@@ -1,0 +1,27 @@
+project:
+  type: book
+  output-dir: docs
+
+execute: 
+  echo: true
+  warning: false
+  message: false
+
+toc: true 
+toc-depth: 3
+bibliography: references.bib   
+  
+book:
+  title: "Documentation for ARC"
+  author: 
+  - John J. Curtin, PhD
+  - Susan Wanta, MS
+  site-url: https://github.io/jjcurtin/docs_arc
+  repo-url: https://github.com/jjcurtin/docs_arc
+  repo-branch: main
+  repo-actions: [edit]
+  sharing: [facebook, linkedin]  
+  page-navigation: true
+  chapters:
+    - index.qmd
+    - chtc.qmd

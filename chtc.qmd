@@ -1,0 +1,33 @@
+# CHTC
+
+## Common UNIX Commands
+
+* `condor_submit sub.sub`
+* `condor_q` for quick review of queue for submitted jobs
+* `condor_q -hold` for quick review of held jobs
+* `condor_qedit [cluster id number] RequestMemory [memory]` to increase memory.  Example: `condor_qedit 16892087 RequestMemory 20000`.  Can specific specific job with .# added to the ID.  Memory is specified in MB in our training control files.
+* `condor_release $USER` to release all held jobs for user (e.g., after increasing memory)
+
+## CHTC Office Hours & Live Help
+
+See the [Get Help Page](https://chtc.cs.wisc.edu/uw-research-computing/get-help.html).  Rachel and Christine are our two main support people at CHTC.  You can email them at chtc@cs.wisc.edu
+
+The zoom link for CHTC office hours is [go.wisc.edu/chtc-officehours](go.wisc.edu/chtc-officehours).  Office hours are current scheduled at 
+* Tuesday morning: 10:30am - 12:00pm
+* Thursday afternoon: 3:00 - 4:30 pm.
+
+
+## Logging In
+
+1. Open PuTTY. Enter Hostname: submit-1.chtc.wisc.edu, Port:  22, connection type: ssh
+2. Log in with your netid.  You will have to use DUO for MFA.
+3. Open WinSCP. Use the same credentials as PuTTY. You can drag files between your computer and CHTC. You can also edit documents with this program.
+
+## Hello World and General Help
+
+For substantial help, you can start with the [CHTC home page](https://chtc.cs.wisc.edu/uw-research-computing/) and their list of [how to docs](https://chtc.cs.wisc.edu/uw-research-computing/guides.html#htc-documentation) for HTC.  
+
+CHTC provides a [Hello World](https://chtc.cs.wisc.edu/uw-research-computing/helloworld) overview of how to use CHTC.  It is worth a review for new users.
+
+## Software
+On windows, use [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) for secure shell connection (SSH) to CHTC submit server and [WinSCP](https://winscp.net/eng/download.php) for FTP
