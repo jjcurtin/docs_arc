@@ -1,0 +1,51 @@
+[
+  {
+    "objectID": "index.html#welcome",
+    "href": "index.html#welcome",
+    "title": "Documentation for ARC",
+    "section": "Welcome",
+    "text": "Welcome\nThis web book is a collection of general documentation, demostrations, and other supporting materials for John Curtin’s Addiction Research Center."
+  },
+  {
+    "objectID": "chtc.html#common-unix-commands",
+    "href": "chtc.html#common-unix-commands",
+    "title": "1  CHTC",
+    "section": "1.1 Common UNIX Commands",
+    "text": "1.1 Common UNIX Commands\n\ncondor_submit sub.sub\ncondor_q for quick review of queue for submitted jobs\ncondor_q -hold for quick review of held jobs\ncondor_q -af HoldReason for more detailed review of held jobs\ncondor_qedit [cluster id number] RequestMemory [memory] to increase memory. Example: condor_qedit 16892087 RequestMemory 20000. Can specific specific job with .# added to the ID. Memory is specified in MB in our training control files.\ncondor_release $USER to release all held jobs for user (e.g., after increasing memory)\ncondor_rm [jobid] or condor_rm $USER to remove a job or all jobs"
+  },
+  {
+    "objectID": "chtc.html#chtc-office-hours-live-help",
+    "href": "chtc.html#chtc-office-hours-live-help",
+    "title": "1  CHTC",
+    "section": "1.2 CHTC Office Hours & Live Help",
+    "text": "1.2 CHTC Office Hours & Live Help\nSee the Get Help Page. Rachel and Christine are our two main support people at CHTC. You can email them at chtc@cs.wisc.edu\nThe zoom link for CHTC office hours is go.wisc.edu/chtc-officehours. Office hours are current scheduled at * Tuesday morning: 10:30am - 12:00pm * Thursday afternoon: 3:00 - 4:30 pm."
+  },
+  {
+    "objectID": "chtc.html#logging-in",
+    "href": "chtc.html#logging-in",
+    "title": "1  CHTC",
+    "section": "1.3 Logging In",
+    "text": "1.3 Logging In\n\nOpen PuTTY. Enter Hostname: submit-1.chtc.wisc.edu, Port: 22, connection type: ssh\nLog in with your netid. You will have to use DUO for MFA.\nOpen WinSCP. Use the same credentials as PuTTY. You can drag files between your computer and CHTC. You can also edit documents with this program."
+  },
+  {
+    "objectID": "chtc.html#hello-world-and-general-help",
+    "href": "chtc.html#hello-world-and-general-help",
+    "title": "1  CHTC",
+    "section": "1.4 Hello World and General Help",
+    "text": "1.4 Hello World and General Help\nFor substantial help, you can start with the CHTC home page and their list of how to docs for HTC.\nCHTC provides a Hello World overview of how to use CHTC. It is worth a review for new users."
+  },
+  {
+    "objectID": "chtc.html#software",
+    "href": "chtc.html#software",
+    "title": "1  CHTC",
+    "section": "1.5 Software",
+    "text": "1.5 Software\nOn windows, use PuTTY for secure shell connection (SSH) to CHTC submit server and WinSCP for FTP."
+  },
+  {
+    "objectID": "chtc.html#making-package-tars",
+    "href": "chtc.html#making-package-tars",
+    "title": "1  CHTC",
+    "section": "1.6 Making package TARS",
+    "text": "1.6 Making package TARS"
+  }
+]
