@@ -5,8 +5,10 @@
 * `condor_submit sub.sub`
 * `condor_q` for quick review of queue for submitted jobs
 * `condor_q -hold` for quick review of held jobs
+* `condor_q -af HoldReason` for more detailed review of held jobs
 * `condor_qedit [cluster id number] RequestMemory [memory]` to increase memory.  Example: `condor_qedit 16892087 RequestMemory 20000`.  Can specific specific job with .# added to the ID.  Memory is specified in MB in our training control files.
 * `condor_release $USER` to release all held jobs for user (e.g., after increasing memory)
+* `condor_rm [jobid]` or `condor_rm $USER` to remove a job or all jobs
 
 ## CHTC Office Hours & Live Help
 
@@ -30,4 +32,8 @@ For substantial help, you can start with the [CHTC home page](https://chtc.cs.wi
 CHTC provides a [Hello World](https://chtc.cs.wisc.edu/uw-research-computing/helloworld) overview of how to use CHTC.  It is worth a review for new users.
 
 ## Software
-On windows, use [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) for secure shell connection (SSH) to CHTC submit server and [WinSCP](https://winscp.net/eng/download.php) for FTP
+On windows, use [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) for secure shell connection (SSH) to CHTC submit server and [WinSCP](https://winscp.net/eng/download.php) for FTP.
+
+
+
+## Making package TARS
