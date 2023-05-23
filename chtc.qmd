@@ -9,6 +9,10 @@
 * `condor_qedit [cluster id number] RequestMemory [memory]` to increase memory.  Example: `condor_qedit 16892087 RequestMemory 20000`.  Can specific specific job with .# added to the ID.  Memory is specified in MB in our training control files.
 * `condor_release $USER` to release all held jobs for user (e.g., after increasing memory)
 * `condor_rm [jobid]` or `condor_rm $USER` to remove a job or all jobs
+* `condor_history [NetID] -limit 10 -af requestmemory memoryusage` is an example of reviewing recent job history (past 10 in this example) for a subset of the history parameters.  Can list all the parameters for a single job using `condor_history 16892169.1 -l` where the jobid is listed explicitly.
+
+
+
 
 ## CHTC Office Hours & Live Help
 
@@ -37,3 +41,10 @@ On windows, use [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/lates
 
 
 ## Making package TARS
+
+
+
+## Open Science Pool
+
+JJC plans to get an account directly for the OS Pool.   We can access this pools through flock/glide BUT with an account, we can run twice as many jobs (using each account separately).  May still just be easier to run using multiple lab accounts on CHTC but worth considering.  For more info:  
+https://portal.osg-htc.org/documentation/
