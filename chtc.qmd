@@ -12,7 +12,7 @@
 * `condor_history [NetID] -limit 10 -af requestmemory memoryusage` is an example of reviewing recent job history (past 10 in this example) for a subset of the history parameters.  Can list all the parameters (long format) for a single job using `condor_history 16892169.1 -l` where the jobid is listed explicitly.
 * `ls -lSr` to list files sorted by size (with larger sizes later).  Useful to find the non-zero error  files
 * `nano job_nums.txt` to edit job_nums.txt for jobs to re-run due to errors
-
+* `cat results_* > results_batch.csv` to combine all results into one file before transfering back to our server
 
 ## CHTC Office Hours & Live Help
 
