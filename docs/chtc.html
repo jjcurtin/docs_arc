@@ -180,6 +180,9 @@ ul.task-list li input[type="checkbox"] {
 <li><code>condor_release $USER</code> to release all held jobs for user (e.g., after increasing memory)</li>
 <li><code>condor_rm [jobid]</code> or <code>condor_rm $USER</code> to remove a job or all jobs</li>
 <li><code>condor_history [NetID] -limit 10 -af requestmemory memoryusage</code> is an example of reviewing recent job history (past 10 in this example) for a subset of the history parameters. Can list all the parameters (long format) for a single job using <code>condor_history 16892169.1 -l</code> where the jobid is listed explicitly.</li>
+<li><code>ls -lSr</code> to list files sorted by size (with larger sizes later). Useful to find the non-zero error files</li>
+<li><code>nano job_nums.txt</code> to edit job_nums.txt for jobs to re-run due to errors</li>
+<li><code>cat results_* &gt; results_all.csv</code> to combine all results into one file before transferring back to our server</li>
 </ul>
 </section>
 <section id="chtc-office-hours-live-help" class="level2" data-number="1.2">
