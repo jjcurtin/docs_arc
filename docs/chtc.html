@@ -139,8 +139,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#common-unix-commands" id="toc-common-unix-commands" class="nav-link active" data-scroll-target="#common-unix-commands"><span class="header-section-number">1.1</span> Common UNIX Commands</a></li>
-  <li><a href="#chtc-office-hours-live-help" id="toc-chtc-office-hours-live-help" class="nav-link" data-scroll-target="#chtc-office-hours-live-help"><span class="header-section-number">1.2</span> CHTC Office Hours &amp; Live Help</a></li>
+  <li><a href="#common-condor-commands" id="toc-common-condor-commands" class="nav-link active" data-scroll-target="#common-condor-commands"><span class="header-section-number">1.1</span> Common CONDOR commands</a></li>
+  <li><a href="#common-unix-generic-commands" id="toc-common-unix-generic-commands" class="nav-link" data-scroll-target="#common-unix-generic-commands"><span class="header-section-number">1.2</span> Common UNIX generic commands</a></li>
   <li><a href="#logging-in" id="toc-logging-in" class="nav-link" data-scroll-target="#logging-in"><span class="header-section-number">1.3</span> Logging In</a></li>
   <li><a href="#hello-world-and-general-help" id="toc-hello-world-and-general-help" class="nav-link" data-scroll-target="#hello-world-and-general-help"><span class="header-section-number">1.4</span> Hello World and General Help</a></li>
   <li><a href="#software" id="toc-software" class="nav-link" data-scroll-target="#software"><span class="header-section-number">1.5</span> Software</a></li>
@@ -169,8 +169,8 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="common-unix-commands" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="common-unix-commands"><span class="header-section-number">1.1</span> Common UNIX Commands</h2>
+<section id="common-condor-commands" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="common-condor-commands"><span class="header-section-number">1.1</span> Common CONDOR commands</h2>
 <ul>
 <li><code>condor_submit sub.sub</code></li>
 <li><code>condor_q</code> for quick review of queue for submitted jobs</li>
@@ -180,14 +180,18 @@ ul.task-list li input[type="checkbox"] {
 <li><code>condor_release $USER</code> to release all held jobs for user (e.g., after increasing memory)</li>
 <li><code>condor_rm [jobid]</code> or <code>condor_rm $USER</code> to remove a job or all jobs</li>
 <li><code>condor_history [NetID] -limit 10 -af requestmemory memoryusage</code> is an example of reviewing recent job history (past 10 in this example) for a subset of the history parameters. Can list all the parameters (long format) for a single job using <code>condor_history 16892169.1 -l</code> where the jobid is listed explicitly.</li>
+</ul>
+</section>
+<section id="common-unix-generic-commands" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="common-unix-generic-commands"><span class="header-section-number">1.2</span> Common UNIX generic commands</h2>
+<ul>
 <li><code>ls -lSr</code> to list files sorted by size (with larger sizes later). Useful to find the non-zero error files</li>
 <li><code>nano job_nums.txt</code> to edit job_nums.txt for jobs to re-run due to errors</li>
 <li><code>cat results_* &gt; results_all.csv</code> to combine all results into one file before transferring back to our server</li>
 <li><code>chmod +x get_missing_jobs.sh</code> to change permissions on get_missing_jobs.sh to run it. <code>./get_missing_jobs.sh</code> to run it.</li>
+<li><code>find -maxdepth 1 -name "results_*.csv" | wc -l</code> will find results_*.csv in local folder (maxdepth 1) and pipe them into a word count that counts lines (-l)</li>
+<li><code>cat job_nums.txt | wc -l</code> reads contents of job_nums.text and pipes to a word count that counts lines (-l) ## CHTC Office Hours &amp; Live Help</li>
 </ul>
-</section>
-<section id="chtc-office-hours-live-help" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="chtc-office-hours-live-help"><span class="header-section-number">1.2</span> CHTC Office Hours &amp; Live Help</h2>
 <p>See the <a href="https://chtc.cs.wisc.edu/uw-research-computing/get-help.html">Get Help Page</a>. Rachel and Christine are our two main support people at CHTC. You can email them at chtc@cs.wisc.edu</p>
 <p>The zoom link for CHTC office hours is <a href="go.wisc.edu/chtc-officehours">go.wisc.edu/chtc-officehours</a>. Office hours are current scheduled at * Tuesday morning: 10:30am - 12:00pm * Thursday afternoon: 3:00 - 4:30 pm.</p>
 </section>

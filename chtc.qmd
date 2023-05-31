@@ -1,6 +1,6 @@
 # CHTC
 
-## Common UNIX Commands
+## Common CONDOR commands
 
 * `condor_submit sub.sub`
 * `condor_q` for quick review of queue for submitted jobs
@@ -10,11 +10,15 @@
 * `condor_release $USER` to release all held jobs for user (e.g., after increasing memory)
 * `condor_rm [jobid]` or `condor_rm $USER` to remove a job or all jobs
 * `condor_history [NetID] -limit 10 -af requestmemory memoryusage` is an example of reviewing recent job history (past 10 in this example) for a subset of the history parameters.  Can list all the parameters (long format) for a single job using `condor_history 16892169.1 -l` where the jobid is listed explicitly.
+
+## Common UNIX generic commands
+
 * `ls -lSr` to list files sorted by size (with larger sizes later).  Useful to find the non-zero error  files
 * `nano job_nums.txt` to edit job_nums.txt for jobs to re-run due to errors
 * `cat results_* > results_all.csv` to combine all results into one file before transferring back to our server
 * `chmod +x get_missing_jobs.sh` to change permissions on get_missing_jobs.sh to run it.  `./get_missing_jobs.sh` to run it.
-
+* `find -maxdepth 1 -name "results_*.csv" | wc -l` will find results_*.csv in local folder (maxdepth 1) and pipe them into a word count that counts lines (-l)
+* `cat job_nums.txt | wc -l` reads contents of job_nums.text and pipes to a word count that counts lines (-l)
 ## CHTC Office Hours & Live Help
 
 See the [Get Help Page](https://chtc.cs.wisc.edu/uw-research-computing/get-help.html).  Rachel and Christine are our two main support people at CHTC.  You can email them at chtc@cs.wisc.edu
