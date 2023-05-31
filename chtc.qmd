@@ -13,6 +13,7 @@
 * `ls -lSr` to list files sorted by size (with larger sizes later).  Useful to find the non-zero error  files
 * `nano job_nums.txt` to edit job_nums.txt for jobs to re-run due to errors
 * `cat results_* > results_all.csv` to combine all results into one file before transferring back to our server
+* `chmod +x get_missing_jobs.sh` to change permissions on get_missing_jobs.sh to run it.  `./get_missing_jobs.sh` to run it.
 
 ## CHTC Office Hours & Live Help
 
