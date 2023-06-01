@@ -13,8 +13,8 @@
 
 ## Common UNIX generic commands
 
-* `ls -lSr` to list files sorted by size (with larger sizes later).  Useful to find the non-zero error  files
-* `nano job_nums.txt` to edit job_nums.txt for jobs to re-run due to errors
+* `ls -lSr` to list files sorted by size (with larger sizes later).  Useful to find the non-zero error  files. Can have issues when applied to large numbers of files.  See use of `find` and `xargs` below if needed.
+* `nano` is used to edit text files.   For example `nano job_nums.txt` to edit job_nums.txt for jobs to re-run due to errors
 * `cat results_* > results_all.csv` to combine all results into one file before transferring back to our server
 * `chmod +x get_missing_jobs.sh` to change permissions on get_missing_jobs.sh to run it.  `./get_missing_jobs.sh` to run it.
 * `find -maxdepth 1 -name "results_*.csv" | wc -l` will find results_*.csv in local folder (maxdepth 1) and pipe them into a word count that counts lines (-l)
