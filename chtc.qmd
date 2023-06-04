@@ -9,7 +9,8 @@
 * `condor_qedit [cluster id number] RequestMemory [memory]` to increase memory.  Example: `condor_qedit 16892087 RequestMemory 20000`.  Can specific specific job with .# added to the ID.  Memory is specified in MB in our training control files.
 * `condor_release $USER` to release all held jobs for user (e.g., after increasing memory)
 * `condor_rm [jobid]` or `condor_rm $USER` to remove a job or all jobs
-* `condor_history [NetID] -limit 10 -af requestmemory memoryusage` is an example of reviewing recent job history (past 10 in this example) for a subset of the history parameters.  Can list all the parameters (long format) for a single job using `condor_history 16892169.1 -l` where the jobid is listed explicitly.
+* `condor_history [NetID] -limit 10 -af requestmemory memoryusage` is an example of reviewing recent job history (past 10 in this example) for a subset of the history parameters.  Can list all the parameters (long format) for a single job using `condor_history 16892169.1 -l` where the jobid is listed explicitly.\
+* `condor_hold $USER` to hold all jobs running (e.g., to increase memory).
 
 ## Common UNIX generic commands
 
