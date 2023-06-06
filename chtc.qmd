@@ -1,89 +1,106 @@
 # CHTC
 
-
-
 ## CHTC Office Hours & Live Help
 
-See the [Get Help Page](https://chtc.cs.wisc.edu/uw-research-computing/get-help.html).  Rachel and Christine are our two main support people at CHTC.  You can email them at chtc@cs.wisc.edu
+See the [Get Help Page](https://chtc.cs.wisc.edu/uw-research-computing/get-help.html). Rachel and Christine are our two main support people at CHTC. You can email them at chtc\@cs.wisc.edu
 
-The zoom link for CHTC office hours is [go.wisc.edu/chtc-officehours](go.wisc.edu/chtc-officehours).  Office hours are current scheduled at 
-* Tuesday morning: 10:30am - 12:00pm
-* Thursday afternoon: 3:00 - 4:30 pm.
-
+The zoom link for CHTC office hours is [go.wisc.edu/chtc-officehours](go.wisc.edu/chtc-officehours). Office hours are current scheduled at \* Tuesday morning: 10:30am - 12:00pm \* Thursday afternoon: 3:00 - 4:30 pm.
 
 ## Logging In
 
-1. Open PuTTY. Enter Hostname: submit-1.chtc.wisc.edu, Port:  22, connection type: ssh
-2. Log in with your netid.  You will have to use DUO for MFA.
-3. Open WinSCP. Use the same credentials as PuTTY. You can drag files between your computer and CHTC. You can also edit documents with this program.
+1.  Open PuTTY. Enter Hostname: submit-1.chtc.wisc.edu, Port: 22, connection type: ssh
+2.  Log in with your netid. You will have to use DUO for MFA.
+3.  Open WinSCP. Use the same credentials as PuTTY. You can drag files between your computer and CHTC. You can also edit documents with this program.
 
 ## Hello World and General Help
 
-For substantial help, you can start with the [CHTC home page](https://chtc.cs.wisc.edu/uw-research-computing/) and their list of [how to docs](https://chtc.cs.wisc.edu/uw-research-computing/guides.html#htc-documentation) for HTC.  
+For substantial help, you can start with the [CHTC home page](https://chtc.cs.wisc.edu/uw-research-computing/) and their list of [how to docs](https://chtc.cs.wisc.edu/uw-research-computing/guides.html#htc-documentation) for HTC.
 
-CHTC provides a [Hello World](https://chtc.cs.wisc.edu/uw-research-computing/helloworld) overview of how to use CHTC.  It is worth a review for new users.
+CHTC provides a [Hello World](https://chtc.cs.wisc.edu/uw-research-computing/helloworld) overview of how to use CHTC. It is worth a review for new users.
 
 ## Software
+
 On windows, use [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) for secure shell connection (SSH) to CHTC submit server and [WinSCP](https://winscp.net/eng/download.php) for FTP.
 
-
-
-## General CHTC Workflow 
+## General CHTC Workflow
 
 ### Making Batch of Jobs
 
+-   Create or edit the training controls file for your batch of jobs. You should start with the demo `training_controls.R` file in the `lab_support` repo.
+-   Run (and create if necessary) `mak_jobs.R` for your study. To create it, start with the demo in the `lab_support` repo. You will need to update the path to your training controls file when creating the file.
+-   `make_jobs()` is called by the `mak_jobs.R` script. It will make a new folder for your batch of jobs on the server in the `chtc` folder for your study. 
+- FTP all of the files in the `input` folder for this batch of jobs to the CHTC submit server.
+
 ### Testing Jobs
+
+- Make sure you have a `results` folder and an `error` folder in your home directory. 
+- Make sure you have all files for the batch of jobs you will train (see above) and `train.sif`
+- Edit `job_nums.csv` on CHTC server to contain some (e.g., 3) jobs with only several configs (e.g., 5) in each bin (job/row). For example, you can create the content below by typing `printf "1,1,5\n2,6,10\n3,11,15" > job_nums.csv`
+```
+1, 1, 5
+2, 6, 10
+3, 11, 15
+```
+- Type `condor_submit train.sub` to submit this jobs
+- Monitor the jobs using `condor_q` and `-condor_q -hold` if needed
+- Confirm that there are data in the results file (file size > 0 for all files): `ls ./results/results* -lS`.  This will sort files with size = 0 to the bottom of the list. There should not be any!
+- Confirm that the correct number of results files were created by counting them: `ls ./results/results* | wc -l`
+- Check for error files with error messages (file size > 0): `ls ./error/error* -lSr`.  This will sort the non-zero files to the bottom of the list.  
+- If there are non-zero files, look at the error messages using nano editor: For example, `nano ./error/error_1.err`
+- Determine the run time for your test jobs:  `condor_history $USER -limit 3` (where limit is the number of test jobs you ran).  You want to bin enough configurations together in a job to have it last for 2-3 hours.   You may need to run `mak_jobs.R` again with a different value for `configs_per_job` to make a new `job_nums.csv` file.
+- Review the memory and disk usage for these test jobs: `condor_history $USER -limit 3 -af RequestMemory MemoryUsage RequestDisk DiskUsage`.  You may need to edit `train.sub` and `training_controls.R` to increase or decrease these values.   You should make the values match across both files on both CHTC server and our server to avoid confusion later.  Or just delete the batch and re-run `mak_jobs.R`
+
 
 ### Running jobs
 
-1. Copy files that are created by `mak_jobs()` from the server to CHTC submit server.
-2. Confirm that the EOL character for `execute.sh` have been changed to Unix.  The EOL can be changed using Notepad++.  From the menu, select `Edit:EOL conversion` and choose `Unix (LF)`
-3. Confirm that you have an `error` directory. If not, create one (`mkdir error`)
-3. Type `condor_submit sub.sub`
-4. Type `condor_q` to confirm that the number of jobs that were submitted matches your expectations
+-  Make sure you have FTPed the full `jobs_nums.csv` to the CHTC server to replace the test batch.
+-  Type `condor_submit train.sub`
+-  Type `condor_q` to confirm that the number of jobs that were submitted matches your expectations
 
 ### Monitoring Running Jobs
 
-* run `condor_q` to monitor progress on your jobs.
-* run `condor_q -hold` to explore the reason for held jobs.  If necessary, you may  need to change the requested memory or disk space to get those jobs to complete.   See below for more detail.  `condor_q -af HoldReason` will provide more detail on why a job is held if needed.
-* `condor_release $USER` will release all held jobs for the user.   You can substitute batch or job number to release a subset of held jobs if needed
-* `condor_rm $USER` will remove/cancel all jobs for the user.
-* You can review the error files associated with the batch of jobs to detect and understand errors as well.   Change to the error directory (`cd error`).  You can sort the files so that the files with errors (i.e., file switch file size > 0) display last by typing `ls -lSr`   If there are MANY (> 60K) files, you may need to pipe the file names into ls by typing `find -maxdepth 1 -name "err_*.err" | ls -lSr`.   You can view the contents of a non-zero error file using nano.   e.g., `nano err_1111.err`
+-   run `condor_q` to monitor progress on your jobs.
+-   run `condor_q -hold` to explore the reason for held jobs. If necessary, you may need to change the requested memory or disk space to get those jobs to complete. See below for more detail. `condor_q -af HoldReason` will provide more detail on why a job is held if needed.
+-   `condor_release $USER` will release all held jobs for the user. You can substitute batch or job number to release a subset of held jobs if needed
+-   `condor_rm $USER` will remove/cancel all jobs for the user.
+-   You can review the error files associated with the batch of jobs to detect and understand errors as well. Sort the files so that the files with errors (i.e., file switch file size > 0) display last by typing `ls ./error/error* -lSr` If there are MANY (> 60K) files, you may need to pipe the file names into `ls` by typing `find ./error -name "error_*" | ls -lSr`. You can view the contents of a non-zero error file using nano. e.g., `nano ./error/error_1.err`
+- Flock/Glide jobs will sometimes not exit properly.  These jobs are put on hold (in addition to jobs with insufficient memory/disk space).  You can simply release these jobs and try again:  `condor_release $USER`.  Of course, you should first address any problems with memory or disk usage that resulted in holds.
 
 ### Editing Running Jobs
-At times some (or all) jobs may be held if they require more memory or disk space than was requested in sub.sub.  You can update these parameters and then release the held jobs.   
 
-*  To update memory, type `condor_qedit [batch_name or job_id] RequestMemory [memory]`. You can see the batch_name and job_ids by typing `condor_q -hold`  Memory is quantified in MB.  
-* To update disk space, type `condor_qedit [batch_name or job_id] RequestDisk [space]`. You can see the batch_name and job_ids by typing `condor_q -hold`  Space is quantified in MB.  
-* Type `condor_release $USER` to release all held jobs from the user.
-* If you expect that you will need the specified higher memory or disk space for the currently running jobs (not yet held), you can hold them by typing `condor_hold $USER` and then release them with `condor_release $USER` such that they will now find machine with the higher levels for these parameters.
+At times some (or all) jobs may be held if they require more memory or disk space than was requested in sub.sub. You can update these parameters and then release the held jobs.
 
+-   To update memory, type `condor_qedit [batch_name or job_id] RequestMemory [memory]`. You can see the batch_name and job_ids by typing `condor_q -hold` Memory is quantified in MB.\
+-   To update disk space, type `condor_qedit [batch_name or job_id] RequestDisk [space]`. You can see the batch_name and job_ids by typing `condor_q -hold` Space is quantified in MB.\
+-   Type `condor_release $USER` to release all held jobs from the user.
+-   If you expect that you will need the specified higher memory or disk space for the currently running jobs (not yet held), you can hold them by typing `condor_hold $USER` and then release them with `condor_release $USER` such that they will now find machine with the higher levels for these parameters.
 
 ### Transferring Jobs back to Our Server
 
-`head -n +1 results_1.csv > all_results.csv; find -maxdepth 1 -name "results_*.csv" | xargs awk 'FNR>1' >> all_results.csv`
-
+- Confirm that you have the correct number of results files: `ls ./results/results_* | wc -l`
+- Review the non-zero error files:  `ls ./error/error_* -lSr` and `nano ./error/error_1.csv`
+- Concatenate all the results files: `head -n +1 ./results/results_1.csv > batch_results.csv; ls ./results/results_*.csv | xargs awk 'FNR>1' >> batch_results.csv`
+- Now FTP `batch_results.csv` and the log file to the output folder for this batch on our server.   
+- Do NOT delete results and error files until you have confirmed they look good by processing them in R.
 
 ## Creating a Container for R and Packages
 
-https://chtc.cs.wisc.edu/uw-research-computing/singularity-htc
+[Documentation](https://chtc.cs.wisc.edu/uw-research-computing/singularity-htc) on CHTC 
 
-
-https://hub.docker.com/_/r-base/tags
-
+[Docker image for base r](https://hub.docker.com/_/r-base).  Chose current numbered version (e.g., 4.3.0) among tags.
 
 ## Making package TARS
 
-CHTC offers a detailed step-by-step walkthrough for [making package tars](https://chtc.cs.wisc.edu/uw-research-computing/r-jobs#build).   
+CHTC offers a detailed step-by-step walkthrough for [making package tars](https://chtc.cs.wisc.edu/uw-research-computing/r-jobs#build).
 
 In our CHTC workflow we have two tars located at P:/chtc/tars
 
-1. **features.tar**    
-This tar contains all the packages needed for making features on CHTC.    
+1.  **features.tar**\
+    This tar contains all the packages needed for making features on CHTC.
 
-Current packages in this tar include:   
+Current packages in this tar include:
 
-```
+```         
 10/4/22 - recreated TAR to work with updated CHTC Linux OS (v 8) and R version 4.1.3 (updated from 4.0.2)
 
 As of 6/1/23 Current packages include:
@@ -95,13 +112,12 @@ foreach -1.5.2,
 tis - 1.39
 ```
 
+2.  **train.tar**\
+    This tar contains all the packages needed for fitting model configurations on CHTC.
 
-2. **train.tar**    
-This tar contains all the packages needed for fitting model configurations on CHTC.
+Current packages in this tar include:
 
-Current packages in this tar include:   
-
-```
+```         
 10/4/22 - recreated TAR to work with updated CHTC Linux OS (v 8) and R version 4.1.3 (updated from 4.0.2)    
 Note: with update no longer need to use compiler fix-around for installing glmnet and xgboost (see demo_changing_package_compiler in demos_docs/chtc for how we got around this error)
 
@@ -131,28 +147,40 @@ iml 0.11.1
 
 ## Open Science Pool
 
-JJC plans to get an account directly for the OS Pool.   We can access this pools through flock/glide BUT with an account, we can run twice as many jobs (using each account separately).  May still just be easier to run using multiple lab accounts on CHTC but worth considering.
+JJC plans to get an account directly for the OS Pool. We can access this pools through flock/glide BUT with an account, we can run twice as many jobs (using each account separately). May still just be easier to run using multiple lab accounts on CHTC but worth considering.
 
 ## Common CONDOR commands
 
-* `condor_submit sub.sub`
-* `condor_q` for quick review of queue for submitted jobs
-* `condor_q -hold` for quick review of held jobs
-* `condor_q -af HoldReason` for more detailed review of held jobs
-* `condor_qedit [cluster id number] RequestMemory [memory]` to increase memory.  Example: `condor_qedit 16892087 RequestMemory 20000`.  Can specific specific job with .# added to the ID.  Memory is specified in MB in our training control files.
-* `condor_release $USER` to release all held jobs for user (e.g., after increasing memory)
-* `condor_rm [jobid]` or `condor_rm $USER` to remove a job or all jobs
-* `condor_history [NetID] -limit 10 -af requestmemory memoryusage` is an example of reviewing recent job history (past 10 in this example) for a subset of the history parameters.  Can list all the parameters (long format) for a single job using `condor_history 16892169.1 -l` where the jobid is listed explicitly.\
-* `condor_hold $USER` to hold all jobs running (e.g., to increase memory).
+-   `condor_submit sub.sub`
+-   `condor_q` for quick review of queue for submitted jobs
+-   `condor_q -hold` for quick review of held jobs
+-   `condor_q -af HoldReason` for more detailed review of held jobs
+-   `condor_qedit [cluster id number] RequestMemory [memory]` to increase memory. Example: `condor_qedit 16892087 RequestMemory 20000`. Can specific specific job with .# added to the ID. Memory is specified in MB in our training control files.
+-   `condor_release $USER` to release all held jobs for user (e.g., after increasing memory)
+-   `condor_rm [jobid]` or `condor_rm $USER` to remove a job or all jobs
+-   `condor_history [NetID] -limit 10 -af requestmemory memoryusage` is an example of reviewing recent job history (past 10 in this example) for a subset of the history parameters. Can list all the parameters (long format) for a single job using `condor_history 16892169.1 -l` where the jobid is listed explicitly.\
+-   `condor_hold $USER` to hold all jobs running (e.g., to increase memory).
 
 ## Common UNIX generic commands
 
-* `ls -lSr` to list files sorted by size (with larger sizes later).  Useful to find the non-zero error  files. Can have issues when applied to large numbers of files.  See use of `find` and `xargs` below if needed.
-* `rm` to remove file(s).  `rm -r` to remove non-empty directory 
-* `nano` is used to edit text files.   For example `nano job_nums.txt` to edit job_nums.txt for jobs to re-run due to errors
-* `cat results_* > results_all.csv` to combine all results into one file before transferring back to our server
-* `chmod +x get_missing_jobs.sh` to change permissions on get_missing_jobs.sh to run it.  `./get_missing_jobs.sh` to run it.
-* `find -maxdepth 1 -name "results_*.csv" | wc -l` will find results_*.csv in local folder (maxdepth 1) and pipe them into a word count that counts lines (-l)
-* `cat job_nums.txt | wc -l` reads contents of job_nums.text and pipes to a word count that counts lines (-l)
-* `find -maxdepth 1 -name "results_*.csv" | ls -lSr` gets around the too many arguments issue.  
-* `head -n +1 results_1.csv > all_results.csv; find -maxdepth 1 -name "results_*.csv" | xargs awk 'FNR>1' >> all_results.csv` to concatenate results files (including only one header row).  See [tutorial](https://linuxhandbook.com/awk-command-tutorial/) on awk to understand its use for simple programming.  See a [tutorial](https://shapeshed.com/unix-xargs/) on the use of xargs.
+-   `ls -lSr` to list files sorted by size (with larger sizes later). Useful to find the non-zero error files. Can have issues when applied to large numbers of files. See use of `find` and `xargs` below if needed.
+
+-   `mv` to move files between directories. can use `..` as target to move file to home directory. e.g., `mv results_* ..`
+
+-   `>` redirect standard output to a new file (creates file if does not exist; writes over file contents if it does exist). `>>` redirect standard output to append to a file
+
+-   `rm` to remove file(s). `rm -r` to remove non-empty directory
+
+-   `nano` is used to edit text files. For example `nano job_nums.txt` to edit job_nums.txt for jobs to re-run due to errors
+
+-   `cat results_* > results_all.csv` to combine all results into one file before transferring back to our server
+
+-   `chmod +x get_missing_jobs.sh` to change permissions on get_missing_jobs.sh to run it. `./get_missing_jobs.sh` to run it.
+
+-   `find -maxdepth 1 -name "results_*.csv" | wc -l` will find results\_\*.csv in local folder (maxdepth 1) and pipe them into a word count that counts lines (-l)
+
+-   `cat job_nums.txt | wc -l` reads contents of job_nums.text and pipes to a word count that counts lines (-l)
+
+-   `find -maxdepth 1 -name "results_*.csv" | ls -lSr` gets around the too many arguments issue.\
+
+-   `head -n +1 results_1.csv > all_results.csv; find -maxdepth 1 -name "results_*.csv" | xargs awk 'FNR>1' >> all_results.csv` to concatenate results files (including only one header row). See [tutorial](https://linuxhandbook.com/awk-command-tutorial/) on awk to understand its use for simple programming. See a [tutorial](https://shapeshed.com/unix-xargs/) on the use of xargs.

@@ -206,19 +206,42 @@ ul.task-list li input[type="checkbox"] {
 <h2 data-number="1.5" class="anchored" data-anchor-id="general-chtc-workflow"><span class="header-section-number">1.5</span> General CHTC Workflow</h2>
 <section id="making-batch-of-jobs" class="level3" data-number="1.5.1">
 <h3 data-number="1.5.1" class="anchored" data-anchor-id="making-batch-of-jobs"><span class="header-section-number">1.5.1</span> Making Batch of Jobs</h3>
+<ul>
+<li>Create or edit the training controls file for your batch of jobs. You should start with the demo <code>training_controls.R</code> file in the <code>lab_support</code> repo.</li>
+<li>Run (and create if necessary) <code>mak_jobs.R</code> for your study. To create it, start with the demo in the <code>lab_support</code> repo. You will need to update the path to your training controls file when creating the file.</li>
+<li><code>make_jobs()</code> is called by the <code>mak_jobs.R</code> script. It will make a new folder for your batch of jobs on the server in the <code>chtc</code> folder for your study.</li>
+<li>FTP all of the files in the <code>input</code> folder for this batch of jobs to the CHTC submit server.</li>
+</ul>
 </section>
 <section id="testing-jobs" class="level3" data-number="1.5.2">
 <h3 data-number="1.5.2" class="anchored" data-anchor-id="testing-jobs"><span class="header-section-number">1.5.2</span> Testing Jobs</h3>
+<ul>
+<li>Make sure you have a <code>results</code> folder and an <code>error</code> folder in your home directory.</li>
+<li>Make sure you have all files for the batch of jobs you will train (see above) and <code>train.sif</code></li>
+<li>Edit <code>job_nums.csv</code> on CHTC server to contain some (e.g., 3) jobs with only several configs (e.g., 5) in each bin (job/row). For example, you can create the content below by typing <code>printf "1,1,5\n2,6,10\n3,11,15" &gt; job_nums.csv</code></li>
+</ul>
+<pre><code>1, 1, 5
+2, 6, 10
+3, 11, 15</code></pre>
+<ul>
+<li>Type <code>condor_submit train.sub</code> to submit this jobs</li>
+<li>Monitor the jobs using <code>condor_q</code> and <code>-condor_q -hold</code> if needed</li>
+<li>Confirm that there are data in the results file (file size &gt; 0 for all files): <code>ls ./results/results* -lS</code>. This will sort files with size = 0 to the bottom of the list. There should not be any!</li>
+<li>Confirm that the correct number of results files were created by counting them: <code>ls ./results/results* | wc -l</code></li>
+<li>Check for error files with error messages (file size &gt; 0): <code>ls ./error/error* -lSr</code>. This will sort the non-zero files to the bottom of the list.<br>
+</li>
+<li>If there are non-zero files, look at the error messages using nano editor: For example, <code>nano ./error/error_1.err</code></li>
+<li>Determine the run time for your test jobs: <code>condor_history $USER -limit 3</code> (where limit is the number of test jobs you ran). You want to bin enough configurations together in a job to have it last for 2-3 hours. You may need to run <code>mak_jobs.R</code> again with a different value for <code>configs_per_job</code> to make a new <code>job_nums.csv</code> file.</li>
+<li>Review the memory and disk usage for these test jobs: <code>condor_history $USER -limit 3 -af RequestMemory MemoryUsage RequestDisk DiskUsage</code>. You may need to edit <code>train.sub</code> and <code>training_controls.R</code> to increase or decrease these values. You should make the values match across both files on both CHTC server and our server to avoid confusion later. Or just delete the batch and re-run <code>mak_jobs.R</code></li>
+</ul>
 </section>
 <section id="running-jobs" class="level3" data-number="1.5.3">
 <h3 data-number="1.5.3" class="anchored" data-anchor-id="running-jobs"><span class="header-section-number">1.5.3</span> Running jobs</h3>
-<ol type="1">
-<li>Copy files that are created by <code>mak_jobs()</code> from the server to CHTC submit server.</li>
-<li>Confirm that the EOL character for <code>execute.sh</code> have been changed to Unix. The EOL can be changed using Notepad++. From the menu, select <code>Edit:EOL conversion</code> and choose <code>Unix (LF)</code></li>
-<li>Confirm that you have an <code>error</code> directory. If not, create one (<code>mkdir error</code>)</li>
-<li>Type <code>condor_submit sub.sub</code></li>
+<ul>
+<li>Make sure you have FTPed the full <code>jobs_nums.csv</code> to the CHTC server to replace the test batch.</li>
+<li>Type <code>condor_submit train.sub</code></li>
 <li>Type <code>condor_q</code> to confirm that the number of jobs that were submitted matches your expectations</li>
-</ol>
+</ul>
 </section>
 <section id="monitoring-running-jobs" class="level3" data-number="1.5.4">
 <h3 data-number="1.5.4" class="anchored" data-anchor-id="monitoring-running-jobs"><span class="header-section-number">1.5.4</span> Monitoring Running Jobs</h3>
@@ -227,7 +250,8 @@ ul.task-list li input[type="checkbox"] {
 <li>run <code>condor_q -hold</code> to explore the reason for held jobs. If necessary, you may need to change the requested memory or disk space to get those jobs to complete. See below for more detail. <code>condor_q -af HoldReason</code> will provide more detail on why a job is held if needed.</li>
 <li><code>condor_release $USER</code> will release all held jobs for the user. You can substitute batch or job number to release a subset of held jobs if needed</li>
 <li><code>condor_rm $USER</code> will remove/cancel all jobs for the user.</li>
-<li>You can review the error files associated with the batch of jobs to detect and understand errors as well. Change to the error directory (<code>cd error</code>). You can sort the files so that the files with errors (i.e., file switch file size &gt; 0) display last by typing <code>ls -lSr</code> If there are MANY (&gt; 60K) files, you may need to pipe the file names into ls by typing <code>find -maxdepth 1 -name "err_*.err" | ls -lSr</code>. You can view the contents of a non-zero error file using nano. e.g., <code>nano err_1111.err</code></li>
+<li>You can review the error files associated with the batch of jobs to detect and understand errors as well. Sort the files so that the files with errors (i.e., file switch file size &gt; 0) display last by typing <code>ls ./error/error* -lSr</code> If there are MANY (&gt; 60K) files, you may need to pipe the file names into <code>ls</code> by typing <code>find ./error -name "error_*" | ls -lSr</code>. You can view the contents of a non-zero error file using nano. e.g., <code>nano ./error/error_1.err</code></li>
+<li>Flock/Glide jobs will sometimes not exit properly. These jobs are put on hold (in addition to jobs with insufficient memory/disk space). You can simply release these jobs and try again: <code>condor_release $USER</code>. Of course, you should first address any problems with memory or disk usage that resulted in holds.</li>
 </ul>
 </section>
 <section id="editing-running-jobs" class="level3" data-number="1.5.5">
@@ -244,13 +268,20 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="transferring-jobs-back-to-our-server" class="level3" data-number="1.5.6">
 <h3 data-number="1.5.6" class="anchored" data-anchor-id="transferring-jobs-back-to-our-server"><span class="header-section-number">1.5.6</span> Transferring Jobs back to Our Server</h3>
-<p><code>head -n +1 results_1.csv &gt; all_results.csv; find -maxdepth 1 -name "results_*.csv" | xargs awk 'FNR&gt;1' &gt;&gt; all_results.csv</code></p>
+<ul>
+<li>Confirm that you have the correct number of results files: <code>ls ./results/results_* | wc -l</code></li>
+<li>Review the non-zero error files: <code>ls ./error/error_* -lSr</code> and <code>nano ./error/error_1.csv</code></li>
+<li>Concatenate all the results files: <code>head -n +1 ./results/results_1.csv &gt; batch_results.csv; ls ./results/results_*.csv | xargs awk 'FNR&gt;1' &gt;&gt; batch_results.csv</code></li>
+<li>Now FTP <code>batch_results.csv</code> and the log file to the output folder for this batch on our server.<br>
+</li>
+<li>Do NOT delete results and error files until you have confirmed they look good by processing them in R.</li>
+</ul>
 </section>
 </section>
 <section id="creating-a-container-for-r-and-packages" class="level2" data-number="1.6">
 <h2 data-number="1.6" class="anchored" data-anchor-id="creating-a-container-for-r-and-packages"><span class="header-section-number">1.6</span> Creating a Container for R and Packages</h2>
-<p>https://chtc.cs.wisc.edu/uw-research-computing/singularity-htc</p>
-<p>https://hub.docker.com/_/r-base/tags</p>
+<p><a href="https://chtc.cs.wisc.edu/uw-research-computing/singularity-htc">Documentation</a> on CHTC</p>
+<p><a href="https://hub.docker.com/_/r-base">Docker image for base r</a>. Chose current numbered version (e.g., 4.3.0) among tags.</p>
 </section>
 <section id="making-package-tars" class="level2" data-number="1.7">
 <h2 data-number="1.7" class="anchored" data-anchor-id="making-package-tars"><span class="header-section-number">1.7</span> Making package TARS</h2>
@@ -323,16 +354,18 @@ iml 0.11.1</code></pre>
 <section id="common-unix-generic-commands" class="level2" data-number="1.10">
 <h2 data-number="1.10" class="anchored" data-anchor-id="common-unix-generic-commands"><span class="header-section-number">1.10</span> Common UNIX generic commands</h2>
 <ul>
-<li><code>ls -lSr</code> to list files sorted by size (with larger sizes later). Useful to find the non-zero error files. Can have issues when applied to large numbers of files. See use of <code>find</code> and <code>xargs</code> below if needed.</li>
-<li><code>rm</code> to remove file(s). <code>rm -r</code> to remove non-empty directory</li>
-<li><code>nano</code> is used to edit text files. For example <code>nano job_nums.txt</code> to edit job_nums.txt for jobs to re-run due to errors</li>
-<li><code>cat results_* &gt; results_all.csv</code> to combine all results into one file before transferring back to our server</li>
-<li><code>chmod +x get_missing_jobs.sh</code> to change permissions on get_missing_jobs.sh to run it. <code>./get_missing_jobs.sh</code> to run it.</li>
-<li><code>find -maxdepth 1 -name "results_*.csv" | wc -l</code> will find results_*.csv in local folder (maxdepth 1) and pipe them into a word count that counts lines (-l)</li>
-<li><code>cat job_nums.txt | wc -l</code> reads contents of job_nums.text and pipes to a word count that counts lines (-l)</li>
-<li><code>find -maxdepth 1 -name "results_*.csv" | ls -lSr</code> gets around the too many arguments issue.<br>
-</li>
-<li><code>head -n +1 results_1.csv &gt; all_results.csv; find -maxdepth 1 -name "results_*.csv" | xargs awk 'FNR&gt;1' &gt;&gt; all_results.csv</code> to concatenate results files (including only one header row). See <a href="https://linuxhandbook.com/awk-command-tutorial/">tutorial</a> on awk to understand its use for simple programming. See a <a href="https://shapeshed.com/unix-xargs/">tutorial</a> on the use of xargs.</li>
+<li><p><code>ls -lSr</code> to list files sorted by size (with larger sizes later). Useful to find the non-zero error files. Can have issues when applied to large numbers of files. See use of <code>find</code> and <code>xargs</code> below if needed.</p></li>
+<li><p><code>mv</code> to move files between directories. can use <code>..</code> as target to move file to home directory. e.g., <code>mv results_* ..</code></p></li>
+<li><p><code>&gt;</code> redirect standard output to a new file (creates file if does not exist; writes over file contents if it does exist). <code>&gt;&gt;</code> redirect standard output to append to a file</p></li>
+<li><p><code>rm</code> to remove file(s). <code>rm -r</code> to remove non-empty directory</p></li>
+<li><p><code>nano</code> is used to edit text files. For example <code>nano job_nums.txt</code> to edit job_nums.txt for jobs to re-run due to errors</p></li>
+<li><p><code>cat results_* &gt; results_all.csv</code> to combine all results into one file before transferring back to our server</p></li>
+<li><p><code>chmod +x get_missing_jobs.sh</code> to change permissions on get_missing_jobs.sh to run it. <code>./get_missing_jobs.sh</code> to run it.</p></li>
+<li><p><code>find -maxdepth 1 -name "results_*.csv" | wc -l</code> will find results_*.csv in local folder (maxdepth 1) and pipe them into a word count that counts lines (-l)</p></li>
+<li><p><code>cat job_nums.txt | wc -l</code> reads contents of job_nums.text and pipes to a word count that counts lines (-l)</p></li>
+<li><p><code>find -maxdepth 1 -name "results_*.csv" | ls -lSr</code> gets around the too many arguments issue.<br>
+</p></li>
+<li><p><code>head -n +1 results_1.csv &gt; all_results.csv; find -maxdepth 1 -name "results_*.csv" | xargs awk 'FNR&gt;1' &gt;&gt; all_results.csv</code> to concatenate results files (including only one header row). See <a href="https://linuxhandbook.com/awk-command-tutorial/">tutorial</a> on awk to understand its use for simple programming. See a <a href="https://shapeshed.com/unix-xargs/">tutorial</a> on the use of xargs.</p></li>
 </ul>
 
 
