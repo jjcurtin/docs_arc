@@ -313,13 +313,19 @@ ul.task-list li input[type="checkbox"] {
 <li><p><code>mv</code> to move files between directories. can use <code>..</code> as target to move file to home directory. e.g., <code>mv results_* ..</code></p></li>
 <li><p><code>&gt;</code> redirect standard output to a new file (creates file if does not exist; writes over file contents if it does exist). <code>&gt;&gt;</code> redirect standard output to append to a file</p></li>
 <li><p><code>rm</code> to remove file(s). <code>rm -r</code> to remove non-empty directory</p></li>
-<li><p><code>nano</code> is used to edit text files. For example <code>nano job_nums.txt</code> to edit job_nums.txt for jobs to re-run due to errors</p></li>
+<li><p><code>nano</code> is used to edit text files. For example <code>nano job_nums.csv</code> to edit job_nums.csv for jobs to re-run due to errors</p></li>
 <li><p><code>cat filename_* &gt; all_files.csv</code> to concatenate all files into one file.</p></li>
 <li><p><code>chmod +x get_missing_jobs.sh</code> to change permissions on get_missing_jobs.sh to run it. <code>./get_missing_jobs.sh</code> to run it.</p></li>
 <li><p><code>find -maxdepth 1 -name "results_*.csv" | wc -l</code> will find results_*.csv in local folder (maxdepth 1) and pipe them into a word count that counts lines (-l)</p></li>
 <li><p><code>cat job_nums.csv | wc -l</code> reads contents of <code>job_nums.csv</code> and pipes to a word count that counts lines (<code>-l</code>)</p></li>
 <li><p><code>find -maxdepth 1 -name "results_*.csv" | ls -lSr</code> gets around the too many arguments issue. Find searches recursively by default (override with maxdepth if needed), whereas ls searches just <code>.</code> or the specified directory (e.g., <code>./results</code>)</p></li>
 <li><p>See <a href="https://linuxhandbook.com/awk-command-tutorial/">tutorial</a> on awk to understand its use for simple programming. See a <a href="https://shapeshed.com/unix-xargs/">tutorial</a> on the use of xargs.</p></li>
+<li><p><code>printf</code> to send formatted text to standard output or to a file</p>
+<ul>
+<li><code>printf "John is %s\n" "nice"</code></li>
+<li><code>printf "John is %d years old" 54</code></li>
+<li><code>printf "hello world\nIt is John!" &gt; out.txt</code>)</li>
+</ul></li>
 </ul>
 
 
