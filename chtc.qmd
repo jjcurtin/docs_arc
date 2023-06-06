@@ -120,7 +120,7 @@ JJC plans to get an account directly for the OS Pool. We can access this pools t
 
 -   `rm` to remove file(s). `rm -r` to remove non-empty directory
 
--   `nano` is used to edit text files. For example `nano job_nums.txt` to edit job_nums.txt for jobs to re-run due to errors
+-   `nano` is used to edit text files. For example `nano job_nums.csv` to edit job_nums.csv for jobs to re-run due to errors
 
 -   `cat filename_* > all_files.csv` to concatenate all files into one file.
 
@@ -133,3 +133,8 @@ JJC plans to get an account directly for the OS Pool. We can access this pools t
 -   `find -maxdepth 1 -name "results_*.csv" | ls -lSr` gets around the too many arguments issue.  Find searches recursively by default (override with maxdepth if needed), whereas ls searches just `.` or the specified directory (e.g., `./results`)
 
 -   See [tutorial](https://linuxhandbook.com/awk-command-tutorial/) on awk to understand its use for simple programming. See a [tutorial](https://shapeshed.com/unix-xargs/) on the use of xargs.
+
+- `printf` to send formatted text to standard output or to a file
+   - `printf "John is %s\n" "nice"`
+   - `printf "John is %d years old" 54`
+   - `printf "hello world\nIt is John!" > out.txt`)
