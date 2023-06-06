@@ -17,29 +17,29 @@
     "objectID": "chtc.html#chtc-office-hours-live-help",
     "href": "chtc.html#chtc-office-hours-live-help",
     "title": "1  CHTC",
-    "section": "1.3 CHTC Office Hours & Live Help",
-    "text": "1.3 CHTC Office Hours & Live Help\nSee the Get Help Page. Rachel and Christine are our two main support people at CHTC. You can email them at chtc@cs.wisc.edu\nThe zoom link for CHTC office hours is go.wisc.edu/chtc-officehours. Office hours are current scheduled at * Tuesday morning: 10:30am - 12:00pm * Thursday afternoon: 3:00 - 4:30 pm."
+    "section": "1.1 CHTC Office Hours & Live Help",
+    "text": "1.1 CHTC Office Hours & Live Help\nSee the Get Help Page. Rachel and Christine are our two main support people at CHTC. You can email them at chtc@cs.wisc.edu\nThe zoom link for CHTC office hours is go.wisc.edu/chtc-officehours. Office hours are current scheduled at * Tuesday morning: 10:30am - 12:00pm * Thursday afternoon: 3:00 - 4:30 pm."
   },
   {
     "objectID": "chtc.html#logging-in",
     "href": "chtc.html#logging-in",
     "title": "1  CHTC",
-    "section": "1.4 Logging In",
-    "text": "1.4 Logging In\n\nOpen PuTTY. Enter Hostname: submit-1.chtc.wisc.edu, Port: 22, connection type: ssh\nLog in with your netid. You will have to use DUO for MFA.\nOpen WinSCP. Use the same credentials as PuTTY. You can drag files between your computer and CHTC. You can also edit documents with this program."
+    "section": "1.2 Logging In",
+    "text": "1.2 Logging In\n\nOpen PuTTY. Enter Hostname: submit-1.chtc.wisc.edu, Port: 22, connection type: ssh\nLog in with your netid. You will have to use DUO for MFA.\nOpen WinSCP. Use the same credentials as PuTTY. You can drag files between your computer and CHTC. You can also edit documents with this program."
   },
   {
     "objectID": "chtc.html#hello-world-and-general-help",
     "href": "chtc.html#hello-world-and-general-help",
     "title": "1  CHTC",
-    "section": "1.5 Hello World and General Help",
-    "text": "1.5 Hello World and General Help\nFor substantial help, you can start with the CHTC home page and their list of how to docs for HTC.\nCHTC provides a Hello World overview of how to use CHTC. It is worth a review for new users."
+    "section": "1.3 Hello World and General Help",
+    "text": "1.3 Hello World and General Help\nFor substantial help, you can start with the CHTC home page and their list of how to docs for HTC.\nCHTC provides a Hello World overview of how to use CHTC. It is worth a review for new users."
   },
   {
     "objectID": "chtc.html#software",
     "href": "chtc.html#software",
     "title": "1  CHTC",
-    "section": "1.6 Software",
-    "text": "1.6 Software\nOn windows, use PuTTY for secure shell connection (SSH) to CHTC submit server and WinSCP for FTP."
+    "section": "1.4 Software",
+    "text": "1.4 Software\nOn windows, use PuTTY for secure shell connection (SSH) to CHTC submit server and WinSCP for FTP."
   },
   {
     "objectID": "chtc.html#making-package-tars",
@@ -53,20 +53,34 @@
     "href": "chtc.html#open-science-pool",
     "title": "1  CHTC",
     "section": "1.8 Open Science Pool",
-    "text": "1.8 Open Science Pool\nJJC plans to get an account directly for the OS Pool. We can access this pools through flock/glide BUT with an account, we can run twice as many jobs (using each account separately). May still just be easier to run using multiple lab accounts on CHTC but worth considering. For more info:"
+    "text": "1.8 Open Science Pool\nJJC plans to get an account directly for the OS Pool. We can access this pools through flock/glide BUT with an account, we can run twice as many jobs (using each account separately). May still just be easier to run using multiple lab accounts on CHTC but worth considering."
   },
   {
     "objectID": "chtc.html#common-condor-commands",
     "href": "chtc.html#common-condor-commands",
     "title": "1  CHTC",
-    "section": "1.1 Common CONDOR commands",
-    "text": "1.1 Common CONDOR commands\n\ncondor_submit sub.sub\ncondor_q for quick review of queue for submitted jobs\ncondor_q -hold for quick review of held jobs\ncondor_q -af HoldReason for more detailed review of held jobs\ncondor_qedit [cluster id number] RequestMemory [memory] to increase memory. Example: condor_qedit 16892087 RequestMemory 20000. Can specific specific job with .# added to the ID. Memory is specified in MB in our training control files.\ncondor_release $USER to release all held jobs for user (e.g., after increasing memory)\ncondor_rm [jobid] or condor_rm $USER to remove a job or all jobs\ncondor_history [NetID] -limit 10 -af requestmemory memoryusage is an example of reviewing recent job history (past 10 in this example) for a subset of the history parameters. Can list all the parameters (long format) for a single job using condor_history 16892169.1 -l where the jobid is listed explicitly.\n\ncondor_hold $USER to hold all jobs running (e.g., to increase memory)."
+    "section": "1.9 Common CONDOR commands",
+    "text": "1.9 Common CONDOR commands\n\ncondor_submit sub.sub\ncondor_q for quick review of queue for submitted jobs\ncondor_q -hold for quick review of held jobs\ncondor_q -af HoldReason for more detailed review of held jobs\ncondor_qedit [cluster id number] RequestMemory [memory] to increase memory. Example: condor_qedit 16892087 RequestMemory 20000. Can specific specific job with .# added to the ID. Memory is specified in MB in our training control files.\ncondor_release $USER to release all held jobs for user (e.g., after increasing memory)\ncondor_rm [jobid] or condor_rm $USER to remove a job or all jobs\ncondor_history [NetID] -limit 10 -af requestmemory memoryusage is an example of reviewing recent job history (past 10 in this example) for a subset of the history parameters. Can list all the parameters (long format) for a single job using condor_history 16892169.1 -l where the jobid is listed explicitly.\n\ncondor_hold $USER to hold all jobs running (e.g., to increase memory)."
   },
   {
     "objectID": "chtc.html#common-unix-generic-commands",
     "href": "chtc.html#common-unix-generic-commands",
     "title": "1  CHTC",
-    "section": "1.2 Common UNIX generic commands",
-    "text": "1.2 Common UNIX generic commands\n\nls -lSr to list files sorted by size (with larger sizes later). Useful to find the non-zero error files. Can have issues when applied to large numbers of files. See use of find and xargs below if needed.\nrm to remove file(s). rm -r to remove non-empty directory\nnano is used to edit text files. For example nano job_nums.txt to edit job_nums.txt for jobs to re-run due to errors\ncat results_* > results_all.csv to combine all results into one file before transferring back to our server\nchmod +x get_missing_jobs.sh to change permissions on get_missing_jobs.sh to run it. ./get_missing_jobs.sh to run it.\nfind -maxdepth 1 -name \"results_*.csv\" | wc -l will find results_*.csv in local folder (maxdepth 1) and pipe them into a word count that counts lines (-l)\ncat job_nums.txt | wc -l reads contents of job_nums.text and pipes to a word count that counts lines (-l)\nfind -maxdepth 1 -name \"results_*.csv\" | ls -lSr gets around the too many arguments issue.\n\nfind -maxdepth 1 -name \"results_*.csv\" | xargs awk 'FNR == 1 && NR != 1 {next;}{print}' > combined_results.csv to concatenate results files without header. See tutorial on awk to understand its use for simple programming. See a tutorial on the use of xargs."
+    "section": "1.10 Common UNIX generic commands",
+    "text": "1.10 Common UNIX generic commands\n\nls -lSr to list files sorted by size (with larger sizes later). Useful to find the non-zero error files. Can have issues when applied to large numbers of files. See use of find and xargs below if needed.\nrm to remove file(s). rm -r to remove non-empty directory\nnano is used to edit text files. For example nano job_nums.txt to edit job_nums.txt for jobs to re-run due to errors\ncat results_* &gt; results_all.csv to combine all results into one file before transferring back to our server\nchmod +x get_missing_jobs.sh to change permissions on get_missing_jobs.sh to run it. ./get_missing_jobs.sh to run it.\nfind -maxdepth 1 -name \"results_*.csv\" | wc -l will find results_*.csv in local folder (maxdepth 1) and pipe them into a word count that counts lines (-l)\ncat job_nums.txt | wc -l reads contents of job_nums.text and pipes to a word count that counts lines (-l)\nfind -maxdepth 1 -name \"results_*.csv\" | ls -lSr gets around the too many arguments issue.\n\nhead -n +1 results_1.csv &gt; all_results.csv; find -maxdepth 1 -name \"results_*.csv\" | xargs awk 'FNR&gt;1' &gt;&gt; all_results.csv to concatenate results files (including only one header row). See tutorial on awk to understand its use for simple programming. See a tutorial on the use of xargs."
+  },
+  {
+    "objectID": "chtc.html#general-chtc-workflow",
+    "href": "chtc.html#general-chtc-workflow",
+    "title": "1  CHTC",
+    "section": "1.5 General CHTC Workflow",
+    "text": "1.5 General CHTC Workflow\n\n1.5.1 Making Batch of Jobs\n\n\n1.5.2 Testing Jobs\n\n\n1.5.3 Running jobs\n\nCopy files that are created by mak_jobs() from the server to CHTC submit server.\nConfirm that the EOL character for execute.sh have been changed to Unix. The EOL can be changed using Notepad++. From the menu, select Edit:EOL conversion and choose Unix (LF)\nConfirm that you have an error directory. If not, create one (mkdir error)\nType condor_submit sub.sub\nType condor_q to confirm that the number of jobs that were submitted matches your expectations\n\n\n\n1.5.4 Monitoring Running Jobs\n\nrun condor_q to monitor progress on your jobs.\nrun condor_q -hold to explore the reason for held jobs. If necessary, you may need to change the requested memory or disk space to get those jobs to complete. See below for more detail. condor_q -af HoldReason will provide more detail on why a job is held if needed.\ncondor_release $USER will release all held jobs for the user. You can substitute batch or job number to release a subset of held jobs if needed\ncondor_rm $USER will remove/cancel all jobs for the user.\nYou can review the error files associated with the batch of jobs to detect and understand errors as well. Change to the error directory (cd error). You can sort the files so that the files with errors (i.e., file switch file size &gt; 0) display last by typing ls -lSr If there are MANY (&gt; 60K) files, you may need to pipe the file names into ls by typing find -maxdepth 1 -name \"err_*.err\" | ls -lSr. You can view the contents of a non-zero error file using nano. e.g., nano err_1111.err\n\n\n\n1.5.5 Editing Running Jobs\nAt times some (or all) jobs may be held if they require more memory or disk space than was requested in sub.sub. You can update these parameters and then release the held jobs.\n\nTo update memory, type condor_qedit [batch_name or job_id] RequestMemory [memory]. You can see the batch_name and job_ids by typing condor_q -hold Memory is quantified in MB.\n\nTo update disk space, type condor_qedit [batch_name or job_id] RequestDisk [space]. You can see the batch_name and job_ids by typing condor_q -hold Space is quantified in MB.\n\nType condor_release $USER to release all held jobs from the user.\nIf you expect that you will need the specified higher memory or disk space for the currently running jobs (not yet held), you can hold them by typing condor_hold $USER and then release them with condor_release $USER such that they will now find machine with the higher levels for these parameters.\n\n\n\n1.5.6 Transferring Jobs back to Our Server\nhead -n +1 results_1.csv &gt; all_results.csv; find -maxdepth 1 -name \"results_*.csv\" | xargs awk 'FNR&gt;1' &gt;&gt; all_results.csv"
+  },
+  {
+    "objectID": "chtc.html#creating-a-container-for-r-and-packages",
+    "href": "chtc.html#creating-a-container-for-r-and-packages",
+    "title": "1  CHTC",
+    "section": "1.6 Creating a Container for R and Packages",
+    "text": "1.6 Creating a Container for R and Packages\nhttps://chtc.cs.wisc.edu/uw-research-computing/singularity-htc\nhttps://hub.docker.com/_/r-base/tags"
   }
 ]
