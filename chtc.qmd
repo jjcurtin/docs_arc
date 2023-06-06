@@ -79,7 +79,7 @@ At times some (or all) jobs may be held if they require more memory or disk spac
 
 - Confirm that you have the correct number of results files: `ls ./results/results_* | wc -l`
 - Review the non-zero error files:  `ls ./error/error_* -lSr` and `nano ./error/error_1.csv`
-- Concatenate all the results files: `head -n +1 ./results/results_1.csv > batch_results.csv; ls ./results/results_*.csv | xargs awk 'FNR>1' >> batch_results.csv`
+- Concatenate all the results files: `head -n +1 ./results/results_1.csv > batch_results.csv; ls ./results/results_*.csv | xargs awk 'FNR>1' >> batch_results.csv`.  See [tutorial](https://linuxhandbook.com/awk-command-tutorial/) on awk to understand its use for simple programming. See a [tutorial](https://shapeshed.com/unix-xargs/) on the use of xargs.
 - Now FTP `batch_results.csv` and the log file to the output folder for this batch on our server.   
 - Do NOT delete results and error files until you have confirmed they look good by processing them in R.
 
@@ -91,79 +91,28 @@ At times some (or all) jobs may be held if they require more memory or disk spac
 
 ## Making package TARS
 
-CHTC offers a detailed step-by-step walkthrough for [making package tars](https://chtc.cs.wisc.edu/uw-research-computing/r-jobs#build).
+We are no longer using tars (we use containers for R instead).  However, if needed in the future, CHTC offers a detailed step-by-step walkthrough for [making package tars](https://chtc.cs.wisc.edu/uw-research-computing/r-jobs#build).
 
-In our CHTC workflow we have two tars located at P:/chtc/tars
-
-1.  **features.tar**\
-    This tar contains all the packages needed for making features on CHTC.
-
-Current packages in this tar include:
-
-```         
-10/4/22 - recreated TAR to work with updated CHTC Linux OS (v 8) and R version 4.1.3 (updated from 4.0.2)
-
-As of 6/1/23 Current packages include:
-lubridate - 1.8.0,
-vroom - 1.6.0, 
-dplyr - 1.0.10,
-stringr - 1.4.1,
-foreach -1.5.2,
-tis - 1.39
-```
-
-2.  **train.tar**\
-    This tar contains all the packages needed for fitting model configurations on CHTC.
-
-Current packages in this tar include:
-
-```         
-10/4/22 - recreated TAR to work with updated CHTC Linux OS (v 8) and R version 4.1.3 (updated from 4.0.2)    
-Note: with update no longer need to use compiler fix-around for installing glmnet and xgboost (see demo_changing_package_compiler in demos_docs/chtc for how we got around this error)
-
-As of 6/1/23 Current packages include:
-readr - 2.1.3, 
-dplyr - 1.0.10, 
-tidyr - 1.2.1, 
-recipes - 1.0.1, 
-parsnip - 1.0.2, 
-themis - 1.0.0, 
-tune - 1.0.0, 
-yardstick - 1.1.0, 
-rsample - 1.1.0, 
-ranger - 0.14.1, 
-psych - 2.2.9, 
-purrr - 1.0.1, 
-kknn - 1.3.1, 
-vip - 0.3.2, 
-glmnet - 4.1.4,
-stringr - 1.4.1, 
-vroom - 1.6.0,
-foreach - 1.5.2, 
-lubridate - 1.8.0,
-xgboost - 1.6.0.1
-iml 0.11.1
-```
-
+ 
 ## Open Science Pool
 
 JJC plans to get an account directly for the OS Pool. We can access this pools through flock/glide BUT with an account, we can run twice as many jobs (using each account separately). May still just be easier to run using multiple lab accounts on CHTC but worth considering.
 
 ## Common CONDOR commands
 
--   `condor_submit sub.sub`
+-   `condor_submit train.sub`
 -   `condor_q` for quick review of queue for submitted jobs
 -   `condor_q -hold` for quick review of held jobs
 -   `condor_q -af HoldReason` for more detailed review of held jobs
 -   `condor_qedit [cluster id number] RequestMemory [memory]` to increase memory. Example: `condor_qedit 16892087 RequestMemory 20000`. Can specific specific job with .# added to the ID. Memory is specified in MB in our training control files.
 -   `condor_release $USER` to release all held jobs for user (e.g., after increasing memory)
 -   `condor_rm [jobid]` or `condor_rm $USER` to remove a job or all jobs
--   `condor_history [NetID] -limit 10 -af requestmemory memoryusage` is an example of reviewing recent job history (past 10 in this example) for a subset of the history parameters. Can list all the parameters (long format) for a single job using `condor_history 16892169.1 -l` where the jobid is listed explicitly.\
+-   `condor_history $USER -limit 10 -af requestmemory memoryusage` is an example of reviewing recent job history (past 10 in this example) for a subset of the history parameters. Can list all the parameters (long format) for a single job using `condor_history 16892169.1 -l` where the jobid is listed explicitly.\
 -   `condor_hold $USER` to hold all jobs running (e.g., to increase memory).
 
 ## Common UNIX generic commands
 
--   `ls -lSr` to list files sorted by size (with larger sizes later). Useful to find the non-zero error files. Can have issues when applied to large numbers of files. See use of `find` and `xargs` below if needed.
+-   `ls -lSr` to list files sorted by size (with larger sizes later: `r`). Useful to find the non-zero error files. Can have issues when applied to large numbers of files (> 60K). See use of `find` and `xargs` below if needed.
 
 -   `mv` to move files between directories. can use `..` as target to move file to home directory. e.g., `mv results_* ..`
 
@@ -173,14 +122,14 @@ JJC plans to get an account directly for the OS Pool. We can access this pools t
 
 -   `nano` is used to edit text files. For example `nano job_nums.txt` to edit job_nums.txt for jobs to re-run due to errors
 
--   `cat results_* > results_all.csv` to combine all results into one file before transferring back to our server
+-   `cat filename_* > all_files.csv` to concatenate all files into one file.
 
 -   `chmod +x get_missing_jobs.sh` to change permissions on get_missing_jobs.sh to run it. `./get_missing_jobs.sh` to run it.
 
--   `find -maxdepth 1 -name "results_*.csv" | wc -l` will find results\_\*.csv in local folder (maxdepth 1) and pipe them into a word count that counts lines (-l)
+-   `find -maxdepth 1 -name "results_*.csv" | wc -l` will find results_*.csv in local folder (maxdepth 1) and pipe them into a word count that counts lines (-l)
 
--   `cat job_nums.txt | wc -l` reads contents of job_nums.text and pipes to a word count that counts lines (-l)
+-   `cat job_nums.csv | wc -l` reads contents of `job_nums.csv` and pipes to a word count that counts lines (`-l`)
 
--   `find -maxdepth 1 -name "results_*.csv" | ls -lSr` gets around the too many arguments issue.\
+-   `find -maxdepth 1 -name "results_*.csv" | ls -lSr` gets around the too many arguments issue.  Find searches recursively by default (override with maxdepth if needed), whereas ls searches just `.` or the specified directory (e.g., `./results`)
 
--   `head -n +1 results_1.csv > all_results.csv; find -maxdepth 1 -name "results_*.csv" | xargs awk 'FNR>1' >> all_results.csv` to concatenate results files (including only one header row). See [tutorial](https://linuxhandbook.com/awk-command-tutorial/) on awk to understand its use for simple programming. See a [tutorial](https://shapeshed.com/unix-xargs/) on the use of xargs.
+-   See [tutorial](https://linuxhandbook.com/awk-command-tutorial/) on awk to understand its use for simple programming. See a [tutorial](https://shapeshed.com/unix-xargs/) on the use of xargs.
