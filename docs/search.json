@@ -102,7 +102,7 @@
     "href": "git.html#aliases",
     "title": "2  Git",
     "section": "2.3 Aliases",
-    "text": "2.3 Aliases\nGit bash operates like and other ssh shell. You can customize your startup preferences in the .bash_profile file!\n\nFirst you will need to create a blank or modify an existing profile file using nano .bash_profile\nInside this file add your different aliases (i.e., shortcuts)\n\n\n\nalias github=\"cd 'My Documents\\github'\"\nalias chtc=\"ssh username@submit-1.chtc.wisc.edu\"\n\nNote you can also define functions in this file.\n\nClose and reopen a new bash window for preferences to take effect."
+    "text": "2.3 Aliases\nGit bash operates like and other ssh shell. You can customize your startup preferences in the .bash_profile file!\n\nFirst you will need to create a blank or modify an existing profile file using nano .bash_profile\nInside this file add your different aliases (i.e., shortcuts)\n\n\n\nalias github=\"cd 'My Documents/github'\"\nalias chtc=\"ssh username@submit-1.chtc.wisc.edu\"\n\nNote you can also define functions in this file.\n\nYou can now reload the profile: ./.bash_profile"
   },
   {
     "objectID": "git.html#creating-a-password-key-for-use-with-chtc",

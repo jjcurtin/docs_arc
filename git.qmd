@@ -42,12 +42,12 @@ Git bash operates like and other ssh shell. You can customize your startup prefe
 1. First you will need to create a blank or modify an existing profile file using `nano .bash_profile`
 
 2. Inside this file add your different aliases (i.e., shortcuts)   
-- `alias github="cd 'My Documents\github'"` 
+- `alias github="cd 'My Documents/github'"` 
 - `alias chtc="ssh username@submit-1.chtc.wisc.edu"`  
 
 Note you can also define functions in this file.  
 
-3. Close and reopen a new bash window for preferences to take effect.   
+3. You can now reload the profile: `./.bash_profile`
 
 
 ## Creating a password key for use with CHTC
