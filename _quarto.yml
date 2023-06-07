@@ -25,3 +25,4 @@ book:
   chapters:
     - index.qmd
     - chtc.qmd
+    - git.qmd
