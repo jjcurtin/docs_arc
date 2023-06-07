@@ -34,10 +34,42 @@ Note: with the git bash terminal you shouldn't have to re-enter your github user
 - `git checkout [branch_name]` switches branches
 - `git checkout -b [new_branch_name]` switches to new branch (`git branch [new_branch_name]` creates new branch but doesn't switch to it).
 
+
+## Aliases
+
+Git bash operates like and other ssh shell. You can customize your startup preferences in the .bash_profile file!   
+
+1. First you will need to create a blank or modify an existing profile file using `nano .bash_profile`
+
+2. Inside this file add your different aliases (i.e., shortcuts)   
+- `alias github="cd 'My Documents\github'"` 
+- `alias chtc="ssh username@submit-1.chtc.wisc.edu"`  
+
+Note you can also define functions in this file.  
+
+3. Close and reopen a new bash window for preferences to take effect.   
+
+
+## Creating a password key for use with CHTC
+I highly recommend creating an [ssh key](https://www.linode.com/docs/guides/use-public-key-authentication-with-ssh/) for logging in to CHTC from your terminal. This eliminates the need to enter your username and password.   
+
+Note: It looks like [CHTC](https://chtc.cs.wisc.edu/uw-research-computing/configure-ssh) also now has a new way for a time-limited bypass of credentials and duo push but I am less familiar with it.  
+
+
+Below are the steps for using an ssh key:      
+
+1. open bash terminal and type `ssh-keygen -t ed25519`   
+
+2. press enter to save key pair to default file name and enter two more times to keep passphrase blank    
+
+3. open up public key file (replacing kpaquette2 with your username!) `cat /c/Users/kpaquette2/.ssh/id_ed25519.pub` and copy the whole key (e.g., mine starts with ssh-ed25519 and ends with kpaquette2@HiddenLayer)   
+
+4. log into chtc   
+
+5. create a new file `nano .ssh/authorized_keys` and paste this public key in the file and save   
+
+
 ## Other notes
-
-Git bash operates like and other ssh shell. You can customize your preferences (e.g., create alias shortcuts, connect to CHTC) in the .bash_profile file!   
-
 
 If you are not familiar with UNIX you may want to review the [UNIX chapter](https://jjcurtin.github.io/docs_arc/chtc.html#common-unix-generic-commands) for helpful commands when working with git command line. For example you may want to use `nano` for resolving conflicts instead of opening up the file in your file explorer.
 
