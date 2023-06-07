@@ -1,2 +1,47 @@
 # Git
 
+## Git Command Line
+
+The recommended terminal for using the Git command line on Windows is [Git Bash](https://git-scm.com/download/win).
+
+For full documentation of using the command line you can read the  [Git Pro Book](https://git-scm.com/book/en/v2).  
+
+Below is a list of common Git commands for reference.
+
+## Common Git Commands
+
+Note: These commands will only work if you are in a git repo. You can navigate to different repos by using the `cd` command in your terminal. The default working directory when you open the terminal will be C:/Users/username. You can also use tab to autofill a folder or file name so it is pretty easy to navigate around!    
+
+### Common workflow commands
+
+- `git status` shows any files updated locally
+- `git add [filename]` add file to staging area
+- `git add .` adds all modified files to staging area
+- `git commit` create commit of staged files - this will prompt you to enter commit message. You can also use the -m flag to write your message directly with commit command (`git commit -m "updates xyz"`).
+- `git push` pushes your commits to github
+- `git pull` pulls updates from github (it is good practice to pull before pushing)    
+
+Note: with the git bash terminal you shouldn't have to re-enter your github username and password once it is set up. I don't remember if it automatically prompts you to do this, but if you find you are needing to enter it everytime you push changes there is a work around for that!
+
+### Repos
+
+- `git clone [repo_url]` clones git repo.   
+- `git init [repo_name]` creates a new empty repo
+
+### Branching
+
+- `git branch` shows you have been working on locally (`git branch -a` will show you all branches local and on github)
+- `git checkout [branch_name]` switches branches
+- `git checkout -b [new_branch_name]` switches to new branch (`git branch [new_branch_name]` creates new branch but doesn't switch to it).
+
+## Other notes
+
+Git bash operates like and other ssh shell. You can customize your preferences (e.g., create alias shortcuts, connect to CHTC) in the .bash_profile file!   
+
+
+There are also a ton of more things that an be done in git (e.g., `git diff`, `git log`) but some of these may be more easily done on github.
+
+
+
+
+

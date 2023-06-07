@@ -82,5 +82,26 @@
     "title": "1  CHTC",
     "section": "1.6 Creating a Container for R and Packages",
     "text": "1.6 Creating a Container for R and Packages\nDocumentation on CHTC\nDocker image for base r. Chose current numbered version (e.g., 4.3.0) among tags."
+  },
+  {
+    "objectID": "git.html#git-command-line",
+    "href": "git.html#git-command-line",
+    "title": "2  Git",
+    "section": "2.1 Git Command Line",
+    "text": "2.1 Git Command Line\nThe recommended terminal for using the Git command line on Windows is Git Bash.\nFor full documentation of using the command line you can read the Git Pro Book.\nBelow is a list of common Git commands for reference."
+  },
+  {
+    "objectID": "git.html#common-git-commands",
+    "href": "git.html#common-git-commands",
+    "title": "2  Git",
+    "section": "2.2 Common Git Commands",
+    "text": "2.2 Common Git Commands\nNote: These commands will only work if you are in a git repo. You can navigate to different repos by using the cd command in your terminal. The default working directory when you open the terminal will be C:/Users/username. You can also use tab to autofill a folder or file name so it is pretty easy to navigate around!\n\n2.2.1 Common workflow commands\n\ngit status shows any files updated locally\ngit add [filename] add file to staging area\ngit add . adds all modified files to staging area\ngit commit create commit of staged files - this will prompt you to enter commit message. You can also use the -m flag to write your message directly with commit command (git commit -m \"updates xyz\").\ngit push pushes your commits to github\ngit pull pulls updates from github (it is good practice to pull before pushing)\n\nNote: with the git bash terminal you shouldn’t have to re-enter your github username and password once it is set up. I don’t remember if it automatically prompts you to do this, but if you find you are needing to enter it everytime you push changes there is a work around for that!\n\n\n2.2.2 Repos\n\ngit clone [repo_url] clones git repo.\n\ngit init [repo_name] creates a new empty repo\n\n\n\n2.2.3 Branching\n\ngit branch shows you have been working on locally (git branch -a will show you all branches local and on github)\ngit checkout [branch_name] switches branches\ngit checkout -b [new_branch_name] switches to new branch (git branch [new_branch_name] creates new branch but doesn’t switch to it)."
+  },
+  {
+    "objectID": "git.html#other-notes",
+    "href": "git.html#other-notes",
+    "title": "2  Git",
+    "section": "2.3 Other notes",
+    "text": "2.3 Other notes\nGit bash operates like and other ssh shell. You can customize your preferences (e.g., create alias shortcuts, connect to CHTC) in the .bash_profile file!\nThere are also a ton of more things that an be done in git (e.g., git diff, git log) but some of these may be more easily done on github."
   }
 ]
