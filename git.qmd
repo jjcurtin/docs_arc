@@ -18,6 +18,7 @@ Note: These commands will only work if you are in a git repo. You can navigate t
 - `git add [filename]` add file to staging area
 - `git add .` adds all modified files to staging area
 - `git commit` create commit of staged files - this will prompt you to enter commit message. You can also use the -m flag to write your message directly with commit command (`git commit -m "updates xyz"`).
+- `git commit -am "commit message"` will add all files and commit them in one step.  However, 
 - `git push` pushes your commits to github
 - `git pull` pulls updates from github (it is good practice to pull before pushing)    
 
@@ -30,14 +31,20 @@ Note: with the git bash terminal you shouldn't have to re-enter your github user
 
 ### Branching
 
-- `git branch` shows you have been working on locally (`git branch -a` will show you all branches local and on github)
+- `git branch` shows  local branches (`git branch -a` will show you all branches local and on github)
 - `git checkout [branch_name]` switches branches
 - `git checkout -b [new_branch_name]` switches to new branch (`git branch [new_branch_name]` creates new branch but doesn't switch to it).
+- `git branch -d [brand_name]` deletes a local branch.  This must be done from another branch or main.
+- `git push origin -d [brach_name]` deletes branch_name on remote/github  (assumes remote is called origin, which it is for us).
 
+### Log and Versioning
 
+- `git log` displays the most recent commits
+- `git log --stat -[N]` displays stats on the most recent N commits.  Cleaner than log
+- `git log [filename]` displays commit history for a file.  May have problems if the filename was ever changed.  In that case consider, `git log --follow -- [filename].  Can add `--stat` for more info on commit
 ## Aliases
 
-Git bash operates like and other ssh shell. You can customize your startup preferences in the .bash_profile file!   
+Git bash operates like and other ssh shell. You can customize your start-up preferences in the .bash_profile file!   
 
 1. First you will need to create a blank or modify an existing profile file using `nano .bash_profile`
 
