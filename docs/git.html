@@ -151,10 +151,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#workflow" id="toc-workflow" class="nav-link" data-scroll-target="#workflow"><span class="header-section-number">2.2.1</span> Workflow</a></li>
   <li><a href="#repos" id="toc-repos" class="nav-link" data-scroll-target="#repos"><span class="header-section-number">2.2.2</span> Repos</a></li>
   <li><a href="#branching" id="toc-branching" class="nav-link" data-scroll-target="#branching"><span class="header-section-number">2.2.3</span> Branching</a></li>
+  <li><a href="#log-and-versioning" id="toc-log-and-versioning" class="nav-link" data-scroll-target="#log-and-versioning"><span class="header-section-number">2.2.4</span> Log and Versioning</a></li>
   </ul></li>
-  <li><a href="#aliases" id="toc-aliases" class="nav-link" data-scroll-target="#aliases"><span class="header-section-number">2.3</span> Aliases</a></li>
-  <li><a href="#creating-a-password-key-for-use-with-chtc" id="toc-creating-a-password-key-for-use-with-chtc" class="nav-link" data-scroll-target="#creating-a-password-key-for-use-with-chtc"><span class="header-section-number">2.4</span> Creating a password key for use with CHTC</a></li>
-  <li><a href="#other-notes" id="toc-other-notes" class="nav-link" data-scroll-target="#other-notes"><span class="header-section-number">2.5</span> Other notes</a></li>
+  <li><a href="#creating-a-password-key-for-use-with-chtc" id="toc-creating-a-password-key-for-use-with-chtc" class="nav-link" data-scroll-target="#creating-a-password-key-for-use-with-chtc"><span class="header-section-number">2.3</span> Creating a password key for use with CHTC</a></li>
+  <li><a href="#other-notes" id="toc-other-notes" class="nav-link" data-scroll-target="#other-notes"><span class="header-section-number">2.4</span> Other notes</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jjcurtin/docs_arc/edit/main/git.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
@@ -194,6 +194,7 @@ ul.task-list li input[type="checkbox"] {
 <li><code>git add [filename]</code> add file to staging area</li>
 <li><code>git add .</code> adds all modified files to staging area</li>
 <li><code>git commit</code> create commit of staged files - this will prompt you to enter commit message. You can also use the -m flag to write your message directly with commit command (<code>git commit -m "updates xyz"</code>).</li>
+<li><code>git commit -am "commit message"</code> will add all files and commit them in one step. However,</li>
 <li><code>git push</code> pushes your commits to github</li>
 <li><code>git pull</code> pulls updates from github (it is good practice to pull before pushing)</li>
 </ul>
@@ -210,15 +211,21 @@ ul.task-list li input[type="checkbox"] {
 <section id="branching" class="level3" data-number="2.2.3">
 <h3 data-number="2.2.3" class="anchored" data-anchor-id="branching"><span class="header-section-number">2.2.3</span> Branching</h3>
 <ul>
-<li><code>git branch</code> shows you have been working on locally (<code>git branch -a</code> will show you all branches local and on github)</li>
+<li><code>git branch</code> shows local branches (<code>git branch -a</code> will show you all branches local and on github)</li>
 <li><code>git checkout [branch_name]</code> switches branches</li>
 <li><code>git checkout -b [new_branch_name]</code> switches to new branch (<code>git branch [new_branch_name]</code> creates new branch but doesn’t switch to it).</li>
+<li><code>git branch -d [brand_name]</code> deletes a local branch. This must be done from another branch or main.</li>
+<li><code>git push origin -d [brach_name]</code> deletes branch_name on remote/github (assumes remote is called origin, which it is for us).</li>
 </ul>
 </section>
-</section>
-<section id="aliases" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="aliases"><span class="header-section-number">2.3</span> Aliases</h2>
-<p>Git bash operates like and other ssh shell. You can customize your startup preferences in the .bash_profile file!</p>
+<section id="log-and-versioning" class="level3" data-number="2.2.4">
+<h3 data-number="2.2.4" class="anchored" data-anchor-id="log-and-versioning"><span class="header-section-number">2.2.4</span> Log and Versioning</h3>
+<ul>
+<li><code>git log</code> displays the most recent commits</li>
+<li><code>git log --stat -[N]</code> displays stats on the most recent N commits. Cleaner than log</li>
+<li><code>git log [filename]</code> displays commit history for a file. May have problems if the filename was ever changed. In that case consider, <code>git log --follow -- [filename].  Can add</code>–stat` for more info on commit ## Aliases</li>
+</ul>
+<p>Git bash operates like and other ssh shell. You can customize your start-up preferences in the .bash_profile file!</p>
 <ol type="1">
 <li><p>First you will need to create a blank or modify an existing profile file using <code>nano .bash_profile</code></p></li>
 <li><p>Inside this file add your different aliases (i.e., shortcuts)<br>
@@ -233,8 +240,9 @@ ul.task-list li input[type="checkbox"] {
 <li>You can now reload the profile: <code>./.bash_profile</code></li>
 </ol>
 </section>
-<section id="creating-a-password-key-for-use-with-chtc" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="creating-a-password-key-for-use-with-chtc"><span class="header-section-number">2.4</span> Creating a password key for use with CHTC</h2>
+</section>
+<section id="creating-a-password-key-for-use-with-chtc" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="creating-a-password-key-for-use-with-chtc"><span class="header-section-number">2.3</span> Creating a password key for use with CHTC</h2>
 <p>I highly recommend creating an <a href="https://www.linode.com/docs/guides/use-public-key-authentication-with-ssh/">ssh key</a> for logging in to CHTC from your terminal. This eliminates the need to enter your username and password.</p>
 <p>Note: It looks like <a href="https://chtc.cs.wisc.edu/uw-research-computing/configure-ssh">CHTC</a> also now has a new way for a time-limited bypass of credentials and duo push but I am less familiar with it.</p>
 <p>Below are the steps for using an ssh key:</p>
@@ -246,8 +254,8 @@ ul.task-list li input[type="checkbox"] {
 <li><p>create a new file <code>nano .ssh/authorized_keys</code> and paste this public key in the file and save</p></li>
 </ol>
 </section>
-<section id="other-notes" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="other-notes"><span class="header-section-number">2.5</span> Other notes</h2>
+<section id="other-notes" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="other-notes"><span class="header-section-number">2.4</span> Other notes</h2>
 <p>If you are not familiar with UNIX you may want to review the <a href="https://jjcurtin.github.io/docs_arc/chtc.html#common-unix-generic-commands">UNIX chapter</a> for helpful commands when working with git command line. For example you may want to use <code>nano</code> for resolving conflicts instead of opening up the file in your file explorer.</p>
 <p>There are also a ton of more things that an be done in git (e.g., <code>git diff</code>, <code>git log</code>) but some of these may be more easily done on github.</p>
 
