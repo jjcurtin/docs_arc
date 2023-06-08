@@ -43,10 +43,10 @@ On windows, use [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/lates
 ```
 - Type `condor_submit train.sub` to submit this jobs
 - Monitor the jobs using `condor_q` and `-condor_q -hold` if needed
-- Confirm that there are data in the results file (file size > 0 for all files): `ls ./results/results* -lS`.  This will sort files with size = 0 to the bottom of the list. There should not be any!
-- Confirm that the correct number of results files were created by counting them: `ls ./results/results* | wc -l`
-- Check for error files with error messages (file size > 0): `ls ./error/error* -lSr`.  This will sort the non-zero files to the bottom of the list.  
-- If there are non-zero files, look at the error messages using nano editor: For example, `nano ./error/error_1.err`
+- Confirm that there are data in the results file (file size > 0 for all files): `ls results/results* -lS`.  This will sort files with size = 0 to the bottom of the list. There should not be any!
+- Confirm that the correct number of results files were created by counting them: `ls results/results* | wc -l`
+- Check for error files with error messages (file size > 0): `ls error/error* -lSr`.  This will sort the non-zero files to the bottom of the list.  
+- If there are non-zero files, look at the error messages using nano editor: For example, `nano error/error_1.err`
 - Determine the run time for your test jobs:  `condor_history $USER -limit 3` (where limit is the number of test jobs you ran).  You want to bin enough configurations together in a job to have it last for 2-3 hours.   You may need to run `mak_jobs.R` again with a different value for `configs_per_job` to make a new `job_nums.csv` file.
 - Review the memory and disk usage for these test jobs: `condor_history $USER -limit 3 -af RequestMemory MemoryUsage RequestDisk DiskUsage`.  You may need to edit `train.sub` and `training_controls.R` to increase or decrease these values.   You should make the values match across both files on both CHTC server and our server to avoid confusion later.  Or just delete the batch and re-run `mak_jobs.R`
 
@@ -63,7 +63,7 @@ On windows, use [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/lates
 -   run `condor_q -hold` to explore the reason for held jobs. If necessary, you may need to change the requested memory or disk space to get those jobs to complete. See below for more detail. `condor_q -af HoldReason` will provide more detail on why a job is held if needed.
 -   `condor_release $USER` will release all held jobs for the user. You can substitute batch or job number to release a subset of held jobs if needed
 -   `condor_rm $USER` will remove/cancel all jobs for the user.
--   You can review the error files associated with the batch of jobs to detect and understand errors as well. Sort the files so that the files with errors (i.e., file switch file size > 0) display last by typing `ls ./error/error* -lSr` If there are MANY (> 60K) files, you may need to pipe the file names into `ls` by typing `find ./error -name "error_*" | ls -lSr`. You can view the contents of a non-zero error file using nano. e.g., `nano ./error/error_1.err`
+-   You can review the error files associated with the batch of jobs to detect and understand errors as well. Sort the files so that the files with errors (i.e., file switch file size > 0) display last by typing `ls error/error* -lSr` If there are MANY (> 60K) files, you may need to pipe the file names into `ls` by typing `find error -name "error_*" | ls -lSr`. You can view the contents of a non-zero error file using nano. e.g., `nano error/error_1.err`
 - Flock/Glide jobs will sometimes not exit properly.  These jobs are put on hold (in addition to jobs with insufficient memory/disk space).  You can simply release these jobs and try again:  `condor_release $USER`.  Of course, you should first address any problems with memory or disk usage that resulted in holds.
 
 ### Editing Running Jobs
@@ -78,8 +78,8 @@ At times some (or all) jobs may be held if they require more memory or disk spac
 ### Transferring Jobs back to Our Server
 
 - Confirm that you have the correct number of results files: `ls ./results/results_* | wc -l`
-- Review the non-zero error files:  `ls ./error/error_* -lSr` and `nano ./error/error_1.csv`
-- Concatenate all the results files: `head -n +1 ./results/results_1.csv > batch_results.csv; ls ./results/results_*.csv | xargs awk 'FNR>1' >> batch_results.csv`.  See [tutorial](https://linuxhandbook.com/awk-command-tutorial/) on awk to understand its use for simple programming. See a [tutorial](https://shapeshed.com/unix-xargs/) on the use of xargs.
+- Review the non-zero error files:  `ls error/error_* -lSr` and `nano error/error_1.csv`
+- Concatenate all the results files: `head -n +1 results/results_1.csv > batch_results.csv; ls results/results_*.csv | xargs awk 'FNR>1' >> batch_results.csv`.  See [tutorial](https://linuxhandbook.com/awk-command-tutorial/) on awk to understand its use for simple programming. See a [tutorial](https://shapeshed.com/unix-xargs/) on the use of xargs.
 - Now FTP `batch_results.csv` and the log file to the output folder for this batch on our server.   
 - Do NOT delete results and error files until you have confirmed they look good by processing them in R.
 

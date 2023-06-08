@@ -233,11 +233,11 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>Type <code>condor_submit train.sub</code> to submit this jobs</li>
 <li>Monitor the jobs using <code>condor_q</code> and <code>-condor_q -hold</code> if needed</li>
-<li>Confirm that there are data in the results file (file size &gt; 0 for all files): <code>ls ./results/results* -lS</code>. This will sort files with size = 0 to the bottom of the list. There should not be any!</li>
-<li>Confirm that the correct number of results files were created by counting them: <code>ls ./results/results* | wc -l</code></li>
-<li>Check for error files with error messages (file size &gt; 0): <code>ls ./error/error* -lSr</code>. This will sort the non-zero files to the bottom of the list.<br>
+<li>Confirm that there are data in the results file (file size &gt; 0 for all files): <code>ls results/results* -lS</code>. This will sort files with size = 0 to the bottom of the list. There should not be any!</li>
+<li>Confirm that the correct number of results files were created by counting them: <code>ls results/results* | wc -l</code></li>
+<li>Check for error files with error messages (file size &gt; 0): <code>ls error/error* -lSr</code>. This will sort the non-zero files to the bottom of the list.<br>
 </li>
-<li>If there are non-zero files, look at the error messages using nano editor: For example, <code>nano ./error/error_1.err</code></li>
+<li>If there are non-zero files, look at the error messages using nano editor: For example, <code>nano error/error_1.err</code></li>
 <li>Determine the run time for your test jobs: <code>condor_history $USER -limit 3</code> (where limit is the number of test jobs you ran). You want to bin enough configurations together in a job to have it last for 2-3 hours. You may need to run <code>mak_jobs.R</code> again with a different value for <code>configs_per_job</code> to make a new <code>job_nums.csv</code> file.</li>
 <li>Review the memory and disk usage for these test jobs: <code>condor_history $USER -limit 3 -af RequestMemory MemoryUsage RequestDisk DiskUsage</code>. You may need to edit <code>train.sub</code> and <code>training_controls.R</code> to increase or decrease these values. You should make the values match across both files on both CHTC server and our server to avoid confusion later. Or just delete the batch and re-run <code>mak_jobs.R</code></li>
 </ul>
@@ -257,7 +257,7 @@ ul.task-list li input[type="checkbox"] {
 <li>run <code>condor_q -hold</code> to explore the reason for held jobs. If necessary, you may need to change the requested memory or disk space to get those jobs to complete. See below for more detail. <code>condor_q -af HoldReason</code> will provide more detail on why a job is held if needed.</li>
 <li><code>condor_release $USER</code> will release all held jobs for the user. You can substitute batch or job number to release a subset of held jobs if needed</li>
 <li><code>condor_rm $USER</code> will remove/cancel all jobs for the user.</li>
-<li>You can review the error files associated with the batch of jobs to detect and understand errors as well. Sort the files so that the files with errors (i.e., file switch file size &gt; 0) display last by typing <code>ls ./error/error* -lSr</code> If there are MANY (&gt; 60K) files, you may need to pipe the file names into <code>ls</code> by typing <code>find ./error -name "error_*" | ls -lSr</code>. You can view the contents of a non-zero error file using nano. e.g., <code>nano ./error/error_1.err</code></li>
+<li>You can review the error files associated with the batch of jobs to detect and understand errors as well. Sort the files so that the files with errors (i.e., file switch file size &gt; 0) display last by typing <code>ls error/error* -lSr</code> If there are MANY (&gt; 60K) files, you may need to pipe the file names into <code>ls</code> by typing <code>find error -name "error_*" | ls -lSr</code>. You can view the contents of a non-zero error file using nano. e.g., <code>nano error/error_1.err</code></li>
 <li>Flock/Glide jobs will sometimes not exit properly. These jobs are put on hold (in addition to jobs with insufficient memory/disk space). You can simply release these jobs and try again: <code>condor_release $USER</code>. Of course, you should first address any problems with memory or disk usage that resulted in holds.</li>
 </ul>
 </section>
@@ -277,8 +277,8 @@ ul.task-list li input[type="checkbox"] {
 <h3 data-number="1.5.6" class="anchored" data-anchor-id="transferring-jobs-back-to-our-server"><span class="header-section-number">1.5.6</span> Transferring Jobs back to Our Server</h3>
 <ul>
 <li>Confirm that you have the correct number of results files: <code>ls ./results/results_* | wc -l</code></li>
-<li>Review the non-zero error files: <code>ls ./error/error_* -lSr</code> and <code>nano ./error/error_1.csv</code></li>
-<li>Concatenate all the results files: <code>head -n +1 ./results/results_1.csv &gt; batch_results.csv; ls ./results/results_*.csv | xargs awk 'FNR&gt;1' &gt;&gt; batch_results.csv</code>. See <a href="https://linuxhandbook.com/awk-command-tutorial/">tutorial</a> on awk to understand its use for simple programming. See a <a href="https://shapeshed.com/unix-xargs/">tutorial</a> on the use of xargs.</li>
+<li>Review the non-zero error files: <code>ls error/error_* -lSr</code> and <code>nano error/error_1.csv</code></li>
+<li>Concatenate all the results files: <code>head -n +1 results/results_1.csv &gt; batch_results.csv; ls results/results_*.csv | xargs awk 'FNR&gt;1' &gt;&gt; batch_results.csv</code>. See <a href="https://linuxhandbook.com/awk-command-tutorial/">tutorial</a> on awk to understand its use for simple programming. See a <a href="https://shapeshed.com/unix-xargs/">tutorial</a> on the use of xargs.</li>
 <li>Now FTP <code>batch_results.csv</code> and the log file to the output folder for this batch on our server.<br>
 </li>
 <li>Do NOT delete results and error files until you have confirmed they look good by processing them in R.</li>
@@ -333,6 +333,13 @@ ul.task-list li input[type="checkbox"] {
 <li><code>printf "John is %d years old" 54</code></li>
 <li><code>printf "hello world\nIt is John!" &gt; out.txt</code>)</li>
 </ul></li>
+<li><p><code>man [command]</code> to open manual for command</p></li>
+<li><p><code>sdiff file1 file2</code> - Compare two files side by side.</p></li>
+<li><p><code>vimdiff file1 file2</code> - Highlight the differences between two files in the vim editor.</p></li>
+<li><p><code>tar [-] c|x|t f tarfile [pattern]</code> - Create, extract or list contents of a tar archive using pattern, if supplied.</p></li>
+<li><p><code>du -h</code> - Display sizes in human readable format. For example, 1.2M, 3.7G, etc.</p></li>
+<li><p>`gzip file - Compress file. The resulting compressed file is named file.gz.</p></li>
+<li><p><code>gunzip file</code> - Uncompress files.</p></li>
 </ul>
 
 
