@@ -138,3 +138,12 @@ JJC plans to get an account directly for the OS Pool. We can access this pools t
    - `printf "John is %s\n" "nice"`
    - `printf "John is %d years old" 54`
    - `printf "hello world\nIt is John!" > out.txt`)
+
+- `man [command]` to open manual for command
+
+- `sdiff file1 file2` - Compare two files side by side. 
+- `vimdiff file1 file2` - Highlight the differences between two files in the vim editor.
+- `tar [-] c|x|t f tarfile [pattern]` - Create, extract or list contents of a tar archive using pattern, if supplied.
+- `du -h` - Display sizes in human readable format. For example, 1.2M, 3.7G, etc.
+- `gzip file - Compress file. The resulting compressed file is named file.gz. 
+- `gunzip file` - Uncompress files.
