@@ -89,6 +89,12 @@ At times some (or all) jobs may be held if they require more memory or disk spac
 
 [Docker image for base r](https://hub.docker.com/_/r-base).  Chose current numbered version (e.g., 4.3.0) among tags.
 
+NOTES: To use in a job, do *not* use the instructions from the above guide, with "universe = container" and "container_image = ". That *is* the way of the future, however *right now* to run on the OSPool and CHTC, you'll want to use this instead: 
+universe = vanilla
++SingularityImage = "container.sif"
+And then include the container.sif file in the transfer_input_files line. That *should* work seamlessly across the OSPool/CHTC. Maybe use this just to be safe?
+requirements = (PoolName == "CHTC") || (SINGULARITY_CAN_USE_SIF)
+
 ## Making package TARS
 
 We are no longer using tars (we use containers for R instead).  However, if needed in the future, CHTC offers a detailed step-by-step walkthrough for [making package tars](https://chtc.cs.wisc.edu/uw-research-computing/r-jobs#build).
