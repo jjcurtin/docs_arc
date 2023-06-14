@@ -15,6 +15,7 @@ book:
   title: "Documentation for ARC"
   author: 
   - John J. Curtin, PhD
+  - Kendra Wyant, MS
   - Susan Wanta, MS
   site-url: https://github.io/jjcurtin/docs_arc
   repo-url: https://github.com/jjcurtin/docs_arc
@@ -26,3 +27,4 @@ book:
     - index.qmd
     - chtc.qmd
     - git.qmd
+    - linux_install.qmd
