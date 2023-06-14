@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.361">
+<meta name="generator" content="quarto-1.3.340">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -57,8 +57,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-submit-button-title": "Submit"
   }
 }</script>
 
@@ -77,7 +76,7 @@ ul.task-list li input[type="checkbox"] {
       <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chtc.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">CHTC</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -166,7 +165,13 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#editing-running-jobs" id="toc-editing-running-jobs" class="nav-link" data-scroll-target="#editing-running-jobs"><span class="header-section-number">1.5.5</span> Editing Running Jobs</a></li>
   <li><a href="#transferring-jobs-back-to-our-server" id="toc-transferring-jobs-back-to-our-server" class="nav-link" data-scroll-target="#transferring-jobs-back-to-our-server"><span class="header-section-number">1.5.6</span> Transferring Jobs back to Our Server</a></li>
   </ul></li>
-  <li><a href="#creating-a-container-for-r-and-packages" id="toc-creating-a-container-for-r-and-packages" class="nav-link" data-scroll-target="#creating-a-container-for-r-and-packages"><span class="header-section-number">1.6</span> Creating a Container for R and Packages</a></li>
+  <li><a href="#using-and-creating-containers-for-r-and-packages" id="toc-using-and-creating-containers-for-r-and-packages" class="nav-link" data-scroll-target="#using-and-creating-containers-for-r-and-packages"><span class="header-section-number">1.6</span> Using and Creating Containers for R and Packages</a>
+  <ul class="collapse">
+  <li><a href="#full-documetation-from-chtc" id="toc-full-documetation-from-chtc" class="nav-link" data-scroll-target="#full-documetation-from-chtc"><span class="header-section-number">1.6.1</span> Full documetation from CHTC</a></li>
+  <li><a href="#use-existing-container" id="toc-use-existing-container" class="nav-link" data-scroll-target="#use-existing-container"><span class="header-section-number">1.6.2</span> Use Existing Container</a></li>
+  <li><a href="#using-container-with-your-jobs" id="toc-using-container-with-your-jobs" class="nav-link" data-scroll-target="#using-container-with-your-jobs"><span class="header-section-number">1.6.3</span> Using Container with your Jobs</a></li>
+  <li><a href="#brief-steps-for-creating-a-new-container" id="toc-brief-steps-for-creating-a-new-container" class="nav-link" data-scroll-target="#brief-steps-for-creating-a-new-container"><span class="header-section-number">1.6.4</span> Brief Steps for Creating a New Container</a></li>
+  </ul></li>
   <li><a href="#making-package-tars" id="toc-making-package-tars" class="nav-link" data-scroll-target="#making-package-tars"><span class="header-section-number">1.7</span> Making package TARS</a></li>
   <li><a href="#open-science-pool" id="toc-open-science-pool" class="nav-link" data-scroll-target="#open-science-pool"><span class="header-section-number">1.8</span> Open Science Pool</a></li>
   <li><a href="#common-condor-commands" id="toc-common-condor-commands" class="nav-link" data-scroll-target="#common-condor-commands"><span class="header-section-number">1.9</span> Common CONDOR commands</a></li>
@@ -292,11 +297,34 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 </section>
-<section id="creating-a-container-for-r-and-packages" class="level2" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="creating-a-container-for-r-and-packages"><span class="header-section-number">1.6</span> Creating a Container for R and Packages</h2>
-<p><a href="https://chtc.cs.wisc.edu/uw-research-computing/singularity-htc">Documentation</a> on CHTC</p>
-<p><a href="https://hub.docker.com/_/r-base">Docker image for base r</a>. Chose current numbered version (e.g., 4.3.0) among tags.</p>
-<p>NOTES: To use in a job, do <em>not</em> use the instructions from the above guide, with “universe = container” and “container_image =”. That <em>is</em> the way of the future, however <em>right now</em> to run on the OSPool and CHTC, you’ll want to use this instead: universe = vanilla +SingularityImage = “container.sif” And then include the container.sif file in the transfer_input_files line. That <em>should</em> work seamlessly across the OSPool/CHTC. Maybe use this just to be safe? requirements = (PoolName == “CHTC”) || (SINGULARITY_CAN_USE_SIF)</p>
+<section id="using-and-creating-containers-for-r-and-packages" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="using-and-creating-containers-for-r-and-packages"><span class="header-section-number">1.6</span> Using and Creating Containers for R and Packages</h2>
+<section id="full-documetation-from-chtc" class="level3" data-number="1.6.1">
+<h3 data-number="1.6.1" class="anchored" data-anchor-id="full-documetation-from-chtc"><span class="header-section-number">1.6.1</span> Full documetation from CHTC</h3>
+<p>CHTC has full <a href="https://chtc.cs.wisc.edu/uw-research-computing/singularity-htc">documentation</a> of these steps. We are currently using this <a href="https://hub.docker.com/_/r-base">Docker image for base r</a>. Chose current numbered version (e.g., 4.3.0) among tags.</p>
+</section>
+<section id="use-existing-container" class="level3" data-number="1.6.2">
+<h3 data-number="1.6.2" class="anchored" data-anchor-id="use-existing-container"><span class="header-section-number">1.6.2</span> Use Existing Container</h3>
+<p>We have saved existing containers for training and for feature creation on our server in the CHTC folder (/CHTC/containers/train and /CHTC/containers/features). These folders include the sub and def files that were used to create these containers. The current/up-to-date container is named without an underscore. The _# are older versions with the highest number being the most recent old version. Likely not needed!</p>
+</section>
+<section id="using-container-with-your-jobs" class="level3" data-number="1.6.3">
+<h3 data-number="1.6.3" class="anchored" data-anchor-id="using-container-with-your-jobs"><span class="header-section-number">1.6.3</span> Using Container with your Jobs</h3>
+<p>NOTES: for now, CHTC says to <em>not</em> use the instructions from the above guide in your jobs’ sub file (e.g., “universe = container” and “container_image =”). That <em>is</em> the way of the future, however <em>right now</em> to run on the OSPool and CHTC, you’ll want to use this instead:</p>
+<pre><code>universe = vanilla
++SingularityImage = "container.sif"</code></pre>
+<p>And then include the container.sif file in the transfer_input_files line. That <em>should</em> work seamlessly across the OSPool/CHTC. Maybe use this just to be safe: <code>requirements = (PoolName == "CHTC") || (SINGULARITY_CAN_USE_SIF)</code></p>
+</section>
+<section id="brief-steps-for-creating-a-new-container" class="level3" data-number="1.6.4">
+<h3 data-number="1.6.4" class="anchored" data-anchor-id="brief-steps-for-creating-a-new-container"><span class="header-section-number">1.6.4</span> Brief Steps for Creating a New Container</h3>
+<p>Here is the steps in brief</p>
+<ol type="1">
+<li>create or use and existing build.sub and .def file. See examples for train and features in the CHTC folder on the server.</li>
+<li>FTP these files to CHTC submit server</li>
+<li>Run an interactive sessions <code>condor_submit -i build.sub</code>, where you use your sub file</li>
+<li>Build the apptainer: <code>apptainer build train.sif train.def</code>, where you name your .sif file and use your def file</li>
+<li>After the container is built, you can clear the cache: <code>apptainer cache clean -f</code> and then <code>exit</code> the interactive session. Your container should be returned to the root folder on chtc submit server (along with the log file). Consider whether to archive it on our server or if it was a one-time use for you.</li>
+</ol>
+</section>
 </section>
 <section id="making-package-tars" class="level2" data-number="1.7">
 <h2 data-number="1.7" class="anchored" data-anchor-id="making-package-tars"><span class="header-section-number">1.7</span> Making package TARS</h2>
