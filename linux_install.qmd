@@ -3,6 +3,9 @@
 ## R
 
 https://www.r-bloggers.com/2022/08/installation-of-r-4-2-on-ubuntu-22-04-1-lts-and-tips-for-spatial-packages/
+
+https://www.digitalocean.com/community/tutorials/how-to-install-r-on-ubuntu-22-04
+
 ## Quarto
 
 https://docs.posit.co/resources/install-quarto/
