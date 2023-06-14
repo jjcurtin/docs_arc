@@ -1,0 +1,7 @@
+# Installing Linux
+
+## Quarto
+
+https://docs.posit.co/resources/install-quarto/
+
+https://www.cyberciti.biz/faq/how-to-install-curl-command-on-a-ubuntu-linux/
