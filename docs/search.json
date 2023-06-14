@@ -105,10 +105,10 @@
     "text": "2.4 Other notes\nIf you are not familiar with UNIX you may want to review the UNIX chapter for helpful commands when working with git command line. For example you may want to use nano for resolving conflicts instead of opening up the file in your file explorer.\nThere are also a ton of more things that an be done in git (e.g., git diff, git log) but some of these may be more easily done on github."
   },
   {
-    "objectID": "linux_install.html#quarto",
-    "href": "linux_install.html#quarto",
+    "objectID": "linux_install.html#r",
+    "href": "linux_install.html#r",
     "title": "3  Installing Linux",
-    "section": "3.1 Quarto",
-    "text": "3.1 Quarto\nhttps://docs.posit.co/resources/install-quarto/\nhttps://www.cyberciti.biz/faq/how-to-install-curl-command-on-a-ubuntu-linux/"
+    "section": "3.1 R",
+    "text": "3.1 R\nhttps://www.r-bloggers.com/2022/08/installation-of-r-4-2-on-ubuntu-22-04-1-lts-and-tips-for-spatial-packages/ ## Quarto\nhttps://docs.posit.co/resources/install-quarto/\nhttps://www.cyberciti.biz/faq/how-to-install-curl-command-on-a-ubuntu-linux/"
   }
 ]
