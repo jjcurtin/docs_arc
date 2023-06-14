@@ -1,5 +1,8 @@
 # Installing Linux
 
+## R
+
+https://www.r-bloggers.com/2022/08/installation-of-r-4-2-on-ubuntu-22-04-1-lts-and-tips-for-spatial-packages/
 ## Quarto
 
 https://docs.posit.co/resources/install-quarto/
