@@ -83,17 +83,35 @@ At times some (or all) jobs may be held if they require more memory or disk spac
 - Now FTP `batch_results.csv` and the log file to the output folder for this batch on our server.   
 - Do NOT delete results and error files until you have confirmed they look good by processing them in R.
 
-## Creating a Container for R and Packages
+## Using and Creating Containers for R and Packages
 
-[Documentation](https://chtc.cs.wisc.edu/uw-research-computing/singularity-htc) on CHTC 
+### Full documetation from CHTC
+CHTC has full [documentation](https://chtc.cs.wisc.edu/uw-research-computing/singularity-htc) of these steps.  We are currently using this [Docker image for base r](https://hub.docker.com/_/r-base).  Chose current numbered version (e.g., 4.3.0) among tags.
 
-[Docker image for base r](https://hub.docker.com/_/r-base).  Chose current numbered version (e.g., 4.3.0) among tags.
+### Use Existing Container
 
-NOTES: To use in a job, do *not* use the instructions from the above guide, with "universe = container" and "container_image = ". That *is* the way of the future, however *right now* to run on the OSPool and CHTC, you'll want to use this instead: 
+We have saved existing containers for training and for feature creation on our server in the CHTC folder (/CHTC/containers/train and /CHTC/containers/features).   These folders include the sub and def files that were used to create these containers.  The current/up-to-date container is named without an underscore.  The _# are older versions with the highest number being the most recent old version.   Likely not needed!
+
+### Using Container with your Jobs
+NOTES: for now, CHTC says to *not* use the instructions from the above guide in your jobs' sub file (e.g., "universe = container" and "container_image = "). That *is* the way of the future, however *right now* to run on the OSPool and CHTC, you'll want to use this instead: 
+
+```
 universe = vanilla
 +SingularityImage = "container.sif"
-And then include the container.sif file in the transfer_input_files line. That *should* work seamlessly across the OSPool/CHTC. Maybe use this just to be safe?
-requirements = (PoolName == "CHTC") || (SINGULARITY_CAN_USE_SIF)
+```
+And then include the container.sif file in the transfer_input_files line. That *should* work seamlessly across the OSPool/CHTC. Maybe use this just to be safe: 
+`requirements = (PoolName == "CHTC") || (SINGULARITY_CAN_USE_SIF)`
+
+### Brief Steps for Creating a New Container
+
+Here is the steps in brief
+
+1. create or use and existing build.sub and .def file.  See examples for train and features in the CHTC folder on the server.
+2.  FTP these files to CHTC submit server
+3.  Run an interactive sessions `condor_submit -i build.sub`, where you use your sub file 
+4.  Build the apptainer: `apptainer build train.sif train.def`, where you name your .sif file and use your def file
+5. After the container is built, you can clear the cache: `apptainer cache clean -f` and then `exit` the interactive session.  Your container should be returned to the root folder on chtc submit server (along with the log file).  Consider whether to archive it on our server or if it was a one-time use for you.
+
 
 ## Making package TARS
 
