@@ -11,3 +11,6 @@ https://www.digitalocean.com/community/tutorials/how-to-install-r-on-ubuntu-22-0
 https://docs.posit.co/resources/install-quarto/
 
 https://www.cyberciti.biz/faq/how-to-install-curl-command-on-a-ubuntu-linux/
+
+# SSH Keys for github, chtc, etc
+https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
