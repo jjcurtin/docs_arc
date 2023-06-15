@@ -15,4 +15,6 @@ https://www.cyberciti.biz/faq/how-to-install-curl-command-on-a-ubuntu-linux/
 # SSH Keys for github, chtc, etc
 https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
 
+https://github.com/settings/keys
+
 https://www.beyondtrust.com/blog/entry/ssh-key-management-overview-6-best-practices
