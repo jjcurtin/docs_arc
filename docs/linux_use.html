@@ -161,7 +161,13 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#general-short-cuts" id="toc-general-short-cuts" class="nav-link active" data-scroll-target="#general-short-cuts"><span class="header-section-number">4.1</span> General Short Cuts</a></li>
   <li><a href="#terminal-short-cuts" id="toc-terminal-short-cuts" class="nav-link" data-scroll-target="#terminal-short-cuts"><span class="header-section-number">4.2</span> Terminal Short Cuts</a></li>
   <li><a href="#vim-short-cuts" id="toc-vim-short-cuts" class="nav-link" data-scroll-target="#vim-short-cuts"><span class="header-section-number">4.3</span> Vim Short Cuts</a></li>
-  <li><a href="#common-commands" id="toc-common-commands" class="nav-link" data-scroll-target="#common-commands"><span class="header-section-number">4.4</span> Common Commands</a></li>
+  <li><a href="#running-apps-from-terminal" id="toc-running-apps-from-terminal" class="nav-link" data-scroll-target="#running-apps-from-terminal"><span class="header-section-number">4.4</span> Running Apps from Terminal</a>
+  <ul class="collapse">
+  <li><a href="#quarto" id="toc-quarto" class="nav-link" data-scroll-target="#quarto"><span class="header-section-number">4.4.1</span> Quarto</a></li>
+  <li><a href="#markdown" id="toc-markdown" class="nav-link" data-scroll-target="#markdown"><span class="header-section-number">4.4.2</span> Markdown</a></li>
+  <li><a href="#firefox" id="toc-firefox" class="nav-link" data-scroll-target="#firefox"><span class="header-section-number">4.4.3</span> Firefox</a></li>
+  </ul></li>
+  <li><a href="#common-commands" id="toc-common-commands" class="nav-link" data-scroll-target="#common-commands"><span class="header-section-number">4.5</span> Common Commands</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jjcurtin/docs_arc/edit/main/linux_use.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
@@ -212,8 +218,24 @@ ul.task-list li input[type="checkbox"] {
 <section id="vim-short-cuts" class="level2" data-number="4.3">
 <h2 data-number="4.3" class="anchored" data-anchor-id="vim-short-cuts"><span class="header-section-number">4.3</span> Vim Short Cuts</h2>
 </section>
-<section id="common-commands" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="common-commands"><span class="header-section-number">4.4</span> Common Commands</h2>
+<section id="running-apps-from-terminal" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="running-apps-from-terminal"><span class="header-section-number">4.4</span> Running Apps from Terminal</h2>
+<section id="quarto" class="level3" data-number="4.4.1">
+<h3 data-number="4.4.1" class="anchored" data-anchor-id="quarto"><span class="header-section-number">4.4.1</span> Quarto</h3>
+</section>
+<section id="markdown" class="level3" data-number="4.4.2">
+<h3 data-number="4.4.2" class="anchored" data-anchor-id="markdown"><span class="header-section-number">4.4.2</span> Markdown</h3>
+<p>You will need to install pandoc to render markdown to pdf: <code>sudo apt-get install pandoc texlive-latex-base texlive-fonts-recommended texlive-extra-utils texlive-latex-extra</code>.</p>
+<p>Use <code>pandoc [infile.md] -o [outfile.pdf]</code> to render infile.md to outfile.pdf.</p>
+<p>Note also that the ReText app can render markdown to pdf (and html) as well if you don’t want to use the terminal.</p>
+</section>
+<section id="firefox" class="level3" data-number="4.4.3">
+<h3 data-number="4.4.3" class="anchored" data-anchor-id="firefox"><span class="header-section-number">4.4.3</span> Firefox</h3>
+<p>You can view an html file in firefox from terminal using <code>firefox [filename]</code></p>
+</section>
+</section>
+<section id="common-commands" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="common-commands"><span class="header-section-number">4.5</span> Common Commands</h2>
 <ul>
 <li><p><code>ls -lSr</code> to list files sorted by size (with larger sizes later: <code>r</code>). Useful to find the non-zero error files. Can have issues when applied to large numbers of files (&gt; 60K). See use of <code>find</code> and <code>xargs</code> below if needed.</p></li>
 <li><p><code>mv</code> to move files between directories. can use <code>..</code> as target to move file to home directory. e.g., <code>mv results_* ..</code></p></li>

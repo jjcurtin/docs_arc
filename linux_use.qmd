@@ -23,6 +23,23 @@
 
 ## Vim Short Cuts
 
+## Running Apps from Terminal
+
+### Quarto
+
+
+### Markdown
+
+You will need to install pandoc to render markdown to pdf: `sudo apt-get install pandoc texlive-latex-base texlive-fonts-recommended texlive-extra-utils texlive-latex-extra`.
+
+Use `pandoc [infile.md] -o [outfile.pdf]` to render infile.md to outfile.pdf.
+
+Note also that the ReText app can render markdown to pdf (and html) as well if you don't want to use the terminal.  
+
+### Firefox
+
+You can view an html file in firefox from terminal using `firefox [filename]`
+
 ## Common Commands
 
 -   `ls -lSr` to list files sorted by size (with larger sizes later: `r`). Useful to find the non-zero error files. Can have issues when applied to large numbers of files (> 60K). See use of `find` and `xargs` below if needed.
