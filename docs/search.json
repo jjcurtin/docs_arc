@@ -70,13 +70,6 @@
     "text": "1.9 Common CONDOR commands\n\ncondor_submit train.sub\ncondor_q for quick review of queue for submitted jobs\ncondor_q -hold for quick review of held jobs\ncondor_q -af HoldReason for more detailed review of held jobs\ncondor_qedit [cluster id number] RequestMemory [memory] to increase memory. Example: condor_qedit 16892087 RequestMemory 20000. Can specific specific job with .# added to the ID. Memory is specified in MB in our training control files.\ncondor_release $USER to release all held jobs for user (e.g., after increasing memory)\ncondor_rm [jobid] or condor_rm $USER to remove a job or all jobs\ncondor_history $USER -limit 10 -af requestmemory memoryusage is an example of reviewing recent job history (past 10 in this example) for a subset of the history parameters. Can list all the parameters (long format) for a single job using condor_history 16892169.1 -l where the jobid is listed explicitly.\n\ncondor_hold $USER to hold all jobs running (e.g., to increase memory)."
   },
   {
-    "objectID": "chtc.html#common-unix-generic-commands",
-    "href": "chtc.html#common-unix-generic-commands",
-    "title": "1  CHTC",
-    "section": "1.10 Common UNIX generic commands",
-    "text": "1.10 Common UNIX generic commands\n\nls -lSr to list files sorted by size (with larger sizes later: r). Useful to find the non-zero error files. Can have issues when applied to large numbers of files (&gt; 60K). See use of find and xargs below if needed.\nmv to move files between directories. can use .. as target to move file to home directory. e.g., mv results_* ..\n&gt; redirect standard output to a new file (creates file if does not exist; writes over file contents if it does exist). &gt;&gt; redirect standard output to append to a file\nrm to remove file(s). rm -r to remove non-empty directory\nnano is used to edit text files. For example nano job_nums.csv to edit job_nums.csv for jobs to re-run due to errors\ncat filename_* &gt; all_files.csv to concatenate all files into one file.\nchmod +x get_missing_jobs.sh to change permissions on get_missing_jobs.sh to run it. ./get_missing_jobs.sh to run it.\nfind -maxdepth 1 -name \"results_*.csv\" | wc -l will find results_*.csv in local folder (maxdepth 1) and pipe them into a word count that counts lines (-l)\ncat job_nums.csv | wc -l reads contents of job_nums.csv and pipes to a word count that counts lines (-l)\nfind -maxdepth 1 -name \"results_*.csv\" | ls -lSr gets around the too many arguments issue. Find searches recursively by default (override with maxdepth if needed), whereas ls searches just . or the specified directory (e.g., ./results)\nSee tutorial on awk to understand its use for simple programming. See a tutorial on the use of xargs.\nprintf to send formatted text to standard output or to a file\n\nprintf \"John is %s\\n\" \"nice\"\nprintf \"John is %d years old\" 54\nprintf \"hello world\\nIt is John!\" &gt; out.txt)\n\nman [command] to open manual for command\nsdiff file1 file2 - Compare two files side by side.\nvimdiff file1 file2 - Highlight the differences between two files in the vim editor.\ntar [-] c|x|t f tarfile [pattern] - Create, extract or list contents of a tar archive using pattern, if supplied.\ndu -h - Display sizes in human readable format. For example, 1.2M, 3.7G, etc.\n`gzip file - Compress file. The resulting compressed file is named file.gz.\ngunzip file - Uncompress files."
-  },
-  {
     "objectID": "git.html#git-command-line",
     "href": "git.html#git-command-line",
     "title": "2  Git",
@@ -124,5 +117,26 @@
     "title": "3  Installing Linux",
     "section": "3.2 Quarto",
     "text": "3.2 Quarto\nhttps://docs.posit.co/resources/install-quarto/\nhttps://www.cyberciti.biz/faq/how-to-install-curl-command-on-a-ubuntu-linux/"
+  },
+  {
+    "objectID": "linux_use.html#general-short-cuts",
+    "href": "linux_use.html#general-short-cuts",
+    "title": "4  Using Linux",
+    "section": "4.1 General Short Cuts",
+    "text": "4.1 General Short Cuts\n\nsuper+tab switches between windows\nsuper+left/right arrow fits active window to left or right of screen\nctrl+alt+t opens a new terminal window"
+  },
+  {
+    "objectID": "linux_use.html#vim-short-cuts",
+    "href": "linux_use.html#vim-short-cuts",
+    "title": "4  Using Linux",
+    "section": "4.2 Vim Short Cuts",
+    "text": "4.2 Vim Short Cuts"
+  },
+  {
+    "objectID": "linux_use.html#common-commands",
+    "href": "linux_use.html#common-commands",
+    "title": "4  Using Linux",
+    "section": "4.3 Common Commands",
+    "text": "4.3 Common Commands\n\nls -lSr to list files sorted by size (with larger sizes later: r). Useful to find the non-zero error files. Can have issues when applied to large numbers of files (&gt; 60K). See use of find and xargs below if needed.\nmv to move files between directories. can use .. as target to move file to home directory. e.g., mv results_* ..\n&gt; redirect standard output to a new file (creates file if does not exist; writes over file contents if it does exist). &gt;&gt; redirect standard output to append to a file\nrm to remove file(s). rm -r to remove non-empty directory\nnano is used to edit text files. For example nano job_nums.csv to edit job_nums.csv for jobs to re-run due to errors\ncat filename_* &gt; all_files.csv to concatenate all files into one file.\nchmod +x get_missing_jobs.sh to change permissions on get_missing_jobs.sh to run it. ./get_missing_jobs.sh to run it.\nfind -maxdepth 1 -name \"results_*.csv\" | wc -l will find results_*.csv in local folder (maxdepth 1) and pipe them into a word count that counts lines (-l)\ncat job_nums.csv | wc -l reads contents of job_nums.csv and pipes to a word count that counts lines (-l)\nfind -maxdepth 1 -name \"results_*.csv\" | ls -lSr gets around the too many arguments issue. Find searches recursively by default (override with maxdepth if needed), whereas ls searches just . or the specified directory (e.g., ./results)\nSee tutorial on awk to understand its use for simple programming. See a tutorial on the use of xargs.\nprintf to send formatted text to standard output or to a file\n\nprintf \"John is %s\\n\" \"nice\"\nprintf \"John is %d years old\" 54\nprintf \"hello world\\nIt is John!\" &gt; out.txt)\n\nman [command] to open manual for command\nsdiff file1 file2 - Compare two files side by side.\nvimdiff file1 file2 - Highlight the differences between two files in the vim editor.\ntar [-] c|x|t f tarfile [pattern] - Create, extract or list contents of a tar archive using pattern, if supplied.\ndu -h - Display sizes in human readable format. For example, 1.2M, 3.7G, etc.\n`gzip file - Compress file. The resulting compressed file is named file.gz.\ngunzip file - Uncompress files."
   }
 ]

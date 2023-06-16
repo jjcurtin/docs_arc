@@ -143,6 +143,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Installing Linux</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./linux_use.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Using Linux</span></span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -176,7 +182,6 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#making-package-tars" id="toc-making-package-tars" class="nav-link" data-scroll-target="#making-package-tars"><span class="header-section-number">1.7</span> Making package TARS</a></li>
   <li><a href="#open-science-pool" id="toc-open-science-pool" class="nav-link" data-scroll-target="#open-science-pool"><span class="header-section-number">1.8</span> Open Science Pool</a></li>
   <li><a href="#common-condor-commands" id="toc-common-condor-commands" class="nav-link" data-scroll-target="#common-condor-commands"><span class="header-section-number">1.9</span> Common CONDOR commands</a></li>
-  <li><a href="#common-unix-generic-commands" id="toc-common-unix-generic-commands" class="nav-link" data-scroll-target="#common-unix-generic-commands"><span class="header-section-number">1.10</span> Common UNIX generic commands</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jjcurtin/docs_arc/edit/main/chtc.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
@@ -348,35 +353,6 @@ ul.task-list li input[type="checkbox"] {
 <li><code>condor_history $USER -limit 10 -af requestmemory memoryusage</code> is an example of reviewing recent job history (past 10 in this example) for a subset of the history parameters. Can list all the parameters (long format) for a single job using <code>condor_history 16892169.1 -l</code> where the jobid is listed explicitly.<br>
 </li>
 <li><code>condor_hold $USER</code> to hold all jobs running (e.g., to increase memory).</li>
-</ul>
-</section>
-<section id="common-unix-generic-commands" class="level2" data-number="1.10">
-<h2 data-number="1.10" class="anchored" data-anchor-id="common-unix-generic-commands"><span class="header-section-number">1.10</span> Common UNIX generic commands</h2>
-<ul>
-<li><p><code>ls -lSr</code> to list files sorted by size (with larger sizes later: <code>r</code>). Useful to find the non-zero error files. Can have issues when applied to large numbers of files (&gt; 60K). See use of <code>find</code> and <code>xargs</code> below if needed.</p></li>
-<li><p><code>mv</code> to move files between directories. can use <code>..</code> as target to move file to home directory. e.g., <code>mv results_* ..</code></p></li>
-<li><p><code>&gt;</code> redirect standard output to a new file (creates file if does not exist; writes over file contents if it does exist). <code>&gt;&gt;</code> redirect standard output to append to a file</p></li>
-<li><p><code>rm</code> to remove file(s). <code>rm -r</code> to remove non-empty directory</p></li>
-<li><p><code>nano</code> is used to edit text files. For example <code>nano job_nums.csv</code> to edit job_nums.csv for jobs to re-run due to errors</p></li>
-<li><p><code>cat filename_* &gt; all_files.csv</code> to concatenate all files into one file.</p></li>
-<li><p><code>chmod +x get_missing_jobs.sh</code> to change permissions on get_missing_jobs.sh to run it. <code>./get_missing_jobs.sh</code> to run it.</p></li>
-<li><p><code>find -maxdepth 1 -name "results_*.csv" | wc -l</code> will find results_*.csv in local folder (maxdepth 1) and pipe them into a word count that counts lines (-l)</p></li>
-<li><p><code>cat job_nums.csv | wc -l</code> reads contents of <code>job_nums.csv</code> and pipes to a word count that counts lines (<code>-l</code>)</p></li>
-<li><p><code>find -maxdepth 1 -name "results_*.csv" | ls -lSr</code> gets around the too many arguments issue. Find searches recursively by default (override with maxdepth if needed), whereas ls searches just <code>.</code> or the specified directory (e.g., <code>./results</code>)</p></li>
-<li><p>See <a href="https://linuxhandbook.com/awk-command-tutorial/">tutorial</a> on awk to understand its use for simple programming. See a <a href="https://shapeshed.com/unix-xargs/">tutorial</a> on the use of xargs.</p></li>
-<li><p><code>printf</code> to send formatted text to standard output or to a file</p>
-<ul>
-<li><code>printf "John is %s\n" "nice"</code></li>
-<li><code>printf "John is %d years old" 54</code></li>
-<li><code>printf "hello world\nIt is John!" &gt; out.txt</code>)</li>
-</ul></li>
-<li><p><code>man [command]</code> to open manual for command</p></li>
-<li><p><code>sdiff file1 file2</code> - Compare two files side by side.</p></li>
-<li><p><code>vimdiff file1 file2</code> - Highlight the differences between two files in the vim editor.</p></li>
-<li><p><code>tar [-] c|x|t f tarfile [pattern]</code> - Create, extract or list contents of a tar archive using pattern, if supplied.</p></li>
-<li><p><code>du -h</code> - Display sizes in human readable format. For example, 1.2M, 3.7G, etc.</p></li>
-<li><p>`gzip file - Compress file. The resulting compressed file is named file.gz.</p></li>
-<li><p><code>gunzip file</code> - Uncompress files.</p></li>
 </ul>
 
 
