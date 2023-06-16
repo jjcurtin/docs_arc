@@ -23,6 +23,15 @@
 
 ## Vim Short Cuts
 
+### Navigating document in Default (Command) Mode
+
+Remember to enter command mode by pressing `esc`
+
+- Move cursor left (`h`), down(`j`), up (`k`), or right (`l`) 
+
+- `gg` for top of document and `G` for bottom
+- `H` for top of window, `M` for middle of window, and `L` for bottom of window
+- `:#` for line number
 ## Running Apps from Terminal
 
 ### Quarto
