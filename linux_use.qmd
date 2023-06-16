@@ -6,6 +6,21 @@
 - `super+left/right arrow` fits active window to left or right of screen
 - `ctrl+alt+t` opens a new terminal window
 
+## Terminal Short Cuts
+
+- `tab` autocompletes from what you have started to type
+- `ctrl+c` breaks out of a command or process
+- `ctrl+d` logs out of current terminal
+- `ctrl+l clears screen
+- `ctrl+a` moves cursor to beginnng of line
+- `ctrl+e` moves cursor to the end of line
+- `ctrl+u` clears the current line
+- `ctrl+p` or `up arrow` scrolls through previous commands
+- `ctrl_n` or `down arrow` scrolls forward through commands
+- `ctrl+shift+c` copies highlighted text
+- `ctrl+shift+v` pastes copied text
+
+
 ## Vim Short Cuts
 
 ## Common Commands
