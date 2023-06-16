@@ -126,17 +126,24 @@
     "text": "4.1 General Short Cuts\n\nsuper+tab switches between windows\nsuper+left/right arrow fits active window to left or right of screen\nctrl+alt+t opens a new terminal window"
   },
   {
+    "objectID": "linux_use.html#terminal-short-cuts",
+    "href": "linux_use.html#terminal-short-cuts",
+    "title": "4  Using Linux",
+    "section": "4.2 Terminal Short Cuts",
+    "text": "4.2 Terminal Short Cuts\n\ntab autocompletes from what you have started to type\nctrl+c breaks out of a command or process\nctrl+d logs out of current terminal\n`ctrl+l clears screen\nctrl+a moves cursor to beginnng of line\nctrl+e moves cursor to the end of line\nctrl+u clears the current line\nctrl+p or up arrow scrolls through previous commands\nctrl_n or down arrow scrolls forward through commands\nctrl+shift+c copies highlighted text\nctrl+shift+v pastes copied text"
+  },
+  {
     "objectID": "linux_use.html#vim-short-cuts",
     "href": "linux_use.html#vim-short-cuts",
     "title": "4  Using Linux",
-    "section": "4.2 Vim Short Cuts",
-    "text": "4.2 Vim Short Cuts"
+    "section": "4.3 Vim Short Cuts",
+    "text": "4.3 Vim Short Cuts"
   },
   {
     "objectID": "linux_use.html#common-commands",
     "href": "linux_use.html#common-commands",
     "title": "4  Using Linux",
-    "section": "4.3 Common Commands",
-    "text": "4.3 Common Commands\n\nls -lSr to list files sorted by size (with larger sizes later: r). Useful to find the non-zero error files. Can have issues when applied to large numbers of files (&gt; 60K). See use of find and xargs below if needed.\nmv to move files between directories. can use .. as target to move file to home directory. e.g., mv results_* ..\n&gt; redirect standard output to a new file (creates file if does not exist; writes over file contents if it does exist). &gt;&gt; redirect standard output to append to a file\nrm to remove file(s). rm -r to remove non-empty directory\nnano is used to edit text files. For example nano job_nums.csv to edit job_nums.csv for jobs to re-run due to errors\ncat filename_* &gt; all_files.csv to concatenate all files into one file.\nchmod +x get_missing_jobs.sh to change permissions on get_missing_jobs.sh to run it. ./get_missing_jobs.sh to run it.\nfind -maxdepth 1 -name \"results_*.csv\" | wc -l will find results_*.csv in local folder (maxdepth 1) and pipe them into a word count that counts lines (-l)\ncat job_nums.csv | wc -l reads contents of job_nums.csv and pipes to a word count that counts lines (-l)\nfind -maxdepth 1 -name \"results_*.csv\" | ls -lSr gets around the too many arguments issue. Find searches recursively by default (override with maxdepth if needed), whereas ls searches just . or the specified directory (e.g., ./results)\nSee tutorial on awk to understand its use for simple programming. See a tutorial on the use of xargs.\nprintf to send formatted text to standard output or to a file\n\nprintf \"John is %s\\n\" \"nice\"\nprintf \"John is %d years old\" 54\nprintf \"hello world\\nIt is John!\" &gt; out.txt)\n\nman [command] to open manual for command\nsdiff file1 file2 - Compare two files side by side.\nvimdiff file1 file2 - Highlight the differences between two files in the vim editor.\ntar [-] c|x|t f tarfile [pattern] - Create, extract or list contents of a tar archive using pattern, if supplied.\ndu -h - Display sizes in human readable format. For example, 1.2M, 3.7G, etc.\n`gzip file - Compress file. The resulting compressed file is named file.gz.\ngunzip file - Uncompress files."
+    "section": "4.4 Common Commands",
+    "text": "4.4 Common Commands\n\nls -lSr to list files sorted by size (with larger sizes later: r). Useful to find the non-zero error files. Can have issues when applied to large numbers of files (&gt; 60K). See use of find and xargs below if needed.\nmv to move files between directories. can use .. as target to move file to home directory. e.g., mv results_* ..\n&gt; redirect standard output to a new file (creates file if does not exist; writes over file contents if it does exist). &gt;&gt; redirect standard output to append to a file\nrm to remove file(s). rm -r to remove non-empty directory\nnano is used to edit text files. For example nano job_nums.csv to edit job_nums.csv for jobs to re-run due to errors\ncat filename_* &gt; all_files.csv to concatenate all files into one file.\nchmod +x get_missing_jobs.sh to change permissions on get_missing_jobs.sh to run it. ./get_missing_jobs.sh to run it.\nfind -maxdepth 1 -name \"results_*.csv\" | wc -l will find results_*.csv in local folder (maxdepth 1) and pipe them into a word count that counts lines (-l)\ncat job_nums.csv | wc -l reads contents of job_nums.csv and pipes to a word count that counts lines (-l)\nfind -maxdepth 1 -name \"results_*.csv\" | ls -lSr gets around the too many arguments issue. Find searches recursively by default (override with maxdepth if needed), whereas ls searches just . or the specified directory (e.g., ./results)\nSee tutorial on awk to understand its use for simple programming. See a tutorial on the use of xargs.\nprintf to send formatted text to standard output or to a file\n\nprintf \"John is %s\\n\" \"nice\"\nprintf \"John is %d years old\" 54\nprintf \"hello world\\nIt is John!\" &gt; out.txt)\n\nman [command] to open manual for command\nsdiff file1 file2 - Compare two files side by side.\nvimdiff file1 file2 - Highlight the differences between two files in the vim editor.\ntar [-] c|x|t f tarfile [pattern] - Create, extract or list contents of a tar archive using pattern, if supplied.\ndu -h - Display sizes in human readable format. For example, 1.2M, 3.7G, etc.\n`gzip file - Compress file. The resulting compressed file is named file.gz.\ngunzip file - Uncompress files."
   }
 ]

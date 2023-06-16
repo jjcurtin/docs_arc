@@ -159,8 +159,9 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#general-short-cuts" id="toc-general-short-cuts" class="nav-link active" data-scroll-target="#general-short-cuts"><span class="header-section-number">4.1</span> General Short Cuts</a></li>
-  <li><a href="#vim-short-cuts" id="toc-vim-short-cuts" class="nav-link" data-scroll-target="#vim-short-cuts"><span class="header-section-number">4.2</span> Vim Short Cuts</a></li>
-  <li><a href="#common-commands" id="toc-common-commands" class="nav-link" data-scroll-target="#common-commands"><span class="header-section-number">4.3</span> Common Commands</a></li>
+  <li><a href="#terminal-short-cuts" id="toc-terminal-short-cuts" class="nav-link" data-scroll-target="#terminal-short-cuts"><span class="header-section-number">4.2</span> Terminal Short Cuts</a></li>
+  <li><a href="#vim-short-cuts" id="toc-vim-short-cuts" class="nav-link" data-scroll-target="#vim-short-cuts"><span class="header-section-number">4.3</span> Vim Short Cuts</a></li>
+  <li><a href="#common-commands" id="toc-common-commands" class="nav-link" data-scroll-target="#common-commands"><span class="header-section-number">4.4</span> Common Commands</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jjcurtin/docs_arc/edit/main/linux_use.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
@@ -192,11 +193,27 @@ ul.task-list li input[type="checkbox"] {
 <li><code>ctrl+alt+t</code> opens a new terminal window</li>
 </ul>
 </section>
-<section id="vim-short-cuts" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="vim-short-cuts"><span class="header-section-number">4.2</span> Vim Short Cuts</h2>
+<section id="terminal-short-cuts" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="terminal-short-cuts"><span class="header-section-number">4.2</span> Terminal Short Cuts</h2>
+<ul>
+<li><code>tab</code> autocompletes from what you have started to type</li>
+<li><code>ctrl+c</code> breaks out of a command or process</li>
+<li><code>ctrl+d</code> logs out of current terminal</li>
+<li>`ctrl+l clears screen</li>
+<li><code>ctrl+a</code> moves cursor to beginnng of line</li>
+<li><code>ctrl+e</code> moves cursor to the end of line</li>
+<li><code>ctrl+u</code> clears the current line</li>
+<li><code>ctrl+p</code> or <code>up arrow</code> scrolls through previous commands</li>
+<li><code>ctrl_n</code> or <code>down arrow</code> scrolls forward through commands</li>
+<li><code>ctrl+shift+c</code> copies highlighted text</li>
+<li><code>ctrl+shift+v</code> pastes copied text</li>
+</ul>
 </section>
-<section id="common-commands" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="common-commands"><span class="header-section-number">4.3</span> Common Commands</h2>
+<section id="vim-short-cuts" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="vim-short-cuts"><span class="header-section-number">4.3</span> Vim Short Cuts</h2>
+</section>
+<section id="common-commands" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="common-commands"><span class="header-section-number">4.4</span> Common Commands</h2>
 <ul>
 <li><p><code>ls -lSr</code> to list files sorted by size (with larger sizes later: <code>r</code>). Useful to find the non-zero error files. Can have issues when applied to large numbers of files (&gt; 60K). See use of <code>find</code> and <code>xargs</code> below if needed.</p></li>
 <li><p><code>mv</code> to move files between directories. can use <code>..</code> as target to move file to home directory. e.g., <code>mv results_* ..</code></p></li>
