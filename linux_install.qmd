@@ -53,3 +53,31 @@ https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generati
 https://github.com/settings/keys
 
 https://www.beyondtrust.com/blog/entry/ssh-key-management-overview-6-best-practices
+
+## Zotero
+
+- `sudo apt update`
+- `sudo apt upgrade`
+- `sudo apt snap install zotero-snap`
+
+After zotero is installed, you can synch to the Addiction Research Lab library.   Go to menu `edit:preferences:synch`.  Username is jjccurtin.  Ask John or Susan for the password.
+
+## Slack
+
+Slack is easily installed from the Ubuntu Software Center.  Open up the software center.  Search for Slack.  Install.  Done.
+
+## Mount Shares
+
+- `sudo apt-get install cifs-utils`
+
+- create directories within ~/mnt/ for each share.   
+
+- save credentials file for synology (.synology_credentials) or research drive (.researchdrive_credentials) at /root/.  These should include username=, password= (and for research drive, domain=ad.wisc.edu)
+
+- create an alias for the command for each share to  mount.  Get it from John
+
+## Quarto
+
+- Download latest version of [Quarto](https://quarto.org/docs/get-started/)
+
+- install using `sudo apt install <package path>` or `sudo dpkg -i <package path>`
