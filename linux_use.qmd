@@ -86,3 +86,7 @@ You can view an html file in firefox from terminal using `firefox [filename]`
 - `du -h` - Display sizes in human readable format. For example, 1.2M, 3.7G, etc.
 - `gzip file - Compress file. The resulting compressed file is named file.gz. 
 - `gunzip file` - Uncompress files.
+
+## Kill a frozen app
+
+Press Alt + F2 . Type xkill and hit Enter. The cursor will turn into a small 'x'. Left click any window to kill the process associated with that window. 
