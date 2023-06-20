@@ -167,9 +167,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#log-and-versioning" id="toc-log-and-versioning" class="nav-link" data-scroll-target="#log-and-versioning"><span class="header-section-number">2.1.4</span> Log and Versioning</a></li>
   </ul></li>
   <li><a href="#aliases" id="toc-aliases" class="nav-link" data-scroll-target="#aliases"><span class="header-section-number">2.2</span> Aliases</a></li>
-  <li><a href="#creating-a-password-key-for-use-with-chtc" id="toc-creating-a-password-key-for-use-with-chtc" class="nav-link" data-scroll-target="#creating-a-password-key-for-use-with-chtc"><span class="header-section-number">2.3</span> Creating a password key for use with CHTC</a></li>
-  <li><a href="#other-notes" id="toc-other-notes" class="nav-link" data-scroll-target="#other-notes"><span class="header-section-number">2.4</span> Other notes</a></li>
-  <li><a href="#git-command-line-for-windows" id="toc-git-command-line-for-windows" class="nav-link" data-scroll-target="#git-command-line-for-windows"><span class="header-section-number">2.5</span> Git Command Line for Windows</a></li>
+  <li><a href="#other-notes" id="toc-other-notes" class="nav-link" data-scroll-target="#other-notes"><span class="header-section-number">2.3</span> Other notes</a></li>
+  <li><a href="#git-command-line-for-windows" id="toc-git-command-line-for-windows" class="nav-link" data-scroll-target="#git-command-line-for-windows"><span class="header-section-number">2.4</span> Git Command Line for Windows</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jjcurtin/docs_arc/edit/main/git.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
@@ -253,26 +252,13 @@ ul.task-list li input[type="checkbox"] {
 <li>You can now reload the profile: <code>./.bash_profile</code></li>
 </ol>
 </section>
-<section id="creating-a-password-key-for-use-with-chtc" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="creating-a-password-key-for-use-with-chtc"><span class="header-section-number">2.3</span> Creating a password key for use with CHTC</h2>
-<p>I highly recommend creating an <a href="https://www.linode.com/docs/guides/use-public-key-authentication-with-ssh/">ssh key</a> for logging in to CHTC from your terminal. This eliminates the need to enter your username and password.</p>
-<p>Note: It looks like <a href="https://chtc.cs.wisc.edu/uw-research-computing/configure-ssh">CHTC</a> also now has a new way for a time-limited bypass of credentials and duo push but I am less familiar with it.</p>
-<p>Below are the steps for using an ssh key:</p>
-<ol type="1">
-<li><p>open bash terminal and type <code>ssh-keygen -t ed25519</code></p></li>
-<li><p>press enter to save key pair to default file name and enter two more times to keep passphrase blank</p></li>
-<li><p>open up public key file (replacing kpaquette2 with your username!) <code>cat /c/Users/kpaquette2/.ssh/id_ed25519.pub</code> and copy the whole key (e.g., mine starts with ssh-ed25519 and ends with kpaquette2@HiddenLayer)</p></li>
-<li><p>log into chtc</p></li>
-<li><p>create a new file <code>nano .ssh/authorized_keys</code> and paste this public key in the file and save</p></li>
-</ol>
-</section>
-<section id="other-notes" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="other-notes"><span class="header-section-number">2.4</span> Other notes</h2>
+<section id="other-notes" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="other-notes"><span class="header-section-number">2.3</span> Other notes</h2>
 <p>If you are not familiar with UNIX you may want to review the <a href="https://jjcurtin.github.io/docs_arc/chtc.html#common-unix-generic-commands">UNIX chapter</a> for helpful commands when working with git command line. For example you may want to use <code>nano</code> for resolving conflicts instead of opening up the file in your file explorer.</p>
 <p>There are also a ton of more things that an be done in git (e.g., <code>git diff</code>, <code>git log</code>) but some of these may be more easily done on github.</p>
 </section>
-<section id="git-command-line-for-windows" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="git-command-line-for-windows"><span class="header-section-number">2.5</span> Git Command Line for Windows</h2>
+<section id="git-command-line-for-windows" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="git-command-line-for-windows"><span class="header-section-number">2.4</span> Git Command Line for Windows</h2>
 <p>The recommended terminal for using the Git command line on Windows is <a href="https://git-scm.com/download/win">Git Bash</a>.</p>
 <p>For full documentation of using the command line you can read the <a href="https://git-scm.com/book/en/v2">Git Pro Book</a>.</p>
 <p>Below is a list of common Git commands for reference.</p>
