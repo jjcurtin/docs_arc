@@ -77,7 +77,7 @@ At times some (or all) jobs may be held if they require more memory or disk spac
 
 ### Transferring Jobs back to Our Server
 
-- Confirm that you have the correct number of results files: `ls ./results/results_* | wc -l`
+- Confirm that you have the correct number of results files: `ls results/results_* | wc -l`
 - Review the non-zero error files:  `ls error/error_* -lSr` and `nano error/error_1.csv`
 - Concatenate all the results files: `head -n +1 results/results_1.csv > batch_results.csv; ls results/results_*.csv | xargs awk 'FNR>1' >> batch_results.csv`.  See [tutorial](https://linuxhandbook.com/awk-command-tutorial/) on awk to understand its use for simple programming. See a [tutorial](https://shapeshed.com/unix-xargs/) on the use of xargs.
 - Now FTP `batch_results.csv` and the log file to the output folder for this batch on our server.   
