@@ -70,18 +70,18 @@
     "text": "1.9 Common CONDOR commands\n\ncondor_submit train.sub\ncondor_q for quick review of queue for submitted jobs\ncondor_q -hold for quick review of held jobs\ncondor_q -af HoldReason for more detailed review of held jobs\ncondor_qedit [cluster id number] RequestMemory [memory] to increase memory. Example: condor_qedit 16892087 RequestMemory 20000. Can specific specific job with .# added to the ID. Memory is specified in MB in our training control files.\ncondor_release $USER to release all held jobs for user (e.g., after increasing memory)\ncondor_rm [jobid] or condor_rm $USER to remove a job or all jobs\ncondor_history $USER -limit 10 -af requestmemory memoryusage is an example of reviewing recent job history (past 10 in this example) for a subset of the history parameters. Can list all the parameters (long format) for a single job using condor_history 16892169.1 -l where the jobid is listed explicitly.\n\ncondor_hold $USER to hold all jobs running (e.g., to increase memory)."
   },
   {
-    "objectID": "git.html#git-command-line",
-    "href": "git.html#git-command-line",
-    "title": "2  Git",
-    "section": "2.1 Git Command Line",
-    "text": "2.1 Git Command Line\nThe recommended terminal for using the Git command line on Windows is Git Bash.\nFor full documentation of using the command line you can read the Git Pro Book.\nBelow is a list of common Git commands for reference."
-  },
-  {
     "objectID": "git.html#common-git-commands",
     "href": "git.html#common-git-commands",
     "title": "2  Git",
     "section": "2.1 Common Git Commands",
     "text": "2.1 Common Git Commands\nNote: These commands will only work if you are in a git repo. You can navigate to different repos by using the cd command in your terminal. The default working directory when you open the terminal will be C:/Users/username. You can also use tab to autofill a folder or file name so it is pretty easy to navigate around!\n\n2.1.1 Workflow\n\ngit status shows any files updated locally\ngit add [filename] add file to staging area\ngit add . adds all modified files to staging area\ngit commit create commit of staged files - this will prompt you to enter commit message. You can also use the -m flag to write your message directly with commit command (git commit -m \"updates xyz\").\ngit commit -am \"commit message\" will add all files and commit them in one step. However,\ngit push pushes your commits to github\ngit pull pulls updates from github (it is good practice to pull before pushing)\n\nNote: with the git bash terminal you shouldn’t have to re-enter your github username and password once it is set up. I don’t remember if it automatically prompts you to do this, but if you find you are needing to enter it everytime you push changes there is a work around for that!\n\n\n2.1.2 Repos\n\ngit clone [repo_url] clones git repo.\n\ngit init [repo_name] creates a new empty repo\n\n\n\n2.1.3 Branching\n\ngit branch shows local branches (git branch -a will show you all branches local and on github)\ngit checkout [branch_name] switches branches\ngit checkout -b [new_branch_name] switches to new branch (git branch [new_branch_name] creates new branch but doesn’t switch to it).\ngit branch -d [brand_name] deletes a local branch. This must be done from another branch or main.\ngit push origin -d [brach_name] deletes branch_name on remote/github (assumes remote is called origin, which it is for us).\n\n\n\n2.1.4 Log and Versioning\n\ngit log displays the most recent commits\ngit log --stat -[N] displays stats on the most recent N commits. Cleaner than log\ngit log [filename] displays commit history for a file. May have problems if the filename was ever changed. In that case consider, git log --follow -- [filename].  Can add–stat` for more info on commit"
+  },
+  {
+    "objectID": "git.html#aliases",
+    "href": "git.html#aliases",
+    "title": "2  Git",
+    "section": "2.2 Aliases",
+    "text": "2.2 Aliases\nGit bash operates like and other ssh shell. You can customize your start-up preferences in the .bash_profile file!\n\nFirst you will need to create a blank or modify an existing profile file using nano .bash_profile\nInside this file add your different aliases (i.e., shortcuts)\n\n\n\nalias github=\"cd '~/My Documents/github'\"\nalias chtc=\"ssh username@submit-1.chtc.wisc.edu\"\n\nNote you can also define functions in this file.\n\nYou can now reload the profile: ./.bash_profile"
   },
   {
     "objectID": "git.html#creating-a-password-key-for-use-with-chtc",
@@ -98,6 +98,13 @@
     "text": "2.4 Other notes\nIf you are not familiar with UNIX you may want to review the UNIX chapter for helpful commands when working with git command line. For example you may want to use nano for resolving conflicts instead of opening up the file in your file explorer.\nThere are also a ton of more things that an be done in git (e.g., git diff, git log) but some of these may be more easily done on github."
   },
   {
+    "objectID": "git.html#git-command-line-for-windows",
+    "href": "git.html#git-command-line-for-windows",
+    "title": "2  Git",
+    "section": "2.5 Git Command Line for Windows",
+    "text": "2.5 Git Command Line for Windows\nThe recommended terminal for using the Git command line on Windows is Git Bash.\nFor full documentation of using the command line you can read the Git Pro Book.\nBelow is a list of common Git commands for reference."
+  },
+  {
     "objectID": "linux_install.html",
     "href": "linux_install.html",
     "title": "3  Installing Linux",
@@ -105,18 +112,67 @@
     "text": "4 SSH Keys for github, chtc, etc\nhttps://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent\nhttps://github.com/settings/keys\nhttps://www.beyondtrust.com/blog/entry/ssh-key-management-overview-6-best-practices"
   },
   {
+    "objectID": "linux_install.html#install-os",
+    "href": "linux_install.html#install-os",
+    "title": "3  Installing Linux",
+    "section": "3.1 Install OS",
+    "text": "3.1 Install OS\nhttps://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview"
+  },
+  {
+    "objectID": "linux_install.html#install-key-support-apps",
+    "href": "linux_install.html#install-key-support-apps",
+    "title": "3  Installing Linux",
+    "section": "3.2 Install key support apps",
+    "text": "3.2 Install key support apps\nsudo apt install git sudo apt install vim"
+  },
+  {
+    "objectID": "linux_install.html#create-and-edit-aliases",
+    "href": "linux_install.html#create-and-edit-aliases",
+    "title": "3  Installing Linux",
+    "section": "3.3 Create and edit aliases",
+    "text": "3.3 Create and edit aliases"
+  },
+  {
     "objectID": "linux_install.html#r",
     "href": "linux_install.html#r",
     "title": "3  Installing Linux",
-    "section": "3.1 R",
-    "text": "3.1 R\nhttps://www.r-bloggers.com/2022/08/installation-of-r-4-2-on-ubuntu-22-04-1-lts-and-tips-for-spatial-packages/\nhttps://www.digitalocean.com/community/tutorials/how-to-install-r-on-ubuntu-22-04"
+    "section": "3.4 R",
+    "text": "3.4 R\nsudo apt install -y –no-install-recommends software-properties-common dirmngr wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc sudo add-apt-repository “deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/” sudo apt install -y r-base r-base-core r-recommended r-base-dev sudo apt install libcurl4-openssl-dev sudo apt install libfontconfig1-dev sudo apt install libxml2-dev sudo apt install libharfbuzz-dev libfribidi-dev\nwget https://download1.rstudio.org/electron/jammy/amd64/rstudio-2023.03.0-386-amd64.deb sudo apt install -f ./rstudio-2023.03.0-386-amd64.deb\ninstall.packages(“devtools”) library(devtools) install.packages(“tidyverse”)\nhttps://www.r-bloggers.com/2022/08/installation-of-r-4-2-on-ubuntu-22-04-1-lts-and-tips-for-spatial-packages/\nhttps://www.digitalocean.com/community/tutorials/how-to-install-r-on-ubuntu-22-04\nhttps://computingforgeeks.com/how-to-install-r-and-rstudio-on-ubuntu-debian-mint/"
   },
   {
     "objectID": "linux_install.html#quarto",
     "href": "linux_install.html#quarto",
     "title": "3  Installing Linux",
-    "section": "3.2 Quarto",
-    "text": "3.2 Quarto\nhttps://docs.posit.co/resources/install-quarto/\nhttps://www.cyberciti.biz/faq/how-to-install-curl-command-on-a-ubuntu-linux/"
+    "section": "3.5 Quarto",
+    "text": "3.5 Quarto\nhttps://docs.posit.co/resources/install-quarto/\nhttps://www.cyberciti.biz/faq/how-to-install-curl-command-on-a-ubuntu-linux/"
+  },
+  {
+    "objectID": "linux_install.html#zotero",
+    "href": "linux_install.html#zotero",
+    "title": "3  Installing Linux",
+    "section": "4.1 Zotero",
+    "text": "4.1 Zotero\n\nsudo apt update\nsudo apt upgrade\nsudo apt snap install zotero-snap\n\nAfter zotero is installed, you can synch to the Addiction Research Lab library. Go to menu edit:preferences:synch. Username is jjccurtin. Ask John or Susan for the password."
+  },
+  {
+    "objectID": "linux_install.html#slack",
+    "href": "linux_install.html#slack",
+    "title": "3  Installing Linux",
+    "section": "4.2 Slack",
+    "text": "4.2 Slack\nSlack is easily installed from the Ubuntu Software Center. Open up the software center. Search for Slack. Install. Done."
+  },
+  {
+    "objectID": "linux_install.html#mount-shares",
+    "href": "linux_install.html#mount-shares",
+    "title": "3  Installing Linux",
+    "section": "4.3 Mount Shares",
+    "text": "4.3 Mount Shares\n\nsudo apt-get install cifs-utils\ncreate directories within ~/mnt/ for each share.\nsave credentials file for synology (.synology_credentials) or research drive (.researchdrive_credentials) at /root/. These should include username=, password= (and for research drive, domain=ad.wisc.edu)\ncreate an alias for the command for each share to mount. Get it from John"
+  },
+  {
+    "objectID": "linux_install.html#quarto-1",
+    "href": "linux_install.html#quarto-1",
+    "title": "3  Installing Linux",
+    "section": "4.4 Quarto",
+    "text": "4.4 Quarto\n\nDownload latest version of Quarto\ninstall using sudo apt install &lt;package path&gt; or sudo dpkg -i &lt;package path&gt;"
   },
   {
     "objectID": "linux_use.html#general-short-cuts",
@@ -145,26 +201,5 @@
     "title": "4  Using Linux",
     "section": "4.4 Common Commands",
     "text": "4.4 Common Commands\n\nls -lSr to list files sorted by size (with larger sizes later: r). Useful to find the non-zero error files. Can have issues when applied to large numbers of files (&gt; 60K). See use of find and xargs below if needed.\nmv to move files between directories. can use .. as target to move file to home directory. e.g., mv results_* ..\n&gt; redirect standard output to a new file (creates file if does not exist; writes over file contents if it does exist). &gt;&gt; redirect standard output to append to a file\nrm to remove file(s). rm -r to remove non-empty directory\nnano is used to edit text files. For example nano job_nums.csv to edit job_nums.csv for jobs to re-run due to errors\ncat filename_* &gt; all_files.csv to concatenate all files into one file.\nchmod +x get_missing_jobs.sh to change permissions on get_missing_jobs.sh to run it. ./get_missing_jobs.sh to run it.\nfind -maxdepth 1 -name \"results_*.csv\" | wc -l will find results_*.csv in local folder (maxdepth 1) and pipe them into a word count that counts lines (-l)\ncat job_nums.csv | wc -l reads contents of job_nums.csv and pipes to a word count that counts lines (-l)\nfind -maxdepth 1 -name \"results_*.csv\" | ls -lSr gets around the too many arguments issue. Find searches recursively by default (override with maxdepth if needed), whereas ls searches just . or the specified directory (e.g., ./results)\nSee tutorial on awk to understand its use for simple programming. See a tutorial on the use of xargs.\nprintf to send formatted text to standard output or to a file\n\nprintf \"John is %s\\n\" \"nice\"\nprintf \"John is %d years old\" 54\nprintf \"hello world\\nIt is John!\" &gt; out.txt)\n\nman [command] to open manual for command\nsdiff file1 file2 - Compare two files side by side.\nvimdiff file1 file2 - Highlight the differences between two files in the vim editor.\ntar [-] c|x|t f tarfile [pattern] - Create, extract or list contents of a tar archive using pattern, if supplied.\ndu -h - Display sizes in human readable format. For example, 1.2M, 3.7G, etc.\n`gzip file - Compress file. The resulting compressed file is named file.gz.\ngunzip file - Uncompress files."
-  },
-  {
-    "objectID": "linux_use.html#running-apps-from-terminal",
-    "href": "linux_use.html#running-apps-from-terminal",
-    "title": "4  Using Linux",
-    "section": "4.4 Running Apps from Terminal",
-    "text": "4.4 Running Apps from Terminal\n\n4.4.1 Quarto\n\n\n4.4.2 Markdown\nYou will need to install pandoc to render markdown to pdf: sudo apt-get install pandoc texlive-latex-base texlive-fonts-recommended texlive-extra-utils texlive-latex-extra.\nUse pandoc [infile.md] -o [outfile.pdf] to render infile.md to outfile.pdf.\nNote also that the ReText app can render markdown to pdf (and html) as well if you don’t want to use the terminal.\n\n\n4.4.3 Firefox\nYou can view an html file in firefox from terminal using firefox [filename]"
-  },
-  {
-    "objectID": "git.html#git-command-line-for-windows",
-    "href": "git.html#git-command-line-for-windows",
-    "title": "2  Git",
-    "section": "2.5 Git Command Line for Windows",
-    "text": "2.5 Git Command Line for Windows\nThe recommended terminal for using the Git command line on Windows is Git Bash.\nFor full documentation of using the command line you can read the Git Pro Book.\nBelow is a list of common Git commands for reference."
-  },
-  {
-    "objectID": "git.html#aliases",
-    "href": "git.html#aliases",
-    "title": "2  Git",
-    "section": "2.2 Aliases",
-    "text": "2.2 Aliases\nGit bash operates like and other ssh shell. You can customize your start-up preferences in the .bash_profile file!\n\nFirst you will need to create a blank or modify an existing profile file using nano .bash_profile\nInside this file add your different aliases (i.e., shortcuts)\n\n\n\nalias github=\"cd '~/My Documents/github'\"\nalias chtc=\"ssh username@submit-1.chtc.wisc.edu\"\n\nNote you can also define functions in this file.\n\nYou can now reload the profile: ./.bash_profile"
   }
 ]

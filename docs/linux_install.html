@@ -159,9 +159,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#r" id="toc-r" class="nav-link active" data-scroll-target="#r"><span class="header-section-number">3.1</span> R</a></li>
-  <li><a href="#quarto" id="toc-quarto" class="nav-link" data-scroll-target="#quarto"><span class="header-section-number">3.2</span> Quarto</a></li>
-  <li><a href="#ssh-keys-for-github-chtc-etc" id="toc-ssh-keys-for-github-chtc-etc" class="nav-link" data-scroll-target="#ssh-keys-for-github-chtc-etc"><span class="header-section-number">4</span> SSH Keys for github, chtc, etc</a></li>
+  <li><a href="#install-os" id="toc-install-os" class="nav-link active" data-scroll-target="#install-os"><span class="header-section-number">3.1</span> Install OS</a></li>
+  <li><a href="#install-key-support-apps" id="toc-install-key-support-apps" class="nav-link" data-scroll-target="#install-key-support-apps"><span class="header-section-number">3.2</span> Install key support apps</a></li>
+  <li><a href="#create-and-edit-aliases" id="toc-create-and-edit-aliases" class="nav-link" data-scroll-target="#create-and-edit-aliases"><span class="header-section-number">3.3</span> Create and edit aliases</a></li>
+  <li><a href="#r" id="toc-r" class="nav-link" data-scroll-target="#r"><span class="header-section-number">3.4</span> R</a></li>
+  <li><a href="#quarto" id="toc-quarto" class="nav-link" data-scroll-target="#quarto"><span class="header-section-number">3.5</span> Quarto</a></li>
+  <li><a href="#ssh-keys-for-github-chtc-etc" id="toc-ssh-keys-for-github-chtc-etc" class="nav-link" data-scroll-target="#ssh-keys-for-github-chtc-etc"><span class="header-section-number">4</span> SSH Keys for github, chtc, etc</a>
+  <ul class="collapse">
+  <li><a href="#zotero" id="toc-zotero" class="nav-link" data-scroll-target="#zotero"><span class="header-section-number">4.1</span> Zotero</a></li>
+  <li><a href="#slack" id="toc-slack" class="nav-link" data-scroll-target="#slack"><span class="header-section-number">4.2</span> Slack</a></li>
+  <li><a href="#mount-shares" id="toc-mount-shares" class="nav-link" data-scroll-target="#mount-shares"><span class="header-section-number">4.3</span> Mount Shares</a></li>
+  <li><a href="#quarto-1" id="toc-quarto-1" class="nav-link" data-scroll-target="#quarto-1"><span class="header-section-number">4.4</span> Quarto</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jjcurtin/docs_arc/edit/main/linux_install.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
@@ -185,13 +194,28 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="r" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="r"><span class="header-section-number">3.1</span> R</h2>
+<section id="install-os" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="install-os"><span class="header-section-number">3.1</span> Install OS</h2>
+<p>https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview</p>
+</section>
+<section id="install-key-support-apps" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="install-key-support-apps"><span class="header-section-number">3.2</span> Install key support apps</h2>
+<p><code>sudo apt install git</code> <code>sudo apt install vim</code></p>
+</section>
+<section id="create-and-edit-aliases" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="create-and-edit-aliases"><span class="header-section-number">3.3</span> Create and edit aliases</h2>
+</section>
+<section id="r" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="r"><span class="header-section-number">3.4</span> R</h2>
+<p>sudo apt install -y –no-install-recommends software-properties-common dirmngr wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc sudo add-apt-repository “deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/” sudo apt install -y r-base r-base-core r-recommended r-base-dev sudo apt install libcurl4-openssl-dev sudo apt install libfontconfig1-dev sudo apt install libxml2-dev sudo apt install libharfbuzz-dev libfribidi-dev</p>
+<p><code>wget https://download1.rstudio.org/electron/jammy/amd64/rstudio-2023.03.0-386-amd64.deb</code> <code>sudo apt install -f ./rstudio-2023.03.0-386-amd64.deb</code></p>
+<p>install.packages(“devtools”) library(devtools) install.packages(“tidyverse”)</p>
 <p>https://www.r-bloggers.com/2022/08/installation-of-r-4-2-on-ubuntu-22-04-1-lts-and-tips-for-spatial-packages/</p>
 <p>https://www.digitalocean.com/community/tutorials/how-to-install-r-on-ubuntu-22-04</p>
+<p>https://computingforgeeks.com/how-to-install-r-and-rstudio-on-ubuntu-debian-mint/</p>
 </section>
-<section id="quarto" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="quarto"><span class="header-section-number">3.2</span> Quarto</h2>
+<section id="quarto" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="quarto"><span class="header-section-number">3.5</span> Quarto</h2>
 <p>https://docs.posit.co/resources/install-quarto/</p>
 <p>https://www.cyberciti.biz/faq/how-to-install-curl-command-on-a-ubuntu-linux/</p>
 </section>
@@ -200,8 +224,37 @@ ul.task-list li input[type="checkbox"] {
 <p>https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent</p>
 <p>https://github.com/settings/keys</p>
 <p>https://www.beyondtrust.com/blog/entry/ssh-key-management-overview-6-best-practices</p>
+<section id="zotero" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="zotero"><span class="header-section-number">4.1</span> Zotero</h2>
+<ul>
+<li><code>sudo apt update</code></li>
+<li><code>sudo apt upgrade</code></li>
+<li><code>sudo apt snap install zotero-snap</code></li>
+</ul>
+<p>After zotero is installed, you can synch to the Addiction Research Lab library. Go to menu <code>edit:preferences:synch</code>. Username is jjccurtin. Ask John or Susan for the password.</p>
+</section>
+<section id="slack" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="slack"><span class="header-section-number">4.2</span> Slack</h2>
+<p>Slack is easily installed from the Ubuntu Software Center. Open up the software center. Search for Slack. Install. Done.</p>
+</section>
+<section id="mount-shares" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="mount-shares"><span class="header-section-number">4.3</span> Mount Shares</h2>
+<ul>
+<li><p><code>sudo apt-get install cifs-utils</code></p></li>
+<li><p>create directories within ~/mnt/ for each share.</p></li>
+<li><p>save credentials file for synology (.synology_credentials) or research drive (.researchdrive_credentials) at /root/. These should include username=, password= (and for research drive, domain=ad.wisc.edu)</p></li>
+<li><p>create an alias for the command for each share to mount. Get it from John</p></li>
+</ul>
+</section>
+<section id="quarto-1" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="quarto-1"><span class="header-section-number">4.4</span> Quarto</h2>
+<ul>
+<li><p>Download latest version of <a href="https://quarto.org/docs/get-started/">Quarto</a></p></li>
+<li><p>install using <code>sudo apt install &lt;package path&gt;</code> or <code>sudo dpkg -i &lt;package path&gt;</code></p></li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
