@@ -208,5 +208,19 @@
     "title": "4  Using Linux",
     "section": "4.5 Kill a frozen app",
     "text": "4.5 Kill a frozen app\nPress Alt + F2 . Type xkill and hit Enter. The cursor will turn into a small ‘x’. Left click any window to kill the process associated with that window."
+  },
+  {
+    "objectID": "linux_install.html#sound-mixer-settings",
+    "href": "linux_install.html#sound-mixer-settings",
+    "title": "3  Installing Linux",
+    "section": "4.6 Sound mixer settings",
+    "text": "4.6 Sound mixer settings\nalsamixer from terminal"
+  },
+  {
+    "objectID": "linux_install.html#vnc-for-remote-access",
+    "href": "linux_install.html#vnc-for-remote-access",
+    "title": "3  Installing Linux",
+    "section": "4.7 VNC for Remote Access",
+    "text": "4.7 VNC for Remote Access\nhttps://kb.wisc.edu/biochem/it/page.php?id=127360"
   }
 ]
