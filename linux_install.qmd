@@ -110,5 +110,11 @@ To use this key with Github
 
 3. Click New SSH Key, give it a title, and paste the public key info into Key box.
 
+## Sound mixer settings
 
+alsamixer from terminal
+
+## VNC for Remote Access
+
+https://kb.wisc.edu/biochem/it/page.php?id=127360
 
