@@ -119,6 +119,4 @@ alsamixer from terminal
 https://kb.wisc.edu/biochem/it/page.php?id=127360
 
 
-## Mounting shared drives
-https://kb.wisc.edu/researchdata/page.php?id=95148
 
