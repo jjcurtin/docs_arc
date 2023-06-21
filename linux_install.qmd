@@ -120,3 +120,7 @@ https://kb.wisc.edu/biochem/it/page.php?id=127360
 
 
 
+## SSH to office computer
+https://linuxhint.com/enable-use-ssh-ubuntu/
+
+use username for hostname
