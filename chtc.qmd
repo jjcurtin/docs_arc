@@ -61,10 +61,34 @@ On windows, use [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/lates
 
 -   run `condor_q` to monitor progress on your jobs.
 -   run `condor_q -hold` to explore the reason for held jobs. If necessary, you may need to change the requested memory or disk space to get those jobs to complete. See below for more detail. `condor_q -af HoldReason` will provide more detail on why a job is held if needed.
+-   run `condor_q -run` to explore running jobs
+-   run `condor_q -idle` to explore idle jobs
+-   run `condor_q -analyze` or `condor_q JobId -better-analyze` to determine why certain jobs are not running by performing an analysis on a per machine basis for each machine in the pool. The latter command produces more thorough analysis of complex requirements and shows the values of relevant job ClassAd attributes. 
 -   `condor_release $USER` will release all held jobs for the user. You can substitute batch or job number to release a subset of held jobs if needed
 -   `condor_rm $USER` will remove/cancel all jobs for the user.
 -   You can review the error files associated with the batch of jobs to detect and understand errors as well. Sort the files so that the files with errors (i.e., file switch file size > 0) display last by typing `ls error/error* -lSr` If there are MANY (> 60K) files, you may need to pipe the file names into `ls` by typing `find error -name "error_*" | ls -lSr`. You can view the contents of a non-zero error file using nano. e.g., `nano error/error_1.err`
 - Flock/Glide jobs will sometimes not exit properly.  These jobs are put on hold (in addition to jobs with insufficient memory/disk space).  You can simply release these jobs and try again:  `condor_release $USER`.  Of course, you should first address any problems with memory or disk usage that resulted in holds.
+
+### Removing a subset of jobs
+It is possible to remove a subset of jobs using `condor_rm` with a constraint.
+It sounds like your jobs are in order based on their clusterID. To remove these
+jobs individually, it is possible to use `condor_rm JobID`. To remove a series
+of jobs, you can use:
+
+condor_rm -constraint 'ClusterId > 1 && ClusterId < 5'
+
+ClusterID refers to the batch of jobs submitted using one submit file. After re-reading your email, it sounds like you want to remove a subset of jobs that all fall under one
+ClusterID. To do this, you can use something like: condor_rm -constraint
+'ProcId > 1 && ProcId < 5 && ClusterID == 15307921' When typing condor_q,
+ClusterID is equivalent to the Batch_Name value. To remove the subset of jobs
+you want to remove, you will want to look at the values after the period in the
+Job_IDs column. The values after the period are the ProcessID (ProcID). For
+example, if I submitted a batch of jobs and it was assigned a cluster/batch
+name of 15307921 and I want to remove jobs 15307921.1, 15307921.2, and
+15307921.3, I could use: 
+condor_rm -const 'ProcId > 1 && ProcId < 5 && ClusterID == 15307921
+
+
 
 ### Editing Running Jobs
 
