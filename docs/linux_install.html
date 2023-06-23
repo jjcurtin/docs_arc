@@ -89,7 +89,9 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Documentation for ARC</a> 
+      <a href="./">
+      Documentation for ARC
+      </a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/jjcurtin/docs_arc" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
@@ -173,6 +175,11 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#creating-ssh-passkeys" id="toc-creating-ssh-passkeys" class="nav-link" data-scroll-target="#creating-ssh-passkeys"><span class="header-section-number">4.5</span> Creating SSH passkeys</a></li>
   <li><a href="#sound-mixer-settings" id="toc-sound-mixer-settings" class="nav-link" data-scroll-target="#sound-mixer-settings"><span class="header-section-number">4.6</span> Sound mixer settings</a></li>
   <li><a href="#vnc-for-remote-access" id="toc-vnc-for-remote-access" class="nav-link" data-scroll-target="#vnc-for-remote-access"><span class="header-section-number">4.7</span> VNC for Remote Access</a></li>
+  <li><a href="#ssh-to-office-computer" id="toc-ssh-to-office-computer" class="nav-link" data-scroll-target="#ssh-to-office-computer"><span class="header-section-number">4.8</span> SSH to office computer</a>
+  <ul class="collapse">
+  <li><a href="#x11-forwarding" id="toc-x11-forwarding" class="nav-link" data-scroll-target="#x11-forwarding"><span class="header-section-number">4.8.1</span> X11 forwarding</a></li>
+  </ul></li>
+  <li><a href="#customize-cli-prompt" id="toc-customize-cli-prompt" class="nav-link" data-scroll-target="#customize-cli-prompt"><span class="header-section-number">4.9</span> Customize CLI prompt</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jjcurtin/docs_arc/edit/main/linux_install.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
@@ -285,7 +292,23 @@ ul.task-list li input[type="checkbox"] {
 <section id="vnc-for-remote-access" class="level2" data-number="4.7">
 <h2 data-number="4.7" class="anchored" data-anchor-id="vnc-for-remote-access"><span class="header-section-number">4.7</span> VNC for Remote Access</h2>
 <p>https://kb.wisc.edu/biochem/it/page.php?id=127360</p>
-
+</section>
+<section id="ssh-to-office-computer" class="level2" data-number="4.8">
+<h2 data-number="4.8" class="anchored" data-anchor-id="ssh-to-office-computer"><span class="header-section-number">4.8</span> SSH to office computer</h2>
+<p>https://linuxhint.com/enable-use-ssh-ubuntu/</p>
+<p>use username for hostname</p>
+<section id="x11-forwarding" class="level3" data-number="4.8.1">
+<h3 data-number="4.8.1" class="anchored" data-anchor-id="x11-forwarding"><span class="header-section-number">4.8.1</span> X11 forwarding</h3>
+<p>X11 forwarding is used in SSH to display GUI for app (e.g., rstudio) on remote computer (e.g., office computer). To enable X11 forwarding, need to edit /etc/ssh/sshd_config on remote computer to indicate: - <code>X11Forwarding yes</code></p>
+<p><em>May</em> also want to set - <code>X11DisplayOffset 10</code> - <code>X11UseLocalhost yes</code> - <code>TCPKeepAlive yes</code></p>
+<p><em>May</em> need to install xauth on remote computer.</p>
+<p>Need to use -X flag with ssh from local computer. Can then open GUI for remote app (e.g.. rstudio)</p>
+</section>
+</section>
+<section id="customize-cli-prompt" class="level2" data-number="4.9">
+<h2 data-number="4.9" class="anchored" data-anchor-id="customize-cli-prompt"><span class="header-section-number">4.9</span> Customize CLI prompt</h2>
+<p>This will set up a green prompt with relative path for current directory.</p>
+<p>PS1=“$ <span class="hidden" data-render-id="quarto-int-navbar-title">Documentation for ARC</span> <span class="hidden" data-render-id="quarto-int-next"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Using Linux</span></span> <span class="hidden" data-render-id="quarto-int-prev"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Git</span></span> <span class="hidden" data-render-id="quarto-int-sidebar:/index.html">Welcome</span> <span class="hidden" data-render-id="quarto-int-sidebar:/chtc.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">CHTC</span></span> <span class="hidden" data-render-id="quarto-int-sidebar:/git.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Git</span></span> <span class="hidden" data-render-id="quarto-int-sidebar:/linux_install.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Installing Linux</span></span> <span class="hidden" data-render-id="quarto-int-sidebar:/linux_use.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Using Linux</span></span> <span class="hidden" data-render-id="quarto-breadcrumbs-cdcf36773ec266e2eb2fff3eaa951c2a"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Installing Linux</span></span> :::</p>
 
 </section>
 </section>

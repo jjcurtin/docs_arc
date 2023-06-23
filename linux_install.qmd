@@ -124,3 +124,25 @@ https://kb.wisc.edu/biochem/it/page.php?id=127360
 https://linuxhint.com/enable-use-ssh-ubuntu/
 
 use username for hostname
+
+### X11 forwarding
+X11 forwarding is used in SSH to display GUI for app (e.g., rstudio) on remote computer (e.g., office computer). To enable X11 forwarding, need to edit /etc/ssh/sshd_config on remote computer to indicate:
+- `X11Forwarding yes`
+
+*May* also want to set
+- `X11DisplayOffset 10`
+- `X11UseLocalhost yes`
+- `TCPKeepAlive yes`
+
+*May* need to install xauth on remote computer.
+
+Need to use -X flag with ssh from local computer.  Can then open GUI for remote app (e.g.. rstudio)
+
+
+
+## Customize CLI prompt
+
+This will set up a green prompt with relative path for current directory.
+
+PS1="\e[0;32;1m[\w]\$ \e[m"
+
