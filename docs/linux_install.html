@@ -89,7 +89,9 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Documentation for ARC</a> 
+      <a href="./">
+      Documentation for ARC
+      </a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/jjcurtin/docs_arc" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
@@ -170,6 +172,14 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#slack" id="toc-slack" class="nav-link" data-scroll-target="#slack"><span class="header-section-number">4.2</span> Slack</a></li>
   <li><a href="#mount-shares" id="toc-mount-shares" class="nav-link" data-scroll-target="#mount-shares"><span class="header-section-number">4.3</span> Mount Shares</a></li>
   <li><a href="#quarto-1" id="toc-quarto-1" class="nav-link" data-scroll-target="#quarto-1"><span class="header-section-number">4.4</span> Quarto</a></li>
+  <li><a href="#creating-ssh-passkeys" id="toc-creating-ssh-passkeys" class="nav-link" data-scroll-target="#creating-ssh-passkeys"><span class="header-section-number">4.5</span> Creating SSH passkeys</a></li>
+  <li><a href="#sound-mixer-settings" id="toc-sound-mixer-settings" class="nav-link" data-scroll-target="#sound-mixer-settings"><span class="header-section-number">4.6</span> Sound mixer settings</a></li>
+  <li><a href="#vnc-for-remote-access" id="toc-vnc-for-remote-access" class="nav-link" data-scroll-target="#vnc-for-remote-access"><span class="header-section-number">4.7</span> VNC for Remote Access</a></li>
+  <li><a href="#ssh-to-office-computer" id="toc-ssh-to-office-computer" class="nav-link" data-scroll-target="#ssh-to-office-computer"><span class="header-section-number">4.8</span> SSH to office computer</a>
+  <ul class="collapse">
+  <li><a href="#x11-forwarding" id="toc-x11-forwarding" class="nav-link" data-scroll-target="#x11-forwarding"><span class="header-section-number">4.8.1</span> X11 forwarding</a></li>
+  </ul></li>
+  <li><a href="#customize-cli-prompt" id="toc-customize-cli-prompt" class="nav-link" data-scroll-target="#customize-cli-prompt"><span class="header-section-number">4.9</span> Customize CLI prompt</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jjcurtin/docs_arc/edit/main/linux_install.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
@@ -252,7 +262,53 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Download latest version of <a href="https://quarto.org/docs/get-started/">Quarto</a></p></li>
 <li><p>install using <code>sudo apt install &lt;package path&gt;</code> or <code>sudo dpkg -i &lt;package path&gt;</code></p></li>
 </ul>
-
+</section>
+<section id="creating-ssh-passkeys" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="creating-ssh-passkeys"><span class="header-section-number">4.5</span> Creating SSH passkeys</h2>
+<p>You can create an <a href="https://www.linode.com/docs/guides/use-public-key-authentication-with-ssh/">ssh key</a> to ssh without the need to provide username and password. In our lab, these are useful to ssh to CHTC or for git shh to GitHub.</p>
+<p>To create the key</p>
+<ol type="1">
+<li><p>Open a terminal and type <code>ssh-keygen -t ed25519</code>.</p></li>
+<li><p>Accept the defaults by repeatedly pressing enter and this will create a key with defauult names .ssh/id_ed25519, and .ssh/id_ed25519.pub.</p></li>
+</ol>
+<p>To use this key with CHTC</p>
+<ol type="1">
+<li><p>Open the public key file (id_25519.pub) and copy the content.</p></li>
+<li><p>SSH to CTHC</p></li>
+<li><p>Create or edit .ssh/authorized_keys</p></li>
+<li><p>Paste your public key info at the end of this file.</p></li>
+</ol>
+<p>To use this key with Github</p>
+<ol type="1">
+<li><p>Go to your settings (point at your profile picture and select settings.</p></li>
+<li><p>Select SSH and GPG Keys</p></li>
+<li><p>Click New SSH Key, give it a title, and paste the public key info into Key box.</p></li>
+</ol>
+</section>
+<section id="sound-mixer-settings" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="sound-mixer-settings"><span class="header-section-number">4.6</span> Sound mixer settings</h2>
+<p>alsamixer from terminal</p>
+</section>
+<section id="vnc-for-remote-access" class="level2" data-number="4.7">
+<h2 data-number="4.7" class="anchored" data-anchor-id="vnc-for-remote-access"><span class="header-section-number">4.7</span> VNC for Remote Access</h2>
+<p>https://kb.wisc.edu/biochem/it/page.php?id=127360</p>
+</section>
+<section id="ssh-to-office-computer" class="level2" data-number="4.8">
+<h2 data-number="4.8" class="anchored" data-anchor-id="ssh-to-office-computer"><span class="header-section-number">4.8</span> SSH to office computer</h2>
+<p>https://linuxhint.com/enable-use-ssh-ubuntu/</p>
+<p>use username for hostname</p>
+<section id="x11-forwarding" class="level3" data-number="4.8.1">
+<h3 data-number="4.8.1" class="anchored" data-anchor-id="x11-forwarding"><span class="header-section-number">4.8.1</span> X11 forwarding</h3>
+<p>X11 forwarding is used in SSH to display GUI for app (e.g., rstudio) on remote computer (e.g., office computer). To enable X11 forwarding, need to edit /etc/ssh/sshd_config on remote computer to indicate: - <code>X11Forwarding yes</code></p>
+<p><em>May</em> also want to set - <code>X11DisplayOffset 10</code> - <code>X11UseLocalhost yes</code> - <code>TCPKeepAlive yes</code></p>
+<p><em>May</em> need to install xauth on remote computer.</p>
+<p>Need to use -X flag with ssh from local computer. Can then open GUI for remote app (e.g.. rstudio)</p>
+</section>
+</section>
+<section id="customize-cli-prompt" class="level2" data-number="4.9">
+<h2 data-number="4.9" class="anchored" data-anchor-id="customize-cli-prompt"><span class="header-section-number">4.9</span> Customize CLI prompt</h2>
+<p>This will set up a green prompt with relative path for current directory.</p>
+<p>PS1=“$ <span class="hidden" data-render-id="quarto-int-navbar-title">Documentation for ARC</span> <span class="hidden" data-render-id="quarto-int-next"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Using Linux</span></span> <span class="hidden" data-render-id="quarto-int-prev"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Git</span></span> <span class="hidden" data-render-id="quarto-int-sidebar:/index.html">Welcome</span> <span class="hidden" data-render-id="quarto-int-sidebar:/chtc.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">CHTC</span></span> <span class="hidden" data-render-id="quarto-int-sidebar:/git.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Git</span></span> <span class="hidden" data-render-id="quarto-int-sidebar:/linux_install.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Installing Linux</span></span> <span class="hidden" data-render-id="quarto-int-sidebar:/linux_use.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Using Linux</span></span> <span class="hidden" data-render-id="quarto-breadcrumbs-cdcf36773ec266e2eb2fff3eaa951c2a"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Installing Linux</span></span> :::</p>
 
 </section>
 </section>

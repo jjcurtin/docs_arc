@@ -13,6 +13,7 @@ Note: These commands will only work if you are in a git repo. You can navigate t
 - `git commit -am "commit message"` will add all files and commit them in one step.  However, 
 - `git push` pushes your commits to github
 - `git pull` pulls updates from github (it is good practice to pull before pushing)    
+- `git mv <oldname> <newname>` to rename and/or move a file without losing its link to its earlier history.  [Read more](https://docs.github.com/en/repositories/working-with-files/managing-files/renaming-a-file)
 
 Note: with the git bash terminal you shouldn't have to re-enter your github username and password once it is set up. I don't remember if it automatically prompts you to do this, but if you find you are needing to enter it everytime you push changes there is a work around for that!
 
@@ -49,25 +50,6 @@ Git bash operates like and other ssh shell. You can customize your start-up pref
 Note you can also define functions in this file.  
 
 3. You can now reload the profile: `./.bash_profile`
-
-
-## Creating a password key for use with CHTC
-I highly recommend creating an [ssh key](https://www.linode.com/docs/guides/use-public-key-authentication-with-ssh/) for logging in to CHTC from your terminal. This eliminates the need to enter your username and password.   
-
-Note: It looks like [CHTC](https://chtc.cs.wisc.edu/uw-research-computing/configure-ssh) also now has a new way for a time-limited bypass of credentials and duo push but I am less familiar with it.  
-
-
-Below are the steps for using an ssh key:      
-
-1. open bash terminal and type `ssh-keygen -t ed25519`   
-
-2. press enter to save key pair to default file name and enter two more times to keep passphrase blank    
-
-3. open up public key file (replacing kpaquette2 with your username!) `cat /c/Users/kpaquette2/.ssh/id_ed25519.pub` and copy the whole key (e.g., mine starts with ssh-ed25519 and ends with kpaquette2@HiddenLayer)   
-
-4. log into chtc   
-
-5. create a new file `nano .ssh/authorized_keys` and paste this public key in the file and save   
 
 
 ## Other notes

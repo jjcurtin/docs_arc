@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.361">
+<meta name="generator" content="quarto-1.3.340">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -57,8 +57,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-submit-button-title": "Submit"
   }
 }</script>
 
@@ -77,7 +76,7 @@ ul.task-list li input[type="checkbox"] {
       <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chtc.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">CHTC</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -169,8 +168,9 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#testing-jobs" id="toc-testing-jobs" class="nav-link" data-scroll-target="#testing-jobs"><span class="header-section-number">1.5.2</span> Testing Jobs</a></li>
   <li><a href="#running-jobs" id="toc-running-jobs" class="nav-link" data-scroll-target="#running-jobs"><span class="header-section-number">1.5.3</span> Running jobs</a></li>
   <li><a href="#monitoring-running-jobs" id="toc-monitoring-running-jobs" class="nav-link" data-scroll-target="#monitoring-running-jobs"><span class="header-section-number">1.5.4</span> Monitoring Running Jobs</a></li>
-  <li><a href="#editing-running-jobs" id="toc-editing-running-jobs" class="nav-link" data-scroll-target="#editing-running-jobs"><span class="header-section-number">1.5.5</span> Editing Running Jobs</a></li>
-  <li><a href="#transferring-jobs-back-to-our-server" id="toc-transferring-jobs-back-to-our-server" class="nav-link" data-scroll-target="#transferring-jobs-back-to-our-server"><span class="header-section-number">1.5.6</span> Transferring Jobs back to Our Server</a></li>
+  <li><a href="#removing-a-subset-of-jobs" id="toc-removing-a-subset-of-jobs" class="nav-link" data-scroll-target="#removing-a-subset-of-jobs"><span class="header-section-number">1.5.5</span> Removing a subset of jobs</a></li>
+  <li><a href="#editing-running-jobs" id="toc-editing-running-jobs" class="nav-link" data-scroll-target="#editing-running-jobs"><span class="header-section-number">1.5.6</span> Editing Running Jobs</a></li>
+  <li><a href="#transferring-jobs-back-to-our-server" id="toc-transferring-jobs-back-to-our-server" class="nav-link" data-scroll-target="#transferring-jobs-back-to-our-server"><span class="header-section-number">1.5.7</span> Transferring Jobs back to Our Server</a></li>
   </ul></li>
   <li><a href="#using-and-creating-containers-for-r-and-packages" id="toc-using-and-creating-containers-for-r-and-packages" class="nav-link" data-scroll-target="#using-and-creating-containers-for-r-and-packages"><span class="header-section-number">1.6</span> Using and Creating Containers for R and Packages</a>
   <ul class="collapse">
@@ -273,14 +273,23 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>run <code>condor_q</code> to monitor progress on your jobs.</li>
 <li>run <code>condor_q -hold</code> to explore the reason for held jobs. If necessary, you may need to change the requested memory or disk space to get those jobs to complete. See below for more detail. <code>condor_q -af HoldReason</code> will provide more detail on why a job is held if needed.</li>
+<li>run <code>condor_q -run</code> to explore running jobs</li>
+<li>run <code>condor_q -idle</code> to explore idle jobs</li>
+<li>run <code>condor_q -analyze</code> or <code>condor_q JobId -better-analyze</code> to determine why certain jobs are not running by performing an analysis on a per machine basis for each machine in the pool. The latter command produces more thorough analysis of complex requirements and shows the values of relevant job ClassAd attributes.</li>
 <li><code>condor_release $USER</code> will release all held jobs for the user. You can substitute batch or job number to release a subset of held jobs if needed</li>
 <li><code>condor_rm $USER</code> will remove/cancel all jobs for the user.</li>
 <li>You can review the error files associated with the batch of jobs to detect and understand errors as well. Sort the files so that the files with errors (i.e., file switch file size &gt; 0) display last by typing <code>ls error/error* -lSr</code> If there are MANY (&gt; 60K) files, you may need to pipe the file names into <code>ls</code> by typing <code>find error -name "error_*" | ls -lSr</code>. You can view the contents of a non-zero error file using nano. e.g., <code>nano error/error_1.err</code></li>
 <li>Flock/Glide jobs will sometimes not exit properly. These jobs are put on hold (in addition to jobs with insufficient memory/disk space). You can simply release these jobs and try again: <code>condor_release $USER</code>. Of course, you should first address any problems with memory or disk usage that resulted in holds.</li>
 </ul>
 </section>
-<section id="editing-running-jobs" class="level3" data-number="1.5.5">
-<h3 data-number="1.5.5" class="anchored" data-anchor-id="editing-running-jobs"><span class="header-section-number">1.5.5</span> Editing Running Jobs</h3>
+<section id="removing-a-subset-of-jobs" class="level3" data-number="1.5.5">
+<h3 data-number="1.5.5" class="anchored" data-anchor-id="removing-a-subset-of-jobs"><span class="header-section-number">1.5.5</span> Removing a subset of jobs</h3>
+<p>It is possible to remove a subset of jobs using <code>condor_rm</code> with a constraint. It sounds like your jobs are in order based on their clusterID. To remove these jobs individually, it is possible to use <code>condor_rm JobID</code>. To remove a series of jobs, you can use:</p>
+<p>condor_rm -constraint ‘ClusterId &gt; 1 &amp;&amp; ClusterId &lt; 5’</p>
+<p>ClusterID refers to the batch of jobs submitted using one submit file. After re-reading your email, it sounds like you want to remove a subset of jobs that all fall under one ClusterID. To do this, you can use something like: condor_rm -constraint ‘ProcId &gt; 1 &amp;&amp; ProcId &lt; 5 &amp;&amp; ClusterID == 15307921’ When typing condor_q, ClusterID is equivalent to the Batch_Name value. To remove the subset of jobs you want to remove, you will want to look at the values after the period in the Job_IDs column. The values after the period are the ProcessID (ProcID). For example, if I submitted a batch of jobs and it was assigned a cluster/batch name of 15307921 and I want to remove jobs 15307921.1, 15307921.2, and 15307921.3, I could use: condor_rm -const ’ProcId &gt; 1 &amp;&amp; ProcId &lt; 5 &amp;&amp; ClusterID == 15307921</p>
+</section>
+<section id="editing-running-jobs" class="level3" data-number="1.5.6">
+<h3 data-number="1.5.6" class="anchored" data-anchor-id="editing-running-jobs"><span class="header-section-number">1.5.6</span> Editing Running Jobs</h3>
 <p>At times some (or all) jobs may be held if they require more memory or disk space than was requested in sub.sub. You can update these parameters and then release the held jobs.</p>
 <ul>
 <li>To update memory, type <code>condor_qedit [batch_name or job_id] RequestMemory [memory]</code>. You can see the batch_name and job_ids by typing <code>condor_q -hold</code> Memory is quantified in MB.<br>
@@ -291,10 +300,10 @@ ul.task-list li input[type="checkbox"] {
 <li>If you expect that you will need the specified higher memory or disk space for the currently running jobs (not yet held), you can hold them by typing <code>condor_hold $USER</code> and then release them with <code>condor_release $USER</code> such that they will now find machine with the higher levels for these parameters.</li>
 </ul>
 </section>
-<section id="transferring-jobs-back-to-our-server" class="level3" data-number="1.5.6">
-<h3 data-number="1.5.6" class="anchored" data-anchor-id="transferring-jobs-back-to-our-server"><span class="header-section-number">1.5.6</span> Transferring Jobs back to Our Server</h3>
+<section id="transferring-jobs-back-to-our-server" class="level3" data-number="1.5.7">
+<h3 data-number="1.5.7" class="anchored" data-anchor-id="transferring-jobs-back-to-our-server"><span class="header-section-number">1.5.7</span> Transferring Jobs back to Our Server</h3>
 <ul>
-<li>Confirm that you have the correct number of results files: <code>ls ./results/results_* | wc -l</code></li>
+<li>Confirm that you have the correct number of results files: <code>ls results/results_* | wc -l</code></li>
 <li>Review the non-zero error files: <code>ls error/error_* -lSr</code> and <code>nano error/error_1.csv</code></li>
 <li>Concatenate all the results files: <code>head -n +1 results/results_1.csv &gt; batch_results.csv; ls results/results_*.csv | xargs awk 'FNR&gt;1' &gt;&gt; batch_results.csv</code>. See <a href="https://linuxhandbook.com/awk-command-tutorial/">tutorial</a> on awk to understand its use for simple programming. See a <a href="https://shapeshed.com/unix-xargs/">tutorial</a> on the use of xargs.</li>
 <li>Now FTP <code>batch_results.csv</code> and the log file to the output folder for this batch on our server.<br>

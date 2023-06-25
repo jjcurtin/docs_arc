@@ -88,3 +88,7 @@ You can view an html file in firefox from terminal using `firefox [filename]`
 - `gunzip file` - Uncompress files.
 
 - `head`, `tail`, and `sort` work as expected.  Remember to use -n with sort if you want to do a numeric (rather than text) sort.  Sort also takes -r for reverse.  Use pipe to pipe in a vector of numbers or text.  Use -1 with head or tail to get the first (or last) value in series.
+
+## Kill a frozen app
+
+Press Alt + F2 . Type xkill and hit Enter. The cursor will turn into a small 'x'. Left click any window to kill the process associated with that window. 

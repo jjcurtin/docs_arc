@@ -81,3 +81,68 @@ Slack is easily installed from the Ubuntu Software Center.  Open up the software
 - Download latest version of [Quarto](https://quarto.org/docs/get-started/)
 
 - install using `sudo apt install <package path>` or `sudo dpkg -i <package path>`
+
+## Creating SSH passkeys
+
+You can create an [ssh key](https://www.linode.com/docs/guides/use-public-key-authentication-with-ssh/) to ssh without the need to provide username and password.  In our lab, these are useful to ssh to CHTC or for git shh to GitHub.
+
+To create the key
+
+1. Open a terminal and type `ssh-keygen -t ed25519`.  
+
+2. Accept the defaults by repeatedly pressing enter and this will create a key with defauult names .ssh/id_ed25519, and .ssh/id_ed25519.pub. 
+
+To use this key with CHTC
+
+1. Open the public key file (id_25519.pub) and copy the content.
+
+2. SSH to CTHC
+
+3. Create or edit .ssh/authorized_keys
+
+4.  Paste your public key info at the end of this file.
+
+To use this key with Github
+
+1. Go to your settings (point at your profile picture and select settings.
+
+2. Select SSH and GPG Keys
+
+3. Click New SSH Key, give it a title, and paste the public key info into Key box.
+
+## Sound mixer settings
+
+alsamixer from terminal
+
+## VNC for Remote Access
+
+https://kb.wisc.edu/biochem/it/page.php?id=127360
+
+
+
+## SSH to office computer
+https://linuxhint.com/enable-use-ssh-ubuntu/
+
+use username for hostname
+
+### X11 forwarding
+X11 forwarding is used in SSH to display GUI for app (e.g., rstudio) on remote computer (e.g., office computer). To enable X11 forwarding, need to edit /etc/ssh/sshd_config on remote computer to indicate:
+- `X11Forwarding yes`
+
+*May* also want to set
+- `X11DisplayOffset 10`
+- `X11UseLocalhost yes`
+- `TCPKeepAlive yes`
+
+*May* need to install xauth on remote computer.
+
+Need to use -X flag with ssh from local computer.  Can then open GUI for remote app (e.g.. rstudio)
+
+
+
+## Customize CLI prompt
+
+This will set up a green prompt with relative path for current directory.
+
+PS1="\e[0;32;1m[\w]\$ \e[m"
+
