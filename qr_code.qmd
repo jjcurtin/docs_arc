@@ -1,0 +1,6 @@
+# Creating QR Codes for Presentations
+- Easy to make
+- Use this website: https://app.qr-code-generator.com/manage
+
+- Link to our posters and presentations page: https://arc.psych.wisc.edu/posters-presentations/
+- Include on last slide along with CREDITS

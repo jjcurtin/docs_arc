@@ -175,6 +175,34 @@
     "text": "4.5 Creating SSH passkeys\nYou can create an ssh key to ssh without the need to provide username and password. In our lab, these are useful to ssh to CHTC or for git shh to GitHub.\nTo create the key\n\nOpen a terminal and type ssh-keygen -t ed25519.\nAccept the defaults by repeatedly pressing enter and this will create a key with defauult names .ssh/id_ed25519, and .ssh/id_ed25519.pub.\n\nTo use this key with CHTC\n\nOpen the public key file (id_25519.pub) and copy the content.\nSSH to CTHC\nCreate or edit .ssh/authorized_keys\nPaste your public key info at the end of this file.\n\nTo use this key with Github\n\nGo to your settings (point at your profile picture and select settings.\nSelect SSH and GPG Keys\nClick New SSH Key, give it a title, and paste the public key info into Key box."
   },
   {
+    "objectID": "linux_install.html#sound-mixer-settings",
+    "href": "linux_install.html#sound-mixer-settings",
+    "title": "3  Installing Linux",
+    "section": "4.6 Sound mixer settings",
+    "text": "4.6 Sound mixer settings\nalsamixer from terminal"
+  },
+  {
+    "objectID": "linux_install.html#vnc-for-remote-access",
+    "href": "linux_install.html#vnc-for-remote-access",
+    "title": "3  Installing Linux",
+    "section": "4.7 VNC for Remote Access",
+    "text": "4.7 VNC for Remote Access\nhttps://kb.wisc.edu/biochem/it/page.php?id=127360"
+  },
+  {
+    "objectID": "linux_install.html#ssh-to-office-computer",
+    "href": "linux_install.html#ssh-to-office-computer",
+    "title": "3  Installing Linux",
+    "section": "4.8 SSH to office computer",
+    "text": "4.8 SSH to office computer\nhttps://linuxhint.com/enable-use-ssh-ubuntu/\nuse username for hostname\n\n4.8.1 X11 forwarding\nX11 forwarding is used in SSH to display GUI for app (e.g., rstudio) on remote computer (e.g., office computer). To enable X11 forwarding, need to edit /etc/ssh/sshd_config on remote computer to indicate: - X11Forwarding yes\nMay also want to set - X11DisplayOffset 10 - X11UseLocalhost yes - TCPKeepAlive yes\nMay need to install xauth on remote computer.\nNeed to use -X flag with ssh from local computer. Can then open GUI for remote app (e.g.. rstudio)"
+  },
+  {
+    "objectID": "linux_install.html#customize-cli-prompt",
+    "href": "linux_install.html#customize-cli-prompt",
+    "title": "3  Installing Linux",
+    "section": "4.9 Customize CLI prompt",
+    "text": "4.9 Customize CLI prompt\nThis will set up a green prompt with relative path for current directory.\nPS1=“$ Documentation for ARC 4  Using Linux 2  Git Welcome 1  CHTC 2  Git 3  Installing Linux 4  Using Linux 5  Flowcharts 6  Creating QR Codes for Presentations 3  Installing Linux :::"
+  },
+  {
     "objectID": "linux_use.html#general-short-cuts",
     "href": "linux_use.html#general-short-cuts",
     "title": "4  Using Linux",
@@ -210,38 +238,17 @@
     "text": "4.5 Kill a frozen app\nPress Alt + F2 . Type xkill and hit Enter. The cursor will turn into a small ‘x’. Left click any window to kill the process associated with that window."
   },
   {
-    "objectID": "linux_install.html#sound-mixer-settings",
-    "href": "linux_install.html#sound-mixer-settings",
-    "title": "3  Installing Linux",
-    "section": "4.6 Sound mixer settings",
-    "text": "4.6 Sound mixer settings\nalsamixer from terminal"
+    "objectID": "flowchart_demo.html",
+    "href": "flowchart_demo.html",
+    "title": "5  Flowcharts",
+    "section": "",
+    "text": "This is a short demo for making a flowchart in R.\nHere are two links to more information on the DiagrammeR function:\nhttps://bookdown.org/yihui/rmarkdown-cookbook/diagrams.html\nhttps://rich-iannone.github.io/DiagrammeR/graphviz_and_mermaid.html\nHere is a basic example of using DiagrammeR to create a flowchart of participant retention.\nThe process has 3 main parts:\n1. Define the nodes\n2. Define the edges\n3. Define node labels (content of nodes) using footnotes.\nNote: for this simple flowchart I am manually entering the number of particpants as a string. You can also use data in your dataset as content for the label.\nex. ‘Starting Sample = 216’ could also be str_c(‘Starting Sample =’, nrow(sample))\n\n\nDiagrammeR::grViz(\"\n  digraph {\n  graph []\n  \n  node [fontname = Helvetica, shape = rectangle, fixedsize = true, width = 2.5]\n  a [label = '@@1']\n  b [label = '@@2']\n  c [label = '@@3']\n  d [label = '@@4']\n  e [label = '@@5']\n  f [label = '@@6']\n  g [label = '@@7']\n\n  a -&gt; b -&gt; d -&gt; f\n  a -&gt; c\n  b -&gt; e\n  d -&gt; g\n  }\n  \n  [1]: 'Participants screened \\\\n n = 300'\n  [2]: 'Participants eligible \\\\n n = 250'\n  [3]: 'Participants ineligible \\\\n n = 50'\n  [4]: 'Participants enrolled \\\\n n = 215'\n  [5]: 'Participants did not enroll \\\\n n = 35'\n  [6]: 'Participants completed study \\\\n n= 175'\n  [7]: 'Participants discontinued \\\\n n = 40'\n  \") \n\n\n\n\n\nHere is a more complicated example of participant enrollment flow code, demonstrating how to code a) edges (lines) that connect to more than one node (box), b) more descriptive node labels, and c) manual line breaks in the node text.\n\ngrViz(\"digraph {\n\ngraph[layout = dot, rankdir = TB]  #top to bottom vs LR for left to right\n\n# general node definition\nnode [shape = rectangle, style = filled, fillcolor = LightBlue, fontsize=14]\n\n#specific nodes with label text specified later\nreddit [label = '@@1']\ncommunity [label = '@@2']\nclinician [label = '@@3']\ncraigslist [label = '@@15']\nunknown [label = '@@4']\nscreen [width = 3,label = '@@5']\nscreen_fail [shape = octagon, fillcolor= Red, height = 1.3, width = 1, label = '@@6']\nscreen_pass [width = 4, label = '@@7']\nfail_reasons [label = '@@8']\nenrolled [label = '@@9']\nnot_enrolled [shape = octagon, fillcolor= Red, height = 1.5, label = '@@10']\nnot_enrolled_why [label = '@@11']\non_study [label = '@@12']\noff_study [label = '@@13']\ndisposition [label = '@@14']\n\n\n#edge definitions (lines between boxes)\n{reddit community craigslist clinician unknown} -&gt; screen -&gt; {screen_fail screen_pass}\nscreen_fail -&gt; fail_reasons\nscreen_pass -&gt; {not_enrolled enrolled}\nnot_enrolled -&gt; not_enrolled_why\nenrolled -&gt; {on_study off_study}\noff_study -&gt; disposition\n}\n\n\n[1]: str_c('Reddit \\\\n(n = ', n_reddit, ')')\n[2]: str_c('Community \\\\n(n = ', n_community, ')')\n[3]: str_c('Clinician \\\\n(n = ', n_clinician, ')')\n[4]: str_c('Unknown \\\\n(n = ', n_unknown, ')')\n[5]: str_c('Screened \\\\n(n = ', n_reddit+n_community+n_clinician+n_craigsl+n_unknown, ')')\n[6]: str_c('Screen fail \\\\n(n = ', n_ineligible, ')')\n[7]: str_c('Screen pass \\\\n(n = ', n_eligible, ')')\n[8]: str_c('Screen fail reasons: \\\\n', 'No Android (n = ', sum(the_hist$no_android), ')\\\\n', 'Internet Number (n = ', sum(the_hist$yes_internet_num), ')\\\\n', 'Multiple or unreliable phones (n = ', sum(the_hist$maintain_phone, the_hist$multiple_phones), ')\\\\n', 'Under 18 (n = ', sum(the_hist$under_18), ')\\\\n', 'No MAT (n = ', sum(the_hist$no_mat), ')\\\\n', 'Not MAT adherent (n = ', sum(the_hist$daily_not_adhere, the_hist$monthly_not_adhere), ')\\\\n', 'MAT too short (n = ', sum(the_hist$mat_too_short), ')\\\\n', 'MAT too long (n = ', sum(the_hist$mat_too_long), ')\\\\n', 'Relapsed (n = ', sum(the_hist$relapse), ')\\\\n\\\\n', mult_inel, ' participants screened out\\\\non 2+ conditions')\n[9]: str_c('Enrolled \\\\n(n = ', nrow(all_digital), ')\\\\n', 'Scheduled (n = ', n_eligible_pending, ')')\n[10]: str_c('Not enrolled \\\\n(n = ', not_enrolled_digital, ')')\n[11]: str_c('Reasons not enrolled: Needs further exploration')\n[12]: str_c('On study \\\\n(n = ', all_digital %&gt;% filter(study_end_date &gt; today()) %&gt;% nrow(), ')')\n[13]: str_c('Off study \\\\n(n = ', all_digital %&gt;% filter(study_end_date &lt;= today()) %&gt;% nrow(), ')')\n[14]: str_c('Disposition: \\\\nCompleted (n = ', disposition %&gt;% filter(subid %in% all_digital$subid, disposition == 'complete') %&gt;% nrow(), ')\\\\n', 'Usable data (n = ', all_digital %&gt;% filter(study_end_date &lt;= today(), subid %in% usable_subs$subid) %&gt;% nrow(), ')\\\\n', 'Unusable (n = ', all_digital %&gt;% filter(study_end_date &lt;= today(), !(subid %in% usable_subs$subid)) %&gt;% nrow(), ')')\n[15]: str_c('Craigslist \\\\n(n = ', n_craigsl, ')')\n\")"
   },
   {
-    "objectID": "linux_install.html#vnc-for-remote-access",
-    "href": "linux_install.html#vnc-for-remote-access",
-    "title": "3  Installing Linux",
-    "section": "4.7 VNC for Remote Access",
-    "text": "4.7 VNC for Remote Access\nhttps://kb.wisc.edu/biochem/it/page.php?id=127360"
-  },
-  {
-    "objectID": "linux_install.html#mounting-shared-drives",
-    "href": "linux_install.html#mounting-shared-drives",
-    "title": "3  Installing Linux",
-    "section": "4.8 Mounting shared drives",
-    "text": "4.8 Mounting shared drives\nhttps://kb.wisc.edu/researchdata/page.php?id=95148"
-  },
-  {
-    "objectID": "linux_install.html#ssh-to-office-computer",
-    "href": "linux_install.html#ssh-to-office-computer",
-    "title": "3  Installing Linux",
-    "section": "4.8 SSH to office computer",
-    "text": "4.8 SSH to office computer\nhttps://linuxhint.com/enable-use-ssh-ubuntu/\nuse username for hostname\n\n4.8.1 X11 forwarding\nX11 forwarding is used in SSH to display GUI for app (e.g., rstudio) on remote computer (e.g., office computer). To enable X11 forwarding, need to edit /etc/ssh/sshd_config on remote computer to indicate: - X11Forwarding yes\nMay also want to set - X11DisplayOffset 10 - X11UseLocalhost yes - TCPKeepAlive yes\nMay need to install xauth on remote computer.\nNeed to use -X flag with ssh from local computer. Can then open GUI for remote app (e.g.. rstudio)"
-  },
-  {
-    "objectID": "linux_install.html#customize-cli-prompt",
-    "href": "linux_install.html#customize-cli-prompt",
-    "title": "3  Installing Linux",
-    "section": "4.9 Customize CLI prompt",
-    "text": "4.9 Customize CLI prompt\nThis will set up a green prompt with relative path for current directory.\nPS1=“$ Documentation for ARC 4  Using Linux 2  Git Welcome 1  CHTC 2  Git 3  Installing Linux 4  Using Linux 3  Installing Linux :::"
+    "objectID": "qr_code.html",
+    "href": "qr_code.html",
+    "title": "6  Creating QR Codes for Presentations",
+    "section": "",
+    "text": "Easy to make\nUse this website: https://app.qr-code-generator.com/manage\nLink to our posters and presentations page: https://arc.psych.wisc.edu/posters-presentations/\nInclude on last slide along with CREDITS"
   }
 ]
