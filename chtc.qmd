@@ -157,3 +157,7 @@ JJC plans to get an account directly for the OS Pool. We can access this pools t
 -   `condor_rm [jobid]` or `condor_rm $USER` to remove a job or all jobs
 -   `condor_history $USER -limit 10 -af requestmemory memoryusage` is an example of reviewing recent job history (past 10 in this example) for a subset of the history parameters. Can list all the parameters (long format) for a single job using `condor_history 16892169.1 -l` where the jobid is listed explicitly.\
 -   `condor_hold $USER` to hold all jobs running (e.g., to increase memory).
+
+## Citing CHTC
+
+[Guidance](https://chtc.cs.wisc.edu/uw-research-computing/cite-chtc) for citing CHTC in grants and papers.
