@@ -138,6 +138,14 @@ X11 forwarding is used in SSH to display GUI for app (e.g., rstudio) on remote c
 
 Need to use -X flag with ssh from local computer.  Can then open GUI for remote app (e.g.. rstudio)
 
+### VNC
+
+- [Documentation](https://kb.wisc.edu/biochem/it/page.php?id=127360) on how to install tightvnc on host.
+
+- Start vncserver on host with specific resolution: `vncserver -geometry 2560x1080 -depth 24` 
+
+- On client, can use Remmina with SSH.   
+
 
 
 ## Customize CLI prompt

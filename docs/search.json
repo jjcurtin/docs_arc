@@ -193,7 +193,7 @@
     "href": "linux_install.html#ssh-to-office-computer",
     "title": "3  Installing Linux",
     "section": "4.8 SSH to office computer",
-    "text": "4.8 SSH to office computer\nhttps://linuxhint.com/enable-use-ssh-ubuntu/\nuse username for hostname\n\n4.8.1 X11 forwarding\nX11 forwarding is used in SSH to display GUI for app (e.g., rstudio) on remote computer (e.g., office computer). To enable X11 forwarding, need to edit /etc/ssh/sshd_config on remote computer to indicate: - X11Forwarding yes\nMay also want to set - X11DisplayOffset 10 - X11UseLocalhost yes - TCPKeepAlive yes\nMay need to install xauth on remote computer.\nNeed to use -X flag with ssh from local computer. Can then open GUI for remote app (e.g.. rstudio)"
+    "text": "4.8 SSH to office computer\nhttps://linuxhint.com/enable-use-ssh-ubuntu/\nuse username for hostname\n\n4.8.1 X11 forwarding\nX11 forwarding is used in SSH to display GUI for app (e.g., rstudio) on remote computer (e.g., office computer). To enable X11 forwarding, need to edit /etc/ssh/sshd_config on remote computer to indicate: - X11Forwarding yes\nMay also want to set - X11DisplayOffset 10 - X11UseLocalhost yes - TCPKeepAlive yes\nMay need to install xauth on remote computer.\nNeed to use -X flag with ssh from local computer. Can then open GUI for remote app (e.g.. rstudio)\n\n\n4.8.2 VNC\n\nDocumentation on how to install tightvnc on host.\nStart vncserver on host with specific resolution: vncserver -geometry 2560x1080 -depth 24\nOn client, can use Remmina with SSH."
   },
   {
     "objectID": "linux_install.html#customize-cli-prompt",
