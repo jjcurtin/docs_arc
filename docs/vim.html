@@ -239,8 +239,9 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#search-in-vim" id="toc-search-in-vim" class="nav-link" data-scroll-target="#search-in-vim"><span class="header-section-number">8.7</span> Search in VIM</a></li>
   <li><a href="#visual-selection" id="toc-visual-selection" class="nav-link" data-scroll-target="#visual-selection"><span class="header-section-number">8.8</span> Visual selection</a></li>
   <li><a href="#copy" id="toc-copy" class="nav-link" data-scroll-target="#copy"><span class="header-section-number">8.9</span> Copy</a></li>
-  <li><a href="#settings" id="toc-settings" class="nav-link" data-scroll-target="#settings"><span class="header-section-number">8.10</span> Settings</a></li>
-  <li><a href="#learing-vim" id="toc-learing-vim" class="nav-link" data-scroll-target="#learing-vim"><span class="header-section-number">8.11</span> Learing VIM</a></li>
+  <li><a href="#working-with-multiple-files" id="toc-working-with-multiple-files" class="nav-link" data-scroll-target="#working-with-multiple-files"><span class="header-section-number">8.10</span> Working with multiple files</a></li>
+  <li><a href="#settings" id="toc-settings" class="nav-link" data-scroll-target="#settings"><span class="header-section-number">8.11</span> Settings</a></li>
+  <li><a href="#learing-vim" id="toc-learing-vim" class="nav-link" data-scroll-target="#learing-vim"><span class="header-section-number">8.12</span> Learing VIM</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jjcurtin/docs_arc/edit/main/vim.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
@@ -358,8 +359,21 @@ ul.task-list li input[type="checkbox"] {
 <li><code>yy</code> to yank a line</li>
 </ul>
 </section>
-<section id="settings" class="level2" data-number="8.10">
-<h2 data-number="8.10" class="anchored" data-anchor-id="settings"><span class="header-section-number">8.10</span> Settings</h2>
+<section id="working-with-multiple-files" class="level2" data-number="8.10">
+<h2 data-number="8.10" class="anchored" data-anchor-id="working-with-multiple-files"><span class="header-section-number">8.10</span> Working with multiple files</h2>
+<p>Vim can open multiple files in separate buffers. This can be done at the start by providing multiple filenames to vim (e.g., <code>vim file1.md file2.md</code>)</p>
+<p>Alternatively, additional files can be opened for editting later (<code>:e file2.txt</code>).</p>
+<p>Moving between buffers</p>
+<ul>
+<li><code>bn</code> moves to next buffer</li>
+<li><code>bp</code> moves to previous buffer</li>
+<li><code>:buffers</code> displays all open buffers</li>
+<li><code>: buffer 1</code> allows switch to buffer 1 (or any other number) if there are many buffers open</li>
+</ul>
+<p>yank/delete/put will work between buffers</p>
+</section>
+<section id="settings" class="level2" data-number="8.11">
+<h2 data-number="8.11" class="anchored" data-anchor-id="settings"><span class="header-section-number">8.11</span> Settings</h2>
 <p>“:set xxx” sets the option “xxx”. Some options are:</p>
 <ul>
 <li>‘ic’ ‘ignorecase’ ignore upper/lower case when searching</li>
@@ -368,8 +382,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>You can either use the long or the short option name. Prepend “no” to switch an option off: :set noic</p>
 </section>
-<section id="learing-vim" class="level2" data-number="8.11">
-<h2 data-number="8.11" class="anchored" data-anchor-id="learing-vim"><span class="header-section-number">8.11</span> Learing VIM</h2>
+<section id="learing-vim" class="level2" data-number="8.12">
+<h2 data-number="8.12" class="anchored" data-anchor-id="learing-vim"><span class="header-section-number">8.12</span> Learing VIM</h2>
 <ul>
 <li><p>run <code>vimtutor</code></p></li>
 <li><p>books: https://iccf-holland.org/vim_books.html</p></li>

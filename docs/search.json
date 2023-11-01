@@ -423,15 +423,15 @@
     "objectID": "vim.html#settings",
     "href": "vim.html#settings",
     "title": "8  VIM",
-    "section": "8.10 Settings",
-    "text": "8.10 Settings\n“:set xxx” sets the option “xxx”. Some options are:\n\n‘ic’ ‘ignorecase’ ignore upper/lower case when searching\n‘is’ ‘incsearch’ show partial matches for a search phrase\n‘hls’ ‘hlsearch’ highlight all matching phrases\n\nYou can either use the long or the short option name. Prepend “no” to switch an option off: :set noic"
+    "section": "8.11 Settings",
+    "text": "8.11 Settings\n“:set xxx” sets the option “xxx”. Some options are:\n\n‘ic’ ‘ignorecase’ ignore upper/lower case when searching\n‘is’ ‘incsearch’ show partial matches for a search phrase\n‘hls’ ‘hlsearch’ highlight all matching phrases\n\nYou can either use the long or the short option name. Prepend “no” to switch an option off: :set noic"
   },
   {
     "objectID": "vim.html#learing-vim",
     "href": "vim.html#learing-vim",
     "title": "8  VIM",
-    "section": "8.11 Learing VIM",
-    "text": "8.11 Learing VIM\n\nrun vimtutor\nbooks: https://iccf-holland.org/vim_books.html"
+    "section": "8.12 Learing VIM",
+    "text": "8.12 Learing VIM\n\nrun vimtutor\nbooks: https://iccf-holland.org/vim_books.html"
   },
   {
     "objectID": "flowchart_demo.html",
@@ -768,5 +768,12 @@
     "title": "14  Psychophysiology Documentation",
     "section": "20.2 Sensor Removal and Cleaning",
     "text": "20.2 Sensor Removal and Cleaning\n\nRemove sensor sticker collars from each sensor. Do not pull on the leads; hold by the sensor cup and the tab on the sensor collar.\nIf you can’t start cleaning immediately, it’s okay to soak the cup ends in clean water for 5-10 minutes until you are able to start. This makes it easier to clean later by preventing the gel from drying out. It’s okay to put them in clean water with the EEG cap, but do NOT put the sensors in soapy water. Be sure the plug ends stay dry!\nPlace each sensor cup directly under the jet stream from the faucet. Make certain that the end of the sensor leads do not get wet. Hold the sensor close to the bottom of the sink to reduce splashing. Move the orientation of the sensor around relative to the jet stream to allow the water to hit the sensor cup from different angles. Do this for 10-15 seconds.\nRemove the sensor from the water and blow firmly on the cup to remove the water. A clean sensor will appear matte-dry and not at all shiny. Any shine visible means there is still gel present.\nRepeat steps 2-3 until there is absolutely no residual gel on the sensor cup surface. It is very important that the surface is completely clean.\nPlace the sensors in the disinfectant solution (under sink) for approximately 5 minutes. Ok to put the sensors in at the same time as the cap.\nWhile the sensors are disinfecting, clean the gel applicator and tip.\n\nSquirt excess gel into the garbage can\nRemove the plunger and fill the applicator with water, and squire though the applicator. Repeat a few times\nDisconnect the applicator tip and blow through it\nInspect the tip and make certain that you can see through it with no residual gel.\n\nClean the applicator body\nPut the applicator body and tip back into the organizer on the sink\n\nRemove the sensors from the disinfectant and rinse off disinfectant thoroughly with water. Be sure to put the lid back on the disinfectant.\nSquirt distilled water onto the inside surface of each sensor cup as a final rinse.\nHang the electrodes from the sensor rack to air dry. Make certain that the end of the sensor leads do not hang into the sink."
+  },
+  {
+    "objectID": "vim.html#working-with-multiple-files",
+    "href": "vim.html#working-with-multiple-files",
+    "title": "8  VIM",
+    "section": "8.10 Working with multiple files",
+    "text": "8.10 Working with multiple files\nVim can open multiple files in separate buffers. This can be done at the start by providing multiple filenames to vim (e.g., vim file1.md file2.md)\nAlternatively, additional files can be opened for editting later (:e file2.txt).\nMoving between buffers\n\nbn moves to next buffer\nbp moves to previous buffer\n:buffers displays all open buffers\n: buffer 1 allows switch to buffer 1 (or any other number) if there are many buffers open\n\nyank/delete/put will work between buffers"
   }
 ]

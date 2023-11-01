@@ -82,6 +82,21 @@ Remember to enter command mode by pressing `esc`
 - `yw` to yank a word
 - `yy` to yank a line
 
+## Working with multiple files
+
+Vim can open multiple files in separate buffers.  This can be done at the start by providing multiple filenames to vim (e.g., `vim file1.md file2.md`)
+
+Alternatively, additional files can be opened for editting later (`:e file2.txt`).
+
+Moving between buffers
+
+- `bn` moves to next buffer
+- `bp` moves to previous buffer
+- `:buffers` displays all open buffers
+- `: buffer 1` allows switch to buffer 1 (or any other number) if there are many buffers open
+
+yank/delete/put will work between buffers
+
 
 ## Settings
 
