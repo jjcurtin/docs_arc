@@ -1,0 +1,23 @@
+# Current and Planned Stuides
+
+We list potential study ideas below, organized by project/data set.  When projects have been tentatively claimed, that is indicated as well
+
+## RISK
+- Compare insight only to full EMA for lapse risk prediction [Gaylen (lead), Kendra, Ariela, Sarah]
+- GPS features solo for lapse risk prediction [Claire FYP (lead)]
+- Less burdensome EMA for lapse risk prediction. Maybe only morning.  Maybe only some items.  Maybe only some items depending on responses to other items [Coco?]
+- Use text message content & meta data for lapse prediction [Coco?]
+- Replicate stressor use with RISK data.  MLM analyses [unassigned]
+- Full model using GPS, EMA, communications for lapse risk prediction [unassigned]
+- Lagged week level models for  lapse risk prediction.   Maybe 3 days, 1 week, two weeks lag [unassigned]
+- Model duration of lapse rather than binary outcome to allow move toward harm reduction approaches
+- Model lapses that are labeled (or quantified) on severity based on chaining, or perhaps the respone to them (what the say about future ab goal, EMA affect after, etc)
+- Establish individual lapse as a clinically meaningful event - use lapse/no lapse as feature to predict variety of negative outcomes from (next? subsequent period?) EMAs, e.g., craving, risky situations, stressful events, negative affect, self-efficacy/change of abstinence goal (abstinence violation effect). Account for previous negative outcome level (either include as covariate [feature]? or make outcome a change score) [unassigned]
+
+## RISK2
+
+
+## NRT1
+- Build machine learning model for smoking lapse risk prediction (e.g., replicate RISK ema paper) [unassigned]
+
+## FACE

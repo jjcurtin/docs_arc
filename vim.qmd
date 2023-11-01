@@ -1,0 +1,102 @@
+# VIM
+
+## Exit and Save
+
+- `:x` exits and saves
+- `:w` saves without exit
+- `:w filename` saves file as filename
+- `:q!` exits without save
+
+## Run commands
+ - `:!CMD` where CMD is command.  e.g.., !ls
+
+## Navigating document in Default (Command) Mode
+
+Remember to enter command mode by pressing `esc`
+- `0` moves the cursor to the start of line
+- `$` moves cursor to end of line
+- Move cursor left (`h`), down(`j`), up (`k`), or right (`l`)
+
+- `gg` for top of document 
+- `G` for bottom of document
+- `nG` to move to line number n.  CTRL-g shows line numbers in footer of doc.
+- `H` for top of window, `M` for middle of window, and `L` for bottom of window
+
+- `w` moves forward to the beginning of the next word.
+- `b` moves backwards to the beginning of the previous word.
+- `(` and `)` move by sentences, either backward or forward.
+- `{` and `}` move by paragraphs.
+
+## Inserting
+
+- `i` Insert text before the cursor
+- `a` Insert text after cursor
+- `A`  Append text to end of current line.  - `I` Insert text at beginning of line.
+- `o` Open blank line below cursor for text.  - `O` Open blank line above cursor for text.
+- `p` puts the Vim register (from delete) after cursor (if full line, on next line).
+- `rx` replaces the character at the cursor with 'x'
+- `R` replaces multiple characters.  Type ESC when done.
+- `ce` deletes until end of word and places you in insert.  Press ESC when done
+- `c$` deletes until end of line and  places you in insert.  Press ESC when done
+- `:%s/old/new/gc` - replaces old with new in full doc with prompt for replace.
+
+- `:r filename` to insert text in filename above cursor
+
+## Deleting
+- `x` deletes the character under the cursor
+- `dw` deletes from cursor to start of next word (including space spearator). `d2w` deletes from cursor to end of second word, etc.
+- `de` delets from curors to end of current for
+- `dd` deletes the line.  `2dd` deletes two lines.
+- `d$` deletes from cursor to end of line.
+- `u` to undo the last command. `CTRL-R` for redo
+-`U` to undo all fixes on a line.
+
+
+## Spell check
+
+- `:set spell` – Turn on spell checking
+- `:set nospell` – Turn off spell checking
+- `]s` – Jump to the next misspelled word
+- `[s` – Jump to the previous misspelled word
+- `z=` – Bring up the suggested replacements
+- `zg` – Good word: Add the word under the cursor to the dictionary
+- `zw` – Woops! Undo and remove the word from the dictionary
+
+## Search in VIM
+
+- `/text` to search forward for text.  Type ENTER to exit to that text.
+- `?text` to search backward for text. 
+- `n` to find next instance of text (after ENTER)
+- `N` to find previous instance of text (after ENTER)
+
+## Visual selection
+
+- `v` to select text.  Move cursor around with hjkl keys
+- then `d` to delete (can later p(ut) it somewhere if needed)
+- or `y` to yank (copy) so you can later p(ut) it somewhere
+- or `w` to write to separate file 
+
+## Copy
+
+- `y` to yank (copy) selction (use with v for visual selection)
+- `yw` to yank a word
+- `yy` to yank a line
+
+
+## Settings
+
+":set xxx" sets the option "xxx".  Some options are:
+
+- 'ic' 'ignorecase'       ignore upper/lower case when searching
+- 'is' 'incsearch'        show partial matches for a search phrase
+- 'hls' 'hlsearch'        highlight all matching phrases
+
+You can either use the long or the short option name. Prepend "no" to switch an option off:   :set noic
+
+
+
+## Learing VIM
+
+- run `vimtutor`
+
+- books: https://iccf-holland.org/vim_books.html

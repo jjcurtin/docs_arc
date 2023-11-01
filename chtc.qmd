@@ -1,0 +1,163 @@
+# CHTC
+
+## CHTC Office Hours & Live Help
+
+See the [Get Help Page](https://chtc.cs.wisc.edu/uw-research-computing/get-help.html). Rachel and Christine are our two main support people at CHTC. You can email them at chtc\@cs.wisc.edu
+
+The zoom link for CHTC office hours is [go.wisc.edu/chtc-officehours](go.wisc.edu/chtc-officehours). Office hours are current scheduled at \* Tuesday morning: 10:30am - 12:00pm \* Thursday afternoon: 3:00 - 4:30 pm.
+
+## Logging In
+
+1.  Open PuTTY. Enter Hostname: submit-1.chtc.wisc.edu, Port: 22, connection type: ssh
+2.  Log in with your netid. You will have to use DUO for MFA.
+3.  Open WinSCP. Use the same credentials as PuTTY. You can drag files between your computer and CHTC. You can also edit documents with this program.
+
+## Hello World and General Help
+
+For substantial help, you can start with the [CHTC home page](https://chtc.cs.wisc.edu/uw-research-computing/) and their list of [how to docs](https://chtc.cs.wisc.edu/uw-research-computing/guides.html#htc-documentation) for HTC.
+
+CHTC provides a [Hello World](https://chtc.cs.wisc.edu/uw-research-computing/helloworld) overview of how to use CHTC. It is worth a review for new users.
+
+## Software
+
+On windows, use [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) for secure shell connection (SSH) to CHTC submit server and [WinSCP](https://winscp.net/eng/download.php) for FTP.
+
+## General CHTC Workflow
+
+### Making Batch of Jobs
+
+-   Create or edit the training controls file for your batch of jobs. You should start with the demo `training_controls.R` file in the `lab_support` repo.
+-   Run (and create if necessary) `mak_jobs.R` for your study. To create it, start with the demo in the `lab_support` repo. You will need to update the path to your training controls file when creating the file.
+-   `make_jobs()` is called by the `mak_jobs.R` script. It will make a new folder for your batch of jobs on the server in the `chtc` folder for your study. 
+- FTP all of the files in the `input` folder for this batch of jobs to the CHTC submit server.
+
+### Testing Jobs
+
+- Make sure you have a `results` folder and an `error` folder in your home directory. 
+- Make sure you have all files for the batch of jobs you will train (see above) and `train.sif`
+- Edit `job_nums.csv` on CHTC server to contain some (e.g., 3) jobs with only several configs (e.g., 5) in each bin (job/row). For example, you can create the content below by typing `printf "1,1,5\n2,6,10\n3,11,15" > job_nums.csv`
+```
+1, 1, 5
+2, 6, 10
+3, 11, 15
+```
+- Type `condor_submit train.sub` to submit this jobs
+- Monitor the jobs using `condor_q` and `-condor_q -hold` if needed
+- Confirm that there are data in the results file (file size > 0 for all files): `ls results/results* -lS`.  This will sort files with size = 0 to the bottom of the list. There should not be any!
+- Confirm that the correct number of results files were created by counting them: `ls results/results* | wc -l`
+- Check for error files with error messages (file size > 0): `ls error/error* -lSr`.  This will sort the non-zero files to the bottom of the list.  
+- If there are non-zero files, look at the error messages using nano editor: For example, `nano error/error_1.err`
+- Determine the run time for your test jobs:  `condor_history $USER -limit 3` (where limit is the number of test jobs you ran).  You want to bin enough configurations together in a job to have it last for 2-3 hours.   You may need to run `mak_jobs.R` again with a different value for `configs_per_job` to make a new `job_nums.csv` file.
+- Review the memory and disk usage for these test jobs: `condor_history $USER -limit 3 -af RequestMemory MemoryUsage RequestDisk DiskUsage`.  You may need to edit `train.sub` and `training_controls.R` to increase or decrease these values.   You should make the values match across both files on both CHTC server and our server to avoid confusion later.  Or just delete the batch and re-run `mak_jobs.R`
+
+
+### Running jobs
+
+-  Make sure you have FTPed the full `jobs_nums.csv` to the CHTC server to replace the test batch.
+-  Type `condor_submit train.sub`
+-  Type `condor_q` to confirm that the number of jobs that were submitted matches your expectations
+
+### Monitoring Running Jobs
+
+-   run `condor_q` to monitor progress on your jobs.
+-   run `condor_q -hold` to explore the reason for held jobs. If necessary, you may need to change the requested memory or disk space to get those jobs to complete. See below for more detail. `condor_q -af HoldReason` will provide more detail on why a job is held if needed.
+-   run `condor_q -run` to explore running jobs
+-   run `condor_q -idle` to explore idle jobs
+-   run `condor_q -analyze` or `condor_q JobId -better-analyze` to determine why certain jobs are not running by performing an analysis on a per machine basis for each machine in the pool. The latter command produces more thorough analysis of complex requirements and shows the values of relevant job ClassAd attributes. 
+-   `condor_release $USER` will release all held jobs for the user. You can substitute batch or job number to release a subset of held jobs if needed
+-   `condor_rm $USER` will remove/cancel all jobs for the user.
+-   You can review the error files associated with the batch of jobs to detect and understand errors as well. Sort the files so that the files with errors (i.e., file switch file size > 0) display last by typing `ls error/error* -lSr` If there are MANY (> 60K) files, you may need to pipe the file names into `ls` by typing `find error -name "error_*" | ls -lSr`. You can view the contents of a non-zero error file using nano. e.g., `nano error/error_1.err`
+- Flock/Glide jobs will sometimes not exit properly.  These jobs are put on hold (in addition to jobs with insufficient memory/disk space).  You can simply release these jobs and try again:  `condor_release $USER`.  Of course, you should first address any problems with memory or disk usage that resulted in holds.
+
+### Removing a subset of jobs
+It is possible to remove a subset of jobs using `condor_rm` with a constraint.
+It sounds like your jobs are in order based on their clusterID. To remove these
+jobs individually, it is possible to use `condor_rm JobID`. To remove a series
+of jobs, you can use:
+
+condor_rm -constraint 'ClusterId > 1 && ClusterId < 5'
+
+ClusterID refers to the batch of jobs submitted using one submit file. After re-reading your email, it sounds like you want to remove a subset of jobs that all fall under one
+ClusterID. To do this, you can use something like: condor_rm -constraint
+'ProcId > 1 && ProcId < 5 && ClusterID == 15307921' When typing condor_q,
+ClusterID is equivalent to the Batch_Name value. To remove the subset of jobs
+you want to remove, you will want to look at the values after the period in the
+Job_IDs column. The values after the period are the ProcessID (ProcID). For
+example, if I submitted a batch of jobs and it was assigned a cluster/batch
+name of 15307921 and I want to remove jobs 15307921.1, 15307921.2, and
+15307921.3, I could use: 
+condor_rm -const 'ProcId > 1 && ProcId < 5 && ClusterID == 15307921
+
+
+
+### Editing Running Jobs
+
+At times some (or all) jobs may be held if they require more memory or disk space than was requested in sub.sub. You can update these parameters and then release the held jobs.
+
+-   To update memory, type `condor_qedit [batch_name or job_id] RequestMemory [memory]`. You can see the batch_name and job_ids by typing `condor_q -hold` Memory is quantified in MB.\
+-   To update disk space, type `condor_qedit [batch_name or job_id] RequestDisk [space]`. You can see the batch_name and job_ids by typing `condor_q -hold` Space is quantified in MB.\
+-   Type `condor_release $USER` to release all held jobs from the user.
+-   If you expect that you will need the specified higher memory or disk space for the currently running jobs (not yet held), you can hold them by typing `condor_hold $USER` and then release them with `condor_release $USER` such that they will now find machine with the higher levels for these parameters.
+
+### Transferring Jobs back to Our Server
+
+- Confirm that you have the correct number of results files: `ls results/results_* | wc -l`
+- Review the non-zero error files:  `ls error/error_* -lSr` and `nano error/error_1.csv`
+- Concatenate all the results files: `head -n +1 results/results_1.csv > batch_results.csv; ls results/results_*.csv | xargs awk 'FNR>1' >> batch_results.csv`.  See [tutorial](https://linuxhandbook.com/awk-command-tutorial/) on awk to understand its use for simple programming. See a [tutorial](https://shapeshed.com/unix-xargs/) on the use of xargs.
+- Now FTP `batch_results.csv` and the log file to the output folder for this batch on our server.   
+- Do NOT delete results and error files until you have confirmed they look good by processing them in R.
+
+## Using and Creating Containers for R and Packages
+
+### Full documetation from CHTC
+CHTC has full [documentation](https://chtc.cs.wisc.edu/uw-research-computing/singularity-htc) of these steps.  We are currently using this [Docker image for base r](https://hub.docker.com/_/r-base).  Chose current numbered version (e.g., 4.3.0) among tags.
+
+### Use Existing Container
+
+We have saved existing containers for training and for feature creation on our server in the CHTC folder (/CHTC/containers/train and /CHTC/containers/features).   These folders include the sub and def files that were used to create these containers.  The current/up-to-date container is named without an underscore.  The _# are older versions with the highest number being the most recent old version.   Likely not needed!
+
+### Using Container with your Jobs
+NOTES: for now, CHTC says to *not* use the instructions from the above guide in your jobs' sub file (e.g., "universe = container" and "container_image = "). That *is* the way of the future, however *right now* to run on the OSPool and CHTC, you'll want to use this instead: 
+
+```
+universe = vanilla
++SingularityImage = "container.sif"
+```
+And then include the container.sif file in the transfer_input_files line. That *should* work seamlessly across the OSPool/CHTC. Maybe use this just to be safe: 
+`requirements = (PoolName == "CHTC") || (SINGULARITY_CAN_USE_SIF)`
+
+### Brief Steps for Creating a New Container
+
+Here is the steps in brief
+
+1. create or use and existing build.sub and .def file.  See examples for train and features in the CHTC folder on the server.
+2.  FTP these files to CHTC submit server
+3.  Run an interactive sessions `condor_submit -i build.sub`, where you use your sub file 
+4.  Build the apptainer: `apptainer build train.sif train.def`, where you name your .sif file and use your def file
+5. After the container is built, you can clear the cache: `apptainer cache clean -f` and then `exit` the interactive session.  Your container should be returned to the root folder on chtc submit server (along with the log file).  Consider whether to archive it on our server or if it was a one-time use for you.
+
+
+## Making package TARS
+
+We are no longer using tars (we use containers for R instead).  However, if needed in the future, CHTC offers a detailed step-by-step walkthrough for [making package tars](https://chtc.cs.wisc.edu/uw-research-computing/r-jobs#build).
+
+ 
+## Open Science Pool
+
+JJC plans to get an account directly for the OS Pool. We can access this pools through flock/glide BUT with an account, we can run twice as many jobs (using each account separately). May still just be easier to run using multiple lab accounts on CHTC but worth considering.
+
+## Common CONDOR commands
+
+-   `condor_submit train.sub`
+-   `condor_q` for quick review of queue for submitted jobs
+-   `condor_q -hold` for quick review of held jobs
+-   `condor_q -af HoldReason` for more detailed review of held jobs
+-   `condor_qedit [cluster id number] RequestMemory [memory]` to increase memory. Example: `condor_qedit 16892087 RequestMemory 20000`. Can specific specific job with .# added to the ID. Memory is specified in MB in our training control files.
+-   `condor_release $USER` to release all held jobs for user (e.g., after increasing memory)
+-   `condor_rm [jobid]` or `condor_rm $USER` to remove a job or all jobs
+-   `condor_history $USER -limit 10 -af requestmemory memoryusage` is an example of reviewing recent job history (past 10 in this example) for a subset of the history parameters. Can list all the parameters (long format) for a single job using `condor_history 16892169.1 -l` where the jobid is listed explicitly.\
+-   `condor_hold $USER` to hold all jobs running (e.g., to increase memory).
+
+## Citing CHTC
+
+[Guidance](https://chtc.cs.wisc.edu/uw-research-computing/cite-chtc) for citing CHTC in grants and papers.

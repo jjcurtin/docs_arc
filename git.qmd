@@ -1,0 +1,73 @@
+# Git
+
+For full documentation of using git from the command line you can read the  [Git Pro Book](https://git-scm.com/book/en/v2).  
+
+## Common Git Commands
+
+Note: These commands will only work if you are in a git repo.
+
+### Workflow
+
+- `git status` shows any files updated locally
+- `git add [filename]` add file to staging area
+- `git add .` adds all modified files to staging area
+- `git commit` create commit of staged files - this will prompt you to enter commit message. You can also use the -m flag to write your message directly with commit command (`git commit -m "updates xyz"`).
+- `git commit -am "commit message"` will add all files and commit them in one step.  However, 
+- `git push` pushes your commits to github
+- `git pull` pulls updates from github (it is good practice to pull before commiting)    
+- `git mv <oldname> <newname>` to rename and/or move a file without losing its link to its earlier history.  [Read more](https://docs.github.com/en/repositories/working-with-files/managing-files/renaming-a-file)
+- `git stash` to stash changes; `git stash pop` to reapply stashed changes
+
+### Repos
+
+- `git clone [repo_url]` clones git repo.   
+- `git init [repo_name]` creates a new empty repo
+
+### Branching
+
+- `git branch` shows local branches (`git branch -a` will show you all branches local and on github)
+- `git checkout [branch_name]` switches branches
+- `git checkout -b [new_branch_name]` switches to new branch (`git branch [new_branch_name]` creates new branch but doesn't switch to it).
+- `git branch -d [brand_name]` deletes a local branch.  This must be done from another branch or main.
+- `git push origin -d [brach_name]` deletes branch_name on remote/github  (assumes remote is called origin, which it is for us).
+
+### Log and Versioning
+
+- `git log` displays the most recent commits
+- `git log --stat -[N]` displays stats on the most recent N commits.  Cleaner than log
+- `git log [filename]` displays commit history for a file.  May have problems if the filename was ever changed.  In that case consider, `git log --follow -- [filename].  Can add `--stat` for more info on commit
+
+### Diffs
+
+- we use [meld merge](https://meldmerge.org/) for file diffs
+- meld merge can do diffs on two files saved locally.  For example, between a qmd file for a paper in a repo and another copy of that file with edits from a lab member saved outside the repo.
+- meld merge can also be [set up to be used as the difftool for git](https://stackoverflow.com/questions/34119866/setting-up-and-using-meld-as-your-git-difftool-and-mergetool).  In Linux, add the following to your .gitconfig file
+- git difftool [commit_id] HEAD [filename] to compare any specific version of a file to the current version on github.
+- git difftool last HEAD [filename] to compare current local version (not yet committed) to version on github.
+
+```
+[diff]
+    tool = meld
+[difftool]
+    prompt = false
+[difftool "meld"]
+cmd = meld "$LOCAL" "$REMOTE"
+
+# The order of the Meld GUI window panes can be controlled by the order of $LOCAL and $REMOTE in cmd
+```
+
+- then you can compare a version of any file from a specific commit to the current version
+   - `git difftool <COMMIT_HASH> file_name`
+- or you can compare two versions of a file across two separate commits
+   - `git difftool <COMMIT_HASH_1> <COMMIT_HASH_2> file_name`
+
+
+
+## Git Command Line for Windows
+
+The recommended terminal for using the Git command line on Windows is [Git Bash](https://git-scm.com/download/win).
+
+
+
+
+

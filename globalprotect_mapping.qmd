@@ -1,0 +1,61 @@
+# Global Protect and Mapping the Network Server
+
+## Global Protect
+
+After you install GlobalProtect vis [these instructions](https://kb.wisc.edu/helpdesk/page.php?id=90370), connecting is nearly identical on Mac or Windows PC:
+
+1.	Open the GlobalProtect client by selecting the icon at the top of your screen (Mac) or in the system tray (PC). (If it does not automatically appear in this place, access the client through your Finder's Applications folder (Mac) or Start Menu (PC).) 
+
+    a. If it is your first time connecting, you will be prompted to enter a portal address. The default portal is **uwmadison.vpn.wisc.edu**.
+    b. If you have used GlobalProtect before, you will be connected to the portal you last used. This can be changed by opening the settings menu on the top right of the client login screen.
+    
+    
+
+![gp1.png](images/gp1.png)\
+
+2.	Enter your netid followed by _1 (to use your Static IP) and password (regular NetID password) and click Sign In. If you are prompted to use Duo MFA, enter the passcode from your fob/Duo Mobile app or enter "1" to receive a push on your mobile device.
+
+![gp2.png](images/gp2.png)\
+
+### Troubleshooting Global Protect on Mac OSX
+If the client never connects and just "spins", this issue could be related to a security setting for the Mac Keychain. Properly restart the computer by clicking restart, and making sure the "Reopen windows when logging back in" is unchecked as shown here:
+
+![gp3.png](images/gp3.png)\
+ 
+Once the computer restarts and GlobalProtect restarts upon booting back up, there will eventually be a prompt that pops up. It may ask for permission for GlobalProtect to use confidential information from the Keychain. The password should be the computer's Admin password, or their Apple ID password. Once the password has been entered, click "Always allow". Afterward, GlobalProtect should be able to move past the "Connecting" phase and will prompt for username and password as usual.
+
+## Connecting to John’s server
+
+### Mac OSX:
+
+1. After GlobalProtect is connected, open your Finder application: From the top utility bar Click on Go and select Connect to Server.
+
+![gp4.png](images/gp4.png)\
+
+2.	Enter the server address: `smb://dionysus.psych.wisc.edu/Private`
+
+![gp5.png](images/gp5.png)\
+
+3. Click on the + (plus) icon to add the server name to your Favorite Servers.
+
+4. When you are prompted for your credentials be sure to select "Registered User".  Enter your username and password. You can also check to remember this password in your keychain, if you wish. 
+
+![gp6.png](images/gp6.png)\
+
+5. Click Connect to continue
+
+
+## Windows PC:
+
+1.	Open Windows explorer and click on This PC. Under the Computer tab, select Map Network Drive
+
+![gp7.png](images/gp7.png)\
+
+2.	In the dialog box, select a drive letter. **For the Private drive you want to be sure to use P: as that is referenced in our analysis code.**
+
+![gp8.png](images/gp8.png)\
+
+3.	In the Folder box, type the address of the drive you wish to map; i.e. `\\dionysus.psych.wisc.edu\private`
+
+4.	Check "Connect using other credentials" and enter `dionysus\yournetid` (no double slashes leading) as the username (use your actual netID), and your netID password.
+5.	Make sure that "Reconnect at Logon" is ALSO checked and hit Finish

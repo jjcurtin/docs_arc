@@ -1,0 +1,197 @@
+# Lab Practices
+
+## General Information
+
+### Lab Information
+
+#### Building Address:  
+1202 W Johnson St, Madison WI 53706
+
+The lab Mailbox is on the 2nd floor, around the corner from Gary’s office facing the department head’s office (labeled Curtin/Wanta). Grads will be assigned their own mailboxes.
+
+**Offices:**
+
+John - 326  
+Grad office - 325  
+Susan - 187    
+Ariela - 191  
+RA offices - 195, 192  
+
+Most lab meetings are held in 228 or 311.
+
+**Keys:** 
+
+See Gary on 2nd floor for Lab and Building keys.  Undergraduates will have to pay a $20 fee which will be refunded upon return of the keys. Let Susan know if you take this route and I’ll email him authorization. 
+
+In addition to the building key, you can request:   
+30 key – first floor.   
+9 key – grad office.  
+
+First floor key box code: See Susan.   
+
+#### Important Websites:  
+* Lab website - <http://arc.psych.wisc.edu>  
+* Lab Documentation - <https://jjcurtin.github.io/docs_arc/>  
+* Lab Tidyverse Documention - <https://jjcurtin.github.io/dwt/>
+* John's Introduction to Machine Learning Course- <https://dionysus.psych.wisc.edu/iaml/>  
+* Risk2 Project Manual - <https://jjcurtin.github.io/docs_risk2/>   
+
+#### Productivity Software:
+* Our lab uses [Slack](http://uw-arc.slack.com) almost exclusively for internal communication (only occasionally email).  
+* We use [Asana](https://app.asana.com/) for assigning & tracking tasks.  
+* We maintain a lab reference manager database with [Zotero](https://www.zotero.org/). 
+* We use Zoom for virtual meetings. 
+* We use Qualtrics for our survey administration and management, including both participant surveys and surveys filled out by RAs.
+* You will need a Static IP so you can connect to our server remotely if you wish to use a personal computer for R, and/or wish to remote desktop into a lab computer. **Please visit [this page](https://it.wisc.edu/services/static-ips/) and request a Static IP.** Provide the username (netid_1) and assigned IP address to Susan via email for her to authorize access in the firewall. After she confirms you are set, you will use [GlobalProtect](https://kb.wisc.edu/helpdesk/page.php?id=90370) to enable mapping the drive, and/or Remote Desktop for accessing your work computer from off campus.
+* We use [Office 365](https://it.wisc.edu/services/microsoft-365/) for email, calendaring, etc. You can sign in with your wisc.edu account at email.wisc.edu, and either access the various Microsoft tools online, or download them to your office computer for use as standalone apps. 
+
+**We will send you Slack, Asana, and Zotero invites to your wisc.edu email address, which you can use to create an account and access our lab resources.**
+
+Qualtrics and Zoom are UW-authorized software and you should sign up for them with your wisc.edu email through the links provided in the [Campus Software Library](https://it.wisc.edu/services/software/). Let us know when done so we can add you to our various lab services.
+
+#### Data Analysis Software:
+* We use [R](https://cran.r-project.org/) and [RStudio](https://posit.co/products/open-source/rstudio/) for data manipulation & analysis. They can be downloaded onto your personal computer, if you wish, or you can simply plan to use a lab computer. If you do download them yourself, remember you need to install R as a standalone prior to installing RStudio.
+* We store data analysis and manuscript code in repositories on [Github](https://github.com/ ). We also use [Github Desktop](https://desktop.github.com/) to interface with those repos.
+* We use [Quarto](https://quarto.org/) in R for writing grants, manuscripts, and data analysis scripts and documentation 
+* We perform machine learning Data Analysis at the Center for High Throughput Computing ([CHTC](https://chtc.cs.wisc.edu/)) 
+* We use [Ron's Data Edit](https://www.ronsplace.ca/Products/RonsDataEdit) to view or edit csv data files outside of R. You will need to get the activation license from Susan.
+    * Excel is NOT appropriate to use with csv data files, as it imposes its own date formatting which then makes the data unreadable by R. 
+
+**You should create user accounts on Github and CHTC and let us know so we can add you to the lab resources.**
+
+
+## Lab Communications
+
+**The Problem: ** Asynchronous communication tools (Slack, email) are distracting, which can prevent deep work.  Constant task switching interferes with complex tasks like writing and coding.  These tools draw our attention and reduce our focus even when we are not checking them, simply by knowing that others may be trying to reach us with them.  
+
+These asynchronous communication tools may also be making us miserable.  In the short-term, it is rewarding to respond to a simple request or add a cute emojii for feedback.  However, it is frustrating to try to continuously monitor multiple communication channels through the day, every day.  
+
+However, these tools were developed for a reason.  We do need to communicate regularly because we are pursuing collaborative research aims.  We need a better way to communicate that is efficient but not distracting.
+
+Our solutions are outlined below: 
+
+### Office hours 
+
+We will each hold *office hours* every day from 8:30 - 9:30 am.  Students who have class or practicum conflicts are excused from office hours on those days.  Otherwise, we should all plan to be available to each other during these hours.
+
+These office hours allow us to communicate flexibly, individually or in groups, as needed. This way we will each have access to each other every day, though it is not expected that we will actually meet during these office hours every day.  
+
+Meetings will happen as needed by a Zoom video or audio call.  We can also call others to the meeting if necessary.  Meetings can be very short (a few minutes) or longer (up to 30 minutes?)  Do not plan to use the full hour as that will prevent others from communicating with this person.   Long meetings, if needed, can be scheduled outside of office hours.
+
+We will use the **meetings-office-hours** channel in Slack each morning before or at the start of Office hours to organize meetings during that time.  If you need someone, its a good idea to give them a heads up by indicating that in the thread for the day.  I will try to post something by the start of each office hour about my needs and inviting others to reserve time with me.
+
+Each of us should also use our office hours each morning to handle asynchronous communications (e.g., responding to email, Slack, Asana messages/tasks).
+
+### Asynchronous or unscheduled communications
+
+We will not remove all asynchronous communications.   They can be efficient for some communication tasks. Urgent needs for communication can also arise unexpectedly.  We need methods for these communications.  They are as follows:
+
+1. **Slack messages**.  Most asynchronous communications will continue to occur in Slack.  Slack messages should be limited to questions or posts that do not require more than a single response from one individual.  Examples include:
+
+   * Posts about articles to read, new analysis methods, etc to channels like software-r, read-papers, read-media.  These posts do not require any response but many of us (myself included) find them valuable to read at moments when we are not doing deep work.  
+    
+   * Questions directed at as single lab member requesting clear information that will not (likely) require follow-up or clarification (i.e., a series of back-and-forth messages over a short period).  We should @ the person within the appropriate channel or DM them.  They will respond the next morning during their office hours.
+
+2. **Task assignments in Asana**.  If we need someone to DO something, don't use Slack.  Asana was designed to track tasks and it does this well.  Assign that person a task directly in Asana.  Set a due date for when you need it (they can adjust this date if necessary to accommodate their own schedule).  Describe the task fully in the description box.  If the task requires discussion, discuss it with them during that person's office hours.  Do NOT engage in a series of back and forth messages in Asana!  Live meetings are appropriate for discussions.  Some messages or update can be posted in Asana.  Expect these messages to be read the next day during the person's office hours.  Use @ to make sure the person sees your message (comment)
+
+3. **Phone calls for urgent communications**.  Urgent communications may be necessary at times.  If you need information from someone immediately, call them.  This will allow us to be available for urgent issues without having to monitor some communication channel.  However, we should very carefully consider how urgent our need is.  We recognize that we are likely disrupting someone else's deep work.   This cost to them should be recognized.   Most issues can wait until the next morning.
+
+4. **Lab notebooks for documentation**.  Slack and Asana were not designed for documentation.  For documentation, we will begin to make heavier use of lab notebooks maintained through Quarto.   At this point these will include:
+     * Project manuals - for procedure and materials for a grant funded or other parent project.
+     * Project progess reports - for updates and meeting notes about those projects.
+     * Study notebooks - for notes about analyses for specific papers.
+    
+5. **Github and coding tasks**.  We will continue to use **issues** in Github to document coding needs for specific projects, studies, and lab toolboxes.  At this point, we don't yet have a clear integration of Github issues with Asana tasks.  This is something we still need to address.  
+
+### Professional Calendaring
+
+We all need to commit to keep our Outlook calendar up to date with all meetings and planned absences during business hours in the work week.  This will allow each of us to view others calendars and use Outlook's scheduler to find times that are available for all of us.  This anticipates that the whole university is pushing to establish Outlook as our "business" calendar.  As adoption increases, this will remove the need for time consuming schedule poll (e.g., whentomeet) for all of us.  I understand that many of you may use other calendars for your personal use.  However, Outlook will be the official work calendar.  If you use other calendaring systems, please make sure that you have shared events in that calendar such that the are viewable (public or private by your choice) in Outlook.   
+
+We may send invites to share Google calendars with you if you are assigned to work on a study with a calendar. These calendars are used to view scheduled sessions for studies. 
+
+### Intro to Slack
+Our Slack workspace is the primary place that lab members communicate with each other (preferable to email) as it allows everyone to keep informed about study and project activities or decisions.
+
+*	John creates channels. You are welcome to browse and subscribe to as many channels as interest you!
+    * Proj-name: These are channels for specific projects which are overarching research programs, mostly linked to an R01 or other Grant, or Dissertation
+    * Study-name: Each Project can result in several [studies](studies.qmd) which are analyses of specific subsets of project data; these are channels for Studies. 
+*	Inside Channels we can post Threads. Each Thread is a semi or fully self-contained topic or conversation related to the channel. 
+    * When replying to a thread, be sure to reply in the thread and not as a new thread in the channel. 
+    * As much as possible, try to keep related questions together in a single thread, as this allows for better tracking of decisions and milestones related to that topic.
+*	We also use DMs (direct messages) for conversations that are more ephemeral or don’t require group discussions.
+    * DMs don’t always use threaded conversations as heavily, depending on the preferences of the people in it. For example, I often still use threaded conversations in DMs with John, but not with other staff.
+    * You will need to have a separate conversation with any permutation of people. For example, if you and John are having a DM conversation and wish to loop me in, Slack will start a new conversation, and I will not be able to view anything that was previously posted in that conversation.
+
+#### Slack Best Practices:
+*	In most\* cases, Slack is NOT meant for “immediate” communication. You are not expected to reply immediately, but should be checking and responding to messages during office hours as outlined above. 
+    *	If you need John for an immediate question, call him instead of sending a Slack message.
+    *	\*If you need Susan for an immediate question, you are free to DM in Slack! I am always available and it’s the fastest way to get in touch with me.
+*	When you wish to notify someone in a thread or a reply, you should tag them using the @ symbol. Otherwise they may not see it!
+*	We use Reactions fairly heavily in the lab to indicate that we’ve received information/seen a reply or thread, if it doesn’t explicitly ask for a verbal response. For example, John may tell post a thread “I’ve just updated the repo, be sure to update from Github before you start working” – a thumbs up or checkmark reaction is an indicator to John that you’ve seen and taken the necessary action.
+
+
+### Intro to Asana
+Asana is an online task-management system that we use to keep track of tasks and milestones. Graduate students are expected to use Asana to manage their First Year Projects.
+
+*	John will help you create Projects for each of your FYPs.
+*	You or John can create Tasks in your project, and set up due dates or dependencies. 
+    *	Like Slack thread replies, you can have comments on an Asana task to ask for clarification or provide updates to the assignee/assigner.
+*	When working on a collaborative task, you can re-assign a task to someone else. For example while working on a task from John, you may assign it back to him for input or review, and he will assign it back when there is an action response for you. 
+
+
+## Human Subjects Training
+
+All lab members are required to be up to date with the UW required human subjects training courses:
+
+1.	HIPAA - visit <https://compliance.wisc.edu/hipaa/training/> and click the Canvas link for the training.
+2.	CITI go to <https://apps.research.wisc.edu/citi> and sign up for:  
+    a.	UW Human Subjects Protections Course
+    b.	GCP – Social and Behavioral Research Best Practices for Clinical Research
+    c.	Basics of Effort Reporting (grad students only; NOT the one listed for the SMPH)
+
+These trainings need to be renewed periodically. You will receive emails or notifications when renewal approaches.
+
+
+## Security and Privacy
+1.	All lab members are expected to keep their workstations secure. It should be set to lock automatically after 5 minutes and you should be in the habit of locking your workstation whenever you leave your desk.
+2.	Door should be locked behind you when not in the room. Never leave a room unattended and open. 
+3.	File cabinets should be locked when not in use. All files must be in locked cabinets when not in use.
+4.	NEVER leave participant or financially related files out on your desk overnight. For brief periods away from your desk, make sure all information is covered or secured.
+5.	Never share keys, passwords, or other information except those which are explicitly provided to you as being for multi-user access.
+6.	All lab members are expected to respect the privacy of participants by keeping conversations, files, and other items private per the [Confidentiality Agreement](P:\administration\forms\ConfidentialityAgreement.doc) and per the Participant Privacy section below. 
+7.	A copy of the Confidentiality Agreement must be signed by each lab member, their mentor/supervisor, and filed by the Lab Manager
+
+### Using Lab Computers
+1.	Never save anything to a computer locally (meaning do not save items to a computer's desktop or C drive) unless it is 100% reproducible and okay to immediately be lost forever (e.g. scratch documents for your use only)
+2.	Study data should be saved in the designated location on the shared P drive for that study.
+3. 	Personal information should not be saved to the shared P drive OR a local computer.
+    a.	If you do save personal information to a computer, that information is in jeopardy or being lost.
+    b.  Instead of saving to the computer, it is recommended that you save your personal information Google drive, [UW Box](https://uwmadison.account.box.com/login), or Github, all of which are available from anywhere you have internet.
+4.	If you are an undergraduate student, then you will need to log onto a computer using the log-in information provided to you by the study coordinator or your supervisor/mentor.
+5.	If you are not an undergraduate student, you will log into a computer using a personal log in name and password. This log-in name in and password will need to be set up by John or the lab manager.
+
+
+### Participant Privacy
+1.	Always give participants as much privacy as is possible for answering questionnaires.
+2.	NEVER speak about any past, present or future participant if you are within hearing range of anyone who does not work in our lab.
+3.	Never discuss study participants with other study participants, even if a participant volunteers that they know another participant. Discuss with the lab manager or study coordinator if you have any concerns.
+4.	Any papers or files with a participant's personal information must be kept out of plain sight at all times.
+5.	If any papers with participant information need to be thrown out, be sure to shred it (the shredder is in room 187 or 192).
+
+
+## Undergraduate RA Expectations
+
+1.	Undergraduate RAs are expected to work approximately 10 hours per week in the lab. 
+    *	Timesheets for paid students are approved by Susan and should be submitted through my.wisc.edu
+    *	You can request course credit (Psych 621) for up to 3 credit-hours in exchange for your participation. 
+         *	NOT all RAs are eligible for mentored research (ie, Bio 152 or a Senior Thesis). Please speak to Susan about requirements to be considered for this.
+2.	We will work with you to schedule your shifts at times that don’t interfere with your classes/extracurricular activities.
+    *	If you are scheduled for a participant visit and it is cancelled, you are still expected to be present in the lab at that time and use the time for training or other duties, unless told otherwise.
+    *	Although we are very flexible with respect to exams, vacations, etc; you MUST let us know in advance if you will be absent for a scheduled participant visit/session.
+3.	We communicate primarily by Slack and request that you are prompt in responding to direct messages or mentions (during your shift, please try to reply immediately unless you are with a participant; outside your shift, please reply within 24 hours excepting weekends).
+    *	We also do communicate intermittently by email. You may wish to read this primer on workplace email etiquette if you are not already very familiar with how employers use email: <https://www.thebalancecareers.com/email-etiquette-525535>
+    *	All lab members (excluding RAs) hold office hours daily from 8:45 am – 9:45 am, during which time we are available for meetings by request. RAs are not required to hold office hours although you are welcome to send a slack message to anyone to request a meeting during this time. 
+     *	If you have questions, Susan is reachable via slack pretty much all the time!
+4.	Dress code: Outside of face-to-face participant interaction, there is no dress code. 
+    *	We currently (2023) do not have in-person participant visits; but if we did, the dress code for those would be light business casual (No sweats, shorts, or sneakers, no t-shirts with logos or text, no tank tops or cropped tops). You will often be dealing with a community population and are expected to present yourself professionally as a representative of the lab and the University.
+

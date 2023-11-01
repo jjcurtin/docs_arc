@@ -1,0 +1,189 @@
+# Installing Linux
+
+## Install OS
+https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview
+
+## Install key support apps
+
+`sudo apt install git`
+`sudo apt install vim`
+
+## Create and edit aliases
+
+
+
+
+## R
+
+sudo apt install -y --no-install-recommends software-properties-common dirmngr
+wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc
+sudo add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/"
+sudo apt install -y r-base r-base-core r-recommended r-base-dev
+sudo apt install libcurl4-openssl-dev
+sudo apt install libfontconfig1-dev
+sudo apt install libxml2-dev
+sudo apt install libharfbuzz-dev libfribidi-dev
+
+
+`wget https://download1.rstudio.org/electron/jammy/amd64/rstudio-2023.03.0-386-amd64.deb`
+`sudo apt install -f ./rstudio-2023.03.0-386-amd64.deb`
+
+install.packages("devtools")
+library(devtools)
+install.packages("tidyverse")
+
+
+
+https://www.r-bloggers.com/2022/08/installation-of-r-4-2-on-ubuntu-22-04-1-lts-and-tips-for-spatial-packages/
+
+https://www.digitalocean.com/community/tutorials/how-to-install-r-on-ubuntu-22-04
+
+https://computingforgeeks.com/how-to-install-r-and-rstudio-on-ubuntu-debian-mint/
+
+
+## Quarto
+
+- Download latest version of [Quarto](https://quarto.org/docs/get-started/)
+
+- install using `sudo apt install <package path>` or `sudo dpkg -i <package path>`
+
+https://docs.posit.co/resources/install-quarto/
+
+https://www.cyberciti.biz/faq/how-to-install-curl-command-on-a-ubuntu-linux/
+
+## SSH Keys for github, chtc, etc
+https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+
+https://github.com/settings/keys
+
+https://www.beyondtrust.com/blog/entry/ssh-key-management-overview-6-best-practices
+
+## Zotero
+
+- `sudo apt update`
+- `sudo apt upgrade`
+- `sudo snap install zotero-snap`
+
+After zotero is installed, you can synch to the Addiction Research Lab library.   Go to menu `edit:preferences:synch`.  Username is jjccurtin.  Ask John or Susan for the password.
+
+## Slack
+
+Slack is easily installed from the Ubuntu Software Center.  Open up the software center.  Search for Slack.  Install.  Done.
+
+### pdfs
+
+- `sudo snap install evince` for viewing pdfs
+
+- `sudo apt-get install qpdf` for manipulating pdfs (e.g., extract pages)
+
+## Global Protect
+
+- [Install] (https://kb.wisc.edu/helpdesk/105971)
+- []
+
+## Meld Merge for file diffs
+
+- download and install [meld merge](https://meldmerge.org/)
+- add the following to your .gitconfig file
+
+```
+[diff]
+    tool = meld
+[difftool]
+    prompt = false
+[difftool "meld"]
+cmd = meld "$LOCAL" "$REMOTE"
+
+# The order of the Meld GUI window panes can be controlled by the order of $LOCAL and $REMOTE in cmd
+```
+
+## CSV
+
+https://www.tadviewer.com/
+
+## Mount Shares
+
+- `sudo apt-get install cifs-utils`
+
+- create directories within ~/mnt/ for each share.   
+
+- save credentials file for synology (.synology_credentials) or research drive (.researchdrive_credentials) at /root/.  These should include username=, password= (and for research drive, domain=ad.wisc.edu)
+
+- create an alias for the command for each share to  mount.  Get it from John
+
+
+
+## Creating SSH passkeys
+
+You can create an [ssh key](https://www.linode.com/docs/guides/use-public-key-authentication-with-ssh/) to ssh without the need to provide username and password.  In our lab, these are useful to ssh to CHTC or for git shh to GitHub.
+
+To create the key
+
+1. Open a terminal and type `ssh-keygen -t ed25519`.  
+
+2. Accept the defaults by repeatedly pressing enter and this will create a key with defauult names .ssh/id_ed25519, and .ssh/id_ed25519.pub. 
+
+To use this key with CHTC
+
+1. Open the public key file (id_25519.pub) and copy the content.
+
+2. SSH to CTHC
+
+3. Create or edit .ssh/authorized_keys
+
+4.  Paste your public key info at the end of this file.
+
+To use this key with Github
+
+1. Go to your settings (point at your profile picture and select settings.
+
+2. Select SSH and GPG Keys
+
+3. Click New SSH Key, give it a title, and paste the public key info into Key box.
+
+## Sound mixer settings
+
+install pavucontrol to get mic on zoom to work
+
+alsamixer from terminal may help 
+
+## VNC for Remote Access
+
+https://kb.wisc.edu/biochem/it/page.php?id=127360
+
+
+
+## SSH to office computer
+https://linuxhint.com/enable-use-ssh-ubuntu/
+
+use username for hostname
+
+### X11 forwarding
+X11 forwarding is used in SSH to display GUI for app (e.g., rstudio) on remote computer (e.g., office computer). To enable X11 forwarding, need to edit /etc/ssh/sshd_config on remote computer to indicate:
+- `X11Forwarding yes`
+
+*May* also want to set
+- `X11DisplayOffset 10`
+- `X11UseLocalhost yes`
+- `TCPKeepAlive yes`
+
+*May* need to install xauth on remote computer.
+
+Need to use -X flag with ssh from local computer.  Can then open GUI for remote app (e.g.. rstudio)
+
+### VNC
+
+- [Documentation](https://kb.wisc.edu/biochem/it/page.php?id=127360) on how to install tightvnc on host.
+
+- Start vncserver on host with specific resolution: `vncserver -geometry 2560x1080 -depth 24` 
+
+- On client, can use Remmina with SSH.   
+
+
+
+## Customize CLI prompt
+
+This will set up a green prompt with relative path for current directory.
+
+PS1="\e[0;32;1m[\w]\$ \e[m"
+
