@@ -98,16 +98,16 @@ Moving between buffers
 yank/delete/put will work between buffers
 
 
-## Settings
+## Render files
 
-":set xxx" sets the option "xxx".  Some options are:
+We tend to use either md or qmd files for writing, code, etc.  Our .vimrc file turns on markdown highlighting for these files if saved with .md or ..qmd extensions.  qmd is preferred because it works with RStudio as well.
 
-- 'ic' 'ignorecase'       ignore upper/lower case when searching
-- 'is' 'incsearch'        show partial matches for a search phrase
-- 'hls' 'hlsearch'        highlight all matching phrases
+These files can be rendered to html or pdf if desired.
 
-You can either use the long or the short option name. Prepend "no" to switch an option off:   :set noic
+- `quarto render file.qmd` to render to html
+- `quarto render file.qmd --to pdf` to render to pdf
 
+We can use a full yaml header for more fancy output.   We have templates for apa manuscripts, letterhead, and a generally nice format pdf output if desired.  Just paste the yaml at the top of the file.
 
 
 ## Learing VIM

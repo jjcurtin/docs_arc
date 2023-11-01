@@ -775,5 +775,12 @@
     "title": "8  VIM",
     "section": "8.10 Working with multiple files",
     "text": "8.10 Working with multiple files\nVim can open multiple files in separate buffers. This can be done at the start by providing multiple filenames to vim (e.g., vim file1.md file2.md)\nAlternatively, additional files can be opened for editting later (:e file2.txt).\nMoving between buffers\n\nbn moves to next buffer\nbp moves to previous buffer\n:buffers displays all open buffers\n: buffer 1 allows switch to buffer 1 (or any other number) if there are many buffers open\n\nyank/delete/put will work between buffers"
+  },
+  {
+    "objectID": "vim.html#render-files",
+    "href": "vim.html#render-files",
+    "title": "8  VIM",
+    "section": "8.11 Render files",
+    "text": "8.11 Render files\nWe tend to use either md or qmd files for writing, code, etc. Our .vimrc file turns on markdown highlighting for these files if saved with .md or ..qmd extensions. qmd is preferred because it works with RStudio as well.\nThese files can be rendered to html or pdf if desired.\n\nquarto render file.qmd to render to html\nquarto render file.qmd --to pdf to render to pdf\n\nWe can use a full yaml header for more fancy output. We have templates for apa manuscripts, letterhead, and a generally nice format pdf output if desired. Just paste the yaml at the top of the file."
   }
 ]
