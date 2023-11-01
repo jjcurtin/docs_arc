@@ -1,0 +1,384 @@
+# Psychophysiology Software
+
+## Matlab
+This document is notes and documentation about Matlab from the server and wiki.
+
+
+### Matlab Support Phone Number
+508-647-7000, Option 5
+
+### Introductory Matlab readings:  
+See P:\Lit\Topics\Matlab  
+Chapter 2: Basic Features  
+Chapter 3: The Matlab Desktop  
+Chapter 4: Script M-Files  
+Chapter 5: Arrays and Array Operations  
+Chapter 8: Cell Arrays and Structures  
+Chapter 11: Control Flow  
+Chapter 12: Functions  
+Chapter 14: File and Directory Management  
+
+See Also
+Matlab Onramp - self-paced online course. To use, create a Mathworks account and check the Campus Software Library page for Matlab for the most recent key.
+
+### Installing Matlab and updating license and startup files
+Follow these steps to install Matlab (or update to the most current version - an update is a fresh install of a new release)
+
+#### Install Matlab
+1.	Get the MathWorks login information from our last pass account. Go to http://www.mathworks.com/
+2.	Login to the site using our lastpass information
+3.	Select 'Support' menu option (top menu) followed by 'Download' sub-option (center panel, left-hand icon)
+4.	The most recent version will appear as a download link in the center of the screen. Consult with John regarding which version to install. As of 12/2014 we are still installing 2012a. Click the button of the desired release to proceed.
+5.	Choose correct platform (as of 12/2014 32bit to insure compatibility with our I/O), and click. The download will begin (save where prompted, or it will be saved wherever your browser is configured to save files). It is an .exe installation file.
+6.	Once download is complete, click to begin the installation. Click accept to allow the extractor to run which will begin unzipping the install files. Press Run when prompted to begin the installation.
+7.	Choose 'Install using the Internet' and the press 'Next'. Enter the Mathworks account information when prompted.
+8.	Click 'Yes', to accept the terms of the license agreement and then press 'Next'. Continue to follow the installation prompts.
+    1.	Note: You can follow the instructions from this point to update the license for any machine which already has Matlab installed
+9.	Go to Start Menu -> Program Files -> MATLAB -> <your version number> -> Choose "Activate Matlab" (if Matlab is already open after installation, but Activation doesn't automatically launch, go to the Help menu and select Licensing, then "Activate Software".)
+10.	Select "Activate using the Internet". Enter the Mathworks account information when prompted.
+11.	Select the correct license which reads: Campus - Academic (rather than Concurrent - Academic). Old way was: TAH Designated Computer. There may be others that look similar (ie TAH Network Concurrent), do not use those. Hit Next
+12.	Confirm the activation settings then hit Activate.
+13.	Close and re-open Matlab to verify activation is complete.
+
+#### Update Matlab Startup files & Other Setup
+To allow Matlab to recognize our custom scripts, you need to install our custom startup file. It can be found in P:\Documentation\Software\Matlab. Read Matlab Startup Details below for more information about startup and paths work.
+1. Download and save this file in the \toolbox\local folder at the Matlab root. This folder will be found in the Matlab installation folder in the program files folder. For example, for 2012a installation of matlab, it is found here: 
+Windows: C:\Program Files\Matlab\R2012a\toolbox\local\startup.m
+2. Restart Matlab
+The only thing done by startup.m is to call P:\Documentation\Matlab\Settings\ARCStartup.m. This latter file contains installation procedures for EEGLab, Physbox, and LedaLab which are handled automatically by Matlab. No commands need to be run to install these plugins/toolboxes and they do not need to be installed manually. To verify, simply call "eeglab" from the Matlab prompt and it should run if all is correct.
+ARCStartup.m also puts the support folder from CurtinTasks toolbox in path for all machines EXCEPT data collection machines. It checks if a machine is a data collection machine (by name) and excludes them. Data collection still uses study specific /Support in /Programs for each study.
+NOTE: Computers which cannot connect to the internet (such as the mobile lab at CRU) cannot use this file and will have their own startup file.
+
+#### Matlab Startup Details
+When Matlab starts, it runs matlabrc.m (located in /toolbox/local from the matlab root). matlabrc.m establishs paths (via pathdef.m) and then calls startup.m. Code in matlabrc.m is executed for all installations of matlab (regardless of user). startup.m provides an opportunity to then do additional custom setup for a specific user. To accomplish this, you could place startup.m in a user folder set up by matlabrc.m but we do not do this. We keep startup.m in /toolbox/local and run the same script for all users.
+
+Startup only does two things 
+1. It puts P:\Documentation\Matlab\Settings in the path. This allows access to genpath_excludem and ARCStartup.m genpath_exclude allows us to not include svn folders for toolboxes under version control in the path. 
+2. It calls ARCStartup to implement the remaining startup code. 
+This allows us to only edit ACRStartup.m to implement startup changes on all computers at once rather than having to replace startup.m on every computer each time we change something.
+
+CRU ONLY: startup does one thing 
+1. It puts C:\Local in the path. This file is located on the server (P:\Documentation\Matlab) and called startup_CRU.m and needs to be renamed startup.m on the local CRU computer. This startup file is different because the CRU computer does not have internet access or access to the server. Therefore we reproduce the server infrastructure locally. In other words, study folders (e.g., KAYE2, DOX) live within C:\Local\ rather than within P:\StudyData\
+
+ARCStartup.m does some common tasks across all computers and then some computer specific tasks based on whether the computer is a stimulus control data collection machine vs. all others.
+For all computers, it puts EEGLab, PhysBox and Ledalab in the path. It adds these to the end of the path (not really that important but maybe a little slower access than earlier folders). Critically, it adds them in a frozen state. This means that matlab will not receive change notification handles if anything changes in these folders. Regardless, Matlab knows if a script/file changes if you edit it in Matlab so this is not a concern if you were to edit a PhysBox function in Matlab. The new function will be recognized as changed. The only time that Matlab would not know a script or other change happens in these folders is if you edit a file outside of matlab (e.g., with Notepad rather than the matlab editor) or if you copy or replace a file through the Explorer. In these rare instances, you should type clear all (or restart matlab) to have it recognize the changes to the scripts/functions.
+
+These folders are added as frozen intentionally because there is a performance cost to constantly monitoring for changes in these folders (and also b/c there are a limited number of folders that can be monitored- hence the warnings in the past about running out of change notification handles and we add a LOT of folders for EEGLab, PTB, etc).
+
+It should also be noted that the PTB toolbox is NOT added by ARCStartup. This is because PTB adds its folders to the matlab path in pathdef.m when it is installed. Moreover, it wants the folders added to the path in a specific order (bad practice in my opinion) and I didnt want to have to have complicated code to do this in our ARCStartup so I let it do what it wants to do.
+
+On all computers other than stimulus control, ARCStartup also adds 'P:\Toolboxes\CurtinTasks\Support from the CurtinTasks toolbox'. This gives these computers access to the General Matlab and PTB specific code we have written in house. We do NOT want the stimulus control computers to have access to these folders because this code can change and might break a script running in a current (or past) experiment.
+
+Instead, on stimulus control computers, ARCStartup adds C:\Local to the path. This allows the stimulus control computer to recognize scripts saved in this folder. We then put STUDYNAME.m files in this folder that should be executed before you run PTB for data collection. STUDYNAME.m adds /Programs from the study's StudyData folder. /Programs contains the code for all the tasks for this study and also a /Support folder that was established at the time the study was initiated. This way, any future changes to /Support in the CurtinTasks toolbox do NOT affect previous studies.
+
+
+### Matlab Demo Scripts
+\\Matlab\\General\\Demos
+
+* DEMO_EMA.m: Creates file for mCore SMS Component to read all scheduled outgoing text messages.
+* MakeSound.m: Plays a sound file
+
+* DEMO_ShockValueExtract.m: demo script index and extract particular values from arrays created by shock assess scripts to be analyzed.
+* DMDXAggregate.m: Script to loop through individual .dat RT files from DMDX and aggregate into one file
+
+### Matlab Function Library
+Source code for our laboratory's library of Matlab functions to support general use and PTB is maintained under version control at Sourceforge. This repository also contains PTB code for our specific experimental tasks as well. The repository for source code can be checked out at via username/password at: https://svn.code.sf.net/p/curtintasks/code/trunk
+A working copy of this repository lives at P:\Toolboxes\CurtinTasks
+
+
+### Matlab Reference Card
+
+#### file name and path manipulation
+fileparts()
+
+fullfile()
+
+#### Button dialog for user input
+ButtonName = questdlg('What is your favorite color?', ...
+'Color Question', 'Red', 'Green', 'Blue', Green');
+switch ButtonName
+ case 'Red'
+
+     disp('Your favorite color is Red');
+
+ case 'Blue'
+
+     disp('Your favorite color is Blue.')
+
+ case 'Green'
+
+      disp('Your favorite color is Green.');
+
+end
+#### Use of varargin
+if ~isempty(varargin)
+
+  try g = struct(varargin{:});
+ 
+  catch
+      error('ERROR in pop_CreateAvg: wrong syntax in function arguments')
+  
+  end
+end
+
+
+#### Cell Arrays
+TestNum = cell(5,1);  %allocate a cell array with [] for all entries
+TestMixed = cell(5,1);  %allocate a cell array with [] for all entries
+TestChar = cell(5,1);  %allocate a cell array with [] for all entries
+%assignment to a cell
+TestNum{1} = 2;
+TestNum{2} = 3;
+TestMixed{4} = 1;
+TestMixed{5} = 'John';
+TestChar{1} = '1234';
+TestChar{3} = '5678';
+
+%indexing into cell
+Value = TestNum{1} %returns double into value
+Value = TestNum(1) %returns cell which contains 1 
+Value = TestMixed{5} %returns 'John' as char
+Value = TestMixed(5) %returns cell 
+
+%use of brackets
+Value = [TestNum{:}] %returns array of length 2 of double
+Value = [TestChar{:}] %returns 12345678 as char
+Value = [TestMixed{:}]  %doesnt work (returns char that includes special character for 1 and then John 
+%use of find with numeric entries
+index = find([TestNum{:}]==2;  %result is index 1
+
+%Deleteing empty cells
+TestChar(cellfun('isempty',TestChar))= [];
+
+
+### Fixing Matlab problems
+
+#### Random Number Generators
+Matlab's random number generators are very misleading. They will all generate the same exact random numbers each time upon restarting matlab. You can get around this by changing the seed before calling this funciton. See matlab help page:http://www.mathworks.com/help/matlab/math/why-do-random-numbers-repeat-after-startup.html
+
+
+#### Path problems
+For some unknown reason, matlab sometimes (but not always) saves information about files and folders it expects to find on startup in pathdef.m. If you subsequently delete these files or fodlers, Matlab will generate error messages such as:
+Warning: Name is nonexistent or not a directory: C:\Program Files\EEGLab\eeglab8_0_3_4b.
+To fix this problem you need to edit the pathdef.m file to delete references to these files and/or folders. Pathdef.m can be found in the toolbox\local\ folder (e.g., c:\program files\matlab\R2010a\toolbox\local\
+
+#### Floating point errors
+See the following Matlab tech note and the follow-up tech notes from this page
+http://www.mathworks.com/support/solutions/en/data/1-16FOQ/
+
+When you encounter this problem when testing for equality (e.g A == B), try this
+abs(A-B) < 100*eps
+
+
+#### Filter Error; Boundry Event
+
+> I saw your reply on a post in the eeglablist named 'Filtering trouble'.
+> In my instance, the sampling rate is 500 and the number of frames is
+> 1385355. I tried both 0.1Hz and 0.5Hz for the lower edge of my accepted
+> band when doing a highpass filtering. However, the below error messages
+> happened all the time for 0.1Hz and happened still quite frequently for
+> 0.5Hz. Do you have any suggestion to avoid that kind of error? Thank you
+> very much!
+Relevant is not the total number of frames, but the number of frames per
+*continuous* data epoch/segment (separated by 'boundary' events usually
+inserted by the data acquisition system to mark DC offsets). As far as I
+remember the EEGLAB built-in "Basic FIR filter" requires the segment to
+be at least three times longer than the number of filter coefficients.
+You find 'boundary' event indices/latencies fastest from the commandline:
+
+>> boundArray = strmatch('boundary', {EEG.event.type})
+>> [EEG.event(boundArray).latency]
+
+You might want to try the "Windowed sinc FIR filter" from the firfilt
+plugin which does not have this restriction. Reasonable starting values
+for filter order are 8250 for 0.1 Hz highpass (Hamming window; 0.2 Hz
+transition band width) or 1650 for
+
+
+Dear Min,
+
+you continuous data is long enough but portions of it are too narrow (portions are defined as the data in between boundary events). Our filters are not optimal for use at these very low frequencies. There has been other messages related to this topic on the list.
+
+http://sccn.ucsd.edu/pipermail/eeglablist/2008/002190.html
+
+Best regards,
+A. Delorme 
+
+#### Out Of Memory Error
+
+Your problem is likely due to the manner in which the different operating systems handle memory. With Matlab, the largest variable size is determined by the largest contiguous block of free memory. Therefore, even though your Windows machine has 2.5G RAM, the maximum variable size Matlab is able to create and store could be much, much smaller, particularly if you have several processes running in the background.
+
+You can check the free contiguous blocks of memory at the Matlab prompt by typing: system_dependent memstats
+
+There is a helpful web tutorial dealing with large datasets in Matlab on the Matlab Central File Exchange (http://www.mathworks.com/matlabcentral/fileexchange/loadFile.do?objectId=9060&objectType=file#).
+
+ 
+#### Generate N random numbers in a one-dimensional vector with values spaced between X1 and X2
+
+random_vector = (x2-x1)*rand(1,N) + x1
+
+Generate random data having correlation between column 4 and the other columns.
+x = randn(30,4);     % Uncorrelated data
+x(:,4) = sum(x,2);   % Introduce correlation.
+[r,p] = corrcoef(x)  % Compute sample correlation and p-values.
+[i,j] = find(p<0.05);  % Find significant correlations.
+[i,j]                % Display their (row,col) indices.
+
+r =
+    1.0000   -0.3566    0.1929    0.3457
+   -0.3566    1.0000   -0.1429    0.4461
+    0.1929   -0.1429    1.0000    0.5183
+    0.3457    0.4461    0.5183    1.0000
+
+p =
+    1.0000    0.0531    0.3072    0.0613
+    0.0531    1.0000    0.4511    0.0135
+    0.3072    0.4511    1.0000    0.0033
+    0.0613    0.0135    0.0033    1.0000
+
+ans =
+     4     2
+     4     3
+     2     4
+     3     4
+
+
+## Neuroscan 
+
+
+### Downloading Neuroscan
+Scan 4.5 can run on both Windows XP and Windows 7 as long as Scan 4.5.1 is also downloaded, which is a patch that allows Scan 4.5 to run properly. Any Neuroscan software before Scan 4.5 can only run on Windows XP.
+
+You may or may not need to upgrade the license on your dongle ('hardware key'), you won't know until you install the software and look up license manager (Go to Start\Programs\Neuroscan\Scan4.5 and open License Manager). In license manager, 'Scan 4.3' should be listed there in order to run Scan 4.5. If you don't see it there, you should let tech support at Neuroscan know and they will arrange to have it upgraded for you.
+
+### Installation
+
+To install the Scan software, remove your license key before you proceed then uninstall any Scan application that may have been installed then follow the step-by-step instructions below:
+
+1. Disconnect the amplifier(s).
+
+2. Download 4.5 from the following link: http://dl.dropbox.com/u/11144802/Scan4.5%20Release%20Disk.zip
+This is a full installation, compressed into a ZIP archive. Download and save, and then copy over to your destination PC. Unzip the file contents into an empty folder, and then run "launch.exe" to begin the installation. Restart the PC when prompted.
+
+3. Once Scan 4.5 is installed, you will need to run the 4.5.1 Hotfix. Download it from: http://dl.dropbox.com/u/11144802/Scan451Hotfix2.exe
+This is a single EXE file; download and save onto your PC, and then run the EXE file.
+
+4. Run the "Amplifier Install" program and select your amplifier (Windows Start\Programs\Neuroscan\Scan 4.5\Amp Install).
+
+5. Connect your license key and run Edit. If the key is not recognized, do the following:
+Browse to the Neuroscan folder located in C:\Program Files\Neuroscan and find Scan4.5\Drivers\Sentinel; run the EXE file (v 7.5.0) in that folder with the dongle disconnected. Afterwards, reconnect the dongle.
+The 4.5/4.5.1 Release Notes can be downloaded from: http://dl.dropbox.com/u/11144802/Release%20Notes%20451.zip
+
+6. At this point, you can connect your amplifier which should be detected automatically. If the amplifier is not detected automatically, when you try to open Scan 4.5, you receive an error message "Error: Amplifiers not detected." You should then manually install the amp driver. To do this, simply go to Dev Manager and direct the flagged unidentified USB hardware to upgrade the driver from the following location C:\Program Files (or Program Files(x86))\Neuroscan\Scan4.5\Drivers\Synamp2\. If you still receive an error message stating that the amplifiers are not detected, you should contact tech support at Neuroscan.
+
+### Neuroscan Setup Files
+Neuroscan requires Setup files (extension .ast) to determine the amplifier settings and recording parameters for your study. Below is an an example setup file for our lab and description of some common parameters.
+NOTE: The name of the active setup file should display in the lower right corner of the screen next to the workspace name default.aws. If it does not, you may need to set the display resolution above 1280x1024 (per RS at NS Jan 2015) Here is an example neuroscan setup file to record orbicularis, corrugator, and probe: STL_CRG.ast
+
+1. Once you download the setup file above open neuroscan acquire and click File > Load Setup... find your file and click Open.
+
+2. Confirm or edit your channel assignments by going to Edit > Channel Assignment. The channel assignments table has 3 columns representing the channel number (#), the physical channel on the amplifier (Phys), and the label that is displayed on the screen for that channel (Label). The example file above has the following channel assignments:
+* Orbicularis: # = 1; Phys = BP2; Label = ORB
+* Corrugator: # = 2; Phys = BP3; Label = CRG
+* Probe: # = 3; Phys = HL1; Label = PRB
+
+3. Now check your overall parameters by going to Edit > Overall Parameters. Below are listed common parameters we use for data collection:
+* Startup:
+* Single Window Display No 1: Check Enable
+* Negative: Check Up
+* Amplifiers (SN2):
+* Acquisition:
+* A/D Rate = 2500
+* Number of Channels = 3 (Note: modify this to match the number of channels you are actually collecting.)
+* Acquisition Type = Continuous
+* AC/DC = Check DC
+* Amplifier Settings
+* Low pass = 500Hz (See pt 4 below)
+* High pass = DC
+* Click Apply To All Selected Channels (First, Click Select All)
+* Notch
+* Frequency = Off
+* Triggers
+* Check External.
+* Hold value = 0 (Note: This must match your hold value designated in the header of your stimulus presentation program. Some programs in our lab have used 255, so confirm that this matches your DMDX or Matlab program).
+
+4. Much of our filtering of data is done off-line in post-collection data processing. Historically, high pass hardware filters were necessary during data collection because older amplifiers (e.g., 8, 12, 16 bit) would saturate causing problems with data recording. Current amplifiers (e.g., 32 bit) do not appear to have this problem making hardware high pass filters unnecessary. Our lab’s current procedure is to collect all channels with the high pass filter set to “DC” and the low pass filter set to “500”. This DC-500 hz hardware filtering gives us total flexibility to use what offline digital filter we deem necessary in later data processing. Given this practice, we should continue to monitor data as it is being collected to ensure that channels with large responses (e.g., ORB for startle) do not saturate
+
+
+## Curry
+
+
+### Installing Curry
+1.	Installer package comes with an installer CD, tutorial CD, and a USB dongle.
+2.	The Dell Latitude laptop being uses for the mobile lab does not have an optical drive. Therefore, the contents of the installer CD were copied to P://Private/Documentation/Neuroscan/Curry/Installer Disk
+3.	Run setup.exe from the installer disk folder.
+4.	When prompted to choose which components to install, select: EEG acquisition, Core Files, Dongle Drivers, and Amplifier Drivers.
+   a.	Do NOT install: EEG/MEG analysis, Head models, Example Data
+5.	When the installer gets to the Amplifier Driver Installation, an onscreen prompt tells you to follow the onscreen directions.
+   a.	A secondary (device driver) installation window opens
+   b.	Give windows security approval to allow Compumedics to install the drivers by clicking the Install button.
+   c.	Click finish when the wizard indicates it is finished. It now returns to the main installer.
+6.	At the end of installation the finish window reminds you that a hardware lock "dongle" is required to run the software.
+7.	Go ahead and start the Curry 7 acquisition
+8.	A license information window will come up saying "dongle not found"
+   a.	Plug in the dongle and hit refresh. NOTE: The dongle must be plugged in at all times for the software to run. Just plug it in and leave it alone.
+   b.	Close the dongle window.
+9.	Go to the start menu and run Curry 7 acquisition from the Start or Programs menu.
+
+
+### Updating after First Install
+1.	At first launch, you will be prompted to do an online update; hit yes
+2.	You will receive another window that says you have to send a notification email to Neuroscan
+   a.	If you don't have an email editor like Outlook installed (which you shouldn't) click the button that says "no email"
+   b.	A text box will pop up, and you will be instructed to copy and paste this into an email which you can do via Wiscmail.
+3.	An executable update will available. Click to download, than click to run
+   a.	Note you must close Curry first
+4.	When that is finished, start the Neuroimaging suite again, and you will have been updated from 7.0.6 to 7.0.10
+5.	You will now have another email which you have to send. Follow the procedure above.
+
+### Curry Configuration Files
+Curry requires Configuration files to determine the amplifier settings and recording parameters for your study. There are both Amplifier Configuration files (.xml extension) and Global Parameters files (.cfg). These are roughly the equivalent of the Set-Up (.ast) files from SCAN. Below is an an example setup file for our lab and description of some common parameters.
+
+#### Amplifier Configuration
+*	In general it is recommended that you start with an existing configuration file and modify it rather than starting from scratch. See notes below for more.
+*	Amplifier: Grael EEG (demo below is for Grael)
+*	Sampling rate = 2048 Hz (required for triggering, see below)
+*	Mode: DC
+*	Low Pass: 819 Hz (default - unclear if this can/should be modified to 500Hz)
+*	Click on each site (or hold Ctrl for multiple sites) and select on/off the sites you will collect.
+*	For bipolar channels the Electrode No is the number and you can enter a Name (e.g, "ORB")
+
+#### Sensor Placement
+* Can use one of the defaults or create a new montage that is just for bipolar channels.
+* For bipolar channels the Active should be the channel number and Ref column should remain empty.
+
+#### Special limitations with the Grael trigger module. 
+If you are using the trigger unit with the Grael PSG or EEG amplifier, you should be aware of the following limitations:
+
+*	Triggers are only registered when acquiring data with the fastest sampling rate (2048Hz).
+*	Only stimulus events from 1-64 are registered; no response events are recognized.
+*	The maximum trigger frequency is 40Hz.
+*	The "Record Event Duration" option does not work with Grael.
+
+### Global Parameters 
+
+#### Amplifier Controls:
+*	Sampling rate must be 2048Hz for triggers to register.
+*	Load your configuration file.
+*	Set the path you want to save data for your study. Then click File->Parameters->Save Global Parameters.
+*	Trigger settings:
+  *	Select Neuroscan Stim2
+  *	Stimulus should be unchecked from Invert and Response should be checked for Invert (although we're not actually collecting Invert).
+
+#### Filter Parameters:
+* Raw: Raw should be selected. The tab that is selected is the current tab that is viewed during data collection. It is very important to always select RAW (it will also be displayed F-SET: Raw in the top left corner of the recording window).
+  *	Baseline checked
+  *	All other parameters will be blocked out and unable to modify.
+* Options MGFP unchecked (in order to have access to uncheck this you must be acquiring data) . MGFP is the mean global field power.
+
+### Notes
+*	NOTES: The computer can not be connected to VPN and connect to the amplifer at the same time. This is likely because the way the amplifier is detected over the network and the changing ip address used with each user's vpn account.
+*	We identified two software bugs on Curry. First when creating a new configuration from scratch the default setting is to set the trigger channel to off (0 sampling rate). This does not appear to be modifiable in the GUI. Therefore you need to start with an existing/working or the default configuration file for triggers to appear - and modify that file to your specs and save as new config file. Second, bipolar channels do not display impedances for both plus and minux channel separately.
+  *	Both of these bugs are fixed in a custom patch sent to us from Curry tech support. Hotfix is saved on the server: P:\Documentation\Neuroscan and Peripherals\Curry\Curry701029Hotfix.exe
+*	Sampling rate must be set at 2048Hz for triggers to register in Grael EEG.
+*	Bipolar channels are optically isolated from each other (per Ronnie email 2016_0728) and therefore it is safe to send audio/probe channel into bipolar channel while recording. Must be attenuated within range (<600uV or +-300uV).

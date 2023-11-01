@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Documentation for ARC - 15&nbsp; Psychophysiology Software</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./psychophysiology.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./psychophysiology.html">Psychophysiology</a></li><li class="breadcrumb-item"><a href="./psychophysiology_software.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Psychophysiology Software</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Documentation for ARC</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/jjcurtin/docs_arc" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
+              <i class="bi bi-bi-facebook pe-1"></i>
+            Facebook
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+      </ul>
+    </div>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welcome</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lab_practices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Lab Practices</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./grad_expectations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Graduate Student/Mentor Expectations/Policies</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./studies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Current and Planned Stuides</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chtc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">CHTC</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./git.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Git</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./linux_install.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Installing Linux</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./linux_use.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Using Linux</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./vim.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">VIM</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./flowchart_demo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Flowcharts</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./studies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Current and Planned Stuides</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Other Software</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./globalprotect_mapping.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Global Protect and Mapping the Network Server</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./zotero.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Zotero</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./qr_code.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Creating QR Codes for Presentations</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Psychophysiology</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./psychophysiology.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Psychophysiology Documentation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./psychophysiology_software.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Psychophysiology Software</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#matlab" id="toc-matlab" class="nav-link active" data-scroll-target="#matlab"><span class="header-section-number">15.1</span> Matlab</a>
+  <ul class="collapse">
+  <li><a href="#matlab-support-phone-number" id="toc-matlab-support-phone-number" class="nav-link" data-scroll-target="#matlab-support-phone-number"><span class="header-section-number">15.1.1</span> Matlab Support Phone Number</a></li>
+  <li><a href="#introductory-matlab-readings" id="toc-introductory-matlab-readings" class="nav-link" data-scroll-target="#introductory-matlab-readings"><span class="header-section-number">15.1.2</span> Introductory Matlab readings:</a></li>
+  <li><a href="#installing-matlab-and-updating-license-and-startup-files" id="toc-installing-matlab-and-updating-license-and-startup-files" class="nav-link" data-scroll-target="#installing-matlab-and-updating-license-and-startup-files"><span class="header-section-number">15.1.3</span> Installing Matlab and updating license and startup files</a></li>
+  <li><a href="#matlab-demo-scripts" id="toc-matlab-demo-scripts" class="nav-link" data-scroll-target="#matlab-demo-scripts"><span class="header-section-number">15.1.4</span> Matlab Demo Scripts</a></li>
+  <li><a href="#matlab-function-library" id="toc-matlab-function-library" class="nav-link" data-scroll-target="#matlab-function-library"><span class="header-section-number">15.1.5</span> Matlab Function Library</a></li>
+  <li><a href="#matlab-reference-card" id="toc-matlab-reference-card" class="nav-link" data-scroll-target="#matlab-reference-card"><span class="header-section-number">15.1.6</span> Matlab Reference Card</a></li>
+  <li><a href="#fixing-matlab-problems" id="toc-fixing-matlab-problems" class="nav-link" data-scroll-target="#fixing-matlab-problems"><span class="header-section-number">15.1.7</span> Fixing Matlab problems</a></li>
+  </ul></li>
+  <li><a href="#neuroscan" id="toc-neuroscan" class="nav-link" data-scroll-target="#neuroscan"><span class="header-section-number">15.2</span> Neuroscan</a>
+  <ul class="collapse">
+  <li><a href="#downloading-neuroscan" id="toc-downloading-neuroscan" class="nav-link" data-scroll-target="#downloading-neuroscan"><span class="header-section-number">15.2.1</span> Downloading Neuroscan</a></li>
+  <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation"><span class="header-section-number">15.2.2</span> Installation</a></li>
+  <li><a href="#neuroscan-setup-files" id="toc-neuroscan-setup-files" class="nav-link" data-scroll-target="#neuroscan-setup-files"><span class="header-section-number">15.2.3</span> Neuroscan Setup Files</a></li>
+  </ul></li>
+  <li><a href="#curry" id="toc-curry" class="nav-link" data-scroll-target="#curry"><span class="header-section-number">15.3</span> Curry</a>
+  <ul class="collapse">
+  <li><a href="#installing-curry" id="toc-installing-curry" class="nav-link" data-scroll-target="#installing-curry"><span class="header-section-number">15.3.1</span> Installing Curry</a></li>
+  <li><a href="#updating-after-first-install" id="toc-updating-after-first-install" class="nav-link" data-scroll-target="#updating-after-first-install"><span class="header-section-number">15.3.2</span> Updating after First Install</a></li>
+  <li><a href="#curry-configuration-files" id="toc-curry-configuration-files" class="nav-link" data-scroll-target="#curry-configuration-files"><span class="header-section-number">15.3.3</span> Curry Configuration Files</a></li>
+  <li><a href="#global-parameters" id="toc-global-parameters" class="nav-link" data-scroll-target="#global-parameters"><span class="header-section-number">15.3.4</span> Global Parameters</a></li>
+  <li><a href="#notes" id="toc-notes" class="nav-link" data-scroll-target="#notes"><span class="header-section-number">15.3.5</span> Notes</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jjcurtin/docs_arc/edit/main/psychophysiology_software.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Psychophysiology Software</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="matlab" class="level2" data-number="15.1">
+<h2 data-number="15.1" class="anchored" data-anchor-id="matlab"><span class="header-section-number">15.1</span> Matlab</h2>
+<p>This document is notes and documentation about Matlab from the server and wiki.</p>
+<section id="matlab-support-phone-number" class="level3" data-number="15.1.1">
+<h3 data-number="15.1.1" class="anchored" data-anchor-id="matlab-support-phone-number"><span class="header-section-number">15.1.1</span> Matlab Support Phone Number</h3>
+<p>508-647-7000, Option 5</p>
+</section>
+<section id="introductory-matlab-readings" class="level3" data-number="15.1.2">
+<h3 data-number="15.1.2" class="anchored" data-anchor-id="introductory-matlab-readings"><span class="header-section-number">15.1.2</span> Introductory Matlab readings:</h3>
+<p>See P: Chapter 2: Basic Features<br>
+Chapter 3: The Matlab Desktop<br>
+Chapter 4: Script M-Files<br>
+Chapter 5: Arrays and Array Operations<br>
+Chapter 8: Cell Arrays and Structures<br>
+Chapter 11: Control Flow<br>
+Chapter 12: Functions<br>
+Chapter 14: File and Directory Management</p>
+<p>See Also Matlab Onramp - self-paced online course. To use, create a Mathworks account and check the Campus Software Library page for Matlab for the most recent key.</p>
+</section>
+<section id="installing-matlab-and-updating-license-and-startup-files" class="level3" data-number="15.1.3">
+<h3 data-number="15.1.3" class="anchored" data-anchor-id="installing-matlab-and-updating-license-and-startup-files"><span class="header-section-number">15.1.3</span> Installing Matlab and updating license and startup files</h3>
+<p>Follow these steps to install Matlab (or update to the most current version - an update is a fresh install of a new release)</p>
+<section id="install-matlab" class="level4" data-number="15.1.3.1">
+<h4 data-number="15.1.3.1" class="anchored" data-anchor-id="install-matlab"><span class="header-section-number">15.1.3.1</span> Install Matlab</h4>
+<ol type="1">
+<li>Get the MathWorks login information from our last pass account. Go to http://www.mathworks.com/</li>
+<li>Login to the site using our lastpass information</li>
+<li>Select ‘Support’ menu option (top menu) followed by ‘Download’ sub-option (center panel, left-hand icon)</li>
+<li>The most recent version will appear as a download link in the center of the screen. Consult with John regarding which version to install. As of 12/2014 we are still installing 2012a. Click the button of the desired release to proceed.</li>
+<li>Choose correct platform (as of 12/2014 32bit to insure compatibility with our I/O), and click. The download will begin (save where prompted, or it will be saved wherever your browser is configured to save files). It is an .exe installation file.</li>
+<li>Once download is complete, click to begin the installation. Click accept to allow the extractor to run which will begin unzipping the install files. Press Run when prompted to begin the installation.</li>
+<li>Choose ‘Install using the Internet’ and the press ‘Next’. Enter the Mathworks account information when prompted.</li>
+<li>Click ‘Yes’, to accept the terms of the license agreement and then press ‘Next’. Continue to follow the installation prompts.
+<ol type="1">
+<li>Note: You can follow the instructions from this point to update the license for any machine which already has Matlab installed</li>
+</ol></li>
+<li>Go to Start Menu -&gt; Program Files -&gt; MATLAB -&gt; <your version="" number=""> -&gt; Choose “Activate Matlab” (if Matlab is already open after installation, but Activation doesn’t automatically launch, go to the Help menu and select Licensing, then “Activate Software”.)</your></li>
+<li>Select “Activate using the Internet”. Enter the Mathworks account information when prompted.</li>
+<li>Select the correct license which reads: Campus - Academic (rather than Concurrent - Academic). Old way was: TAH Designated Computer. There may be others that look similar (ie TAH Network Concurrent), do not use those. Hit Next</li>
+<li>Confirm the activation settings then hit Activate.</li>
+<li>Close and re-open Matlab to verify activation is complete.</li>
+</ol>
+</section>
+<section id="update-matlab-startup-files-other-setup" class="level4" data-number="15.1.3.2">
+<h4 data-number="15.1.3.2" class="anchored" data-anchor-id="update-matlab-startup-files-other-setup"><span class="header-section-number">15.1.3.2</span> Update Matlab Startup files &amp; Other Setup</h4>
+<p>To allow Matlab to recognize our custom scripts, you need to install our custom startup file. It can be found in P:. Read Matlab Startup Details below for more information about startup and paths work. 1. Download and save this file in the folder at the Matlab root. This folder will be found in the Matlab installation folder in the program files folder. For example, for 2012a installation of matlab, it is found here: Windows: C:Files2012a.m 2. Restart Matlab The only thing done by startup.m is to call P:.m. This latter file contains installation procedures for EEGLab, Physbox, and LedaLab which are handled automatically by Matlab. No commands need to be run to install these plugins/toolboxes and they do not need to be installed manually. To verify, simply call “eeglab” from the Matlab prompt and it should run if all is correct. ARCStartup.m also puts the support folder from CurtinTasks toolbox in path for all machines EXCEPT data collection machines. It checks if a machine is a data collection machine (by name) and excludes them. Data collection still uses study specific /Support in /Programs for each study. NOTE: Computers which cannot connect to the internet (such as the mobile lab at CRU) cannot use this file and will have their own startup file.</p>
+</section>
+<section id="matlab-startup-details" class="level4" data-number="15.1.3.3">
+<h4 data-number="15.1.3.3" class="anchored" data-anchor-id="matlab-startup-details"><span class="header-section-number">15.1.3.3</span> Matlab Startup Details</h4>
+<p>When Matlab starts, it runs matlabrc.m (located in /toolbox/local from the matlab root). matlabrc.m establishs paths (via pathdef.m) and then calls startup.m. Code in matlabrc.m is executed for all installations of matlab (regardless of user). startup.m provides an opportunity to then do additional custom setup for a specific user. To accomplish this, you could place startup.m in a user folder set up by matlabrc.m but we do not do this. We keep startup.m in /toolbox/local and run the same script for all users.</p>
+<p>Startup only does two things 1. It puts P:in the path. This allows access to genpath_excludem and ARCStartup.m genpath_exclude allows us to not include svn folders for toolboxes under version control in the path. 2. It calls ARCStartup to implement the remaining startup code. This allows us to only edit ACRStartup.m to implement startup changes on all computers at once rather than having to replace startup.m on every computer each time we change something.</p>
+<p>CRU ONLY: startup does one thing 1. It puts C:in the path. This file is located on the server (P:) and called startup_CRU.m and needs to be renamed startup.m on the local CRU computer. This startup file is different because the CRU computer does not have internet access or access to the server. Therefore we reproduce the server infrastructure locally. In other words, study folders (e.g., KAYE2, DOX) live within C:&nbsp;rather than within P:<br>
+</p>
+<p>ARCStartup.m does some common tasks across all computers and then some computer specific tasks based on whether the computer is a stimulus control data collection machine vs.&nbsp;all others. For all computers, it puts EEGLab, PhysBox and Ledalab in the path. It adds these to the end of the path (not really that important but maybe a little slower access than earlier folders). Critically, it adds them in a frozen state. This means that matlab will not receive change notification handles if anything changes in these folders. Regardless, Matlab knows if a script/file changes if you edit it in Matlab so this is not a concern if you were to edit a PhysBox function in Matlab. The new function will be recognized as changed. The only time that Matlab would not know a script or other change happens in these folders is if you edit a file outside of matlab (e.g., with Notepad rather than the matlab editor) or if you copy or replace a file through the Explorer. In these rare instances, you should type clear all (or restart matlab) to have it recognize the changes to the scripts/functions.</p>
+<p>These folders are added as frozen intentionally because there is a performance cost to constantly monitoring for changes in these folders (and also b/c there are a limited number of folders that can be monitored- hence the warnings in the past about running out of change notification handles and we add a LOT of folders for EEGLab, PTB, etc).</p>
+<p>It should also be noted that the PTB toolbox is NOT added by ARCStartup. This is because PTB adds its folders to the matlab path in pathdef.m when it is installed. Moreover, it wants the folders added to the path in a specific order (bad practice in my opinion) and I didnt want to have to have complicated code to do this in our ARCStartup so I let it do what it wants to do.</p>
+<p>On all computers other than stimulus control, ARCStartup also adds ‘P:from the CurtinTasks toolbox’. This gives these computers access to the General Matlab and PTB specific code we have written in house. We do NOT want the stimulus control computers to have access to these folders because this code can change and might break a script running in a current (or past) experiment.</p>
+<p>Instead, on stimulus control computers, ARCStartup adds C:to the path. This allows the stimulus control computer to recognize scripts saved in this folder. We then put STUDYNAME.m files in this folder that should be executed before you run PTB for data collection. STUDYNAME.m adds /Programs from the study’s StudyData folder. /Programs contains the code for all the tasks for this study and also a /Support folder that was established at the time the study was initiated. This way, any future changes to /Support in the CurtinTasks toolbox do NOT affect previous studies.</p>
+</section>
+</section>
+<section id="matlab-demo-scripts" class="level3" data-number="15.1.4">
+<h3 data-number="15.1.4" class="anchored" data-anchor-id="matlab-demo-scripts"><span class="header-section-number">15.1.4</span> Matlab Demo Scripts</h3>
+<p>\Matlab\General\Demos</p>
+<ul>
+<li><p>DEMO_EMA.m: Creates file for mCore SMS Component to read all scheduled outgoing text messages.</p></li>
+<li><p>MakeSound.m: Plays a sound file</p></li>
+<li><p>DEMO_ShockValueExtract.m: demo script index and extract particular values from arrays created by shock assess scripts to be analyzed.</p></li>
+<li><p>DMDXAggregate.m: Script to loop through individual .dat RT files from DMDX and aggregate into one file</p></li>
+</ul>
+</section>
+<section id="matlab-function-library" class="level3" data-number="15.1.5">
+<h3 data-number="15.1.5" class="anchored" data-anchor-id="matlab-function-library"><span class="header-section-number">15.1.5</span> Matlab Function Library</h3>
+<p>Source code for our laboratory’s library of Matlab functions to support general use and PTB is maintained under version control at Sourceforge. This repository also contains PTB code for our specific experimental tasks as well. The repository for source code can be checked out at via username/password at: https://svn.code.sf.net/p/curtintasks/code/trunk A working copy of this repository lives at P:</p>
+</section>
+<section id="matlab-reference-card" class="level3" data-number="15.1.6">
+<h3 data-number="15.1.6" class="anchored" data-anchor-id="matlab-reference-card"><span class="header-section-number">15.1.6</span> Matlab Reference Card</h3>
+<section id="file-name-and-path-manipulation" class="level4" data-number="15.1.6.1">
+<h4 data-number="15.1.6.1" class="anchored" data-anchor-id="file-name-and-path-manipulation"><span class="header-section-number">15.1.6.1</span> file name and path manipulation</h4>
+<p>fileparts()</p>
+<p>fullfile()</p>
+</section>
+<section id="button-dialog-for-user-input" class="level4" data-number="15.1.6.2">
+<h4 data-number="15.1.6.2" class="anchored" data-anchor-id="button-dialog-for-user-input"><span class="header-section-number">15.1.6.2</span> Button dialog for user input</h4>
+<p>ButtonName = questdlg(‘What is your favorite color?’, … ‘Color Question’, ‘Red’, ‘Green’, ‘Blue’, Green’); switch ButtonName case ‘Red’</p>
+<pre><code> disp('Your favorite color is Red');</code></pre>
+<p>case ‘Blue’</p>
+<pre><code> disp('Your favorite color is Blue.')</code></pre>
+<p>case ‘Green’</p>
+<pre><code>  disp('Your favorite color is Green.');</code></pre>
+<p>end #### Use of varargin if ~isempty(varargin)</p>
+<p>try g = struct(varargin{:});</p>
+<p>catch error(‘ERROR in pop_CreateAvg: wrong syntax in function arguments’)</p>
+<p>end end</p>
+</section>
+<section id="cell-arrays" class="level4" data-number="15.1.6.3">
+<h4 data-number="15.1.6.3" class="anchored" data-anchor-id="cell-arrays"><span class="header-section-number">15.1.6.3</span> Cell Arrays</h4>
+<p>TestNum = cell(5,1); %allocate a cell array with [] for all entries TestMixed = cell(5,1); %allocate a cell array with [] for all entries TestChar = cell(5,1); %allocate a cell array with [] for all entries %assignment to a cell TestNum{1} = 2; TestNum{2} = 3; TestMixed{4} = 1; TestMixed{5} = ‘John’; TestChar{1} = ‘1234’; TestChar{3} = ‘5678’;</p>
+<p>%indexing into cell Value = TestNum{1} %returns double into value Value = TestNum(1) %returns cell which contains 1 Value = TestMixed{5} %returns ‘John’ as char Value = TestMixed(5) %returns cell</p>
+<p>%use of brackets Value = [TestNum{:}] %returns array of length 2 of double Value = [TestChar{:}] %returns 12345678 as char Value = [TestMixed{:}] %doesnt work (returns char that includes special character for 1 and then John %use of find with numeric entries index = find([TestNum{:}]==2; %result is index 1</p>
+<p>%Deleteing empty cells TestChar(cellfun(‘isempty’,TestChar))= [];</p>
+</section>
+</section>
+<section id="fixing-matlab-problems" class="level3" data-number="15.1.7">
+<h3 data-number="15.1.7" class="anchored" data-anchor-id="fixing-matlab-problems"><span class="header-section-number">15.1.7</span> Fixing Matlab problems</h3>
+<section id="random-number-generators" class="level4" data-number="15.1.7.1">
+<h4 data-number="15.1.7.1" class="anchored" data-anchor-id="random-number-generators"><span class="header-section-number">15.1.7.1</span> Random Number Generators</h4>
+<p>Matlab’s random number generators are very misleading. They will all generate the same exact random numbers each time upon restarting matlab. You can get around this by changing the seed before calling this funciton. See matlab help page:http://www.mathworks.com/help/matlab/math/why-do-random-numbers-repeat-after-startup.html</p>
+</section>
+<section id="path-problems" class="level4" data-number="15.1.7.2">
+<h4 data-number="15.1.7.2" class="anchored" data-anchor-id="path-problems"><span class="header-section-number">15.1.7.2</span> Path problems</h4>
+<p>For some unknown reason, matlab sometimes (but not always) saves information about files and folders it expects to find on startup in pathdef.m. If you subsequently delete these files or fodlers, Matlab will generate error messages such as: Warning: Name is nonexistent or not a directory: C:Files_0_3_4b. To fix this problem you need to edit the pathdef.m file to delete references to these files and/or folders. Pathdef.m can be found in the toolbox&nbsp;folder (e.g., c:files2010a<br>
+</p>
+</section>
+<section id="floating-point-errors" class="level4" data-number="15.1.7.3">
+<h4 data-number="15.1.7.3" class="anchored" data-anchor-id="floating-point-errors"><span class="header-section-number">15.1.7.3</span> Floating point errors</h4>
+<p>See the following Matlab tech note and the follow-up tech notes from this page http://www.mathworks.com/support/solutions/en/data/1-16FOQ/</p>
+<p>When you encounter this problem when testing for equality (e.g A == B), try this abs(A-B) &lt; 100*eps</p>
+</section>
+<section id="filter-error-boundry-event" class="level4" data-number="15.1.7.4">
+<h4 data-number="15.1.7.4" class="anchored" data-anchor-id="filter-error-boundry-event"><span class="header-section-number">15.1.7.4</span> Filter Error; Boundry Event</h4>
+<blockquote class="blockquote">
+<p>I saw your reply on a post in the eeglablist named ‘Filtering trouble’. In my instance, the sampling rate is 500 and the number of frames is 1385355. I tried both 0.1Hz and 0.5Hz for the lower edge of my accepted band when doing a highpass filtering. However, the below error messages happened all the time for 0.1Hz and happened still quite frequently for 0.5Hz. Do you have any suggestion to avoid that kind of error? Thank you very much! Relevant is not the total number of frames, but the number of frames per <em>continuous</em> data epoch/segment (separated by ‘boundary’ events usually inserted by the data acquisition system to mark DC offsets). As far as I remember the EEGLAB built-in “Basic FIR filter” requires the segment to be at least three times longer than the number of filter coefficients. You find ‘boundary’ event indices/latencies fastest from the commandline:</p>
+</blockquote>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>boundArray = strmatch(‘boundary’, {EEG.event.type}) [EEG.event(boundArray).latency]</p>
+</blockquote>
+</blockquote>
+<p>You might want to try the “Windowed sinc FIR filter” from the firfilt plugin which does not have this restriction. Reasonable starting values for filter order are 8250 for 0.1 Hz highpass (Hamming window; 0.2 Hz transition band width) or 1650 for</p>
+<p>Dear Min,</p>
+<p>you continuous data is long enough but portions of it are too narrow (portions are defined as the data in between boundary events). Our filters are not optimal for use at these very low frequencies. There has been other messages related to this topic on the list.</p>
+<p>http://sccn.ucsd.edu/pipermail/eeglablist/2008/002190.html</p>
+<p>Best regards, A. Delorme </p>
+</section>
+<section id="out-of-memory-error" class="level4" data-number="15.1.7.5">
+<h4 data-number="15.1.7.5" class="anchored" data-anchor-id="out-of-memory-error"><span class="header-section-number">15.1.7.5</span> Out Of Memory Error</h4>
+<p>Your problem is likely due to the manner in which the different operating systems handle memory. With Matlab, the largest variable size is determined by the largest contiguous block of free memory. Therefore, even though your Windows machine has 2.5G RAM, the maximum variable size Matlab is able to create and store could be much, much smaller, particularly if you have several processes running in the background.</p>
+<p>You can check the free contiguous blocks of memory at the Matlab prompt by typing: system_dependent memstats</p>
+<p>There is a helpful web tutorial dealing with large datasets in Matlab on the Matlab Central File Exchange (http://www.mathworks.com/matlabcentral/fileexchange/loadFile.do?objectId=9060&amp;objectType=file#).</p>
+</section>
+<section id="generate-n-random-numbers-in-a-one-dimensional-vector-with-values-spaced-between-x1-and-x2" class="level4" data-number="15.1.7.6">
+<h4 data-number="15.1.7.6" class="anchored" data-anchor-id="generate-n-random-numbers-in-a-one-dimensional-vector-with-values-spaced-between-x1-and-x2"><span class="header-section-number">15.1.7.6</span> Generate N random numbers in a one-dimensional vector with values spaced between X1 and X2</h4>
+<p>random_vector = (x2-x1)*rand(1,N) + x1</p>
+<p>Generate random data having correlation between column 4 and the other columns. x = randn(30,4); % Uncorrelated data x(:,4) = sum(x,2); % Introduce correlation. [r,p] = corrcoef(x) % Compute sample correlation and p-values. [i,j] = find(p&lt;0.05); % Find significant correlations. [i,j] % Display their (row,col) indices.</p>
+<p>r = 1.0000 -0.3566 0.1929 0.3457 -0.3566 1.0000 -0.1429 0.4461 0.1929 -0.1429 1.0000 0.5183 0.3457 0.4461 0.5183 1.0000</p>
+<p>p = 1.0000 0.0531 0.3072 0.0613 0.0531 1.0000 0.4511 0.0135 0.3072 0.4511 1.0000 0.0033 0.0613 0.0135 0.0033 1.0000</p>
+<p>ans = 4 2 4 3 2 4 3 4</p>
+</section>
+</section>
+</section>
+<section id="neuroscan" class="level2" data-number="15.2">
+<h2 data-number="15.2" class="anchored" data-anchor-id="neuroscan"><span class="header-section-number">15.2</span> Neuroscan</h2>
+<section id="downloading-neuroscan" class="level3" data-number="15.2.1">
+<h3 data-number="15.2.1" class="anchored" data-anchor-id="downloading-neuroscan"><span class="header-section-number">15.2.1</span> Downloading Neuroscan</h3>
+<p>Scan 4.5 can run on both Windows XP and Windows 7 as long as Scan 4.5.1 is also downloaded, which is a patch that allows Scan 4.5 to run properly. Any Neuroscan software before Scan 4.5 can only run on Windows XP.</p>
+<p>You may or may not need to upgrade the license on your dongle (‘hardware key’), you won’t know until you install the software and look up license manager (Go to Start and open License Manager). In license manager, ‘Scan 4.3’ should be listed there in order to run Scan 4.5. If you don’t see it there, you should let tech support at Neuroscan know and they will arrange to have it upgraded for you.</p>
+</section>
+<section id="installation" class="level3" data-number="15.2.2">
+<h3 data-number="15.2.2" class="anchored" data-anchor-id="installation"><span class="header-section-number">15.2.2</span> Installation</h3>
+<p>To install the Scan software, remove your license key before you proceed then uninstall any Scan application that may have been installed then follow the step-by-step instructions below:</p>
+<ol type="1">
+<li><p>Disconnect the amplifier(s).</p></li>
+<li><p>Download 4.5 from the following link: http://dl.dropbox.com/u/11144802/Scan4.5%20Release%20Disk.zip This is a full installation, compressed into a ZIP archive. Download and save, and then copy over to your destination PC. Unzip the file contents into an empty folder, and then run “launch.exe” to begin the installation. Restart the PC when prompted.</p></li>
+<li><p>Once Scan 4.5 is installed, you will need to run the 4.5.1 Hotfix. Download it from: http://dl.dropbox.com/u/11144802/Scan451Hotfix2.exe This is a single EXE file; download and save onto your PC, and then run the EXE file.</p></li>
+<li><p>Run the “Amplifier Install” program and select your amplifier (Windows StartInstall).</p></li>
+<li><p>Connect your license key and run Edit. If the key is not recognized, do the following: Browse to the Neuroscan folder located in C:Filesand find Scan4.5; run the EXE file (v 7.5.0) in that folder with the dongle disconnected. Afterwards, reconnect the dongle. The 4.5/4.5.1 Release Notes can be downloaded from: http://dl.dropbox.com/u/11144802/Release%20Notes%20451.zip</p></li>
+<li><p>At this point, you can connect your amplifier which should be detected automatically. If the amplifier is not detected automatically, when you try to open Scan 4.5, you receive an error message “Error: Amplifiers not detected.” You should then manually install the amp driver. To do this, simply go to Dev Manager and direct the flagged unidentified USB hardware to upgrade the driver from the following location C:Files (or Program Files(x86)). If you still receive an error message stating that the amplifiers are not detected, you should contact tech support at Neuroscan.</p></li>
+</ol>
+</section>
+<section id="neuroscan-setup-files" class="level3" data-number="15.2.3">
+<h3 data-number="15.2.3" class="anchored" data-anchor-id="neuroscan-setup-files"><span class="header-section-number">15.2.3</span> Neuroscan Setup Files</h3>
+<p>Neuroscan requires Setup files (extension .ast) to determine the amplifier settings and recording parameters for your study. Below is an an example setup file for our lab and description of some common parameters. NOTE: The name of the active setup file should display in the lower right corner of the screen next to the workspace name default.aws. If it does not, you may need to set the display resolution above 1280x1024 (per RS at NS Jan 2015) Here is an example neuroscan setup file to record orbicularis, corrugator, and probe: STL_CRG.ast</p>
+<ol type="1">
+<li><p>Once you download the setup file above open neuroscan acquire and click File &gt; Load Setup… find your file and click Open.</p></li>
+<li><p>Confirm or edit your channel assignments by going to Edit &gt; Channel Assignment. The channel assignments table has 3 columns representing the channel number (#), the physical channel on the amplifier (Phys), and the label that is displayed on the screen for that channel (Label). The example file above has the following channel assignments:</p></li>
+</ol>
+<ul>
+<li>Orbicularis: # = 1; Phys = BP2; Label = ORB</li>
+<li>Corrugator: # = 2; Phys = BP3; Label = CRG</li>
+<li>Probe: # = 3; Phys = HL1; Label = PRB</li>
+</ul>
+<ol start="3" type="1">
+<li>Now check your overall parameters by going to Edit &gt; Overall Parameters. Below are listed common parameters we use for data collection:</li>
+</ol>
+<ul>
+<li>Startup:</li>
+<li>Single Window Display No 1: Check Enable</li>
+<li>Negative: Check Up</li>
+<li>Amplifiers (SN2):</li>
+<li>Acquisition:</li>
+<li>A/D Rate = 2500</li>
+<li>Number of Channels = 3 (Note: modify this to match the number of channels you are actually collecting.)</li>
+<li>Acquisition Type = Continuous</li>
+<li>AC/DC = Check DC</li>
+<li>Amplifier Settings</li>
+<li>Low pass = 500Hz (See pt 4 below)</li>
+<li>High pass = DC</li>
+<li>Click Apply To All Selected Channels (First, Click Select All)</li>
+<li>Notch</li>
+<li>Frequency = Off</li>
+<li>Triggers</li>
+<li>Check External.</li>
+<li>Hold value = 0 (Note: This must match your hold value designated in the header of your stimulus presentation program. Some programs in our lab have used 255, so confirm that this matches your DMDX or Matlab program).</li>
+</ul>
+<ol start="4" type="1">
+<li>Much of our filtering of data is done off-line in post-collection data processing. Historically, high pass hardware filters were necessary during data collection because older amplifiers (e.g., 8, 12, 16 bit) would saturate causing problems with data recording. Current amplifiers (e.g., 32 bit) do not appear to have this problem making hardware high pass filters unnecessary. Our lab’s current procedure is to collect all channels with the high pass filter set to “DC” and the low pass filter set to “500”. This DC-500 hz hardware filtering gives us total flexibility to use what offline digital filter we deem necessary in later data processing. Given this practice, we should continue to monitor data as it is being collected to ensure that channels with large responses (e.g., ORB for startle) do not saturate</li>
+</ol>
+</section>
+</section>
+<section id="curry" class="level2" data-number="15.3">
+<h2 data-number="15.3" class="anchored" data-anchor-id="curry"><span class="header-section-number">15.3</span> Curry</h2>
+<section id="installing-curry" class="level3" data-number="15.3.1">
+<h3 data-number="15.3.1" class="anchored" data-anchor-id="installing-curry"><span class="header-section-number">15.3.1</span> Installing Curry</h3>
+<ol type="1">
+<li>Installer package comes with an installer CD, tutorial CD, and a USB dongle.</li>
+<li>The Dell Latitude laptop being uses for the mobile lab does not have an optical drive. Therefore, the contents of the installer CD were copied to P://Private/Documentation/Neuroscan/Curry/Installer Disk</li>
+<li>Run setup.exe from the installer disk folder.</li>
+<li>When prompted to choose which components to install, select: EEG acquisition, Core Files, Dongle Drivers, and Amplifier Drivers.</li>
+</ol>
+<ol type="a">
+<li>Do NOT install: EEG/MEG analysis, Head models, Example Data</li>
+</ol>
+<ol start="5" type="1">
+<li>When the installer gets to the Amplifier Driver Installation, an onscreen prompt tells you to follow the onscreen directions.</li>
+</ol>
+<ol type="a">
+<li>A secondary (device driver) installation window opens</li>
+<li>Give windows security approval to allow Compumedics to install the drivers by clicking the Install button.</li>
+<li>Click finish when the wizard indicates it is finished. It now returns to the main installer.</li>
+</ol>
+<ol start="6" type="1">
+<li>At the end of installation the finish window reminds you that a hardware lock “dongle” is required to run the software.</li>
+<li>Go ahead and start the Curry 7 acquisition</li>
+<li>A license information window will come up saying “dongle not found”</li>
+</ol>
+<ol type="a">
+<li>Plug in the dongle and hit refresh. NOTE: The dongle must be plugged in at all times for the software to run. Just plug it in and leave it alone.</li>
+<li>Close the dongle window.</li>
+</ol>
+<ol start="9" type="1">
+<li>Go to the start menu and run Curry 7 acquisition from the Start or Programs menu.</li>
+</ol>
+</section>
+<section id="updating-after-first-install" class="level3" data-number="15.3.2">
+<h3 data-number="15.3.2" class="anchored" data-anchor-id="updating-after-first-install"><span class="header-section-number">15.3.2</span> Updating after First Install</h3>
+<ol type="1">
+<li>At first launch, you will be prompted to do an online update; hit yes</li>
+<li>You will receive another window that says you have to send a notification email to Neuroscan</li>
+</ol>
+<ol type="a">
+<li>If you don’t have an email editor like Outlook installed (which you shouldn’t) click the button that says “no email”</li>
+<li>A text box will pop up, and you will be instructed to copy and paste this into an email which you can do via Wiscmail.</li>
+</ol>
+<ol start="3" type="1">
+<li>An executable update will available. Click to download, than click to run</li>
+</ol>
+<ol type="a">
+<li>Note you must close Curry first</li>
+</ol>
+<ol start="4" type="1">
+<li>When that is finished, start the Neuroimaging suite again, and you will have been updated from 7.0.6 to 7.0.10</li>
+<li>You will now have another email which you have to send. Follow the procedure above.</li>
+</ol>
+</section>
+<section id="curry-configuration-files" class="level3" data-number="15.3.3">
+<h3 data-number="15.3.3" class="anchored" data-anchor-id="curry-configuration-files"><span class="header-section-number">15.3.3</span> Curry Configuration Files</h3>
+<p>Curry requires Configuration files to determine the amplifier settings and recording parameters for your study. There are both Amplifier Configuration files (.xml extension) and Global Parameters files (.cfg). These are roughly the equivalent of the Set-Up (.ast) files from SCAN. Below is an an example setup file for our lab and description of some common parameters.</p>
+<section id="amplifier-configuration" class="level4" data-number="15.3.3.1">
+<h4 data-number="15.3.3.1" class="anchored" data-anchor-id="amplifier-configuration"><span class="header-section-number">15.3.3.1</span> Amplifier Configuration</h4>
+<ul>
+<li>In general it is recommended that you start with an existing configuration file and modify it rather than starting from scratch. See notes below for more.</li>
+<li>Amplifier: Grael EEG (demo below is for Grael)</li>
+<li>Sampling rate = 2048 Hz (required for triggering, see below)</li>
+<li>Mode: DC</li>
+<li>Low Pass: 819 Hz (default - unclear if this can/should be modified to 500Hz)</li>
+<li>Click on each site (or hold Ctrl for multiple sites) and select on/off the sites you will collect.</li>
+<li>For bipolar channels the Electrode No is the number and you can enter a Name (e.g, “ORB”)</li>
+</ul>
+</section>
+<section id="sensor-placement" class="level4" data-number="15.3.3.2">
+<h4 data-number="15.3.3.2" class="anchored" data-anchor-id="sensor-placement"><span class="header-section-number">15.3.3.2</span> Sensor Placement</h4>
+<ul>
+<li>Can use one of the defaults or create a new montage that is just for bipolar channels.</li>
+<li>For bipolar channels the Active should be the channel number and Ref column should remain empty.</li>
+</ul>
+</section>
+<section id="special-limitations-with-the-grael-trigger-module." class="level4" data-number="15.3.3.3">
+<h4 data-number="15.3.3.3" class="anchored" data-anchor-id="special-limitations-with-the-grael-trigger-module."><span class="header-section-number">15.3.3.3</span> Special limitations with the Grael trigger module.</h4>
+<p>If you are using the trigger unit with the Grael PSG or EEG amplifier, you should be aware of the following limitations:</p>
+<ul>
+<li>Triggers are only registered when acquiring data with the fastest sampling rate (2048Hz).</li>
+<li>Only stimulus events from 1-64 are registered; no response events are recognized.</li>
+<li>The maximum trigger frequency is 40Hz.</li>
+<li>The “Record Event Duration” option does not work with Grael.</li>
+</ul>
+</section>
+</section>
+<section id="global-parameters" class="level3" data-number="15.3.4">
+<h3 data-number="15.3.4" class="anchored" data-anchor-id="global-parameters"><span class="header-section-number">15.3.4</span> Global Parameters</h3>
+<section id="amplifier-controls" class="level4" data-number="15.3.4.1">
+<h4 data-number="15.3.4.1" class="anchored" data-anchor-id="amplifier-controls"><span class="header-section-number">15.3.4.1</span> Amplifier Controls:</h4>
+<ul>
+<li>Sampling rate must be 2048Hz for triggers to register.</li>
+<li>Load your configuration file.</li>
+<li>Set the path you want to save data for your study. Then click File-&gt;Parameters-&gt;Save Global Parameters.</li>
+<li>Trigger settings:</li>
+<li>Select Neuroscan Stim2</li>
+<li>Stimulus should be unchecked from Invert and Response should be checked for Invert (although we’re not actually collecting Invert).</li>
+</ul>
+</section>
+<section id="filter-parameters" class="level4" data-number="15.3.4.2">
+<h4 data-number="15.3.4.2" class="anchored" data-anchor-id="filter-parameters"><span class="header-section-number">15.3.4.2</span> Filter Parameters:</h4>
+<ul>
+<li>Raw: Raw should be selected. The tab that is selected is the current tab that is viewed during data collection. It is very important to always select RAW (it will also be displayed F-SET: Raw in the top left corner of the recording window).
+<ul>
+<li>Baseline checked</li>
+<li>All other parameters will be blocked out and unable to modify.</li>
+</ul></li>
+<li>Options MGFP unchecked (in order to have access to uncheck this you must be acquiring data) . MGFP is the mean global field power.</li>
+</ul>
+</section>
+</section>
+<section id="notes" class="level3" data-number="15.3.5">
+<h3 data-number="15.3.5" class="anchored" data-anchor-id="notes"><span class="header-section-number">15.3.5</span> Notes</h3>
+<ul>
+<li>NOTES: The computer can not be connected to VPN and connect to the amplifer at the same time. This is likely because the way the amplifier is detected over the network and the changing ip address used with each user’s vpn account.</li>
+<li>We identified two software bugs on Curry. First when creating a new configuration from scratch the default setting is to set the trigger channel to off (0 sampling rate). This does not appear to be modifiable in the GUI. Therefore you need to start with an existing/working or the default configuration file for triggers to appear - and modify that file to your specs and save as new config file. Second, bipolar channels do not display impedances for both plus and minux channel separately.</li>
+<li>Both of these bugs are fixed in a custom patch sent to us from Curry tech support. Hotfix is saved on the server: P:and Peripherals701029Hotfix.exe</li>
+<li>Sampling rate must be set at 2048Hz for triggers to register in Grael EEG.</li>
+<li>Bipolar channels are optically isolated from each other (per Ronnie email 2016_0728) and therefore it is safe to send audio/probe channel into bipolar channel while recording. Must be attenuated within range (&lt;600uV or +-300uV).</li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./psychophysiology.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Psychophysiology Documentation</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
