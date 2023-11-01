@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.361">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Documentation for ARC - 4&nbsp; CHTC</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./git.html" rel="next">
+<link href="./studies.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chtc.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">CHTC</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Documentation for ARC</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/jjcurtin/docs_arc" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
+              <i class="bi bi-bi-facebook pe-1"></i>
+            Facebook
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+      </ul>
+    </div>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welcome</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lab_practices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Lab Practices</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./grad_expectations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Graduate Student/Mentor Expectations/Policies</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./studies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Current and Planned Stuides</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chtc.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">CHTC</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./git.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Git</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./linux_install.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Installing Linux</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./linux_use.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Using Linux</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./vim.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">VIM</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./flowchart_demo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Flowcharts</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./studies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Current and Planned Stuides</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Other Software</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./globalprotect_mapping.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Global Protect and Mapping the Network Server</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./zotero.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Zotero</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./qr_code.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Creating QR Codes for Presentations</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./psychophysiology.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Psychophysiology Documentation</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#chtc-office-hours-live-help" id="toc-chtc-office-hours-live-help" class="nav-link active" data-scroll-target="#chtc-office-hours-live-help"><span class="header-section-number">4.1</span> CHTC Office Hours &amp; Live Help</a></li>
+  <li><a href="#logging-in" id="toc-logging-in" class="nav-link" data-scroll-target="#logging-in"><span class="header-section-number">4.2</span> Logging In</a></li>
+  <li><a href="#hello-world-and-general-help" id="toc-hello-world-and-general-help" class="nav-link" data-scroll-target="#hello-world-and-general-help"><span class="header-section-number">4.3</span> Hello World and General Help</a></li>
+  <li><a href="#software" id="toc-software" class="nav-link" data-scroll-target="#software"><span class="header-section-number">4.4</span> Software</a></li>
+  <li><a href="#general-chtc-workflow" id="toc-general-chtc-workflow" class="nav-link" data-scroll-target="#general-chtc-workflow"><span class="header-section-number">4.5</span> General CHTC Workflow</a>
+  <ul class="collapse">
+  <li><a href="#making-batch-of-jobs" id="toc-making-batch-of-jobs" class="nav-link" data-scroll-target="#making-batch-of-jobs"><span class="header-section-number">4.5.1</span> Making Batch of Jobs</a></li>
+  <li><a href="#testing-jobs" id="toc-testing-jobs" class="nav-link" data-scroll-target="#testing-jobs"><span class="header-section-number">4.5.2</span> Testing Jobs</a></li>
+  <li><a href="#running-jobs" id="toc-running-jobs" class="nav-link" data-scroll-target="#running-jobs"><span class="header-section-number">4.5.3</span> Running jobs</a></li>
+  <li><a href="#monitoring-running-jobs" id="toc-monitoring-running-jobs" class="nav-link" data-scroll-target="#monitoring-running-jobs"><span class="header-section-number">4.5.4</span> Monitoring Running Jobs</a></li>
+  <li><a href="#removing-a-subset-of-jobs" id="toc-removing-a-subset-of-jobs" class="nav-link" data-scroll-target="#removing-a-subset-of-jobs"><span class="header-section-number">4.5.5</span> Removing a subset of jobs</a></li>
+  <li><a href="#editing-running-jobs" id="toc-editing-running-jobs" class="nav-link" data-scroll-target="#editing-running-jobs"><span class="header-section-number">4.5.6</span> Editing Running Jobs</a></li>
+  <li><a href="#transferring-jobs-back-to-our-server" id="toc-transferring-jobs-back-to-our-server" class="nav-link" data-scroll-target="#transferring-jobs-back-to-our-server"><span class="header-section-number">4.5.7</span> Transferring Jobs back to Our Server</a></li>
+  </ul></li>
+  <li><a href="#using-and-creating-containers-for-r-and-packages" id="toc-using-and-creating-containers-for-r-and-packages" class="nav-link" data-scroll-target="#using-and-creating-containers-for-r-and-packages"><span class="header-section-number">4.6</span> Using and Creating Containers for R and Packages</a>
+  <ul class="collapse">
+  <li><a href="#full-documetation-from-chtc" id="toc-full-documetation-from-chtc" class="nav-link" data-scroll-target="#full-documetation-from-chtc"><span class="header-section-number">4.6.1</span> Full documetation from CHTC</a></li>
+  <li><a href="#use-existing-container" id="toc-use-existing-container" class="nav-link" data-scroll-target="#use-existing-container"><span class="header-section-number">4.6.2</span> Use Existing Container</a></li>
+  <li><a href="#using-container-with-your-jobs" id="toc-using-container-with-your-jobs" class="nav-link" data-scroll-target="#using-container-with-your-jobs"><span class="header-section-number">4.6.3</span> Using Container with your Jobs</a></li>
+  <li><a href="#brief-steps-for-creating-a-new-container" id="toc-brief-steps-for-creating-a-new-container" class="nav-link" data-scroll-target="#brief-steps-for-creating-a-new-container"><span class="header-section-number">4.6.4</span> Brief Steps for Creating a New Container</a></li>
+  </ul></li>
+  <li><a href="#making-package-tars" id="toc-making-package-tars" class="nav-link" data-scroll-target="#making-package-tars"><span class="header-section-number">4.7</span> Making package TARS</a></li>
+  <li><a href="#open-science-pool" id="toc-open-science-pool" class="nav-link" data-scroll-target="#open-science-pool"><span class="header-section-number">4.8</span> Open Science Pool</a></li>
+  <li><a href="#common-condor-commands" id="toc-common-condor-commands" class="nav-link" data-scroll-target="#common-condor-commands"><span class="header-section-number">4.9</span> Common CONDOR commands</a></li>
+  <li><a href="#citing-chtc" id="toc-citing-chtc" class="nav-link" data-scroll-target="#citing-chtc"><span class="header-section-number">4.10</span> Citing CHTC</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jjcurtin/docs_arc/edit/main/chtc.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">CHTC</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="chtc-office-hours-live-help" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="chtc-office-hours-live-help"><span class="header-section-number">4.1</span> CHTC Office Hours &amp; Live Help</h2>
+<p>See the <a href="https://chtc.cs.wisc.edu/uw-research-computing/get-help.html">Get Help Page</a>. Rachel and Christine are our two main support people at CHTC. You can email them at chtc@cs.wisc.edu</p>
+<p>The zoom link for CHTC office hours is <a href="go.wisc.edu/chtc-officehours">go.wisc.edu/chtc-officehours</a>. Office hours are current scheduled at * Tuesday morning: 10:30am - 12:00pm * Thursday afternoon: 3:00 - 4:30 pm.</p>
+</section>
+<section id="logging-in" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="logging-in"><span class="header-section-number">4.2</span> Logging In</h2>
+<ol type="1">
+<li>Open PuTTY. Enter Hostname: submit-1.chtc.wisc.edu, Port: 22, connection type: ssh</li>
+<li>Log in with your netid. You will have to use DUO for MFA.</li>
+<li>Open WinSCP. Use the same credentials as PuTTY. You can drag files between your computer and CHTC. You can also edit documents with this program.</li>
+</ol>
+</section>
+<section id="hello-world-and-general-help" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="hello-world-and-general-help"><span class="header-section-number">4.3</span> Hello World and General Help</h2>
+<p>For substantial help, you can start with the <a href="https://chtc.cs.wisc.edu/uw-research-computing/">CHTC home page</a> and their list of <a href="https://chtc.cs.wisc.edu/uw-research-computing/guides.html#htc-documentation">how to docs</a> for HTC.</p>
+<p>CHTC provides a <a href="https://chtc.cs.wisc.edu/uw-research-computing/helloworld">Hello World</a> overview of how to use CHTC. It is worth a review for new users.</p>
+</section>
+<section id="software" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="software"><span class="header-section-number">4.4</span> Software</h2>
+<p>On windows, use <a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">PuTTY</a> for secure shell connection (SSH) to CHTC submit server and <a href="https://winscp.net/eng/download.php">WinSCP</a> for FTP.</p>
+</section>
+<section id="general-chtc-workflow" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="general-chtc-workflow"><span class="header-section-number">4.5</span> General CHTC Workflow</h2>
+<section id="making-batch-of-jobs" class="level3" data-number="4.5.1">
+<h3 data-number="4.5.1" class="anchored" data-anchor-id="making-batch-of-jobs"><span class="header-section-number">4.5.1</span> Making Batch of Jobs</h3>
+<ul>
+<li>Create or edit the training controls file for your batch of jobs. You should start with the demo <code>training_controls.R</code> file in the <code>lab_support</code> repo.</li>
+<li>Run (and create if necessary) <code>mak_jobs.R</code> for your study. To create it, start with the demo in the <code>lab_support</code> repo. You will need to update the path to your training controls file when creating the file.</li>
+<li><code>make_jobs()</code> is called by the <code>mak_jobs.R</code> script. It will make a new folder for your batch of jobs on the server in the <code>chtc</code> folder for your study.</li>
+<li>FTP all of the files in the <code>input</code> folder for this batch of jobs to the CHTC submit server.</li>
+</ul>
+</section>
+<section id="testing-jobs" class="level3" data-number="4.5.2">
+<h3 data-number="4.5.2" class="anchored" data-anchor-id="testing-jobs"><span class="header-section-number">4.5.2</span> Testing Jobs</h3>
+<ul>
+<li>Make sure you have a <code>results</code> folder and an <code>error</code> folder in your home directory.</li>
+<li>Make sure you have all files for the batch of jobs you will train (see above) and <code>train.sif</code></li>
+<li>Edit <code>job_nums.csv</code> on CHTC server to contain some (e.g., 3) jobs with only several configs (e.g., 5) in each bin (job/row). For example, you can create the content below by typing <code>printf "1,1,5\n2,6,10\n3,11,15" &gt; job_nums.csv</code></li>
+</ul>
+<pre><code>1, 1, 5
+2, 6, 10
+3, 11, 15</code></pre>
+<ul>
+<li>Type <code>condor_submit train.sub</code> to submit this jobs</li>
+<li>Monitor the jobs using <code>condor_q</code> and <code>-condor_q -hold</code> if needed</li>
+<li>Confirm that there are data in the results file (file size &gt; 0 for all files): <code>ls results/results* -lS</code>. This will sort files with size = 0 to the bottom of the list. There should not be any!</li>
+<li>Confirm that the correct number of results files were created by counting them: <code>ls results/results* | wc -l</code></li>
+<li>Check for error files with error messages (file size &gt; 0): <code>ls error/error* -lSr</code>. This will sort the non-zero files to the bottom of the list.<br>
+</li>
+<li>If there are non-zero files, look at the error messages using nano editor: For example, <code>nano error/error_1.err</code></li>
+<li>Determine the run time for your test jobs: <code>condor_history $USER -limit 3</code> (where limit is the number of test jobs you ran). You want to bin enough configurations together in a job to have it last for 2-3 hours. You may need to run <code>mak_jobs.R</code> again with a different value for <code>configs_per_job</code> to make a new <code>job_nums.csv</code> file.</li>
+<li>Review the memory and disk usage for these test jobs: <code>condor_history $USER -limit 3 -af RequestMemory MemoryUsage RequestDisk DiskUsage</code>. You may need to edit <code>train.sub</code> and <code>training_controls.R</code> to increase or decrease these values. You should make the values match across both files on both CHTC server and our server to avoid confusion later. Or just delete the batch and re-run <code>mak_jobs.R</code></li>
+</ul>
+</section>
+<section id="running-jobs" class="level3" data-number="4.5.3">
+<h3 data-number="4.5.3" class="anchored" data-anchor-id="running-jobs"><span class="header-section-number">4.5.3</span> Running jobs</h3>
+<ul>
+<li>Make sure you have FTPed the full <code>jobs_nums.csv</code> to the CHTC server to replace the test batch.</li>
+<li>Type <code>condor_submit train.sub</code></li>
+<li>Type <code>condor_q</code> to confirm that the number of jobs that were submitted matches your expectations</li>
+</ul>
+</section>
+<section id="monitoring-running-jobs" class="level3" data-number="4.5.4">
+<h3 data-number="4.5.4" class="anchored" data-anchor-id="monitoring-running-jobs"><span class="header-section-number">4.5.4</span> Monitoring Running Jobs</h3>
+<ul>
+<li>run <code>condor_q</code> to monitor progress on your jobs.</li>
+<li>run <code>condor_q -hold</code> to explore the reason for held jobs. If necessary, you may need to change the requested memory or disk space to get those jobs to complete. See below for more detail. <code>condor_q -af HoldReason</code> will provide more detail on why a job is held if needed.</li>
+<li>run <code>condor_q -run</code> to explore running jobs</li>
+<li>run <code>condor_q -idle</code> to explore idle jobs</li>
+<li>run <code>condor_q -analyze</code> or <code>condor_q JobId -better-analyze</code> to determine why certain jobs are not running by performing an analysis on a per machine basis for each machine in the pool. The latter command produces more thorough analysis of complex requirements and shows the values of relevant job ClassAd attributes.</li>
+<li><code>condor_release $USER</code> will release all held jobs for the user. You can substitute batch or job number to release a subset of held jobs if needed</li>
+<li><code>condor_rm $USER</code> will remove/cancel all jobs for the user.</li>
+<li>You can review the error files associated with the batch of jobs to detect and understand errors as well. Sort the files so that the files with errors (i.e., file switch file size &gt; 0) display last by typing <code>ls error/error* -lSr</code> If there are MANY (&gt; 60K) files, you may need to pipe the file names into <code>ls</code> by typing <code>find error -name "error_*" | ls -lSr</code>. You can view the contents of a non-zero error file using nano. e.g., <code>nano error/error_1.err</code></li>
+<li>Flock/Glide jobs will sometimes not exit properly. These jobs are put on hold (in addition to jobs with insufficient memory/disk space). You can simply release these jobs and try again: <code>condor_release $USER</code>. Of course, you should first address any problems with memory or disk usage that resulted in holds.</li>
+</ul>
+</section>
+<section id="removing-a-subset-of-jobs" class="level3" data-number="4.5.5">
+<h3 data-number="4.5.5" class="anchored" data-anchor-id="removing-a-subset-of-jobs"><span class="header-section-number">4.5.5</span> Removing a subset of jobs</h3>
+<p>It is possible to remove a subset of jobs using <code>condor_rm</code> with a constraint. It sounds like your jobs are in order based on their clusterID. To remove these jobs individually, it is possible to use <code>condor_rm JobID</code>. To remove a series of jobs, you can use:</p>
+<p>condor_rm -constraint ‘ClusterId &gt; 1 &amp;&amp; ClusterId &lt; 5’</p>
+<p>ClusterID refers to the batch of jobs submitted using one submit file. After re-reading your email, it sounds like you want to remove a subset of jobs that all fall under one ClusterID. To do this, you can use something like: condor_rm -constraint ‘ProcId &gt; 1 &amp;&amp; ProcId &lt; 5 &amp;&amp; ClusterID == 15307921’ When typing condor_q, ClusterID is equivalent to the Batch_Name value. To remove the subset of jobs you want to remove, you will want to look at the values after the period in the Job_IDs column. The values after the period are the ProcessID (ProcID). For example, if I submitted a batch of jobs and it was assigned a cluster/batch name of 15307921 and I want to remove jobs 15307921.1, 15307921.2, and 15307921.3, I could use: condor_rm -const ’ProcId &gt; 1 &amp;&amp; ProcId &lt; 5 &amp;&amp; ClusterID == 15307921</p>
+</section>
+<section id="editing-running-jobs" class="level3" data-number="4.5.6">
+<h3 data-number="4.5.6" class="anchored" data-anchor-id="editing-running-jobs"><span class="header-section-number">4.5.6</span> Editing Running Jobs</h3>
+<p>At times some (or all) jobs may be held if they require more memory or disk space than was requested in sub.sub. You can update these parameters and then release the held jobs.</p>
+<ul>
+<li>To update memory, type <code>condor_qedit [batch_name or job_id] RequestMemory [memory]</code>. You can see the batch_name and job_ids by typing <code>condor_q -hold</code> Memory is quantified in MB.<br>
+</li>
+<li>To update disk space, type <code>condor_qedit [batch_name or job_id] RequestDisk [space]</code>. You can see the batch_name and job_ids by typing <code>condor_q -hold</code> Space is quantified in MB.<br>
+</li>
+<li>Type <code>condor_release $USER</code> to release all held jobs from the user.</li>
+<li>If you expect that you will need the specified higher memory or disk space for the currently running jobs (not yet held), you can hold them by typing <code>condor_hold $USER</code> and then release them with <code>condor_release $USER</code> such that they will now find machine with the higher levels for these parameters.</li>
+</ul>
+</section>
+<section id="transferring-jobs-back-to-our-server" class="level3" data-number="4.5.7">
+<h3 data-number="4.5.7" class="anchored" data-anchor-id="transferring-jobs-back-to-our-server"><span class="header-section-number">4.5.7</span> Transferring Jobs back to Our Server</h3>
+<ul>
+<li>Confirm that you have the correct number of results files: <code>ls results/results_* | wc -l</code></li>
+<li>Review the non-zero error files: <code>ls error/error_* -lSr</code> and <code>nano error/error_1.csv</code></li>
+<li>Concatenate all the results files: <code>head -n +1 results/results_1.csv &gt; batch_results.csv; ls results/results_*.csv | xargs awk 'FNR&gt;1' &gt;&gt; batch_results.csv</code>. See <a href="https://linuxhandbook.com/awk-command-tutorial/">tutorial</a> on awk to understand its use for simple programming. See a <a href="https://shapeshed.com/unix-xargs/">tutorial</a> on the use of xargs.</li>
+<li>Now FTP <code>batch_results.csv</code> and the log file to the output folder for this batch on our server.<br>
+</li>
+<li>Do NOT delete results and error files until you have confirmed they look good by processing them in R.</li>
+</ul>
+</section>
+</section>
+<section id="using-and-creating-containers-for-r-and-packages" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="using-and-creating-containers-for-r-and-packages"><span class="header-section-number">4.6</span> Using and Creating Containers for R and Packages</h2>
+<section id="full-documetation-from-chtc" class="level3" data-number="4.6.1">
+<h3 data-number="4.6.1" class="anchored" data-anchor-id="full-documetation-from-chtc"><span class="header-section-number">4.6.1</span> Full documetation from CHTC</h3>
+<p>CHTC has full <a href="https://chtc.cs.wisc.edu/uw-research-computing/singularity-htc">documentation</a> of these steps. We are currently using this <a href="https://hub.docker.com/_/r-base">Docker image for base r</a>. Chose current numbered version (e.g., 4.3.0) among tags.</p>
+</section>
+<section id="use-existing-container" class="level3" data-number="4.6.2">
+<h3 data-number="4.6.2" class="anchored" data-anchor-id="use-existing-container"><span class="header-section-number">4.6.2</span> Use Existing Container</h3>
+<p>We have saved existing containers for training and for feature creation on our server in the CHTC folder (/CHTC/containers/train and /CHTC/containers/features). These folders include the sub and def files that were used to create these containers. The current/up-to-date container is named without an underscore. The _# are older versions with the highest number being the most recent old version. Likely not needed!</p>
+</section>
+<section id="using-container-with-your-jobs" class="level3" data-number="4.6.3">
+<h3 data-number="4.6.3" class="anchored" data-anchor-id="using-container-with-your-jobs"><span class="header-section-number">4.6.3</span> Using Container with your Jobs</h3>
+<p>NOTES: for now, CHTC says to <em>not</em> use the instructions from the above guide in your jobs’ sub file (e.g., “universe = container” and “container_image =”). That <em>is</em> the way of the future, however <em>right now</em> to run on the OSPool and CHTC, you’ll want to use this instead:</p>
+<pre><code>universe = vanilla
++SingularityImage = "container.sif"</code></pre>
+<p>And then include the container.sif file in the transfer_input_files line. That <em>should</em> work seamlessly across the OSPool/CHTC. Maybe use this just to be safe: <code>requirements = (PoolName == "CHTC") || (SINGULARITY_CAN_USE_SIF)</code></p>
+</section>
+<section id="brief-steps-for-creating-a-new-container" class="level3" data-number="4.6.4">
+<h3 data-number="4.6.4" class="anchored" data-anchor-id="brief-steps-for-creating-a-new-container"><span class="header-section-number">4.6.4</span> Brief Steps for Creating a New Container</h3>
+<p>Here is the steps in brief</p>
+<ol type="1">
+<li>create or use and existing build.sub and .def file. See examples for train and features in the CHTC folder on the server.</li>
+<li>FTP these files to CHTC submit server</li>
+<li>Run an interactive sessions <code>condor_submit -i build.sub</code>, where you use your sub file</li>
+<li>Build the apptainer: <code>apptainer build train.sif train.def</code>, where you name your .sif file and use your def file</li>
+<li>After the container is built, you can clear the cache: <code>apptainer cache clean -f</code> and then <code>exit</code> the interactive session. Your container should be returned to the root folder on chtc submit server (along with the log file). Consider whether to archive it on our server or if it was a one-time use for you.</li>
+</ol>
+</section>
+</section>
+<section id="making-package-tars" class="level2" data-number="4.7">
+<h2 data-number="4.7" class="anchored" data-anchor-id="making-package-tars"><span class="header-section-number">4.7</span> Making package TARS</h2>
+<p>We are no longer using tars (we use containers for R instead). However, if needed in the future, CHTC offers a detailed step-by-step walkthrough for <a href="https://chtc.cs.wisc.edu/uw-research-computing/r-jobs#build">making package tars</a>.</p>
+</section>
+<section id="open-science-pool" class="level2" data-number="4.8">
+<h2 data-number="4.8" class="anchored" data-anchor-id="open-science-pool"><span class="header-section-number">4.8</span> Open Science Pool</h2>
+<p>JJC plans to get an account directly for the OS Pool. We can access this pools through flock/glide BUT with an account, we can run twice as many jobs (using each account separately). May still just be easier to run using multiple lab accounts on CHTC but worth considering.</p>
+</section>
+<section id="common-condor-commands" class="level2" data-number="4.9">
+<h2 data-number="4.9" class="anchored" data-anchor-id="common-condor-commands"><span class="header-section-number">4.9</span> Common CONDOR commands</h2>
+<ul>
+<li><code>condor_submit train.sub</code></li>
+<li><code>condor_q</code> for quick review of queue for submitted jobs</li>
+<li><code>condor_q -hold</code> for quick review of held jobs</li>
+<li><code>condor_q -af HoldReason</code> for more detailed review of held jobs</li>
+<li><code>condor_qedit [cluster id number] RequestMemory [memory]</code> to increase memory. Example: <code>condor_qedit 16892087 RequestMemory 20000</code>. Can specific specific job with .# added to the ID. Memory is specified in MB in our training control files.</li>
+<li><code>condor_release $USER</code> to release all held jobs for user (e.g., after increasing memory)</li>
+<li><code>condor_rm [jobid]</code> or <code>condor_rm $USER</code> to remove a job or all jobs</li>
+<li><code>condor_history $USER -limit 10 -af requestmemory memoryusage</code> is an example of reviewing recent job history (past 10 in this example) for a subset of the history parameters. Can list all the parameters (long format) for a single job using <code>condor_history 16892169.1 -l</code> where the jobid is listed explicitly.<br>
+</li>
+<li><code>condor_hold $USER</code> to hold all jobs running (e.g., to increase memory).</li>
+</ul>
+</section>
+<section id="citing-chtc" class="level2" data-number="4.10">
+<h2 data-number="4.10" class="anchored" data-anchor-id="citing-chtc"><span class="header-section-number">4.10</span> Citing CHTC</h2>
+<p><a href="https://chtc.cs.wisc.edu/uw-research-computing/cite-chtc">Guidance</a> for citing CHTC in grants and papers.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./studies.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Current and Planned Stuides</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./git.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Git</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
