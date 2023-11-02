@@ -109,6 +109,12 @@ These files can be rendered to html or pdf if desired.
 
 We can use a full yaml header for more fancy output.   We have templates for apa manuscripts, letterhead, and a generally nice format pdf output if desired.  Just paste the yaml at the top of the file.
 
+## Installing plugins
+If the plugin is on github, simply clone it using the github url into the vim plugin
+folder: /home/jjcurtin/.vim/pack/vendor/start
+
+And you are done!
+
 
 ## Learing VIM
 
