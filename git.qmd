@@ -44,6 +44,8 @@ Note: These commands will only work if you are in a git repo.
 - meld merge can also be [set up to be used as the difftool for git](https://stackoverflow.com/questions/34119866/setting-up-and-using-meld-as-your-git-difftool-and-mergetool).  In Linux, add the following to your .gitconfig file
 - git difftool [commit_id] HEAD [filename] to compare any specific version of a file to the current version on github.
 - git difftool last HEAD [filename] to compare current local version (not yet committed) to version on github.
+- `git difftool HEAD pathfile.qmd` to compare local copy (not committed) to version on
+  github
 
 ```
 [diff]
