@@ -101,6 +101,8 @@ cmd = meld "$LOCAL" "$REMOTE"
 
 https://www.tadviewer.com/
 
+https://www.moderncsv.com/
+
 ## Mount Shares
 
 - `sudo apt-get install cifs-utils`
