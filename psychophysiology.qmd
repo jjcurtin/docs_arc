@@ -14,7 +14,7 @@ Although we no longer focus on psychophysiology studies in our lab, this chapter
 * Obsolete, replaced by Synamps RT (<https://compumedicsneuroscan.com/product/synamps-rt-64-channel-eeg-erp-ep-amplifier/>)
 
 #### SynAmps2 Headbox Configuration:
-![Left lab headbox showing labeled channels for placement of Ground (GND), REF, ORB, and CRG](psychophysiology\hardware\neuroscan\synamps\synamps2_config.png)  
+![Left lab headbox showing labeled channels for placement of Ground (GND), REF, ORB, and CRG](https://raw.githubusercontent.com/jjcurtin/psychophysiology/main/hardware/neuroscan/synamps/synamps2_config.png)  
 
 
 Synamps2 and SynampsRT require a signal input to the REF channel to accurately calculate impedances (this was not the case with Synamps1). Therefore, we use a small sensor placed on the forehead 1cm to the side of the ground (left side in Left Lab) which is connected to REF on the headbox.
@@ -151,11 +151,11 @@ The shock electrode wires act like a big antenna, so over time we have made mult
 See Psychophysiology supplies under `P:\\private\ Documentation \Supplies\CommonLabSupplies.docx`
 
 ## Psychophysiology Peripherals Diagrams
-* [Redel Connector](psychophysiology/hardware/psychophys_peripherals_diagrams/CurtinRedelConnector.pdf)  
-* [Fixed Response Delay Board](psychophysiology/hardware/psychophys_peripherals_diagrams/Fixed_Response_Delay.pdf) 
-* [Photo Sensor](psychophysiology/hardware/psychophys_peripherals_diagrams/PhotoSensor.pdf) 
-* [Response Button](psychophysiology/hardware/psychophys_peripherals_diagrams/Response_Button.pdf) 
-* [Voltage Divider](psychophysiology/hardware/psychophys_peripherals_diagrams/VoltageDivider.pdf) 
+* [Redel Connector]https://raw.githubusercontent.com/jjcurtin/psychophysiology/main/hardware/psychophys_peripherals_diagrams/CurtinRedelConnector.pdf)  
+* [Fixed Response Delay Board](https://raw.githubusercontent.com/jjcurtin/psychophysiology/main/hardware/psychophys_peripherals_diagrams/Fixed_Response_Delay.pdf) 
+* [Photo Sensor](https://raw.githubusercontent.com/jjcurtin/psychophysiology/main/hardware/psychophys_peripherals_diagrams/PhotoSensor.pdf) 
+* [Response Button](https://raw.githubusercontent.com/jjcurtin/psychophysiology/main/hardware/psychophys_peripherals_diagrams/Response_Button.pdf) 
+* [Voltage Divider](https://raw.githubusercontent.com/jjcurtin/psychophysiology/main/hardware/psychophys_peripherals_diagrams/VoltageDivider.pdf) 
 
 
 # Hardware Testing
@@ -171,21 +171,21 @@ On the Mackie audio mixer, verify that the sub mix are is the indent/U and the m
 Verify that the computer volume never changes after initial calibration of the sound probe.
 
  
-![](https://github.com/jjcurtin/psychophysiology/blob/main/hardware/hardware_testing/images/str_calibrate1.png)
+![](https://raw.githubusercontent.com/jjcurtin/psychophysiology/main/hardware/hardware_testing/images/str_calibrate1.png)
 
 Pull the meter out of the suitcase and slip the metal sleeve over the meter:
  
-![](https://github.com/jjcurtin/psychophysiology/blob/main/hardware/hardware_testing/images/str_calibrate2.png)
+![](https://raw.githubusercontent.com/jjcurtin/psychophysiology/main/hardware/hardware_testing/images/str_calibrate2.png)
 
 The circular end of the meter should slip into a round opening at the top of the metal sleeve.
 
 Turn the meter dials as follows:
 
-* ![The db range should be set to 100.](https://github.com/jjcurtin/psychophysiology/blob/main/hardware/hardware_testing/images/str_calibrate3.png)
+* ![The db range should be set to 100.](https://raw.githubusercontent.com/jjcurtin/psychophysiology/main/hardware/hardware_testing/images/str_calibrate3.png)
 
-* ![The Batt dial should be set to A on the slow side.](https://github.com/jjcurtin/psychophysiology/blob/main/hardware/hardware_testing/images/str_calibrate4.png)
+* ![The Batt dial should be set to A on the slow side.](https://raw.githubusercontent.com/jjcurtin/psychophysiology/main/hardware/hardware_testing/images/str_calibrate4.png)
 
-* ![The frequency dial should be set to 250.](https://github.com/jjcurtin/psychophysiology/blob/main/hardware/hardware_testing/images/str_calibrate5.png)
+* ![The frequency dial should be set to 250.](https://raw.githubusercontent.com/jjcurtin/psychophysiology/main/hardware/hardware_testing/images/str_calibrate5.png)
 
 
 Pull the Batt dial out- (this turns the device on).
@@ -194,7 +194,7 @@ Loosen the wing nuts until you can move the metal arm on the top of the metal sl
 
 Slip one headphone in between the metal arm, and metal sleeve. The headphone should surround the round opening at the top of the metal sleeve: 
  
-![](https://github.com/jjcurtin/psychophysiology/blob/main/hardware/hardware_testing/images/str_calibrate6.png)
+![](https://raw.githubusercontent.com/jjcurtin/psychophysiology/main/hardware/hardware_testing/images/str_calibrate6.png)
 
 Tighten the wing nuts so that the headphone cannot slip out of this position however do NOT tighten the wing nuts such that the cushion on the headphone is pressed. The headphone cushion should be fully expanded as in the picture.
 
@@ -212,7 +212,7 @@ If the needle is not pointing towards 2, you will need to adjust the 5-6 gain di
 
 Check both headphones (left and right) and make sure both are outputting at 2.
  
-![](https://github.com/jjcurtin/psychophysiology/blob/main/hardware/hardware_testing/images/str_calibrate7.png)
+![](https://raw.githubusercontent.com/jjcurtin/psychophysiology/main/hardware/hardware_testing/images/str_calibrate7.png)
 
 For DMDX: If the probe ends before you can adjust the needle accurately enough, hit escape to get out of the file, do not save the data, and run the long startle probe calibration file again.
 
@@ -257,13 +257,13 @@ Here is a quick reference table for typical values to convert from observed volt
 
 ## Testing Acoustic Startle Probes
 
-`[TestWhiteNoise.m](https://github.com/jjcurtin/psychophysiology/blob/main/hardware/hardware_testing/TestWhiteNoise.m)` is used to test acoustic startle probe presentation and timing relative to event code. TestWhiteNoise presents 10 white noise probes (WNProbe.wav) separated by 2s. Each probe is marked with an event code of 100. White noise onset should occur a short, fixed interval after event code if system is working properly.
+`[TestWhiteNoise.m](https://raw.githubusercontent.com/jjcurtin/psychophysiology/main/arc_library/PTB/TestWhiteNoise.m)` is used to test acoustic startle probe presentation and timing relative to event code. TestWhiteNoise presents 10 white noise probes (WNProbe.wav) separated by 2s. Each probe is marked with an event code of 100. White noise onset should occur a short, fixed interval after event code if system is working properly.
 
 ### Conducting the Test
 
 1.	Open Matlab on Stimulus Control computer
 1.	Type `TestWhiteNoise` at Matlab command prompt. Default is to analyze output in EEGLab. Type `TestWhiteNoise(false)` if no analysis is necessary.
-2.	Open Neuroscan and select setup file that records probe channel and uses an event code hold value of 0 (e.g., [NoiseTest_SynAmps1.ast](https://github.com/jjcurtin/psychophysiology/blob/main/hardware/hardware_testing/NoiseTest_SynAmps1.ast); [NoiseTest_SynAmps2.ast](https://github.com/jjcurtin/psychophysiology/blob/main/hardware/hardware_testing/NoiseTest_SynAmps2.ast))
+2.	Open Neuroscan and select setup file that records probe channel and uses an event code hold value of 0 (e.g., [NoiseTest_SynAmps1.ast](https://raw.githubusercontent.com/jjcurtin/psychophysiology/main/hardware/hardware_testing/NoiseTest_SynAmps1.ast); [NoiseTest_SynAmps2.ast](https://raw.githubusercontent.com/jjcurtin/psychophysiology/main/hardware/hardware_testing/NoiseTest_SynAmps2.ast))
 3.	View Neuroscan data and start saving. NOTE: Save to server if you want immediate access for analysis.
 4.	Press any key on Stimulus Control computer to begin test
 5.	Don't forget to stop saving in SCAN once probes are complete!
@@ -283,10 +283,10 @@ Also you can check to see if the sound card is configured correctly by checking 
 
 ## Testing Response Time Accuracy
 
-`P:\Toolboxes\CurtinTasks\Support\PTB\TestResponseTime.m` is used to verify that behavioral response input time is accurate. To be used with a response box that simulates participant input. When box is triggered, it produces an input exactly 434ms later. The script completes 200 presentations of this simulated input. This can be changed by passing a different input such as "TestResponseTime (365)"
+[TestResponseTime.m](https://raw.githubusercontent.com/jjcurtin/psychophysiology/main/arc_library/PTB/TestResponseTime.m) is used to verify that behavioral response input time is accurate. To be used with a response box that simulates participant input. When box is triggered, it produces an input exactly 434ms later. The script completes 200 presentations of this simulated input. This can be changed by passing a different input such as "TestResponseTime (365)"
 
 ### Performing the Test
-![](https://github.com/jjcurtin/psychophysiology/blob/main/hardware/hardware_testing/breakout_1.png)
+![](https://raw.githubusercontent.com/jjcurtin/psychophysiology/main/hardware/hardware_testing/breakout_1.png)
 
 Placement of banana plugs on the Breakout Box (see diagram in `P:\Documentation\Hardware\IO` if needed). The cord from the breakout box is the grey one coming in right center, over the VGA Splitter
 
@@ -310,7 +310,7 @@ After data are collected, Matlab will display stats and a histogram
 Responses should be constant with no bias (within ~ 5ms).
 
 ## Testing Neuroscan Event Codes
-`P:\Toolboxes\CurtinTasks\Support\PTB\TestEventCodes.m` is used to output a series of event codes from the Stimulus Control computer to the Physiology computer. This test script will also determine if the time between event codes appears to be accurate (as recorded by the Stimulus Control computer).
+[TestEventCodes.m](https://raw.githubusercontent.com/jjcurtin/psychophysiology/main/arc_library/PTB/TestEventCodes.m) is used to output a series of event codes from the Stimulus Control computer to the Physiology computer. This test script will also determine if the time between event codes appears to be accurate (as recorded by the Stimulus Control computer).
 
 ### Conducting the Test
 1.	Open Matlab on the Stimulus Control computer
@@ -327,13 +327,13 @@ Responses should be constant with no bias (within ~ 5ms).
 ## Testing Display Presentation Timing
 
 ### General
-[TestDisplay.m](https://github.com/jjcurtin/psychophysiology/blob/main/hardware/hardware_testing/TestDisplay.m) 
-[TestOutput.m](https://github.com/jjcurtin/psychophysiology/blob/main/hardware/hardware_testing/TestOutput.m)is used to verify that display timing is accurate and synched to event codes. The script completes 100 presentations of a full screen white "box" with black ITIs. The ITI is a function of the refresh rate and the FlipFrame argument to the function but the default is appropriate for almost all use. The script will mark each trial onset with an event code (1) and report statistics on trial onset timing as monitored by Psychtoolbox. Obvious tearing of the image will indicate serious timing problems. Significant departure from expected ITI time and or large SD in observe ITIs will also indicate a problem. If you use a photoresistor, you can verify that trial onset is synched with event codes.
+[TestDisplay.m](https://raw.githubusercontent.com/jjcurtin/psychophysiology/main/hardware/hardware_testing/TestDisplay.m) 
+[TestOutput.m](https://raw.githubusercontent.com/jjcurtin/psychophysiology/main/hardware/hardware_testing/TestOutput.m)is used to verify that display timing is accurate and synched to event codes. The script completes 100 presentations of a full screen white "box" with black ITIs. The ITI is a function of the refresh rate and the FlipFrame argument to the function but the default is appropriate for almost all use. The script will mark each trial onset with an event code (1) and report statistics on trial onset timing as monitored by Psychtoolbox. Obvious tearing of the image will indicate serious timing problems. Significant departure from expected ITI time and or large SD in observe ITIs will also indicate a problem. If you use a photoresistor, you can verify that trial onset is synched with event codes.
 
 NOTE: Older video drivers can throw errors due to the split monitor signal. If this is the case, unhook the splitter so the participant monitor is directly connected to the matlab computer. Run the test, confirm the results are good, then reconnect the splitter.
 
 ### Placement of photoresistor
-![](https://github.com/jjcurtin/psychophysiology/blob/main/hardware/hardware_testing/images/displaytest1.png)
+![](https://raw.githubusercontent.com/jjcurtin/psychophysiology/main/hardware/hardware_testing/images/displaytest1.png)
 
 ### To record event codes and photoresistor output
 1.	Using suction cup, place the end of the photoresistor on the upper left corner of the display to be tested. Get as close to the top and left edges as possible.
@@ -355,7 +355,7 @@ Connections Instructions
 
 ### Performing the Test on Synamps amplifier (most of ARL)
 1.	Start Matlab and type TestDisplay. Wait for the "press any key" prompt to come up.
-2.	Start Neuroscan and select a setup file with an event hold value of 0 and a channel to record output from the photoresistor. Example files can be used: [synamps2TestDisplay.ast](https://github.com/jjcurtin/psychophysiology/blob/main/hardware/hardware_testing/synamps2TestDisplay.ast).
+2.	Start Neuroscan and select a setup file with an event hold value of 0 and a channel to record output from the photoresistor. Example files can be used: [synamps2TestDisplay.ast](https://raw.githubusercontent.com/jjcurtin/psychophysiology/main/hardware/hardware_testing/synamps2TestDisplay.ast).
 3.	Press acquire and begin recording. You will be prompted to save the file; save locally in the Matlab-accessible folder
 4.	Press any key on Stimulus Control computer to initiate test
 5.	When Matlab prompts that the test has ended, stop data collection.
@@ -380,32 +380,32 @@ Zoom in near zero on the x axis.
 Onset of each white screen should be consistent (each voltage line).
 There should be no severe deviations or dead spots in the signal
 
-![](https://github.com/jjcurtin/psychophysiology/blob/main/hardware/hardware_testing/images/displaytest2.png)
+![](https://raw.githubusercontent.com/jjcurtin/psychophysiology/main/hardware/hardware_testing/images/displaytest2.png)
  
 DisplayTest.m Output
 
 ## Testing IO Output
-[TestOutput.m]https://github.com/jjcurtin/psychophysiology/blob/main/hardware/hardware_testing/TestOutput.m) is used to test a single digital output from Stimulus Control computer. This can be on either port B or C (the two output ports). This can be used to test event codes to neuroscan or to test TTLs on port C (for external devices such as shocker).
+[TestOutput.m]https://raw.githubusercontent.com/jjcurtin/psychophysiology/main/hardware/hardware_testing/TestOutput.m) is used to test a single digital output from Stimulus Control computer. This can be on either port B or C (the two output ports). This can be used to test event codes to neuroscan or to test TTLs on port C (for external devices such as shocker).
 
 In Matlab type `TestOutput(Output, Port)`, where output is 8-bit integer (0-255) and Port is either 'B' or 'C'. 'B' is default if omitted.
 e.g., `TestOutput(100,'B')`
 
 
 # EEG
-* [ERG Cap Cable Connector Pinouts](https://github.com/jjcurtin/psychophysiology/blob/main/eeg/eeg_cap_cable_connector_pinouts.pdf)
+* [ERG Cap Cable Connector Pinouts](https://raw.githubusercontent.com/jjcurtin/psychophysiology/main/eeg/eeg_cap_cable_connector_pinouts.pdf)
 
 ## 32 Channel Caps
-* [Channel Assignment](https://github.com/jjcurtin/psychophysiology/blob/main/eeg/32_channel_2015/eeg_cap_cable_connector_pinouts.pdf)
-* [Custom 32Ch Cap Order Form](https://github.com/jjcurtin/psychophysiology/blob/main/eeg/32_channel_2015/CustomCapOrderForm_Pre2015.pdf)
-* [32 Channel Cap Diagram](https://github.com/jjcurtin/psychophysiology/blob/main/eeg/32_channel_2015/NSC32_cap_diagram.pdf)
-* [32 Channel Cap Connector Diagram](https://github.com/jjcurtin/psychophysiology/blob/main/eeg/32_channel_2015/NSC32_connector_diagram.pdf)
-* [32 Channel Pinout](https://github.com/jjcurtin/psychophysiology/blob/main/eeg/32_channel_2015/PinOut-32_2015.xls)
-* [Synamps2 Pinout](https://github.com/jjcurtin/psychophysiology/blob/main/eeg/32_channel_2015/SynAmps2 PinOut.pdf)
+* [Channel Assignment](https://raw.githubusercontent.com/jjcurtin/psychophysiology/main/eeg/32_channel_2015/eeg_cap_cable_connector_pinouts.pdf)
+* [Custom 32Ch Cap Order Form](https://raw.githubusercontent.com/jjcurtin/psychophysiology/main/eeg/32_channel_2015/CustomCapOrderForm_Pre2015.pdf)
+* [32 Channel Cap Diagram](https://raw.githubusercontent.com/jjcurtin/psychophysiology/main/eeg/32_channel_2015/NSC32_cap_diagram.pdf)
+* [32 Channel Cap Connector Diagram](https://raw.githubusercontent.com/jjcurtin/psychophysiology/main/eeg/32_channel_2015/NSC32_connector_diagram.pdf)
+* [32 Channel Pinout](https://raw.githubusercontent.com/jjcurtin/psychophysiology/main/eeg/32_channel_2015/PinOut-32_2015.xls)
+* [Synamps2 Pinout](https://raw.githubusercontent.com/jjcurtin/psychophysiology/main/eeg/32_channel_2015/SynAmps2 PinOut.pdf)
 
 ## 64 Channel Caps
-* ![64 Channel Cap Diagram](https://github.com/jjcurtin/psychophysiology/blob/main/eeg/64_channel/64channel.JPG)
-* [Custom 32Ch Cap Order Form](https://github.com/jjcurtin/psychophysiology/blob/main/eeg/64_channel/custom64capform.pdf)
-* [64 Channel Pinout](https://github.com/jjcurtin/psychophysiology/blob/main/eeg/64_channel/PinOut64.xls)
+* ![64 Channel Cap Diagram](https://raw.githubusercontent.com/jjcurtin/psychophysiology/main/eeg/64_channel/64channel.JPG)
+* [Custom 32Ch Cap Order Form](https://raw.githubusercontent.com/jjcurtin/psychophysiology/main/eeg/64_channel/custom64capform.pdf)
+* [64 Channel Pinout](https://raw.githubusercontent.com/jjcurtin/psychophysiology/main/eeg/64_channel/PinOut64.xls)
 
 # Sensor Placement
 
@@ -432,9 +432,9 @@ For all measures, prior to the arrival of the participant you should:
 2.	Cut sensor collars
     * The EMG sensor collars are cut in order to allow them to be placed closer together and closer to the site of EMG activity.  There are two different cutting procedures:  one for obicularis and corrugator and a second for zygomatic.
     * For obicularis and corrugator, we cut both the top and insides of the collars to allow the sensors to be placed close together and near either the eyelid (for obicularis) or the eyebrow (for corrugator)
-   ![collars_orb_corr.png](https://github.com/jjcurtin/psychophysiology/blob/main/sensor_placement/images/images\collars_orb_corr.png)
+   ![collars_orb_corr.png](https://raw.githubusercontent.com/jjcurtin/psychophysiology/main/sensor_placement/images/images\collars_orb_corr.png)
     * 	For zygomatic, we cut only the inside of the sensor collars to allow the sensors to be placed close together.
-   ![collars_zyg.png](https://github.com/jjcurtin/psychophysiology/blob/main/sensor_placement/images/collars_zyg.png)
+   ![collars_zyg.png](https://raw.githubusercontent.com/jjcurtin/psychophysiology/main/sensor_placement/images/collars_zyg.png)
 
 3.	Place sensor collars on sensor cups.
    * There are two sizes of sensors, depending upon the measure used.
@@ -473,10 +473,10 @@ Sensor location and procedures are described below for each measure separately. 
 * Place the large Ground sensor about 1" from the bridge of the nose, slightly towards the VEOG side. Be careful it will not be rubbed or disloged by the edge of the EEG cap.
 * Place the smaller Reference sensor next to the Ground sensor, slightly towards the orbicularis side. Be careful it will not be rubbed or disloged  by the edge of the EEG cap.
 
-VEOG placement with headbox on participant's left:     ![](https://github.com/jjcurtin/psychophysiology/blob/main/sensor_placement/images/SensorPlacement_VEOGleft.jpg)
+VEOG placement with headbox on participant's left:     ![](https://raw.githubusercontent.com/jjcurtin/psychophysiology/main/sensor_placement/images/SensorPlacement_VEOGleft.jpg)
 
 VEOG placement with headbox on participant's right:  
-![](https://github.com/jjcurtin/psychophysiology/blob/main/sensor_placement/images/SensorPlacement_VEOGright.jpg)
+![](https://raw.githubusercontent.com/jjcurtin/psychophysiology/main/sensor_placement/images/SensorPlacement_VEOGright.jpg)
 
 
 ### Corrugator placement (miniature sensors)
