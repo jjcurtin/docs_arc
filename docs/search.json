@@ -520,259 +520,259 @@
   {
     "objectID": "psychophysiology.html",
     "href": "psychophysiology.html",
-    "title": "14  Psychophysiology Documentation",
+    "title": "14  Psychophysiology Methods",
     "section": "",
     "text": "15 Electronics and Psychophysiology\nThis section will cover sensor preparation and placement for EMG, Skin Conductance and Heart Rate. For each of these measures, pre-participant preparation, participant preparation, sensor placement and sensor cleaning procedures are described below. There are many similarities in the preparation procedure across measures. Important differences between measures are highlighted."
   },
   {
     "objectID": "psychophysiology.html#measure-and-record-bioelectric-signals-erp-eeg-emg-hr",
     "href": "psychophysiology.html#measure-and-record-bioelectric-signals-erp-eeg-emg-hr",
-    "title": "14  Psychophysiology Documentation",
+    "title": "14  Psychophysiology Methods",
     "section": "16.1 Measure and record bioelectric signals (ERP, EEG, EMG, HR)",
     "text": "16.1 Measure and record bioelectric signals (ERP, EEG, EMG, HR)\n\n16.1.1 Neuroscan 64 channel Synamps 2\n\nObsolete, replaced by Synamps RT (https://compumedicsneuroscan.com/product/synamps-rt-64-channel-eeg-erp-ep-amplifier/)\n\n\n16.1.1.1 SynAmps2 Headbox Configuration:\n\n\n\nLeft lab headbox showing labeled channels for placement of Ground (GND), REF, ORB, and CRG\n\n\nSynamps2 and SynampsRT require a signal input to the REF channel to accurately calculate impedances (this was not the case with Synamps1). Therefore, we use a small sensor placed on the forehead 1cm to the side of the ground (left side in Left Lab) which is connected to REF on the headbox.\nThe two channels (REF and GND) should NOT be jumped. REF and GND have 2 entirely separate functions when it comes to calculating the impedances and recording the data, hence by jumping the two channels, you are essentially combining their functions. The GND’s role is to reject common mode noise during data recording. The REF channel is not actually needed for bipolar EMG data recording, but will not degrade the signal, and therefore should remain plugged into headbox.\nThis applies to EMG recording only. When recording with EEG the REF sensor included on the cap should be used and no additional EMG REF input is needed on the headbox.\n\n\n16.1.1.2 Neuroscap Hardware Filter Info\nIn the Synamp2 system the highpass is DC; however, if you record in AC, then a 0.05 Hz hardware highpass filter is applied to the data after front-end DC coupling. This filter is a single-pole Butterworth filter, and it’s 3dB down at 0.05. The lowpass hardware filter is also a single-pole Butterworth, 3dB down at a cutoff of 4,070 Hz. Note this is greater than the actual specified bandwidth of the device, which is 3,500 Hz (this is a pure software filter). The reason the hardware cutoff is &gt; 3,500 is because the filter effects are additive (hardware + software), so the attenuation at 3,500 Hz from the hardware filter is only 0.5dB.\nFor the Synamp1, this information was a little harder to track down. The hardware filter in AC mode is a single-pole RC highpass, 6dB down at 0.05 Hz. The Synamp manual documentation lists the upper-end of the software filter at 3000 Hz, and the filter is 9dB down at that cutoff. This suggests to me that, due to the additive filtering effects, the hardware lowpass is very close to 3000 Hz as well; unfortunately I have not yet been able to track down any documentation on it. I will keep searching, but wanted to report my findings before too long!\n\n\n16.1.1.3 Neuroscan AQUIRE software\n\nObsolete, replaces by CURRY: https://compumedicsneuroscan.com/product/curry-data-acquisition-online-processing-x/)\n\nHistorical Note: do not buy full SCAN package. You do NOT want EDIT. We use Matlab/EEGLab for data reduction. Also do NOT buy STIM, we use Matlab]\n\n\n\n\n16.1.2 Grael\n\nNeuroscan 32 channel HD EEG mobile unit: https://compumedicsneuroscan.com/product/grael-4k-psg-eeg-erp-amplifier/\nmobile i/o USB-DIO24/37 http://www.mccdaq.com/usb-data-acquisition/USB-DIO24-Series.aspx\nmobile sound card - http://us.creative.com/p/sound-blaster/sound-blaster-e5\nCustom system from James Long: http://www.jameslong.net/"
   },
   {
     "objectID": "psychophysiology.html#data-processingreduction-software",
     "href": "psychophysiology.html#data-processingreduction-software",
-    "title": "14  Psychophysiology Documentation",
+    "title": "14  Psychophysiology Methods",
     "section": "16.2 Data processing/reduction software",
     "text": "16.2 Data processing/reduction software\n\nMATLAB: http://www.mathworks.com/products/matlab/\nMATLAB Signal Processing Toolbox: http://www.mathworks.com/products/signal/\nEEGLab: Free download from http://www.sccn.ucsd.edu/eeglab/\nPhysBox: PhysBox: The Psychophysiology Toolbox https://arc.psych.wisc.edu/physbox/"
   },
   {
     "objectID": "psychophysiology.html#stimulus-control-software",
     "href": "psychophysiology.html#stimulus-control-software",
-    "title": "14  Psychophysiology Documentation",
+    "title": "14  Psychophysiology Methods",
     "section": "16.3 Stimulus Control software",
     "text": "16.3 Stimulus Control software\n\nPsychToolBox: P:\\Documentation\\Software\\PTB\\PsychToolBox.docx\nDMDX: Free download from http://www.u.arizona.edu/~kforster/dmdx/dmdx.htm"
   },
   {
     "objectID": "psychophysiology.html#io-card-for-inter-computer-communication",
     "href": "psychophysiology.html#io-card-for-inter-computer-communication",
-    "title": "14  Psychophysiology Documentation",
+    "title": "14  Psychophysiology Methods",
     "section": "16.4 I/O card for inter-computer communication",
     "text": "16.4 I/O card for inter-computer communication\n\nParallel digital I/O card: All of the following can be obtained from Measurement Computing (https://www.mccdaq.com/)\n\nFor desktop computer: PCI-DIO24 (https://www.mccdaq.com/pci-data-acquisition/PCI-DIO24-Series.aspx) & SCB-37 (https://www.mccdaq.com/productsearch.aspx?q=SCB-37) & C37FFS-5 Cable (https://www.mccdaq.com/productsearch.aspx?q=C37FFS-5) 2 feet long is the standard length I use. However, it is Available in 1, 2, 3, 4, 5, 10, 15, 20, 25, and 50-foot lengths on their website\nFor notebook computer: PC-CARD-DIO48 & SCB-50 & CPCC-50F-39 (see also USB option for notebooks)\n\n24-channel PCI-bus compatible, logic-level digital I/O board: https://www.mccdaq.com/pci-data-acquisition/PCI-DIO24-Series.aspx USB 24-channel Digital I/O Board with 37-Pin D-Sub Connector (for notebook): https://www.mccdaq.com/usb-data-acquisition/USB-DIO24-Series.aspx - We purchased this dio card but it is not supported currently by PTB. So we purchased the USB 1024LS instead (see below)\nUSB-1024LS-channel Digital I/O Device Connector (for notebook): http://www.mccdaq.com/usb-data-acquisition/USB-1024LS.aspx\nSignal connection box, 37-conductor, shielded: https://www.mccdaq.com/products/screw_terminal_bnc.aspx#\nCable, 37-conductor shielded, female to female molded connectors, 5 ft. long: https://www.mccdaq.com/Products/cables-adapters\nScrew terminal Adapter\n\nFor Desktops:\n\nCIO-MINI37 (https://www.mccdaq.com/productsearch.aspx?q=CIO-MINI37): This works for most applications.\nCIO-MINI37-VERT (https://www.mccdaq.com/productsearch.aspx?q=CIO-MINI37): This one has the connector configured vertically. Might be useful in some applications if you are building into a box that requires this orientation.\n\nFor notebooks:\n\nCIO-MINI50 (https://www.mccdaq.com/productsearch.aspx?q=CIO-MINI50): This works for most applications"
   },
   {
     "objectID": "psychophysiology.html#intercom-and-audio-stimulus-control",
     "href": "psychophysiology.html#intercom-and-audio-stimulus-control",
-    "title": "14  Psychophysiology Documentation",
+    "title": "14  Psychophysiology Methods",
     "section": "16.5 Intercom and audio stimulus control",
     "text": "16.5 Intercom and audio stimulus control\n\nMackie 1202 VLZ3 audio mixer-amplifier: http://www.mackie.com/products/vlz3series/splash.html\nMackie 802-VLZ3 8-Ch. Compact Recording/SR Mixer: http://www.amazon.com/Mackie-802-VLZ3-8-Ch-Compact-Recording/dp/B00132EJKG/ref=pd_bbs_sr_1?ie=UTF8&s=musical-instruments&qid=1239029418&sr=8-1\nSennheiser HD280Pro headphones: https://en-us.sennheiser.com/hd-280-pro\nShure Microflex MX418 D/S: http://www.shure.com/americas/products/microphones/microflex/mx412-mx418-gooseneck-microphones\nAudio Technica Cardiod Pro 44: http://www.audio-technica.com/cms/wired_mics/8ba9f72f1fc02bc5/index.html\nRadio Shack digital sound level meter (model: 33-2055): (Obsolete) https://www.amazon.com/Radio-Shack-33-099-Digital-Sound/dp/B000A1EHGW\nAcoustic Calibrator DR1-R (use with sound level meter to calibrate acoustic signal from headphones): http://www.digital-recordings.com/coupler/coupler.html\nPropoint Boundary Microphone: http://www.amazon.com/Audio-Technica-PRO44-Propoint-Boundary-Microphone/dp/B0002BBOOS/ref=sr_1_3?ie=UTF8&s=electronics&qid=1239029218&sr=8-3"
   },
   {
     "objectID": "psychophysiology.html#audio-recording",
     "href": "psychophysiology.html#audio-recording",
-    "title": "14  Psychophysiology Documentation",
+    "title": "14  Psychophysiology Methods",
     "section": "16.6 Audio Recording",
     "text": "16.6 Audio Recording\n\nShure Mic Mixer model M68: (Obsolete) https://pubs.shure.com/view/guide/M68/en-US.pdf\nRealistic 33-1090B PZM Pressure Zone Microphones: (discontinued) see http://www.uneeda-audio.com/pzm/pzm1.jpg for image.\nBehringer BEQ802USB Xenyx Q802USB Premium 8-Input 2-Bus Mixer ordered 5/26/2016 from http://www.bhphotovideo.com for mobile lab"
   },
   {
     "objectID": "psychophysiology.html#video-observation",
     "href": "psychophysiology.html#video-observation",
-    "title": "14  Psychophysiology Documentation",
+    "title": "14  Psychophysiology Methods",
     "section": "16.7 Video observation",
     "text": "16.7 Video observation\n\nPolarisUSA 1/3” B/W Brick Camera: Model BC-600B, replaced by http://polarisusa.com/pvi4?func=product&id=475\nPolarisUSA Portable Infrared Illuminator, 1.2 AMP Power Supply Included: http://www.polarisusa.com/product/46/IR-TILE.html\nPolarisUSA 12V DC Power Supply: http://polarisusa.com/product/1352/ps-12v-1a\n6” Camera Stand: http://polarisusa.com/pvi4?func=product&id=604\nBlack CCTV Monitor: http://www.lcdracks.com/monitors/LYNX/M-Pro-CCTV-19.php"
   },
   {
     "objectID": "psychophysiology.html#handheld-impedance-meter-for-erpeeg-only",
     "href": "psychophysiology.html#handheld-impedance-meter-for-erpeeg-only",
-    "title": "14  Psychophysiology Documentation",
+    "title": "14  Psychophysiology Methods",
     "section": "16.8 Handheld impedance meter (for ERP/EEG only)",
     "text": "16.8 Handheld impedance meter (for ERP/EEG only)\n\nPrep-Check electrode impedance meter (EIM 105-30Hz): [ http://www.general-devices.com/eim105.htm Obsolete, replaced by https://www.biopac.com/product/electrode-impedance-checker/"
   },
   {
     "objectID": "psychophysiology.html#erpeeg-electro-caps",
     "href": "psychophysiology.html#erpeeg-electro-caps",
-    "title": "14  Psychophysiology Documentation",
+    "title": "14  Psychophysiology Methods",
     "section": "16.9 ERP/EEG electro caps",
     "text": "16.9 ERP/EEG electro caps\n\nElectro-cap International: http://www.electro-cap.com/\n\nWe use custom cap configurations. See the Order form (P:\\Documentation\\Hardware\\EEGCaps&Connectors\\CustomCapOrderForm.pdf) and Pinouts P:\\ Documentation \\Hardware\\EEGCaps&Connectors\\ECICapPinout.pdf)\n\nElectrode Board Adapter (E2S): http://electro-cap.com/index.cfm/pricing/"
   },
   {
     "objectID": "psychophysiology.html#agagcl-sensors",
     "href": "psychophysiology.html#agagcl-sensors",
-    "title": "14  Psychophysiology Documentation",
+    "title": "14  Psychophysiology Methods",
     "section": "16.10 Ag/AgCl sensors",
     "text": "16.10 Ag/AgCl sensors\n\nLarge Ag/AgCl electrode. TDE-022-Y-ZZ-S Electrode, 8mm, and 48in lead length: http://www.discountdisposables.com/electrodes/reusable-electrodes/tde-022-y-zz-s-electrode-8mm.html\nSmall Ag/AgCl electrode; TDE-023-Y-ZZ-S Electrode, 4mm, and 48in lead length: http://www.discountdisposables.com/electrodes/reusable-electrodes/tde-023-y-zz-s-electrode-4mm.html"
   },
   {
     "objectID": "psychophysiology.html#shock-electrodes",
     "href": "psychophysiology.html#shock-electrodes",
-    "title": "14  Psychophysiology Documentation",
+    "title": "14  Psychophysiology Methods",
     "section": "16.11 Shock electrodes",
     "text": "16.11 Shock electrodes\n\nAs of 12/2016, we currently have 2 older sets of non-disconnectable and 2 sets (one at CRU) of disconnectable electrodes.\n\nNone of these three are shielded/grounded.\nThe newer types currently in use are:\n1. in left lab are grounded and shielded, non-disconnectable. 2. in right lab are grounded and shielded, disconnectable. 3. in CRU mobile lab, are grounded and shielded, disconnectable.\nThe shock electrode wires act like a big antenna, so over time we have made multiple adjustments to try and reduce the interference from them: * All our new cables are now shielded and grounded to the i/o box. * The wires should be shielded as far up to the electrodes as possible. Any gap on the shielding increases antenna interference again. If they are to be disconnectable, shielding can terminate at the disconnect, but disconnectable ones will always have more interference than non-disconnectable. * The unshielded portion of the wires (whether or not disconnectable) should be as short as possible. Ideally 3-4”, just enough to allow them to be connected to the two fingers of various size hands. * The cable itself should be as short as possible, because the length alone is a factor in the strength of the antenna being formed. Right now about 16 feet seems to be working well (left lab)."
   },
   {
     "objectID": "psychophysiology.html#miscellaneous-equipment",
     "href": "psychophysiology.html#miscellaneous-equipment",
-    "title": "14  Psychophysiology Documentation",
+    "title": "14  Psychophysiology Methods",
     "section": "16.12 Miscellaneous equipment",
     "text": "16.12 Miscellaneous equipment\n\n2 Port 250 MHz VGA Video Splitter (ST122L): http://www.startech.com/Product/ItemDetail.aspx?productid=ST122L&c=US"
   },
   {
     "objectID": "psychophysiology.html#computers",
     "href": "psychophysiology.html#computers",
-    "title": "14  Psychophysiology Documentation",
+    "title": "14  Psychophysiology Methods",
     "section": "16.13 Computers",
     "text": "16.13 Computers\n\n2 computers, one for data acquisition, one for stimulus control"
   },
   {
     "objectID": "psychophysiology.html#sound-cards",
     "href": "psychophysiology.html#sound-cards",
-    "title": "14  Psychophysiology Documentation",
+    "title": "14  Psychophysiology Methods",
     "section": "16.14 Sound Cards",
     "text": "16.14 Sound Cards\n\n185L: Creative Sound Blaster X-Fi Titanium PCI Express Sound Card: (Obsolete)\n185R: Creative Sound Blaster ZxR PCIe Audiophile Grade Gaming Sound Card http://us.creative.com/p/sound-blaster/sound-blaster-zxr\nSound Blaster E5 external sound card (for notebook): http://us.creative.com/p/sound-blaster/sound-blaster-e5"
   },
   {
     "objectID": "psychophysiology.html#monitors",
     "href": "psychophysiology.html#monitors",
-    "title": "14  Psychophysiology Documentation",
+    "title": "14  Psychophysiology Methods",
     "section": "16.15 Monitors",
     "text": "16.15 Monitors\n\n2 LCD flat panel for experimenter to view physiology and experimental stimuli\n1 large CRT for participant display\nOptional: Support to mount LCDs on wall to save desk space"
   },
   {
     "objectID": "psychophysiology.html#psychophysiology-supplies",
     "href": "psychophysiology.html#psychophysiology-supplies",
-    "title": "14  Psychophysiology Documentation",
+    "title": "14  Psychophysiology Methods",
     "section": "16.16 Psychophysiology supplies",
     "text": "16.16 Psychophysiology supplies\nSee Psychophysiology supplies under P:\\\\private\\ Documentation \\Supplies\\CommonLabSupplies.docx"
   },
   {
     "objectID": "psychophysiology.html#psychophysiology-peripherals-diagrams",
     "href": "psychophysiology.html#psychophysiology-peripherals-diagrams",
-    "title": "14  Psychophysiology Documentation",
+    "title": "14  Psychophysiology Methods",
     "section": "16.17 Psychophysiology Peripherals Diagrams",
     "text": "16.17 Psychophysiology Peripherals Diagrams\n\nRedel Connector\n\nFixed Response Delay Board\nPhoto Sensor\nResponse Button\nVoltage Divider"
   },
   {
     "objectID": "psychophysiology.html#calibrate-white-noise-startle-probes-for-hd280pro",
     "href": "psychophysiology.html#calibrate-white-noise-startle-probes-for-hd280pro",
-    "title": "14  Psychophysiology Documentation",
+    "title": "14  Psychophysiology Methods",
     "section": "17.1 Calibrate White Noise Startle Probes for HD280Pro",
     "text": "17.1 Calibrate White Noise Startle Probes for HD280Pro\nRecord the decibels before and after calibration in a Startle Probe Calibration Log .xlsx file\nThese instructions are for the sound meter, the bigger one, that is housed in a suitcase, and has a headphone holder.\nBring this sound meter into the room where participants receive startle probes.\nOn the Mackie audio mixer, verify that the sub mix are is the indent/U and the main mix, which controls RA speaker volume, is turned all the way to the right/max. Verify that the computer volume never changes after initial calibration of the sound probe.\n\nPull the meter out of the suitcase and slip the metal sleeve over the meter:\n\nThe circular end of the meter should slip into a round opening at the top of the metal sleeve.\nTurn the meter dials as follows:\n\n\n\n\nThe db range should be set to 100.\n\n\n\n\n\nThe Batt dial should be set to A on the slow side.\n\n\n\n\n\nThe frequency dial should be set to 250.\n\n\n\nPull the Batt dial out- (this turns the device on).\nLoosen the wing nuts until you can move the metal arm on the top of the metal sleeve.\nSlip one headphone in between the metal arm, and metal sleeve. The headphone should surround the round opening at the top of the metal sleeve:\n\nTighten the wing nuts so that the headphone cannot slip out of this position however do NOT tighten the wing nuts such that the cushion on the headphone is pressed. The headphone cushion should be fully expanded as in the picture.\nTurn on the computer that generates the startle (in both labs, it is the computer that is on the right), and open up DMDX or Matlab depending on how you control your stimulus presentation.\nIf using DMDX, click browse, and follow this file path: local/calibrate/CalibrateLong.rtf Select the CalibrateLong.rtf file, and hit run.\nIf using Matlab, type “CalibrateWhiteNoise” and hit Enter.\nNow, hit the space bar to initiate the long probe.\nMove quickly back to the sound meter, and check where the decibel needle is pointing. The goal is to get the needle to point to 2.\nIf the needle is not pointing towards 2, you will need to adjust the 5-6 gain dial on the audio mixer.\nCheck both headphones (left and right) and make sure both are outputting at 2.\n\nFor DMDX: If the probe ends before you can adjust the needle accurately enough, hit escape to get out of the file, do not save the data, and run the long startle probe calibration file again.\nFor Matlab: If the probe ends before you can adjust the needle accurately enough, hit “enter” and type “CalibrateWhiteNoise” and hit enter again.\nOnce you are finished Close DMDX or Matlab and shut down the computer.\nMake sure to turn the sound meter off by pushing the batt dial back in. (if you do not- the battery will die)\nReturn the sound meter to its carrying case, and then to the shop."
   },
   {
     "objectID": "psychophysiology.html#calibrate-white-noise-startle-probes-for-er-4s-ear-insert-earphones",
     "href": "psychophysiology.html#calibrate-white-noise-startle-probes-for-er-4s-ear-insert-earphones",
-    "title": "14  Psychophysiology Documentation",
+    "title": "14  Psychophysiology Methods",
     "section": "17.2 Calibrate White Noise Startle Probes for ER-4S Ear Insert Earphones",
     "text": "17.2 Calibrate White Noise Startle Probes for ER-4S Ear Insert Earphones\nThe ER-4S has a known voltage input to sound intensity output function. This function can be used to calibrate the intensity of the startle probe, etc. This function is:\nIntensity (dB) = 108 + 20 log10(voltage [in V])\nVoltage should be measured in AC V using RMS (see note below on modifications present in Curtin Lab)\nTo measure this voltage you will need to build an adapter that will allow you to insert volt meter test point probes (black and red probes attached to meter) into a wire connected between your sound card and the ER-4S earphones. It is important that the earphones are connected when making this measurement b/c their presence in the circuit will affect the voltage measured. The easiest option is to splice two wires into a cable with male and female mini (1/8 inch) phono plugs. Splice one wire onto the ground/shield and the second to either of the audio channels (left and right ear should contain the same signal). Plug the male connector into the sound card, plug the earphones into the female end and alligator clip the meter probes onto the two wires you spliced in.\nYou should produce the sound with the software and wav file you intend to use for sound presentation b/c they both will affect the intensity of the sound. I have created two calibration scripts for DMDX:\n\nA long probe script (32s probe for calibration)\nA short probe script (standard 50ms probe to demo the probe if desired)\n\nThe script uses a short (50ms) and long (32 s) wav file for white noise. These must be in the same folder as the script. The long file was constructed with the same parameters as the short file and presents at the same intensity. If you calibrate with the long file, you should obviously use this short wav file in your experiments.\nHere is a quick reference table for typical values to convert from observed voltage to dB. Intermediate values can be determined using the formula provided above.\n\n\n\n\n\n\n\nVoltage Input (V)\nSound Intensity Output (dB)\n\n\n\n\n.2\n94.0\n\n\n.3\n97.5\n\n\n.4\n100.0\n\n\n.5\n[.35V*]\n\n\n.6\n104.0\n\n\n.7\n105.0\n\n\n\n*IMPORTANT NOTE FOR CURTIN LAB. In our lab, our voltmeter is not RMS. 102DB should measure .5V RMS but on our meter it measures .35V. Calibrate to .35V using the 2V range setting"
   },
   {
     "objectID": "psychophysiology.html#testing-acoustic-startle-probes",
     "href": "psychophysiology.html#testing-acoustic-startle-probes",
-    "title": "14  Psychophysiology Documentation",
+    "title": "14  Psychophysiology Methods",
     "section": "17.3 Testing Acoustic Startle Probes",
-    "text": "17.3 Testing Acoustic Startle Probes\n[TestWhiteNoise.m](\\psychophysiology\\hardware\\hardware_testing\\TestWhiteNoise.m) is used to test acoustic startle probe presentation and timing relative to event code. TestWhiteNoise presents 10 white noise probes (WNProbe.wav) separated by 2s. Each probe is marked with an event code of 100. White noise onset should occur a short, fixed interval after event code if system is working properly.\n\n17.3.1 Conducting the Test\n\nOpen Matlab on Stimulus Control computer\nType TestWhiteNoise at Matlab command prompt. Default is to analyze output in EEGLab. Type TestWhiteNoise(false) if no analysis is necessary.\nOpen Neuroscan and select setup file that records probe channel and uses an event code hold value of 0 (e.g., NoiseTest_SynAmps1.ast; NoiseTest_SynAmps2.ast)\nView Neuroscan data and start saving. NOTE: Save to server if you want immediate access for analysis.\nPress any key on Stimulus Control computer to begin test\nDon’t forget to stop saving in SCAN once probes are complete!\n\n\n\n17.3.2 Analysis of Output\n\nAfter data are collected, Matlab will display a dialog box to select data file and path\nNext input data type (16 bit/synamps 1 or 32 bit/symamps 2)\nScript will generate a plot of the 10 probe administrations\nProbe onset should be within 4 ms of 0 and consistent\nProbe offset should be near 50ms and consistent\nThere should be no dead spots in signal\n\n\n\n17.3.3 Troubleshooting\nIf there are issues (i.e. no sound coming from headphones) please check to see if the audio mixer is configured correctly by going to the Configuration document in P:\\Documentation\\Hardware\\MackieMixer.\nAlso you can check to see if the sound card is configured correctly by checking the config document here: P:\\Documentation\\Hardware\\SoundCards"
+    "text": "17.3 Testing Acoustic Startle Probes\n[TestWhiteNoise.m](https://github.com/jjcurtin/psychophysiology/blob/main/hardware/hardware_testing/TestWhiteNoise.m) is used to test acoustic startle probe presentation and timing relative to event code. TestWhiteNoise presents 10 white noise probes (WNProbe.wav) separated by 2s. Each probe is marked with an event code of 100. White noise onset should occur a short, fixed interval after event code if system is working properly.\n\n17.3.1 Conducting the Test\n\nOpen Matlab on Stimulus Control computer\nType TestWhiteNoise at Matlab command prompt. Default is to analyze output in EEGLab. Type TestWhiteNoise(false) if no analysis is necessary.\nOpen Neuroscan and select setup file that records probe channel and uses an event code hold value of 0 (e.g., NoiseTest_SynAmps1.ast; NoiseTest_SynAmps2.ast)\nView Neuroscan data and start saving. NOTE: Save to server if you want immediate access for analysis.\nPress any key on Stimulus Control computer to begin test\nDon’t forget to stop saving in SCAN once probes are complete!\n\n\n\n17.3.2 Analysis of Output\n\nAfter data are collected, Matlab will display a dialog box to select data file and path\nNext input data type (16 bit/synamps 1 or 32 bit/symamps 2)\nScript will generate a plot of the 10 probe administrations\nProbe onset should be within 4 ms of 0 and consistent\nProbe offset should be near 50ms and consistent\nThere should be no dead spots in signal\n\n\n\n17.3.3 Troubleshooting\nIf there are issues (i.e. no sound coming from headphones) please check to see if the audio mixer is configured correctly by going to the Configuration document in P:\\Documentation\\Hardware\\MackieMixer.\nAlso you can check to see if the sound card is configured correctly by checking the config document here: P:\\Documentation\\Hardware\\SoundCards"
   },
   {
     "objectID": "psychophysiology.html#testing-response-time-accuracy",
     "href": "psychophysiology.html#testing-response-time-accuracy",
-    "title": "14  Psychophysiology Documentation",
+    "title": "14  Psychophysiology Methods",
     "section": "17.4 Testing Response Time Accuracy",
     "text": "17.4 Testing Response Time Accuracy\nP:\\Toolboxes\\CurtinTasks\\Support\\PTB\\TestResponseTime.m is used to verify that behavioral response input time is accurate. To be used with a response box that simulates participant input. When box is triggered, it produces an input exactly 434ms later. The script completes 200 presentations of this simulated input. This can be changed by passing a different input such as “TestResponseTime (365)”\n\n17.4.1 Performing the Test\n\nPlacement of banana plugs on the Breakout Box (see diagram in P:\\Documentation\\Hardware\\IO if needed). The cord from the breakout box is the grey one coming in right center, over the VGA Splitter\nRefer to the IO Card Pinout diagram (P:\\Documentation\\Hardware\\IO) if needed:\n\nTurn off the stimulus computer.\nResponse box BLACK plug should be connected to GND (pin 19).\nGREEN plug should be connected to PortB output B0 (pin 10)\nWHITE plug should be connected to PortA input A1 (pin 36). This assumes testing is on line 1 (negative).\nRED should be connected to +5v (pin 18)\n\n\nTurn on the computer\nStart Matlab and type TestResponseTime\nPress any key on Stimulus Control computer to initiate test\n\nWhen unplugging the box, first turn off the computer, then be sure to unplug the BLACK plug (GND) last.\n\n\n17.4.2 Interpreting Test Results\nAfter data are collected, Matlab will display stats and a histogram\nResponses should be constant with no bias (within ~ 5ms)."
   },
   {
     "objectID": "psychophysiology.html#testing-neuroscan-event-codes",
     "href": "psychophysiology.html#testing-neuroscan-event-codes",
-    "title": "14  Psychophysiology Documentation",
+    "title": "14  Psychophysiology Methods",
     "section": "17.5 Testing Neuroscan Event Codes",
     "text": "17.5 Testing Neuroscan Event Codes\nP:\\Toolboxes\\CurtinTasks\\Support\\PTB\\TestEventCodes.m is used to output a series of event codes from the Stimulus Control computer to the Physiology computer. This test script will also determine if the time between event codes appears to be accurate (as recorded by the Stimulus Control computer).\n\n17.5.1 Conducting the Test\n\nOpen Matlab on the Stimulus Control computer\nOpen Neuroscan and select any setup file that uses an event code hold value of 0 (e.g., TestSynamp1.ast synamp1; synamps2)\nStart viewing data in Neuroscan\n(Optional) Start saving data in Neuroscan. This will allow you to do a more rigorous test of event code timing as recorded on the Physiology computer\nType TestEventCodes at Matlab command line. NOTE: By default TestEventCodes outputs a series of 10 event codes [1:5, 101:105]. However, you can output a series of any length of any values by providing EventCodes as an argument. e.g., TestEventCodes([1 11 101 151 201]).\n\n\n\n17.5.2 Interpreting the Output\n\nYou should see the appropriate event codes on the bottom of the Neuroscan screen\nTestEventCodes will return the mean time between events. It should be 2.000s\nIf you omit the semi-colon when you type TestEventCodes, it will also return the time between each event"
   },
   {
     "objectID": "psychophysiology.html#testing-display-presentation-timing",
     "href": "psychophysiology.html#testing-display-presentation-timing",
-    "title": "14  Psychophysiology Documentation",
+    "title": "14  Psychophysiology Methods",
     "section": "17.6 Testing Display Presentation Timing",
     "text": "17.6 Testing Display Presentation Timing\n\n17.6.1 General\nTestDisplay.m TestOutput.mis used to verify that display timing is accurate and synched to event codes. The script completes 100 presentations of a full screen white “box” with black ITIs. The ITI is a function of the refresh rate and the FlipFrame argument to the function but the default is appropriate for almost all use. The script will mark each trial onset with an event code (1) and report statistics on trial onset timing as monitored by Psychtoolbox. Obvious tearing of the image will indicate serious timing problems. Significant departure from expected ITI time and or large SD in observe ITIs will also indicate a problem. If you use a photoresistor, you can verify that trial onset is synched with event codes.\nNOTE: Older video drivers can throw errors due to the split monitor signal. If this is the case, unhook the splitter so the participant monitor is directly connected to the matlab computer. Run the test, confirm the results are good, then reconnect the splitter.\n\n\n17.6.2 Placement of photoresistor\n\n\n\n17.6.3 To record event codes and photoresistor output\n\nUsing suction cup, place the end of the photoresistor on the upper left corner of the display to be tested. Get as close to the top and left edges as possible.\nConnect to headbox for your specific physiology equipment following the instructions below\nTurn on the photoresistor by flipping the toggle switch on the black box. Connections Instructions\n\n\n17.6.3.1 For Grael EEG\n\nConnect photoresistor leads to BP40 (or whatever channel ORB is set to in your set up file) on the Grael EEG box. Make sure to connect the BLUE lead to the NEGATIVE channel and the WHITE lead to the POSITIVE channel.\n\n\n\n17.6.3.2 For Synamps II\n\nConnect photoresistor leads to BP2 (or whatever channel ORB is set to in your set up file) on the neuroscan box. Make sure to connect the BLUE lead to the NEGATIVE channel and the WHITE lead to the POSITIVE channel.\n\n\n\n17.6.3.3 For Synamps I\n\nConnect photoresistor leads to BP32 on the neuroscan box. Make sure to connect the BLUE lead to the NEGATIVE channel and the WHITE lead to the POSITIVE channel.\n\n\n\n17.6.3.4 For James Long\n\nConnect photoresistor BNC to BNC input in control room.\n\n\n\n\n17.6.4 Performing the Test on Synamps amplifier (most of ARL)\n\nStart Matlab and type TestDisplay. Wait for the “press any key” prompt to come up.\nStart Neuroscan and select a setup file with an event hold value of 0 and a channel to record output from the photoresistor. Example files can be used: synamps2TestDisplay.ast.\nPress acquire and begin recording. You will be prompted to save the file; save locally in the Matlab-accessible folder\nPress any key on Stimulus Control computer to initiate test\nWhen Matlab prompts that the test has ended, stop data collection.\nMatlab script will automatically ask you to browse to the saved file, and then display the data\n\n\n\n17.6.5 Performing the Test on Grael EEG amplifier (mobile lab)\n\nStart Matlab and type TestDisplay(20,1,0,1). Wait for the “press any key” prompt to come up.\nStart Curry and select a setup file with an event hold value of 0 and a channel to record output from the photoresistor. Example files can be used:(see Kaye2 for example)\nSelect your save path; save locally in the Matlab-accessible folder (or copy to server after recording to allow matlab to access file).\nPress Play to connect to amplifier and press record and begin recording.\nPress any key on Stimulus Control computer to initiate test\nWhen Matlab prompts that the test has ended, stop data collection (and move Curry *.dat file to server if matlab doesn’t have access to Curry computer).\nMatlab script will automatically ask you to browse to the saved file, and then display the data ### Performing the Test on James Long Note this section may be outdated and if so should be removed\nStart SnapMaster after selecting a setup file with an event channel\nDisplay and save data file locally with Neuroscan and SnapMaster\nMove saved data file from local drive to server\nSelect file from server (Matlab script will automatically display data) Interpreting Test Results Zoom in near zero on the x axis. Onset of each white screen should be consistent (each voltage line). There should be no severe deviations or dead spots in the signal\n\n\nDisplayTest.m Output"
   },
   {
     "objectID": "psychophysiology.html#testing-io-output",
     "href": "psychophysiology.html#testing-io-output",
-    "title": "14  Psychophysiology Documentation",
+    "title": "14  Psychophysiology Methods",
     "section": "17.7 Testing IO Output",
-    "text": "17.7 Testing IO Output\nTestOutput.m is used to test a single digital output from Stimulus Control computer. This can be on either port B or C (the two output ports). This can be used to test event codes to neuroscan or to test TTLs on port C (for external devices such as shocker).\nIn Matlab type TestOutput(Output, Port), where output is 8-bit integer (0-255) and Port is either ‘B’ or ‘C’. ‘B’ is default if omitted. e.g., TestOutput(100,'B')"
+    "text": "17.7 Testing IO Output\n[TestOutput.m]https://github.com/jjcurtin/psychophysiology/blob/main/hardware/hardware_testing/TestOutput.m) is used to test a single digital output from Stimulus Control computer. This can be on either port B or C (the two output ports). This can be used to test event codes to neuroscan or to test TTLs on port C (for external devices such as shocker).\nIn Matlab type TestOutput(Output, Port), where output is 8-bit integer (0-255) and Port is either ‘B’ or ‘C’. ‘B’ is default if omitted. e.g., TestOutput(100,'B')"
   },
   {
     "objectID": "psychophysiology.html#channel-caps",
     "href": "psychophysiology.html#channel-caps",
-    "title": "14  Psychophysiology Documentation",
+    "title": "14  Psychophysiology Methods",
     "section": "18.1 32 Channel Caps",
     "text": "18.1 32 Channel Caps\n\nChannel Assignment\nCustom 32Ch Cap Order Form\n32 Channel Cap Diagram\n32 Channel Cap Connector Diagram\n32 Channel Pinout\nSynamps2 Pinout"
   },
   {
     "objectID": "psychophysiology.html#channel-caps-1",
     "href": "psychophysiology.html#channel-caps-1",
-    "title": "14  Psychophysiology Documentation",
+    "title": "14  Psychophysiology Methods",
     "section": "18.2 64 Channel Caps",
     "text": "18.2 64 Channel Caps\n\n\n\n\n64 Channel Cap Diagram\n\n\nCustom 32Ch Cap Order Form\n64 Channel Pinout"
   },
   {
     "objectID": "psychophysiology.html#sensor-placement-videos",
     "href": "psychophysiology.html#sensor-placement-videos",
-    "title": "14  Psychophysiology Documentation",
+    "title": "14  Psychophysiology Methods",
     "section": "19.1 Sensor Placement Videos",
     "text": "19.1 Sensor Placement Videos\nSensor Prep\nCorrugator/Orbicularis\nSkin Conductance\nSensor Cleaning"
   },
   {
     "objectID": "psychophysiology.html#pre-participant-preparation",
     "href": "psychophysiology.html#pre-participant-preparation",
-    "title": "14  Psychophysiology Documentation",
+    "title": "14  Psychophysiology Methods",
     "section": "19.2 Pre-participant preparation",
     "text": "19.2 Pre-participant preparation\nFor all measures, prior to the arrival of the participant you should:\n\nFill “gel applicator” with gel\n\nLocate a gel applicator body and applicator tip (in kitchen room on sink counter in organizer)\nPrior to attaching the tip, insert the applicator body into the conductive gel in the Tupperware container with plunger completed depressed. Slowly withdraw the plunger until the applicator body is almost full (for EEG) or about 2mL (for EMG only). This may take a few attempts.\nWipe off the excess\nAttach applicator tip\n\nCut sensor collars\n\nThe EMG sensor collars are cut in order to allow them to be placed closer together and closer to the site of EMG activity. There are two different cutting procedures: one for obicularis and corrugator and a second for zygomatic.\nFor obicularis and corrugator, we cut both the top and insides of the collars to allow the sensors to be placed close together and near either the eyelid (for obicularis) or the eyebrow (for corrugator) \nFor zygomatic, we cut only the inside of the sensor collars to allow the sensors to be placed close together. \n\nPlace sensor collars on sensor cups.\n\n\nThere are two sizes of sensors, depending upon the measure used.\n\nThe miniature sensors are used for facial EMG (obicularis, corrugator and zygomatic)\nThe standard sensors are used for skin conductance, heart rate and the ground sensor.\n\nLocate the appropriate size sensor collar and affix to the sensor such that the hole in the collar fits exactly around the sensor cup surface and the tab is in line with the sensor lead (wire). Make certain that the collar is securely attached by rubbing firmly with your thumb."
   },
   {
     "objectID": "psychophysiology.html#participant-preparation",
     "href": "psychophysiology.html#participant-preparation",
-    "title": "14  Psychophysiology Documentation",
+    "title": "14  Psychophysiology Methods",
     "section": "19.3 Participant Preparation",
     "text": "19.3 Participant Preparation\n\nHave the participant wash their hands and face with warm soapy water to remove make-up and dirt/oils. Make certain that they thoroughly dry hands and face afterwards. Explain to them that this is to allow for better measurement of the physiological signals that we are collecting.\nPrepare each site to reduce sensor impedance for all measures except skin conductance. No preparation is done for the skin conductance site. The preparation is performed in two steps. Make certain that you explain each step to the participant prior to beginning.\n\nClean the area with an alcohol prep pad. Make certain that you have the participant close their eyes if you are anywhere near the eye. Be gentle, but firm with cleaning.\n\nClean the area with the exfoliating gel (Nu-prep). Put a small dollop on Nu-prep on the end of a gauze pad. Rub the gauze pad over the placement site. If possible, rub in multiple directions to further reduce impedance. Again, be firm but gentle. Be particularly gentle with the obicularis site under the eye. After rubbing the gel into the site, use a clean portion of the gauze pad to remove excess gel from the skin."
   },
   {
     "objectID": "psychophysiology.html#general-information-on-sensor-placement",
     "href": "psychophysiology.html#general-information-on-sensor-placement",
-    "title": "14  Psychophysiology Documentation",
+    "title": "14  Psychophysiology Methods",
     "section": "19.4 General information on Sensor Placement",
     "text": "19.4 General information on Sensor Placement\nPrior to the application of each sensor, you will need to fill it with gel. All of the measures use the same conductive gel (in the large Tupperware container) except for skin conductance. It is VERY IMPORTANT that you do not use the conductive gel for the skin conductance sensors. This measure has its own gel.\nFor all sensors but skin conductance, you will fill the sensor cup evenly with gel from the gel applicator such that the gel slightly overfills the cup. Do not overfill too much as it will interfere with the sensor collar adhering to the participant. It is VERY IMPORTANT that you do not touch the sensor cup surface with the gel applicator tip. This will destroy the Ag-AgCl coating.\nFor skin conductance, you will fill the sensor cup with gel directly from the skin conductance gel bottle. You want the gel to completely fill the sensor cup but not overfill at all."
   },
   {
     "objectID": "psychophysiology.html#sensor-locations",
     "href": "psychophysiology.html#sensor-locations",
-    "title": "14  Psychophysiology Documentation",
+    "title": "14  Psychophysiology Methods",
     "section": "19.5 Sensor Locations",
     "text": "19.5 Sensor Locations\nSensor location and procedures are described below for each measure separately. When placing sensors on the face, position the sensor leads back behind the ear after placement to avoid the lead dangling in the face of the participant.\n\n19.5.1 Obicularis Placement (miniature sensors)\n\nPrior to attaching these sensors inform the participant that the sensors will feel a bit funny under their eye and may make their eye blink and water for a few moments. Tell them that they will get used to the feeling within a few minutes.\nTell the participant to look directly forward and up. Place the first sensor under the eye and directly in line with the pupil. You should place the sensor such that the collar top fits right into the crease under the eyelid.\n\nPlace the second sensor directly next to the first and to the outside (and slightly superior if possible) of the first sensor such that the collars just touch. Again, this should place the top of the collar right into the crease under the eye.\nPlug end of sensor leads into the headbox. Place the first sensor lead into the – (bottom) channel and the second into the + (top) channel.\n\n\n\n19.5.2 Obicularis Placement with EEG Cap VEOG, Ground, and Reference Sensors\n\nFollow the instructions above to place the obicularis sensors on the eye closest to the headbox (location therefore differs depending on which lab, see images below)\nPlace the VEOG sensors on the other eye. Place the lower sensor directly under the eye and in line with the pupil, and the upper sensor directly above that, immediately above the eyebrow.\nPlace the large Ground sensor about 1” from the bridge of the nose, slightly towards the VEOG side. Be careful it will not be rubbed or disloged by the edge of the EEG cap.\nPlace the smaller Reference sensor next to the Ground sensor, slightly towards the orbicularis side. Be careful it will not be rubbed or disloged by the edge of the EEG cap.\n\nVEOG placement with headbox on participant’s left: \nVEOG placement with headbox on participant’s right:\n\n\n\n19.5.3 Corrugator placement (miniature sensors)\n\nThe first sensor is placed above the eyebrow and directly in line with inside corner of the eye. You should place this sensor as close to the eyebrow as possible.\nThe second sensor is placed directly next to the first sensor and to the outside of the eye.\n\nPlug end of sensor leads into the headbox. Place the first sensor lead into the – (bottom) channel and the second into the + (top) channel.\n\n\n\n19.5.4 Zygomatic placement (miniature sensors)\n\nDraw an imaginary line between the corner of the mouth and the indentation at the top of the ear. Place the first sensor directly in the center of this imaginary line.\nPlace the second sensor directly next to this sensor and closer to mouth on this imaginary line.\nPlug end of sensor leads into the headbox. Place the first sensor lead into the – (bottom) channel and the second into the + (top) channel.\n\n\n\n19.5.5 Heart Rate placement (standard sensors)\n\nYou will place one sensor on the inside of each forearm. The exact location does not have to be precise. However, you should make certain not to place the sensor directly on top of a vein or on a hairy section of the arm.\nPlug end of sensor leads into the headbox. Place the sensor lead on the left are into the – (bottom) channel and the lead on the right arm into the + (top) channel.\n\n\n\n19.5.6 Skin Conductance placement (standard sensors w/ special gel)\n\nPrior to attaching these sensors, you will need to place a second set of sensor collars directly on the palm of the hand. This is to make certain that the surface area of the contact remains constant (and is not affected by smearing gel under the collar).\nYou will place these collars on the fleshy part of the palm under the pinky. Place the two sensors vertically on the palm with the outer edges of the collars just touching. After placing each collar, remove the adhesive covering.\nYou will place each sensor directly on top of these collars. It is very important that you line up the collars exactly. First align one edge and then very carefully align sides while placing.\nIf the sensor appears to be insecurely attached, you can wrap tape around the sensor cup to secure more firmly to the palm.\nPlug end of sensor leads into the extensions hanging out of the skin conductance amplifier (into where it says subject input). Place the top sensor lead into the top channel and the bottom sensor into the bottom channel.\n\n\n\n19.5.7 Ground sensor placement (standard sensor)\n\nYou will attach a ground sensor in the center of the participant’s forehead. Attach this sensor such that the sensor lead is pointing up and back toward the participants ear to avoid the lead dangling in the participants face.\nPlug end of sensor leads into the ground channel on the headbox."
   },
   {
     "objectID": "psychophysiology.html#sensor-removal-and-cleaning",
     "href": "psychophysiology.html#sensor-removal-and-cleaning",
-    "title": "14  Psychophysiology Documentation",
+    "title": "14  Psychophysiology Methods",
     "section": "19.6 Sensor Removal and Cleaning",
     "text": "19.6 Sensor Removal and Cleaning\n\nDisconnect each sensor lead from the headbox and drape to the side of the participant so that you do not step on the leads.\nCarefully remove the electrodes from the participant. For the facial EMG sensors, it is often best to place one finger on the participants face directly next to the sensor to avoid the skin pulling while removing the sensor. It is very important that you do not pull on the sensor leads. Pull on the sensor collar tabs to remove.\nBring all of the sensors (and the gel applicator) to the sink in the recovery rom, and follow the cleaning instructions."
   },
   {
     "objectID": "psychophysiology.html#prepping-startle-quick-reference",
     "href": "psychophysiology.html#prepping-startle-quick-reference",
-    "title": "14  Psychophysiology Documentation",
+    "title": "14  Psychophysiology Methods",
     "section": "19.7 Prepping Startle: Quick Reference",
     "text": "19.7 Prepping Startle: Quick Reference\nThese instructions refer to Corrugator/Orbicularis (miniature sensors) and Ground placement (large sensors)\n\nClean all sites with alcohol prep pad.\nClean all sites with NuPrep (exfoliant).\nFill sensors with gel, and apply. (you should be talking to the participant and making them comfortable during this time). Sensors should already have collars on them and orb collars should already be cut.\nPlug electrodes into headbox\nCheck impedances from the hookup.\n\nAll impedances should be less than 10. Re-prep if necessary.\nVerify that signal to noise ratio is adequate.\nConfirm that you can see eyeblinks on the orb channel."
   },
   {
     "objectID": "psychophysiology.html#checking-sensor-impedance",
     "href": "psychophysiology.html#checking-sensor-impedance",
-    "title": "14  Psychophysiology Documentation",
+    "title": "14  Psychophysiology Methods",
     "section": "19.8 Checking Sensor Impedance",
     "text": "19.8 Checking Sensor Impedance\n\nOpen Neuroscan and go into File&gt;LoadSetup&gt; and then load C:\\Local\\LocalLabema1\\Labema1_Screen.ast\nClick “Aqusition” at the top of the screen and then click “Impedences” Verify that all impedences are below 10 microvolts.\nCheck for excessive signal noise by selecting the small green arrow on the toolbar to view the actual EEG signal. Ask participant to blink twice very hard to check recording.\nMake sure that the scale in the lower right corner is at -512 microvolts and 1 second. (Correct by pressing up up/down left/right arrows on keyboard)"
   },
   {
     "objectID": "psychophysiology.html#eeg-cap-cleaning-instructions",
     "href": "psychophysiology.html#eeg-cap-cleaning-instructions",
-    "title": "14  Psychophysiology Documentation",
+    "title": "14  Psychophysiology Methods",
     "section": "20.1 EEG Cap Cleaning Instructions",
     "text": "20.1 EEG Cap Cleaning Instructions\n\nRemove the sticky collars and any tape from the external sensors.\nFill the cap cleaning container (clear rectangular tupperware) with warm soapy water.\nLet the cap soak in the warm soapy water for a few minutes and stir around to clean.\nHold each of the external sensors, and the inside cup of each of the cap sensors, under the water stream from the faucet to remove gel.\nUse the toothbrush or “Orange Sticks” in the drawer to scrub out remaining gel. Check each sensor to make sure that all gel is removed for the inside cup.\nClean the outside of all sensors with water from faucet (top of cap)\nOnce you are confident that all the gel is removed from the sensors, place the cap in the disinfectant underneath the sink for at least 10 minutes. It is important not to leave the cap soaking for more than 30 minutes or it will begin to deteriorate.\nWhile you are waiting, clean the gel applicators. Shoot all gel from applicator in the trash or down the sink. Dispose of the blunt tip in trash. Fill applicator with water and shoot through top a few times to make sure it is cleaned inside.\nRemove EEG cap from disinfectant and rinse. Fill the tupperware full of clean water and rinse repeatedly (with fresh water) until no more bubbles appear. This is to make certain that all disinfectant is clean from the cap or else it will smell and deteriorate.\nHang cap from hook to right of sink with the connector end carefully tucked on top where it can’t get dripped on.\n\nIMPORTANT NOTE: Cleaning the cap carefully is VERY important. The caps cost close to $1000 each. You must make certain that ALL gel is out of the sensor cups. Even a minute amount of residual gell will dramatically reduce the life of the cap and the integrity of subsequent data collection. Also, never let the end connector get wet."
   },
   {
     "objectID": "psychophysiology.html#sensor-removal-and-cleaning-1",
     "href": "psychophysiology.html#sensor-removal-and-cleaning-1",
-    "title": "14  Psychophysiology Documentation",
+    "title": "14  Psychophysiology Methods",
     "section": "20.2 Sensor Removal and Cleaning",
     "text": "20.2 Sensor Removal and Cleaning\n\nRemove sensor sticker collars from each sensor. Do not pull on the leads; hold by the sensor cup and the tab on the sensor collar.\nIf you can’t start cleaning immediately, it’s okay to soak the cup ends in clean water for 5-10 minutes until you are able to start. This makes it easier to clean later by preventing the gel from drying out. It’s okay to put them in clean water with the EEG cap, but do NOT put the sensors in soapy water. Be sure the plug ends stay dry!\nPlace each sensor cup directly under the jet stream from the faucet. Make certain that the end of the sensor leads do not get wet. Hold the sensor close to the bottom of the sink to reduce splashing. Move the orientation of the sensor around relative to the jet stream to allow the water to hit the sensor cup from different angles. Do this for 10-15 seconds.\nRemove the sensor from the water and blow firmly on the cup to remove the water. A clean sensor will appear matte-dry and not at all shiny. Any shine visible means there is still gel present.\nRepeat steps 2-3 until there is absolutely no residual gel on the sensor cup surface. It is very important that the surface is completely clean.\nPlace the sensors in the disinfectant solution (under sink) for approximately 5 minutes. Ok to put the sensors in at the same time as the cap.\nWhile the sensors are disinfecting, clean the gel applicator and tip.\n\nSquirt excess gel into the garbage can\nRemove the plunger and fill the applicator with water, and squire though the applicator. Repeat a few times\nDisconnect the applicator tip and blow through it\nInspect the tip and make certain that you can see through it with no residual gel.\n\nClean the applicator body\nPut the applicator body and tip back into the organizer on the sink\n\nRemove the sensors from the disinfectant and rinse off disinfectant thoroughly with water. Be sure to put the lid back on the disinfectant.\nSquirt distilled water onto the inside surface of each sensor cup as a final rinse.\nHang the electrodes from the sensor rack to air dry. Make certain that the end of the sensor leads do not hang into the sink."
   },
