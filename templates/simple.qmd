@@ -1,9 +1,0 @@
----
-format: 
-  pdf: default
-  html:
-    embed-resources: true
-geometry: margin=.5in
-mainfont: TimesNewRomanPSMT #ArialMT
-fontsize: 12pt
----   
