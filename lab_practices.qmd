@@ -32,7 +32,7 @@ First floor key box code: See Susan.
 #### Important Websites:  
 * Lab website - <http://arc.psych.wisc.edu>  
 * Lab Documentation - <https://jjcurtin.github.io/docs_arc/>  
-* Lab Tidyverse Documention - <https://jjcurtin.github.io/dwt/>
+* Lab Tidyverse Documention - <https://jjcurtin.github.io/book_dwvt/>
 * John's Introduction to Machine Learning Course- <https://dionysus.psych.wisc.edu/iaml/>  
 * Risk2 Project Manual - <https://jjcurtin.github.io/docs_risk2/>   
 
