@@ -93,28 +93,28 @@
   {
     "objectID": "studies.html#risk",
     "href": "studies.html#risk",
-    "title": "3  Current and Planned Stuides",
+    "title": "3  Current and Planned Studies",
     "section": "3.1 RISK",
     "text": "3.1 RISK\n\nCompare insight only to full EMA for lapse risk prediction [Gaylen (lead), Kendra, Ariela, Sarah]\nGPS features solo for lapse risk prediction [Claire FYP (lead)]\nLess burdensome EMA for lapse risk prediction. Maybe only morning. Maybe only some items. Maybe only some items depending on responses to other items [Coco?]\nUse text message content & meta data for lapse prediction [Coco?]\nReplicate stressor use with RISK data. MLM analyses [unassigned]\nFull model using GPS, EMA, communications for lapse risk prediction [unassigned]\nLagged week level models for lapse risk prediction. Maybe 3 days, 1 week, two weeks lag [unassigned]\nModel duration of lapse rather than binary outcome to allow move toward harm reduction approaches\nModel lapses that are labeled (or quantified) on severity based on chaining, or perhaps the respone to them (what the say about future ab goal, EMA affect after, etc)\nEstablish individual lapse as a clinically meaningful event - use lapse/no lapse as feature to predict variety of negative outcomes from (next? subsequent period?) EMAs, e.g., craving, risky situations, stressful events, negative affect, self-efficacy/change of abstinence goal (abstinence violation effect). Account for previous negative outcome level (either include as covariate [feature]? or make outcome a change score) [unassigned]"
   },
   {
     "objectID": "studies.html#risk2",
     "href": "studies.html#risk2",
-    "title": "3  Current and Planned Stuides",
+    "title": "3  Current and Planned Studies",
     "section": "3.2 RISK2",
     "text": "3.2 RISK2"
   },
   {
     "objectID": "studies.html#nrt1",
     "href": "studies.html#nrt1",
-    "title": "3  Current and Planned Stuides",
+    "title": "3  Current and Planned Studies",
     "section": "3.3 NRT1",
     "text": "3.3 NRT1\n\nBuild machine learning model for smoking lapse risk prediction (e.g., replicate RISK ema paper) [unassigned]"
   },
   {
     "objectID": "studies.html#face",
     "href": "studies.html#face",
-    "title": "3  Current and Planned Stuides",
+    "title": "3  Current and Planned Studies",
     "section": "3.4 FACE",
     "text": "3.4 FACE"
   },
