@@ -92,11 +92,19 @@ You can view an html file in firefox from terminal using `firefox [filename]`
 - `vimdiff file1 file2` - Highlight the differences between two files in the vim editor.
 - `tar [-] c|x|t f tarfile [pattern]` - Create, extract or list contents of a tar archive using pattern, if supplied.
 - `du -h` - Display sizes in human readable format. For example, 1.2M, 3.7G, etc.
-- `gzip file - Compress file. The resulting compressed file is named file.gz. 
-- `gunzip file` - Uncompress files.
+
 
 - `head`, `tail`, and `sort` work as expected.  Remember to use -n with sort if you want to do a numeric (rather than text) sort.  Sort also takes -r for reverse.  Use pipe to pipe in a vector of numbers or text.  Use -1 with head or tail to get the first (or last) value in series.
 
 ## Kill a frozen app
 
 Press Alt + F2 . Type xkill and hit Enter. The cursor will turn into a small 'x'. Left click any window to kill the process associated with that window. 
+
+## Compressing and archiving files
+
+- `gzip foo.txt - Compress foo.txt. The resulting compressed file is named file.txt.gz.  -r to compress subdirectories when compressing a directory rather than file.
+- `gunzip foo.txt` - Uncompress foo.txt.gz (no need to append .gz).
+- `gunzip foo.txt -c | less` to view contents of foo.txt without decompressing it
+- `tar cf playground.tar playground` make archive of playground directory.  r rather than c to append rather than create new archive.
+- `tar czf playground.tgz playground` to archive and compress (coukd also name playground.tar.gz)
+- `tar xf playground2.tar` to extract files from archive
