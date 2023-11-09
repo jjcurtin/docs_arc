@@ -46,7 +46,7 @@ For the Synamp1, this information was a little harder to track down.  The hardwa
 * PhysBox: PhysBox: The Psychophysiology Toolbox <https://arc.psych.wisc.edu/physbox/>
   
 ## Stimulus Control software
-* PsychToolBox: `P:\Documentation\Software\PTB\PsychToolBox.docx`
+* PsychToolBox: <https://github.com/jjcurtin/psychophysiology/tree/main/arc_library/PTB>
 * DMDX: Free download from <http://www.u.arizona.edu/~kforster/dmdx/dmdx.htm>
 
 ## I/O card for inter-computer communication
@@ -151,7 +151,7 @@ The shock electrode wires act like a big antenna, so over time we have made mult
 See Psychophysiology supplies under `P:\\private\ Documentation \Supplies\CommonLabSupplies.docx`
 
 ## Psychophysiology Peripherals Diagrams
-* [Redel Connector]https://raw.githubusercontent.com/jjcurtin/psychophysiology/main/hardware/psychophys_peripherals_diagrams/CurtinRedelConnector.pdf)  
+* [Redel Connector](https://raw.githubusercontent.com/jjcurtin/psychophysiology/main/hardware/psychophys_peripherals_diagrams/CurtinRedelConnector.pdf)  
 * [Fixed Response Delay Board](https://raw.githubusercontent.com/jjcurtin/psychophysiology/main/hardware/psychophys_peripherals_diagrams/Fixed_Response_Delay.pdf) 
 * [Photo Sensor](https://raw.githubusercontent.com/jjcurtin/psychophysiology/main/hardware/psychophys_peripherals_diagrams/PhotoSensor.pdf) 
 * [Response Button](https://raw.githubusercontent.com/jjcurtin/psychophysiology/main/hardware/psychophys_peripherals_diagrams/Response_Button.pdf) 
