@@ -119,331 +119,359 @@
     "text": "3.4 FACE"
   },
   {
+    "objectID": "resources.html#repositories",
+    "href": "resources.html#repositories",
+    "title": "4  Lab Resources",
+    "section": "4.1 Repositories",
+    "text": "4.1 Repositories\nA full list of John’s GitHub repos can be found here. A few frequently used ones:\n\nlab_supoort: Contains R functions, chtc code, and quarto templates written for specific ARC tasks.\narc_measures: Copies of our collected individual difference measures and their scoring code and related reference material. Any questionnaire which is copyrighted will only have our scoring file and a link to the copyright holder, if known."
+  },
+  {
+    "objectID": "resources.html#quarto-templates",
+    "href": "resources.html#quarto-templates",
+    "title": "4  Lab Resources",
+    "section": "4.2 Quarto Templates",
+    "text": "4.2 Quarto Templates\nAll of the following templates are quarto files for use in creating lab-related documentation\n\nSimple Quarto Template. This simple template allows you to set margins/font and to switch from HTML to PDF output.\n\n\n4.2.1 YAML files\nIncluding these YAML files in a blank .qmd document sets up output for either HTML or PDF, tailored to ARC standards with respect to margins, font, etc.\nTBD (CONTENTS NEED TO BE ADDED TO THESE FILES)\n\nHTML YAML\nPD YAML\n\n\n\n4.2.2 Latex Support Files\nTBD\n\nincludes.tex - this file includes frequently used packages and their specifications. (Will expand)\ndefine_headers_arc.tex - define H1 - H3 headers per John’s specifications\ndefine_headers_apa.tex - define H1 - H5 headers per APA specifications\nnih_template.tex - contains formatting related to NIH grant writing including header and bibliography formatting.\n\n\n\n4.2.3 Manuscripts\n\n4.2.3.1 APA\n.qmd template. This is based on the template at this repo. Our version is currently under development to try and load assets from our lab_support repo rather than installing the extention files locally.\n\n\n4.2.3.2 CSL files\nBelow are the YAML code of a couple that we use frequently (linked to the primary CSL repo)\nNIH Grant Proposals:\ncsl: https://raw.githubusercontent.com/citation-style-language/styles/master/national-library-of-medicine-grant-proposals.csl\nElsevier (Vancouver substyle):\ncsl: https://raw.githubusercontent.com/citation-style-language/styles-distribution/f8524f9b9df60e94e98f824f242a1fb27cc9fc59/elsevier-vancouver.csl\nAPA 7th Edition:\ncsl: https://raw.githubusercontent.com/citation-style-language/styles/master/apa.csl\nNote: the apa quarto template in the lab_support repo calls its own version of the apa.csl from within its ex_apa support folder.\n\n\n\n4.2.4 Grants\nTBD\n\n\n4.2.5 Other\nLetterhead: .qmd template. See Susan or John for assistance in personalizing this for other lab members."
+  },
+  {
     "objectID": "chtc.html#chtc-office-hours-live-help",
     "href": "chtc.html#chtc-office-hours-live-help",
-    "title": "4  CHTC",
-    "section": "4.1 CHTC Office Hours & Live Help",
-    "text": "4.1 CHTC Office Hours & Live Help\nSee the Get Help Page. Rachel and Christine are our two main support people at CHTC. You can email them at chtc@cs.wisc.edu\nThe zoom link for CHTC office hours is go.wisc.edu/chtc-officehours. Office hours are current scheduled at * Tuesday morning: 10:30am - 12:00pm * Thursday afternoon: 3:00 - 4:30 pm."
+    "title": "5  CHTC",
+    "section": "5.1 CHTC Office Hours & Live Help",
+    "text": "5.1 CHTC Office Hours & Live Help\nSee the Get Help Page. Rachel and Christine are our two main support people at CHTC. You can email them at chtc@cs.wisc.edu\nThe zoom link for CHTC office hours is go.wisc.edu/chtc-officehours. Office hours are current scheduled at * Tuesday morning: 10:30am - 12:00pm * Thursday afternoon: 3:00 - 4:30 pm."
   },
   {
     "objectID": "chtc.html#logging-in",
     "href": "chtc.html#logging-in",
-    "title": "4  CHTC",
-    "section": "4.2 Logging In",
-    "text": "4.2 Logging In\n\nOpen PuTTY. Enter Hostname: submit-1.chtc.wisc.edu, Port: 22, connection type: ssh\nLog in with your netid. You will have to use DUO for MFA.\nOpen WinSCP. Use the same credentials as PuTTY. You can drag files between your computer and CHTC. You can also edit documents with this program."
+    "title": "5  CHTC",
+    "section": "5.2 Logging In",
+    "text": "5.2 Logging In\n\nOpen PuTTY. Enter Hostname: submit-1.chtc.wisc.edu, Port: 22, connection type: ssh\nLog in with your netid. You will have to use DUO for MFA.\nOpen WinSCP. Use the same credentials as PuTTY. You can drag files between your computer and CHTC. You can also edit documents with this program."
   },
   {
     "objectID": "chtc.html#hello-world-and-general-help",
     "href": "chtc.html#hello-world-and-general-help",
-    "title": "4  CHTC",
-    "section": "4.3 Hello World and General Help",
-    "text": "4.3 Hello World and General Help\nFor substantial help, you can start with the CHTC home page and their list of how to docs for HTC.\nCHTC provides a Hello World overview of how to use CHTC. It is worth a review for new users."
+    "title": "5  CHTC",
+    "section": "5.3 Hello World and General Help",
+    "text": "5.3 Hello World and General Help\nFor substantial help, you can start with the CHTC home page and their list of how to docs for HTC.\nCHTC provides a Hello World overview of how to use CHTC. It is worth a review for new users."
   },
   {
     "objectID": "chtc.html#software",
     "href": "chtc.html#software",
-    "title": "4  CHTC",
-    "section": "4.4 Software",
-    "text": "4.4 Software\nOn windows, use PuTTY for secure shell connection (SSH) to CHTC submit server and WinSCP for FTP."
+    "title": "5  CHTC",
+    "section": "5.4 Software",
+    "text": "5.4 Software\nOn windows, use PuTTY for secure shell connection (SSH) to CHTC submit server and WinSCP for FTP."
   },
   {
     "objectID": "chtc.html#general-chtc-workflow",
     "href": "chtc.html#general-chtc-workflow",
-    "title": "4  CHTC",
-    "section": "4.5 General CHTC Workflow",
-    "text": "4.5 General CHTC Workflow\n\n4.5.1 Making Batch of Jobs\n\nCreate or edit the training controls file for your batch of jobs. You should start with the demo training_controls.R file in the lab_support repo.\nRun (and create if necessary) mak_jobs.R for your study. To create it, start with the demo in the lab_support repo. You will need to update the path to your training controls file when creating the file.\nmake_jobs() is called by the mak_jobs.R script. It will make a new folder for your batch of jobs on the server in the chtc folder for your study.\nFTP all of the files in the input folder for this batch of jobs to the CHTC submit server.\n\n\n\n4.5.2 Testing Jobs\n\nMake sure you have a results folder and an error folder in your home directory.\nMake sure you have all files for the batch of jobs you will train (see above) and train.sif\nEdit job_nums.csv on CHTC server to contain some (e.g., 3) jobs with only several configs (e.g., 5) in each bin (job/row). For example, you can create the content below by typing printf \"1,1,5\\n2,6,10\\n3,11,15\" &gt; job_nums.csv\n\n1, 1, 5\n2, 6, 10\n3, 11, 15\n\nType condor_submit train.sub to submit this jobs\nMonitor the jobs using condor_q and -condor_q -hold if needed\nConfirm that there are data in the results file (file size &gt; 0 for all files): ls results/results* -lS. This will sort files with size = 0 to the bottom of the list. There should not be any!\nConfirm that the correct number of results files were created by counting them: ls results/results* | wc -l\nCheck for error files with error messages (file size &gt; 0): ls error/error* -lSr. This will sort the non-zero files to the bottom of the list.\n\nIf there are non-zero files, look at the error messages using nano editor: For example, nano error/error_1.err\nDetermine the run time for your test jobs: condor_history $USER -limit 3 (where limit is the number of test jobs you ran). You want to bin enough configurations together in a job to have it last for 2-3 hours. You may need to run mak_jobs.R again with a different value for configs_per_job to make a new job_nums.csv file.\nReview the memory and disk usage for these test jobs: condor_history $USER -limit 3 -af RequestMemory MemoryUsage RequestDisk DiskUsage. You may need to edit train.sub and training_controls.R to increase or decrease these values. You should make the values match across both files on both CHTC server and our server to avoid confusion later. Or just delete the batch and re-run mak_jobs.R\n\n\n\n4.5.3 Running jobs\n\nMake sure you have FTPed the full jobs_nums.csv to the CHTC server to replace the test batch.\nType condor_submit train.sub\nType condor_q to confirm that the number of jobs that were submitted matches your expectations\n\n\n\n4.5.4 Monitoring Running Jobs\n\nrun condor_q to monitor progress on your jobs.\nrun condor_q -hold to explore the reason for held jobs. If necessary, you may need to change the requested memory or disk space to get those jobs to complete. See below for more detail. condor_q -af HoldReason will provide more detail on why a job is held if needed.\nrun condor_q -run to explore running jobs\nrun condor_q -idle to explore idle jobs\nrun condor_q -analyze or condor_q JobId -better-analyze to determine why certain jobs are not running by performing an analysis on a per machine basis for each machine in the pool. The latter command produces more thorough analysis of complex requirements and shows the values of relevant job ClassAd attributes.\ncondor_release $USER will release all held jobs for the user. You can substitute batch or job number to release a subset of held jobs if needed\ncondor_rm $USER will remove/cancel all jobs for the user.\nYou can review the error files associated with the batch of jobs to detect and understand errors as well. Sort the files so that the files with errors (i.e., file switch file size &gt; 0) display last by typing ls error/error* -lSr If there are MANY (&gt; 60K) files, you may need to pipe the file names into ls by typing find error -name \"error_*\" | ls -lSr. You can view the contents of a non-zero error file using nano. e.g., nano error/error_1.err\nFlock/Glide jobs will sometimes not exit properly. These jobs are put on hold (in addition to jobs with insufficient memory/disk space). You can simply release these jobs and try again: condor_release $USER. Of course, you should first address any problems with memory or disk usage that resulted in holds.\n\n\n\n4.5.5 Removing a subset of jobs\nIt is possible to remove a subset of jobs using condor_rm with a constraint. It sounds like your jobs are in order based on their clusterID. To remove these jobs individually, it is possible to use condor_rm JobID. To remove a series of jobs, you can use:\ncondor_rm -constraint ‘ClusterId &gt; 1 && ClusterId &lt; 5’\nClusterID refers to the batch of jobs submitted using one submit file. After re-reading your email, it sounds like you want to remove a subset of jobs that all fall under one ClusterID. To do this, you can use something like: condor_rm -constraint ‘ProcId &gt; 1 && ProcId &lt; 5 && ClusterID == 15307921’ When typing condor_q, ClusterID is equivalent to the Batch_Name value. To remove the subset of jobs you want to remove, you will want to look at the values after the period in the Job_IDs column. The values after the period are the ProcessID (ProcID). For example, if I submitted a batch of jobs and it was assigned a cluster/batch name of 15307921 and I want to remove jobs 15307921.1, 15307921.2, and 15307921.3, I could use: condor_rm -const ’ProcId &gt; 1 && ProcId &lt; 5 && ClusterID == 15307921\n\n\n4.5.6 Editing Running Jobs\nAt times some (or all) jobs may be held if they require more memory or disk space than was requested in sub.sub. You can update these parameters and then release the held jobs.\n\nTo update memory, type condor_qedit [batch_name or job_id] RequestMemory [memory]. You can see the batch_name and job_ids by typing condor_q -hold Memory is quantified in MB.\n\nTo update disk space, type condor_qedit [batch_name or job_id] RequestDisk [space]. You can see the batch_name and job_ids by typing condor_q -hold Space is quantified in MB.\n\nType condor_release $USER to release all held jobs from the user.\nIf you expect that you will need the specified higher memory or disk space for the currently running jobs (not yet held), you can hold them by typing condor_hold $USER and then release them with condor_release $USER such that they will now find machine with the higher levels for these parameters.\n\n\n\n4.5.7 Transferring Jobs back to Our Server\n\nConfirm that you have the correct number of results files: ls results/results_* | wc -l\nReview the non-zero error files: ls error/error_* -lSr and nano error/error_1.csv\nConcatenate all the results files: head -n +1 results/results_1.csv &gt; batch_results.csv; ls results/results_*.csv | xargs awk 'FNR&gt;1' &gt;&gt; batch_results.csv. See tutorial on awk to understand its use for simple programming. See a tutorial on the use of xargs.\nNow FTP batch_results.csv and the log file to the output folder for this batch on our server.\n\nDo NOT delete results and error files until you have confirmed they look good by processing them in R."
+    "title": "5  CHTC",
+    "section": "5.5 General CHTC Workflow",
+    "text": "5.5 General CHTC Workflow\n\n5.5.1 Making Batch of Jobs\n\nCreate or edit the training controls file for your batch of jobs. You should start with the demo training_controls.R file in the lab_support repo.\nRun (and create if necessary) mak_jobs.R for your study. To create it, start with the demo in the lab_support repo. You will need to update the path to your training controls file when creating the file.\nmake_jobs() is called by the mak_jobs.R script. It will make a new folder for your batch of jobs on the server in the chtc folder for your study.\nFTP all of the files in the input folder for this batch of jobs to the CHTC submit server.\n\n\n\n5.5.2 Testing Jobs\n\nMake sure you have a results folder and an error folder in your home directory.\nMake sure you have all files for the batch of jobs you will train (see above) and train.sif\nEdit job_nums.csv on CHTC server to contain some (e.g., 3) jobs with only several configs (e.g., 5) in each bin (job/row). For example, you can create the content below by typing printf \"1,1,5\\n2,6,10\\n3,11,15\" &gt; job_nums.csv\n\n1, 1, 5\n2, 6, 10\n3, 11, 15\n\nType condor_submit train.sub to submit this jobs\nMonitor the jobs using condor_q and -condor_q -hold if needed\nConfirm that there are data in the results file (file size &gt; 0 for all files): ls results/results* -lS. This will sort files with size = 0 to the bottom of the list. There should not be any!\nConfirm that the correct number of results files were created by counting them: ls results/results* | wc -l\nCheck for error files with error messages (file size &gt; 0): ls error/error* -lSr. This will sort the non-zero files to the bottom of the list.\n\nIf there are non-zero files, look at the error messages using nano editor: For example, nano error/error_1.err\nDetermine the run time for your test jobs: condor_history $USER -limit 3 (where limit is the number of test jobs you ran). You want to bin enough configurations together in a job to have it last for 2-3 hours. You may need to run mak_jobs.R again with a different value for configs_per_job to make a new job_nums.csv file.\nReview the memory and disk usage for these test jobs: condor_history $USER -limit 3 -af RequestMemory MemoryUsage RequestDisk DiskUsage. You may need to edit train.sub and training_controls.R to increase or decrease these values. You should make the values match across both files on both CHTC server and our server to avoid confusion later. Or just delete the batch and re-run mak_jobs.R\n\n\n\n5.5.3 Running jobs\n\nMake sure you have FTPed the full jobs_nums.csv to the CHTC server to replace the test batch.\nType condor_submit train.sub\nType condor_q to confirm that the number of jobs that were submitted matches your expectations\n\n\n\n5.5.4 Monitoring Running Jobs\n\nrun condor_q to monitor progress on your jobs.\nrun condor_q -hold to explore the reason for held jobs. If necessary, you may need to change the requested memory or disk space to get those jobs to complete. See below for more detail. condor_q -af HoldReason will provide more detail on why a job is held if needed.\nrun condor_q -run to explore running jobs\nrun condor_q -idle to explore idle jobs\nrun condor_q -analyze or condor_q JobId -better-analyze to determine why certain jobs are not running by performing an analysis on a per machine basis for each machine in the pool. The latter command produces more thorough analysis of complex requirements and shows the values of relevant job ClassAd attributes.\ncondor_release $USER will release all held jobs for the user. You can substitute batch or job number to release a subset of held jobs if needed\ncondor_rm $USER will remove/cancel all jobs for the user.\nYou can review the error files associated with the batch of jobs to detect and understand errors as well. Sort the files so that the files with errors (i.e., file switch file size &gt; 0) display last by typing ls error/error* -lSr If there are MANY (&gt; 60K) files, you may need to pipe the file names into ls by typing find error -name \"error_*\" | ls -lSr. You can view the contents of a non-zero error file using nano. e.g., nano error/error_1.err\nFlock/Glide jobs will sometimes not exit properly. These jobs are put on hold (in addition to jobs with insufficient memory/disk space). You can simply release these jobs and try again: condor_release $USER. Of course, you should first address any problems with memory or disk usage that resulted in holds.\n\n\n\n5.5.5 Removing a subset of jobs\nIt is possible to remove a subset of jobs using condor_rm with a constraint. It sounds like your jobs are in order based on their clusterID. To remove these jobs individually, it is possible to use condor_rm JobID. To remove a series of jobs, you can use:\ncondor_rm -constraint ‘ClusterId &gt; 1 && ClusterId &lt; 5’\nClusterID refers to the batch of jobs submitted using one submit file. After re-reading your email, it sounds like you want to remove a subset of jobs that all fall under one ClusterID. To do this, you can use something like: condor_rm -constraint ‘ProcId &gt; 1 && ProcId &lt; 5 && ClusterID == 15307921’ When typing condor_q, ClusterID is equivalent to the Batch_Name value. To remove the subset of jobs you want to remove, you will want to look at the values after the period in the Job_IDs column. The values after the period are the ProcessID (ProcID). For example, if I submitted a batch of jobs and it was assigned a cluster/batch name of 15307921 and I want to remove jobs 15307921.1, 15307921.2, and 15307921.3, I could use: condor_rm -const ’ProcId &gt; 1 && ProcId &lt; 5 && ClusterID == 15307921\n\n\n5.5.6 Editing Running Jobs\nAt times some (or all) jobs may be held if they require more memory or disk space than was requested in sub.sub. You can update these parameters and then release the held jobs.\n\nTo update memory, type condor_qedit [batch_name or job_id] RequestMemory [memory]. You can see the batch_name and job_ids by typing condor_q -hold Memory is quantified in MB.\n\nTo update disk space, type condor_qedit [batch_name or job_id] RequestDisk [space]. You can see the batch_name and job_ids by typing condor_q -hold Space is quantified in MB.\n\nType condor_release $USER to release all held jobs from the user.\nIf you expect that you will need the specified higher memory or disk space for the currently running jobs (not yet held), you can hold them by typing condor_hold $USER and then release them with condor_release $USER such that they will now find machine with the higher levels for these parameters.\n\n\n\n5.5.7 Transferring Jobs back to Our Server\n\nConfirm that you have the correct number of results files: ls results/results_* | wc -l\nReview the non-zero error files: ls error/error_* -lSr and nano error/error_1.csv\nConcatenate all the results files: head -n +1 results/results_1.csv &gt; batch_results.csv; ls results/results_*.csv | xargs awk 'FNR&gt;1' &gt;&gt; batch_results.csv. See tutorial on awk to understand its use for simple programming. See a tutorial on the use of xargs.\nNow FTP batch_results.csv and the log file to the output folder for this batch on our server.\n\nDo NOT delete results and error files until you have confirmed they look good by processing them in R."
   },
   {
     "objectID": "chtc.html#using-and-creating-containers-for-r-and-packages",
     "href": "chtc.html#using-and-creating-containers-for-r-and-packages",
-    "title": "4  CHTC",
-    "section": "4.6 Using and Creating Containers for R and Packages",
-    "text": "4.6 Using and Creating Containers for R and Packages\n\n4.6.1 Full documetation from CHTC\nCHTC has full documentation of these steps. We are currently using this Docker image for base r. Chose current numbered version (e.g., 4.3.0) among tags.\n\n\n4.6.2 Use Existing Container\nWe have saved existing containers for training and for feature creation on our server in the CHTC folder (/CHTC/containers/train and /CHTC/containers/features). These folders include the sub and def files that were used to create these containers. The current/up-to-date container is named without an underscore. The _# are older versions with the highest number being the most recent old version. Likely not needed!\n\n\n4.6.3 Using Container with your Jobs\nNOTES: for now, CHTC says to not use the instructions from the above guide in your jobs’ sub file (e.g., “universe = container” and “container_image =”). That is the way of the future, however right now to run on the OSPool and CHTC, you’ll want to use this instead:\nuniverse = vanilla\n+SingularityImage = \"container.sif\"\nAnd then include the container.sif file in the transfer_input_files line. That should work seamlessly across the OSPool/CHTC. Maybe use this just to be safe: requirements = (PoolName == \"CHTC\") || (SINGULARITY_CAN_USE_SIF)\n\n\n4.6.4 Brief Steps for Creating a New Container\nHere is the steps in brief\n\ncreate or use and existing build.sub and .def file. See examples for train and features in the CHTC folder on the server.\nFTP these files to CHTC submit server\nRun an interactive sessions condor_submit -i build.sub, where you use your sub file\nBuild the apptainer: apptainer build train.sif train.def, where you name your .sif file and use your def file\nAfter the container is built, you can clear the cache: apptainer cache clean -f and then exit the interactive session. Your container should be returned to the root folder on chtc submit server (along with the log file). Consider whether to archive it on our server or if it was a one-time use for you."
+    "title": "5  CHTC",
+    "section": "5.6 Using and Creating Containers for R and Packages",
+    "text": "5.6 Using and Creating Containers for R and Packages\n\n5.6.1 Full documetation from CHTC\nCHTC has full documentation of these steps. We are currently using this Docker image for base r. Chose current numbered version (e.g., 4.3.0) among tags.\n\n\n5.6.2 Use Existing Container\nWe have saved existing containers for training and for feature creation on our server in the CHTC folder (/CHTC/containers/train and /CHTC/containers/features). These folders include the sub and def files that were used to create these containers. The current/up-to-date container is named without an underscore. The _# are older versions with the highest number being the most recent old version. Likely not needed!\n\n\n5.6.3 Using Container with your Jobs\nNOTES: for now, CHTC says to not use the instructions from the above guide in your jobs’ sub file (e.g., “universe = container” and “container_image =”). That is the way of the future, however right now to run on the OSPool and CHTC, you’ll want to use this instead:\nuniverse = vanilla\n+SingularityImage = \"container.sif\"\nAnd then include the container.sif file in the transfer_input_files line. That should work seamlessly across the OSPool/CHTC. Maybe use this just to be safe: requirements = (PoolName == \"CHTC\") || (SINGULARITY_CAN_USE_SIF)\n\n\n5.6.4 Brief Steps for Creating a New Container\nHere is the steps in brief\n\ncreate or use and existing build.sub and .def file. See examples for train and features in the CHTC folder on the server.\nFTP these files to CHTC submit server\nRun an interactive sessions condor_submit -i build.sub, where you use your sub file\nBuild the apptainer: apptainer build train.sif train.def, where you name your .sif file and use your def file\nAfter the container is built, you can clear the cache: apptainer cache clean -f and then exit the interactive session. Your container should be returned to the root folder on chtc submit server (along with the log file). Consider whether to archive it on our server or if it was a one-time use for you."
   },
   {
     "objectID": "chtc.html#making-package-tars",
     "href": "chtc.html#making-package-tars",
-    "title": "4  CHTC",
-    "section": "4.7 Making package TARS",
-    "text": "4.7 Making package TARS\nWe are no longer using tars (we use containers for R instead). However, if needed in the future, CHTC offers a detailed step-by-step walkthrough for making package tars."
+    "title": "5  CHTC",
+    "section": "5.7 Making package TARS",
+    "text": "5.7 Making package TARS\nWe are no longer using tars (we use containers for R instead). However, if needed in the future, CHTC offers a detailed step-by-step walkthrough for making package tars."
   },
   {
     "objectID": "chtc.html#open-science-pool",
     "href": "chtc.html#open-science-pool",
-    "title": "4  CHTC",
-    "section": "4.8 Open Science Pool",
-    "text": "4.8 Open Science Pool\nJJC plans to get an account directly for the OS Pool. We can access this pools through flock/glide BUT with an account, we can run twice as many jobs (using each account separately). May still just be easier to run using multiple lab accounts on CHTC but worth considering."
+    "title": "5  CHTC",
+    "section": "5.8 Open Science Pool",
+    "text": "5.8 Open Science Pool\nJJC plans to get an account directly for the OS Pool. We can access this pools through flock/glide BUT with an account, we can run twice as many jobs (using each account separately). May still just be easier to run using multiple lab accounts on CHTC but worth considering."
   },
   {
     "objectID": "chtc.html#common-condor-commands",
     "href": "chtc.html#common-condor-commands",
-    "title": "4  CHTC",
-    "section": "4.9 Common CONDOR commands",
-    "text": "4.9 Common CONDOR commands\n\ncondor_submit train.sub\ncondor_q for quick review of queue for submitted jobs\ncondor_q -hold for quick review of held jobs\ncondor_q -af HoldReason for more detailed review of held jobs\ncondor_qedit [cluster id number] RequestMemory [memory] to increase memory. Example: condor_qedit 16892087 RequestMemory 20000. Can specific specific job with .# added to the ID. Memory is specified in MB in our training control files.\ncondor_release $USER to release all held jobs for user (e.g., after increasing memory)\ncondor_rm [jobid] or condor_rm $USER to remove a job or all jobs\ncondor_history $USER -limit 10 -af requestmemory memoryusage is an example of reviewing recent job history (past 10 in this example) for a subset of the history parameters. Can list all the parameters (long format) for a single job using condor_history 16892169.1 -l where the jobid is listed explicitly.\n\ncondor_hold $USER to hold all jobs running (e.g., to increase memory)."
+    "title": "5  CHTC",
+    "section": "5.9 Common CONDOR commands",
+    "text": "5.9 Common CONDOR commands\n\ncondor_submit train.sub\ncondor_q for quick review of queue for submitted jobs\ncondor_q -hold for quick review of held jobs\ncondor_q -af HoldReason for more detailed review of held jobs\ncondor_qedit [cluster id number] RequestMemory [memory] to increase memory. Example: condor_qedit 16892087 RequestMemory 20000. Can specific specific job with .# added to the ID. Memory is specified in MB in our training control files.\ncondor_release $USER to release all held jobs for user (e.g., after increasing memory)\ncondor_rm [jobid] or condor_rm $USER to remove a job or all jobs\ncondor_history $USER -limit 10 -af requestmemory memoryusage is an example of reviewing recent job history (past 10 in this example) for a subset of the history parameters. Can list all the parameters (long format) for a single job using condor_history 16892169.1 -l where the jobid is listed explicitly.\n\ncondor_hold $USER to hold all jobs running (e.g., to increase memory)."
   },
   {
     "objectID": "chtc.html#citing-chtc",
     "href": "chtc.html#citing-chtc",
-    "title": "4  CHTC",
-    "section": "4.10 Citing CHTC",
-    "text": "4.10 Citing CHTC\nGuidance for citing CHTC in grants and papers."
+    "title": "5  CHTC",
+    "section": "5.10 Citing CHTC",
+    "text": "5.10 Citing CHTC\nGuidance for citing CHTC in grants and papers."
   },
   {
     "objectID": "git.html#common-git-commands",
     "href": "git.html#common-git-commands",
-    "title": "5  Git",
-    "section": "5.1 Common Git Commands",
-    "text": "5.1 Common Git Commands\nNote: These commands will only work if you are in a git repo.\n\n5.1.1 Workflow\n\ngit status shows any files updated locally\ngit add [filename] add file to staging area\ngit add . adds all modified files to staging area\ngit commit create commit of staged files - this will prompt you to enter commit message. You can also use the -m flag to write your message directly with commit command (git commit -m \"updates xyz\").\ngit commit -am \"commit message\" will add all files and commit them in one step. However,\ngit push pushes your commits to github\ngit pull pulls updates from github (it is good practice to pull before commiting)\n\ngit mv &lt;oldname&gt; &lt;newname&gt; to rename and/or move a file without losing its link to its earlier history. Read more\ngit stash to stash changes; git stash pop to reapply stashed changes\n\n\n\n5.1.2 Repos\n\ngit clone [repo_url] clones git repo.\n\ngit init [repo_name] creates a new empty repo\n\n\n\n5.1.3 Branching\n\ngit branch shows local branches (git branch -a will show you all branches local and on github)\ngit checkout [branch_name] switches branches\ngit checkout -b [new_branch_name] switches to new branch (git branch [new_branch_name] creates new branch but doesn’t switch to it).\ngit branch -d [brand_name] deletes a local branch. This must be done from another branch or main.\ngit push origin -d [brach_name] deletes branch_name on remote/github (assumes remote is called origin, which it is for us).\n\n\n\n5.1.4 Log and Versioning\n\ngit log displays the most recent commits\ngit log --stat -[N] displays stats on the most recent N commits. Cleaner than log\ngit log [filename] displays commit history for a file. May have problems if the filename was ever changed. In that case consider, git log --follow -- [filename].  Can add–stat` for more info on commit\n\n\n\n5.1.5 Diffs\n\nwe use meld merge for file diffs\nmeld merge can do diffs on two files saved locally. For example, between a qmd file for a paper in a repo and another copy of that file with edits from a lab member saved outside the repo.\nmeld merge can also be set up to be used as the difftool for git. In Linux, add the following to your .gitconfig file\ngit difftool [commit_id] HEAD [filename] to compare any specific version of a file to the current version on github.\ngit difftool last HEAD [filename] to compare current local version (not yet committed) to version on github.\ngit difftool HEAD pathfile.qmd to compare local copy (not committed) to version on github\n\n[diff]\n    tool = meld\n[difftool]\n    prompt = false\n[difftool \"meld\"]\ncmd = meld \"$LOCAL\" \"$REMOTE\"\n\n# The order of the Meld GUI window panes can be controlled by the order of $LOCAL and $REMOTE in cmd\n\nthen you can compare a version of any file from a specific commit to the current version\n\ngit difftool &lt;COMMIT_HASH&gt; file_name\n\nor you can compare two versions of a file across two separate commits\n\ngit difftool &lt;COMMIT_HASH_1&gt; &lt;COMMIT_HASH_2&gt; file_name"
+    "title": "6  Git",
+    "section": "6.1 Common Git Commands",
+    "text": "6.1 Common Git Commands\nNote: These commands will only work if you are in a git repo.\n\n6.1.1 Workflow\n\ngit status shows any files updated locally\ngit add [filename] add file to staging area\ngit add . adds all modified files to staging area\ngit commit create commit of staged files - this will prompt you to enter commit message. You can also use the -m flag to write your message directly with commit command (git commit -m \"updates xyz\").\ngit commit -am \"commit message\" will add all files and commit them in one step. However,\ngit push pushes your commits to github\ngit pull pulls updates from github (it is good practice to pull before commiting)\n\ngit mv &lt;oldname&gt; &lt;newname&gt; to rename and/or move a file without losing its link to its earlier history. Read more\ngit stash to stash changes; git stash pop to reapply stashed changes\n\n\n\n6.1.2 Repos\n\ngit clone [repo_url] clones git repo.\n\ngit init [repo_name] creates a new empty repo\n\n\n\n6.1.3 Branching\n\ngit branch shows local branches (git branch -a will show you all branches local and on github)\ngit checkout [branch_name] switches branches\ngit checkout -b [new_branch_name] switches to new branch (git branch [new_branch_name] creates new branch but doesn’t switch to it).\ngit branch -d [brand_name] deletes a local branch. This must be done from another branch or main.\ngit push origin -d [brach_name] deletes branch_name on remote/github (assumes remote is called origin, which it is for us).\n\n\n\n6.1.4 Log and Versioning\n\ngit log displays the most recent commits\ngit log --stat -[N] displays stats on the most recent N commits. Cleaner than log\ngit log [filename] displays commit history for a file. May have problems if the filename was ever changed. In that case consider, git log --follow -- [filename].  Can add–stat` for more info on commit\n\n\n\n6.1.5 Diffs\n\nwe use meld merge for file diffs\nmeld merge can do diffs on two files saved locally. For example, between a qmd file for a paper in a repo and another copy of that file with edits from a lab member saved outside the repo.\nmeld merge can also be set up to be used as the difftool for git. In Linux, add the following to your .gitconfig file\ngit difftool [commit_id] HEAD [filename] to compare any specific version of a file to the current version on github.\ngit difftool last HEAD [filename] to compare current local version (not yet committed) to version on github.\ngit difftool HEAD pathfile.qmd to compare local copy (not committed) to version on github\n\n[diff]\n    tool = meld\n[difftool]\n    prompt = false\n[difftool \"meld\"]\ncmd = meld \"$LOCAL\" \"$REMOTE\"\n\n# The order of the Meld GUI window panes can be controlled by the order of $LOCAL and $REMOTE in cmd\n\nthen you can compare a version of any file from a specific commit to the current version\n\ngit difftool &lt;COMMIT_HASH&gt; file_name\n\nor you can compare two versions of a file across two separate commits\n\ngit difftool &lt;COMMIT_HASH_1&gt; &lt;COMMIT_HASH_2&gt; file_name"
   },
   {
     "objectID": "git.html#git-command-line-for-windows",
     "href": "git.html#git-command-line-for-windows",
-    "title": "5  Git",
-    "section": "5.2 Git Command Line for Windows",
-    "text": "5.2 Git Command Line for Windows\nThe recommended terminal for using the Git command line on Windows is Git Bash."
+    "title": "6  Git",
+    "section": "6.2 Git Command Line for Windows",
+    "text": "6.2 Git Command Line for Windows\nThe recommended terminal for using the Git command line on Windows is Git Bash."
   },
   {
     "objectID": "linux_install.html#install-os",
     "href": "linux_install.html#install-os",
-    "title": "6  Installing Linux",
-    "section": "6.1 Install OS",
-    "text": "6.1 Install OS\nhttps://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview"
+    "title": "7  Installing Linux",
+    "section": "7.1 Install OS",
+    "text": "7.1 Install OS\nhttps://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview"
   },
   {
     "objectID": "linux_install.html#install-key-support-apps",
     "href": "linux_install.html#install-key-support-apps",
-    "title": "6  Installing Linux",
-    "section": "6.2 Install key support apps",
-    "text": "6.2 Install key support apps\nsudo apt install git sudo apt install vim"
+    "title": "7  Installing Linux",
+    "section": "7.2 Install key support apps",
+    "text": "7.2 Install key support apps\nsudo apt install git sudo apt install vim"
   },
   {
     "objectID": "linux_install.html#create-and-edit-aliases",
     "href": "linux_install.html#create-and-edit-aliases",
-    "title": "6  Installing Linux",
-    "section": "6.3 Create and edit aliases",
-    "text": "6.3 Create and edit aliases"
+    "title": "7  Installing Linux",
+    "section": "7.3 Create and edit aliases",
+    "text": "7.3 Create and edit aliases"
   },
   {
     "objectID": "linux_install.html#r",
     "href": "linux_install.html#r",
-    "title": "6  Installing Linux",
-    "section": "6.4 R",
-    "text": "6.4 R\nsudo apt install -y –no-install-recommends software-properties-common dirmngr wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc sudo add-apt-repository “deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/” sudo apt install -y r-base r-base-core r-recommended r-base-dev sudo apt install libcurl4-openssl-dev sudo apt install libfontconfig1-dev sudo apt install libxml2-dev sudo apt install libharfbuzz-dev libfribidi-dev\nwget https://download1.rstudio.org/electron/jammy/amd64/rstudio-2023.03.0-386-amd64.deb sudo apt install -f ./rstudio-2023.03.0-386-amd64.deb\ninstall.packages(“devtools”) library(devtools) install.packages(“tidyverse”)\nhttps://www.r-bloggers.com/2022/08/installation-of-r-4-2-on-ubuntu-22-04-1-lts-and-tips-for-spatial-packages/\nhttps://www.digitalocean.com/community/tutorials/how-to-install-r-on-ubuntu-22-04\nhttps://computingforgeeks.com/how-to-install-r-and-rstudio-on-ubuntu-debian-mint/"
+    "title": "7  Installing Linux",
+    "section": "7.4 R",
+    "text": "7.4 R\nsudo apt install -y –no-install-recommends software-properties-common dirmngr wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc sudo add-apt-repository “deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/” sudo apt install -y r-base r-base-core r-recommended r-base-dev sudo apt install libcurl4-openssl-dev sudo apt install libfontconfig1-dev sudo apt install libxml2-dev sudo apt install libharfbuzz-dev libfribidi-dev\nwget https://download1.rstudio.org/electron/jammy/amd64/rstudio-2023.03.0-386-amd64.deb sudo apt install -f ./rstudio-2023.03.0-386-amd64.deb\ninstall.packages(“devtools”) library(devtools) install.packages(“tidyverse”)\nhttps://www.r-bloggers.com/2022/08/installation-of-r-4-2-on-ubuntu-22-04-1-lts-and-tips-for-spatial-packages/\nhttps://www.digitalocean.com/community/tutorials/how-to-install-r-on-ubuntu-22-04\nhttps://computingforgeeks.com/how-to-install-r-and-rstudio-on-ubuntu-debian-mint/"
   },
   {
     "objectID": "linux_install.html#quarto",
     "href": "linux_install.html#quarto",
-    "title": "6  Installing Linux",
-    "section": "6.5 Quarto",
-    "text": "6.5 Quarto\n\nDownload latest version of Quarto\ninstall using sudo apt install &lt;package path&gt; or sudo dpkg -i &lt;package path&gt;\n\nhttps://docs.posit.co/resources/install-quarto/\nhttps://www.cyberciti.biz/faq/how-to-install-curl-command-on-a-ubuntu-linux/"
+    "title": "7  Installing Linux",
+    "section": "7.5 Quarto",
+    "text": "7.5 Quarto\n\nDownload latest version of Quarto\ninstall using sudo apt install &lt;package path&gt; or sudo dpkg -i &lt;package path&gt;\n\nhttps://docs.posit.co/resources/install-quarto/\nhttps://www.cyberciti.biz/faq/how-to-install-curl-command-on-a-ubuntu-linux/"
   },
   {
     "objectID": "linux_install.html#ssh-keys-for-github-chtc-etc",
     "href": "linux_install.html#ssh-keys-for-github-chtc-etc",
-    "title": "6  Installing Linux",
-    "section": "6.6 SSH Keys for github, chtc, etc",
-    "text": "6.6 SSH Keys for github, chtc, etc\nhttps://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent\nhttps://github.com/settings/keys\nhttps://www.beyondtrust.com/blog/entry/ssh-key-management-overview-6-best-practices"
+    "title": "7  Installing Linux",
+    "section": "7.6 SSH Keys for github, chtc, etc",
+    "text": "7.6 SSH Keys for github, chtc, etc\nhttps://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent\nhttps://github.com/settings/keys\nhttps://www.beyondtrust.com/blog/entry/ssh-key-management-overview-6-best-practices"
   },
   {
     "objectID": "linux_install.html#zotero",
     "href": "linux_install.html#zotero",
-    "title": "6  Installing Linux",
-    "section": "6.7 Zotero",
-    "text": "6.7 Zotero\n\nsudo apt update\nsudo apt upgrade\nsudo snap install zotero-snap\n\nAfter zotero is installed, you can synch to the Addiction Research Lab library. Go to menu edit:preferences:synch. Username is jjccurtin. Ask John or Susan for the password."
+    "title": "7  Installing Linux",
+    "section": "7.7 Zotero",
+    "text": "7.7 Zotero\n\nsudo apt update\nsudo apt upgrade\nsudo snap install zotero-snap\n\nAfter zotero is installed, you can synch to the Addiction Research Lab library. Go to menu edit:preferences:synch. Username is jjccurtin. Ask John or Susan for the password."
   },
   {
     "objectID": "linux_install.html#slack",
     "href": "linux_install.html#slack",
-    "title": "6  Installing Linux",
-    "section": "6.8 Slack",
-    "text": "6.8 Slack\nSlack is easily installed from the Ubuntu Software Center. Open up the software center. Search for Slack. Install. Done.\n\n6.8.1 pdfs\n\nsudo snap install evince for viewing pdfs\nsudo apt-get install qpdf for manipulating pdfs (e.g., extract pages)"
+    "title": "7  Installing Linux",
+    "section": "7.8 Slack",
+    "text": "7.8 Slack\nSlack is easily installed from the Ubuntu Software Center. Open up the software center. Search for Slack. Install. Done.\n\n7.8.1 pdfs\n\nsudo snap install evince for viewing pdfs\nsudo apt-get install qpdf for manipulating pdfs (e.g., extract pages)"
   },
   {
     "objectID": "linux_install.html#global-protect",
     "href": "linux_install.html#global-protect",
-    "title": "6  Installing Linux",
-    "section": "6.9 Global Protect",
-    "text": "6.9 Global Protect\n\n[Install] (https://kb.wisc.edu/helpdesk/105971)\n[]"
+    "title": "7  Installing Linux",
+    "section": "7.9 Global Protect",
+    "text": "7.9 Global Protect\n\n[Install] (https://kb.wisc.edu/helpdesk/105971)\n[]"
   },
   {
     "objectID": "linux_install.html#meld-merge-for-file-diffs",
     "href": "linux_install.html#meld-merge-for-file-diffs",
-    "title": "6  Installing Linux",
-    "section": "6.10 Meld Merge for file diffs",
-    "text": "6.10 Meld Merge for file diffs\n\ndownload and install meld merge\nadd the following to your .gitconfig file\n\n[diff]\n    tool = meld\n[difftool]\n    prompt = false\n[difftool \"meld\"]\ncmd = meld \"$LOCAL\" \"$REMOTE\"\n\n# The order of the Meld GUI window panes can be controlled by the order of $LOCAL and $REMOTE in cmd"
+    "title": "7  Installing Linux",
+    "section": "7.10 Meld Merge for file diffs",
+    "text": "7.10 Meld Merge for file diffs\n\ndownload and install meld merge\nadd the following to your .gitconfig file\n\n[diff]\n    tool = meld\n[difftool]\n    prompt = false\n[difftool \"meld\"]\ncmd = meld \"$LOCAL\" \"$REMOTE\"\n\n# The order of the Meld GUI window panes can be controlled by the order of $LOCAL and $REMOTE in cmd"
   },
   {
     "objectID": "linux_install.html#csv",
     "href": "linux_install.html#csv",
-    "title": "6  Installing Linux",
-    "section": "6.11 CSV",
-    "text": "6.11 CSV\nhttps://www.tadviewer.com/\nhttps://www.moderncsv.com/"
+    "title": "7  Installing Linux",
+    "section": "7.11 CSV",
+    "text": "7.11 CSV\nhttps://www.tadviewer.com/\nhttps://www.moderncsv.com/"
   },
   {
     "objectID": "linux_install.html#mount-shares",
     "href": "linux_install.html#mount-shares",
-    "title": "6  Installing Linux",
-    "section": "6.12 Mount Shares",
-    "text": "6.12 Mount Shares\n\nsudo apt-get install cifs-utils\ncreate directories within ~/mnt/ for each share.\nsave credentials file for synology (.synology_credentials) or research drive (.researchdrive_credentials) at /root/. These should include username=, password= (and for research drive, domain=ad.wisc.edu)\ncreate an alias for the command for each share to mount. Get it from John"
+    "title": "7  Installing Linux",
+    "section": "7.12 Mount Shares",
+    "text": "7.12 Mount Shares\n\nsudo apt-get install cifs-utils\ncreate directories within ~/mnt/ for each share.\nsave credentials file for synology (.synology_credentials) or research drive (.researchdrive_credentials) at /root/. These should include username=, password= (and for research drive, domain=ad.wisc.edu)\ncreate an alias for the command for each share to mount. Get it from John"
   },
   {
     "objectID": "linux_install.html#creating-ssh-passkeys",
     "href": "linux_install.html#creating-ssh-passkeys",
-    "title": "6  Installing Linux",
-    "section": "6.13 Creating SSH passkeys",
-    "text": "6.13 Creating SSH passkeys\nYou can create an ssh key to ssh without the need to provide username and password. In our lab, these are useful to ssh to CHTC or for git shh to GitHub.\nTo create the key\n\nOpen a terminal and type ssh-keygen -t ed25519.\nAccept the defaults by repeatedly pressing enter and this will create a key with defauult names .ssh/id_ed25519, and .ssh/id_ed25519.pub.\n\nTo use this key with CHTC\n\nOpen the public key file (id_25519.pub) and copy the content.\nSSH to CTHC\nCreate or edit .ssh/authorized_keys\nPaste your public key info at the end of this file.\n\nTo use this key with Github\n\nGo to your settings (point at your profile picture and select settings.\nSelect SSH and GPG Keys\nClick New SSH Key, give it a title, and paste the public key info into Key box."
+    "title": "7  Installing Linux",
+    "section": "7.13 Creating SSH passkeys",
+    "text": "7.13 Creating SSH passkeys\nYou can create an ssh key to ssh without the need to provide username and password. In our lab, these are useful to ssh to CHTC or for git shh to GitHub.\nTo create the key\n\nOpen a terminal and type ssh-keygen -t ed25519.\nAccept the defaults by repeatedly pressing enter and this will create a key with defauult names .ssh/id_ed25519, and .ssh/id_ed25519.pub.\n\nTo use this key with CHTC\n\nOpen the public key file (id_25519.pub) and copy the content.\nSSH to CTHC\nCreate or edit .ssh/authorized_keys\nPaste your public key info at the end of this file.\n\nTo use this key with Github\n\nGo to your settings (point at your profile picture and select settings.\nSelect SSH and GPG Keys\nClick New SSH Key, give it a title, and paste the public key info into Key box."
   },
   {
     "objectID": "linux_install.html#sound-mixer-settings",
     "href": "linux_install.html#sound-mixer-settings",
-    "title": "6  Installing Linux",
-    "section": "6.14 Sound mixer settings",
-    "text": "6.14 Sound mixer settings\ninstall pavucontrol to get mic on zoom to work\nalsamixer from terminal may help"
+    "title": "7  Installing Linux",
+    "section": "7.14 Sound mixer settings",
+    "text": "7.14 Sound mixer settings\ninstall pavucontrol to get mic on zoom to work\nalsamixer from terminal may help"
   },
   {
     "objectID": "linux_install.html#vnc-for-remote-access",
     "href": "linux_install.html#vnc-for-remote-access",
-    "title": "6  Installing Linux",
-    "section": "6.15 VNC for Remote Access",
-    "text": "6.15 VNC for Remote Access\nhttps://kb.wisc.edu/biochem/it/page.php?id=127360"
+    "title": "7  Installing Linux",
+    "section": "7.15 VNC for Remote Access",
+    "text": "7.15 VNC for Remote Access\nhttps://kb.wisc.edu/biochem/it/page.php?id=127360"
   },
   {
     "objectID": "linux_install.html#ssh-to-office-computer",
     "href": "linux_install.html#ssh-to-office-computer",
-    "title": "6  Installing Linux",
-    "section": "6.16 SSH to office computer",
-    "text": "6.16 SSH to office computer\nhttps://linuxhint.com/enable-use-ssh-ubuntu/\nuse username for hostname\n\n6.16.1 X11 forwarding\nX11 forwarding is used in SSH to display GUI for app (e.g., rstudio) on remote computer (e.g., office computer). To enable X11 forwarding, need to edit /etc/ssh/sshd_config on remote computer to indicate: - X11Forwarding yes\nMay also want to set - X11DisplayOffset 10 - X11UseLocalhost yes - TCPKeepAlive yes\nMay need to install xauth on remote computer.\nNeed to use -X flag with ssh from local computer. Can then open GUI for remote app (e.g.. rstudio)\n\n\n6.16.2 VNC\n\nDocumentation on how to install tightvnc on host.\nStart vncserver on host with specific resolution: vncserver -geometry 2560x1080 -depth 24\nOn client, can use Remmina with SSH."
+    "title": "7  Installing Linux",
+    "section": "7.16 SSH to office computer",
+    "text": "7.16 SSH to office computer\nhttps://linuxhint.com/enable-use-ssh-ubuntu/\nuse username for hostname\n\n7.16.1 X11 forwarding\nX11 forwarding is used in SSH to display GUI for app (e.g., rstudio) on remote computer (e.g., office computer). To enable X11 forwarding, need to edit /etc/ssh/sshd_config on remote computer to indicate: - X11Forwarding yes\nMay also want to set - X11DisplayOffset 10 - X11UseLocalhost yes - TCPKeepAlive yes\nMay need to install xauth on remote computer.\nNeed to use -X flag with ssh from local computer. Can then open GUI for remote app (e.g.. rstudio)\n\n\n7.16.2 VNC\n\nDocumentation on how to install tightvnc on host.\nStart vncserver on host with specific resolution: vncserver -geometry 2560x1080 -depth 24\nOn client, can use Remmina with SSH."
   },
   {
     "objectID": "linux_install.html#customize-cli-prompt",
     "href": "linux_install.html#customize-cli-prompt",
-    "title": "6  Installing Linux",
-    "section": "6.17 Customize CLI prompt",
-    "text": "6.17 Customize CLI prompt\nThis will set up a green prompt with relative path for current directory.\nPS1=“$ Documentation for ARC 7  Using Linux 5  Git Welcome 1  Lab Practices 2  Graduate Student/Mentor Expectations/Policies 3  Current and Planned Stuides 4  CHTC 5  Git 6  Installing Linux 7  Using Linux 8  VIM 9  Flowcharts Other Software 11  Global Protect and Mapping the Network Server 12  Zotero 13  Creating QR Codes for Presentations Psychophysiology 14  Psychophysiology Documentation 15  Psychophysiology Software 6  Installing Linux :::"
+    "title": "7  Installing Linux",
+    "section": "7.17 Customize CLI prompt",
+    "text": "7.17 Customize CLI prompt\nThis will set up a green prompt with relative path for current directory.\nPS1=“$ Documentation for ARC 8  Using Linux 6  Git Welcome 1  Lab Practices 2  Graduate Student/Mentor Expectations/Policies 3  Current and Planned Studies 4  Lab Resources 5  CHTC 6  Git 7  Installing Linux 8  Using Linux 9  VIM 10  Flowcharts Other Software 11  Global Protect and Mapping the Network Server 12  Zotero 13  Creating QR Codes for Presentations Psychophysiology 14  Psychophysiology Methods 15  Psychophysiology Software 7  Installing Linux :::"
   },
   {
     "objectID": "linux_use.html#general-short-cuts",
     "href": "linux_use.html#general-short-cuts",
-    "title": "7  Using Linux",
-    "section": "7.1 General Short Cuts",
-    "text": "7.1 General Short Cuts\n\nsuper+tab switches between windows\nsuper+left/right arrow fits active window to left or right of screen\nctrl+alt+t opens a new terminal window"
+    "title": "8  Using Linux",
+    "section": "8.1 General Short Cuts",
+    "text": "8.1 General Short Cuts\n\nsuper+tab switches between windows\nsuper+left/right arrow fits active window to left or right of screen\nctrl+alt+t opens a new terminal window"
   },
   {
     "objectID": "linux_use.html#terminal-short-cuts",
     "href": "linux_use.html#terminal-short-cuts",
-    "title": "7  Using Linux",
-    "section": "7.2 Terminal Short Cuts",
-    "text": "7.2 Terminal Short Cuts\n\ntab autocompletes from what you have started to type\nctrl+c breaks out of a command or process\nctrl+d logs out of current terminal\n`ctrl+l clears screen\nctrl+a moves cursor to beginnng of line\nctrl+e moves cursor to the end of line\nctrl+u clears the current line\nctrl+p or up arrow scrolls through previous commands\nctrl_n or down arrow scrolls forward through commands\nctrl+shift+c copies highlighted text\nctrl+shift+v pastes copied text"
+    "title": "8  Using Linux",
+    "section": "8.2 Terminal Short Cuts",
+    "text": "8.2 Terminal Short Cuts\n\ntab autocompletes from what you have started to type\nctrl+c breaks out of a command or process\nctrl+d logs out of current terminal\n`ctrl+l clears screen\nctrl+a moves cursor to beginnng of line\nctrl+e moves cursor to the end of line\nctrl+u clears the current line\nctrl+p or up arrow scrolls through previous commands\nctrl_n or down arrow scrolls forward through commands\nctrl+shift+c copies highlighted text\nctrl+shift+v pastes copied text"
   },
   {
     "objectID": "linux_use.html#control-processes",
     "href": "linux_use.html#control-processes",
-    "title": "7  Using Linux",
-    "section": "7.3 control processes",
-    "text": "7.3 control processes\n\ncommand & to launch program in background of terminal\nfg %1 to move orogram to foreground\nbg %1 to kove to background\nkill %1 (see chap 10 in linux book)\n\n\n7.3.1 Pdf manipulation\nWe use evince [filename.pdf] to view pdfs\nwe use qpdf --empty --pages infile.pdf 1-5 -- outfile.pdf to extract pages from a pdf\n\n\n7.3.2 Quarto\n\n\n7.3.3 Markdown\nYou will need to install pandoc to render markdown to pdf: sudo apt-get install pandoc texlive-latex-base texlive-fonts-recommended texlive-extra-utils texlive-latex-extra.\nUse pandoc [infile.md] -o [outfile.pdf] to render infile.md to outfile.pdf.\nNote also that the ReText app can render markdown to pdf (and html) as well if you don’t want to use the terminal.\n\n\n7.3.4 Firefox\nYou can view an html file in firefox from terminal using firefox [filename]"
+    "title": "8  Using Linux",
+    "section": "8.3 control processes",
+    "text": "8.3 control processes\n\ncommand & to launch program in background of terminal\nfg %1 to move orogram to foreground\nbg %1 to kove to background\nkill %1 (see chap 10 in linux book)\n\n\n8.3.1 Pdf manipulation\nWe use evince [filename.pdf] to view pdfs\nwe use qpdf --empty --pages infile.pdf 1-5 -- outfile.pdf to extract pages from a pdf\n\n\n8.3.2 Quarto\n\n\n8.3.3 Markdown\nYou will need to install pandoc to render markdown to pdf: sudo apt-get install pandoc texlive-latex-base texlive-fonts-recommended texlive-extra-utils texlive-latex-extra.\nUse pandoc [infile.md] -o [outfile.pdf] to render infile.md to outfile.pdf.\nNote also that the ReText app can render markdown to pdf (and html) as well if you don’t want to use the terminal.\n\n\n8.3.4 Firefox\nYou can view an html file in firefox from terminal using firefox [filename]"
   },
   {
     "objectID": "linux_use.html#common-commands",
     "href": "linux_use.html#common-commands",
-    "title": "7  Using Linux",
-    "section": "7.4 Common Commands",
-    "text": "7.4 Common Commands\n\nwc, uniq, head, tail, |, &gt;, &gt;&gt;, less, sort, grep, cat, man, help, –help, type, which, echo\nls -lSr to list files sorted by size (with larger sizes later: r). Useful to find the non-zero error files. Can have issues when applied to large numbers of files (&gt; 60K). See use of find and xargs below if needed.\ncd - changes tio previous directory\nmv to move files between directories. can use .. as target to move file to home directory. e.g., mv results_* ..\n&gt; redirect standard output to a new file (creates file if does not exist; writes over file contents if it does exist). &gt;&gt; redirect standard output to append to a file\nrm to remove file(s). rm -r to remove non-empty directory\ncat filename_* &gt; all_files.csv to concatenate all files into one file.\nless views file contents\n| is pipe operator\nwc is word count. wc -l counts lines\nchmod +x get_missing_jobs.sh to change permissions on get_missing_jobs.sh to run it. ./get_missing_jobs.sh to run it.\nfind -maxdepth 1 -name \"results_*.csv\" | wc -l will find results_*.csv in local folder (maxdepth 1) and pipe them into a word count that counts lines (-l)\ncat job_nums.csv | wc -l reads contents of job_nums.csv and pipes to a word count that counts lines (-l)\nfind -maxdepth 1 -name \"results_*.csv\" | ls -lSr gets around the too many arguments issue. Find searches recursively by default (override with maxdepth if needed), whereas ls searches just . or the specified directory (e.g., ./results)\nSee tutorial on awk to understand its use for simple programming. See a tutorial on the use of xargs.\nprintf to send formatted text to standard output or to a file\n\nprintf \"John is %s\\n\" \"nice\"\nprintf \"John is %d years old\" 54\nprintf \"hello world\\nIt is John!\" &gt; out.txt)\n\nman [command] to open manual for command\nsdiff file1 file2 - Compare two files side by side.\nvimdiff file1 file2 - Highlight the differences between two files in the vim editor.\ntar [-] c|x|t f tarfile [pattern] - Create, extract or list contents of a tar archive using pattern, if supplied.\ndu -h - Display sizes in human readable format. For example, 1.2M, 3.7G, etc.\n`gzip file - Compress file. The resulting compressed file is named file.gz.\ngunzip file - Uncompress files.\nhead, tail, and sort work as expected. Remember to use -n with sort if you want to do a numeric (rather than text) sort. Sort also takes -r for reverse. Use pipe to pipe in a vector of numbers or text. Use -1 with head or tail to get the first (or last) value in series."
+    "title": "8  Using Linux",
+    "section": "8.4 Common Commands",
+    "text": "8.4 Common Commands\n\nwc, uniq, head, tail, |, &gt;, &gt;&gt;, less, sort, grep, cat, man, help, –help, type, which, echo\nls -lSr to list files sorted by size (with larger sizes later: r). Useful to find the non-zero error files. Can have issues when applied to large numbers of files (&gt; 60K). See use of find and xargs below if needed.\ncd - changes tio previous directory\nmv to move files between directories. can use .. as target to move file to home directory. e.g., mv results_* ..\n&gt; redirect standard output to a new file (creates file if does not exist; writes over file contents if it does exist). &gt;&gt; redirect standard output to append to a file\nrm to remove file(s). rm -r to remove non-empty directory\ncat filename_* &gt; all_files.csv to concatenate all files into one file.\nless views file contents\n| is pipe operator\nwc is word count. wc -l counts lines\nchmod +x get_missing_jobs.sh to change permissions on get_missing_jobs.sh to run it. ./get_missing_jobs.sh to run it.\nfind -maxdepth 1 -name \"results_*.csv\" | wc -l will find results_*.csv in local folder (maxdepth 1) and pipe them into a word count that counts lines (-l)\ncat job_nums.csv | wc -l reads contents of job_nums.csv and pipes to a word count that counts lines (-l)\nfind -maxdepth 1 -name \"results_*.csv\" | ls -lSr gets around the too many arguments issue. Find searches recursively by default (override with maxdepth if needed), whereas ls searches just . or the specified directory (e.g., ./results)\nSee tutorial on awk to understand its use for simple programming. See a tutorial on the use of xargs.\nprintf to send formatted text to standard output or to a file\n\nprintf \"John is %s\\n\" \"nice\"\nprintf \"John is %d years old\" 54\nprintf \"hello world\\nIt is John!\" &gt; out.txt)\n\nman [command] to open manual for command\nsdiff file1 file2 - Compare two files side by side.\nvimdiff file1 file2 - Highlight the differences between two files in the vim editor.\ntar [-] c|x|t f tarfile [pattern] - Create, extract or list contents of a tar archive using pattern, if supplied.\ndu -h - Display sizes in human readable format. For example, 1.2M, 3.7G, etc.\nhead, tail, and sort work as expected. Remember to use -n with sort if you want to do a numeric (rather than text) sort. Sort also takes -r for reverse. Use pipe to pipe in a vector of numbers or text. Use -1 with head or tail to get the first (or last) value in series."
   },
   {
     "objectID": "linux_use.html#kill-a-frozen-app",
     "href": "linux_use.html#kill-a-frozen-app",
-    "title": "7  Using Linux",
-    "section": "7.5 Kill a frozen app",
-    "text": "7.5 Kill a frozen app\nPress Alt + F2 . Type xkill and hit Enter. The cursor will turn into a small ‘x’. Left click any window to kill the process associated with that window."
+    "title": "8  Using Linux",
+    "section": "8.5 Kill a frozen app",
+    "text": "8.5 Kill a frozen app\nPress Alt + F2 . Type xkill and hit Enter. The cursor will turn into a small ‘x’. Left click any window to kill the process associated with that window."
+  },
+  {
+    "objectID": "linux_use.html#compressing-and-archiving-files",
+    "href": "linux_use.html#compressing-and-archiving-files",
+    "title": "8  Using Linux",
+    "section": "8.6 Compressing and archiving files",
+    "text": "8.6 Compressing and archiving files\n\n`gzip foo.txt - Compress foo.txt. The resulting compressed file is named file.txt.gz. -r to compress subdirectories when compressing a directory rather than file.\ngunzip foo.txt - Uncompress foo.txt.gz (no need to append .gz).\ngunzip foo.txt -c | less to view contents of foo.txt without decompressing it\ntar cf playground.tar playground make archive of playground directory. r rather than c to append rather than create new archive.\ntar czf playground.tgz playground to archive and compress (coukd also name playground.tar.gz)\ntar xf playground2.tar to extract files from archive"
   },
   {
     "objectID": "vim.html#exit-and-save",
     "href": "vim.html#exit-and-save",
-    "title": "8  VIM",
-    "section": "8.1 Exit and Save",
-    "text": "8.1 Exit and Save\n\n:x exits and saves\n:w saves without exit\n:w filename saves file as filename\n:q! exits without save"
+    "title": "9  VIM",
+    "section": "9.1 Exit and Save",
+    "text": "9.1 Exit and Save\n\n:x exits and saves\n:w saves without exit\n:w filename saves file as filename\n:q! exits without save"
   },
   {
     "objectID": "vim.html#run-commands",
     "href": "vim.html#run-commands",
-    "title": "8  VIM",
-    "section": "8.2 Run commands",
-    "text": "8.2 Run commands\n\n:!CMD where CMD is command. e.g.., !ls"
+    "title": "9  VIM",
+    "section": "9.2 Run commands",
+    "text": "9.2 Run commands\n\n:!CMD where CMD is command. e.g.., !ls"
   },
   {
     "objectID": "vim.html#navigating-document-in-default-command-mode",
     "href": "vim.html#navigating-document-in-default-command-mode",
-    "title": "8  VIM",
-    "section": "8.3 Navigating document in Default (Command) Mode",
-    "text": "8.3 Navigating document in Default (Command) Mode\nRemember to enter command mode by pressing esc - 0 moves the cursor to the start of line - $ moves cursor to end of line - Move cursor left (h), down(j), up (k), or right (l)\n\ngg for top of document\nG for bottom of document\nnG to move to line number n. CTRL-g shows line numbers in footer of doc.\nH for top of window, M for middle of window, and L for bottom of window\nw moves forward to the beginning of the next word.\nb moves backwards to the beginning of the previous word.\n( and ) move by sentences, either backward or forward.\n{ and } move by paragraphs."
+    "title": "9  VIM",
+    "section": "9.3 Navigating document in Default (Command) Mode",
+    "text": "9.3 Navigating document in Default (Command) Mode\nRemember to enter command mode by pressing esc - 0 moves the cursor to the start of line - $ moves cursor to end of line - Move cursor left (h), down(j), up (k), or right (l)\n\ngg for top of document\nG for bottom of document\nnG to move to line number n. CTRL-g shows line numbers in footer of doc.\nH for top of window, M for middle of window, and L for bottom of window\nw moves forward to the beginning of the next word.\nb moves backwards to the beginning of the previous word.\n( and ) move by sentences, either backward or forward.\n{ and } move by paragraphs."
   },
   {
     "objectID": "vim.html#inserting",
     "href": "vim.html#inserting",
-    "title": "8  VIM",
-    "section": "8.4 Inserting",
-    "text": "8.4 Inserting\n\ni Insert text before the cursor\na Insert text after cursor\nA Append text to end of current line. - I Insert text at beginning of line.\no Open blank line below cursor for text. - O Open blank line above cursor for text.\np puts the Vim register (from delete) after cursor (if full line, on next line).\nrx replaces the character at the cursor with ‘x’\nR replaces multiple characters. Type ESC when done.\nce deletes until end of word and places you in insert. Press ESC when done\nc$ deletes until end of line and places you in insert. Press ESC when done\n:%s/old/new/gc - replaces old with new in full doc with prompt for replace.\n:r filename to insert text in filename above cursor"
+    "title": "9  VIM",
+    "section": "9.4 Inserting",
+    "text": "9.4 Inserting\n\ni Insert text before the cursor\na Insert text after cursor\nA Append text to end of current line. - I Insert text at beginning of line.\no Open blank line below cursor for text. - O Open blank line above cursor for text.\np puts the Vim register (from delete) after cursor (if full line, on next line).\nrx replaces the character at the cursor with ‘x’\nR replaces multiple characters. Type ESC when done.\nce deletes until end of word and places you in insert. Press ESC when done\nc$ deletes until end of line and places you in insert. Press ESC when done\n:%s/old/new/gc - replaces old with new in full doc with prompt for replace.\n:r filename to insert text in filename above cursor"
   },
   {
     "objectID": "vim.html#deleting",
     "href": "vim.html#deleting",
-    "title": "8  VIM",
-    "section": "8.5 Deleting",
-    "text": "8.5 Deleting\n\nx deletes the character under the cursor\ndw deletes from cursor to start of next word (including space spearator). d2w deletes from cursor to end of second word, etc.\nde delets from curors to end of current for\ndd deletes the line. 2dd deletes two lines.\nd$ deletes from cursor to end of line.\nu to undo the last command. CTRL-R for redo -U to undo all fixes on a line."
+    "title": "9  VIM",
+    "section": "9.5 Deleting",
+    "text": "9.5 Deleting\n\nx deletes the character under the cursor\ndw deletes from cursor to start of next word (including space spearator). d2w deletes from cursor to end of second word, etc.\nde delets from curors to end of current for\ndd deletes the line. 2dd deletes two lines.\nd$ deletes from cursor to end of line.\nu to undo the last command. CTRL-R for redo -U to undo all fixes on a line."
   },
   {
     "objectID": "vim.html#spell-check",
     "href": "vim.html#spell-check",
-    "title": "8  VIM",
-    "section": "8.6 Spell check",
-    "text": "8.6 Spell check\n\n:set spell – Turn on spell checking\n:set nospell – Turn off spell checking\n]s – Jump to the next misspelled word\n[s – Jump to the previous misspelled word\nz= – Bring up the suggested replacements\nzg – Good word: Add the word under the cursor to the dictionary\nzw – Woops! Undo and remove the word from the dictionary"
+    "title": "9  VIM",
+    "section": "9.6 Spell check",
+    "text": "9.6 Spell check\n\n:set spell – Turn on spell checking\n:set nospell – Turn off spell checking\n]s – Jump to the next misspelled word\n[s – Jump to the previous misspelled word\nz= – Bring up the suggested replacements\nzg – Good word: Add the word under the cursor to the dictionary\nzw – Woops! Undo and remove the word from the dictionary"
   },
   {
     "objectID": "vim.html#search-in-vim",
     "href": "vim.html#search-in-vim",
-    "title": "8  VIM",
-    "section": "8.7 Search in VIM",
-    "text": "8.7 Search in VIM\n\n/text to search forward for text. Type ENTER to exit to that text.\n?text to search backward for text.\nn to find next instance of text (after ENTER)\nN to find previous instance of text (after ENTER)"
+    "title": "9  VIM",
+    "section": "9.7 Search in VIM",
+    "text": "9.7 Search in VIM\n\n/text to search forward for text. Type ENTER to exit to that text.\n?text to search backward for text.\nn to find next instance of text (after ENTER)\nN to find previous instance of text (after ENTER)"
   },
   {
     "objectID": "vim.html#visual-selection",
     "href": "vim.html#visual-selection",
-    "title": "8  VIM",
-    "section": "8.8 Visual selection",
-    "text": "8.8 Visual selection\n\nv to select text. Move cursor around with hjkl keys\nthen d to delete (can later p(ut) it somewhere if needed)\nor y to yank (copy) so you can later p(ut) it somewhere\nor w to write to separate file"
+    "title": "9  VIM",
+    "section": "9.8 Visual selection",
+    "text": "9.8 Visual selection\n\nv to select text. Move cursor around with hjkl keys\nthen d to delete (can later p(ut) it somewhere if needed)\nor y to yank (copy) so you can later p(ut) it somewhere\nor w to write to separate file"
   },
   {
     "objectID": "vim.html#copy",
     "href": "vim.html#copy",
-    "title": "8  VIM",
-    "section": "8.9 Copy",
-    "text": "8.9 Copy\n\ny to yank (copy) selction (use with v for visual selection)\nyw to yank a word\nyy to yank a line"
+    "title": "9  VIM",
+    "section": "9.9 Copy",
+    "text": "9.9 Copy\n\ny to yank (copy) selction (use with v for visual selection)\nyw to yank a word\nyy to yank a line"
   },
   {
     "objectID": "vim.html#working-with-multiple-files",
     "href": "vim.html#working-with-multiple-files",
-    "title": "8  VIM",
-    "section": "8.10 Working with multiple files",
-    "text": "8.10 Working with multiple files\nVim can open multiple files in separate buffers. This can be done at the start by providing multiple filenames to vim (e.g., vim file1.md file2.md)\nAlternatively, additional files can be opened for editting later (:e file2.txt).\nMoving between buffers\n\nbn moves to next buffer\nbp moves to previous buffer\n:buffers displays all open buffers\n: buffer 1 allows switch to buffer 1 (or any other number) if there are many buffers open\n\nyank/delete/put will work between buffers"
+    "title": "9  VIM",
+    "section": "9.10 Working with multiple files",
+    "text": "9.10 Working with multiple files\nVim can open multiple files in separate buffers. This can be done at the start by providing multiple filenames to vim (e.g., vim file1.md file2.md)\nAlternatively, additional files can be opened for editting later (:e file2.txt).\nMoving between buffers\n\nbn moves to next buffer\nbp moves to previous buffer\n:buffers displays all open buffers\n: buffer 1 allows switch to buffer 1 (or any other number) if there are many buffers open\n\nyank/delete/put will work between buffers"
   },
   {
     "objectID": "vim.html#render-files",
     "href": "vim.html#render-files",
-    "title": "8  VIM",
-    "section": "8.11 Render files",
-    "text": "8.11 Render files\nWe tend to use either md or qmd files for writing, code, etc. Our .vimrc file turns on markdown highlighting for these files if saved with .md or ..qmd extensions. qmd is preferred because it works with RStudio as well.\nThese files can be rendered to html or pdf if desired.\n\nquarto render file.qmd to render to html\nquarto render file.qmd --to pdf to render to pdf\n\nWe can use a full yaml header for more fancy output. We have templates for apa manuscripts, letterhead, and a generally nice format pdf output if desired. Just paste the yaml at the top of the file."
+    "title": "9  VIM",
+    "section": "9.11 Render files",
+    "text": "9.11 Render files\nWe tend to use either md or qmd files for writing, code, etc. Our .vimrc file turns on markdown highlighting for these files if saved with .md or ..qmd extensions. qmd is preferred because it works with RStudio as well.\nThese files can be rendered to html or pdf if desired.\n\nquarto render file.qmd to render to html\nquarto render file.qmd --to pdf to render to pdf\n\nWe can use a full yaml header for more fancy output. We have templates for apa manuscripts, letterhead, and a generally nice format pdf output if desired. Just paste the yaml at the top of the file."
+  },
+  {
+    "objectID": "vim.html#installing-plugins",
+    "href": "vim.html#installing-plugins",
+    "title": "9  VIM",
+    "section": "9.12 Installing plugins",
+    "text": "9.12 Installing plugins\nIf the plugin is on github, simply clone it using the github url into the vim plugin folder: /home/jjcurtin/.vim/pack/vendor/start\nAnd you are done!"
   },
   {
     "objectID": "vim.html#learing-vim",
     "href": "vim.html#learing-vim",
-    "title": "8  VIM",
-    "section": "8.13 Learing VIM",
-    "text": "8.13 Learing VIM\n\nrun vimtutor\nbooks: https://iccf-holland.org/vim_books.html"
+    "title": "9  VIM",
+    "section": "9.13 Learing VIM",
+    "text": "9.13 Learing VIM\n\nrun vimtutor\nbooks: https://iccf-holland.org/vim_books.html"
   },
   {
     "objectID": "flowchart_demo.html",
     "href": "flowchart_demo.html",
-    "title": "9  Flowcharts",
+    "title": "10  Flowcharts",
     "section": "",
     "text": "This is a short demo for making a flowchart in R.\nHere are two links to more information on the DiagrammeR function:\nhttps://bookdown.org/yihui/rmarkdown-cookbook/diagrams.html\nhttps://rich-iannone.github.io/DiagrammeR/graphviz_and_mermaid.html\nHere is a basic example of using DiagrammeR to create a flowchart of participant retention.\nThe process has 3 main parts:\n1. Define the nodes\n2. Define the edges\n3. Define node labels (content of nodes) using footnotes.\nNote: for this simple flowchart I am manually entering the number of particpants as a string. You can also use data in your dataset as content for the label.\nex. ‘Starting Sample = 216’ could also be str_c(‘Starting Sample =’, nrow(sample))\n\n\nDiagrammeR::grViz(\"\n  digraph {\n  graph []\n  \n  node [fontname = Helvetica, shape = rectangle, fixedsize = true, width = 2.5]\n  a [label = '@@1']\n  b [label = '@@2']\n  c [label = '@@3']\n  d [label = '@@4']\n  e [label = '@@5']\n  f [label = '@@6']\n  g [label = '@@7']\n\n  a -&gt; b -&gt; d -&gt; f\n  a -&gt; c\n  b -&gt; e\n  d -&gt; g\n  }\n  \n  [1]: 'Participants screened \\\\n n = 300'\n  [2]: 'Participants eligible \\\\n n = 250'\n  [3]: 'Participants ineligible \\\\n n = 50'\n  [4]: 'Participants enrolled \\\\n n = 215'\n  [5]: 'Participants did not enroll \\\\n n = 35'\n  [6]: 'Participants completed study \\\\n n= 175'\n  [7]: 'Participants discontinued \\\\n n = 40'\n  \") \n\n\n\n\n\nHere is a more complicated example of participant enrollment flow code, demonstrating how to code a) edges (lines) that connect to more than one node (box), b) more descriptive node labels, and c) manual line breaks in the node text.\n\ngrViz(\"digraph {\n\ngraph[layout = dot, rankdir = TB]  #top to bottom vs LR for left to right\n\n# general node definition\nnode [shape = rectangle, style = filled, fillcolor = LightBlue, fontsize=14]\n\n#specific nodes with label text specified later\nreddit [label = '@@1']\ncommunity [label = '@@2']\nclinician [label = '@@3']\ncraigslist [label = '@@15']\nunknown [label = '@@4']\nscreen [width = 3,label = '@@5']\nscreen_fail [shape = octagon, fillcolor= Red, height = 1.3, width = 1, label = '@@6']\nscreen_pass [width = 4, label = '@@7']\nfail_reasons [label = '@@8']\nenrolled [label = '@@9']\nnot_enrolled [shape = octagon, fillcolor= Red, height = 1.5, label = '@@10']\nnot_enrolled_why [label = '@@11']\non_study [label = '@@12']\noff_study [label = '@@13']\ndisposition [label = '@@14']\n\n\n#edge definitions (lines between boxes)\n{reddit community craigslist clinician unknown} -&gt; screen -&gt; {screen_fail screen_pass}\nscreen_fail -&gt; fail_reasons\nscreen_pass -&gt; {not_enrolled enrolled}\nnot_enrolled -&gt; not_enrolled_why\nenrolled -&gt; {on_study off_study}\noff_study -&gt; disposition\n}\n\n\n[1]: str_c('Reddit \\\\n(n = ', n_reddit, ')')\n[2]: str_c('Community \\\\n(n = ', n_community, ')')\n[3]: str_c('Clinician \\\\n(n = ', n_clinician, ')')\n[4]: str_c('Unknown \\\\n(n = ', n_unknown, ')')\n[5]: str_c('Screened \\\\n(n = ', n_reddit+n_community+n_clinician+n_craigsl+n_unknown, ')')\n[6]: str_c('Screen fail \\\\n(n = ', n_ineligible, ')')\n[7]: str_c('Screen pass \\\\n(n = ', n_eligible, ')')\n[8]: str_c('Screen fail reasons: \\\\n', 'No Android (n = ', sum(the_hist$no_android), ')\\\\n', 'Internet Number (n = ', sum(the_hist$yes_internet_num), ')\\\\n', 'Multiple or unreliable phones (n = ', sum(the_hist$maintain_phone, the_hist$multiple_phones), ')\\\\n', 'Under 18 (n = ', sum(the_hist$under_18), ')\\\\n', 'No MAT (n = ', sum(the_hist$no_mat), ')\\\\n', 'Not MAT adherent (n = ', sum(the_hist$daily_not_adhere, the_hist$monthly_not_adhere), ')\\\\n', 'MAT too short (n = ', sum(the_hist$mat_too_short), ')\\\\n', 'MAT too long (n = ', sum(the_hist$mat_too_long), ')\\\\n', 'Relapsed (n = ', sum(the_hist$relapse), ')\\\\n\\\\n', mult_inel, ' participants screened out\\\\non 2+ conditions')\n[9]: str_c('Enrolled \\\\n(n = ', nrow(all_digital), ')\\\\n', 'Scheduled (n = ', n_eligible_pending, ')')\n[10]: str_c('Not enrolled \\\\n(n = ', not_enrolled_digital, ')')\n[11]: str_c('Reasons not enrolled: Needs further exploration')\n[12]: str_c('On study \\\\n(n = ', all_digital %&gt;% filter(study_end_date &gt; today()) %&gt;% nrow(), ')')\n[13]: str_c('Off study \\\\n(n = ', all_digital %&gt;% filter(study_end_date &lt;= today()) %&gt;% nrow(), ')')\n[14]: str_c('Disposition: \\\\nCompleted (n = ', disposition %&gt;% filter(subid %in% all_digital$subid, disposition == 'complete') %&gt;% nrow(), ')\\\\n', 'Usable data (n = ', all_digital %&gt;% filter(study_end_date &lt;= today(), subid %in% usable_subs$subid) %&gt;% nrow(), ')\\\\n', 'Unusable (n = ', all_digital %&gt;% filter(study_end_date &lt;= today(), !(subid %in% usable_subs$subid)) %&gt;% nrow(), ')')\n[15]: str_c('Craigslist \\\\n(n = ', n_craigsl, ')')\n\")"
   },
@@ -543,7 +571,7 @@
     "href": "psychophysiology.html#stimulus-control-software",
     "title": "14  Psychophysiology Methods",
     "section": "16.3 Stimulus Control software",
-    "text": "16.3 Stimulus Control software\n\nPsychToolBox: P:\\Documentation\\Software\\PTB\\PsychToolBox.docx\nDMDX: Free download from http://www.u.arizona.edu/~kforster/dmdx/dmdx.htm"
+    "text": "16.3 Stimulus Control software\n\nPsychToolBox: https://github.com/jjcurtin/psychophysiology/tree/main/arc_library/PTB\nDMDX: Free download from http://www.u.arizona.edu/~kforster/dmdx/dmdx.htm"
   },
   {
     "objectID": "psychophysiology.html#io-card-for-inter-computer-communication",
@@ -641,7 +669,7 @@
     "href": "psychophysiology.html#psychophysiology-peripherals-diagrams",
     "title": "14  Psychophysiology Methods",
     "section": "16.17 Psychophysiology Peripherals Diagrams",
-    "text": "16.17 Psychophysiology Peripherals Diagrams\n\n[Redel Connector]https://raw.githubusercontent.com/jjcurtin/psychophysiology/main/hardware/psychophys_peripherals_diagrams/CurtinRedelConnector.pdf)\n\nFixed Response Delay Board\nPhoto Sensor\nResponse Button\nVoltage Divider"
+    "text": "16.17 Psychophysiology Peripherals Diagrams\n\nRedel Connector\n\nFixed Response Delay Board\nPhoto Sensor\nResponse Button\nVoltage Divider"
   },
   {
     "objectID": "psychophysiology.html#calibrate-white-noise-startle-probes-for-hd280pro",
@@ -796,12 +824,5 @@
     "title": "15  Psychophysiology Software",
     "section": "15.3 Curry",
     "text": "15.3 Curry\n\n15.3.1 Installing Curry\n\nInstaller package comes with an installer CD, tutorial CD, and a USB dongle.\nThe Dell Latitude laptop being uses for the mobile lab does not have an optical drive. Therefore, the contents of the installer CD were copied to P://Private/Documentation/Neuroscan/Curry/Installer Disk\nRun setup.exe from the installer disk folder.\nWhen prompted to choose which components to install, select: EEG acquisition, Core Files, Dongle Drivers, and Amplifier Drivers.\n\n\nDo NOT install: EEG/MEG analysis, Head models, Example Data\n\n\nWhen the installer gets to the Amplifier Driver Installation, an onscreen prompt tells you to follow the onscreen directions.\n\n\nA secondary (device driver) installation window opens\nGive windows security approval to allow Compumedics to install the drivers by clicking the Install button.\nClick finish when the wizard indicates it is finished. It now returns to the main installer.\n\n\nAt the end of installation the finish window reminds you that a hardware lock “dongle” is required to run the software.\nGo ahead and start the Curry 7 acquisition\nA license information window will come up saying “dongle not found”\n\n\nPlug in the dongle and hit refresh. NOTE: The dongle must be plugged in at all times for the software to run. Just plug it in and leave it alone.\nClose the dongle window.\n\n\nGo to the start menu and run Curry 7 acquisition from the Start or Programs menu.\n\n\n\n15.3.2 Updating after First Install\n\nAt first launch, you will be prompted to do an online update; hit yes\nYou will receive another window that says you have to send a notification email to Neuroscan\n\n\nIf you don’t have an email editor like Outlook installed (which you shouldn’t) click the button that says “no email”\nA text box will pop up, and you will be instructed to copy and paste this into an email which you can do via Wiscmail.\n\n\nAn executable update will available. Click to download, than click to run\n\n\nNote you must close Curry first\n\n\nWhen that is finished, start the Neuroimaging suite again, and you will have been updated from 7.0.6 to 7.0.10\nYou will now have another email which you have to send. Follow the procedure above.\n\n\n\n15.3.3 Curry Configuration Files\nCurry requires Configuration files to determine the amplifier settings and recording parameters for your study. There are both Amplifier Configuration files (.xml extension) and Global Parameters files (.cfg). These are roughly the equivalent of the Set-Up (.ast) files from SCAN. Below is an an example setup file for our lab and description of some common parameters.\n\n15.3.3.1 Amplifier Configuration\n\nIn general it is recommended that you start with an existing configuration file and modify it rather than starting from scratch. See notes below for more.\nAmplifier: Grael EEG (demo below is for Grael)\nSampling rate = 2048 Hz (required for triggering, see below)\nMode: DC\nLow Pass: 819 Hz (default - unclear if this can/should be modified to 500Hz)\nClick on each site (or hold Ctrl for multiple sites) and select on/off the sites you will collect.\nFor bipolar channels the Electrode No is the number and you can enter a Name (e.g, “ORB”)\n\n\n\n15.3.3.2 Sensor Placement\n\nCan use one of the defaults or create a new montage that is just for bipolar channels.\nFor bipolar channels the Active should be the channel number and Ref column should remain empty.\n\n\n\n15.3.3.3 Special limitations with the Grael trigger module.\nIf you are using the trigger unit with the Grael PSG or EEG amplifier, you should be aware of the following limitations:\n\nTriggers are only registered when acquiring data with the fastest sampling rate (2048Hz).\nOnly stimulus events from 1-64 are registered; no response events are recognized.\nThe maximum trigger frequency is 40Hz.\nThe “Record Event Duration” option does not work with Grael.\n\n\n\n\n15.3.4 Global Parameters\n\n15.3.4.1 Amplifier Controls:\n\nSampling rate must be 2048Hz for triggers to register.\nLoad your configuration file.\nSet the path you want to save data for your study. Then click File-&gt;Parameters-&gt;Save Global Parameters.\nTrigger settings:\nSelect Neuroscan Stim2\nStimulus should be unchecked from Invert and Response should be checked for Invert (although we’re not actually collecting Invert).\n\n\n\n15.3.4.2 Filter Parameters:\n\nRaw: Raw should be selected. The tab that is selected is the current tab that is viewed during data collection. It is very important to always select RAW (it will also be displayed F-SET: Raw in the top left corner of the recording window).\n\nBaseline checked\nAll other parameters will be blocked out and unable to modify.\n\nOptions MGFP unchecked (in order to have access to uncheck this you must be acquiring data) . MGFP is the mean global field power.\n\n\n\n\n15.3.5 Notes\n\nNOTES: The computer can not be connected to VPN and connect to the amplifer at the same time. This is likely because the way the amplifier is detected over the network and the changing ip address used with each user’s vpn account.\nWe identified two software bugs on Curry. First when creating a new configuration from scratch the default setting is to set the trigger channel to off (0 sampling rate). This does not appear to be modifiable in the GUI. Therefore you need to start with an existing/working or the default configuration file for triggers to appear - and modify that file to your specs and save as new config file. Second, bipolar channels do not display impedances for both plus and minux channel separately.\nBoth of these bugs are fixed in a custom patch sent to us from Curry tech support. Hotfix is saved on the server: P:and Peripherals701029Hotfix.exe\nSampling rate must be set at 2048Hz for triggers to register in Grael EEG.\nBipolar channels are optically isolated from each other (per Ronnie email 2016_0728) and therefore it is safe to send audio/probe channel into bipolar channel while recording. Must be attenuated within range (&lt;600uV or +-300uV)."
-  },
-  {
-    "objectID": "vim.html#installing-plugins",
-    "href": "vim.html#installing-plugins",
-    "title": "8  VIM",
-    "section": "8.12 Installing plugins",
-    "text": "8.12 Installing plugins\nIf the plugin is on github, simply clone it using the github url into the vim plugin folder: /home/jjcurtin/.vim/pack/vendor/start\nAnd you are done!"
   }
 ]

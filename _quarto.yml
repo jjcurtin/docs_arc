@@ -28,13 +28,13 @@ book:
     - lab_practices.qmd
     - grad_expectations.qmd
     - studies.qmd
+    - resources.qmd
     - chtc.qmd
     - git.qmd
     - linux_install.qmd
     - linux_use.qmd
     - vim.qmd
     - flowchart_demo.qmd
-    - studies.qmd
     - part: "Other Software"
       chapters:
         - globalprotect_mapping.qmd

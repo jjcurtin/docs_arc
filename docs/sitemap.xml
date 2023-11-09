@@ -2,62 +2,66 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://github.io/jjcurtin/docs_arc/index.html</loc>
-    <lastmod>2023-11-01T16:43:58.960Z</lastmod>
+    <lastmod>2023-11-09T22:33:51.860Z</lastmod>
   </url>
   <url>
     <loc>https://github.io/jjcurtin/docs_arc/lab_practices.html</loc>
-    <lastmod>2023-11-07T15:43:58.755Z</lastmod>
+    <lastmod>2023-11-09T22:33:51.872Z</lastmod>
   </url>
   <url>
     <loc>https://github.io/jjcurtin/docs_arc/grad_expectations.html</loc>
-    <lastmod>2023-11-01T16:43:58.990Z</lastmod>
+    <lastmod>2023-11-09T22:33:51.882Z</lastmod>
   </url>
   <url>
     <loc>https://github.io/jjcurtin/docs_arc/studies.html</loc>
-    <lastmod>2023-11-07T15:45:08.782Z</lastmod>
+    <lastmod>2023-11-09T22:33:51.889Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.io/jjcurtin/docs_arc/resources.html</loc>
+    <lastmod>2023-11-09T22:33:51.897Z</lastmod>
   </url>
   <url>
     <loc>https://github.io/jjcurtin/docs_arc/chtc.html</loc>
-    <lastmod>2023-11-01T16:43:59.011Z</lastmod>
+    <lastmod>2023-11-09T22:33:51.913Z</lastmod>
   </url>
   <url>
     <loc>https://github.io/jjcurtin/docs_arc/git.html</loc>
-    <lastmod>2023-11-02T20:35:09.931Z</lastmod>
+    <lastmod>2023-11-09T22:33:51.922Z</lastmod>
   </url>
   <url>
     <loc>https://github.io/jjcurtin/docs_arc/linux_install.html</loc>
-    <lastmod>2023-11-02T17:42:52.362Z</lastmod>
+    <lastmod>2023-11-09T22:33:51.935Z</lastmod>
   </url>
   <url>
     <loc>https://github.io/jjcurtin/docs_arc/linux_use.html</loc>
-    <lastmod>2023-11-01T16:43:59.045Z</lastmod>
+    <lastmod>2023-11-09T22:33:51.945Z</lastmod>
   </url>
   <url>
     <loc>https://github.io/jjcurtin/docs_arc/vim.html</loc>
-    <lastmod>2023-11-02T15:15:27.924Z</lastmod>
+    <lastmod>2023-11-09T22:33:51.962Z</lastmod>
   </url>
   <url>
     <loc>https://github.io/jjcurtin/docs_arc/flowchart_demo.html</loc>
-    <lastmod>2023-11-01T16:43:59.068Z</lastmod>
+    <lastmod>2023-11-09T22:33:51.975Z</lastmod>
   </url>
   <url>
     <loc>https://github.io/jjcurtin/docs_arc/globalprotect_mapping.html</loc>
-    <lastmod>2023-11-01T16:43:59.081Z</lastmod>
+    <lastmod>2023-11-09T22:33:51.983Z</lastmod>
   </url>
   <url>
     <loc>https://github.io/jjcurtin/docs_arc/zotero.html</loc>
-    <lastmod>2023-11-01T16:43:59.092Z</lastmod>
+    <lastmod>2023-11-09T22:33:51.994Z</lastmod>
   </url>
   <url>
     <loc>https://github.io/jjcurtin/docs_arc/qr_code.html</loc>
-    <lastmod>2023-11-01T16:43:59.098Z</lastmod>
+    <lastmod>2023-11-09T22:33:52.001Z</lastmod>
   </url>
   <url>
     <loc>https://github.io/jjcurtin/docs_arc/psychophysiology.html</loc>
-    <lastmod>2023-11-03T14:19:21.003Z</lastmod>
+    <lastmod>2023-11-09T22:33:52.037Z</lastmod>
   </url>
   <url>
     <loc>https://github.io/jjcurtin/docs_arc/psychophysiology_software.html</loc>
-    <lastmod>2023-11-01T16:43:59.148Z</lastmod>
+    <lastmod>2023-11-09T22:33:52.053Z</lastmod>
   </url>
 </urlset>
