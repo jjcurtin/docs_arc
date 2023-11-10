@@ -333,7 +333,7 @@
     "href": "linux_install.html#customize-cli-prompt",
     "title": "7  Installing Linux",
     "section": "7.17 Customize CLI prompt",
-    "text": "7.17 Customize CLI prompt\nThis will set up a green prompt with relative path for current directory.\nPS1=“$ Documentation for ARC 8  Using Linux 6  Git Welcome 1  Lab Practices 2  Graduate Student/Mentor Expectations/Policies 3  Current and Planned Studies 4  Lab Resources 5  CHTC 6  Git 7  Installing Linux 8  Using Linux 9  VIM 10  Flowcharts Other Software 11  Global Protect and Mapping the Network Server 12  Zotero 13  Creating QR Codes for Presentations Psychophysiology 14  Psychophysiology Methods 15  Psychophysiology Software 7  Installing Linux :::"
+    "text": "7.17 Customize CLI prompt\nThis will set up a green prompt with relative path for current directory.\nPS1=“$ Documentation for ARC 8  Using Linux 6  Git Welcome 1  Lab Practices 2  Graduate Student/Mentor Expectations/Policies 3  Current and Planned Studies 4  Lab Resources 5  CHTC 6  Git 7  Installing Linux 8  Using Linux 9  vim 10  Flowcharts Other Software 11  Global Protect and Mapping the Network Server 12  Zotero 13  Creating QR Codes for Presentations Psychophysiology 14  Psychophysiology Methods 15  Psychophysiology Software 7  Installing Linux :::"
   },
   {
     "objectID": "linux_use.html#general-short-cuts",
@@ -380,91 +380,91 @@
   {
     "objectID": "vim.html#exit-and-save",
     "href": "vim.html#exit-and-save",
-    "title": "9  VIM",
+    "title": "9  vim",
     "section": "9.1 Exit and Save",
     "text": "9.1 Exit and Save\n\n:x exits and saves\n:w saves without exit\n:w filename saves file as filename\n:q! exits without save"
   },
   {
     "objectID": "vim.html#run-commands",
     "href": "vim.html#run-commands",
-    "title": "9  VIM",
+    "title": "9  vim",
     "section": "9.2 Run commands",
     "text": "9.2 Run commands\n\n:!CMD where CMD is command. e.g.., !ls"
   },
   {
     "objectID": "vim.html#navigating-document-in-default-command-mode",
     "href": "vim.html#navigating-document-in-default-command-mode",
-    "title": "9  VIM",
+    "title": "9  vim",
     "section": "9.3 Navigating document in Default (Command) Mode",
     "text": "9.3 Navigating document in Default (Command) Mode\nRemember to enter command mode by pressing esc - 0 moves the cursor to the start of line - $ moves cursor to end of line - Move cursor left (h), down(j), up (k), or right (l)\n\ngg for top of document\nG for bottom of document\nnG to move to line number n. CTRL-g shows line numbers in footer of doc.\nH for top of window, M for middle of window, and L for bottom of window\nw moves forward to the beginning of the next word.\nb moves backwards to the beginning of the previous word.\n( and ) move by sentences, either backward or forward.\n{ and } move by paragraphs."
   },
   {
     "objectID": "vim.html#inserting",
     "href": "vim.html#inserting",
-    "title": "9  VIM",
+    "title": "9  vim",
     "section": "9.4 Inserting",
     "text": "9.4 Inserting\n\ni Insert text before the cursor\na Insert text after cursor\nA Append text to end of current line. - I Insert text at beginning of line.\no Open blank line below cursor for text. - O Open blank line above cursor for text.\np puts the Vim register (from delete) after cursor (if full line, on next line).\nrx replaces the character at the cursor with ‘x’\nR replaces multiple characters. Type ESC when done.\nce deletes until end of word and places you in insert. Press ESC when done\nc$ deletes until end of line and places you in insert. Press ESC when done\n:%s/old/new/gc - replaces old with new in full doc with prompt for replace.\n:r filename to insert text in filename above cursor"
   },
   {
     "objectID": "vim.html#deleting",
     "href": "vim.html#deleting",
-    "title": "9  VIM",
+    "title": "9  vim",
     "section": "9.5 Deleting",
     "text": "9.5 Deleting\n\nx deletes the character under the cursor\ndw deletes from cursor to start of next word (including space spearator). d2w deletes from cursor to end of second word, etc.\nde delets from curors to end of current for\ndd deletes the line. 2dd deletes two lines.\nd$ deletes from cursor to end of line.\nu to undo the last command. CTRL-R for redo -U to undo all fixes on a line."
   },
   {
     "objectID": "vim.html#spell-check",
     "href": "vim.html#spell-check",
-    "title": "9  VIM",
+    "title": "9  vim",
     "section": "9.6 Spell check",
     "text": "9.6 Spell check\n\n:set spell – Turn on spell checking\n:set nospell – Turn off spell checking\n]s – Jump to the next misspelled word\n[s – Jump to the previous misspelled word\nz= – Bring up the suggested replacements\nzg – Good word: Add the word under the cursor to the dictionary\nzw – Woops! Undo and remove the word from the dictionary"
   },
   {
     "objectID": "vim.html#search-in-vim",
     "href": "vim.html#search-in-vim",
-    "title": "9  VIM",
+    "title": "9  vim",
     "section": "9.7 Search in VIM",
     "text": "9.7 Search in VIM\n\n/text to search forward for text. Type ENTER to exit to that text.\n?text to search backward for text.\nn to find next instance of text (after ENTER)\nN to find previous instance of text (after ENTER)"
   },
   {
     "objectID": "vim.html#visual-selection",
     "href": "vim.html#visual-selection",
-    "title": "9  VIM",
+    "title": "9  vim",
     "section": "9.8 Visual selection",
     "text": "9.8 Visual selection\n\nv to select text. Move cursor around with hjkl keys\nthen d to delete (can later p(ut) it somewhere if needed)\nor y to yank (copy) so you can later p(ut) it somewhere\nor w to write to separate file"
   },
   {
     "objectID": "vim.html#copy",
     "href": "vim.html#copy",
-    "title": "9  VIM",
+    "title": "9  vim",
     "section": "9.9 Copy",
     "text": "9.9 Copy\n\ny to yank (copy) selction (use with v for visual selection)\nyw to yank a word\nyy to yank a line"
   },
   {
     "objectID": "vim.html#working-with-multiple-files",
     "href": "vim.html#working-with-multiple-files",
-    "title": "9  VIM",
+    "title": "9  vim",
     "section": "9.10 Working with multiple files",
     "text": "9.10 Working with multiple files\nVim can open multiple files in separate buffers. This can be done at the start by providing multiple filenames to vim (e.g., vim file1.md file2.md)\nAlternatively, additional files can be opened for editting later (:e file2.txt).\nMoving between buffers\n\nbn moves to next buffer\nbp moves to previous buffer\n:buffers displays all open buffers\n: buffer 1 allows switch to buffer 1 (or any other number) if there are many buffers open\n\nyank/delete/put will work between buffers"
   },
   {
     "objectID": "vim.html#render-files",
     "href": "vim.html#render-files",
-    "title": "9  VIM",
+    "title": "9  vim",
     "section": "9.11 Render files",
     "text": "9.11 Render files\nWe tend to use either md or qmd files for writing, code, etc. Our .vimrc file turns on markdown highlighting for these files if saved with .md or ..qmd extensions. qmd is preferred because it works with RStudio as well.\nThese files can be rendered to html or pdf if desired.\n\nquarto render file.qmd to render to html\nquarto render file.qmd --to pdf to render to pdf\n\nWe can use a full yaml header for more fancy output. We have templates for apa manuscripts, letterhead, and a generally nice format pdf output if desired. Just paste the yaml at the top of the file."
   },
   {
     "objectID": "vim.html#installing-plugins",
     "href": "vim.html#installing-plugins",
-    "title": "9  VIM",
+    "title": "9  vim",
     "section": "9.12 Installing plugins",
     "text": "9.12 Installing plugins\nIf the plugin is on github, simply clone it using the github url into the vim plugin folder: /home/jjcurtin/.vim/pack/vendor/start\nAnd you are done!"
   },
   {
     "objectID": "vim.html#learing-vim",
     "href": "vim.html#learing-vim",
-    "title": "9  VIM",
+    "title": "9  vim",
     "section": "9.13 Learing VIM",
     "text": "9.13 Learing VIM\n\nrun vimtutor\nbooks: https://iccf-holland.org/vim_books.html"
   },

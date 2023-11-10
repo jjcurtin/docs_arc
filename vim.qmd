@@ -1,4 +1,4 @@
-# VIM
+# vim
 
 ## Exit and Save
 
