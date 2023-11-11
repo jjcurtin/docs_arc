@@ -34,6 +34,7 @@ book:
     - linux_install.qmd
     - linux_use.qmd
     - vim.qmd
+	- bash_scripting.qmd
     - flowchart_demo.qmd
     - part: "Other Software"
       chapters:
