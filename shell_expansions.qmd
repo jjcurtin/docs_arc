@@ -1,0 +1,69 @@
+# Shell Expansions
+
+
+## Wildcards
+
+- * Matches any sequence of characters.
+- ? Matches a single character.
+- [...] Matches any character within the brackets.
+- [^...] Matches any character NOT in the brackets.
+
+
+## Tilde expansion
+
+Tilde Expansion:
+
+- ~ Expands to the home directory of the current user.
+- ~username Expands to the home directory of the specified username.
+
+## Variable expansion
+
+Shell variables are placeholders for storing data. When you reference a variable, the shell expands it to its stored value.
+
+- $variable: Expands to the value of the specified variable.
+- ${variable}: Use curly braces for disambiguation.
+
+## Command Substitution
+
+Command substitution allows you to execute a command and replace it with its output.
+- $(command): Executes the command and substitutes its output.
+
+examples:
+
+```
+files_count=$(ls -l | wc -l) echo "Number of files: $files_count" 
+```
+
+## Arithmetic Expansion
+
+Arithmetic expressions enclosed in double parentheses $((...)) are evaluated and the result is expanded.
+
+Example:
+
+Prints: y is 10 
+
+```
+x=5 y=$((x * 2)) echo "y is $y" 
+```
+
+
+## Brace Expansion
+
+Brace expansion generates multiple strings by specifying a sequence or multiple options inside curly braces.
+
+
+{a,b,c}: Expands to "a", "b", and "c".
+{start..end}: Expands a numerical range.
+
+Examples:
+
+Prints: apple banana cherry 
+```
+echo {apple,banana,cherry} 
+```
+
+Prints: 1 2 3 4 5 
+
+```
+echo {1..5} 
+```

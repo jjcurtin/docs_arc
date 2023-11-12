@@ -10,3 +10,15 @@
 - Consider where to save
   - can be run from anywhere if saved in PATH (~/bin for you or /usr/local/bin for everyone)
   - need to type full filename and path to run if not in path
+  
+  
+## General
+  
+assignment to variable in subprocess
+- x=1
+- foo="yes"
+- echo $foo
+- fn=foo.txt
+
+assignment in environment (available to all processes)
+- export x=1
