@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Documentation for ARC - 3&nbsp; Current and Planned Studies</title>
+<title>Documentation for ARC - 10&nbsp; Bash Scripting</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./resources.html" rel="next">
-<link href="./grad_expectations.html" rel="prev">
+<link href="./flowchart_demo.html" rel="next">
+<link href="./vim.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -74,7 +74,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./studies.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Current and Planned Studies</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./bash_scripting.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Bash Scripting</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -139,7 +139,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./studies.html" class="sidebar-item-text sidebar-link active">
+  <a href="./studies.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Current and Planned Studies</span></span></a>
   </div>
 </li>
@@ -181,7 +181,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./bash_scripting.html" class="sidebar-item-text sidebar-link">
+  <a href="./bash_scripting.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Bash Scripting</span></span></a>
   </div>
 </li>
@@ -253,19 +253,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#risk" id="toc-risk" class="nav-link active" data-scroll-target="#risk"><span class="header-section-number">3.1</span> RISK</a></li>
-  <li><a href="#risk2" id="toc-risk2" class="nav-link" data-scroll-target="#risk2"><span class="header-section-number">3.2</span> RISK2</a></li>
-  <li><a href="#nrt1" id="toc-nrt1" class="nav-link" data-scroll-target="#nrt1"><span class="header-section-number">3.3</span> NRT1</a></li>
-  <li><a href="#face" id="toc-face" class="nav-link" data-scroll-target="#face"><span class="header-section-number">3.4</span> FACE</a></li>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link active" data-scroll-target="#getting-started"><span class="header-section-number">10.1</span> Getting Started</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jjcurtin/docs_arc/edit/main/studies.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jjcurtin/docs_arc/edit/main/bash_scripting.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Current and Planned Studies</span></h1>
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Bash Scripting</span></h1>
 </div>
 
 
@@ -280,33 +277,20 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>We list potential study ideas below, organized by project/data set. When projects have been tentatively claimed, that is indicated as well</p>
-<section id="risk" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="risk"><span class="header-section-number">3.1</span> RISK</h2>
+<section id="getting-started" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="getting-started"><span class="header-section-number">10.1</span> Getting Started</h2>
 <ul>
-<li>Compare insight only to full EMA for lapse risk prediction [Gaylen (lead), Kendra, Ariela, Sarah]</li>
-<li>GPS features solo for lapse risk prediction [Claire FYP (lead)]</li>
-<li>Less burdensome EMA for lapse risk prediction. Maybe only morning. Maybe only some items. Maybe only some items depending on responses to other items [Coco?]</li>
-<li>Use text message content &amp; meta data for lapse prediction [Coco?]</li>
-<li>Replicate stressor use with RISK data. MLM analyses [unassigned]</li>
-<li>Full model using GPS, EMA, communications for lapse risk prediction [unassigned]</li>
-<li>Lagged week level models for lapse risk prediction. Maybe 3 days, 1 week, two weeks lag [unassigned]</li>
-<li>Model duration of lapse rather than binary outcome to allow move toward harm reduction approaches</li>
-<li>Model lapses that are labeled (or quantified) on severity based on chaining, or perhaps the respone to them (what the say about future ab goal, EMA affect after, etc)</li>
-<li>Establish individual lapse as a clinically meaningful event - use lapse/no lapse as feature to predict variety of negative outcomes from (next? subsequent period?) EMAs, e.g., craving, risky situations, stressful events, negative affect, self-efficacy/change of abstinence goal (abstinence violation effect). Account for previous negative outcome level (either include as covariate [feature]? or make outcome a change score) [unassigned]</li>
-</ul>
-</section>
-<section id="risk2" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="risk2"><span class="header-section-number">3.2</span> RISK2</h2>
-</section>
-<section id="nrt1" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="nrt1"><span class="header-section-number">3.3</span> NRT1</h2>
+<li>start scripts with shebang (#!/bin/bash)</li>
+<li>use comments (#)</li>
+<li>make executable fie everyone (chmod 755 foo.sh) or just you (chmod 700 foo.sh)</li>
+<li>execute in subshell using ./foo.sh (if in current directory)</li>
+<li>source in current shell using source foo.sh or . foo.sh (again if in current directory)</li>
+<li>Consider where to save
 <ul>
-<li>Build machine learning model for smoking lapse risk prediction (e.g., replicate RISK ema paper) [unassigned]</li>
+<li>can be run from anywhere if saved in PATH (~/bin for you or /usr/local/bin for everyone)</li>
+<li>need to type full filename and path to run if not in path</li>
+</ul></li>
 </ul>
-</section>
-<section id="face" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="face"><span class="header-section-number">3.4</span> FACE</h2>
 
 
 </section>
@@ -547,13 +531,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./grad_expectations.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Graduate Student/Mentor Expectations/Policies</span></span>
+      <a href="./vim.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">vim</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./resources.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Lab Resources</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./flowchart_demo.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Flowcharts</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

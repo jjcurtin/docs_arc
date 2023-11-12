@@ -23,21 +23,21 @@
 ## control processes
 
 - command & to launch program in background of terminal
-- fg %1 to move orogram to foreground
-- bg %1 to kove to background
+- fg %1 to move program to foreground
+- bg %1 to move to background
 - kill %1 (see chap 10 in linux book)
 
-### Pdf manipulation
+## Pdf manipulation
 
 We use `evince [filename.pdf]` to view pdfs
 
 we use `qpdf --empty --pages infile.pdf 1-5 -- outfile.pdf` to extract pages from a pdf
 
 
-### Quarto
+## Quarto
 
 
-### Markdown
+## Markdown
 
 You will need to install pandoc to render markdown to pdf: `sudo apt-get install pandoc texlive-latex-base texlive-fonts-recommended texlive-extra-utils texlive-latex-extra`.
 
@@ -45,7 +45,7 @@ Use `pandoc [infile.md] -o [outfile.pdf]` to render infile.md to outfile.pdf.
 
 Note also that the ReText app can render markdown to pdf (and html) as well if you don't want to use the terminal.  
 
-### Firefox
+## Firefox
 
 You can view an html file in firefox from terminal using `firefox [filename]`
 
@@ -96,10 +96,6 @@ You can view an html file in firefox from terminal using `firefox [filename]`
 
 - `head`, `tail`, and `sort` work as expected.  Remember to use -n with sort if you want to do a numeric (rather than text) sort.  Sort also takes -r for reverse.  Use pipe to pipe in a vector of numbers or text.  Use -1 with head or tail to get the first (or last) value in series.
 
-## Kill a frozen app
-
-Press Alt + F2 . Type xkill and hit Enter. The cursor will turn into a small 'x'. Left click any window to kill the process associated with that window. 
-
 ## Compressing and archiving files
 
 - `gzip foo.txt - Compress foo.txt. The resulting compressed file is named file.txt.gz.  -r to compress subdirectories when compressing a directory rather than file.
@@ -108,3 +104,25 @@ Press Alt + F2 . Type xkill and hit Enter. The cursor will turn into a small 'x'
 - `tar cf playground.tar playground` make archive of playground directory.  r rather than c to append rather than create new archive.
 - `tar czf playground.tgz playground` to archive and compress (coukd also name playground.tar.gz)
 - `tar xf playground2.tar` to extract files from archive
+
+## FTP
+
+- use sftp at command line.  e.g., `sftp submit-1.chtc.wisc.edu`
+- can use command line to review local and remote computers.
+- For local `lls`, `lcd`, `lpwd` are the three most useful commands
+- For remote `ls`, `cd`, `pwd`
+- Use `get foo.txt` to copy foo.txt from remote to local director
+- Use `put foo.txt` to copy foo.txt from local directory to remote directory
+- `exit` when done
+- Can [set up a ssh key](https://www.unixtutorial.org/how-to-generate-ed25519-ssh-key/) to log in without credentials to CHTC.
+
+## SSH
+
+- use ssh at command line.  e.g., `ssh submit-1.chtc.wisc.edu`
+- Can [set up a ssh key](https://www.unixtutorial.org/how-to-generate-ed25519-ssh-key/) to log in without credentials to CHTC.
+
+## Kill a frozen app
+
+Press Alt + F2 . Type xkill and hit Enter. The cursor will turn into a small 'x'. Left click any window to kill the process associated with that window. 
+
+
