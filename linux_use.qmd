@@ -5,6 +5,7 @@
 - `super+tab` switches between windows
 - `super+left/right arrow` fits active window to left or right of screen
 - `ctrl+alt+t` opens a new terminal window
+- `ctrl+d` closes a terminal window
 
 ## Terminal Short Cuts
 
