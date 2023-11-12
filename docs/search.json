@@ -340,7 +340,7 @@
     "href": "linux_use.html#general-short-cuts",
     "title": "8  Using Linux",
     "section": "8.1 General Short Cuts",
-    "text": "8.1 General Short Cuts\n\nsuper+tab switches between windows\nsuper+left/right arrow fits active window to left or right of screen\nctrl+alt+t opens a new terminal window"
+    "text": "8.1 General Short Cuts\n\nsuper+tab switches between windows\nsuper+left/right arrow fits active window to left or right of screen\nctrl+alt+t opens a new terminal window\nctrl+d closes a terminal window"
   },
   {
     "objectID": "linux_use.html#terminal-short-cuts",
