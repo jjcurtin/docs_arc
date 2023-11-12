@@ -30,14 +30,14 @@ book:
     - resources.qmd
     - chtc.qmd
     - flowchart_demo.qmd
-	- part: Linux and CLI
-	  chapters:
-	    - git.qmd
-      - linux_install.qmd
-      - linux_use.qmd
-      - vim.qmd
-	    - bash_scripting.qmd
-		  - shell expansions.qmd
+    - part: Linux and CLI
+      chapters:
+        - git.qmd
+        - linux_install.qmd
+        - linux_use.qmd
+        - vim.qmd
+        - bash_scripting.qmd
+        - shell_expansions.qmd
     - part: "Other Software"
       chapters:
         - globalprotect_mapping.qmd

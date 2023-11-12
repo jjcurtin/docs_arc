@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Documentation for ARC - 2&nbsp; Graduate Student/Mentor Expectations/Policies</title>
+<title>Documentation for ARC - 12&nbsp; Shell Expansions</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./studies.html" rel="next">
-<link href="./lab_practices.html" rel="prev">
+<link href="./globalprotect_mapping.html" rel="next">
+<link href="./bash_scripting.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -74,7 +74,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./grad_expectations.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Graduate Student/Mentor Expectations/Policies</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./git.html">Linux and CLI</a></li><li class="breadcrumb-item"><a href="./shell_expansions.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Shell Expansions</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -133,7 +133,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./grad_expectations.html" class="sidebar-item-text sidebar-link active">
+  <a href="./grad_expectations.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Graduate Student/Mentor Expectations/Policies</span></span></a>
   </div>
 </li>
@@ -202,7 +202,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./shell_expansions.html" class="sidebar-item-text sidebar-link">
+  <a href="./shell_expansions.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Shell Expansions</span></span></a>
   </div>
 </li>
@@ -270,27 +270,21 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#lab-communications" id="toc-lab-communications" class="nav-link active" data-scroll-target="#lab-communications"><span class="header-section-number">2.1</span> Lab Communications</a>
-  <ul class="collapse">
-  <li><a href="#office-hours" id="toc-office-hours" class="nav-link" data-scroll-target="#office-hours"><span class="header-section-number">2.1.1</span> Office hours</a></li>
-  <li><a href="#asynchronous-or-unscheduled-communications" id="toc-asynchronous-or-unscheduled-communications" class="nav-link" data-scroll-target="#asynchronous-or-unscheduled-communications"><span class="header-section-number">2.1.2</span> Asynchronous or unscheduled communications</a></li>
-  <li><a href="#professional-calendaring" id="toc-professional-calendaring" class="nav-link" data-scroll-target="#professional-calendaring"><span class="header-section-number">2.1.3</span> Professional Calendaring</a></li>
-  </ul></li>
-  <li><a href="#weekly-lab-meeting" id="toc-weekly-lab-meeting" class="nav-link" data-scroll-target="#weekly-lab-meeting"><span class="header-section-number">2.2</span> Weekly Lab Meeting</a></li>
-  <li><a href="#weekly-studentmentor-meeting" id="toc-weekly-studentmentor-meeting" class="nav-link" data-scroll-target="#weekly-studentmentor-meeting"><span class="header-section-number">2.3</span> Weekly Student/Mentor Meeting</a></li>
-  <li><a href="#research-contributions-in-the-lab" id="toc-research-contributions-in-the-lab" class="nav-link" data-scroll-target="#research-contributions-in-the-lab"><span class="header-section-number">2.4</span> Research Contributions in the Lab</a></li>
-  <li><a href="#mentoring-and-studypaper-collaborations" id="toc-mentoring-and-studypaper-collaborations" class="nav-link" data-scroll-target="#mentoring-and-studypaper-collaborations"><span class="header-section-number">2.5</span> Mentoring and Study/Paper Collaborations</a></li>
-  <li><a href="#authorship-expectations" id="toc-authorship-expectations" class="nav-link" data-scroll-target="#authorship-expectations"><span class="header-section-number">2.6</span> Authorship expectations</a></li>
-  <li><a href="#first-year-student-orientation" id="toc-first-year-student-orientation" class="nav-link" data-scroll-target="#first-year-student-orientation"><span class="header-section-number">2.7</span> First Year Student Orientation</a></li>
+  <li><a href="#wildcards" id="toc-wildcards" class="nav-link active" data-scroll-target="#wildcards"><span class="header-section-number">12.1</span> Wildcards</a></li>
+  <li><a href="#tilde-expansion" id="toc-tilde-expansion" class="nav-link" data-scroll-target="#tilde-expansion"><span class="header-section-number">12.2</span> Tilde expansion</a></li>
+  <li><a href="#variable-expansion" id="toc-variable-expansion" class="nav-link" data-scroll-target="#variable-expansion"><span class="header-section-number">12.3</span> Variable expansion</a></li>
+  <li><a href="#command-substitution" id="toc-command-substitution" class="nav-link" data-scroll-target="#command-substitution"><span class="header-section-number">12.4</span> Command Substitution</a></li>
+  <li><a href="#arithmetic-expansion" id="toc-arithmetic-expansion" class="nav-link" data-scroll-target="#arithmetic-expansion"><span class="header-section-number">12.5</span> Arithmetic Expansion</a></li>
+  <li><a href="#brace-expansion" id="toc-brace-expansion" class="nav-link" data-scroll-target="#brace-expansion"><span class="header-section-number">12.6</span> Brace Expansion</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jjcurtin/docs_arc/edit/main/grad_expectations.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jjcurtin/docs_arc/edit/main/shell_expansions.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Graduate Student/Mentor Expectations/Policies</span></h1>
+<h1 class="title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Shell Expansions</span></h1>
 </div>
 
 
@@ -305,112 +299,55 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="lab-communications" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="lab-communications"><span class="header-section-number">2.1</span> Lab Communications</h2>
-<p>Asynchronous communication tools (Slack, email) are distracting, which can prevent deep work. Constant task switching interferes with complex tasks like writing and coding. These tools draw our attention and reduce our focus even when we are not checking them, simply by knowing that others may be trying to reach us with them. These asynchronous communication tools may also be making us miserable. In the short-term, it is rewarding to respond to a simple request or add a cute emojii for feedback. However, it is frustrating to try to continuously monitor multiple communication channels through the day, every day.<br>
-However, these tools were developed for a reason. We do need to communicate regularly because we are pursuing collaborative research aims. We need a better way to communicate that is efficient but not distracting. We have a hybrid approach:</p>
-<section id="office-hours" class="level3" data-number="2.1.1">
-<h3 data-number="2.1.1" class="anchored" data-anchor-id="office-hours"><span class="header-section-number">2.1.1</span> Office hours</h3>
-<p>We will each hold <em>office hours</em> every day from 8:30 - 9:30 am. Students who have class or practicum conflicts are excused from office hours on those days. Otherwise, we should all plan to be available to each other during these hours. This way we will each have access to each other every day, though it is not expected that we will actually meet during these office hours every day.</p>
-<p>If you need someone, its a good idea to give them a heads up by indicating that in a slack message earlier that morning or the previous afternoon. You can initiate communication during office hours either in slack or by phone (or across the desks if you are on campus!). You might consider a zoom if you need to bring in multiple people in different locations.</p>
-<p>Meetings can be very short (a few minutes) or longer (up to 30 minutes?) Do not plan to use the full hour as that will prevent others from communicating with this person. Long meetings, if needed, can be scheduled outside of office hours.</p>
-<p>Each of us will also use our office hours each morning to handle asynchronous communications (e.g., email, Slack, Asana messages/tasks).</p>
-</section>
-<section id="asynchronous-or-unscheduled-communications" class="level3" data-number="2.1.2">
-<h3 data-number="2.1.2" class="anchored" data-anchor-id="asynchronous-or-unscheduled-communications"><span class="header-section-number">2.1.2</span> Asynchronous or unscheduled communications</h3>
-<p>We will not remove all asynchronous communications. They can be efficient for some communication tasks. Urgent needs for communication can also arise unexpectedly. We need methods for these communications. They are as follows:</p>
-<ol type="1">
-<li><p><strong>Slack messages</strong>. Most asynchronous communications will continue to occur in Slack. Slack messages should be limited to questions or posts that do not require more than one (or two?) responses from one individual. Examples include:</p>
+<section id="wildcards" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="wildcards"><span class="header-section-number">12.1</span> Wildcards</h2>
 <ul>
-<li><p>Posts about articles to read, new analysis methods, etc to channels like software-r, read-papers, read-media. These posts do not require any response but many of us (myself included) find them valuable to read at moments when we are not doing deep work.</p></li>
-<li><p>Questions directed at as single lab member requesting clear information that will not (likely) require follow-up or clarification (i.e., a series of back-and-forth messages over a short period). We should @ the person within the appropriate channel or DM them. They will respond the next morning during their office hours.</p></li>
+<li><ul>
+<li>Matches any sequence of characters.</li>
 </ul></li>
-<li><p><strong>Task assignments in Asana</strong>. If we need someone to DO something, don’t use Slack. Asana was designed to track tasks and it does this well. Assign that person a task directly in Asana. Set a due date for when you need it (they can adjust this date if necessary to accommodate their own schedule). Describe the task fully in the description box. If the task requires discussion, discuss it with them during office hours. Do NOT engage in a series of back and forth messages in Asana! Live meetings are appropriate for discussions. Some messages or update can be posted in Asana. Expect these messages to be read the next day during the person’s office hours. Use @ to make sure the person sees your message (comment)</p></li>
-<li><p><strong>Phone calls for urgent communications</strong>. Urgent communications may be necessary at times. If you need information from someone immediately, call them. This will allow us to be available for urgent issues without having to monitor some communication channel. However, we should very carefully consider how urgent our need is. We recognize that we are likely disrupting someone else’s deep work. This cost to them should be recognized. Most issues can wait until the next morning.</p></li>
-<li><p><strong>Lab notebooks for documentation</strong>. Slack and Asana were not designed for documentation. For documentation, we will begin to make heavier use of lab notebooks maintained through Quarto. There is a strong expectation that we are all contributing to these various documentation efforts. Its simply too much to be maintained solely by John and Susan. At this point these notebooks will include:</p>
-<ul>
-<li>Project manuals - for procedure and materials for a grant funded or other parent project. These manuals can also include units on data cleaning, design, hypotheses, etc. These repos are public and called docs_PROJECTNAME. We currently have
-<ul>
-<li>docs_risk</li>
-<li>docs_risk2</li>
-<li>docs_face</li>
-</ul></li>
-<li>ARC documentation (docs_arc) - A documentation notebook for our lab about general lab issues</li>
-<li>DWT (dwt) - A web book documenting best practices for data wrangling and visualization using the tidyverse.</li>
-</ul></li>
-</ol>
-</section>
-<section id="professional-calendaring" class="level3" data-number="2.1.3">
-<h3 data-number="2.1.3" class="anchored" data-anchor-id="professional-calendaring"><span class="header-section-number">2.1.3</span> Professional Calendaring</h3>
-<p>We all need to commit to keep our Outlook calendar up to date with all meetings and planned absences during business hours in the work week. This will allow each of us to view others calendars and use Outlook’s scheduler to find times that are available for all of us. This anticipates that the whole university is pushing to establish Outlook as our “business” calendar. As adoption increases, this will remove the need for time consuming schedule poll (e.g., whentomeet) for all of us. I understand that many of you may use other calendars for your personal use. However, Outlook will be the official work calendar. If you use other calendaring systems, please make sure that you have shared events in that calendar such that the are viewable (public or private by your choice) in Outlook.</p>
-<p>We may send invites to share Google calendars with you if you are assigned to work on a study with a calendar. These calendars are used to view scheduled sessions for studies.</p>
-</section>
-</section>
-<section id="weekly-lab-meeting" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="weekly-lab-meeting"><span class="header-section-number">2.2</span> Weekly Lab Meeting</h2>
-<ul>
-<li>happen weekly</li>
-<li>everyone is expected to contribute to selecting topics</li>
-<li>everyone is expected to lead some meetings</li>
-<li>post topics and materials by Friday (at the latest) for the next week</li>
-<li>Location TBD. Outside when possible/pleasant</li>
+<li>? Matches a single character.</li>
+<li>[…] Matches any character within the brackets.</li>
+<li>[^...] Matches any character NOT in the brackets.</li>
 </ul>
 </section>
-<section id="weekly-studentmentor-meeting" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="weekly-studentmentor-meeting"><span class="header-section-number">2.3</span> Weekly Student/Mentor Meeting</h2>
-</section>
-<section id="research-contributions-in-the-lab" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="research-contributions-in-the-lab"><span class="header-section-number">2.4</span> Research Contributions in the Lab</h2>
+<section id="tilde-expansion" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="tilde-expansion"><span class="header-section-number">12.2</span> Tilde expansion</h2>
+<p>Tilde Expansion:</p>
 <ul>
-<li>Everyone makes contributions to lab projects</li>
-<li>These activities provide:
-<ul>
-<li>Important training activities</li>
-<li>Keeps us connected to how the data are collected and cleaned, which is important when we write papers</li>
-<li>Serves to create data that are used by current and future students (and past students did the same for you!)</li>
-</ul></li>
-<li>The nature of the contributions often change based on developmental stage and skill set
-<ul>
-<li>Younger students more often may collect data and/or meet with participants</li>
-<li>Older students may do more EDA or data management</li>
-</ul></li>
-<li>Students who are supported as RAs or on university or training fellowship (e.g., Emotion training grant) are expected that to use their hours (up to 20 depending on support) dedicated to a lab project.</li>
-<li>Students who are NRSA supported are expected to work primarily on the aims of that associated grant</li>
-<li>Students who are supporting themselves through teaching will also make contributions but with likely many fewer hours given the demands of their TA</li>
-<li>John will negotiate these assignments each semester as part of discussing your funding</li>
+<li>~ Expands to the home directory of the current user.</li>
+<li>~username Expands to the home directory of the specified username.</li>
 </ul>
 </section>
-<section id="mentoring-and-studypaper-collaborations" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="mentoring-and-studypaper-collaborations"><span class="header-section-number">2.5</span> Mentoring and Study/Paper Collaborations</h2>
-<p>Ideas under development. Likely involves more advanced students collaborating as secondary mentors on FYPs. May also involve first year students collaborating on studies led but more advanced students.</p>
-</section>
-<section id="authorship-expectations" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="authorship-expectations"><span class="header-section-number">2.6</span> Authorship expectations</h2>
-<p>Graduate students will be first authors on their FYP and dissertations in almost all instances. However, if the student is unable to make progress a published version of their project for an extended period of time and the only way to motivate another student to complete that project is by providing them with first author credit, the authorship order could be changes. In those instances, the graduate student would still remain a co-author. Such authorship reordering would only happen following numerous conversations with John about failure to make progress.</p>
-<p>Graduate students will be first authors on independent projects that they design with me and lead as part of their larger program of research. However, as with FYP and dissertations, the authorship order could be changed if progress stalled for an extended period of time. The bar for re-ordering may be somewhat lower for this type of project than for an FYP/Dissertation. As with FYP/Dissertation, such re-ordering would only happen following numerous discussions about progress concerns.</p>
-<p>Graduate students who work as RA/project coordinator on large (i.e., multi-year) R01s (e.g.&nbsp;NRT1, RISK, DOX) should not assume that they will be the first author of all projects published from that grant except in very exceptional circumstances (e.g., the grant includes a sizable intellectual AND practical contribution from the student). If the graduate student takes a part of the grant as an FYP/Dissertation, expectations about author follow as described above. However, there will often be multiple supplemental papers that emerge from an R01 including papers addressing its specific aims and other papers that emerge as the project unfolds. As these supplemental papers are identified, John will offer them to specific students. In these instances, John follows these general guiding principles:</p>
+<section id="variable-expansion" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="variable-expansion"><span class="header-section-number">12.3</span> Variable expansion</h2>
+<p>Shell variables are placeholders for storing data. When you reference a variable, the shell expands it to its stored value.</p>
 <ul>
-<li>Is the paper within the student’s current or desired program of research?</li>
-<li>Does the student have the skill set to lead the project (or is this a skill set they want and John can support them developing)?</li>
-<li>Does the student have the time to make reasonable progress on the project?</li>
-<li>Will the project help advance or otherwise support the student’s professional development?</li>
-<li>Has the student make substantial contributions to the lab outside of their own projects (e.g., mentoring; infrastructure development; programming; grant writing)?</li>
+<li>$variable: Expands to the value of the specified variable.</li>
+<li>${variable}: Use curly braces for disambiguation.</li>
 </ul>
-<p>John will make these preliminary decisions about first author assignment on supplemental papers transparent (i.e., John will share with grads when such assignments have been established). This will allow an opportunity for others to negotiate with John if they disagree with the decision.</p>
-<p>These first author assignments on supplemental papers is preliminary. It is not sufficient to simply express interest or otherwise claim a project to guarantee the first author role on these projects. Authorship order is first established definitively when progress on the project is meaningfully initiated. Prior to that, the bar to re-offer the project to someone else is relatively low (and likely based on some combination of how much times passes since the project is preliminarily assigned, how motivated John is to get the paper published, and who else is available to take the lead).</p>
-<p>Decisions about co-authors and order are negotiated by the first and the senior (John) authors. These decisions are made on a paper by paper basis after considering many factors (skill set of the first author, professional development goals/needs of other graduate students/staff/undergrads, scope/complexity of the project, etc). As noted below, the first author will document expectations of contributions from co-authors to allow some accountability as the project progresses.</p>
-<p>When projects/papers are first developed, an Asana project will be established for the paper. The student first author will be responsible for detailing initial expectations about authorship order, contributions, and timeline. This can be detailed in the studies unit in docs_arc. This information can be updated if expectations change over time. Preliminary assignments should be documented here too (by the student). However, as noted above, preliminary assignments are not finalized until meaningful initiated.</p>
-<p>Authorship order changes will not happen without substantial previous discussion. However, they can happen if expectations about progress are not met. This is necessary to guarantee that our labs investment of time and resources results in published papers in a timely manner.</p>
-<p>We will make every effort to include staff and exceptional undergrads (e.g., Hilldale fellows; Senior theses) as co-authors on papers that they make meaningful contributions. It is less likely that staff/undergrads will be first author on a project but this can happen in situations where grads are not interested or available to write papers in a timely fashion.</p>
 </section>
-<section id="first-year-student-orientation" class="level2" data-number="2.7">
-<h2 data-number="2.7" class="anchored" data-anchor-id="first-year-student-orientation"><span class="header-section-number">2.7</span> First Year Student Orientation</h2>
-<p>The following two documents need to be reviewed and/or completed early in the semester.</p>
-<ul>
-<li><p>All first year students should have a “First Year Fall Meeting” with their mentors. The mentor should be filling out the First Year Fall Meeting Form as the conversation progresses (this form must be completed by the mentor; you must be logged into the UW-Google Space). Basically it’s just a series of checkboxes that you check once you’ve talked about the given topic (e.g., topics related to the FYP, to coursework, to how the lab functions, etc.).</p></li>
-<li><p>All first year students and their advisors should go over and discuss the (Advisor-Advisee Compact)[http://psych.wisc.edu/wp-content/uploads/2023/09/Advisor-AdviseeCompact_2023.pdf]. This is a pdf and there’s nothing to fill out/submit. It’s just part of a conversation you should have.</p></li>
-</ul>
-<p>In addtion, once a Mentoring Committee has been established (i.e., all the faculty members have agreed to serve on the committee and the committee is finalized), the Established Mentoring Committee form should be completed by the student.</p>
+<section id="command-substitution" class="level2" data-number="12.4">
+<h2 data-number="12.4" class="anchored" data-anchor-id="command-substitution"><span class="header-section-number">12.4</span> Command Substitution</h2>
+<p>Command substitution allows you to execute a command and replace it with its output. - $(command): Executes the command and substitutes its output.</p>
+<p>examples:</p>
+<pre><code>files_count=$(ls -l | wc -l) echo "Number of files: $files_count" </code></pre>
+</section>
+<section id="arithmetic-expansion" class="level2" data-number="12.5">
+<h2 data-number="12.5" class="anchored" data-anchor-id="arithmetic-expansion"><span class="header-section-number">12.5</span> Arithmetic Expansion</h2>
+<p>Arithmetic expressions enclosed in double parentheses $((…)) are evaluated and the result is expanded.</p>
+<p>Example:</p>
+<p>Prints: y is 10</p>
+<pre><code>x=5 y=$((x * 2)) echo "y is $y" </code></pre>
+</section>
+<section id="brace-expansion" class="level2" data-number="12.6">
+<h2 data-number="12.6" class="anchored" data-anchor-id="brace-expansion"><span class="header-section-number">12.6</span> Brace Expansion</h2>
+<p>Brace expansion generates multiple strings by specifying a sequence or multiple options inside curly braces.</p>
+<p>{a,b,c}: Expands to “a”, “b”, and “c”. {start..end}: Expands a numerical range.</p>
+<p>Examples:</p>
+<p>Prints: apple banana cherry</p>
+<pre><code>echo {apple,banana,cherry} </code></pre>
+<p>Prints: 1 2 3 4 5</p>
+<pre><code>echo {1..5} </code></pre>
 
 
 </section>
@@ -651,13 +588,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./lab_practices.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Lab Practices</span></span>
+      <a href="./bash_scripting.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Bash Scripting</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./studies.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Current and Planned Studies</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./globalprotect_mapping.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Global Protect and Mapping the Network Server</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
