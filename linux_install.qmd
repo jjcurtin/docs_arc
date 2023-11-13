@@ -32,8 +32,6 @@ install.packages("devtools")
 library(devtools)
 install.packages("tidyverse")
 
-
-
 https://www.r-bloggers.com/2022/08/installation-of-r-4-2-on-ubuntu-22-04-1-lts-and-tips-for-spatial-packages/
 
 https://www.digitalocean.com/community/tutorials/how-to-install-r-on-ubuntu-22-04
@@ -51,12 +49,6 @@ https://docs.posit.co/resources/install-quarto/
 
 https://www.cyberciti.biz/faq/how-to-install-curl-command-on-a-ubuntu-linux/
 
-## SSH Keys for github, chtc, etc
-https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
-
-https://github.com/settings/keys
-
-https://www.beyondtrust.com/blog/entry/ssh-key-management-overview-6-best-practices
 
 ## Zotero
 
@@ -143,11 +135,20 @@ To use this key with Github
 
 3. Click New SSH Key, give it a title, and paste the public key info into Key box.
 
+For more info
+
+- https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+
+- https://github.com/settings/keys
+
+- https://www.beyondtrust.com/blog/entry/ssh-key-management-overview-6-best-practices
+
 ## Sound mixer settings
 
 install pavucontrol to get mic on zoom to work
 
 alsamixer from terminal may help 
+
 
 ## VNC for Remote Access
 
@@ -189,3 +190,9 @@ This will set up a green prompt with relative path for current directory.
 
 PS1="\e[0;32;1m[\w]\$ \e[m"
 
+
+## Git Command Line for Windows
+
+If you want to run some cli programs (e.g., sftp, ssh, git) and limited bash on a Windows compoter, install [Git Bash](https://git-scm.com/download/win).
+
+This is NOT needed if you are installing Linux as your OS.
