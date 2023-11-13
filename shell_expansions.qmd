@@ -51,19 +51,48 @@ x=5 y=$((x * 2)) echo "y is $y"
 
 Brace expansion generates multiple strings by specifying a sequence or multiple options inside curly braces.
 
-
 {a,b,c}: Expands to "a", "b", and "c".
-{start..end}: Expands a numerical range.
+{start..end}: Expands a alphanumerical range.
 
 Examples:
 
 Prints: apple banana cherry 
-```
-echo {apple,banana,cherry} 
-```
+
+```echo {apple,banana,cherry}```
 
 Prints: 1 2 3 4 5 
 
-```
-echo {1..5} 
-```
+```echo {1..5}```
+
+## Parameter Expansion
+
+https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Shell-Parameter-Expansion
+
+
+## Common Applications
+
+### Remove the extension .zip from all the filenames
+Note: the -- protects against filenames that begin with - and would appear to be an option otherwise.
+
+```for f in *.zip; do mv -- "$f" "${f%.zip}"; done```
+
+
+### Rename all *.foo filenames to *.bar
+
+```for f in *.foo; do mv -- "$f" "${f%.foo}.bar"; done```
+
+
+### Remove prefix abc_ from all filenames
+
+```for f in abc_* ; do mv -- "$f" "${f#abc_}"; done```
+
+
+
+### Replace all spaces with underscores
+
+```for f in *\ *; do mv -- "$f" "${f// /_}"; done```
+
+
+### Convert filenames to all lowercase
+
+```for f in *[[:upper:]]*; do mv -- "$f" "${f,,}"; done```
