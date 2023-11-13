@@ -9,19 +9,25 @@
 - [^...] Matches any character NOT in the brackets.
 
 
-## Tilde expansion
+## Tilde Expansion
 
 Tilde Expansion:
 
 - ~ Expands to the home directory of the current user.
 - ~username Expands to the home directory of the specified username.
 
-## Variable expansion
+
+## Variable/Parameter Expansion
 
 Shell variables are placeholders for storing data. When you reference a variable, the shell expands it to its stored value.
 
 - $variable: Expands to the value of the specified variable.
 - ${variable}: Use curly braces for disambiguation.
+
+https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Shell-Parameter-Expansion
+
+https://opensource.com/article/17/6/bash-parameter-expansion
+
 
 ## Command Substitution
 
@@ -33,6 +39,7 @@ examples:
 ```
 files_count=$(ls -l | wc -l) echo "Number of files: $files_count" 
 ```
+
 
 ## Arithmetic Expansion
 
@@ -64,20 +71,19 @@ Prints: 1 2 3 4 5
 
 ```echo {1..5}```
 
-## Parameter Expansion
-
-https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Shell-Parameter-Expansion
 
 
 ## Common Applications
 
-### Remove the extension .zip from all the filenames
+
+### Remove the extension (.zip) from all the filenames
+
 Note: the -- protects against filenames that begin with - and would appear to be an option otherwise.
 
 ```for f in *.zip; do mv -- "$f" "${f%.zip}"; done```
 
 
-### Rename all *.foo filenames to *.bar
+### Replace extension (.foo to .bar) for all filenames
 
 ```for f in *.foo; do mv -- "$f" "${f%.foo}.bar"; done```
 
@@ -85,7 +91,6 @@ Note: the -- protects against filenames that begin with - and would appear to be
 ### Remove prefix abc_ from all filenames
 
 ```for f in abc_* ; do mv -- "$f" "${f#abc_}"; done```
-
 
 
 ### Replace all spaces with underscores
@@ -96,3 +101,4 @@ Note: the -- protects against filenames that begin with - and would appear to be
 ### Convert filenames to all lowercase
 
 ```for f in *[[:upper:]]*; do mv -- "$f" "${f,,}"; done```
+
