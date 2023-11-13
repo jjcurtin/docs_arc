@@ -103,8 +103,9 @@ You can view an html file in firefox from terminal using `firefox [filename]`
 - `gunzip foo.txt` - Uncompress foo.txt.gz (no need to append .gz).
 - `gunzip foo.txt -c | less` to view contents of foo.txt without decompressing it
 - `tar cf playground.tar playground` make archive of playground directory.  r rather than c to append rather than create new archive.
-- `tar czf playground.tgz playground` to archive and compress (coukd also name playground.tar.gz)
+- `tar czf playground.tgz playground` to archive and compress (could also name playground.tar.gz)
 - `tar xf playground2.tar` to extract files from archive
+- see linux book, chapter 18 for more details
 
 ## FTP
 
