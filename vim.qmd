@@ -97,6 +97,15 @@ Moving between buffers
 
 yank/delete/put will work between buffers
 
+## Command line in VIM
+
+Switch to command line from normal mode by typing `:`
+
+You can then use:
+
+- `pwd` to print the current working director
+- `cd` to change the working directory for the vim shell
+- `lcd` to change the working directory for the specific buffer you are in
 
 ## Render files
 
