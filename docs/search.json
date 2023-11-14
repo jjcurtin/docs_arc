@@ -494,7 +494,7 @@
     "href": "vim.html#working-with-multiple-files",
     "title": "10  vim",
     "section": "10.10 Working with multiple files",
-    "text": "10.10 Working with multiple files\nVim can open multiple files in separate buffers. This can be done at the start by providing multiple filenames to vim (e.g., vim file1.md file2.md)\nAlternatively, additional files can be opened for editting later (:e file2.txt).\nMoving between buffers\n\nbn moves to next buffer\nbp moves to previous buffer\n:buffers displays all open buffers\n: buffer 1 allows switch to buffer 1 (or any other number) if there are many buffers open\n\nyank/delete/put will work between buffers"
+    "text": "10.10 Working with multiple files\nVim can open multiple files in separate buffers. This can be done at the start by providing multiple filenames to vim (e.g., vim file1.md file2.md)\nAlternatively, additional files can be opened for editting later (:e file2.txt).\nMoving between buffers\n\nbn moves to next buffer\nbp moves to previous buffer\n:buffers displays all open buffers\n: buffer 1 allows switch to buffer 1 (or any other number) if there are many buffers open\n:bd deletes the current buffer. Will fail unless buffer has first been saved (or no changes made)\n\nyank/delete/put will work between buffers"
   },
   {
     "objectID": "vim.html#render-files",
