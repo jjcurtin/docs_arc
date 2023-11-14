@@ -259,13 +259,6 @@
     "text": "8.5 Quarto\n\nDownload latest version of Quarto\ninstall using sudo apt install &lt;package path&gt; or sudo dpkg -i &lt;package path&gt;\n\nhttps://docs.posit.co/resources/install-quarto/\nhttps://www.cyberciti.biz/faq/how-to-install-curl-command-on-a-ubuntu-linux/"
   },
   {
-    "objectID": "linux_install.html#ssh-keys-for-github-chtc-etc",
-    "href": "linux_install.html#ssh-keys-for-github-chtc-etc",
-    "title": "8  Installing Linux",
-    "section": "8.6 SSH Keys for github, chtc, etc",
-    "text": "8.6 SSH Keys for github, chtc, etc\nhttps://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent\nhttps://github.com/settings/keys\nhttps://www.beyondtrust.com/blog/entry/ssh-key-management-overview-6-best-practices"
-  },
-  {
     "objectID": "linux_install.html#zotero",
     "href": "linux_install.html#zotero",
     "title": "8  Installing Linux",
@@ -306,6 +299,13 @@
     "title": "8  Installing Linux",
     "section": "8.11 Mount Shares",
     "text": "8.11 Mount Shares\n\nsudo apt-get install cifs-utils\ncreate directories within ~/mnt/ for each share.\nsave credentials file for synology (.synology_credentials) or research drive (.researchdrive_credentials) at /root/. These should include username=, password= (and for research drive, domain=ad.wisc.edu)\ncreate an alias for the command for each share to mount. Get it from John"
+  },
+  {
+    "objectID": "linux_install.html#set-up-ssh-client-and-server",
+    "href": "linux_install.html#set-up-ssh-client-and-server",
+    "title": "8  Installing Linux",
+    "section": "8.12 Set up SSH Client and Server",
+    "text": "8.12 Set up SSH Client and Server\nhttps://ubuntu.com/server/docs/service-openssh"
   },
   {
     "objectID": "linux_install.html#creating-ssh-passkeys",
@@ -403,7 +403,7 @@
     "href": "linux_use.html#compressing-and-archiving-files",
     "title": "9  Using Linux",
     "section": "9.9 Compressing and archiving files",
-    "text": "9.9 Compressing and archiving files\n\n`gzip foo.txt - Compress foo.txt. The resulting compressed file is named file.txt.gz. -r to compress subdirectories when compressing a directory rather than file.\ngunzip foo.txt - Uncompress foo.txt.gz (no need to append .gz).\ngunzip foo.txt -c | less to view contents of foo.txt without decompressing it\ntar cf playground.tar playground make archive of playground directory. r rather than c to append rather than create new archive.\ntar czf playground.tgz playground to archive and compress (coukd also name playground.tar.gz)\ntar xf playground2.tar to extract files from archive"
+    "text": "9.9 Compressing and archiving files\n\n`gzip foo.txt - Compress foo.txt. The resulting compressed file is named file.txt.gz. -r to compress subdirectories when compressing a directory rather than file.\ngunzip foo.txt - Uncompress foo.txt.gz (no need to append .gz).\ngunzip foo.txt -c | less to view contents of foo.txt without decompressing it\ntar cf playground.tar playground make archive of playground directory. r rather than c to append rather than create new archive.\ntar czf playground.tgz playground to archive and compress (could also name playground.tar.gz)\ntar xf playground2.tar to extract files from archive\nsee linux book, chapter 18 for more details"
   },
   {
     "objectID": "linux_use.html#ftp",
@@ -429,91 +429,98 @@
   {
     "objectID": "vim.html#exit-and-save",
     "href": "vim.html#exit-and-save",
-    "title": "10  vim",
+    "title": "10  Vim",
     "section": "10.1 Exit and Save",
     "text": "10.1 Exit and Save\n\n:x exits and saves\n:w saves without exit\n:w filename saves file as filename\n:q! exits without save"
   },
   {
     "objectID": "vim.html#run-commands",
     "href": "vim.html#run-commands",
-    "title": "10  vim",
+    "title": "10  Vim",
     "section": "10.2 Run commands",
     "text": "10.2 Run commands\n\n:!CMD where CMD is command. e.g.., !ls"
   },
   {
     "objectID": "vim.html#navigating-document-in-default-command-mode",
     "href": "vim.html#navigating-document-in-default-command-mode",
-    "title": "10  vim",
+    "title": "10  Vim",
     "section": "10.3 Navigating document in Default (Command) Mode",
     "text": "10.3 Navigating document in Default (Command) Mode\nRemember to enter command mode by pressing esc - 0 moves the cursor to the start of line - $ moves cursor to end of line - Move cursor left (h), down(j), up (k), or right (l)\n\ngg for top of document\nG for bottom of document\nnG to move to line number n. CTRL-g shows line numbers in footer of doc.\nH for top of window, M for middle of window, and L for bottom of window\nw moves forward to the beginning of the next word.\nb moves backwards to the beginning of the previous word.\n( and ) move by sentences, either backward or forward.\n{ and } move by paragraphs."
   },
   {
     "objectID": "vim.html#inserting",
     "href": "vim.html#inserting",
-    "title": "10  vim",
+    "title": "10  Vim",
     "section": "10.4 Inserting",
     "text": "10.4 Inserting\n\ni Insert text before the cursor\na Insert text after cursor\nA Append text to end of current line. - I Insert text at beginning of line.\no Open blank line below cursor for text. - O Open blank line above cursor for text.\np puts the Vim register (from delete) after cursor (if full line, on next line).\nrx replaces the character at the cursor with ‘x’\nR replaces multiple characters. Type ESC when done.\nce deletes until end of word and places you in insert. Press ESC when done\nc$ deletes until end of line and places you in insert. Press ESC when done\n:%s/old/new/gc - replaces old with new in full doc with prompt for replace.\n:r filename to insert text in filename above cursor"
   },
   {
     "objectID": "vim.html#deleting",
     "href": "vim.html#deleting",
-    "title": "10  vim",
+    "title": "10  Vim",
     "section": "10.5 Deleting",
     "text": "10.5 Deleting\n\nx deletes the character under the cursor\ndw deletes from cursor to start of next word (including space spearator). d2w deletes from cursor to end of second word, etc.\nde delets from curors to end of current for\ndd deletes the line. 2dd deletes two lines.\nd$ deletes from cursor to end of line.\nu to undo the last command. CTRL-R for redo -U to undo all fixes on a line."
   },
   {
     "objectID": "vim.html#spell-check",
     "href": "vim.html#spell-check",
-    "title": "10  vim",
+    "title": "10  Vim",
     "section": "10.6 Spell check",
     "text": "10.6 Spell check\n\n:set spell – Turn on spell checking\n:set nospell – Turn off spell checking\n]s – Jump to the next misspelled word\n[s – Jump to the previous misspelled word\nz= – Bring up the suggested replacements\nzg – Good word: Add the word under the cursor to the dictionary\nzw – Woops! Undo and remove the word from the dictionary"
   },
   {
     "objectID": "vim.html#search-in-vim",
     "href": "vim.html#search-in-vim",
-    "title": "10  vim",
+    "title": "10  Vim",
     "section": "10.7 Search in VIM",
     "text": "10.7 Search in VIM\n\n/text to search forward for text. Type ENTER to exit to that text.\n?text to search backward for text.\nn to find next instance of text (after ENTER)\nN to find previous instance of text (after ENTER)"
   },
   {
     "objectID": "vim.html#visual-selection",
     "href": "vim.html#visual-selection",
-    "title": "10  vim",
+    "title": "10  Vim",
     "section": "10.8 Visual selection",
     "text": "10.8 Visual selection\n\nv to select text. Move cursor around with hjkl keys\nthen d to delete (can later p(ut) it somewhere if needed)\nor y to yank (copy) so you can later p(ut) it somewhere\nor w to write to separate file"
   },
   {
     "objectID": "vim.html#copy",
     "href": "vim.html#copy",
-    "title": "10  vim",
+    "title": "10  Vim",
     "section": "10.9 Copy",
     "text": "10.9 Copy\n\ny to yank (copy) selction (use with v for visual selection)\nyw to yank a word\nyy to yank a line"
   },
   {
     "objectID": "vim.html#working-with-multiple-files",
     "href": "vim.html#working-with-multiple-files",
-    "title": "10  vim",
+    "title": "10  Vim",
     "section": "10.10 Working with multiple files",
     "text": "10.10 Working with multiple files\nVim can open multiple files in separate buffers. This can be done at the start by providing multiple filenames to vim (e.g., vim file1.md file2.md)\nAlternatively, additional files can be opened for editting later (:e file2.txt).\nMoving between buffers\n\nbn moves to next buffer\nbp moves to previous buffer\n:buffers displays all open buffers\n: buffer 1 allows switch to buffer 1 (or any other number) if there are many buffers open\n:bd deletes the current buffer. Will fail unless buffer has first been saved (or no changes made)\n\nyank/delete/put will work between buffers"
   },
   {
+    "objectID": "vim.html#command-line-in-vim",
+    "href": "vim.html#command-line-in-vim",
+    "title": "10  Vim",
+    "section": "10.11 Command line in VIM",
+    "text": "10.11 Command line in VIM\nSwitch to command line from normal mode by typing :\nYou can then use:\n\npwd to print the current working director\ncd to change the working directory for the vim shell\nlcd to change the working directory for the specific buffer you are in"
+  },
+  {
     "objectID": "vim.html#render-files",
     "href": "vim.html#render-files",
-    "title": "10  vim",
+    "title": "10  Vim",
     "section": "10.12 Render files",
     "text": "10.12 Render files\nWe tend to use either md or qmd files for writing, code, etc. Our .vimrc file turns on markdown highlighting for these files if saved with .md or ..qmd extensions. qmd is preferred because it works with RStudio as well.\nThese files can be rendered to html or pdf if desired.\n\nquarto render file.qmd to render to html\nquarto render file.qmd --to pdf to render to pdf\n\nWe can use a full yaml header for more fancy output. We have templates for apa manuscripts, letterhead, and a generally nice format pdf output if desired. Just paste the yaml at the top of the file."
   },
   {
     "objectID": "vim.html#installing-plugins",
     "href": "vim.html#installing-plugins",
-    "title": "10  vim",
+    "title": "10  Vim",
     "section": "10.13 Installing plugins",
     "text": "10.13 Installing plugins\nIf the plugin is on github, simply clone it using the github url into the vim plugin folder: /home/jjcurtin/.vim/pack/vendor/start\nAnd you are done!"
   },
   {
     "objectID": "vim.html#learing-vim",
     "href": "vim.html#learing-vim",
-    "title": "10  vim",
+    "title": "10  Vim",
     "section": "10.14 Learing VIM",
     "text": "10.14 Learing VIM\n\nrun vimtutor\nbooks: https://iccf-holland.org/vim_books.html"
   },
@@ -542,15 +549,15 @@
     "objectID": "shell_expansions.html#tilde-expansion",
     "href": "shell_expansions.html#tilde-expansion",
     "title": "12  Shell Expansions",
-    "section": "12.2 Tilde expansion",
-    "text": "12.2 Tilde expansion\nTilde Expansion:\n\n~ Expands to the home directory of the current user.\n~username Expands to the home directory of the specified username."
+    "section": "12.2 Tilde Expansion",
+    "text": "12.2 Tilde Expansion\nTilde Expansion:\n\n~ Expands to the home directory of the current user.\n~username Expands to the home directory of the specified username."
   },
   {
-    "objectID": "shell_expansions.html#variable-expansion",
-    "href": "shell_expansions.html#variable-expansion",
+    "objectID": "shell_expansions.html#variableparameter-expansion",
+    "href": "shell_expansions.html#variableparameter-expansion",
     "title": "12  Shell Expansions",
-    "section": "12.3 Variable expansion",
-    "text": "12.3 Variable expansion\nShell variables are placeholders for storing data. When you reference a variable, the shell expands it to its stored value.\n\n$variable: Expands to the value of the specified variable.\n${variable}: Use curly braces for disambiguation."
+    "section": "12.3 Variable/Parameter Expansion",
+    "text": "12.3 Variable/Parameter Expansion\nShell variables are placeholders for storing data. When you reference a variable, the shell expands it to its stored value.\n\n$variable: Expands to the value of the specified variable.\n${variable}: Use curly braces for disambiguation.\n\nhttps://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Shell-Parameter-Expansion\nhttps://opensource.com/article/17/6/bash-parameter-expansion"
   },
   {
     "objectID": "shell_expansions.html#command-substitution",
@@ -571,7 +578,14 @@
     "href": "shell_expansions.html#brace-expansion",
     "title": "12  Shell Expansions",
     "section": "12.6 Brace Expansion",
-    "text": "12.6 Brace Expansion\nBrace expansion generates multiple strings by specifying a sequence or multiple options inside curly braces.\n{a,b,c}: Expands to “a”, “b”, and “c”. {start..end}: Expands a numerical range.\nExamples:\nPrints: apple banana cherry\necho {apple,banana,cherry} \nPrints: 1 2 3 4 5\necho {1..5}"
+    "text": "12.6 Brace Expansion\nBrace expansion generates multiple strings by specifying a sequence or multiple options inside curly braces.\n{a,b,c}: Expands to “a”, “b”, and “c”. {start..end}: Expands a alphanumerical range.\nExamples:\nPrints: apple banana cherry\necho {apple,banana,cherry}\nPrints: 1 2 3 4 5\necho {1..5}"
+  },
+  {
+    "objectID": "shell_expansions.html#common-applications",
+    "href": "shell_expansions.html#common-applications",
+    "title": "12  Shell Expansions",
+    "section": "12.7 Common Applications",
+    "text": "12.7 Common Applications\n\n12.7.1 Remove the extension (.zip) from all the filenames\nNote: the – protects against filenames that begin with - and would appear to be an option otherwise.\nfor f in *.zip; do mv -- \"$f\" \"${f%.zip}\"; done\n\n\n12.7.2 Replace extension (.foo to .bar) for all filenames\nfor f in *.foo; do mv -- \"$f\" \"${f%.foo}.bar\"; done\n\n\n12.7.3 Remove prefix abc_ from all filenames\nfor f in abc_* ; do mv -- \"$f\" \"${f#abc_}\"; done\n\n\n12.7.4 Replace all spaces with underscores\nfor f in *\\ *; do mv -- \"$f\" \"${f// /_}\"; done\n\n\n12.7.5 Convert filenames to all lowercase\nfor f in *[[:upper:]]*; do mv -- \"$f\" \"${f,,}\"; done"
   },
   {
     "objectID": "globalprotect_mapping.html#global-protect",
@@ -922,19 +936,5 @@
     "title": "17  Psychophysiology Software",
     "section": "17.3 Curry",
     "text": "17.3 Curry\n\n17.3.1 Installing Curry\n\nInstaller package comes with an installer CD, tutorial CD, and a USB dongle.\nThe Dell Latitude laptop being uses for the mobile lab does not have an optical drive. Therefore, the contents of the installer CD were copied to P://Private/Documentation/Neuroscan/Curry/Installer Disk\nRun setup.exe from the installer disk folder.\nWhen prompted to choose which components to install, select: EEG acquisition, Core Files, Dongle Drivers, and Amplifier Drivers.\n\n\nDo NOT install: EEG/MEG analysis, Head models, Example Data\n\n\nWhen the installer gets to the Amplifier Driver Installation, an onscreen prompt tells you to follow the onscreen directions.\n\n\nA secondary (device driver) installation window opens\nGive windows security approval to allow Compumedics to install the drivers by clicking the Install button.\nClick finish when the wizard indicates it is finished. It now returns to the main installer.\n\n\nAt the end of installation the finish window reminds you that a hardware lock “dongle” is required to run the software.\nGo ahead and start the Curry 7 acquisition\nA license information window will come up saying “dongle not found”\n\n\nPlug in the dongle and hit refresh. NOTE: The dongle must be plugged in at all times for the software to run. Just plug it in and leave it alone.\nClose the dongle window.\n\n\nGo to the start menu and run Curry 7 acquisition from the Start or Programs menu.\n\n\n\n17.3.2 Updating after First Install\n\nAt first launch, you will be prompted to do an online update; hit yes\nYou will receive another window that says you have to send a notification email to Neuroscan\n\n\nIf you don’t have an email editor like Outlook installed (which you shouldn’t) click the button that says “no email”\nA text box will pop up, and you will be instructed to copy and paste this into an email which you can do via Wiscmail.\n\n\nAn executable update will available. Click to download, than click to run\n\n\nNote you must close Curry first\n\n\nWhen that is finished, start the Neuroimaging suite again, and you will have been updated from 7.0.6 to 7.0.10\nYou will now have another email which you have to send. Follow the procedure above.\n\n\n\n17.3.3 Curry Configuration Files\nCurry requires Configuration files to determine the amplifier settings and recording parameters for your study. There are both Amplifier Configuration files (.xml extension) and Global Parameters files (.cfg). These are roughly the equivalent of the Set-Up (.ast) files from SCAN. Below is an an example setup file for our lab and description of some common parameters.\n\n17.3.3.1 Amplifier Configuration\n\nIn general it is recommended that you start with an existing configuration file and modify it rather than starting from scratch. See notes below for more.\nAmplifier: Grael EEG (demo below is for Grael)\nSampling rate = 2048 Hz (required for triggering, see below)\nMode: DC\nLow Pass: 819 Hz (default - unclear if this can/should be modified to 500Hz)\nClick on each site (or hold Ctrl for multiple sites) and select on/off the sites you will collect.\nFor bipolar channels the Electrode No is the number and you can enter a Name (e.g, “ORB”)\n\n\n\n17.3.3.2 Sensor Placement\n\nCan use one of the defaults or create a new montage that is just for bipolar channels.\nFor bipolar channels the Active should be the channel number and Ref column should remain empty.\n\n\n\n17.3.3.3 Special limitations with the Grael trigger module.\nIf you are using the trigger unit with the Grael PSG or EEG amplifier, you should be aware of the following limitations:\n\nTriggers are only registered when acquiring data with the fastest sampling rate (2048Hz).\nOnly stimulus events from 1-64 are registered; no response events are recognized.\nThe maximum trigger frequency is 40Hz.\nThe “Record Event Duration” option does not work with Grael.\n\n\n\n\n17.3.4 Global Parameters\n\n17.3.4.1 Amplifier Controls:\n\nSampling rate must be 2048Hz for triggers to register.\nLoad your configuration file.\nSet the path you want to save data for your study. Then click File-&gt;Parameters-&gt;Save Global Parameters.\nTrigger settings:\nSelect Neuroscan Stim2\nStimulus should be unchecked from Invert and Response should be checked for Invert (although we’re not actually collecting Invert).\n\n\n\n17.3.4.2 Filter Parameters:\n\nRaw: Raw should be selected. The tab that is selected is the current tab that is viewed during data collection. It is very important to always select RAW (it will also be displayed F-SET: Raw in the top left corner of the recording window).\n\nBaseline checked\nAll other parameters will be blocked out and unable to modify.\n\nOptions MGFP unchecked (in order to have access to uncheck this you must be acquiring data) . MGFP is the mean global field power.\n\n\n\n\n17.3.5 Notes\n\nNOTES: The computer can not be connected to VPN and connect to the amplifer at the same time. This is likely because the way the amplifier is detected over the network and the changing ip address used with each user’s vpn account.\nWe identified two software bugs on Curry. First when creating a new configuration from scratch the default setting is to set the trigger channel to off (0 sampling rate). This does not appear to be modifiable in the GUI. Therefore you need to start with an existing/working or the default configuration file for triggers to appear - and modify that file to your specs and save as new config file. Second, bipolar channels do not display impedances for both plus and minux channel separately.\nBoth of these bugs are fixed in a custom patch sent to us from Curry tech support. Hotfix is saved on the server: P:and Peripherals701029Hotfix.exe\nSampling rate must be set at 2048Hz for triggers to register in Grael EEG.\nBipolar channels are optically isolated from each other (per Ronnie email 2016_0728) and therefore it is safe to send audio/probe channel into bipolar channel while recording. Must be attenuated within range (&lt;600uV or +-300uV)."
-  },
-  {
-    "objectID": "vim.html#command-line-in-vim",
-    "href": "vim.html#command-line-in-vim",
-    "title": "10  vim",
-    "section": "10.11 Command line in VIM",
-    "text": "10.11 Command line in VIM\nSwitch to command line from normal mode by typing :\nYou can then use:\n\npwd to print the current working director\ncd to change the working directory for the vim shell\nlcd to change the working directory for the specific buffer you are in"
-  },
-  {
-    "objectID": "linux_install.html#set-up-ssh-client-and-server",
-    "href": "linux_install.html#set-up-ssh-client-and-server",
-    "title": "8  Installing Linux",
-    "section": "8.12 Set up SSH Client and Server",
-    "text": "8.12 Set up SSH Client and Server\nhttps://ubuntu.com/server/docs/service-openssh"
   }
 ]
