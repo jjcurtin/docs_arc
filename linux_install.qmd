@@ -105,7 +105,9 @@ https://www.moderncsv.com/
 
 - create an alias for the command for each share to  mount.  Get it from John
 
+## Set up SSH Client and Server
 
+https://ubuntu.com/server/docs/service-openssh
 
 ## Creating SSH passkeys
 

@@ -269,50 +269,50 @@
     "objectID": "linux_install.html#zotero",
     "href": "linux_install.html#zotero",
     "title": "8  Installing Linux",
-    "section": "8.7 Zotero",
-    "text": "8.7 Zotero\n\nsudo apt update\nsudo apt upgrade\nsudo snap install zotero-snap\n\nAfter zotero is installed, you can synch to the Addiction Research Lab library. Go to menu edit:preferences:synch. Username is jjccurtin. Ask John or Susan for the password."
+    "section": "8.6 Zotero",
+    "text": "8.6 Zotero\n\nsudo apt update\nsudo apt upgrade\nsudo snap install zotero-snap\n\nAfter zotero is installed, you can synch to the Addiction Research Lab library. Go to menu edit:preferences:synch. Username is jjccurtin. Ask John or Susan for the password."
   },
   {
     "objectID": "linux_install.html#slack",
     "href": "linux_install.html#slack",
     "title": "8  Installing Linux",
-    "section": "8.8 Slack",
-    "text": "8.8 Slack\nSlack is easily installed from the Ubuntu Software Center. Open up the software center. Search for Slack. Install. Done.\n\n8.8.1 pdfs\n\nsudo snap install evince for viewing pdfs\nsudo apt-get install qpdf for manipulating pdfs (e.g., extract pages)"
+    "section": "8.7 Slack",
+    "text": "8.7 Slack\nSlack is easily installed from the Ubuntu Software Center. Open up the software center. Search for Slack. Install. Done.\n\n8.7.1 pdfs\n\nsudo snap install evince for viewing pdfs\nsudo apt-get install qpdf for manipulating pdfs (e.g., extract pages)"
   },
   {
     "objectID": "linux_install.html#global-protect",
     "href": "linux_install.html#global-protect",
     "title": "8  Installing Linux",
-    "section": "8.9 Global Protect",
-    "text": "8.9 Global Protect\n\n[Install] (https://kb.wisc.edu/helpdesk/105971)\n[]"
+    "section": "8.8 Global Protect",
+    "text": "8.8 Global Protect\n\n[Install] (https://kb.wisc.edu/helpdesk/105971)\n[]"
   },
   {
     "objectID": "linux_install.html#meld-merge-for-file-diffs",
     "href": "linux_install.html#meld-merge-for-file-diffs",
     "title": "8  Installing Linux",
-    "section": "8.10 Meld Merge for file diffs",
-    "text": "8.10 Meld Merge for file diffs\n\ndownload and install meld merge\nadd the following to your .gitconfig file\n\n[diff]\n    tool = meld\n[difftool]\n    prompt = false\n[difftool \"meld\"]\ncmd = meld \"$LOCAL\" \"$REMOTE\"\n\n# The order of the Meld GUI window panes can be controlled by the order of $LOCAL and $REMOTE in cmd"
+    "section": "8.9 Meld Merge for file diffs",
+    "text": "8.9 Meld Merge for file diffs\n\ndownload and install meld merge\nadd the following to your .gitconfig file\n\n[diff]\n    tool = meld\n[difftool]\n    prompt = false\n[difftool \"meld\"]\ncmd = meld \"$LOCAL\" \"$REMOTE\"\n\n# The order of the Meld GUI window panes can be controlled by the order of $LOCAL and $REMOTE in cmd"
   },
   {
     "objectID": "linux_install.html#csv",
     "href": "linux_install.html#csv",
     "title": "8  Installing Linux",
-    "section": "8.11 CSV",
-    "text": "8.11 CSV\nhttps://www.tadviewer.com/\nhttps://www.moderncsv.com/"
+    "section": "8.10 CSV",
+    "text": "8.10 CSV\nhttps://www.tadviewer.com/\nhttps://www.moderncsv.com/"
   },
   {
     "objectID": "linux_install.html#mount-shares",
     "href": "linux_install.html#mount-shares",
     "title": "8  Installing Linux",
-    "section": "8.12 Mount Shares",
-    "text": "8.12 Mount Shares\n\nsudo apt-get install cifs-utils\ncreate directories within ~/mnt/ for each share.\nsave credentials file for synology (.synology_credentials) or research drive (.researchdrive_credentials) at /root/. These should include username=, password= (and for research drive, domain=ad.wisc.edu)\ncreate an alias for the command for each share to mount. Get it from John"
+    "section": "8.11 Mount Shares",
+    "text": "8.11 Mount Shares\n\nsudo apt-get install cifs-utils\ncreate directories within ~/mnt/ for each share.\nsave credentials file for synology (.synology_credentials) or research drive (.researchdrive_credentials) at /root/. These should include username=, password= (and for research drive, domain=ad.wisc.edu)\ncreate an alias for the command for each share to mount. Get it from John"
   },
   {
     "objectID": "linux_install.html#creating-ssh-passkeys",
     "href": "linux_install.html#creating-ssh-passkeys",
     "title": "8  Installing Linux",
     "section": "8.13 Creating SSH passkeys",
-    "text": "8.13 Creating SSH passkeys\nYou can create an ssh key to ssh without the need to provide username and password. In our lab, these are useful to ssh to CHTC or for git shh to GitHub.\nTo create the key\n\nOpen a terminal and type ssh-keygen -t ed25519.\nAccept the defaults by repeatedly pressing enter and this will create a key with defauult names .ssh/id_ed25519, and .ssh/id_ed25519.pub.\n\nTo use this key with CHTC\n\nOpen the public key file (id_25519.pub) and copy the content.\nSSH to CTHC\nCreate or edit .ssh/authorized_keys\nPaste your public key info at the end of this file.\n\nTo use this key with Github\n\nGo to your settings (point at your profile picture and select settings.\nSelect SSH and GPG Keys\nClick New SSH Key, give it a title, and paste the public key info into Key box."
+    "text": "8.13 Creating SSH passkeys\nYou can create an ssh key to ssh without the need to provide username and password. In our lab, these are useful to ssh to CHTC or for git shh to GitHub.\nTo create the key\n\nOpen a terminal and type ssh-keygen -t ed25519.\nAccept the defaults by repeatedly pressing enter and this will create a key with defauult names .ssh/id_ed25519, and .ssh/id_ed25519.pub.\n\nTo use this key with CHTC\n\nOpen the public key file (id_25519.pub) and copy the content.\nSSH to CTHC\nCreate or edit .ssh/authorized_keys\nPaste your public key info at the end of this file.\n\nTo use this key with Github\n\nGo to your settings (point at your profile picture and select settings.\nSelect SSH and GPG Keys\nClick New SSH Key, give it a title, and paste the public key info into Key box.\n\nFor more info\n\nhttps://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent\nhttps://github.com/settings/keys\nhttps://www.beyondtrust.com/blog/entry/ssh-key-management-overview-6-best-practices"
   },
   {
     "objectID": "linux_install.html#sound-mixer-settings",
@@ -340,7 +340,7 @@
     "href": "linux_install.html#customize-cli-prompt",
     "title": "8  Installing Linux",
     "section": "8.17 Customize CLI prompt",
-    "text": "8.17 Customize CLI prompt\nThis will set up a green prompt with relative path for current directory.\nPS1=“$ Documentation for ARC 9  Using Linux 7  Git Welcome 1  Lab Practices 2  Graduate Student/Mentor Expectations/Policies 3  Current and Planned Studies 4  Lab Resources 5  CHTC 6  Flowcharts Linux and CLI 7  Git 8  Installing Linux 9  Using Linux 10  vim 11  Bash Scripting 12  Shell Expansions Other Software 13  Global Protect and Mapping the Network Server 14  Zotero 15  Creating QR Codes for Presentations Psychophysiology 16  Psychophysiology Methods 17  Psychophysiology Software Linux and CLI 8  Installing Linux :::"
+    "text": "8.17 Customize CLI prompt\nThis will set up a green prompt with relative path for current directory.\nPS1=“$ (https://git-scm.com/download/win).\nThis is NOT needed if you are installing Linux as your OS."
   },
   {
     "objectID": "linux_use.html#general-short-cuts",
@@ -929,5 +929,12 @@
     "title": "10  vim",
     "section": "10.11 Command line in VIM",
     "text": "10.11 Command line in VIM\nSwitch to command line from normal mode by typing :\nYou can then use:\n\npwd to print the current working director\ncd to change the working directory for the vim shell\nlcd to change the working directory for the specific buffer you are in"
+  },
+  {
+    "objectID": "linux_install.html#set-up-ssh-client-and-server",
+    "href": "linux_install.html#set-up-ssh-client-and-server",
+    "title": "8  Installing Linux",
+    "section": "8.12 Set up SSH Client and Server",
+    "text": "8.12 Set up SSH Client and Server\nhttps://ubuntu.com/server/docs/service-openssh"
   }
 ]
