@@ -94,6 +94,7 @@ Moving between buffers
 - `bp` moves to previous buffer
 - `:buffers` displays all open buffers
 - `: buffer 1` allows switch to buffer 1 (or any other number) if there are many buffers open
+- `:bd` deletes the current buffer.  Will fail unless buffer has first been saved (or no changes made)
 
 yank/delete/put will work between buffers
 
