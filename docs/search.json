@@ -417,7 +417,7 @@
     "href": "linux_use.html#ssh",
     "title": "9  Using Linux",
     "section": "9.11 SSH",
-    "text": "9.11 SSH\n\nuse ssh at command line. e.g., ssh submit-1.chtc.wisc.edu\nCan set up a ssh key to log in without credentials to CHTC."
+    "text": "9.11 SSH\n\nuse ssh at command line. e.g., ssh submit-1.chtc.wisc.edu\nCan set up a ssh key to log in without credentials to CHTC, Github, etc."
   },
   {
     "objectID": "linux_use.html#kill-a-frozen-app",

@@ -121,7 +121,7 @@ You can view an html file in firefox from terminal using `firefox [filename]`
 ## SSH
 
 - use ssh at command line.  e.g., `ssh submit-1.chtc.wisc.edu`
-- Can [set up a ssh key](https://www.unixtutorial.org/how-to-generate-ed25519-ssh-key/) to log in without credentials to CHTC.
+- Can [set up a ssh key](https://jjcurtin.github.io/docs_arc/linux_install.html#creating-ssh-passkeys) to log in without credentials to CHTC, Github, etc.
 
 ## Kill a frozen app
 
