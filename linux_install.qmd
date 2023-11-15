@@ -119,6 +119,10 @@ To create the key
 
 2. Accept the defaults by repeatedly pressing enter and this will create a key with defauult names .ssh/id_ed25519, and .ssh/id_ed25519.pub. 
 
+3. After creating the keys, you may need to change their permissions.
+  - `chmod 644 id_ed25519.pub`
+  - `chmod 600 id_ed25519`
+
 To use this key with CHTC
 
 1. Open the public key file (id_25519.pub) and copy the content.
