@@ -67,9 +67,68 @@ cmd = meld "$LOCAL" "$REMOTE"
 
 ## Git Command Line for Windows
 
-The recommended terminal for using the Git command line on Windows is [Git Bash](https://git-scm.com/download/win).
+The recommended terminal for using the Git command line on Windows is [Git Bash](https://git-scm.com/download/win). You can have Git command line and Git Desktop installed on the same machine and they mostly do not affect each other (see notes below).
+
+### Installation
+During installation, you will be given several options:
+
+1. Select the default text editor. It defaults to Vim, but you can select any text editor you have installed on your system.
+2. Override branch name for new repos created with `git init`. It defaults to "master" but you can set your own. This does not affect existing repos. I selected to override and use "main" which is more familiar to me.
+3. Adjust path environment. The most cautious choice is to use Git soley from Git Bash; I selected this as I do not plan on using any other 3rd party software. 
+4. Change SSH executable & backend. The default is the bundled OpenSSH software and crt file.
+5. Configure line endings. As Windows and Unix use different line-end characters, I recommend using the default which is to check out as Windows and commit at Unix. This will prevent issues for other users not on Windows.
+6. Select terminal emulator. I selected the default MinTTY option to make sure I didn't mistake a cmd terminal window for my git terminal.
+7. Choose behavior of `git pull`. Leave it on the default unless you know what effects the other options may have.
+8. Choose credential manager. Choose the default which is the bundled Git Credentials Manager. You will then be able to authenticate once and stay logged in.
+9. Extra options. By default, "Enable file system caching" is checked and "Enable symbolic links" is unchecked. Leave as is unless you know what each option affects.
+10. Experimental options. Leave these unchecked unless you know what you're doing!
+
+### Windows Notes
+1. When first attempting to interact with a repo (either clone/pull/push) Windows will pop up a Git Credentials Window for you to authenticate. Select "Use website" and it will open a browser window the same as happens with Github Desktop. It takes a moment for the connection to be made before you will be able to click the green button to authenticate.
+2. When navigating between directories, if a directory has a space in the name, you must enclose it in single quotes (not backtics)
+3. Occasionally I have typed unequal quotes, ie `cd 'My Documents"` and although GitBash acts as if the command was accepted (showing a new command prompt), nothing happens. The only solution I have found is to close and re-open GitBash.
+4. `pwd` is a shortcut to print the working directory. 
+
+## `git filter-repo`
+
+[`git filter-repo`](https://github.com/newren/git-filter-repo) is a tool that can be used to remove [large or sensitive files](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository) from a repository. It removes the file from all caches, commits, and revision histories without affecting the rest of the repo.
+
+One note: If you commit a large file and make no other changes to the repo in that commit, then you use this tool to remove all traces of that file, the entire commit WILL disappear from the revision history. The commit will remain as long as ANY other file was also touched by the commit.
+
+### Installation  
+
+1. You must first install Python. In GitBash run `python3`and it will install it from the Windows Store.
+1. Find the location of your git installation by running `git --exec-path` in GitBash.
+2. [Save this file](https://github.com/newren/git-filter-repo/blob/main/git-filter-repo) into your Downloads folder if your OS won't allow you to save directly to the git installation location. 
+3. Using File Explorer, change the file name to remove the .txt extension (in Windows 11, at least, it will not download without adding that file extension.)
+4. Copy the renamed file into your git installation folder if you weren't already able to save it there. You will be prompted to provide administrative authorization to permit the copy.
+5. `cd` into a repo and type `git filter-repo` to test. If the installation was successful it will say `no arguments specified`
+
+### Usage
+
+First you will need to know the full repo path & name of the large or sensitive files you wish to delete. To do this, you can browse the previous commits in the repo to identify where they were first added. (Technically, you can get the path/name of the large file from any commit touching that file, but getting it from the initial commit makes sure you don't miss any renames or moves)
+
+Once you have the path/file names, follow the commands [here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository#using-git-filter-repo) to remove each file and add them to gitignore so they don't accidentally get re-committed.
 
 
+## Github Website Tools
+
+### Create Personal Access Token
+
+On the website, go to Account Settings >  Developer Settings > Personal Access Tokens > Token (Classic). There is a Beta version that allows more fine-grained access but I haven't experimented with that yet.
+
+Hit "Generate new token (Classic)". You can specify what this token will be used for and select various permissions to allow for this token.
+
+When the token is generated, you must save it somewhere - Github won't let you see it again. You can then use this token for certain privileged access actions, such as importing another repo into a clean repo repo.
+
+### Import a repo
+
+This action is used when you want to copy another repo into a new repo. It copies ALL past fils, commits, and history, but any actions taken to the new repo will not affect the old repo in the way a branch would.
+
+1. Create a new repo via the website "New repo" button. Give it whatever name and privacy settings are desired.
+2. On the next page, to populate your repository, choose "Import code from another repository".
+3. It will then ask for "Your old repository's clone URL". If you are importing another github repo, the plain repo URL is all that's needed i.e. "https://github.com/jjcurtin/analysis_risk" will import an exact copy of the Risk1 analysis repo. Click "Begin Import".
+4. You will be asked to provide your Login (your github email, NOT the password) and Private Access Token (see above).
 
 
 

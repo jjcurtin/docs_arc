@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.361">
+<meta name="generator" content="quarto-1.3.340">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -57,8 +57,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-submit-button-title": "Submit"
   }
 }</script>
 
@@ -77,7 +76,7 @@ ul.task-list li input[type="checkbox"] {
       <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./git.html">Linux and CLI</a></li><li class="breadcrumb-item"><a href="./git.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Git</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -278,7 +277,21 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#log-and-versioning" id="toc-log-and-versioning" class="nav-link" data-scroll-target="#log-and-versioning"><span class="header-section-number">7.1.4</span> Log and Versioning</a></li>
   <li><a href="#diffs" id="toc-diffs" class="nav-link" data-scroll-target="#diffs"><span class="header-section-number">7.1.5</span> Diffs</a></li>
   </ul></li>
-  <li><a href="#git-command-line-for-windows" id="toc-git-command-line-for-windows" class="nav-link" data-scroll-target="#git-command-line-for-windows"><span class="header-section-number">7.2</span> Git Command Line for Windows</a></li>
+  <li><a href="#git-command-line-for-windows" id="toc-git-command-line-for-windows" class="nav-link" data-scroll-target="#git-command-line-for-windows"><span class="header-section-number">7.2</span> Git Command Line for Windows</a>
+  <ul class="collapse">
+  <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation"><span class="header-section-number">7.2.1</span> Installation</a></li>
+  <li><a href="#windows-notes" id="toc-windows-notes" class="nav-link" data-scroll-target="#windows-notes"><span class="header-section-number">7.2.2</span> Windows Notes</a></li>
+  </ul></li>
+  <li><a href="#git-filter-repo" id="toc-git-filter-repo" class="nav-link" data-scroll-target="#git-filter-repo"><span class="header-section-number">7.3</span> <code>git filter-repo</code></a>
+  <ul class="collapse">
+  <li><a href="#installation-1" id="toc-installation-1" class="nav-link" data-scroll-target="#installation-1"><span class="header-section-number">7.3.1</span> Installation</a></li>
+  <li><a href="#usage" id="toc-usage" class="nav-link" data-scroll-target="#usage"><span class="header-section-number">7.3.2</span> Usage</a></li>
+  </ul></li>
+  <li><a href="#github-website-tools" id="toc-github-website-tools" class="nav-link" data-scroll-target="#github-website-tools"><span class="header-section-number">7.4</span> Github Website Tools</a>
+  <ul class="collapse">
+  <li><a href="#create-personal-access-token" id="toc-create-personal-access-token" class="nav-link" data-scroll-target="#create-personal-access-token"><span class="header-section-number">7.4.1</span> Create Personal Access Token</a></li>
+  <li><a href="#import-a-repo" id="toc-import-a-repo" class="nav-link" data-scroll-target="#import-a-repo"><span class="header-section-number">7.4.2</span> Import a repo</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jjcurtin/docs_arc/edit/main/git.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
@@ -379,9 +392,74 @@ cmd = meld "$LOCAL" "$REMOTE"
 </section>
 <section id="git-command-line-for-windows" class="level2" data-number="7.2">
 <h2 data-number="7.2" class="anchored" data-anchor-id="git-command-line-for-windows"><span class="header-section-number">7.2</span> Git Command Line for Windows</h2>
-<p>The recommended terminal for using the Git command line on Windows is <a href="https://git-scm.com/download/win">Git Bash</a>.</p>
+<p>The recommended terminal for using the Git command line on Windows is <a href="https://git-scm.com/download/win">Git Bash</a>. You can have Git command line and Git Desktop installed on the same machine and they mostly do not affect each other (see notes below).</p>
+<section id="installation" class="level3" data-number="7.2.1">
+<h3 data-number="7.2.1" class="anchored" data-anchor-id="installation"><span class="header-section-number">7.2.1</span> Installation</h3>
+<p>During installation, you will be given several options:</p>
+<ol type="1">
+<li>Select the default text editor. It defaults to Vim, but you can select any text editor you have installed on your system.</li>
+<li>Override branch name for new repos created with <code>git init</code>. It defaults to “master” but you can set your own. This does not affect existing repos. I selected to override and use “main” which is more familiar to me.</li>
+<li>Adjust path environment. The most cautious choice is to use Git soley from Git Bash; I selected this as I do not plan on using any other 3rd party software.</li>
+<li>Change SSH executable &amp; backend. The default is the bundled OpenSSH software and crt file.</li>
+<li>Configure line endings. As Windows and Unix use different line-end characters, I recommend using the default which is to check out as Windows and commit at Unix. This will prevent issues for other users not on Windows.</li>
+<li>Select terminal emulator. I selected the default MinTTY option to make sure I didn’t mistake a cmd terminal window for my git terminal.</li>
+<li>Choose behavior of <code>git pull</code>. Leave it on the default unless you know what effects the other options may have.</li>
+<li>Choose credential manager. Choose the default which is the bundled Git Credentials Manager. You will then be able to authenticate once and stay logged in.</li>
+<li>Extra options. By default, “Enable file system caching” is checked and “Enable symbolic links” is unchecked. Leave as is unless you know what each option affects.</li>
+<li>Experimental options. Leave these unchecked unless you know what you’re doing!</li>
+</ol>
+</section>
+<section id="windows-notes" class="level3" data-number="7.2.2">
+<h3 data-number="7.2.2" class="anchored" data-anchor-id="windows-notes"><span class="header-section-number">7.2.2</span> Windows Notes</h3>
+<ol type="1">
+<li>When first attempting to interact with a repo (either clone/pull/push) Windows will pop up a Git Credentials Window for you to authenticate. Select “Use website” and it will open a browser window the same as happens with Github Desktop. It takes a moment for the connection to be made before you will be able to click the green button to authenticate.</li>
+<li>When navigating between directories, if a directory has a space in the name, you must enclose it in single quotes (not backtics)</li>
+<li>Occasionally I have typed unequal quotes, ie <code>cd 'My Documents"</code> and although GitBash acts as if the command was accepted (showing a new command prompt), nothing happens. The only solution I have found is to close and re-open GitBash.</li>
+<li><code>pwd</code> is a shortcut to print the working directory.</li>
+</ol>
+</section>
+</section>
+<section id="git-filter-repo" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="git-filter-repo"><span class="header-section-number">7.3</span> <code>git filter-repo</code></h2>
+<p><a href="https://github.com/newren/git-filter-repo"><code>git filter-repo</code></a> is a tool that can be used to remove <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository">large or sensitive files</a> from a repository. It removes the file from all caches, commits, and revision histories without affecting the rest of the repo.</p>
+<p>One note: If you commit a large file and make no other changes to the repo in that commit, then you use this tool to remove all traces of that file, the entire commit WILL disappear from the revision history. The commit will remain as long as ANY other file was also touched by the commit.</p>
+<section id="installation-1" class="level3" data-number="7.3.1">
+<h3 data-number="7.3.1" class="anchored" data-anchor-id="installation-1"><span class="header-section-number">7.3.1</span> Installation</h3>
+<ol type="1">
+<li>You must first install Python. In GitBash run <code>python3</code>and it will install it from the Windows Store.</li>
+<li>Find the location of your git installation by running <code>git --exec-path</code> in GitBash.</li>
+<li><a href="https://github.com/newren/git-filter-repo/blob/main/git-filter-repo">Save this file</a> into your Downloads folder if your OS won’t allow you to save directly to the git installation location.</li>
+<li>Using File Explorer, change the file name to remove the .txt extension (in Windows 11, at least, it will not download without adding that file extension.)</li>
+<li>Copy the renamed file into your git installation folder if you weren’t already able to save it there. You will be prompted to provide administrative authorization to permit the copy.</li>
+<li><code>cd</code> into a repo and type <code>git filter-repo</code> to test. If the installation was successful it will say <code>no arguments specified</code></li>
+</ol>
+</section>
+<section id="usage" class="level3" data-number="7.3.2">
+<h3 data-number="7.3.2" class="anchored" data-anchor-id="usage"><span class="header-section-number">7.3.2</span> Usage</h3>
+<p>First you will need to know the full repo path &amp; name of the large or sensitive files you wish to delete. To do this, you can browse the previous commits in the repo to identify where they were first added. (Technically, you can get the path/name of the large file from any commit touching that file, but getting it from the initial commit makes sure you don’t miss any renames or moves)</p>
+<p>Once you have the path/file names, follow the commands <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository#using-git-filter-repo">here</a> to remove each file and add them to gitignore so they don’t accidentally get re-committed.</p>
+</section>
+</section>
+<section id="github-website-tools" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="github-website-tools"><span class="header-section-number">7.4</span> Github Website Tools</h2>
+<section id="create-personal-access-token" class="level3" data-number="7.4.1">
+<h3 data-number="7.4.1" class="anchored" data-anchor-id="create-personal-access-token"><span class="header-section-number">7.4.1</span> Create Personal Access Token</h3>
+<p>On the website, go to Account Settings &gt; Developer Settings &gt; Personal Access Tokens &gt; Token (Classic). There is a Beta version that allows more fine-grained access but I haven’t experimented with that yet.</p>
+<p>Hit “Generate new token (Classic)”. You can specify what this token will be used for and select various permissions to allow for this token.</p>
+<p>When the token is generated, you must save it somewhere - Github won’t let you see it again. You can then use this token for certain privileged access actions, such as importing another repo into a clean repo repo.</p>
+</section>
+<section id="import-a-repo" class="level3" data-number="7.4.2">
+<h3 data-number="7.4.2" class="anchored" data-anchor-id="import-a-repo"><span class="header-section-number">7.4.2</span> Import a repo</h3>
+<p>This action is used when you want to copy another repo into a new repo. It copies ALL past fils, commits, and history, but any actions taken to the new repo will not affect the old repo in the way a branch would.</p>
+<ol type="1">
+<li>Create a new repo via the website “New repo” button. Give it whatever name and privacy settings are desired.</li>
+<li>On the next page, to populate your repository, choose “Import code from another repository”.</li>
+<li>It will then ask for “Your old repository’s clone URL”. If you are importing another github repo, the plain repo URL is all that’s needed i.e.&nbsp;“https://github.com/jjcurtin/analysis_risk” will import an exact copy of the Risk1 analysis repo. Click “Begin Import”.</li>
+<li>You will be asked to provide your Login (your github email, NOT the password) and Private Access Token (see above).</li>
+</ol>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
