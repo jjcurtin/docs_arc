@@ -473,7 +473,7 @@
     "href": "vim.html#search-in-vim",
     "title": "10  Vim",
     "section": "10.7 Search in VIM",
-    "text": "10.7 Search in VIM\n\n/text to search forward for text. Type ENTER to exit to that text.\n?text to search backward for text.\nn to find next instance of text (after ENTER)\nN to find previous instance of text (after ENTER)"
+    "text": "10.7 Search in VIM\n\n/text to search forward for text. Type ENTER to exit to that text.\n?text to search backward for text.\nn to find next instance of text (after ENTER)\nN to find previous instance of text (after ENTER)\n\nFor search and replace\n\n`%s///options\noptions include g for replace all, c for confirmation and i for case insensitive"
   },
   {
     "objectID": "vim.html#visual-selection",

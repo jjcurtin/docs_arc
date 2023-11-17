@@ -69,6 +69,11 @@ Remember to enter command mode by pressing `esc`
 - `n` to find next instance of text (after ENTER)
 - `N` to find previous instance of text (after ENTER)
 
+For search and replace
+
+- `%s/<search_phrase>/<replace_phrase>/options
+- options include `g` for replace all, `c` for confirmation and `i` for case insensitive
+
 ## Visual selection
 
 - `v` to select text.  Move cursor around with hjkl keys
