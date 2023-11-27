@@ -7,8 +7,7 @@ params:
 ---
 
 
-# Quarto with Parameters
-
+# Quarto
 
 ## Assigning values to parameters
 You define parameters in the YAML using the syntax below
@@ -50,7 +49,7 @@ params$pv1 + params$pv2
 
 * You can also access these values using inline r statements. See example below.  I strongly recommend using this in the title of your document so that you can confirm that you correctly updated the parameter values when you rendered!  e.g.,
 
-```{}
+```{r}
 #| eval: false
 
 title: "Demo of quarto document with pv1 = `r params$pv1` and  pv2 = `r params$pv2`."
@@ -69,7 +68,7 @@ Use the following syntax to render quarto documents at command line.
 * use -P to provide a parameter value.  No space between parameter name and value.  If you provide values for only a subset of parameters, defaults will be used for other parameters
 * use `-o` to specify filename (defaults to input filename if not provided).
 
-```{}
+```{r}
 #| eval: false
 
 quarto render docname.qmd -o outputname.html  -P pv1:1 -P pv2:5
