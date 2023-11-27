@@ -1,0 +1,27 @@
+---
+title: "This is value for parameter 1: `r params$pv1` and  parameter 2: `r params$pv2`."
+author: "John Curtin"
+params:
+  pv1: 5
+  pv2: 10
+---
+
+You can use these parameters directly in your scripts
+```{r}
+params$pv1 + params$pv2
+```
+
+However, I find that its cumbersome to have to use param$ before each variable name.  I prefer to assign the parameters to variables by the same name at the top of the script
+```{r}
+pv1 <- params$pv1
+pv2 <- params$pv2
+```
+
+You can then use these variables as normal
+
+```{r}
+pv1 + pv2
+```
+
+
+

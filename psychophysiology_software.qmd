@@ -382,3 +382,8 @@ If you are using the trigger unit with the Grael PSG or EEG amplifier, you shoul
   *	Both of these bugs are fixed in a custom patch sent to us from Curry tech support. Hotfix is saved on the server: P:\Documentation\Neuroscan and Peripherals\Curry\Curry701029Hotfix.exe
 *	Sampling rate must be set at 2048Hz for triggers to register in Grael EEG.
 *	Bipolar channels are optically isolated from each other (per Ronnie email 2016_0728) and therefore it is safe to send audio/probe channel into bipolar channel while recording. Must be attenuated within range (<600uV or +-300uV).
+
+
+## Physbox
+
+See documentation at [https://arc.psych.wisc.edu/physbox/](https://arc.psych.wisc.edu/physbox/)
