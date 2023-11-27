@@ -1,0 +1,66 @@
+# Quarto with Parameters
+
+## Assigning values to parameters
+You define parameters in the YAML using the syntax below
+
+* You can assign initial values to the parameters.  These values will be used by default if you do not replace them with new values from the command line when you render the script.
+* You can update these values with new values you pass in when you render the script (see below).    
+* If you only provide a subset of updated parameter values when you render the document, the default values will be used for the remaining parameters.
+
+```{r}
+#| eval: false
+
+params:
+  pv1: 5
+  pv2: 10
+```
+
+
+For a variety of reasons, I prefer to assign the values from the params list to individual variables
+
+* Code is shorter when using these variables
+* I can update them interactively if I want to use different values (the params list is read-only)
+
+First set the parameters in the YAML as above.  Then put this code chunk right at the top of the script.   If you edit this code chunk to assign new values interactively, make sure you comment it out when you save the final script!
+```{r}
+pv1 <- params$pv1
+pv2 <- params$pv2
+# pv1 <- 5 # Use this line to interactively assign new value
+# pv2 <- 10 # use this line to interactively assign new value
+```
+
+
+## Using parameter values
+When you use params in the YAML, a list named `params` is created.  
+
+* You can then use this list as normal with no further code needed to establish the values.
+```{r}
+params$pv1 + params$pv2
+```
+
+* You can also access these values using inline r statements. See example below.  I strongly recommend using this in the title of your document so that you can confirm that you correctly updated the parameter values when you rendered!  e.g.,
+
+```{}
+#| eval: false
+
+title: "Demo of quarto document with pv1 = `r params$pv1` and  pv2 = `r params$pv2`."
+```
+
+* Or if you assigned the parameter values to variables as I recommended, you can just use those variables as you normally would.  They will start with the values assigned to associated parameters (in YAML or input from command line)
+
+## Passing parameter values at command line
+
+I prefer to render quarto documents in the terminal.  
+
+* You can indicate the output filename (otherwise, the output file name is set to the input filename with a different extension).  
+* You can also pass in values to the parameters, which is typically why we use parameters in the first place
+
+Use the following syntax to render quarto documents at command line.
+* use -P to provide a parameter value.  No space between parameter name and value.  If you provide values for only a subset of parameters, defaults will be used for other parameters
+* use `-o` to specify filename (defaults to input filename if not provided).
+
+```{}
+#| eval: false
+
+quarto render docname.qmd -o outputname.html  -P pv1:1 -P pv2:5
+```
