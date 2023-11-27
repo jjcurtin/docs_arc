@@ -1,4 +1,14 @@
+---
+editor_options: 
+  chunk_output_type: console
+params:
+  pv1: 5
+  pv2: 10
+---
+
+
 # Quarto with Parameters
+
 
 ## Assigning values to parameters
 You define parameters in the YAML using the syntax below
