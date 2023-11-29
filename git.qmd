@@ -106,9 +106,22 @@ One note: If you commit a large file and make no other changes to the repo in th
 
 ### Usage
 
-First you will need to know the full repo path & name of the large or sensitive files you wish to delete. To do this, you can browse the previous commits in the repo to identify where they were first added. (Technically, you can get the path/name of the large file from any commit touching that file, but getting it from the initial commit makes sure you don't miss any renames or moves)
+First you will need to know the full repo path & name of the large or sensitive files you wish to delete. To do this, you can browse the previous commits in the repo to identify where they were first added. (Technically, you can get the path/name of the large file from any commit touching that file, but getting it from the initial commit makes sure you don't miss any renames or moves).
 
-Once you have the path/file names, follow the commands [here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository#using-git-filter-repo) to remove each file and add them to gitignore so they don't accidentally get re-committed.
+
+You could also run the following command to find XX largest objects in repo:
+
+```
+git rev-list --objects --all \  
+  | grep "$(git verify-pack -v .git/objects/pack/*.idx \  
+           | sort -k 3 -n \  
+           | tail -XX \  
+           | awk '{print$1}')"
+```           
+           
+This outputs the path names in a format which is easy to copy.
+
+Once you have the path/file names, follow the commands [here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository#using-git-filter-repo) to remove each file and add them to gitignore so they don't accidentally get re-committed. You can run an entire list of `git filter-repo` commands to remove many files at once.
 
 
 ## Github Website Tools
