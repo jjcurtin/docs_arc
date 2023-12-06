@@ -13,7 +13,8 @@ We list potential study ideas below, organized by project/data set.  When projec
 - Model duration of lapse rather than binary outcome to allow move toward harm reduction approaches
 - Model lapses that are labeled (or quantified) on severity based on chaining, or perhaps the respone to them (what the say about future ab goal, EMA affect after, etc)
 - Establish individual lapse as a clinically meaningful event - use lapse/no lapse as feature to predict variety of negative outcomes from (next? subsequent period?) EMAs, e.g., craving, risky situations, stressful events, negative affect, self-efficacy/change of abstinence goal (abstinence violation effect). Account for previous negative outcome level (either include as covariate [feature]? or make outcome a change score) [unassigned]
-
+- Look at model performance in subsets of data.  This will include traditional disparities based on race/ethnicity, sex, age, income. But also include model  performance based on lapse frequency, time on system,  AUD severity, etc.  [Coco submitted a poster abstract on this topic.  She is planning to lead effort to write paper on this topic]
+- Explore methods to reduce model performance bias among groups that are poorly represented in the training data.  This could be done for participants of color in RISK1 data.   We could consider resampling training data to increase relative representation of these participants.  We can also consider methods to weight errors for these participants.  [This was Coco's idea.  She plans to lead a paper on this topic after we first publish the previous paper about disparities in model performance]
 ## RISK2
 
 
