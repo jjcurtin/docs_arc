@@ -382,7 +382,13 @@ ul.task-list li input[type="checkbox"] {
 cmd = meld "$LOCAL" "$REMOTE"
 
 # The order of the Meld GUI window panes can be controlled by the order of $LOCAL and $REMOTE in cmd.  JJC still not certain about this?</code></pre>
-<p>Once you have done this, git difftool will call meld. You can now use meld for diffs: - <code>git difftool filename</code> to compare local copy (not committed) of filename to head on repo - <code>git difftool &lt;COMMIT_HASH&gt; filename</code> to compare previous version of filename to head version on repo. - <code>git difftool HEAD HEAD~2 filename</code> to compare head version of filename on repo with version of filename two commits back. - <code>git difftool &lt;COMMIT_HASH_1&gt; &lt;COMMIT_HASH_2&gt; filename</code> to compare two versions of a file across two separate commits that are not the head on the repo.</p>
+<p>Once you have done this, git difftool will call meld. You can now use meld for diffs:</p>
+<ul>
+<li><code>git difftool filename</code> to compare local copy (not committed) of filename to head on repo</li>
+<li><code>git difftool &lt;COMMIT_HASH&gt; filename</code> to compare previous version of filename to head version on repo.</li>
+<li><code>git difftool HEAD HEAD~2 filename</code> to compare head version of filename on repo with version of filename two commits back.</li>
+<li><code>git difftool &lt;COMMIT_HASH_1&gt; &lt;COMMIT_HASH_2&gt; filename</code> to compare two versions of a file across two separate commits that are not the head on the repo.</li>
+</ul>
 </section>
 </section>
 <section id="git-command-line-for-windows" class="level2" data-number="8.2">

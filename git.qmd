@@ -56,6 +56,7 @@ cmd = meld "$LOCAL" "$REMOTE"
 ```
 
 Once you have done this, git difftool will call meld.  You can now use meld for diffs: 
+
 - `git difftool filename` to compare local copy (not committed) of filename to head on repo
 - `git difftool <COMMIT_HASH> filename` to compare previous version of filename to head version on repo.
 - `git difftool HEAD HEAD~2 filename` to compare head version of filename on repo with version of filename two commits back.
