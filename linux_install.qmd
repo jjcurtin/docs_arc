@@ -197,6 +197,17 @@ This will set up a green prompt with relative path for current directory.
 
 PS1="\e[0;32;1m[\w]\$ \e[m"
 
+## Word doc conversions
+
+Can convert doc file to text using `catdoc`
+
+- install with `sudo apt-get catdocs`
+- use: `catdoc foo.doc > foo.txt` 
+
+Can convert docx file using `docx2txt`
+
+- install with `sudo apt-get install docx2txt`
+- use: `docx2txt foo.docx`
 
 ## Git Command Line for Windows
 
