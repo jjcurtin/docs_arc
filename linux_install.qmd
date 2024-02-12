@@ -197,7 +197,7 @@ This will set up a green prompt with relative path for current directory.
 
 PS1="\e[0;32;1m[\w]\$ \e[m"
 
-## Word doc conversions
+##  File conversions
 
 Can convert doc file to text using `catdoc`
 
@@ -208,6 +208,18 @@ Can convert docx file using `docx2txt`
 
 - install with `sudo apt-get install docx2txt`
 - use: `docx2txt foo.docx`
+
+Can convert pdf to text
+
+- `sudo apt install poppler-utils`
+- use: `pdftotext filname.pdf`
+
+## Vim-anywhere
+
+Install with: `curl -fsSL https://raw.github.com/cknadler/vim-anywhere/master/install | bash`
+
+- Prompts will indicate if you need to install some other apps
+- May need to tweak shortcut to get linux to recognize it
 
 ## Git Command Line for Windows
 
