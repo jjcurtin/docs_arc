@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -393,10 +393,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
 <li>You can also pass in values to the parameters, which is typically why we use parameters in the first place</li>
 </ul>
-<p>Use the following syntax to render quarto documents at command line. * use -P to provide a parameter value. No space between parameter name and value. If you provide values for only a subset of parameters, defaults will be used for other parameters * use <code>-o</code> to specify filename (defaults to input filename if not provided).</p>
+<p>Use the following syntax to render quarto documents at command line.</p>
+<ul>
+<li>use -P to provide a parameter value. No space between parameter name and value. If you provide values for only a subset of parameters, defaults will be used for other parameters</li>
+<li>use <code>-o</code> to specify filename (defaults to input filename if not provided).</li>
+</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>quarto render docname.qmd <span class="sc">-</span>o outputname.html  <span class="sc">-</span>P pv1<span class="sc">:</span><span class="dv">1</span> <span class="sc">-</span>P pv2<span class="sc">:</span><span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>For rendering books and slides, we have written a bash script to handle setting the <code>_quarto.yml</code> file and then rendering the full project or a single file.</p>
+<ul>
+<li>call the function from the terminal: <code>./render.sh filename.qmd book</code></li>
+<li>the first parameter can be the name of the qmd file or <code>all</code> to render all units (only used for books, not slides)</li>
+<li>the second parameter can be <code>book</code>, <code>slides</code> or <code>slides_wide</code></li>
+</ul>
 
 
 </section>

@@ -65,6 +65,7 @@ I prefer to render quarto documents in the terminal.
 * You can also pass in values to the parameters, which is typically why we use parameters in the first place
 
 Use the following syntax to render quarto documents at command line.
+
 * use -P to provide a parameter value.  No space between parameter name and value.  If you provide values for only a subset of parameters, defaults will be used for other parameters
 * use `-o` to specify filename (defaults to input filename if not provided).
 
@@ -73,3 +74,9 @@ Use the following syntax to render quarto documents at command line.
 
 quarto render docname.qmd -o outputname.html  -P pv1:1 -P pv2:5
 ```
+
+For rendering books and slides, we have written a bash script to handle setting the `_quarto.yml` file and then rendering the full project or a single file.  
+
+- call the function from the terminal: `./render.sh filename.qmd book`
+- the first parameter can be the name of the qmd file or `all` to render all units (only used for books, not slides)
+- the second parameter can be `book`, `slides` or `slides_wide`
