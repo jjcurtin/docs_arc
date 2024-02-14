@@ -9,6 +9,10 @@ params:
 
 # Quarto
 
+## Checking installation details
+
+`/opt/quarto/"${QUARTO_VERSION}"/bin/quarto check` in the terminal
+
 ## Assigning values to parameters
 You define parameters in the YAML using the syntax below
 
