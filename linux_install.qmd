@@ -6,23 +6,44 @@ https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview
 
 ## Install key support apps
 
-`sudo apt install git` `sudo apt install vim`
-
-## Create and edit aliases
+- `sudo apt install git` 
+- `sudo apt install vim`
 
 ## R
 
-sudo apt install -y --no-install-recommends software-properties-common dirmngr wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc \| sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc sudo add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu \$(lsb_release -cs)-cran40/" sudo apt install -y r-base r-base-core r-recommended r-base-dev sudo apt install libcurl4-openssl-dev sudo apt install libfontconfig1-dev sudo apt install libxml2-dev sudo apt install libharfbuzz-dev libfribidi-dev
 
-`wget https://download1.rstudio.org/electron/jammy/amd64/rstudio-2023.03.0-386-amd64.deb` `sudo apt install -f ./rstudio-2023.03.0-386-amd64.deb`
+Following [this website](https://cran.r-project.org/bin/linux/ubuntu/fullREADME.html)
 
-install.packages("devtools") library(devtools) install.packages("tidyverse")
+- sudo apt-get update
+- wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc
+- to verify key type:  gpg --show-keys /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc
+- sudo apt-get update
+- sudo apt-get install r-base r-base-core r-recommended r-base-dev
+- sudo apt install libcurl4-openssl-dev
+- sudo apt install libfontconfig1-dev
+- sudo apt install libxml2-dev
+- sudo apt install libharfbuzz-dev libfribidi-dev
+- sudo apt install libssl-dev
+- sudo apt  install libtiff5-dev
+- sudo apt install libfreetype6-dev 
+- sudo apt install libpng-dev
+- libjpeg-dev
 
-https://www.r-bloggers.com/2022/08/installation-of-r-4-2-on-ubuntu-22-04-1-lts-and-tips-for-spatial-packages/
+Then install RStudio by getting [current deb file](https://posit.co/download/rstudio-desktop/#download) from their website
 
-https://www.digitalocean.com/community/tutorials/how-to-install-r-on-ubuntu-22-04
+Then install key packages
 
-https://computingforgeeks.com/how-to-install-r-and-rstudio-on-ubuntu-debian-mint/
+- devtools
+- tidyverse
+
+For more info if problems
+
+- https://www.r-bloggers.com/2022/08/installation-of-r-4-2-on-ubuntu-22-04-1-lts-and-tips-for-spatial-packages/
+
+- https://www.digitalocean.com/community/tutorials/how-to-install-r-on-ubuntu-22-04
+
+- https://computingforgeeks.com/how-to-install-r-and-rstudio-on-ubuntu-debian-mint/
+
 
 ## Quarto
 
@@ -54,13 +75,15 @@ Slack is easily installed from the Ubuntu Software Center. Open up the software 
 
 ## Global Protect
 
--   \[Install\] (https://kb.wisc.edu/helpdesk/105971)
--   \[\]
+-   [Install] (https://kb.wisc.edu/helpdesk/105971)
+-   []
+
 
 ## Meld Merge for file diffs
 
--   download and install [meld merge](https://meldmerge.org/)
--   add the following to your .gitconfig file
+- install from terminal: `sudo apt install meld`
+- or download and install [meld merge](https://meldmerge.org/)
+- add the following to your .gitconfig file
 
 ```         
 [diff]
@@ -73,25 +96,28 @@ cmd = meld "$LOCAL" "$REMOTE"
 # The order of the Meld GUI window panes can be controlled by the order of $LOCAL and $REMOTE in cmd
 ```
 
+
 ## CSV
 
 https://www.tadviewer.com/
 
 https://www.moderncsv.com/
 
+
 ## Mount Shares
 
--   `sudo apt-get install cifs-utils`
+- `sudo apt-get install cifs-utils`
 
--   create directories within \~/mnt/ for each share.
+- create directories within \~/mnt/ for each share.
 
--   save credentials file for synology (.synology_credentials) or research drive (.researchdrive_credentials) at /root/. These should include username=, password= (and for research drive, domain=ad.wisc.edu)
+- credential files are already saved in ~/github/linux/config
+- aliases for mounts are already saved in ~/github/linux/config/.bash_aliases
 
--   create an alias for the command for each share to mount. Get it from John
 
 ## Set up SSH Client and Server
 
 https://ubuntu.com/server/docs/service-openssh
+
 
 ## Creating SSH passkeys
 
@@ -157,21 +183,25 @@ For more info
 
 -   https://www.beyondtrust.com/blog/entry/ssh-key-management-overview-6-best-practices
 
+
 ## Sound mixer settings
 
 install pavucontrol to get mic on zoom to work
 
 alsamixer from terminal may help
 
+
 ## VNC for Remote Access
 
 https://kb.wisc.edu/biochem/it/page.php?id=127360
+
 
 ## SSH to office computer
 
 https://linuxhint.com/enable-use-ssh-ubuntu/
 
 use username for hostname
+
 
 ### X11 forwarding
 
@@ -183,6 +213,7 @@ X11 forwarding is used in SSH to display GUI for app (e.g., rstudio) on remote c
 
 Need to use -X flag with ssh from local computer. Can then open GUI for remote app (e.g.. rstudio)
 
+
 ### VNC
 
 -   [Documentation](https://kb.wisc.edu/biochem/it/page.php?id=127360) on how to install tightvnc on host.
@@ -191,11 +222,13 @@ Need to use -X flag with ssh from local computer. Can then open GUI for remote a
 
 -   On client, can use Remmina with SSH.
 
+
 ## Customize CLI prompt
 
 This will set up a green prompt with relative path for current directory.
 
 PS1="\e[0;32;1m[\w]\$ \e[m"
+
 
 ##  File conversions
 
@@ -214,12 +247,14 @@ Can convert pdf to text
 - `sudo apt install poppler-utils`
 - use: `pdftotext filname.pdf`
 
+
 ## Vim-anywhere
 
 Install with: `curl -fsSL https://raw.github.com/cknadler/vim-anywhere/master/install | bash`
 
 - Prompts will indicate if you need to install some other apps
 - May need to tweak shortcut to get linux to recognize it
+
 
 ## Git Command Line for Windows
 

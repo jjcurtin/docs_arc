@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.551">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -81,7 +81,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -90,6 +96,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -105,12 +112,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./git.html">Linux and CLI</a></li><li class="breadcrumb-item"><a href="./linux_install.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Installing Linux</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./git.html">Linux and CLI</a></li><li class="breadcrumb-item"><a href="./linux_install.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Installing Linux</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -120,12 +127,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Documentation for ARC</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/jjcurtin/docs_arc" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/jjcurtin/docs_arc" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
       <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
@@ -303,7 +310,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -312,35 +319,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#install-os" id="toc-install-os" class="nav-link active" data-scroll-target="#install-os"><span class="header-section-number">9.1</span> Install OS</a></li>
   <li><a href="#install-key-support-apps" id="toc-install-key-support-apps" class="nav-link" data-scroll-target="#install-key-support-apps"><span class="header-section-number">9.2</span> Install key support apps</a></li>
-  <li><a href="#create-and-edit-aliases" id="toc-create-and-edit-aliases" class="nav-link" data-scroll-target="#create-and-edit-aliases"><span class="header-section-number">9.3</span> Create and edit aliases</a></li>
-  <li><a href="#r" id="toc-r" class="nav-link" data-scroll-target="#r"><span class="header-section-number">9.4</span> R</a></li>
-  <li><a href="#quarto" id="toc-quarto" class="nav-link" data-scroll-target="#quarto"><span class="header-section-number">9.5</span> Quarto</a></li>
-  <li><a href="#zotero" id="toc-zotero" class="nav-link" data-scroll-target="#zotero"><span class="header-section-number">9.6</span> Zotero</a></li>
-  <li><a href="#slack" id="toc-slack" class="nav-link" data-scroll-target="#slack"><span class="header-section-number">9.7</span> Slack</a>
+  <li><a href="#r" id="toc-r" class="nav-link" data-scroll-target="#r"><span class="header-section-number">9.3</span> R</a></li>
+  <li><a href="#quarto" id="toc-quarto" class="nav-link" data-scroll-target="#quarto"><span class="header-section-number">9.4</span> Quarto</a></li>
+  <li><a href="#zotero" id="toc-zotero" class="nav-link" data-scroll-target="#zotero"><span class="header-section-number">9.5</span> Zotero</a></li>
+  <li><a href="#slack" id="toc-slack" class="nav-link" data-scroll-target="#slack"><span class="header-section-number">9.6</span> Slack</a>
   <ul class="collapse">
-  <li><a href="#pdfs" id="toc-pdfs" class="nav-link" data-scroll-target="#pdfs"><span class="header-section-number">9.7.1</span> pdfs</a></li>
+  <li><a href="#pdfs" id="toc-pdfs" class="nav-link" data-scroll-target="#pdfs"><span class="header-section-number">9.6.1</span> pdfs</a></li>
   </ul></li>
-  <li><a href="#global-protect" id="toc-global-protect" class="nav-link" data-scroll-target="#global-protect"><span class="header-section-number">9.8</span> Global Protect</a></li>
-  <li><a href="#meld-merge-for-file-diffs" id="toc-meld-merge-for-file-diffs" class="nav-link" data-scroll-target="#meld-merge-for-file-diffs"><span class="header-section-number">9.9</span> Meld Merge for file diffs</a></li>
-  <li><a href="#csv" id="toc-csv" class="nav-link" data-scroll-target="#csv"><span class="header-section-number">9.10</span> CSV</a></li>
-  <li><a href="#mount-shares" id="toc-mount-shares" class="nav-link" data-scroll-target="#mount-shares"><span class="header-section-number">9.11</span> Mount Shares</a></li>
-  <li><a href="#set-up-ssh-client-and-server" id="toc-set-up-ssh-client-and-server" class="nav-link" data-scroll-target="#set-up-ssh-client-and-server"><span class="header-section-number">9.12</span> Set up SSH Client and Server</a></li>
-  <li><a href="#creating-ssh-passkeys" id="toc-creating-ssh-passkeys" class="nav-link" data-scroll-target="#creating-ssh-passkeys"><span class="header-section-number">9.13</span> Creating SSH passkeys</a></li>
-  <li><a href="#sound-mixer-settings" id="toc-sound-mixer-settings" class="nav-link" data-scroll-target="#sound-mixer-settings"><span class="header-section-number">9.14</span> Sound mixer settings</a></li>
-  <li><a href="#vnc-for-remote-access" id="toc-vnc-for-remote-access" class="nav-link" data-scroll-target="#vnc-for-remote-access"><span class="header-section-number">9.15</span> VNC for Remote Access</a></li>
-  <li><a href="#ssh-to-office-computer" id="toc-ssh-to-office-computer" class="nav-link" data-scroll-target="#ssh-to-office-computer"><span class="header-section-number">9.16</span> SSH to office computer</a>
+  <li><a href="#global-protect" id="toc-global-protect" class="nav-link" data-scroll-target="#global-protect"><span class="header-section-number">9.7</span> Global Protect</a></li>
+  <li><a href="#meld-merge-for-file-diffs" id="toc-meld-merge-for-file-diffs" class="nav-link" data-scroll-target="#meld-merge-for-file-diffs"><span class="header-section-number">9.8</span> Meld Merge for file diffs</a></li>
+  <li><a href="#csv" id="toc-csv" class="nav-link" data-scroll-target="#csv"><span class="header-section-number">9.9</span> CSV</a></li>
+  <li><a href="#mount-shares" id="toc-mount-shares" class="nav-link" data-scroll-target="#mount-shares"><span class="header-section-number">9.10</span> Mount Shares</a></li>
+  <li><a href="#set-up-ssh-client-and-server" id="toc-set-up-ssh-client-and-server" class="nav-link" data-scroll-target="#set-up-ssh-client-and-server"><span class="header-section-number">9.11</span> Set up SSH Client and Server</a></li>
+  <li><a href="#creating-ssh-passkeys" id="toc-creating-ssh-passkeys" class="nav-link" data-scroll-target="#creating-ssh-passkeys"><span class="header-section-number">9.12</span> Creating SSH passkeys</a></li>
+  <li><a href="#sound-mixer-settings" id="toc-sound-mixer-settings" class="nav-link" data-scroll-target="#sound-mixer-settings"><span class="header-section-number">9.13</span> Sound mixer settings</a></li>
+  <li><a href="#vnc-for-remote-access" id="toc-vnc-for-remote-access" class="nav-link" data-scroll-target="#vnc-for-remote-access"><span class="header-section-number">9.14</span> VNC for Remote Access</a></li>
+  <li><a href="#ssh-to-office-computer" id="toc-ssh-to-office-computer" class="nav-link" data-scroll-target="#ssh-to-office-computer"><span class="header-section-number">9.15</span> SSH to office computer</a>
   <ul class="collapse">
-  <li><a href="#x11-forwarding" id="toc-x11-forwarding" class="nav-link" data-scroll-target="#x11-forwarding"><span class="header-section-number">9.16.1</span> X11 forwarding</a></li>
-  <li><a href="#vnc" id="toc-vnc" class="nav-link" data-scroll-target="#vnc"><span class="header-section-number">9.16.2</span> VNC</a></li>
+  <li><a href="#x11-forwarding" id="toc-x11-forwarding" class="nav-link" data-scroll-target="#x11-forwarding"><span class="header-section-number">9.15.1</span> X11 forwarding</a></li>
+  <li><a href="#vnc" id="toc-vnc" class="nav-link" data-scroll-target="#vnc"><span class="header-section-number">9.15.2</span> VNC</a></li>
   </ul></li>
-  <li><a href="#customize-cli-prompt" id="toc-customize-cli-prompt" class="nav-link" data-scroll-target="#customize-cli-prompt"><span class="header-section-number">9.17</span> Customize CLI prompt</a></li>
+  <li><a href="#customize-cli-prompt" id="toc-customize-cli-prompt" class="nav-link" data-scroll-target="#customize-cli-prompt"><span class="header-section-number">9.16</span> Customize CLI prompt</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jjcurtin/docs_arc/edit/main/linux_install.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/jjcurtin/docs_arc/edit/main/linux_install.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./git.html">Linux and CLI</a></li><li class="breadcrumb-item"><a href="./linux_install.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Installing Linux</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Installing Linux</span></h1>
 </div>
@@ -355,7 +361,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
+
 </header>
+
 
 <section id="install-os" class="level2" data-number="9.1">
 <h2 data-number="9.1" class="anchored" data-anchor-id="install-os"><span class="header-section-number">9.1</span> Install OS</h2>
@@ -363,22 +371,45 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="install-key-support-apps" class="level2" data-number="9.2">
 <h2 data-number="9.2" class="anchored" data-anchor-id="install-key-support-apps"><span class="header-section-number">9.2</span> Install key support apps</h2>
-<p><code>sudo apt install git</code> <code>sudo apt install vim</code></p>
+<ul>
+<li><code>sudo apt install git</code></li>
+<li><code>sudo apt install vim</code></li>
+</ul>
 </section>
-<section id="create-and-edit-aliases" class="level2" data-number="9.3">
-<h2 data-number="9.3" class="anchored" data-anchor-id="create-and-edit-aliases"><span class="header-section-number">9.3</span> Create and edit aliases</h2>
+<section id="r" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="r"><span class="header-section-number">9.3</span> R</h2>
+<p>Following <a href="https://cran.r-project.org/bin/linux/ubuntu/fullREADME.html">this website</a></p>
+<ul>
+<li>sudo apt-get update</li>
+<li>wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc</li>
+<li>to verify key type: gpg –show-keys /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc</li>
+<li>sudo apt-get update</li>
+<li>sudo apt-get install r-base r-base-core r-recommended r-base-dev</li>
+<li>sudo apt install libcurl4-openssl-dev</li>
+<li>sudo apt install libfontconfig1-dev</li>
+<li>sudo apt install libxml2-dev</li>
+<li>sudo apt install libharfbuzz-dev libfribidi-dev</li>
+<li>sudo apt install libssl-dev</li>
+<li>sudo apt install libtiff5-dev</li>
+<li>sudo apt install libfreetype6-dev</li>
+<li>sudo apt install libpng-dev</li>
+<li>libjpeg-dev</li>
+</ul>
+<p>Then install RStudio by getting <a href="https://posit.co/download/rstudio-desktop/#download">current deb file</a> from their website</p>
+<p>Then install key packages</p>
+<ul>
+<li>devtools</li>
+<li>tidyverse</li>
+</ul>
+<p>For more info if problems</p>
+<ul>
+<li><p>https://www.r-bloggers.com/2022/08/installation-of-r-4-2-on-ubuntu-22-04-1-lts-and-tips-for-spatial-packages/</p></li>
+<li><p>https://www.digitalocean.com/community/tutorials/how-to-install-r-on-ubuntu-22-04</p></li>
+<li><p>https://computingforgeeks.com/how-to-install-r-and-rstudio-on-ubuntu-debian-mint/</p></li>
+</ul>
 </section>
-<section id="r" class="level2" data-number="9.4">
-<h2 data-number="9.4" class="anchored" data-anchor-id="r"><span class="header-section-number">9.4</span> R</h2>
-<p>sudo apt install -y –no-install-recommends software-properties-common dirmngr wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc sudo add-apt-repository “deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/” sudo apt install -y r-base r-base-core r-recommended r-base-dev sudo apt install libcurl4-openssl-dev sudo apt install libfontconfig1-dev sudo apt install libxml2-dev sudo apt install libharfbuzz-dev libfribidi-dev</p>
-<p><code>wget https://download1.rstudio.org/electron/jammy/amd64/rstudio-2023.03.0-386-amd64.deb</code> <code>sudo apt install -f ./rstudio-2023.03.0-386-amd64.deb</code></p>
-<p>install.packages(“devtools”) library(devtools) install.packages(“tidyverse”)</p>
-<p>https://www.r-bloggers.com/2022/08/installation-of-r-4-2-on-ubuntu-22-04-1-lts-and-tips-for-spatial-packages/</p>
-<p>https://www.digitalocean.com/community/tutorials/how-to-install-r-on-ubuntu-22-04</p>
-<p>https://computingforgeeks.com/how-to-install-r-and-rstudio-on-ubuntu-debian-mint/</p>
-</section>
-<section id="quarto" class="level2" data-number="9.5">
-<h2 data-number="9.5" class="anchored" data-anchor-id="quarto"><span class="header-section-number">9.5</span> Quarto</h2>
+<section id="quarto" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="quarto"><span class="header-section-number">9.4</span> Quarto</h2>
 <ul>
 <li><p>Download latest version of <a href="https://quarto.org/docs/get-started/">Quarto</a></p></li>
 <li><p>install using <code>sudo apt install &lt;package path&gt;</code> or <code>sudo dpkg -i &lt;package path&gt;</code></p></li>
@@ -386,8 +417,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>https://docs.posit.co/resources/install-quarto/</p>
 <p>https://www.cyberciti.biz/faq/how-to-install-curl-command-on-a-ubuntu-linux/</p>
 </section>
-<section id="zotero" class="level2" data-number="9.6">
-<h2 data-number="9.6" class="anchored" data-anchor-id="zotero"><span class="header-section-number">9.6</span> Zotero</h2>
+<section id="zotero" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="zotero"><span class="header-section-number">9.5</span> Zotero</h2>
 <ul>
 <li><code>sudo apt update</code></li>
 <li><code>sudo apt upgrade</code></li>
@@ -395,28 +426,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>After zotero is installed, you can synch to the Addiction Research Lab library. Go to menu <code>edit:preferences:synch</code>. Username is jjccurtin. Ask John or Susan for the password.</p>
 </section>
-<section id="slack" class="level2" data-number="9.7">
-<h2 data-number="9.7" class="anchored" data-anchor-id="slack"><span class="header-section-number">9.7</span> Slack</h2>
+<section id="slack" class="level2" data-number="9.6">
+<h2 data-number="9.6" class="anchored" data-anchor-id="slack"><span class="header-section-number">9.6</span> Slack</h2>
 <p>Slack is easily installed from the Ubuntu Software Center. Open up the software center. Search for Slack. Install. Done.</p>
-<section id="pdfs" class="level3" data-number="9.7.1">
-<h3 data-number="9.7.1" class="anchored" data-anchor-id="pdfs"><span class="header-section-number">9.7.1</span> pdfs</h3>
+<section id="pdfs" class="level3" data-number="9.6.1">
+<h3 data-number="9.6.1" class="anchored" data-anchor-id="pdfs"><span class="header-section-number">9.6.1</span> pdfs</h3>
 <ul>
 <li><p><code>sudo snap install evince</code> for viewing pdfs</p></li>
 <li><p><code>sudo apt-get install qpdf</code> for manipulating pdfs (e.g., extract pages)</p></li>
 </ul>
 </section>
 </section>
-<section id="global-protect" class="level2" data-number="9.8">
-<h2 data-number="9.8" class="anchored" data-anchor-id="global-protect"><span class="header-section-number">9.8</span> Global Protect</h2>
+<section id="global-protect" class="level2" data-number="9.7">
+<h2 data-number="9.7" class="anchored" data-anchor-id="global-protect"><span class="header-section-number">9.7</span> Global Protect</h2>
 <ul>
 <li>[Install] (https://kb.wisc.edu/helpdesk/105971)</li>
 <li>[]</li>
 </ul>
 </section>
-<section id="meld-merge-for-file-diffs" class="level2" data-number="9.9">
-<h2 data-number="9.9" class="anchored" data-anchor-id="meld-merge-for-file-diffs"><span class="header-section-number">9.9</span> Meld Merge for file diffs</h2>
+<section id="meld-merge-for-file-diffs" class="level2" data-number="9.8">
+<h2 data-number="9.8" class="anchored" data-anchor-id="meld-merge-for-file-diffs"><span class="header-section-number">9.8</span> Meld Merge for file diffs</h2>
 <ul>
-<li>download and install <a href="https://meldmerge.org/">meld merge</a></li>
+<li>install from terminal: <code>sudo apt install meld</code></li>
+<li>or download and install <a href="https://meldmerge.org/">meld merge</a></li>
 <li>add the following to your .gitconfig file</li>
 </ul>
 <pre><code>[diff]
@@ -428,26 +460,26 @@ cmd = meld "$LOCAL" "$REMOTE"
 
 # The order of the Meld GUI window panes can be controlled by the order of $LOCAL and $REMOTE in cmd</code></pre>
 </section>
-<section id="csv" class="level2" data-number="9.10">
-<h2 data-number="9.10" class="anchored" data-anchor-id="csv"><span class="header-section-number">9.10</span> CSV</h2>
+<section id="csv" class="level2" data-number="9.9">
+<h2 data-number="9.9" class="anchored" data-anchor-id="csv"><span class="header-section-number">9.9</span> CSV</h2>
 <p>https://www.tadviewer.com/</p>
 <p>https://www.moderncsv.com/</p>
 </section>
-<section id="mount-shares" class="level2" data-number="9.11">
-<h2 data-number="9.11" class="anchored" data-anchor-id="mount-shares"><span class="header-section-number">9.11</span> Mount Shares</h2>
+<section id="mount-shares" class="level2" data-number="9.10">
+<h2 data-number="9.10" class="anchored" data-anchor-id="mount-shares"><span class="header-section-number">9.10</span> Mount Shares</h2>
 <ul>
 <li><p><code>sudo apt-get install cifs-utils</code></p></li>
 <li><p>create directories within ~/mnt/ for each share.</p></li>
-<li><p>save credentials file for synology (.synology_credentials) or research drive (.researchdrive_credentials) at /root/. These should include username=, password= (and for research drive, domain=ad.wisc.edu)</p></li>
-<li><p>create an alias for the command for each share to mount. Get it from John</p></li>
+<li><p>credential files are already saved in ~/github/linux/config</p></li>
+<li><p>aliases for mounts are already saved in ~/github/linux/config/.bash_aliases</p></li>
 </ul>
 </section>
-<section id="set-up-ssh-client-and-server" class="level2" data-number="9.12">
-<h2 data-number="9.12" class="anchored" data-anchor-id="set-up-ssh-client-and-server"><span class="header-section-number">9.12</span> Set up SSH Client and Server</h2>
+<section id="set-up-ssh-client-and-server" class="level2" data-number="9.11">
+<h2 data-number="9.11" class="anchored" data-anchor-id="set-up-ssh-client-and-server"><span class="header-section-number">9.11</span> Set up SSH Client and Server</h2>
 <p>https://ubuntu.com/server/docs/service-openssh</p>
 </section>
-<section id="creating-ssh-passkeys" class="level2" data-number="9.13">
-<h2 data-number="9.13" class="anchored" data-anchor-id="creating-ssh-passkeys"><span class="header-section-number">9.13</span> Creating SSH passkeys</h2>
+<section id="creating-ssh-passkeys" class="level2" data-number="9.12">
+<h2 data-number="9.12" class="anchored" data-anchor-id="creating-ssh-passkeys"><span class="header-section-number">9.12</span> Creating SSH passkeys</h2>
 <p>You can create an <a href="https://www.linode.com/docs/guides/use-public-key-authentication-with-ssh/">ssh key</a> to ssh without the need to provide username and password. In our lab, these are useful to ssh to CHTC or for git shh to GitHub.</p>
 <p>To create the key</p>
 <ol type="1">
@@ -503,28 +535,28 @@ cmd = meld "$LOCAL" "$REMOTE"
 <li><p>https://www.beyondtrust.com/blog/entry/ssh-key-management-overview-6-best-practices</p></li>
 </ul>
 </section>
-<section id="sound-mixer-settings" class="level2" data-number="9.14">
-<h2 data-number="9.14" class="anchored" data-anchor-id="sound-mixer-settings"><span class="header-section-number">9.14</span> Sound mixer settings</h2>
+<section id="sound-mixer-settings" class="level2" data-number="9.13">
+<h2 data-number="9.13" class="anchored" data-anchor-id="sound-mixer-settings"><span class="header-section-number">9.13</span> Sound mixer settings</h2>
 <p>install pavucontrol to get mic on zoom to work</p>
 <p>alsamixer from terminal may help</p>
 </section>
-<section id="vnc-for-remote-access" class="level2" data-number="9.15">
-<h2 data-number="9.15" class="anchored" data-anchor-id="vnc-for-remote-access"><span class="header-section-number">9.15</span> VNC for Remote Access</h2>
+<section id="vnc-for-remote-access" class="level2" data-number="9.14">
+<h2 data-number="9.14" class="anchored" data-anchor-id="vnc-for-remote-access"><span class="header-section-number">9.14</span> VNC for Remote Access</h2>
 <p>https://kb.wisc.edu/biochem/it/page.php?id=127360</p>
 </section>
-<section id="ssh-to-office-computer" class="level2" data-number="9.16">
-<h2 data-number="9.16" class="anchored" data-anchor-id="ssh-to-office-computer"><span class="header-section-number">9.16</span> SSH to office computer</h2>
+<section id="ssh-to-office-computer" class="level2" data-number="9.15">
+<h2 data-number="9.15" class="anchored" data-anchor-id="ssh-to-office-computer"><span class="header-section-number">9.15</span> SSH to office computer</h2>
 <p>https://linuxhint.com/enable-use-ssh-ubuntu/</p>
 <p>use username for hostname</p>
-<section id="x11-forwarding" class="level3" data-number="9.16.1">
-<h3 data-number="9.16.1" class="anchored" data-anchor-id="x11-forwarding"><span class="header-section-number">9.16.1</span> X11 forwarding</h3>
+<section id="x11-forwarding" class="level3" data-number="9.15.1">
+<h3 data-number="9.15.1" class="anchored" data-anchor-id="x11-forwarding"><span class="header-section-number">9.15.1</span> X11 forwarding</h3>
 <p>X11 forwarding is used in SSH to display GUI for app (e.g., rstudio) on remote computer (e.g., office computer). To enable X11 forwarding, need to edit /etc/ssh/sshd_config on remote computer to indicate: - <code>X11Forwarding yes</code></p>
 <p><em>May</em> also want to set - <code>X11DisplayOffset 10</code> - <code>X11UseLocalhost yes</code> - <code>TCPKeepAlive yes</code></p>
 <p><em>May</em> need to install xauth on remote computer.</p>
 <p>Need to use -X flag with ssh from local computer. Can then open GUI for remote app (e.g.. rstudio)</p>
 </section>
-<section id="vnc" class="level3" data-number="9.16.2">
-<h3 data-number="9.16.2" class="anchored" data-anchor-id="vnc"><span class="header-section-number">9.16.2</span> VNC</h3>
+<section id="vnc" class="level3" data-number="9.15.2">
+<h3 data-number="9.15.2" class="anchored" data-anchor-id="vnc"><span class="header-section-number">9.15.2</span> VNC</h3>
 <ul>
 <li><p><a href="https://kb.wisc.edu/biochem/it/page.php?id=127360">Documentation</a> on how to install tightvnc on host.</p></li>
 <li><p>Start vncserver on host with specific resolution: <code>vncserver -geometry 2560x1080 -depth 24</code></p></li>
@@ -532,8 +564,8 @@ cmd = meld "$LOCAL" "$REMOTE"
 </ul>
 </section>
 </section>
-<section id="customize-cli-prompt" class="level2" data-number="9.17">
-<h2 data-number="9.17" class="anchored" data-anchor-id="customize-cli-prompt"><span class="header-section-number">9.17</span> Customize CLI prompt</h2>
+<section id="customize-cli-prompt" class="level2" data-number="9.16">
+<h2 data-number="9.16" class="anchored" data-anchor-id="customize-cli-prompt"><span class="header-section-number">9.16</span> Customize CLI prompt</h2>
 <p>This will set up a green prompt with relative path for current directory.</p>
 <p>PS1=“$ (https://git-scm.com/download/win).</p>
 <p>This is NOT needed if you are installing Linux as your OS.</p>
@@ -621,10 +653,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/github\.io\/jjcurtin\/docs_arc");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -634,8 +683,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -647,7 +705,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -691,6 +872,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -716,6 +898,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -777,12 +985,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./git.html" class="pagination-link">
+      <a href="./git.html" class="pagination-link" aria-label="Git">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Git</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./linux_use.html" class="pagination-link">
+      <a href="./linux_use.html" class="pagination-link" aria-label="Using Linux">
         <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Using Linux</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
@@ -791,4 +999,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-</body></html>
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jjcurtin/docs_arc/edit/main/linux_install.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>
