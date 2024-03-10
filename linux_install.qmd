@@ -75,8 +75,7 @@ Slack is easily installed from the Ubuntu Software Center. Open up the software 
 
 ## Global Protect
 
--   [Install] (https://kb.wisc.edu/helpdesk/105971)
--   []
+-   [Install](https://kb.wisc.edu/helpdesk/105971)
 
 
 ## Meld Merge for file diffs
