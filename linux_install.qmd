@@ -45,6 +45,9 @@ For more info if problems
 - https://computingforgeeks.com/how-to-install-r-and-rstudio-on-ubuntu-debian-mint/
 
 
+and for updates of R version, see https://docs.posit.co/resources/install-r
+
+
 ## Quarto
 
 -   Download latest version of [Quarto](https://quarto.org/docs/get-started/)
