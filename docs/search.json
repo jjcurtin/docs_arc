@@ -94,8 +94,11 @@
     "objectID": "studies.html#risk",
     "href": "studies.html#risk",
     "title": "3  Current and Planned Studies",
-    "section": "3.1 RISK",
-    "text": "3.1 RISK\n\nCompare insight only to full EMA for lapse risk prediction [Gaylen (lead), Kendra, Ariela, Sarah]\nGPS features solo for lapse risk prediction [Claire FYP (lead)]\nLess burdensome EMA for lapse risk prediction. Maybe only morning. Maybe only some items. Maybe only some items depending on responses to other items [Coco?]\nUse text message content & meta data for lapse prediction [Coco?]\nReplicate stressor use with RISK data. MLM analyses [unassigned]\nFull model using GPS, EMA, communications for lapse risk prediction [unassigned]\nLagged week level models for lapse risk prediction. Maybe 3 days, 1 week, two weeks lag [unassigned]\nModel duration of lapse rather than binary outcome to allow move toward harm reduction approaches\nModel lapses that are labeled (or quantified) on severity based on chaining, or perhaps the respone to them (what the say about future ab goal, EMA affect after, etc)\nEstablish individual lapse as a clinically meaningful event - use lapse/no lapse as feature to predict variety of negative outcomes from (next? subsequent period?) EMAs, e.g., craving, risky situations, stressful events, negative affect, self-efficacy/change of abstinence goal (abstinence violation effect). Account for previous negative outcome level (either include as covariate [feature]? or make outcome a change score) [unassigned]"
+    "section": "",
+    "text": "Compare insight only to full EMA for lapse risk prediction [Gaylen (lead), Kendra, Ariela, Sarah]\nGPS features solo for lapse risk prediction [Claire FYP (lead)]\nLess burdensome EMA for lapse risk prediction. Maybe only morning. Maybe only some items. Maybe only some items depending on responses to other items [Coco?]\nUse text message content & meta data for lapse prediction [Coco?]\nReplicate stressor use with RISK data. MLM analyses [unassigned]\nFull model using GPS, EMA, communications for lapse risk prediction [unassigned]\nLagged week level models for lapse risk prediction. Maybe 3 days, 1 week, two weeks lag [unassigned]\nModel duration of lapse rather than binary outcome to allow move toward harm reduction approaches\nModel lapses that are labeled (or quantified) on severity based on chaining, or perhaps the respone to them (what the say about future ab goal, EMA affect after, etc)\nEstablish individual lapse as a clinically meaningful event - use lapse/no lapse as feature to predict variety of negative outcomes from (next? subsequent period?) EMAs, e.g., craving, risky situations, stressful events, negative affect, self-efficacy/change of abstinence goal (abstinence violation effect). Account for previous negative outcome level (either include as covariate [feature]? or make outcome a change score) [unassigned]\nLook at model performance in subsets of data. This will include traditional disparities based on race/ethnicity, sex, age, income. But also include model performance based on lapse frequency, time on system, AUD severity, etc. [Coco submitted a poster abstract on this topic. She is planning to lead effort to write paper on this topic]\nExplore methods to reduce model performance bias among groups that are poorly represented in the training data. This could be done for participants of color in RISK1 data. We could consider resampling training data to increase relative representation of these participants. We can also consider methods to weight errors for these participants. [This was Coco’s idea. She plans to lead a paper on this topic after we first publish the previous paper about disparities in model performance] ## RISK2",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Current and Planned Studies</span>"
+    ]
   },
   {
     "objectID": "studies.html#risk2",
@@ -108,15 +111,21 @@
     "objectID": "studies.html#nrt1",
     "href": "studies.html#nrt1",
     "title": "3  Current and Planned Studies",
-    "section": "3.3 NRT1",
-    "text": "3.3 NRT1\n\nBuild machine learning model for smoking lapse risk prediction (e.g., replicate RISK ema paper) [unassigned]"
+    "section": "3.2 NRT1",
+    "text": "3.2 NRT1\n\nBuild machine learning model for smoking lapse risk prediction (e.g., replicate RISK ema paper) [unassigned]",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Current and Planned Studies</span>"
+    ]
   },
   {
     "objectID": "studies.html#face",
     "href": "studies.html#face",
     "title": "3  Current and Planned Studies",
-    "section": "3.4 FACE",
-    "text": "3.4 FACE"
+    "section": "3.3 FACE",
+    "text": "3.3 FACE",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Current and Planned Studies</span>"
+    ]
   },
   {
     "objectID": "resources.html#repositories",
@@ -243,29 +252,45 @@
     "objectID": "git.html#common-git-commands",
     "href": "git.html#common-git-commands",
     "title": "8  Git",
-    "section": "8.1 Common Git Commands",
-    "text": "8.1 Common Git Commands\nNote: These commands will only work if you are in a git repo.\n\n8.1.1 Workflow\n\ngit status shows any files updated locally\ngit add [filename] add file to staging area\ngit add . adds all modified files to staging area\ngit commit create commit of staged files - this will prompt you to enter commit message. You can also use the -m flag to write your message directly with commit command (git commit -m \"updates xyz\").\ngit commit -am \"commit message\" will add all files and commit them in one step. However,\ngit push pushes your commits to github\ngit pull pulls updates from github (it is good practice to pull before commiting)\n\ngit mv &lt;oldname&gt; &lt;newname&gt; to rename and/or move a file without losing its link to its earlier history. Read more\ngit stash to stash changes; git stash pop to reapply stashed changes\n\n\n\n8.1.2 Repos\n\ngit clone [repo_url] clones git repo.\n\ngit init [repo_name] creates a new empty repo\n\n\n\n8.1.3 Branching\n\ngit branch shows local branches (git branch -a will show you all branches local and on github)\ngit checkout [branch_name] switches branches\ngit checkout -b [new_branch_name] switches to new branch (git branch [new_branch_name] creates new branch but doesn’t switch to it).\ngit branch -d [brand_name] deletes a local branch. This must be done from another branch or main.\ngit push origin -d [brach_name] deletes branch_name on remote/github (assumes remote is called origin, which it is for us).\n\n\n\n8.1.4 Log and Versioning\n\ngit log displays the most recent commits\ngit log --stat -[N] displays stats on the most recent N commits. Cleaner than log\ngit log [filename] displays commit history for a file. May have problems if the filename was ever changed. In that case consider, git log --follow -- [filename].  Can add–stat` for more info on commit\n\n\n\n8.1.5 Diffs\n\nwe use meld merge for file diffs\nmeld merge can do diffs on two files saved locally. For this, you can use the gui and select the files. For example, between a qmd file for a paper in a repo and another copy of that file with edits from a lab member saved outside the repo.\nmeld merge can also be set up to be used as the difftool for git. In Linux, add the following to your .gitconfig file\n\n[diff]\n    tool = meld\n[difftool]\n    prompt = false\n[difftool \"meld\"]\ncmd = meld \"$LOCAL\" \"$REMOTE\"\n\n# The order of the Meld GUI window panes can be controlled by the order of $LOCAL and $REMOTE in cmd.  JJC still not certain about this?\nOnce you have done this, git difftool will call meld. You can now use meld for diffs:\n\ngit difftool filename to compare local copy (not committed) of filename to head on repo\ngit difftool &lt;COMMIT_HASH&gt; filename to compare previous version of filename to head version on repo.\ngit difftool HEAD HEAD~2 filename to compare head version of filename on repo with version of filename two commits back.\ngit difftool &lt;COMMIT_HASH_1&gt; &lt;COMMIT_HASH_2&gt; filename to compare two versions of a file across two separate commits that are not the head on the repo."
+    "section": "",
+    "text": "8.1.1 Workflow\n\ngit status shows any files updated locally\ngit add [filename] add file to staging area\ngit add . adds all modified files to staging area\ngit commit create commit of staged files - this will prompt you to enter commit message. You can also use the -m flag to write your message directly with commit command (git commit -m \"updates xyz\").\ngit commit -am \"commit message\" will add all files and commit them in one step. However,\ngit push pushes your commits to github\ngit pull pulls updates from github (it is good practice to pull before commiting)\n\ngit mv &lt;oldname&gt; &lt;newname&gt; to rename and/or move a file without losing its link to its earlier history. Read more\ngit stash to stash changes; git stash pop to reapply stashed changes\n\n\n\n8.1.2 Repos\n\ngit clone [repo_url] clones git repo.\n\ngit init [repo_name] creates a new empty repo\n\n\n\n8.1.3 Branching\n\ngit branch shows local branches (git branch -a will show you all branches local and on github)\ngit checkout [branch_name] switches branches\ngit checkout -b [new_branch_name] switches to new branch (git branch [new_branch_name] creates new branch but doesn’t switch to it).\ngit branch -d [brand_name] deletes a local branch. This must be done from another branch or main.\ngit push origin -d [brach_name] deletes branch_name on remote/github (assumes remote is called origin, which it is for us).\n\n\n\n8.1.4 Log and Versioning\n\ngit log displays the most recent commits\ngit log --stat -[N] displays stats on the most recent N commits. Cleaner than log\ngit log [filename] displays commit history for a file. May have problems if the filename was ever changed. In that case consider, git log --follow -- [filename].  Can add–stat` for more info on commit\n\n\n\n8.1.5 Diffs\n\nwe use meld merge for file diffs\nmeld merge can do diffs on two files saved locally. For this, you can use the gui and select the files. For example, between a qmd file for a paper in a repo and another copy of that file with edits from a lab member saved outside the repo.\nmeld merge can also be set up to be used as the difftool for git. In Linux, add the following to your .gitconfig file\n\n[diff]\n    tool = meld\n[difftool]\n    prompt = false\n[difftool \"meld\"]\ncmd = meld \"$LOCAL\" \"$REMOTE\"\n\n# The order of the Meld GUI window panes can be controlled by the order of $LOCAL and $REMOTE in cmd.  JJC still not certain about this?\nOnce you have done this, git difftool will call meld. You can now use meld for diffs:\n\ngit difftool filename to compare local copy (not committed) of filename to head on repo\ngit difftool &lt;COMMIT_HASH&gt; filename to compare previous version of filename to head version on repo.\ngit difftool HEAD HEAD~2 filename to compare head version of filename on repo with version of filename two commits back.\ngit difftool &lt;COMMIT_HASH_1&gt; &lt;COMMIT_HASH_2&gt; filename to compare two versions of a file across two separate commits that are not the head on the repo.",
+    "crumbs": [
+      "Linux and CLI",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Git</span>"
+    ]
   },
   {
     "objectID": "git.html#git-command-line-for-windows",
     "href": "git.html#git-command-line-for-windows",
     "title": "8  Git",
     "section": "8.2 Git Command Line for Windows",
-    "text": "8.2 Git Command Line for Windows\nThe recommended terminal for using the Git command line on Windows is Git Bash. You can have Git command line and Git Desktop installed on the same machine and they mostly do not affect each other (see notes below).\n\n8.2.1 Installation\nDuring installation, you will be given several options:\n\nSelect the default text editor. It defaults to Vim, but you can select any text editor you have installed on your system.\nOverride branch name for new repos created with git init. It defaults to “master” but you can set your own. This does not affect existing repos. I selected to override and use “main” which is more familiar to me.\nAdjust path environment. The most cautious choice is to use Git soley from Git Bash; I selected this as I do not plan on using any other 3rd party software.\nChange SSH executable & backend. The default is the bundled OpenSSH software and crt file.\nConfigure line endings. As Windows and Unix use different line-end characters, I recommend using the default which is to check out as Windows and commit at Unix. This will prevent issues for other users not on Windows.\nSelect terminal emulator. I selected the default MinTTY option to make sure I didn’t mistake a cmd terminal window for my git terminal.\nChoose behavior of git pull. Leave it on the default unless you know what effects the other options may have.\nChoose credential manager. Choose the default which is the bundled Git Credentials Manager. You will then be able to authenticate once and stay logged in.\nExtra options. By default, “Enable file system caching” is checked and “Enable symbolic links” is unchecked. Leave as is unless you know what each option affects.\nExperimental options. Leave these unchecked unless you know what you’re doing!\n\n\n\n8.2.2 Windows Notes\n\nWhen first attempting to interact with a repo (either clone/pull/push) Windows will pop up a Git Credentials Window for you to authenticate. Select “Use website” and it will open a browser window the same as happens with Github Desktop. It takes a moment for the connection to be made before you will be able to click the green button to authenticate.\nWhen navigating between directories, if a directory has a space in the name, you must enclose it in single quotes (not backtics)\nOccasionally I have typed unequal quotes, ie cd 'My Documents\" and although GitBash acts as if the command was accepted (showing a new command prompt), nothing happens. The only solution I have found is to close and re-open GitBash.\npwd is a shortcut to print the working directory."
+    "text": "8.2 Git Command Line for Windows\nThe recommended terminal for using the Git command line on Windows is Git Bash. You can have Git command line and Git Desktop installed on the same machine and they mostly do not affect each other (see notes below).\n\n8.2.1 Installation\nDuring installation, you will be given several options:\n\nSelect the default text editor. It defaults to Vim, but you can select any text editor you have installed on your system.\nOverride branch name for new repos created with git init. It defaults to “master” but you can set your own. This does not affect existing repos. I selected to override and use “main” which is more familiar to me.\nAdjust path environment. The most cautious choice is to use Git soley from Git Bash; I selected this as I do not plan on using any other 3rd party software.\nChange SSH executable & backend. The default is the bundled OpenSSH software and crt file.\nConfigure line endings. As Windows and Unix use different line-end characters, I recommend using the default which is to check out as Windows and commit at Unix. This will prevent issues for other users not on Windows.\nSelect terminal emulator. I selected the default MinTTY option to make sure I didn’t mistake a cmd terminal window for my git terminal.\nChoose behavior of git pull. Leave it on the default unless you know what effects the other options may have.\nChoose credential manager. Choose the default which is the bundled Git Credentials Manager. You will then be able to authenticate once and stay logged in.\nExtra options. By default, “Enable file system caching” is checked and “Enable symbolic links” is unchecked. Leave as is unless you know what each option affects.\nExperimental options. Leave these unchecked unless you know what you’re doing!\n\n\n\n8.2.2 Windows Notes\n\nWhen first attempting to interact with a repo (either clone/pull/push) Windows will pop up a Git Credentials Window for you to authenticate. Select “Use website” and it will open a browser window the same as happens with Github Desktop. It takes a moment for the connection to be made before you will be able to click the green button to authenticate.\nWhen navigating between directories, if a directory has a space in the name, you must enclose it in single quotes (not backtics)\nOccasionally I have typed unequal quotes, ie cd 'My Documents\" and although GitBash acts as if the command was accepted (showing a new command prompt), nothing happens. The only solution I have found is to close and re-open GitBash.\npwd is a shortcut to print the working directory.",
+    "crumbs": [
+      "Linux and CLI",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Git</span>"
+    ]
   },
   {
     "objectID": "git.html#git-filter-repo",
     "href": "git.html#git-filter-repo",
     "title": "8  Git",
     "section": "8.3 git filter-repo",
-    "text": "8.3 git filter-repo\ngit filter-repo is a tool that can be used to remove large or sensitive files from a repository. It removes the file from all caches, commits, and revision histories without affecting the rest of the repo.\nOne note: If you commit a large file and make no other changes to the repo in that commit, then you use this tool to remove all traces of that file, the entire commit WILL disappear from the revision history. The commit will remain as long as ANY other file was also touched by the commit.\n\n8.3.1 Installation\n\nYou must first install Python. In GitBash run python3and it will install it from the Windows Store.\nFind the location of your git installation by running git --exec-path in GitBash.\nSave this file into your Downloads folder if your OS won’t allow you to save directly to the git installation location.\nUsing File Explorer, change the file name to remove the .txt extension (in Windows 11, at least, it will not download without adding that file extension.)\nCopy the renamed file into your git installation folder if you weren’t already able to save it there. You will be prompted to provide administrative authorization to permit the copy.\ncd into a repo and type git filter-repo to test. If the installation was successful it will say no arguments specified\n\n\n\n8.3.2 Usage\nFirst you will need to know the full repo path & name of the large or sensitive files you wish to delete. To do this, you can browse the previous commits in the repo to identify where they were first added. (Technically, you can get the path/name of the large file from any commit touching that file, but getting it from the initial commit makes sure you don’t miss any renames or moves).\nYou could also run the following command to find XX largest objects in repo:\ngit rev-list --objects --all \\  \n  | grep \"$(git verify-pack -v .git/objects/pack/*.idx \\  \n           | sort -k 3 -n \\  \n           | tail -XX \\  \n           | awk '{print$1}')\"\nThis outputs the path names in a format which is easy to copy.\nOnce you have the path/file names, follow the commands here to remove each file and add them to gitignore so they don’t accidentally get re-committed. You can run an entire list of git filter-repo commands to remove many files at once."
+    "text": "8.3 git filter-repo\ngit filter-repo is a tool that can be used to remove large or sensitive files from a repository. It removes the file from all caches, commits, and revision histories without affecting the rest of the repo.\nOne note: If you commit a large file and make no other changes to the repo in that commit, then you use this tool to remove all traces of that file, the entire commit WILL disappear from the revision history. The commit will remain as long as ANY other file was also touched by the commit.\n\n8.3.1 Installation\n\nYou must first install Python. In GitBash run python3and it will install it from the Windows Store.\nFind the location of your git installation by running git --exec-path in GitBash.\nSave this file into your Downloads folder if your OS won’t allow you to save directly to the git installation location.\nUsing File Explorer, change the file name to remove the .txt extension (in Windows 11, at least, it will not download without adding that file extension.)\nCopy the renamed file into your git installation folder if you weren’t already able to save it there. You will be prompted to provide administrative authorization to permit the copy.\ncd into a repo and type git filter-repo to test. If the installation was successful it will say no arguments specified\n\n\n\n8.3.2 Usage\nFirst you will need to know the full repo path & name of the large or sensitive files you wish to delete. To do this, you can browse the previous commits in the repo to identify where they were first added. (Technically, you can get the path/name of the large file from any commit touching that file, but getting it from the initial commit makes sure you don’t miss any renames or moves).\nYou could also run the following command to find XX largest objects in repo:\ngit rev-list --objects --all \\  \n  | grep \"$(git verify-pack -v .git/objects/pack/*.idx \\  \n           | sort -k 3 -n \\  \n           | tail -XX \\  \n           | awk '{print$1}')\"\nThis outputs the path names in a format which is easy to copy.\nOnce you have the path/file names, follow the commands here to remove each file and add them to gitignore so they don’t accidentally get re-committed. You can run an entire list of git filter-repo commands to remove many files at once.",
+    "crumbs": [
+      "Linux and CLI",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Git</span>"
+    ]
   },
   {
     "objectID": "git.html#github-website-tools",
     "href": "git.html#github-website-tools",
     "title": "8  Git",
     "section": "8.4 Github Website Tools",
-    "text": "8.4 Github Website Tools\n\n8.4.1 Create Personal Access Token\nOn the website, go to Account Settings &gt; Developer Settings &gt; Personal Access Tokens &gt; Token (Classic). There is a Beta version that allows more fine-grained access but I haven’t experimented with that yet.\nHit “Generate new token (Classic)”. You can specify what this token will be used for and select various permissions to allow for this token.\nWhen the token is generated, you must save it somewhere - Github won’t let you see it again. You can then use this token for certain privileged access actions, such as importing another repo into a clean repo repo.\n\n\n8.4.2 Import a repo\nThis action is used when you want to copy another repo into a new repo. It copies ALL past fils, commits, and history, but any actions taken to the new repo will not affect the old repo in the way a branch would.\n\nCreate a new repo via the website “New repo” button. Give it whatever name and privacy settings are desired.\nOn the next page, to populate your repository, choose “Import code from another repository”.\nIt will then ask for “Your old repository’s clone URL”. If you are importing another github repo, the plain repo URL is all that’s needed i.e. “https://github.com/jjcurtin/analysis_risk” will import an exact copy of the Risk1 analysis repo. Click “Begin Import”.\nYou will be asked to provide your Login (your github email, NOT the password) and Private Access Token (see above)."
+    "text": "8.4 Github Website Tools\n\n8.4.1 Create Personal Access Token\nOn the website, go to Account Settings &gt; Developer Settings &gt; Personal Access Tokens &gt; Token (Classic). There is a Beta version that allows more fine-grained access but I haven’t experimented with that yet.\nHit “Generate new token (Classic)”. You can specify what this token will be used for and select various permissions to allow for this token.\nWhen the token is generated, you must save it somewhere - Github won’t let you see it again. You can then use this token for certain privileged access actions, such as importing another repo into a clean repo repo.\n\n\n8.4.2 Import a repo\nThis action is used when you want to copy another repo into a new repo. It copies ALL past fils, commits, and history, but any actions taken to the new repo will not affect the old repo in the way a branch would.\n\nCreate a new repo via the website “New repo” button. Give it whatever name and privacy settings are desired.\nOn the next page, to populate your repository, choose “Import code from another repository”.\nIt will then ask for “Your old repository’s clone URL”. If you are importing another github repo, the plain repo URL is all that’s needed i.e. “https://github.com/jjcurtin/analysis_risk” will import an exact copy of the Risk1 analysis repo. Click “Begin Import”.\nYou will be asked to provide your Login (your github email, NOT the password) and Private Access Token (see above).",
+    "crumbs": [
+      "Linux and CLI",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Git</span>"
+    ]
   },
   {
     "objectID": "linux_install.html#install-os",
@@ -297,7 +322,7 @@
     "href": "linux_install.html#r",
     "title": "9  Installing Linux",
     "section": "9.3 R",
-    "text": "9.3 R\nFollowing this website\n\nsudo apt-get update\nwget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc\nto verify key type: gpg –show-keys /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc\nsudo apt-get update\nsudo apt-get install r-base r-base-core r-recommended r-base-dev\nsudo apt install libcurl4-openssl-dev\nsudo apt install libfontconfig1-dev\nsudo apt install libxml2-dev\nsudo apt install libharfbuzz-dev libfribidi-dev\nsudo apt install libssl-dev\nsudo apt install libtiff5-dev\nsudo apt install libfreetype6-dev\nsudo apt install libpng-dev\nlibjpeg-dev\n\nThen install RStudio by getting current deb file from their website\nThen install key packages\n\ndevtools\ntidyverse\n\nFor more info if problems\n\nhttps://www.r-bloggers.com/2022/08/installation-of-r-4-2-on-ubuntu-22-04-1-lts-and-tips-for-spatial-packages/\nhttps://www.digitalocean.com/community/tutorials/how-to-install-r-on-ubuntu-22-04\nhttps://computingforgeeks.com/how-to-install-r-and-rstudio-on-ubuntu-debian-mint/",
+    "text": "9.3 R\nFollowing this website\n\nsudo apt-get update\nwget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc\nto verify key type: gpg –show-keys /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc\nsudo apt-get update\nsudo apt-get install r-base r-base-core r-recommended r-base-dev\nsudo apt install libcurl4-openssl-dev\nsudo apt install libfontconfig1-dev\nsudo apt install libxml2-dev\nsudo apt install libharfbuzz-dev libfribidi-dev\nsudo apt install libssl-dev\nsudo apt install libtiff5-dev\nsudo apt install libfreetype6-dev\nsudo apt install libpng-dev\nlibjpeg-dev\n\nThen install RStudio by getting current deb file from their website\nThen install key packages\n\ndevtools\ntidyverse\n\nFor more info if problems\n\nhttps://www.r-bloggers.com/2022/08/installation-of-r-4-2-on-ubuntu-22-04-1-lts-and-tips-for-spatial-packages/\nhttps://www.digitalocean.com/community/tutorials/how-to-install-r-on-ubuntu-22-04\nhttps://computingforgeeks.com/how-to-install-r-and-rstudio-on-ubuntu-debian-mint/\n\nand for updates of R version, see https://docs.posit.co/resources/install-r",
     "crumbs": [
       "Linux and CLI",
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Installing Linux</span>"
@@ -534,99 +559,155 @@
     "objectID": "vim.html#exit-and-save",
     "href": "vim.html#exit-and-save",
     "title": "11  Vim",
-    "section": "11.1 Exit and Save",
-    "text": "11.1 Exit and Save\n\n:x exits and saves\n:w saves without exit\n:w filename saves file as filename\n:q! exits without save"
+    "section": "",
+    "text": ":x exits and saves\n:w saves without exit\n:w filename saves file as filename\n:q! exits without save",
+    "crumbs": [
+      "Linux and CLI",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Vim</span>"
+    ]
   },
   {
     "objectID": "vim.html#run-commands",
     "href": "vim.html#run-commands",
     "title": "11  Vim",
     "section": "11.2 Run commands",
-    "text": "11.2 Run commands\n\n:!CMD where CMD is command. e.g.., !ls"
+    "text": "11.2 Run commands\n\n:!CMD where CMD is command. e.g.., !ls",
+    "crumbs": [
+      "Linux and CLI",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Vim</span>"
+    ]
   },
   {
     "objectID": "vim.html#navigating-document-in-default-command-mode",
     "href": "vim.html#navigating-document-in-default-command-mode",
     "title": "11  Vim",
     "section": "11.3 Navigating document in Default (Command) Mode",
-    "text": "11.3 Navigating document in Default (Command) Mode\nRemember to enter command mode by pressing esc - 0 moves the cursor to the start of line - $ moves cursor to end of line - Move cursor left (h), down(j), up (k), or right (l)\n\ngg for top of document\nG for bottom of document\nnG to move to line number n. CTRL-g shows line numbers in footer of doc.\nH for top of window, M for middle of window, and L for bottom of window\nw moves forward to the beginning of the next word.\nb moves backwards to the beginning of the previous word.\n( and ) move by sentences, either backward or forward.\n{ and } move by paragraphs."
+    "text": "11.3 Navigating document in Default (Command) Mode\nRemember to enter command mode by pressing esc - 0 moves the cursor to the start of line - $ moves cursor to end of line - Move cursor left (h), down(j), up (k), or right (l)\n\ngg for top of document\nG for bottom of document\nnG to move to line number n. CTRL-g shows line numbers in footer of doc.\nH for top of window, M for middle of window, and L for bottom of window\nw moves forward to the beginning of the next word.\nb moves backwards to the beginning of the previous word.\n( and ) move by sentences, either backward or forward.\n{ and } move by paragraphs.",
+    "crumbs": [
+      "Linux and CLI",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Vim</span>"
+    ]
   },
   {
     "objectID": "vim.html#inserting",
     "href": "vim.html#inserting",
     "title": "11  Vim",
     "section": "11.4 Inserting",
-    "text": "11.4 Inserting\n\ni Insert text before the cursor\na Insert text after cursor\nA Append text to end of current line. - I Insert text at beginning of line.\no Open blank line below cursor for text. - O Open blank line above cursor for text.\np puts the Vim register (from delete) after cursor (if full line, on next line).\nrx replaces the character at the cursor with ‘x’\nR replaces multiple characters. Type ESC when done.\nce deletes until end of word and places you in insert. Press ESC when done\nc$ deletes until end of line and places you in insert. Press ESC when done\n:%s/old/new/gc - replaces old with new in full doc with prompt for replace.\n:r filename to insert text in filename above cursor"
+    "text": "11.4 Inserting\n\ni Insert text before the cursor\na Insert text after cursor\nA Append text to end of current line. - I Insert text at beginning of line.\no Open blank line below cursor for text. - O Open blank line above cursor for text.\np puts the Vim register (from delete) after cursor (if full line, on next line).\nrx replaces the character at the cursor with ‘x’\nR replaces multiple characters. Type ESC when done.\nce deletes until end of word and places you in insert. Press ESC when done\nc$ deletes until end of line and places you in insert. Press ESC when done\n:%s/old/new/gc - replaces old with new in full doc with prompt for replace.\n:r filename to insert text in filename above cursor",
+    "crumbs": [
+      "Linux and CLI",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Vim</span>"
+    ]
   },
   {
     "objectID": "vim.html#deleting",
     "href": "vim.html#deleting",
     "title": "11  Vim",
     "section": "11.5 Deleting",
-    "text": "11.5 Deleting\n\nx deletes the character under the cursor\ndw deletes from cursor to start of next word (including space spearator). d2w deletes from cursor to end of second word, etc.\nde delets from curors to end of current for\ndd deletes the line. 2dd deletes two lines.\nd$ deletes from cursor to end of line.\nu to undo the last command. CTRL-R for redo -U to undo all fixes on a line."
+    "text": "11.5 Deleting\n\nx deletes the character under the cursor\ndw deletes from cursor to start of next word (including space spearator). d2w deletes from cursor to end of second word, etc.\nde delets from curors to end of current for\ndd deletes the line. 2dd deletes two lines.\nd$ deletes from cursor to end of line.\nu to undo the last command. CTRL-R for redo -U to undo all fixes on a line.",
+    "crumbs": [
+      "Linux and CLI",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Vim</span>"
+    ]
   },
   {
     "objectID": "vim.html#spell-check",
     "href": "vim.html#spell-check",
     "title": "11  Vim",
     "section": "11.6 Spell check",
-    "text": "11.6 Spell check\n\n:set spell – Turn on spell checking\n:set nospell – Turn off spell checking\n]s – Jump to the next misspelled word\n[s – Jump to the previous misspelled word\nz= – Bring up the suggested replacements\nzg – Good word: Add the word under the cursor to the dictionary\nzw – Woops! Undo and remove the word from the dictionary"
+    "text": "11.6 Spell check\n\n:set spell – Turn on spell checking\n:set nospell – Turn off spell checking\n]s – Jump to the next misspelled word\n[s – Jump to the previous misspelled word\nz= – Bring up the suggested replacements\nzg – Good word: Add the word under the cursor to the dictionary\nzw – Woops! Undo and remove the word from the dictionary",
+    "crumbs": [
+      "Linux and CLI",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Vim</span>"
+    ]
   },
   {
     "objectID": "vim.html#search-in-vim",
     "href": "vim.html#search-in-vim",
     "title": "11  Vim",
     "section": "11.7 Search in VIM",
-    "text": "11.7 Search in VIM\n\n/text to search forward for text. Type ENTER to exit to that text.\n?text to search backward for text.\nn to find next instance of text (after ENTER)\nN to find previous instance of text (after ENTER)\n\nFor search and replace\n\n`%s///options\noptions include g for replace all, c for confirmation and i for case insensitive"
+    "text": "11.7 Search in VIM\n\n/text to search forward for text. Type ENTER to exit to that text.\n?text to search backward for text.\nn to find next instance of text (after ENTER)\nN to find previous instance of text (after ENTER)\n\nFor search and replace\n\n`%s///options\noptions include g for replace all, c for confirmation and i for case insensitive",
+    "crumbs": [
+      "Linux and CLI",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Vim</span>"
+    ]
   },
   {
     "objectID": "vim.html#visual-selection",
     "href": "vim.html#visual-selection",
     "title": "11  Vim",
     "section": "11.8 Visual selection",
-    "text": "11.8 Visual selection\n\nv to select text. Move cursor around with hjkl keys\nthen d to delete (can later p(ut) it somewhere if needed)\nor y to yank (copy) so you can later p(ut) it somewhere\nor w to write to separate file"
+    "text": "11.8 Visual selection\n\nv to select text. Move cursor around with hjkl keys\nthen d to delete (can later p(ut) it somewhere if needed)\nor y to yank (copy) so you can later p(ut) it somewhere\nor w to write to separate file",
+    "crumbs": [
+      "Linux and CLI",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Vim</span>"
+    ]
   },
   {
     "objectID": "vim.html#copy",
     "href": "vim.html#copy",
     "title": "11  Vim",
     "section": "11.9 Copy",
-    "text": "11.9 Copy\n\ny to yank (copy) selction (use with v for visual selection)\nyw to yank a word\nyy to yank a line"
+    "text": "11.9 Copy\n\ny to yank (copy) selction (use with v for visual selection)\nyw to yank a word\nyy to yank a line",
+    "crumbs": [
+      "Linux and CLI",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Vim</span>"
+    ]
   },
   {
     "objectID": "vim.html#working-with-multiple-files",
     "href": "vim.html#working-with-multiple-files",
     "title": "11  Vim",
     "section": "11.10 Working with multiple files",
-    "text": "11.10 Working with multiple files\nVim can open multiple files in separate buffers. This can be done at the start by providing multiple filenames to vim (e.g., vim file1.md file2.md)\nAlternatively, additional files can be opened for editting later (:e file2.txt).\nMoving between buffers\n\nbn moves to next buffer\nbp moves to previous buffer\n:buffers displays all open buffers\n: buffer 1 allows switch to buffer 1 (or any other number) if there are many buffers open\n:bd deletes the current buffer. Will fail unless buffer has first been saved (or no changes made)\n\nyank/delete/put will work between buffers"
+    "text": "11.10 Working with multiple files\nVim can open multiple files in separate buffers. This can be done at the start by providing multiple filenames to vim (e.g., vim file1.md file2.md)\nAlternatively, additional files can be opened for editting later (:e file2.txt).\nMoving between buffers\n\nbn moves to next buffer\nbp moves to previous buffer\n:buffers displays all open buffers\n: buffer 1 allows switch to buffer 1 (or any other number) if there are many buffers open\n:bd deletes the current buffer. Will fail unless buffer has first been saved (or no changes made)\n\nyank/delete/put will work between buffers",
+    "crumbs": [
+      "Linux and CLI",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Vim</span>"
+    ]
   },
   {
     "objectID": "vim.html#command-line-in-vim",
     "href": "vim.html#command-line-in-vim",
     "title": "11  Vim",
     "section": "11.11 Command line in VIM",
-    "text": "11.11 Command line in VIM\nSwitch to command line from normal mode by typing :\nYou can then use:\n\npwd to print the current working director\ncd to change the working directory for the vim shell\nlcd to change the working directory for the specific buffer you are in"
+    "text": "11.11 Command line in VIM\nSwitch to command line from normal mode by typing :\nYou can then use:\n\npwd to print the current working director\ncd to change the working directory for the vim shell\nlcd to change the working directory for the specific buffer you are in",
+    "crumbs": [
+      "Linux and CLI",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Vim</span>"
+    ]
   },
   {
     "objectID": "vim.html#render-files",
     "href": "vim.html#render-files",
     "title": "11  Vim",
     "section": "11.12 Render files",
-    "text": "11.12 Render files\nWe tend to use either md or qmd files for writing, code, etc. Our .vimrc file turns on markdown highlighting for these files if saved with .md or ..qmd extensions. qmd is preferred because it works with RStudio as well.\nThese files can be rendered to html or pdf if desired.\n\nquarto render file.qmd to render to html\nquarto render file.qmd --to pdf to render to pdf\n\nWe can use a full yaml header for more fancy output. We have templates for apa manuscripts, letterhead, and a generally nice format pdf output if desired. Just paste the yaml at the top of the file."
+    "text": "11.12 Render files\nWe tend to use either md or qmd files for writing, code, etc. Our .vimrc file turns on markdown highlighting for these files if saved with .md or ..qmd extensions. qmd is preferred because it works with RStudio as well.\nThese files can be rendered to html or pdf if desired.\n\nquarto render file.qmd to render to html\nquarto render file.qmd --to pdf to render to pdf\n\nWe can use a full yaml header for more fancy output. We have templates for apa manuscripts, letterhead, and a generally nice format pdf output if desired. Just paste the yaml at the top of the file.",
+    "crumbs": [
+      "Linux and CLI",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Vim</span>"
+    ]
   },
   {
     "objectID": "vim.html#installing-plugins",
     "href": "vim.html#installing-plugins",
     "title": "11  Vim",
     "section": "11.13 Installing plugins",
-    "text": "11.13 Installing plugins\nIf the plugin is on github, simply clone it using the github url into the vim plugin folder: /home/jjcurtin/.vim/pack/vendor/start\nAnd you are done!"
+    "text": "11.13 Installing plugins\nIf the plugin is on github, simply clone it using the github url into the vim plugin folder: /home/jjcurtin/.vim/pack/vendor/start\nAnd you are done!",
+    "crumbs": [
+      "Linux and CLI",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Vim</span>"
+    ]
   },
   {
     "objectID": "vim.html#learing-vim",
     "href": "vim.html#learing-vim",
     "title": "11  Vim",
     "section": "11.14 Learing VIM",
-    "text": "11.14 Learing VIM\n\nrun vimtutor\nbooks: https://iccf-holland.org/vim_books.html"
+    "text": "11.14 Learing VIM\n\nrun vimtutor\nbooks: https://iccf-holland.org/vim_books.html",
+    "crumbs": [
+      "Linux and CLI",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Vim</span>"
+    ]
   },
   {
     "objectID": "bash_scripting.html#getting-started",
@@ -695,22 +776,34 @@
     "objectID": "globalprotect_mapping.html#global-protect",
     "href": "globalprotect_mapping.html#global-protect",
     "title": "14  Global Protect and Mapping the Network Server",
-    "section": "14.1 Global Protect",
-    "text": "14.1 Global Protect\nAfter you install GlobalProtect vis these instructions, connecting is nearly identical on Mac or Windows PC:\n\nOpen the GlobalProtect client by selecting the icon at the top of your screen (Mac) or in the system tray (PC). (If it does not automatically appear in this place, access the client through your Finder’s Applications folder (Mac) or Start Menu (PC).)\n\nIf it is your first time connecting, you will be prompted to enter a portal address. The default portal is uwmadison.vpn.wisc.edu.\nIf you have used GlobalProtect before, you will be connected to the portal you last used. This can be changed by opening the settings menu on the top right of the client login screen.\n\n\n\n\n\nEnter your netid followed by _1 (to use your Static IP) and password (regular NetID password) and click Sign In. If you are prompted to use Duo MFA, enter the passcode from your fob/Duo Mobile app or enter “1” to receive a push on your mobile device.\n\n\n\n\n14.1.1 Troubleshooting Global Protect on Mac OSX\nIf the client never connects and just “spins”, this issue could be related to a security setting for the Mac Keychain. Properly restart the computer by clicking restart, and making sure the “Reopen windows when logging back in” is unchecked as shown here:\n\n\nOnce the computer restarts and GlobalProtect restarts upon booting back up, there will eventually be a prompt that pops up. It may ask for permission for GlobalProtect to use confidential information from the Keychain. The password should be the computer’s Admin password, or their Apple ID password. Once the password has been entered, click “Always allow”. Afterward, GlobalProtect should be able to move past the “Connecting” phase and will prompt for username and password as usual."
+    "section": "",
+    "text": "Open the GlobalProtect client by selecting the icon at the top of your screen (Mac) or in the system tray (PC). (If it does not automatically appear in this place, access the client through your Finder’s Applications folder (Mac) or Start Menu (PC).)\n\nIf it is your first time connecting, you will be prompted to enter a portal address. The default portal is uwmadison.vpn.wisc.edu.\nIf you have used GlobalProtect before, you will be connected to the portal you last used. This can be changed by opening the settings menu on the top right of the client login screen.\n\n\n\n\nEnter your netid followed by _1 (to use your Static IP) and password (regular NetID password) and click Sign In. If you are prompted to use Duo MFA, enter the passcode from your fob/Duo Mobile app or enter “1” to receive a push on your mobile device.\n\n\n\n14.1.1 Troubleshooting Global Protect on Mac OSX\nIf the client never connects and just “spins”, this issue could be related to a security setting for the Mac Keychain. Properly restart the computer by clicking restart, and making sure the “Reopen windows when logging back in” is unchecked as shown here:\n\n\nOnce the computer restarts and GlobalProtect restarts upon booting back up, there will eventually be a prompt that pops up. It may ask for permission for GlobalProtect to use confidential information from the Keychain. The password should be the computer’s Admin password, or their Apple ID password. Once the password has been entered, click “Always allow”. Afterward, GlobalProtect should be able to move past the “Connecting” phase and will prompt for username and password as usual.",
+    "crumbs": [
+      "Other Software",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Global Protect and Mapping the Network Server</span>"
+    ]
   },
   {
     "objectID": "globalprotect_mapping.html#connecting-to-johns-server",
     "href": "globalprotect_mapping.html#connecting-to-johns-server",
     "title": "14  Global Protect and Mapping the Network Server",
     "section": "14.2 Connecting to John’s server",
-    "text": "14.2 Connecting to John’s server\n\n14.2.1 Mac OSX:\n\nAfter GlobalProtect is connected, open your Finder application: From the top utility bar Click on Go and select Connect to Server.\n\n\n\n\nEnter the server address: smb://dionysus.psych.wisc.edu/Private\n\n\n\n\nClick on the + (plus) icon to add the server name to your Favorite Servers.\nWhen you are prompted for your credentials be sure to select “Registered User”. Enter your username and password. You can also check to remember this password in your keychain, if you wish.\n\n\n\n\nClick Connect to continue"
+    "text": "14.2 Connecting to John’s server\n\n14.2.1 Mac OSX:\n\nAfter GlobalProtect is connected, open your Finder application: From the top utility bar Click on Go and select Connect to Server.\n\n\n\n\nEnter the server address: smb://dionysus.psych.wisc.edu/Private\n\n\n\n\nClick on the + (plus) icon to add the server name to your Favorite Servers.\nWhen you are prompted for your credentials be sure to select “Registered User”. Enter your username and password. You can also check to remember this password in your keychain, if you wish.\n\n\n\n\nClick Connect to continue",
+    "crumbs": [
+      "Other Software",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Global Protect and Mapping the Network Server</span>"
+    ]
   },
   {
     "objectID": "globalprotect_mapping.html#windows-pc",
     "href": "globalprotect_mapping.html#windows-pc",
     "title": "14  Global Protect and Mapping the Network Server",
     "section": "14.3 Windows PC:",
-    "text": "14.3 Windows PC:\n\nOpen Windows explorer and click on This PC. Under the Computer tab, select Map Network Drive\n\n\n\n\nIn the dialog box, select a drive letter. For the Private drive you want to be sure to use P: as that is referenced in our analysis code.\n\n\n\n\nIn the Folder box, type the address of the drive you wish to map; i.e. \\\\dionysus.psych.wisc.edu\\private\nCheck “Connect using other credentials” and enter dionysus\\yournetid (no double slashes leading) as the username (use your actual netID), and your netID password.\nMake sure that “Reconnect at Logon” is ALSO checked and hit Finish"
+    "text": "14.3 Windows PC:\n\nOpen Windows explorer and click on This PC. Under the Computer tab, select Map Network Drive\n\n\n\n\nIn the dialog box, select a drive letter. For the Private drive you want to be sure to use P: as that is referenced in our analysis code.\n\n\n\n\nIn the Folder box, type the address of the drive you wish to map; i.e. \\\\dionysus.psych.wisc.edu\\private\nCheck “Connect using other credentials” and enter dionysus\\yournetid (no double slashes leading) as the username (use your actual netID), and your netID password.\nMake sure that “Reconnect at Logon” is ALSO checked and hit Finish",
+    "crumbs": [
+      "Other Software",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Global Protect and Mapping the Network Server</span>"
+    ]
   },
   {
     "objectID": "zotero.html#installation",
@@ -1067,6 +1160,59 @@
     "crumbs": [
       "Linux and CLI",
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Installing Linux</span>"
+    ]
+  },
+  {
+    "objectID": "globalprotect_mapping.html",
+    "href": "globalprotect_mapping.html",
+    "title": "14  Global Protect and Mapping the Network Server",
+    "section": "",
+    "text": "14.1 Global Protect\nAfter you install GlobalProtect vis these instructions, connecting is nearly identical on Mac or Windows PC:",
+    "crumbs": [
+      "Other Software",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Global Protect and Mapping the Network Server</span>"
+    ]
+  },
+  {
+    "objectID": "studies.html",
+    "href": "studies.html",
+    "title": "3  Current and Planned Studies",
+    "section": "",
+    "text": "3.1 RISK",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Current and Planned Studies</span>"
+    ]
+  },
+  {
+    "objectID": "git.html",
+    "href": "git.html",
+    "title": "8  Git",
+    "section": "",
+    "text": "8.1 Common Git Commands\nNote: These commands will only work if you are in a git repo.",
+    "crumbs": [
+      "Linux and CLI",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Git</span>"
+    ]
+  },
+  {
+    "objectID": "vim.html",
+    "href": "vim.html",
+    "title": "11  Vim",
+    "section": "",
+    "text": "11.1 Exit and Save",
+    "crumbs": [
+      "Linux and CLI",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Vim</span>"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Documentation for ARC",
+    "section": "",
+    "text": "Welcome\nThis web book is a collection of general documentation, demostrations, and other supporting materials for John Curtin’s Addiction Research Center.",
+    "crumbs": [
+      "Welcome"
     ]
   }
 ]

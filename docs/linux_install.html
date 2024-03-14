@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.551">
+<meta name="generator" content="quarto-1.5.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Documentation for ARC - 9&nbsp; Installing Linux</title>
+<title>Documentation for ARC – 9&nbsp; Installing Linux</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -407,6 +407,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>https://www.digitalocean.com/community/tutorials/how-to-install-r-on-ubuntu-22-04</p></li>
 <li><p>https://computingforgeeks.com/how-to-install-r-and-rstudio-on-ubuntu-debian-mint/</p></li>
 </ul>
+<p>and for updates of R version, see https://docs.posit.co/resources/install-r</p>
 </section>
 <section id="quarto" class="level2" data-number="9.4">
 <h2 data-number="9.4" class="anchored" data-anchor-id="quarto"><span class="header-section-number">9.4</span> Quarto</h2>
@@ -659,7 +660,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
