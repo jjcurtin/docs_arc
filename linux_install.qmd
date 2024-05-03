@@ -263,3 +263,8 @@ Install with: `curl -fsSL https://raw.github.com/cknadler/vim-anywhere/master/in
 If you want to run some cli programs (e.g., sftp, ssh, git) and limited bash on a Windows compoter, install [Git Bash](https://git-scm.com/download/win).
 
 This is NOT needed if you are installing Linux as your OS.
+
+
+## Vim anywhere
+
+https://github.com/cknadler/vim-anywhere
