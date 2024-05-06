@@ -65,7 +65,7 @@ saved from that author and that publication year. Example: CurtinJ2011a for the 
 
 ### In Quarto
 
-As of 2022, most manuscripts in our lab will be written in Quarto since it allows inline code for reproducible results. See [this section](https://jjcurtin.github.io/dwt/quarto.html#journal-articles) for info on adding bibliographies and citations (including linked Quartro resources for further reading)
+As of 2022, most manuscripts in our lab will be written in Quarto since it allows inline code for reproducible results. See [this section](https://jjcurtin.github.io/book_dwvt/quarto.html#journal-articles) for info on adding bibliographies and citations (including linked Quartro resources for further reading)
 
 ### In MS Word
 
