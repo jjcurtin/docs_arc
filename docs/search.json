@@ -1155,7 +1155,7 @@
     "href": "qr_code.html",
     "title": "16  Creating QR Codes for Presentations",
     "section": "",
-    "text": "Easy to make\nUse this website: https://app.qr-code-generator.com/manage\nLink to our posters and presentations page: https://arc.psych.wisc.edu/posters-presentations/\nInclude on last slide along with CREDITS",
+    "text": "16.1 Creating QR codes with R\nThere is a package called qrcode which generates nice little codes which are persistent and free. After installing the package, use the following code, where destination is the URL you wish the code to direct to.\nThen save the plot as an image file.",
     "crumbs": [
       "Other Software",
       "<span class='chapter-number'>16</span>  <span class='chapter-title'>Creating QR Codes for Presentations</span>"
@@ -1621,6 +1621,17 @@
     "crumbs": [
       "Psychophysiology",
       "<span class='chapter-number'>18</span>  <span class='chapter-title'>Psychophysiology Software</span>"
+    ]
+  },
+  {
+    "objectID": "qr_code.html#creating-qr-codes-with-r",
+    "href": "qr_code.html#creating-qr-codes-with-r",
+    "title": "16  Creating QR Codes for Presentations",
+    "section": "",
+    "text": "library(qrcode)\n\ndestination &lt;- \"https://jjcurtin.quarto.pub/precision-mental-health-for-substance-use-disorders-7561\"\n\n\nqr &lt;- qr_code(destination, ecl = c(\"L\", \"M\", \"Q\", \"H\"))\n\nplot(qr)",
+    "crumbs": [
+      "Other Software",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Creating QR Codes for Presentations</span>"
     ]
   }
 ]

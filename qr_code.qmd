@@ -4,3 +4,20 @@
 
 - Link to our posters and presentations page: https://arc.psych.wisc.edu/posters-presentations/
 - Include on last slide along with CREDITS
+
+## Creating QR codes with R
+
+There is a package called `qrcode` which generates nice little codes which are persistent and free. After installing the package, use the following code, where destination is the URL you wish the code to direct to.
+
+````
+library(qrcode)
+
+destination <- "https://jjcurtin.quarto.pub/precision-mental-health-for-substance-use-disorders-7561"
+
+
+qr <- qr_code(destination, ecl = c("L", "M", "Q", "H"))
+
+plot(qr)
+````
+
+Then save the plot as an image file.
