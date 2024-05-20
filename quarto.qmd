@@ -13,6 +13,13 @@ params:
 For general info on using quarto, visit John's [Data Wrangling quarto page](https://jjcurtin.github.io/book_dwvt/quarto.html).
 
 
+## Projects
+As of 2024 our preferred method for creating reproducible analysis is to have a [quarto project](https://quarto.org/docs/projects/quarto-projects.html) for each study. Clone from John's [study template repo](https://github.com/jjcurtin/study_template) to begin a new project.
+
+A project allows you to connect a website, presentations (both slidesets and posters), and PDFs/word documents  to a set of analysis notebooks (formerly our ana_.Rmd files). That way, code across all output formats can be updated simultaneously from a single location. Plots and charts can also be produced from these notebooks, which can them be used across multiple output document formats. 
+
+Please note that most of the documentation on John's [Data Wrangling quarto page](https://jjcurtin.github.io/book_dwvt/quarto.html) was written when we were creating each format type as a standalone. This information is still valid for that workflow. Differences related to projects will be noted in the appropriate section on that page.
+
 ## Checking installation details
 
 `/opt/quarto/"${QUARTO_VERSION}"/bin/quarto check` in the terminal

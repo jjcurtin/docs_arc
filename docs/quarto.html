@@ -318,10 +318,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#using-quarto" id="toc-using-quarto" class="nav-link active" data-scroll-target="#using-quarto"><span class="header-section-number">5.1</span> Using Quarto</a></li>
-  <li><a href="#checking-installation-details" id="toc-checking-installation-details" class="nav-link" data-scroll-target="#checking-installation-details"><span class="header-section-number">5.2</span> Checking installation details</a></li>
-  <li><a href="#assigning-values-to-parameters" id="toc-assigning-values-to-parameters" class="nav-link" data-scroll-target="#assigning-values-to-parameters"><span class="header-section-number">5.3</span> Assigning values to parameters</a></li>
-  <li><a href="#using-parameter-values" id="toc-using-parameter-values" class="nav-link" data-scroll-target="#using-parameter-values"><span class="header-section-number">5.4</span> Using parameter values</a></li>
-  <li><a href="#passing-parameter-values-at-command-line" id="toc-passing-parameter-values-at-command-line" class="nav-link" data-scroll-target="#passing-parameter-values-at-command-line"><span class="header-section-number">5.5</span> Passing parameter values at command line</a></li>
+  <li><a href="#projects" id="toc-projects" class="nav-link" data-scroll-target="#projects"><span class="header-section-number">5.2</span> Projects</a></li>
+  <li><a href="#checking-installation-details" id="toc-checking-installation-details" class="nav-link" data-scroll-target="#checking-installation-details"><span class="header-section-number">5.3</span> Checking installation details</a></li>
+  <li><a href="#assigning-values-to-parameters" id="toc-assigning-values-to-parameters" class="nav-link" data-scroll-target="#assigning-values-to-parameters"><span class="header-section-number">5.4</span> Assigning values to parameters</a></li>
+  <li><a href="#using-parameter-values" id="toc-using-parameter-values" class="nav-link" data-scroll-target="#using-parameter-values"><span class="header-section-number">5.5</span> Using parameter values</a></li>
+  <li><a href="#passing-parameter-values-at-command-line" id="toc-passing-parameter-values-at-command-line" class="nav-link" data-scroll-target="#passing-parameter-values-at-command-line"><span class="header-section-number">5.6</span> Passing parameter values at command line</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/jjcurtin/docs_arc/edit/main/quarto.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
@@ -351,12 +352,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-number="5.1" class="anchored" data-anchor-id="using-quarto"><span class="header-section-number">5.1</span> Using Quarto</h2>
 <p>For general info on using quarto, visit John’s <a href="https://jjcurtin.github.io/book_dwvt/quarto.html">Data Wrangling quarto page</a>.</p>
 </section>
-<section id="checking-installation-details" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="checking-installation-details"><span class="header-section-number">5.2</span> Checking installation details</h2>
+<section id="projects" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="projects"><span class="header-section-number">5.2</span> Projects</h2>
+<p>As of 2024 our preferred method for creating reproducible analysis is to have a <a href="https://quarto.org/docs/projects/quarto-projects.html">quarto project</a> for each study. Clone from John’s <a href="https://github.com/jjcurtin/study_template">study template repo</a> to begin a new project.</p>
+<p>A project allows you to connect a website, presentations (both slidesets and posters), and PDFs/word documents to a set of analysis notebooks (formerly our ana_.Rmd files). That way, code across all output formats can be updated simultaneously from a single location. Plots and charts can also be produced from these notebooks, which can them be used across multiple output document formats.</p>
+<p>Please note that most of the documentation on John’s <a href="https://jjcurtin.github.io/book_dwvt/quarto.html">Data Wrangling quarto page</a> was written when we were creating each format type as a standalone. This information is still valid for that workflow. Differences related to projects will be noted in the appropriate section on that page.</p>
+</section>
+<section id="checking-installation-details" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="checking-installation-details"><span class="header-section-number">5.3</span> Checking installation details</h2>
 <p><code>/opt/quarto/"${QUARTO_VERSION}"/bin/quarto check</code> in the terminal</p>
 </section>
-<section id="assigning-values-to-parameters" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="assigning-values-to-parameters"><span class="header-section-number">5.3</span> Assigning values to parameters</h2>
+<section id="assigning-values-to-parameters" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="assigning-values-to-parameters"><span class="header-section-number">5.4</span> Assigning values to parameters</h2>
 <p>You define parameters in the YAML using the syntax below</p>
 <ul>
 <li>You can assign initial values to the parameters. These values will be used by default if you do not replace them with new values from the command line when you render the script.</li>
@@ -382,8 +389,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># pv2 &lt;- 10 # use this line to interactively assign new value</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="using-parameter-values" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="using-parameter-values"><span class="header-section-number">5.4</span> Using parameter values</h2>
+<section id="using-parameter-values" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="using-parameter-values"><span class="header-section-number">5.5</span> Using parameter values</h2>
 <p>When you use params in the YAML, a list named <code>params</code> is created.</p>
 <ul>
 <li>You can then use this list as normal with no further code needed to establish the values.</li>
@@ -404,8 +411,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Or if you assigned the parameter values to variables as I recommended, you can just use those variables as you normally would. They will start with the values assigned to associated parameters (in YAML or input from command line)</li>
 </ul>
 </section>
-<section id="passing-parameter-values-at-command-line" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="passing-parameter-values-at-command-line"><span class="header-section-number">5.5</span> Passing parameter values at command line</h2>
+<section id="passing-parameter-values-at-command-line" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="passing-parameter-values-at-command-line"><span class="header-section-number">5.6</span> Passing parameter values at command line</h2>
 <p>I prefer to render quarto documents in the terminal.</p>
 <ul>
 <li>You can indicate the output filename (otherwise, the output file name is set to the input filename with a different extension).<br>
