@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.5.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Documentation for ARC - 5&nbsp; Quarto</title>
+<title>Documentation for ARC – 5&nbsp; Quarto</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -317,10 +317,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#checking-installation-details" id="toc-checking-installation-details" class="nav-link active" data-scroll-target="#checking-installation-details"><span class="header-section-number">5.1</span> Checking installation details</a></li>
-  <li><a href="#assigning-values-to-parameters" id="toc-assigning-values-to-parameters" class="nav-link" data-scroll-target="#assigning-values-to-parameters"><span class="header-section-number">5.2</span> Assigning values to parameters</a></li>
-  <li><a href="#using-parameter-values" id="toc-using-parameter-values" class="nav-link" data-scroll-target="#using-parameter-values"><span class="header-section-number">5.3</span> Using parameter values</a></li>
-  <li><a href="#passing-parameter-values-at-command-line" id="toc-passing-parameter-values-at-command-line" class="nav-link" data-scroll-target="#passing-parameter-values-at-command-line"><span class="header-section-number">5.4</span> Passing parameter values at command line</a></li>
+  <li><a href="#using-quarto" id="toc-using-quarto" class="nav-link active" data-scroll-target="#using-quarto"><span class="header-section-number">5.1</span> Using Quarto</a></li>
+  <li><a href="#checking-installation-details" id="toc-checking-installation-details" class="nav-link" data-scroll-target="#checking-installation-details"><span class="header-section-number">5.2</span> Checking installation details</a></li>
+  <li><a href="#assigning-values-to-parameters" id="toc-assigning-values-to-parameters" class="nav-link" data-scroll-target="#assigning-values-to-parameters"><span class="header-section-number">5.3</span> Assigning values to parameters</a></li>
+  <li><a href="#using-parameter-values" id="toc-using-parameter-values" class="nav-link" data-scroll-target="#using-parameter-values"><span class="header-section-number">5.4</span> Using parameter values</a></li>
+  <li><a href="#passing-parameter-values-at-command-line" id="toc-passing-parameter-values-at-command-line" class="nav-link" data-scroll-target="#passing-parameter-values-at-command-line"><span class="header-section-number">5.5</span> Passing parameter values at command line</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/jjcurtin/docs_arc/edit/main/quarto.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
@@ -346,12 +347,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="checking-installation-details" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="checking-installation-details"><span class="header-section-number">5.1</span> Checking installation details</h2>
+<section id="using-quarto" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="using-quarto"><span class="header-section-number">5.1</span> Using Quarto</h2>
+<p>For general info on using quarto, visit John’s <a href="https://jjcurtin.github.io/book_dwvt/quarto.html">Data Wrangling quarto page</a>.</p>
+</section>
+<section id="checking-installation-details" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="checking-installation-details"><span class="header-section-number">5.2</span> Checking installation details</h2>
 <p><code>/opt/quarto/"${QUARTO_VERSION}"/bin/quarto check</code> in the terminal</p>
 </section>
-<section id="assigning-values-to-parameters" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="assigning-values-to-parameters"><span class="header-section-number">5.2</span> Assigning values to parameters</h2>
+<section id="assigning-values-to-parameters" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="assigning-values-to-parameters"><span class="header-section-number">5.3</span> Assigning values to parameters</h2>
 <p>You define parameters in the YAML using the syntax below</p>
 <ul>
 <li>You can assign initial values to the parameters. These values will be used by default if you do not replace them with new values from the command line when you render the script.</li>
@@ -377,8 +382,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># pv2 &lt;- 10 # use this line to interactively assign new value</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="using-parameter-values" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="using-parameter-values"><span class="header-section-number">5.3</span> Using parameter values</h2>
+<section id="using-parameter-values" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="using-parameter-values"><span class="header-section-number">5.4</span> Using parameter values</h2>
 <p>When you use params in the YAML, a list named <code>params</code> is created.</p>
 <ul>
 <li>You can then use this list as normal with no further code needed to establish the values.</li>
@@ -399,8 +404,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Or if you assigned the parameter values to variables as I recommended, you can just use those variables as you normally would. They will start with the values assigned to associated parameters (in YAML or input from command line)</li>
 </ul>
 </section>
-<section id="passing-parameter-values-at-command-line" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="passing-parameter-values-at-command-line"><span class="header-section-number">5.4</span> Passing parameter values at command line</h2>
+<section id="passing-parameter-values-at-command-line" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="passing-parameter-values-at-command-line"><span class="header-section-number">5.5</span> Passing parameter values at command line</h2>
 <p>I prefer to render quarto documents in the terminal.</p>
 <ul>
 <li>You can indicate the output filename (otherwise, the output file name is set to the input filename with a different extension).<br>
@@ -505,6 +510,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/github\.io\/jjcurtin\/docs_arc");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -539,7 +562,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');

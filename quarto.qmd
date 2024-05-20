@@ -9,6 +9,10 @@ params:
 
 # Quarto
 
+## Using Quarto
+For general info on using quarto, visit John's [Data Wrangling quarto page](https://jjcurtin.github.io/book_dwvt/quarto.html).
+
+
 ## Checking installation details
 
 `/opt/quarto/"${QUARTO_VERSION}"/bin/quarto check` in the terminal
