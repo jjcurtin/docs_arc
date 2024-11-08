@@ -20,7 +20,8 @@
 - `ctrl_n` or `down arrow` scrolls forward through commands
 - `ctrl+shift+c` copies highlighted text
 - `ctrl+shift+v` pastes copied text
-
+- `alt-tab` switches between open windows within an app
+- `super-tab` switches between apps
 ## control processes
 
 - command & to launch program in background of terminal
@@ -52,35 +53,35 @@ You can view an html file in firefox from terminal using `firefox [filename]`
 
 ## Common Commands
 
-- wc, uniq, head, tail, |, >, >>, less, sort, grep, cat, man, help, --help, type, which, echo
+- wc, uniq, head, tail, |, >, >>, less, sort, grep, cat, man, help, --help, type, which, echo, history
 
--   `ls -lSr` to list files sorted by size (with larger sizes later: `r`). Useful to find the non-zero error files. Can have issues when applied to large numbers of files (> 60K). See use of `find` and `xargs` below if needed.
+- `ls -lSr` to list files sorted by size (with larger sizes later: `r`). Useful to find the non-zero error files. Can have issues when applied to large numbers of files (> 60K). See use of `find` and `xargs` below if needed.
 
--   `cd -` changes tio previous directory
+- `cd -` changes tio previous directory
 
--   `mv` to move files between directories. can use `..` as target to move file to home directory. e.g., `mv results_* ..`
+- `mv` to move files between directories. can use `..` as target to move file to home directory. e.g., `mv results_* ..`
 
--   `>` redirect standard output to a new file (creates file if does not exist; writes over file contents if it does exist). `>>` redirect standard output to append to a file
+- `>` redirect standard output to a new file (creates file if does not exist; writes over file contents if it does exist). `>>` redirect standard output to append to a file
 
--   `rm` to remove file(s). `rm -r` to remove non-empty directory
+- `rm` to remove file(s). `rm -r` to remove non-empty directory
 
--   `cat filename_* > all_files.csv` to concatenate all files into one file.
+- `cat filename_* > all_files.csv` to concatenate all files into one file.
 
--   `less` views file contents
+- `less` views file contents
 
--   `|` is pipe operator
+- `|` is pipe operator
 
 - `wc` is word count.  `wc -l` counts lines
 
--   `chmod +x get_missing_jobs.sh` to change permissions on get_missing_jobs.sh to run it. `./get_missing_jobs.sh` to run it.
+- `chmod +x get_missing_jobs.sh` to change permissions on get_missing_jobs.sh to run it. `./get_missing_jobs.sh` to run it.
 
--   `find -maxdepth 1 -name "results_*.csv" | wc -l` will find results_*.csv in local folder (maxdepth 1) and pipe them into a word count that counts lines (-l)
+- `find -maxdepth 1 -name "results_*.csv" | wc -l` will find results_*.csv in local folder (maxdepth 1) and pipe them into a word count that counts lines (-l)
 
--   `cat job_nums.csv | wc -l` reads contents of `job_nums.csv` and pipes to a word count that counts lines (`-l`)
+- `cat job_nums.csv | wc -l` reads contents of `job_nums.csv` and pipes to a word count that counts lines (`-l`)
 
--   `find -maxdepth 1 -name "results_*.csv" | ls -lSr` gets around the too many arguments issue.  Find searches recursively by default (override with maxdepth if needed), whereas ls searches just `.` or the specified directory (e.g., `./results`)
+- `find -maxdepth 1 -name "results_*.csv" | ls -lSr` gets around the too many arguments issue.  Find searches recursively by default (override with maxdepth if needed), whereas ls searches just `.` or the specified directory (e.g., `./results`)
 
--   See [tutorial](https://linuxhandbook.com/awk-command-tutorial/) on awk to understand its use for simple programming. See a [tutorial](https://shapeshed.com/unix-xargs/) on the use of xargs.
+- See [tutorial](https://linuxhandbook.com/awk-command-tutorial/) on awk to understand its use for simple programming. See a [tutorial](https://shapeshed.com/unix-xargs/) on the use of xargs.
 
 - `printf` to send formatted text to standard output or to a file
    - `printf "John is %s\n" "nice"`
@@ -93,9 +94,12 @@ You can view an html file in firefox from terminal using `firefox [filename]`
 - `vimdiff file1 file2` - Highlight the differences between two files in the vim editor.
 - `tar [-] c|x|t f tarfile [pattern]` - Create, extract or list contents of a tar archive using pattern, if supplied.
 - `du -h` - Display sizes in human readable format. For example, 1.2M, 3.7G, etc.
-
+  - du -shc ~/mnt/private/studydata/face get size of directory and its subdirectories
 
 - `head`, `tail`, and `sort` work as expected.  Remember to use -n with sort if you want to do a numeric (rather than text) sort.  Sort also takes -r for reverse.  Use pipe to pipe in a vector of numbers or text.  Use -1 with head or tail to get the first (or last) value in series.
+
+- `cd-` switches back to previous directory
+
 
 ## Compressing and archiving files
 
