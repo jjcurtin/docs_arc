@@ -647,62 +647,29 @@
     "href": "linux_use.html#general-short-cuts",
     "title": "10  Using Linux",
     "section": "",
-    "text": "super+tab switches between windows\nsuper+left/right arrow fits active window to left or right of screen\nctrl+alt+t opens a new terminal window\nctrl+d closes a terminal window",
+    "text": "super+tab switches between windows\nsuper+left/right arrow fits active window to left or right of screen\nctrl+alt+t opens a new terminal window\nctrl+shift+t opens a new tab in terminal window\nalt-number switches between tabs in terminal window\nctrl+d closes a terminal window j ## Terminal Short Cuts\ntab autocompletes from what you have started to type\nctrl+c breaks out of a command or process\nctrl+d logs out of current terminal\nc clears screen (my alias)\nctrl+a moves cursor to begining of line\nctrl+e moves cursor to the end of line\nctrl+u clears the current line\nctrl+p or up arrow scrolls through previous commands\nctrl_n or down arrow scrolls forward through commands\nctrl+shift+c copies highlighted text\nctrl+shift+v pastes copied text\nalt-tab switches between open windows within an app\nsuper-tab switches between apps",
     "crumbs": [
       "Linux and CLI",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Using Linux</span>"
     ]
   },
   {
-    "objectID": "linux_use.html#terminal-short-cuts",
-    "href": "linux_use.html#terminal-short-cuts",
+    "objectID": "linux_use.html#control-processes",
+    "href": "linux_use.html#control-processes",
     "title": "10  Using Linux",
-    "section": "10.2 Terminal Short Cuts",
-    "text": "10.2 Terminal Short Cuts\n\ntab autocompletes from what you have started to type\nctrl+c breaks out of a command or process\nctrl+d logs out of current terminal\n`ctrl+l clears screen\nctrl+a moves cursor to beginnng of line\nctrl+e moves cursor to the end of line\nctrl+u clears the current line\nctrl+p or up arrow scrolls through previous commands\nctrl_n or down arrow scrolls forward through commands\nctrl+shift+c copies highlighted text\nctrl+shift+v pastes copied text\nalt-tab switches between open windows within an app\nsuper-tab switches between apps ## control processes\ncommand & to launch program in background of terminal\nfg %1 to move program to foreground\nbg %1 to move to background\nkill %1 (see chap 10 in linux book)",
+    "section": "10.2 control processes",
+    "text": "10.2 control processes\n\ncommand & to launch program in background of terminal\nfg %1 to move program to foreground\nbg %1 to move to background\nkill %1 (see chap 10 in linux book)",
     "crumbs": [
       "Linux and CLI",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Using Linux</span>"
     ]
   },
   {
-    "objectID": "linux_use.html#pdf-manipulation",
-    "href": "linux_use.html#pdf-manipulation",
+    "objectID": "linux_use.html#browsers",
+    "href": "linux_use.html#browsers",
     "title": "10  Using Linux",
-    "section": "10.3 Pdf manipulation",
-    "text": "10.3 Pdf manipulation\nWe use evince [filename.pdf] to view pdfs\nwe use qpdf --empty --pages infile.pdf 1-5 -- outfile.pdf to extract pages from a pdf",
-    "crumbs": [
-      "Linux and CLI",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Using Linux</span>"
-    ]
-  },
-  {
-    "objectID": "linux_use.html#quarto",
-    "href": "linux_use.html#quarto",
-    "title": "10  Using Linux",
-    "section": "10.4 Quarto",
-    "text": "10.4 Quarto",
-    "crumbs": [
-      "Linux and CLI",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Using Linux</span>"
-    ]
-  },
-  {
-    "objectID": "linux_use.html#markdown",
-    "href": "linux_use.html#markdown",
-    "title": "10  Using Linux",
-    "section": "10.5 Markdown",
-    "text": "10.5 Markdown\nYou will need to install pandoc to render markdown to pdf: sudo apt-get install pandoc texlive-latex-base texlive-fonts-recommended texlive-extra-utils texlive-latex-extra.\nUse pandoc [infile.md] -o [outfile.pdf] to render infile.md to outfile.pdf.\nNote also that the ReText app can render markdown to pdf (and html) as well if you don’t want to use the terminal.",
-    "crumbs": [
-      "Linux and CLI",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Using Linux</span>"
-    ]
-  },
-  {
-    "objectID": "linux_use.html#firefox",
-    "href": "linux_use.html#firefox",
-    "title": "10  Using Linux",
-    "section": "10.6 Firefox",
-    "text": "10.6 Firefox\nYou can view an html file in firefox from terminal using firefox [filename]",
+    "section": "11.1 Browsers",
+    "text": "11.1 Browsers\nchrome [filename]s opens a file in chrome. You can view an html file in firefox from terminal using firefox [filename]",
     "crumbs": [
       "Linux and CLI",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Using Linux</span>"
@@ -712,8 +679,8 @@
     "objectID": "linux_use.html#common-commands",
     "href": "linux_use.html#common-commands",
     "title": "10  Using Linux",
-    "section": "10.7 Common Commands",
-    "text": "10.7 Common Commands\n\nwc, uniq, head, tail, |, &gt;, &gt;&gt;, less, sort, grep, cat, man, help, –help, type, which, echo, history\nls -lSr to list files sorted by size (with larger sizes later: r). Useful to find the non-zero error files. Can have issues when applied to large numbers of files (&gt; 60K). See use of find and xargs below if needed.\ncd - changes tio previous directory\nmv to move files between directories. can use .. as target to move file to home directory. e.g., mv results_* ..\n&gt; redirect standard output to a new file (creates file if does not exist; writes over file contents if it does exist). &gt;&gt; redirect standard output to append to a file\nrm to remove file(s). rm -r to remove non-empty directory\ncat filename_* &gt; all_files.csv to concatenate all files into one file.\nless views file contents\n| is pipe operator\nwc is word count. wc -l counts lines\nchmod +x get_missing_jobs.sh to change permissions on get_missing_jobs.sh to run it. ./get_missing_jobs.sh to run it.\nfind -maxdepth 1 -name \"results_*.csv\" | wc -l will find results_*.csv in local folder (maxdepth 1) and pipe them into a word count that counts lines (-l)\ncat job_nums.csv | wc -l reads contents of job_nums.csv and pipes to a word count that counts lines (-l)\nfind -maxdepth 1 -name \"results_*.csv\" | ls -lSr gets around the too many arguments issue. Find searches recursively by default (override with maxdepth if needed), whereas ls searches just . or the specified directory (e.g., ./results)\nSee tutorial on awk to understand its use for simple programming. See a tutorial on the use of xargs.\nprintf to send formatted text to standard output or to a file\n\nprintf \"John is %s\\n\" \"nice\"\nprintf \"John is %d years old\" 54\nprintf \"hello world\\nIt is John!\" &gt; out.txt)\n\nman [command] to open manual for command\nsdiff file1 file2 - Compare two files side by side.\nvimdiff file1 file2 - Highlight the differences between two files in the vim editor.\ntar [-] c|x|t f tarfile [pattern] - Create, extract or list contents of a tar archive using pattern, if supplied.\ndu -h - Display sizes in human readable format. For example, 1.2M, 3.7G, etc.\n\ndu -shc ~/mnt/private/studydata/face get size of directory and its subdirectories\n\nhead, tail, and sort work as expected. Remember to use -n with sort if you want to do a numeric (rather than text) sort. Sort also takes -r for reverse. Use pipe to pipe in a vector of numbers or text. Use -1 with head or tail to get the first (or last) value in series.\ncd- switches back to previous directory",
+    "section": "11.2 Common Commands",
+    "text": "11.2 Common Commands\n\nwc, uniq, head, tail, |, &gt;, &gt;&gt;, less, sort, grep, cat, man, help, –help, type, which, echo, history\nls -lSr to list files sorted by size (with larger sizes later: r). Useful to find the non-zero error files. Can have issues when applied to large numbers of files (&gt; 60K). See use of find and xargs below if needed.\ncd - changes to previous directory\nmv to move files between directories. can use .. as target to move file to home directory. e.g., mv results_* ..\n&gt; redirect standard output to a new file (creates file if does not exist; writes over file contents if it does exist). &gt;&gt; redirect standard output to append to a file\nrm to remove file(s). rm -r to remove non-empty directory\ncat filename_* &gt; all_files.csv to concatenate all files into one file.\nless views file contents\n| is pipe operator\nwc is word count. wc -l counts lines\nchmod +x get_missing_jobs.sh to change permissions on get_missing_jobs.sh to run it. ./get_missing_jobs.sh to run it.\nfind -maxdepth 1 -name \"results_*.csv\" | wc -l will find results_*.csv in local folder (maxdepth 1) and pipe them into a word count that counts lines (-l)\ncat job_nums.csv | wc -l reads contents of job_nums.csv and pipes to a word count that counts lines (-l)\nfind -maxdepth 1 -name \"results_*.csv\" | ls -lSr gets around the too many arguments issue. Find searches recursively by default (override with maxdepth if needed), whereas ls searches just . or the specified directory (e.g., ./results)\nSee tutorial on awk to understand its use for simple programming. See a tutorial on the use of xargs.\nprintf to send formatted text to standard output or to a file\n\nprintf \"John is %s\\n\" \"nice\"\nprintf \"John is %d years old\" 54\nprintf \"hello world\\nIt is John!\" &gt; out.txt)\n\nman [command] to open manual for command\nsdiff file1 file2 - Compare two files side by side.\nvimdiff file1 file2 - Highlight the differences between two files in the vim editor.\ntar [-] c|x|t f tarfile [pattern] - Create, extract or list contents of a tar archive using pattern, if supplied.\ndu -h - Display sizes in human readable format. For example, 1.2M, 3.7G, etc.\n\ndu -shc - Display size of directory and its subdirectories\n\nhead, tail, and sort work as expected. Remember to use -n with sort if you want to do a numeric (rather than text) sort. Sort also takes -r for reverse. Use pipe to pipe in a vector of numbers or text. Use -1 with head or tail to get the first (or last) value in series.\ncd- switches back to previous directory",
     "crumbs": [
       "Linux and CLI",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Using Linux</span>"
@@ -723,8 +690,8 @@
     "objectID": "linux_use.html#compressing-and-archiving-files",
     "href": "linux_use.html#compressing-and-archiving-files",
     "title": "10  Using Linux",
-    "section": "10.8 Compressing and archiving files",
-    "text": "10.8 Compressing and archiving files\n\n`gzip foo.txt - Compress foo.txt. The resulting compressed file is named file.txt.gz. -r to compress subdirectories when compressing a directory rather than file.\ngunzip foo.txt - Uncompress foo.txt.gz (no need to append .gz).\ngunzip foo.txt -c | less to view contents of foo.txt without decompressing it\ntar cf playground.tar playground make archive of playground directory. r rather than c to append rather than create new archive.\ntar czf playground.tgz playground to archive and compress (could also name playground.tar.gz)\ntar xf playground2.tar to extract files from archive\nsee linux book, chapter 18 for more details",
+    "section": "11.3 Compressing and archiving files",
+    "text": "11.3 Compressing and archiving files\n\n`gzip foo.txt - Compress foo.txt. The resulting compressed file is named file.txt.gz. -r to compress subdirectories when compressing a directory rather than file.\ngunzip foo.txt - Uncompress foo.txt.gz (no need to append .gz).\ngunzip foo.txt -c | less to view contents of foo.txt without decompressing it\ntar cf playground.tar playground make archive of playground directory. r rather than c to append rather than create new archive.\ntar czf playground.tgz playground to archive and compress (could also name playground.tar.gz)\ntar xf playground2.tar to extract files from archive\nsee linux book, chapter 18 for more details",
     "crumbs": [
       "Linux and CLI",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Using Linux</span>"
@@ -734,8 +701,8 @@
     "objectID": "linux_use.html#ftp",
     "href": "linux_use.html#ftp",
     "title": "10  Using Linux",
-    "section": "10.9 FTP",
-    "text": "10.9 FTP\n\nuse sftp at command line. e.g., sftp submit-1.chtc.wisc.edu\ncan use command line to review local and remote computers.\nFor local lls, lcd, lpwd are the three most useful commands\nFor remote ls, cd, pwd\nUse get foo.txt to copy foo.txt from remote to local director\nUse put foo.txt to copy foo.txt from local directory to remote directory\nexit when done\nCan set up a ssh key to log in without credentials to CHTC.",
+    "section": "11.4 FTP",
+    "text": "11.4 FTP\n\nuse sftp at command line. e.g., sftp submit-1.chtc.wisc.edu\ncan use command line to review local and remote computers.\nFor local lls, lcd, lpwd are the three most useful commands\nFor remote ls, cd, pwd\nUse get foo.txt to copy foo.txt from remote to local director\nUse put foo.txt to copy foo.txt from local directory to remote directory\nexit when done\nCan set up a ssh key to log in without credentials to CHTC.",
     "crumbs": [
       "Linux and CLI",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Using Linux</span>"
@@ -745,8 +712,8 @@
     "objectID": "linux_use.html#ssh",
     "href": "linux_use.html#ssh",
     "title": "10  Using Linux",
-    "section": "10.10 SSH",
-    "text": "10.10 SSH\n\nuse ssh at command line. e.g., ssh submit-1.chtc.wisc.edu\nCan set up a ssh key to log in without credentials to CHTC, Github, etc.",
+    "section": "11.5 SSH",
+    "text": "11.5 SSH\n\nuse ssh at command line. e.g., ssh submit-1.chtc.wisc.edu\nCan set up a ssh key to log in without credentials to CHTC, Github, etc.",
     "crumbs": [
       "Linux and CLI",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Using Linux</span>"
@@ -756,8 +723,8 @@
     "objectID": "linux_use.html#kill-a-frozen-app",
     "href": "linux_use.html#kill-a-frozen-app",
     "title": "10  Using Linux",
-    "section": "10.11 Kill a frozen app",
-    "text": "10.11 Kill a frozen app\nPress Alt + F2 . Type xkill and hit Enter. The cursor will turn into a small ‘x’. Left click any window to kill the process associated with that window.",
+    "section": "11.6 Kill a frozen app",
+    "text": "11.6 Kill a frozen app\nPress Alt + F2 . Type xkill and hit Enter. The cursor will turn into a small ‘x’. Left click any window to kill the process associated with that window.",
     "crumbs": [
       "Linux and CLI",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Using Linux</span>"
