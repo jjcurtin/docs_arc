@@ -17,9 +17,6 @@ book:
   - Susan Wanta, MS
   site-url: https://github.io/jjcurtin/docs_arc
   repo-url: https://github.com/jjcurtin/docs_arc
-  repo-branch: main
-  repo-actions: [edit]
-  sharing: [facebook, linkedin]
   page-navigation: true
   chapters:
     - index.qmd
