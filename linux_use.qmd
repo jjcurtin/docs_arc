@@ -8,7 +8,7 @@
 - `ctrl+shift+t` opens a new tab in terminal window
 - `alt-number` switches between tabs in terminal window
 - `ctrl+d` closes a terminal window
-j
+
 ## Terminal Short Cuts
 
 - `tab` autocompletes from what you have started to type
@@ -25,19 +25,18 @@ j
 - `alt-tab` switches between open windows within an app
 - `super-tab` switches between apps
 
-## control processes
+## Control processes
 
 - command & to launch program in background of terminal
 - fg %1 to move program to foreground
 - bg %1 to move to background
 - kill %1 (see chap 10 in linux book)
 
-# Pdf manipulation
+## Pdf manipulation
 
 We use `evince [filename.pdf]` to view pdfs
 
 we use `qpdf --empty --pages infile.pdf 1-5 -- outfile.pdf` to extract pages from a pdf
-
 
 
 ## Browsers 
@@ -123,5 +122,3 @@ You can view an html file in firefox from terminal using `firefox [filename]`
 ## Kill a frozen app
 
 Press Alt + F2 . Type xkill and hit Enter. The cursor will turn into a small 'x'. Left click any window to kill the process associated with that window. 
-
-
