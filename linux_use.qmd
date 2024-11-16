@@ -5,15 +5,17 @@
 - `super+tab` switches between windows
 - `super+left/right arrow` fits active window to left or right of screen
 - `ctrl+alt+t` opens a new terminal window
+- `ctrl+shift+t` opens a new tab in terminal window
+- `alt-number` switches between tabs in terminal window
 - `ctrl+d` closes a terminal window
-
+j
 ## Terminal Short Cuts
 
 - `tab` autocompletes from what you have started to type
 - `ctrl+c` breaks out of a command or process
 - `ctrl+d` logs out of current terminal
-- `ctrl+l clears screen
-- `ctrl+a` moves cursor to beginnng of line
+- `c` clears screen (my alias)
+- `ctrl+a` moves cursor to begining of line
 - `ctrl+e` moves cursor to the end of line
 - `ctrl+u` clears the current line
 - `ctrl+p` or `up arrow` scrolls through previous commands
@@ -22,6 +24,7 @@
 - `ctrl+shift+v` pastes copied text
 - `alt-tab` switches between open windows within an app
 - `super-tab` switches between apps
+
 ## control processes
 
 - command & to launch program in background of terminal
@@ -29,26 +32,17 @@
 - bg %1 to move to background
 - kill %1 (see chap 10 in linux book)
 
-## Pdf manipulation
+# Pdf manipulation
 
 We use `evince [filename.pdf]` to view pdfs
 
 we use `qpdf --empty --pages infile.pdf 1-5 -- outfile.pdf` to extract pages from a pdf
 
 
-## Quarto
 
+## Browsers 
 
-## Markdown
-
-You will need to install pandoc to render markdown to pdf: `sudo apt-get install pandoc texlive-latex-base texlive-fonts-recommended texlive-extra-utils texlive-latex-extra`.
-
-Use `pandoc [infile.md] -o [outfile.pdf]` to render infile.md to outfile.pdf.
-
-Note also that the ReText app can render markdown to pdf (and html) as well if you don't want to use the terminal.  
-
-## Firefox
-
+`chrome [filename]`s opens a file in chrome.
 You can view an html file in firefox from terminal using `firefox [filename]`
 
 ## Common Commands
@@ -57,7 +51,7 @@ You can view an html file in firefox from terminal using `firefox [filename]`
 
 - `ls -lSr` to list files sorted by size (with larger sizes later: `r`). Useful to find the non-zero error files. Can have issues when applied to large numbers of files (> 60K). See use of `find` and `xargs` below if needed.
 
-- `cd -` changes tio previous directory
+- `cd -` changes to previous directory
 
 - `mv` to move files between directories. can use `..` as target to move file to home directory. e.g., `mv results_* ..`
 
@@ -94,12 +88,11 @@ You can view an html file in firefox from terminal using `firefox [filename]`
 - `vimdiff file1 file2` - Highlight the differences between two files in the vim editor.
 - `tar [-] c|x|t f tarfile [pattern]` - Create, extract or list contents of a tar archive using pattern, if supplied.
 - `du -h` - Display sizes in human readable format. For example, 1.2M, 3.7G, etc.
-  - du -shc ~/mnt/private/studydata/face get size of directory and its subdirectories
+  - `du -shc` - Display size of directory and its subdirectories
 
 - `head`, `tail`, and `sort` work as expected.  Remember to use -n with sort if you want to do a numeric (rather than text) sort.  Sort also takes -r for reverse.  Use pipe to pipe in a vector of numbers or text.  Use -1 with head or tail to get the first (or last) value in series.
 
 - `cd-` switches back to previous directory
-
 
 ## Compressing and archiving files
 
