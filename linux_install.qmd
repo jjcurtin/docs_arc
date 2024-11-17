@@ -11,7 +11,6 @@ https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview
 
 ## R
 
-
 Following [this website](https://cran.r-project.org/bin/linux/ubuntu/fullREADME.html)
 
 - sudo apt-get update
@@ -258,6 +257,14 @@ Install with: `curl -fsSL https://raw.github.com/cknadler/vim-anywhere/master/in
 - May need to tweak shortcut to get linux to recognize it
 
 
+https://github.com/cknadler/vim-anywhere
+
+## Github Copilot for CLI
+
+- https://github.com/cli/cli/blob/trunk/docs/install_linux.md
+- gh auth login
+- gh extension install github/gh-copilot
+ 
 ## Git Command Line for Windows
 
 If you want to run some cli programs (e.g., sftp, ssh, git) and limited bash on a Windows compoter, install [Git Bash](https://git-scm.com/download/win).
@@ -265,6 +272,3 @@ If you want to run some cli programs (e.g., sftp, ssh, git) and limited bash on 
 This is NOT needed if you are installing Linux as your OS.
 
 
-## Vim anywhere
-
-https://github.com/cknadler/vim-anywhere
