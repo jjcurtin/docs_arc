@@ -621,17 +621,6 @@
     ]
   },
   {
-    "objectID": "linux_install.html#vim-anywhere",
-    "href": "linux_install.html#vim-anywhere",
-    "title": "9  Installing Linux",
-    "section": "9.17 Vim anywhere",
-    "text": "9.17 Vim anywhere\nhttps://github.com/cknadler/vim-anywhere",
-    "crumbs": [
-      "Linux and CLI",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Installing Linux</span>"
-    ]
-  },
-  {
     "objectID": "linux_use.html",
     "href": "linux_use.html",
     "title": "10  Using Linux",
