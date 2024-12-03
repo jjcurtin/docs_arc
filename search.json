@@ -230,11 +230,11 @@
     ]
   },
   {
-    "objectID": "quarto.html#projects",
-    "href": "quarto.html#projects",
+    "objectID": "quarto.html#manuscript-projects",
+    "href": "quarto.html#manuscript-projects",
     "title": "5  Quarto",
-    "section": "5.2 Projects",
-    "text": "5.2 Projects\nAs of 2024 our preferred method for creating reproducible analysis is to have a quarto project for each study. Clone from John’s study template repo to begin a new project.\nA project allows you to connect a website, presentations (both slidesets and posters), and PDFs/word documents to a set of analysis notebooks (formerly our ana_.Rmd files). That way, code across all output formats can be updated simultaneously from a single location. Plots and charts can also be produced from these notebooks, which can them be used across multiple output document formats.\nPlease note that most of the documentation on John’s Data Wrangling quarto page was written when we were creating each format type as a standalone. This information is still valid for that workflow. Differences related to projects will be noted in the appropriate section on that page.",
+    "section": "5.2 Manuscript Projects",
+    "text": "5.2 Manuscript Projects\nAs of 2024 our preferred method for creating reproducible analysis is to have a quarto project for each study.\nA project allows you to connect a website, presentations (both slidesets and posters), and PDFs/word documents to a set of analysis notebooks (formerly our ana_.Rmd files). That way, code across all output formats can be updated simultaneously from a single location. Plots and charts can also be produced from these notebooks, which can them be used across multiple output document formats.\nPlease note that most of the documentation on John’s Data Wrangling quarto page was written when we were creating each format type as a standalone. This information is still valid for that workflow. Differences related to projects will be noted in the appropriate section on that page.\nHere are steps to set up a manuscript project:\n\nCreate study repo for project on github in John’s account (call it study_NAME)\nAdd collaborators to the repo\nClone the repo to your computer\nCreate manuscript project files in the repo. In the terminal (in github folder above new repo) type quarto create project manuscript and then indicate the name of the repo folder when asked\nAdd a gh-pages branch to the repo. Do this in terminal with these commands\n\n\ngit switch --orphan gh-pages\ngit commit --allow-empty -m \"Initial commit on orphan branch\"\ngit push -u origin gh-pages\n\n\nSet up github to publish website from the gh-pages branch. Go to settings, pages, and select the gh-pages and /root as the branch to publish from. The website will be published at https://jjcurtin.github.io/study_NAME",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Quarto</span>"
     ]

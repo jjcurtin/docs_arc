@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.551">
+<meta name="generator" content="quarto-1.4.550">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -301,7 +301,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#using-quarto" id="toc-using-quarto" class="nav-link active" data-scroll-target="#using-quarto"><span class="header-section-number">5.1</span> Using Quarto</a></li>
-  <li><a href="#projects" id="toc-projects" class="nav-link" data-scroll-target="#projects"><span class="header-section-number">5.2</span> Projects</a></li>
+  <li><a href="#manuscript-projects" id="toc-manuscript-projects" class="nav-link" data-scroll-target="#manuscript-projects"><span class="header-section-number">5.2</span> Manuscript Projects</a></li>
   <li><a href="#checking-installation-details" id="toc-checking-installation-details" class="nav-link" data-scroll-target="#checking-installation-details"><span class="header-section-number">5.3</span> Checking installation details</a></li>
   <li><a href="#assigning-values-to-parameters" id="toc-assigning-values-to-parameters" class="nav-link" data-scroll-target="#assigning-values-to-parameters"><span class="header-section-number">5.4</span> Assigning values to parameters</a></li>
   <li><a href="#using-parameter-values" id="toc-using-parameter-values" class="nav-link" data-scroll-target="#using-parameter-values"><span class="header-section-number">5.5</span> Using parameter values</a></li>
@@ -335,11 +335,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-number="5.1" class="anchored" data-anchor-id="using-quarto"><span class="header-section-number">5.1</span> Using Quarto</h2>
 <p>For general info on using quarto, visit John’s <a href="https://jjcurtin.github.io/book_dwvt/quarto.html">Data Wrangling quarto page</a>.</p>
 </section>
-<section id="projects" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="projects"><span class="header-section-number">5.2</span> Projects</h2>
-<p>As of 2024 our preferred method for creating reproducible analysis is to have a <a href="https://quarto.org/docs/projects/quarto-projects.html">quarto project</a> for each study. Clone from John’s <a href="https://github.com/jjcurtin/study_template">study template repo</a> to begin a new project.</p>
+<section id="manuscript-projects" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="manuscript-projects"><span class="header-section-number">5.2</span> Manuscript Projects</h2>
+<p>As of 2024 our preferred method for creating reproducible analysis is to have a <a href="https://quarto.org/docs/projects/quarto-projects.html">quarto project</a> for each study.</p>
 <p>A project allows you to connect a website, presentations (both slidesets and posters), and PDFs/word documents to a set of analysis notebooks (formerly our ana_.Rmd files). That way, code across all output formats can be updated simultaneously from a single location. Plots and charts can also be produced from these notebooks, which can them be used across multiple output document formats.</p>
 <p>Please note that most of the documentation on John’s <a href="https://jjcurtin.github.io/book_dwvt/quarto.html">Data Wrangling quarto page</a> was written when we were creating each format type as a standalone. This information is still valid for that workflow. Differences related to projects will be noted in the appropriate section on that page.</p>
+<p>Here are steps to set up a manuscript project:</p>
+<ol type="1">
+<li>Create study repo for project on github in John’s account (call it study_NAME)</li>
+<li>Add collaborators to the repo</li>
+<li>Clone the repo to your computer</li>
+<li>Create manuscript project files in the repo. In the terminal (in github folder above new repo) type <code>quarto create project manuscript</code> and then indicate the name of the repo folder when asked</li>
+<li>Add a gh-pages branch to the repo. Do this in terminal with these commands</li>
+</ol>
+<ul>
+<li><code>git switch --orphan gh-pages</code></li>
+<li><code>git commit --allow-empty -m "Initial commit on orphan branch"</code></li>
+<li><code>git push -u origin gh-pages</code></li>
+</ul>
+<ol start="6" type="1">
+<li>Set up github to publish website from the gh-pages branch. Go to settings, pages, and select the gh-pages and /root as the branch to publish from. The website will be published at https://jjcurtin.github.io/study_NAME</li>
+</ol>
 </section>
 <section id="checking-installation-details" class="level2" data-number="5.3">
 <h2 data-number="5.3" class="anchored" data-anchor-id="checking-installation-details"><span class="header-section-number">5.3</span> Checking installation details</h2>
@@ -500,24 +516,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/github\.io\/jjcurtin\/docs_arc");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -552,11 +550,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
+      return note.innerHTML;
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
