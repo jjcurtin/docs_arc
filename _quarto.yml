@@ -27,6 +27,8 @@ book:
     - quarto.qmd
     - chtc.qmd
     - flowchart_demo.qmd
+    - research_drives.qmd
+    - virtual_machines.qmd
     - part: Linux and CLI
       chapters:
         - git.qmd
