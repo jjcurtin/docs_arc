@@ -1,4 +1,4 @@
 ## Welcome {.unnumbered}
 
-This web book is a collection of general documentation, demostrations, and other supporting materials for John Curtin's Addiction Research Center.
+This web book is a collection of general documentation, demonstrations, and other supporting materials for John Curtin's Addiction Research Center.
 

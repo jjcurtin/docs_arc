@@ -1,0 +1,58 @@
+# Virtual Machines
+
+## CCI Admin Console
+
+The VMs are administered through the [https://cci-one-vra-01.cci.wisc.edu/csp/gateway/portal/#/consumer](CCI Cloud Console). 
+
+Authenticate with your NetID followed by @ad.wisc.edu, then hit Service Broker. In the left sidebar is a Deployments item; expand that and click Virtual Machines.
+
+## General Information
+
+### Linux VM
+
+* Resource Name: PSYCH-GEN-022216
+* Deployment name: optimize
+* IP: 128.104.221.24  
+* CPUs: 2
+* Cores per socket: 2
+* Memory: 32 GB
+* HD space: 60 GB
+
+
+### Win VM
+
+* Resource Name: PSYCH-GEN-022219
+* Deployment name: optimize_win
+* IP: 128.104.221.25  
+* CPUs: 1
+* Cores per socket: 1
+* Memory: 16 GB
+* HD space: 100 GB
+
+
+### Editing RAM, HD space, etc
+
+While viewing the list of VMs, click the 3-dot menu.
+
+* For CPUs, cores, and RAM, select Resize. 
+* For HD size, select Resize Boot Disk
+
+## Connection Information
+
+### Connecting via the Admin Console
+
+While viewing the list of VMs, click the 3-dot menu for the VM you wish to connect to, then select Connect to Remote Console.
+
+
+### Direct connections
+
+* Usernames/passwords are shared through LastPass, or see Susan to have one created for you
+* You must be on a wired LAN machine in the psych building, or authenticated through GlobalProtect. 
+* If you are on a campus WIFI, you must use eduroam rather than UWNet (the latter is not considered secure enough and connections from it are denied)
+* For the windows VM you can connect via Remote Desktop using the IP above. 
+* For the linux VM you can connect via SSH using the IP above and port 22.
+
+## UW Documentation
+
+https://kb.wisc.edu/search.php?q=cci+virtual is the list of existing documentation from DoIt about VMs.
+

@@ -1,0 +1,39 @@
+# Research Drives
+
+John has been assigned 2 research drives which are free UW-owned storage space for researchers. Each is 25 TB but technically we will need to pay if total use across both exceeds 25 TB.
+
+
+The primary research drive will become a replacement for the P:/ on dionysus as we can complete migrations. It is NOT permitted to store restricted data on this drive. Most of our studies are not restricted, except those that involve the VA or a UW Healthcare Component Co-I.
+
+The other is a restricted research drive for which it IS permitted to store restricted data. When migration is complete, it should only contain study folders for the MN-VA studies, Risk1, and Risk2.
+
+## Access
+
+To gain access to the research/restricted drives you must be granted access through [Manifest](https://manifest.services.wisc.edu) which is UW's Active Directory service. John or Susan can add you as needed. 
+
+* See https://kb.wisc.edu/25882 for information on adding members through manifest.
+
+### Special notes about the Restricted Drive
+
+* Due to current (2024) UW policies about restricted data, currently the restricted drive can only be mapped from one of the lab's [virtual machines](virtual_machines.qmd).
+* As of December 2024 we have not yet migrated the restricted data, as we have not yet set up a workflow to allow everyone who needs it to access this data. One possibility we are considering is to set up a processed data folder on the primary research drive for general access, and retain only raw data on the restricted drive.
+
+
+## Connecting
+
+The two drives are mapped exactly as if you were mapping the P drive. Refer to your normal procedures for Mac/Win/Linux, and use the following addresses (specifying the smb prefix or whatever else is required by your OS):
+
+Primary research drive:  
+`\\research.drive.wisc.edu\jjcurtin`
+
+Restricted research drive:  
+`\\restricted.drive.wisc.edu\jjcurtin`
+
+* (NOTE that the restricted drive can currently only be mapped from the two VMs, see Restricted Drive section above)  
+
+For the username, you must connect with your netID followed by @ad.wisc.edu (eg, schneck2@ad.wisc.edu) and your netID password.
+
+
+## UW Documentation
+
+See https://kb.wisc.edu/95074 for UW's documentation on Research Drives.
