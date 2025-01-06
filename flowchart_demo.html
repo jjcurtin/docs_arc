@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.4.552">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -102,11 +102,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
 <script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
 <script src="site_libs/viz-1.8.2/viz.js"></script>
+
 <link href="site_libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet">
+
 <script src="site_libs/grViz-binding-1.0.11/grViz.js"></script>
+
 
 
 </head>
@@ -366,8 +369,8 @@ ex. ‘Starting Sample = 216’ could also be str_c(‘Starting Sample =’, nro
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="st">  [7]: 'Participants discontinued </span><span class="sc">\\</span><span class="st">n n = 40'</span></span>
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="st">  "</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-79b83d34d8ee9d6fb8db" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-79b83d34d8ee9d6fb8db">{"x":{"diagram":"\n  digraph {\n  graph []\n  \n  node [fontname = Helvetica, shape = rectangle, fixedsize = true, width = 2.5]\n  a [label = \"Participants screened \n n = 300\"]\n  b [label = \"Participants eligible \n n = 250\"]\n  c [label = \"Participants ineligible \n n = 50\"]\n  d [label = \"Participants enrolled \n n = 215\"]\n  e [label = \"Participants did not enroll \n n = 35\"]\n  f [label = \"Participants completed study \n n= 175\"]\n  g [label = \"Participants discontinued \n n = 40\"]\n\n  a -> b -> d -> f\n  a -> c\n  b -> e\n  d -> g\n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-a53ab5891b5f1cdf960a" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-a53ab5891b5f1cdf960a">{"x":{"diagram":"\n  digraph {\n  graph []\n  \n  node [fontname = Helvetica, shape = rectangle, fixedsize = true, width = 2.5]\n  a [label = \"Participants screened \n n = 300\"]\n  b [label = \"Participants eligible \n n = 250\"]\n  c [label = \"Participants ineligible \n n = 50\"]\n  d [label = \"Participants enrolled \n n = 215\"]\n  e [label = \"Participants did not enroll \n n = 35\"]\n  f [label = \"Participants completed study \n n= 175\"]\n  g [label = \"Participants discontinued \n n = 40\"]\n\n  a -> b -> d -> f\n  a -> c\n  b -> e\n  d -> g\n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>Here is a more complicated example of participant enrollment flow code, demonstrating how to code a) edges (lines) that connect to more than one node (box), b) more descriptive node labels, and c) manual line breaks in the node text.</p>
@@ -507,6 +510,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/github\.io\/jjcurtin\/docs_arc");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -541,7 +562,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
