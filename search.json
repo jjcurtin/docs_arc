@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Documentation for ARC",
     "section": "",
-    "text": "Welcome\nThis web book is a collection of general documentation, demostrations, and other supporting materials for John Curtin’s Addiction Research Center.",
+    "text": "Welcome\nThis web book is a collection of general documentation, demonstrations, and other supporting materials for John Curtin’s Addiction Research Center.",
     "crumbs": [
       "Welcome"
     ]
@@ -414,7 +414,7 @@
     "href": "research_drives.html#connecting",
     "title": "8  Research Drives",
     "section": "8.2 Connecting",
-    "text": "8.2 Connecting\nThe two drives are mapped exactly as if you were mapping the P drive. Refer to your normal procedures for Mac/Win/Linux, and use the following addresses (specifying the smb prefix or whatever else is required by your OS):\nPrimary research drive:\n\\\\research.drive.wisc.edu\\jjcurtin\nRestricted research drive: (NOTE that the restricted drive can currently only be mapped from the two VMs, see Restricted Drive section above) \\\\restricted.drive.wisc.edu\\jjcurtin\nFor the username, you must connect with your netID followed by @ad.wisc.edu (eg, schneck2@ad.wisc.edu) and your netID password.",
+    "text": "8.2 Connecting\nThe two drives are mapped exactly as if you were mapping the P drive. Refer to your normal procedures for Mac/Win/Linux, and use the following addresses (specifying the smb prefix or whatever else is required by your OS):\nPrimary research drive:\n\\\\research.drive.wisc.edu\\jjcurtin\nRestricted research drive:\n\\\\restricted.drive.wisc.edu\\jjcurtin\n\n(NOTE that the restricted drive can currently only be mapped from the two VMs, see Restricted Drive section above)\n\nFor the username, you must connect with your netID followed by @ad.wisc.edu (eg, schneck2@ad.wisc.edu) and your netID password.",
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Research Drives</span>"
     ]
@@ -454,7 +454,7 @@
     "href": "virtual_machines.html#connection-information",
     "title": "9  Virtual Machines",
     "section": "9.3 Connection Information",
-    "text": "9.3 Connection Information\n\n9.3.1 Connecting via the Admin Console\nWhile viewing the list of VMs, click the 3-dot menu for the VM you wish to connect to, then selectConnect to Remote Console.\n\n\n9.3.2 Direct connections\n\nUsernames/passwords are shared through LastPass, or see Susan to have one created for you\nYou must be on a wired LAN machine in the psych building, or authenticated through GlobalProtect.\nIf you are on a campus WIFI, you must use eduroam rather than UWNet (the latter is not considered secure enough and connections from it are denied)\nFor the windows VM you can connect via Remote Desktop using the IP above.\nFor the linux VM you can connect via SSH using the IP above and port 22.",
+    "text": "9.3 Connection Information\n\n9.3.1 Connecting via the Admin Console\nWhile viewing the list of VMs, click the 3-dot menu for the VM you wish to connect to, then select Connect to Remote Console.\n\n\n9.3.2 Direct connections\n\nUsernames/passwords are shared through LastPass, or see Susan to have one created for you\nYou must be on a wired LAN machine in the psych building, or authenticated through GlobalProtect.\nIf you are on a campus WIFI, you must use eduroam rather than UWNet (the latter is not considered secure enough and connections from it are denied)\nFor the windows VM you can connect via Remote Desktop using the IP above.\nFor the linux VM you can connect via SSH using the IP above and port 22.",
     "crumbs": [
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Virtual Machines</span>"
     ]
