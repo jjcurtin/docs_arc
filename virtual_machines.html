@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Documentation for ARC - 5&nbsp; Quarto</title>
+<title>Documentation for ARC - 10&nbsp; Virtual Machines</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -64,8 +30,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./chtc.html" rel="next">
-<link href="./resources.html" rel="prev">
+<link href="./research_drives.html" rel="next">
+<link href="./vim.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -115,7 +81,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./quarto.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Quarto</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./virtual_machines.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Virtual Machines</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -133,6 +99,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <a href="./">Documentation for ARC</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/jjcurtin/docs_arc" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
+              <i class="bi bi-bi-facebook pe-1"></i>
+            Facebook
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+      </ul>
+    </div>
 </div>
     </div>
       </div>
@@ -175,26 +158,56 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quarto.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Quarto</span></span></a>
+  <a href="./chtc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">CHTC</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chtc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">CHTC</span></span></a>
+  <a href="./git.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Git</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./linux_install.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Installing Linux</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./linux_use.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Using Linux</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./vim.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Vim</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./virtual_machines.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Virtual Machines</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./research_drives.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Research Drives</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./flowchart_demo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Flowcharts</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Flowcharts</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">Linux and CLI</span></a>
+ <span class="menu-text">Other Software</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -202,38 +215,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./git.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Git</span></span></a>
+  <a href="./globalprotect_mapping.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Global Protect and Mapping the Network Server</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./linux_install.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Installing Linux</span></span></a>
+  <a href="./zotero.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Zotero</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./linux_use.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Using Linux</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./vim.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Vim</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./bash_scripting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Bash Scripting</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./shell_expansions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Shell Expansions</span></span></a>
+  <a href="./qr_code.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Creating QR Codes for Presentations</span></span></a>
   </div>
 </li>
       </ul>
@@ -241,7 +236,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
- <span class="menu-text">Other Software</span></a>
+ <span class="menu-text">Psychophysiology</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -249,43 +244,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./globalprotect_mapping.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Global Protect and Mapping the Network Server</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./zotero.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Zotero</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./qr_code.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Creating QR Codes for Presentations</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
- <span class="menu-text">Psychophysiology</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./psychophysiology.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Psychophysiology Methods</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Psychophysiology Methods</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./psychophysiology_software.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Psychophysiology Software</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Psychophysiology Software</span></span></a>
   </div>
 </li>
       </ul>
@@ -300,21 +266,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#using-quarto" id="toc-using-quarto" class="nav-link active" data-scroll-target="#using-quarto"><span class="header-section-number">5.1</span> Using Quarto</a></li>
-  <li><a href="#manuscript-projects" id="toc-manuscript-projects" class="nav-link" data-scroll-target="#manuscript-projects"><span class="header-section-number">5.2</span> Manuscript Projects</a></li>
-  <li><a href="#checking-installation-details" id="toc-checking-installation-details" class="nav-link" data-scroll-target="#checking-installation-details"><span class="header-section-number">5.3</span> Checking installation details</a></li>
-  <li><a href="#assigning-values-to-parameters" id="toc-assigning-values-to-parameters" class="nav-link" data-scroll-target="#assigning-values-to-parameters"><span class="header-section-number">5.4</span> Assigning values to parameters</a></li>
-  <li><a href="#using-parameter-values" id="toc-using-parameter-values" class="nav-link" data-scroll-target="#using-parameter-values"><span class="header-section-number">5.5</span> Using parameter values</a></li>
-  <li><a href="#passing-parameter-values-at-command-line" id="toc-passing-parameter-values-at-command-line" class="nav-link" data-scroll-target="#passing-parameter-values-at-command-line"><span class="header-section-number">5.6</span> Passing parameter values at command line</a></li>
+  <li><a href="#cci-admin-console" id="toc-cci-admin-console" class="nav-link active" data-scroll-target="#cci-admin-console"><span class="header-section-number">10.1</span> CCI Admin Console</a></li>
+  <li><a href="#general-information" id="toc-general-information" class="nav-link" data-scroll-target="#general-information"><span class="header-section-number">10.2</span> General Information</a>
+  <ul class="collapse">
+  <li><a href="#linux-vm" id="toc-linux-vm" class="nav-link" data-scroll-target="#linux-vm"><span class="header-section-number">10.2.1</span> Linux VM</a></li>
+  <li><a href="#win-vm" id="toc-win-vm" class="nav-link" data-scroll-target="#win-vm"><span class="header-section-number">10.2.2</span> Win VM</a></li>
+  <li><a href="#editing-ram-hd-space-etc" id="toc-editing-ram-hd-space-etc" class="nav-link" data-scroll-target="#editing-ram-hd-space-etc"><span class="header-section-number">10.2.3</span> Editing RAM, HD space, etc</a></li>
+  </ul></li>
+  <li><a href="#connection-information" id="toc-connection-information" class="nav-link" data-scroll-target="#connection-information"><span class="header-section-number">10.3</span> Connection Information</a>
+  <ul class="collapse">
+  <li><a href="#connecting-via-the-admin-console" id="toc-connecting-via-the-admin-console" class="nav-link" data-scroll-target="#connecting-via-the-admin-console"><span class="header-section-number">10.3.1</span> Connecting via the Admin Console</a></li>
+  <li><a href="#direct-connections" id="toc-direct-connections" class="nav-link" data-scroll-target="#direct-connections"><span class="header-section-number">10.3.2</span> Direct connections</a></li>
+  </ul></li>
+  <li><a href="#uw-documentation" id="toc-uw-documentation" class="nav-link" data-scroll-target="#uw-documentation"><span class="header-section-number">10.4</span> UW Documentation</a></li>
   </ul>
-</nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/jjcurtin/docs_arc/edit/main/virtual_machines.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Quarto</span></h1>
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Virtual Machines</span></h1>
 </div>
 
 
@@ -331,107 +304,68 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="using-quarto" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="using-quarto"><span class="header-section-number">5.1</span> Using Quarto</h2>
-<p>For general info on using quarto, visit John’s <a href="https://jjcurtin.github.io/book_dwvt/quarto.html">Data Wrangling quarto page</a>.</p>
+<section id="cci-admin-console" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="cci-admin-console"><span class="header-section-number">10.1</span> CCI Admin Console</h2>
+<p>The VMs are administered through the <a href="CCI Cloud Console">https://cci-one-vra-01.cci.wisc.edu/csp/gateway/portal/#/consumer</a>.</p>
+<p>Authenticate with your NetID followed by <span class="citation" data-cites="ad.wisc.edu">@ad.wisc.edu</span>, then hit Service Broker. In the left sidebar is a Deployments item; expand that and click Virtual Machines.</p>
 </section>
-<section id="manuscript-projects" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="manuscript-projects"><span class="header-section-number">5.2</span> Manuscript Projects</h2>
-<p>As of 2024 our preferred method for creating reproducible analysis is to have a <a href="https://quarto.org/docs/projects/quarto-projects.html">quarto project</a> for each study.</p>
-<p>A project allows you to connect a website, presentations (both slidesets and posters), and PDFs/word documents to a set of analysis notebooks (formerly our ana_.Rmd files). That way, code across all output formats can be updated simultaneously from a single location. Plots and charts can also be produced from these notebooks, which can them be used across multiple output document formats.</p>
-<p>Please note that most of the documentation on John’s <a href="https://jjcurtin.github.io/book_dwvt/quarto.html">Data Wrangling quarto page</a> was written when we were creating each format type as a standalone. This information is still valid for that workflow. Differences related to projects will be noted in the appropriate section on that page.</p>
-<p>Here are steps to set up a manuscript project:</p>
-<ol type="1">
-<li>Create study repo for project on github in John’s account (call it study_NAME)</li>
-<li>Add collaborators to the repo</li>
-<li>Clone the repo to your computer</li>
-<li>Create manuscript project files in the repo. In the terminal (in github folder above new repo) type <code>quarto create project manuscript</code> and then indicate the name of the repo folder when asked</li>
-<li>Add a gh-pages branch to the repo. Do this in terminal with these commands</li>
-</ol>
+<section id="general-information" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="general-information"><span class="header-section-number">10.2</span> General Information</h2>
+<section id="linux-vm" class="level3" data-number="10.2.1">
+<h3 data-number="10.2.1" class="anchored" data-anchor-id="linux-vm"><span class="header-section-number">10.2.1</span> Linux VM</h3>
 <ul>
-<li><code>git switch --orphan gh-pages</code></li>
-<li><code>git commit --allow-empty -m "Initial commit on orphan branch"</code></li>
-<li><code>git push -u origin gh-pages</code></li>
-</ul>
-<ol start="6" type="1">
-<li>Set up github to publish website from the gh-pages branch. Go to settings, pages, and select the gh-pages and /root as the branch to publish from. The website will be published at https://jjcurtin.github.io/study_NAME</li>
-</ol>
-</section>
-<section id="checking-installation-details" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="checking-installation-details"><span class="header-section-number">5.3</span> Checking installation details</h2>
-<p><code>/opt/quarto/"${QUARTO_VERSION}"/bin/quarto check</code> in the terminal</p>
-</section>
-<section id="assigning-values-to-parameters" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="assigning-values-to-parameters"><span class="header-section-number">5.4</span> Assigning values to parameters</h2>
-<p>You define parameters in the YAML using the syntax below</p>
-<ul>
-<li>You can assign initial values to the parameters. These values will be used by default if you do not replace them with new values from the command line when you render the script.</li>
-<li>You can update these values with new values you pass in when you render the script (see below).<br>
+<li>Resource Name: PSYCH-GEN-022216</li>
+<li>Deployment name: optimize</li>
+<li>IP: 128.104.221.24<br>
 </li>
-<li>If you only provide a subset of updated parameter values when you render the document, the default values will be used for the remaining parameters.</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>params<span class="sc">:</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  pv1<span class="sc">:</span> <span class="dv">5</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  pv2<span class="sc">:</span> <span class="dv">10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>For a variety of reasons, I prefer to assign the values from the params list to individual variables</p>
-<ul>
-<li>Code is shorter when using these variables</li>
-<li>I can update them interactively if I want to use different values (the params list is read-only)</li>
-</ul>
-<p>First set the parameters in the YAML as above. Then put this code chunk right at the top of the script. If you edit this code chunk to assign new values interactively, make sure you comment it out when you save the final script!</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>pv1 <span class="ot">&lt;-</span> params<span class="sc">$</span>pv1</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>pv2 <span class="ot">&lt;-</span> params<span class="sc">$</span>pv2</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># pv1 &lt;- 5 # Use this line to interactively assign new value</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># pv2 &lt;- 10 # use this line to interactively assign new value</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="using-parameter-values" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="using-parameter-values"><span class="header-section-number">5.5</span> Using parameter values</h2>
-<p>When you use params in the YAML, a list named <code>params</code> is created.</p>
-<ul>
-<li>You can then use this list as normal with no further code needed to establish the values.</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>params<span class="sc">$</span>pv1 <span class="sc">+</span> params<span class="sc">$</span>pv2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 15</code></pre>
-</div>
-</div>
-<ul>
-<li>You can also access these values using inline r statements. See example below. I strongly recommend using this in the title of your document so that you can confirm that you correctly updated the parameter values when you rendered! e.g.,</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>title<span class="sc">:</span> <span class="st">"Demo of quarto document with pv1 = `r params$pv1` and  pv2 = `r params$pv2`."</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ul>
-<li>Or if you assigned the parameter values to variables as I recommended, you can just use those variables as you normally would. They will start with the values assigned to associated parameters (in YAML or input from command line)</li>
+<li>CPUs: 2</li>
+<li>Cores per socket: 2</li>
+<li>Memory: 32 GB</li>
+<li>HD space: 60 GB</li>
 </ul>
 </section>
-<section id="passing-parameter-values-at-command-line" class="level2" data-number="5.6">
-<h2 data-number="5.6" class="anchored" data-anchor-id="passing-parameter-values-at-command-line"><span class="header-section-number">5.6</span> Passing parameter values at command line</h2>
-<p>I prefer to render quarto documents in the terminal.</p>
+<section id="win-vm" class="level3" data-number="10.2.2">
+<h3 data-number="10.2.2" class="anchored" data-anchor-id="win-vm"><span class="header-section-number">10.2.2</span> Win VM</h3>
 <ul>
-<li>You can indicate the output filename (otherwise, the output file name is set to the input filename with a different extension).<br>
+<li>Resource Name: PSYCH-GEN-022219</li>
+<li>Deployment name: optimize_win</li>
+<li>IP: 128.104.221.25<br>
 </li>
-<li>You can also pass in values to the parameters, which is typically why we use parameters in the first place</li>
+<li>CPUs: 1</li>
+<li>Cores per socket: 1</li>
+<li>Memory: 16 GB</li>
+<li>HD space: 100 GB</li>
 </ul>
-<p>Use the following syntax to render quarto documents at command line.</p>
+</section>
+<section id="editing-ram-hd-space-etc" class="level3" data-number="10.2.3">
+<h3 data-number="10.2.3" class="anchored" data-anchor-id="editing-ram-hd-space-etc"><span class="header-section-number">10.2.3</span> Editing RAM, HD space, etc</h3>
+<p>While viewing the list of VMs, click the 3-dot menu.</p>
 <ul>
-<li>use -P to provide a parameter value. No space between parameter name and value. If you provide values for only a subset of parameters, defaults will be used for other parameters</li>
-<li>use <code>-o</code> to specify filename (defaults to input filename if not provided).</li>
+<li>For CPUs, cores, and RAM, select Resize.</li>
+<li>For HD size, select Resize Boot Disk</li>
 </ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>quarto render docname.qmd <span class="sc">-</span>o outputname.html  <span class="sc">-</span>P pv1<span class="sc">:</span><span class="dv">1</span> <span class="sc">-</span>P pv2<span class="sc">:</span><span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>For rendering books and slides, we have written a bash script to handle setting the <code>_quarto.yml</code> file and then rendering the full project or a single file.</p>
+</section>
+</section>
+<section id="connection-information" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="connection-information"><span class="header-section-number">10.3</span> Connection Information</h2>
+<section id="connecting-via-the-admin-console" class="level3" data-number="10.3.1">
+<h3 data-number="10.3.1" class="anchored" data-anchor-id="connecting-via-the-admin-console"><span class="header-section-number">10.3.1</span> Connecting via the Admin Console</h3>
+<p>While viewing the list of VMs, click the 3-dot menu for the VM you wish to connect to, then selectConnect to Remote Console.</p>
+</section>
+<section id="direct-connections" class="level3" data-number="10.3.2">
+<h3 data-number="10.3.2" class="anchored" data-anchor-id="direct-connections"><span class="header-section-number">10.3.2</span> Direct connections</h3>
 <ul>
-<li>call the function from the terminal: <code>./render.sh filename.qmd book</code></li>
-<li>the first parameter can be the name of the qmd file or <code>all</code> to render all units (only used for books, not slides)</li>
-<li>the second parameter can be <code>book</code>, <code>slides</code> or <code>slides_wide</code></li>
+<li>Usernames/passwords are shared through LastPass, or see Susan to have one created for you</li>
+<li>You must be on a wired LAN machine in the psych building, or authenticated through GlobalProtect.</li>
+<li>If you are on a campus WIFI, you must use eduroam rather than UWNet (the latter is not considered secure enough and connections from it are denied)</li>
+<li>For the windows VM you can connect via Remote Desktop using the IP above.</li>
+<li>For the linux VM you can connect via SSH using the IP above and port 22.</li>
 </ul>
+</section>
+</section>
+<section id="uw-documentation" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="uw-documentation"><span class="header-section-number">10.4</span> UW Documentation</h2>
+<p>https://kb.wisc.edu/search.php?q=cci+virtual is the list of existing documentation from DoIt about VMs.</p>
 
 
 </section>
@@ -848,13 +782,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./resources.html" class="pagination-link" aria-label="Lab Resources">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Lab Resources</span></span>
+      <a href="./vim.html" class="pagination-link" aria-label="Vim">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Vim</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chtc.html" class="pagination-link" aria-label="CHTC">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">CHTC</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./research_drives.html" class="pagination-link" aria-label="Research Drives">
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Research Drives</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -863,4 +797,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-</body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jjcurtin/docs_arc/edit/main/virtual_machines.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>
