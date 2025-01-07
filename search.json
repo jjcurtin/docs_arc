@@ -434,7 +434,7 @@
     "href": "virtual_machines.html",
     "title": "9  Virtual Machines",
     "section": "",
-    "text": "9.1 CCI Admin Console\nThe VMs are administered through the https://cci-one-vra-01.cci.wisc.edu/csp/gateway/portal/#/consumer.\nAuthenticate with your NetID followed by @ad.wisc.edu, then hit Service Broker. In the left sidebar is a Deployments item; expand that and click Virtual Machines.",
+    "text": "9.1 CCI Admin Console\nThe VMs are administered through the CCI Cloud Console.\nAuthenticate with your NetID followed by @ad.wisc.edu, then hit Service Broker. In the left sidebar is a Deployments item; expand that and click Virtual Machines.",
     "crumbs": [
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Virtual Machines</span>"
     ]
@@ -444,7 +444,7 @@
     "href": "virtual_machines.html#general-information",
     "title": "9  Virtual Machines",
     "section": "9.2 General Information",
-    "text": "9.2 General Information\n\n9.2.1 Linux VM\n\nResource Name: PSYCH-GEN-022216\nDeployment name: optimize\nIP: 128.104.221.24\n\nCPUs: 2\nCores per socket: 2\nMemory: 32 GB\nHD space: 60 GB\n\n\n\n9.2.2 Win VM\n\nResource Name: PSYCH-GEN-022219\nDeployment name: optimize_win\nIP: 128.104.221.25\n\nCPUs: 1\nCores per socket: 1\nMemory: 16 GB\nHD space: 100 GB\n\n\n\n9.2.3 Editing RAM, HD space, etc\nWhile viewing the list of VMs, click the 3-dot menu.\n\nFor CPUs, cores, and RAM, select Resize.\nFor HD size, select Resize Boot Disk",
+    "text": "9.2 General Information\n\n9.2.1 Linux VM\n\nResource Name: PSYCH-GEN-022216\nDeployment name: optimize\nIP: 128.104.221.24\n\nCPUs: 2\nCores per socket: 2\nMemory: 32 GB\nHD space: 60 GB\n\n\n\n9.2.2 Win VM\n\nResource Name: PSYCH-GEN-022219\nDeployment name: optimize_win\nIP: 128.104.221.25\n\nCPUs: 1\nCores per socket: 1\nMemory: 16 GB\nHD space: 100 GB\n\n\n\n9.2.3 Editing RAM, HD space, etc\nWhile viewing the list of VMs, click the 3-dot menu for the VM you wish to edit.\n\nFor CPUs, cores, and RAM, select Resize.\nFor HD size, select Resize Boot Disk",
     "crumbs": [
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Virtual Machines</span>"
     ]
