@@ -2,7 +2,7 @@
 
 ## CCI Admin Console
 
-The VMs are administered through the [https://cci-one-vra-01.cci.wisc.edu/csp/gateway/portal/#/consumer](CCI Cloud Console). 
+The VMs are administered through the [CCI Cloud Console](https://cci-one-vra-01.cci.wisc.edu/csp/gateway/portal/#/consumer). 
 
 Authenticate with your NetID followed by @ad.wisc.edu, then hit Service Broker. In the left sidebar is a Deployments item; expand that and click Virtual Machines.
 
@@ -32,7 +32,7 @@ Authenticate with your NetID followed by @ad.wisc.edu, then hit Service Broker. 
 
 ### Editing RAM, HD space, etc
 
-While viewing the list of VMs, click the 3-dot menu.
+While viewing the list of VMs, click the 3-dot menu for the VM you wish to edit.
 
 * For CPUs, cores, and RAM, select Resize. 
 * For HD size, select Resize Boot Disk
