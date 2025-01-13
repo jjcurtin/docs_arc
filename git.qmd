@@ -2,6 +2,34 @@
 
 For full documentation of using git from the command line you can read the  [Git Pro Book](https://git-scm.com/book/en/v2).  
 
+## Creating an SSH Key
+
+To communicate with github through a terminal you must first establish an SSH key (a secure access credential). Follow the instructions below to create this.
+
+1. Open your terminal or command line interface.   
+
+2. Paste the text below, replacing the email used in the example with your GitHub email address.     
+
+`ssh-keygen -t ed25519 -C "your_email@example.com"`
+
+3. When you're prompted to "Enter a file in which to save the key", you can press Enter to accept the default file location.
+
+4. At the prompt to enter a passphrase, you can hit enter twice to keep this blank.
+
+5. Open up your public key by pasting the text below.    
+
+`vim .ssh/id_ed25519.pub`
+
+6. Copy the key, go to `github.com --> settings --> SSH and GPG keys -->  new SSH keys`, and paste your key here.   
+
+7. One last important step! If you have never pushed up to the repo you are working in you will need to run the following code before your SSH works. Run this from your terminal **after navigating into the repo directory.**  
+
+`git remote set-url origin git@github.com:repo_owner_username/repo_name.git`    
+
+ex: `git remote set-url origin git@github.com:jjcurtin/proj_risk2.git`
+
+
+
 ## Common Git Commands
 
 Note: These commands will only work if you are in a git repo.
