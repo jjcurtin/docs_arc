@@ -36,6 +36,7 @@ Note: These commands will only work if you are in a git repo.
 
 ### Workflow
 
+- `git clone git@github.com:username/repo_name.git` clones a repo from github
 - `git status` shows any files updated locally
 - `git add [filename]` add file to staging area
 - `git add .` adds all modified files to staging area
@@ -45,6 +46,8 @@ Note: These commands will only work if you are in a git repo.
 - `git pull` pulls updates from github (it is good practice to pull before commiting)    
 - `git mv <oldname> <newname>` to rename and/or move a file without losing its link to its earlier history.  [Read more](https://docs.github.com/en/repositories/working-with-files/managing-files/renaming-a-file)
 - `git stash` to stash changes; `git stash pop` to reapply stashed changes
+
+- `gitpcp "message` is a shell script written by john to pull, commit (with message) and push to github
 
 ### Repos
 
