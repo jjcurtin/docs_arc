@@ -29,12 +29,23 @@ Authenticate with your NetID followed by @ad.wisc.edu, then hit Service Broker. 
 * Memory: 16 GB
 * HD space: 100 GB
 
+### Hardware specs
+As of Feb 2024 CCI KB lists the following hardware specs for VMs:
+* Server: Dell R740XD vSAN Ready Node
+* CPU: [Intel Xeon Gold 6258R CPU @ 2.70GHz](https://ark.intel.com/content/www/us/en/ark/products/199350/intel-xeon-gold-6258r-processor-38-5m-cache-2-70-ghz.html)
+* Memory: Dual Rank x4 PC4-25600R (DDR4-3200) Registered CAS-22
+* Storage: All-Flash vSAN
+* Cache Disks: 1.6TB Flash NVMe PCIe 8GT/s
+* Capacity Disks: 7.68TB SAS 12Gb/s
+* Network: Redundant 25Gb/s SFP28 Network adapters
+
 
 ### Editing RAM, HD space, etc
 
 While viewing the list of VMs, click the 3-dot menu for the VM you wish to edit.
 
 * For CPUs, cores, and RAM, select Resize. 
+   * Cores per socket should be left at 1 (the default). This has nothing to do with the number of cores the CPU has, see the specs above for more details on that.
 * For HD size, select Resize Boot Disk
 
 ## Connection Information
@@ -43,14 +54,25 @@ While viewing the list of VMs, click the 3-dot menu for the VM you wish to edit.
 
 While viewing the list of VMs, click the 3-dot menu for the VM you wish to connect to, then select Connect to Remote Console.
 
-
 ### Direct connections
 
-* Usernames/passwords are shared through LastPass, or see Susan to have one created for you
+#### Granting access
+
+* Users must be granted access via netID by John or Susan through [Manifest](https://manifest.services.wisc.edu) which is UW's Active Directory service. See [this KB page](https://kb.wisc.edu/25882) for instructions on using Manifest.
+   * The manufest group to add them to is called "CCI-GS-PSYCH-GEN-USER"
+* On the VM, the Administrator must create a user account and give it a password. These user accounts must be "Local" accounts, and cannot be administrators. (NB the administrator password is in Lastpass, both in the lab account and shared with John)
+   * Hit the Start button and Type "Control Panel" to bring up the Control Panel
+   * Hit "User Accounts" twice then "Manager another account" and then "Add a new user"
+* The Administrator must also grant this user permission to use Remote Desktop to connect. In the Control Panel search for "Remote" and select "Select users who can use Remote Desktop"
+
+#### After access has been granted
+
+* Each user will be given a computer account username for the specific VM they plan to use. Computer usernames/passwords are shared through LastPass, or see Susan to have one created for you. Usually this will be your netid (with nothing after it)
+* It is recommended that you change your VM machine account password to match your netID password, as we have usually done with local computer accounts, to make it easier to connect going forward. Otherwise it will default to your local computer credentials and you will have to select "Use another account" each time.
 * You must be on a wired LAN machine in the psych building, or authenticated through GlobalProtect. 
-* If you are on a campus WIFI, you must use eduroam rather than UWNet (the latter is not considered secure enough and connections from it are denied)
+   * If you are on a campus WIFI, you must use eduroam rather than UWNet (the latter is not considered secure enough and connections from it are denied)
 * For the windows VM you can connect via Remote Desktop using the IP above. 
-* For the linux VM you can connect via SSH using the IP above and port 22.
+* For the linux VM you can connect via SSH using the IP above and port 22. It is recommended that you connect with a username specified, ie `ssh username@128.104.221.24` where "username" is the one created for you (or `ssh root@128.104.221.24` for the root user)
 
 ## UW Documentation
 
