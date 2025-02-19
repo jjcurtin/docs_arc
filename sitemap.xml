@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://github.io/jjcurtin/docs_arc/index.html</loc>
-    <lastmod>2023-11-01T19:48:08.965Z</lastmod>
+    <lastmod>2025-02-19T18:16:41.059Z</lastmod>
   </url>
   <url>
     <loc>https://github.io/jjcurtin/docs_arc/lab_practices.html</loc>
@@ -33,16 +33,24 @@
     <lastmod>2023-11-01T19:48:08.965Z</lastmod>
   </url>
   <url>
+    <loc>https://github.io/jjcurtin/docs_arc/research_drives.html</loc>
+    <lastmod>2025-02-19T18:16:41.059Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.io/jjcurtin/docs_arc/virtual_machines.html</loc>
+    <lastmod>2025-02-19T18:16:41.060Z</lastmod>
+  </url>
+  <url>
     <loc>https://github.io/jjcurtin/docs_arc/git.html</loc>
-    <lastmod>2024-05-03T15:58:24.213Z</lastmod>
+    <lastmod>2025-02-19T18:16:41.059Z</lastmod>
   </url>
   <url>
     <loc>https://github.io/jjcurtin/docs_arc/linux_install.html</loc>
-    <lastmod>2024-12-03T17:48:13.238Z</lastmod>
+    <lastmod>2025-02-19T22:07:53.029Z</lastmod>
   </url>
   <url>
     <loc>https://github.io/jjcurtin/docs_arc/linux_use.html</loc>
-    <lastmod>2025-02-19T18:12:58.315Z</lastmod>
+    <lastmod>2025-02-19T22:02:09.137Z</lastmod>
   </url>
   <url>
     <loc>https://github.io/jjcurtin/docs_arc/vim.html</loc>

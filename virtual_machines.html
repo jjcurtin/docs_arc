@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Documentation for ARC - 13&nbsp; Vim</title>
+<title>Documentation for ARC - 9&nbsp; Virtual Machines</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./bash_scripting.html" rel="next">
-<link href="./linux_use.html" rel="prev">
+<link href="./git.html" rel="next">
+<link href="./research_drives.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -81,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./git.html">Linux and CLI</a></li><li class="breadcrumb-item"><a href="./vim.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Vim</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./virtual_machines.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Virtual Machines</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -165,7 +165,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./virtual_machines.html" class="sidebar-item-text sidebar-link">
+  <a href="./virtual_machines.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Virtual Machines</span></span></a>
   </div>
 </li>
@@ -198,7 +198,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./vim.html" class="sidebar-item-text sidebar-link active">
+  <a href="./vim.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Vim</span></span></a>
   </div>
 </li>
@@ -278,29 +278,29 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#exit-and-save" id="toc-exit-and-save" class="nav-link active" data-scroll-target="#exit-and-save"><span class="header-section-number">13.1</span> Exit and Save</a></li>
-  <li><a href="#run-commands" id="toc-run-commands" class="nav-link" data-scroll-target="#run-commands"><span class="header-section-number">13.2</span> Run commands</a></li>
-  <li><a href="#navigating-document-in-default-command-mode" id="toc-navigating-document-in-default-command-mode" class="nav-link" data-scroll-target="#navigating-document-in-default-command-mode"><span class="header-section-number">13.3</span> Navigating document in Default (Command) Mode</a></li>
-  <li><a href="#inserting" id="toc-inserting" class="nav-link" data-scroll-target="#inserting"><span class="header-section-number">13.4</span> Inserting</a></li>
-  <li><a href="#deleting" id="toc-deleting" class="nav-link" data-scroll-target="#deleting"><span class="header-section-number">13.5</span> Deleting</a></li>
-  <li><a href="#spell-check" id="toc-spell-check" class="nav-link" data-scroll-target="#spell-check"><span class="header-section-number">13.6</span> Spell check</a></li>
-  <li><a href="#search-in-vim" id="toc-search-in-vim" class="nav-link" data-scroll-target="#search-in-vim"><span class="header-section-number">13.7</span> Search in VIM</a></li>
-  <li><a href="#visual-selection" id="toc-visual-selection" class="nav-link" data-scroll-target="#visual-selection"><span class="header-section-number">13.8</span> Visual selection</a></li>
-  <li><a href="#copy" id="toc-copy" class="nav-link" data-scroll-target="#copy"><span class="header-section-number">13.9</span> Copy</a></li>
-  <li><a href="#working-with-multiple-files" id="toc-working-with-multiple-files" class="nav-link" data-scroll-target="#working-with-multiple-files"><span class="header-section-number">13.10</span> Working with multiple files</a></li>
-  <li><a href="#command-line-in-vim" id="toc-command-line-in-vim" class="nav-link" data-scroll-target="#command-line-in-vim"><span class="header-section-number">13.11</span> Command line in VIM</a></li>
-  <li><a href="#render-files" id="toc-render-files" class="nav-link" data-scroll-target="#render-files"><span class="header-section-number">13.12</span> Render files</a></li>
-  <li><a href="#installing-plugins" id="toc-installing-plugins" class="nav-link" data-scroll-target="#installing-plugins"><span class="header-section-number">13.13</span> Installing plugins</a></li>
-  <li><a href="#learing-vim" id="toc-learing-vim" class="nav-link" data-scroll-target="#learing-vim"><span class="header-section-number">13.14</span> Learing VIM</a></li>
+  <li><a href="#cci-admin-console" id="toc-cci-admin-console" class="nav-link active" data-scroll-target="#cci-admin-console"><span class="header-section-number">9.1</span> CCI Admin Console</a></li>
+  <li><a href="#general-information" id="toc-general-information" class="nav-link" data-scroll-target="#general-information"><span class="header-section-number">9.2</span> General Information</a>
+  <ul class="collapse">
+  <li><a href="#linux-vm" id="toc-linux-vm" class="nav-link" data-scroll-target="#linux-vm"><span class="header-section-number">9.2.1</span> Linux VM</a></li>
+  <li><a href="#win-vm" id="toc-win-vm" class="nav-link" data-scroll-target="#win-vm"><span class="header-section-number">9.2.2</span> Win VM</a></li>
+  <li><a href="#hardware-specs" id="toc-hardware-specs" class="nav-link" data-scroll-target="#hardware-specs"><span class="header-section-number">9.2.3</span> Hardware specs</a></li>
+  <li><a href="#editing-ram-hd-space-etc" id="toc-editing-ram-hd-space-etc" class="nav-link" data-scroll-target="#editing-ram-hd-space-etc"><span class="header-section-number">9.2.4</span> Editing RAM, HD space, etc</a></li>
+  </ul></li>
+  <li><a href="#connection-information" id="toc-connection-information" class="nav-link" data-scroll-target="#connection-information"><span class="header-section-number">9.3</span> Connection Information</a>
+  <ul class="collapse">
+  <li><a href="#connecting-via-the-admin-console" id="toc-connecting-via-the-admin-console" class="nav-link" data-scroll-target="#connecting-via-the-admin-console"><span class="header-section-number">9.3.1</span> Connecting via the Admin Console</a></li>
+  <li><a href="#direct-connections" id="toc-direct-connections" class="nav-link" data-scroll-target="#direct-connections"><span class="header-section-number">9.3.2</span> Direct connections</a></li>
+  </ul></li>
+  <li><a href="#uw-documentation" id="toc-uw-documentation" class="nav-link" data-scroll-target="#uw-documentation"><span class="header-section-number">9.4</span> UW Documentation</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./git.html">Linux and CLI</a></li><li class="breadcrumb-item"><a href="./vim.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Vim</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Vim</span></h1>
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Virtual Machines</span></h1>
 </div>
 
 
@@ -317,150 +317,96 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="exit-and-save" class="level2" data-number="13.1">
-<h2 data-number="13.1" class="anchored" data-anchor-id="exit-and-save"><span class="header-section-number">13.1</span> Exit and Save</h2>
+<section id="cci-admin-console" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="cci-admin-console"><span class="header-section-number">9.1</span> CCI Admin Console</h2>
+<p>The VMs are administered through the <a href="https://cci-one-vra-01.cci.wisc.edu/csp/gateway/portal/#/consumer">CCI Cloud Console</a>.</p>
+<p>Authenticate with your NetID followed by <span class="citation" data-cites="ad.wisc.edu">@ad.wisc.edu</span>, then hit Service Broker. In the left sidebar is a Deployments item; expand that and click Virtual Machines.</p>
+</section>
+<section id="general-information" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="general-information"><span class="header-section-number">9.2</span> General Information</h2>
+<section id="linux-vm" class="level3" data-number="9.2.1">
+<h3 data-number="9.2.1" class="anchored" data-anchor-id="linux-vm"><span class="header-section-number">9.2.1</span> Linux VM</h3>
 <ul>
-<li><code>:x</code> exits and saves</li>
-<li><code>:w</code> saves without exit</li>
-<li><code>:w filename</code> saves file as filename</li>
-<li><code>:q!</code> exits without save</li>
+<li>Resource Name: PSYCH-GEN-022216</li>
+<li>Deployment name: optimize</li>
+<li>IP: 128.104.221.24<br>
+</li>
+<li>CPUs: 2</li>
+<li>Cores per socket: 2</li>
+<li>Memory: 32 GB</li>
+<li>HD space: 60 GB</li>
 </ul>
 </section>
-<section id="run-commands" class="level2" data-number="13.2">
-<h2 data-number="13.2" class="anchored" data-anchor-id="run-commands"><span class="header-section-number">13.2</span> Run commands</h2>
+<section id="win-vm" class="level3" data-number="9.2.2">
+<h3 data-number="9.2.2" class="anchored" data-anchor-id="win-vm"><span class="header-section-number">9.2.2</span> Win VM</h3>
 <ul>
-<li><code>:!CMD</code> where CMD is command. e.g.., !ls</li>
+<li>Resource Name: PSYCH-GEN-022219</li>
+<li>Deployment name: optimize_win</li>
+<li>IP: 128.104.221.25<br>
+</li>
+<li>CPUs: 1</li>
+<li>Cores per socket: 1</li>
+<li>Memory: 16 GB</li>
+<li>HD space: 100 GB</li>
 </ul>
 </section>
-<section id="navigating-document-in-default-command-mode" class="level2" data-number="13.3">
-<h2 data-number="13.3" class="anchored" data-anchor-id="navigating-document-in-default-command-mode"><span class="header-section-number">13.3</span> Navigating document in Default (Command) Mode</h2>
-<p>Remember to enter command mode by pressing <code>esc</code> - <code>0</code> moves the cursor to the start of line - <code>$</code> moves cursor to end of line - Move cursor left (<code>h</code>), down(<code>j</code>), up (<code>k</code>), or right (<code>l</code>)</p>
+<section id="hardware-specs" class="level3" data-number="9.2.3">
+<h3 data-number="9.2.3" class="anchored" data-anchor-id="hardware-specs"><span class="header-section-number">9.2.3</span> Hardware specs</h3>
+<p>As of Feb 2024 CCI KB lists the following hardware specs for VMs: * Server: Dell R740XD vSAN Ready Node * CPU: <a href="https://ark.intel.com/content/www/us/en/ark/products/199350/intel-xeon-gold-6258r-processor-38-5m-cache-2-70-ghz.html">Intel Xeon Gold 6258R CPU @ 2.70GHz</a> * Memory: Dual Rank x4 PC4-25600R (DDR4-3200) Registered CAS-22 * Storage: All-Flash vSAN * Cache Disks: 1.6TB Flash NVMe PCIe 8GT/s * Capacity Disks: 7.68TB SAS 12Gb/s * Network: Redundant 25Gb/s SFP28 Network adapters</p>
+</section>
+<section id="editing-ram-hd-space-etc" class="level3" data-number="9.2.4">
+<h3 data-number="9.2.4" class="anchored" data-anchor-id="editing-ram-hd-space-etc"><span class="header-section-number">9.2.4</span> Editing RAM, HD space, etc</h3>
+<p>While viewing the list of VMs, click the 3-dot menu for the VM you wish to edit.</p>
 <ul>
-<li><p><code>gg</code> for top of document</p></li>
-<li><p><code>G</code> for bottom of document</p></li>
-<li><p><code>nG</code> to move to line number n.&nbsp;CTRL-g shows line numbers in footer of doc.</p></li>
-<li><p><code>H</code> for top of window, <code>M</code> for middle of window, and <code>L</code> for bottom of window</p></li>
-<li><p><code>w</code> moves forward to the beginning of the next word.</p></li>
-<li><p><code>b</code> moves backwards to the beginning of the previous word.</p></li>
-<li><p><code>(</code> and <code>)</code> move by sentences, either backward or forward.</p></li>
-<li><p><code>{</code> and <code>}</code> move by paragraphs.</p></li>
+<li>For CPUs, cores, and RAM, select Resize.
+<ul>
+<li>Cores per socket should be left at 1 (the default). This has nothing to do with the number of cores the CPU has, see the specs above for more details on that.</li>
+</ul></li>
+<li>For HD size, select Resize Boot Disk</li>
 </ul>
 </section>
-<section id="inserting" class="level2" data-number="13.4">
-<h2 data-number="13.4" class="anchored" data-anchor-id="inserting"><span class="header-section-number">13.4</span> Inserting</h2>
+</section>
+<section id="connection-information" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="connection-information"><span class="header-section-number">9.3</span> Connection Information</h2>
+<section id="connecting-via-the-admin-console" class="level3" data-number="9.3.1">
+<h3 data-number="9.3.1" class="anchored" data-anchor-id="connecting-via-the-admin-console"><span class="header-section-number">9.3.1</span> Connecting via the Admin Console</h3>
+<p>While viewing the list of VMs, click the 3-dot menu for the VM you wish to connect to, then select Connect to Remote Console.</p>
+</section>
+<section id="direct-connections" class="level3" data-number="9.3.2">
+<h3 data-number="9.3.2" class="anchored" data-anchor-id="direct-connections"><span class="header-section-number">9.3.2</span> Direct connections</h3>
+<section id="granting-access" class="level4" data-number="9.3.2.1">
+<h4 data-number="9.3.2.1" class="anchored" data-anchor-id="granting-access"><span class="header-section-number">9.3.2.1</span> Granting access</h4>
 <ul>
-<li><p><code>i</code> Insert text before the cursor</p></li>
-<li><p><code>a</code> Insert text after cursor</p></li>
-<li><p><code>A</code> Append text to end of current line. - <code>I</code> Insert text at beginning of line.</p></li>
-<li><p><code>o</code> Open blank line below cursor for text. - <code>O</code> Open blank line above cursor for text.</p></li>
-<li><p><code>p</code> puts the Vim register (from delete) after cursor (if full line, on next line).</p></li>
-<li><p><code>rx</code> replaces the character at the cursor with ‘x’</p></li>
-<li><p><code>R</code> replaces multiple characters. Type ESC when done.</p></li>
-<li><p><code>ce</code> deletes until end of word and places you in insert. Press ESC when done</p></li>
-<li><p><code>c$</code> deletes until end of line and places you in insert. Press ESC when done</p></li>
-<li><p><code>:%s/old/new/gc</code> - replaces old with new in full doc with prompt for replace.</p></li>
-<li><p><code>:r filename</code> to insert text in filename above cursor</p></li>
+<li>Users must be granted access via netID by John or Susan through <a href="https://manifest.services.wisc.edu">Manifest</a> which is UW’s Active Directory service. See <a href="https://kb.wisc.edu/25882">this KB page</a> for instructions on using Manifest.
+<ul>
+<li>The manufest group to add them to is called “CCI-GS-PSYCH-GEN-USER”</li>
+</ul></li>
+<li>On the VM, the Administrator must create a user account and give it a password. These user accounts must be “Local” accounts, and cannot be administrators. (NB the administrator password is in Lastpass, both in the lab account and shared with John)
+<ul>
+<li>Hit the Start button and Type “Control Panel” to bring up the Control Panel</li>
+<li>Hit “User Accounts” twice then “Manager another account” and then “Add a new user”</li>
+</ul></li>
+<li>The Administrator must also grant this user permission to use Remote Desktop to connect. In the Control Panel search for “Remote” and select “Select users who can use Remote Desktop”</li>
 </ul>
 </section>
-<section id="deleting" class="level2" data-number="13.5">
-<h2 data-number="13.5" class="anchored" data-anchor-id="deleting"><span class="header-section-number">13.5</span> Deleting</h2>
+<section id="after-access-has-been-granted" class="level4" data-number="9.3.2.2">
+<h4 data-number="9.3.2.2" class="anchored" data-anchor-id="after-access-has-been-granted"><span class="header-section-number">9.3.2.2</span> After access has been granted</h4>
 <ul>
-<li><code>x</code> deletes the character under the cursor</li>
-<li><code>dw</code> deletes from cursor to start of next word (including space spearator). <code>d2w</code> deletes from cursor to end of second word, etc.</li>
-<li><code>de</code> delets from curors to end of current for</li>
-<li><code>dd</code> deletes the line. <code>2dd</code> deletes two lines.</li>
-<li><code>d$</code> deletes from cursor to end of line.</li>
-<li><code>u</code> to undo the last command. <code>CTRL-R</code> for redo -<code>U</code> to undo all fixes on a line.</li>
+<li>Each user will be given a computer account username for the specific VM they plan to use. Computer usernames/passwords are shared through LastPass, or see Susan to have one created for you. Usually this will be your netid (with nothing after it)</li>
+<li>It is recommended that you change your VM machine account password to match your netID password, as we have usually done with local computer accounts, to make it easier to connect going forward. Otherwise it will default to your local computer credentials and you will have to select “Use another account” each time.</li>
+<li>You must be on a wired LAN machine in the psych building, or authenticated through GlobalProtect.
+<ul>
+<li>If you are on a campus WIFI, you must use eduroam rather than UWNet (the latter is not considered secure enough and connections from it are denied)</li>
+</ul></li>
+<li>For the windows VM you can connect via Remote Desktop using the IP above.</li>
+<li>For the linux VM you can connect via SSH using the IP above and port 22. It is recommended that you connect with a username specified, ie <code>ssh username@128.104.221.24</code> where “username” is the one created for you (or <code>ssh root@128.104.221.24</code> for the root user)</li>
 </ul>
 </section>
-<section id="spell-check" class="level2" data-number="13.6">
-<h2 data-number="13.6" class="anchored" data-anchor-id="spell-check"><span class="header-section-number">13.6</span> Spell check</h2>
-<ul>
-<li><code>:set spell</code> – Turn on spell checking</li>
-<li><code>:set nospell</code> – Turn off spell checking</li>
-<li><code>]s</code> – Jump to the next misspelled word</li>
-<li><code>[s</code> – Jump to the previous misspelled word</li>
-<li><code>z=</code> – Bring up the suggested replacements</li>
-<li><code>zg</code> – Good word: Add the word under the cursor to the dictionary</li>
-<li><code>zw</code> – Woops! Undo and remove the word from the dictionary</li>
-</ul>
 </section>
-<section id="search-in-vim" class="level2" data-number="13.7">
-<h2 data-number="13.7" class="anchored" data-anchor-id="search-in-vim"><span class="header-section-number">13.7</span> Search in VIM</h2>
-<ul>
-<li><code>/text</code> to search forward for text. Type ENTER to exit to that text.</li>
-<li><code>?text</code> to search backward for text.</li>
-<li><code>n</code> to find next instance of text (after ENTER)</li>
-<li><code>N</code> to find previous instance of text (after ENTER)</li>
-</ul>
-<p>For search and replace</p>
-<ul>
-<li>`%s/<search_phrase>/<replace_phrase>/options</replace_phrase></search_phrase></li>
-<li>options include <code>g</code> for replace all, <code>c</code> for confirmation and <code>i</code> for case insensitive</li>
-</ul>
 </section>
-<section id="visual-selection" class="level2" data-number="13.8">
-<h2 data-number="13.8" class="anchored" data-anchor-id="visual-selection"><span class="header-section-number">13.8</span> Visual selection</h2>
-<ul>
-<li><code>v</code> to select text. Move cursor around with hjkl keys</li>
-<li>then <code>d</code> to delete (can later p(ut) it somewhere if needed)</li>
-<li>or <code>y</code> to yank (copy) so you can later p(ut) it somewhere</li>
-<li>or <code>w</code> to write to separate file</li>
-</ul>
-</section>
-<section id="copy" class="level2" data-number="13.9">
-<h2 data-number="13.9" class="anchored" data-anchor-id="copy"><span class="header-section-number">13.9</span> Copy</h2>
-<ul>
-<li><code>y</code> to yank (copy) selction (use with v for visual selection)</li>
-<li><code>yw</code> to yank a word</li>
-<li><code>yy</code> to yank a line</li>
-</ul>
-</section>
-<section id="working-with-multiple-files" class="level2" data-number="13.10">
-<h2 data-number="13.10" class="anchored" data-anchor-id="working-with-multiple-files"><span class="header-section-number">13.10</span> Working with multiple files</h2>
-<p>Vim can open multiple files in separate buffers. This can be done at the start by providing multiple filenames to vim (e.g., <code>vim file1.md file2.md</code>)</p>
-<p>Alternatively, additional files can be opened for editting later (<code>:e file2.txt</code>).</p>
-<p>Moving between buffers</p>
-<ul>
-<li><code>bn</code> moves to next buffer</li>
-<li><code>bp</code> moves to previous buffer</li>
-<li><code>:buffers</code> displays all open buffers</li>
-<li><code>: buffer 1</code> allows switch to buffer 1 (or any other number) if there are many buffers open</li>
-<li><code>:bd</code> deletes the current buffer. Will fail unless buffer has first been saved (or no changes made)</li>
-</ul>
-<p>yank/delete/put will work between buffers</p>
-</section>
-<section id="command-line-in-vim" class="level2" data-number="13.11">
-<h2 data-number="13.11" class="anchored" data-anchor-id="command-line-in-vim"><span class="header-section-number">13.11</span> Command line in VIM</h2>
-<p>Switch to command line from normal mode by typing <code>:</code></p>
-<p>You can then use:</p>
-<ul>
-<li><code>pwd</code> to print the current working director</li>
-<li><code>cd</code> to change the working directory for the vim shell</li>
-<li><code>lcd</code> to change the working directory for the specific buffer you are in</li>
-</ul>
-</section>
-<section id="render-files" class="level2" data-number="13.12">
-<h2 data-number="13.12" class="anchored" data-anchor-id="render-files"><span class="header-section-number">13.12</span> Render files</h2>
-<p>We tend to use either md or qmd files for writing, code, etc. Our .vimrc file turns on markdown highlighting for these files if saved with .md or ..qmd extensions. qmd is preferred because it works with RStudio as well.</p>
-<p>These files can be rendered to html or pdf if desired.</p>
-<ul>
-<li><code>quarto render file.qmd</code> to render to html</li>
-<li><code>quarto render file.qmd --to pdf</code> to render to pdf</li>
-</ul>
-<p>We can use a full yaml header for more fancy output. We have templates for apa manuscripts, letterhead, and a generally nice format pdf output if desired. Just paste the yaml at the top of the file.</p>
-</section>
-<section id="installing-plugins" class="level2" data-number="13.13">
-<h2 data-number="13.13" class="anchored" data-anchor-id="installing-plugins"><span class="header-section-number">13.13</span> Installing plugins</h2>
-<p>If the plugin is on github, simply clone it using the github url into the vim plugin folder: /home/jjcurtin/.vim/pack/vendor/start</p>
-<p>And you are done!</p>
-</section>
-<section id="learing-vim" class="level2" data-number="13.14">
-<h2 data-number="13.14" class="anchored" data-anchor-id="learing-vim"><span class="header-section-number">13.14</span> Learing VIM</h2>
-<ul>
-<li><p>run <code>vimtutor</code></p></li>
-<li><p>books: https://iccf-holland.org/vim_books.html</p></li>
-</ul>
+<section id="uw-documentation" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="uw-documentation"><span class="header-section-number">9.4</span> UW Documentation</h2>
+<p>https://kb.wisc.edu/search.php?q=cci+virtual is the list of existing documentation from DoIt about VMs.</p>
 
 
 </section>
@@ -855,13 +801,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./linux_use.html" class="pagination-link" aria-label="Using Linux">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Using Linux</span></span>
+      <a href="./research_drives.html" class="pagination-link" aria-label="Research Drives">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Research Drives</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./bash_scripting.html" class="pagination-link" aria-label="Bash Scripting">
-        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Bash Scripting</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./git.html" class="pagination-link" aria-label="Git">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Git</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
