@@ -71,9 +71,14 @@ Slack is easily installed from the Ubuntu Software Center. Open up the software 
 
 ### pdfs
 
--   `sudo snap install evince` for viewing pdfs
+- `sudo snap install evince` for viewing pdfs
 
--   `sudo apt-get install qpdf` for manipulating pdfs (e.g., extract pages)
+- `sudo apt-get install qpdf` for manipulating pdfs (e.g., extract pages)
+
+- also consider sudo apt install poppler-utils and then and for `pdftotext filname.pdf`
+
+
+
 
 ## Global Protect
 

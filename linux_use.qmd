@@ -93,7 +93,7 @@ You can view an html file in firefox from terminal using `firefox [filename]`
 
 - `cd-` switches back to previous directory
 
-- `column -s, -t < test.csv` will display contents of .test.csv in columns using built in function
+- `column -s , -t < test.csv` will display contents of .test.csv in columns using built in function.  default without -s , is space delimited
 
 ## Compressing and archiving files
 
