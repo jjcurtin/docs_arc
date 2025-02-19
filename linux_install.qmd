@@ -260,9 +260,13 @@ Install with: `curl -fsSL https://raw.github.com/cknadler/vim-anywhere/master/in
 
 - Prompts will indicate if you need to install some other apps
 - May need to tweak shortcut to get linux to recognize it
+- [the repo](https://github.com/cknadler/vim-anywhere)
+- [more info](https://ostechnix.com/how-to-use-vim-editor-to-input-text-anywhere/)
 
 
-https://github.com/cknadler/vim-anywhere
+## Vim in bash
+
+- https://blog.sanctum.geek.nz/vi-mode-in-bash/
 
 ## Github Copilot for CLI
 
