@@ -154,7 +154,7 @@
     "href": "studies.html",
     "title": "3  Current and Planned Studies",
     "section": "",
-    "text": "3.1 RISK",
+    "text": "3.1 RISK\nWe list potential study ideas below, organized by project/data set. When projects have been tentatively claimed, that is indicated as well",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Current and Planned Studies</span>"
     ]
@@ -394,7 +394,7 @@
     "href": "research_drives.html",
     "title": "8  Research Drives",
     "section": "",
-    "text": "8.1 Access\nTo gain access to the research/restricted drives you must be granted access through Manifest which is UW’s Active Directory service. John or Susan can add you as needed.",
+    "text": "8.1 Access\nJohn has been assigned 2 research drives which are free UW-owned storage space for researchers. Each is 25 TB but technically we will need to pay if total use across both exceeds 25 TB.\nThe primary research drive will become a replacement for the P:/ on dionysus as we can complete migrations. It is NOT permitted to store restricted data on this drive. Most of our studies are not restricted, except those that involve the VA or a UW Healthcare Component Co-I.\nThe other is a restricted research drive for which it IS permitted to store restricted data. When migration is complete, it should only contain study folders for the MN-VA studies, Risk1, and Risk2.\nTo gain access to the research/restricted drives you must be granted access through Manifest which is UW’s Active Directory service. John or Susan can add you as needed.",
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Research Drives</span>"
     ]
@@ -434,7 +434,7 @@
     "href": "virtual_machines.html",
     "title": "9  Virtual Machines",
     "section": "",
-    "text": "9.1 CCI Admin Console\nThe VMs are administered through the CCI Cloud Console.\nAuthenticate with your NetID followed by @ad.wisc.edu, then hit Service Broker. In the left sidebar is a Deployments item; expand that and click Virtual Machines.",
+    "text": "9.1 General Information",
     "crumbs": [
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Virtual Machines</span>"
     ]
@@ -443,8 +443,18 @@
     "objectID": "virtual_machines.html#general-information",
     "href": "virtual_machines.html#general-information",
     "title": "9  Virtual Machines",
-    "section": "9.2 General Information",
-    "text": "9.2 General Information\n\n9.2.1 Linux VM\n\nResource Name: PSYCH-GEN-022216\nDeployment name: optimize\nIP: 128.104.221.24\n\nCPUs: 2\nCores per socket: 2\nMemory: 32 GB\nHD space: 60 GB\n\n\n\n9.2.2 Win VM\n\nResource Name: PSYCH-GEN-022219\nDeployment name: optimize_win\nIP: 128.104.221.25\n\nCPUs: 1\nCores per socket: 1\nMemory: 16 GB\nHD space: 100 GB\n\n\n\n9.2.3 Hardware specs\nAs of Feb 2024 CCI KB lists the following hardware specs for VMs: * Server: Dell R740XD vSAN Ready Node * CPU: Intel Xeon Gold 6258R CPU @ 2.70GHz * Memory: Dual Rank x4 PC4-25600R (DDR4-3200) Registered CAS-22 * Storage: All-Flash vSAN * Cache Disks: 1.6TB Flash NVMe PCIe 8GT/s * Capacity Disks: 7.68TB SAS 12Gb/s * Network: Redundant 25Gb/s SFP28 Network adapters\n\n\n9.2.4 Editing RAM, HD space, etc\nWhile viewing the list of VMs, click the 3-dot menu for the VM you wish to edit.\n\nFor CPUs, cores, and RAM, select Resize.\n\nCores per socket should be left at 1 (the default). This has nothing to do with the number of cores the CPU has, see the specs above for more details on that.\n\nFor HD size, select Resize Boot Disk",
+    "section": "",
+    "text": "9.1.1 Linux VM\n\nResource Name: PSYCH-GEN-022216\nDeployment name: hal\nIP: 128.104.221.24\n\nCPUs: 2\nCores per socket: 1\nMemory: 32 GB\nHD space: 60 GB\n\n\n\n9.1.2 Win VM #1\n\nResource Name: PSYCH-GEN-022219\nDeployment name: optimize_win\nIP: 128.104.221.25\n\nCPUs: 1\nCores per socket: 1\nMemory: 16 GB\nHD space: 100 GB\n\n\n\n9.1.3 Win VM #2\n\nResource Name: PSYCH-GEN-025563\nDeployment name: supercomputer\nIP: 10.128.254.117\n\nCPUs: 1\nCores per socket: 1\nMemory: 64 GB\nHD space: 100 GB\n\n\n\n9.1.4 Hardware specs\nAs of Feb 2024 CCI KB lists the following hardware specs for VMs: * Server: Dell R740XD vSAN Ready Node * CPU: Intel Xeon Gold 6258R CPU @ 2.70GHz * Memory: Dual Rank x4 PC4-25600R (DDR4-3200) Registered CAS-22 * Storage: All-Flash vSAN * Cache Disks: 1.6TB Flash NVMe PCIe 8GT/s * Capacity Disks: 7.68TB SAS 12Gb/s * Network: Redundant 25Gb/s SFP28 Network adapters\n\n\n9.1.5 A note on “Cores per socket” and “available cores”\nConversations with CCI support indicate that all of the hardware cores for a specific CPU are shared among whomever connects to that CPU - not just users on one VM, but any VM with access to that CPU:\n“The physical CPUs are shared resources and are managed by the CPU scheduler. The CPU scheduler determines which VMs use the processors and when. It maximizes the utilization of the processors and ensures all VMs get their time on a processor.”\nCores per socket, on the other hand, has nothing to do with the number of cores the CPU has, and for our purposes we leave it at the default of 1: “That feature is available because there are operating systems and applications with license limits based on sockets. In those cases, it may be to your advantage to configure more than 1 core per socket.”",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Virtual Machines</span>"
+    ]
+  },
+  {
+    "objectID": "virtual_machines.html#administration",
+    "href": "virtual_machines.html#administration",
+    "title": "9  Virtual Machines",
+    "section": "9.2 Administration",
+    "text": "9.2 Administration\nThe VMs are administered through the CCI Cloud Console.\n\nVisit CCI Cloud Console.\nThe first thing you should see, should be “Select your domain”. Select “ad.wisc.edu”\nAuthenticate with your NetID.\nAfter you are logged in, click “Service Broker”.\nIn the left sidebar is you will see “Deployments”. Click to expand that, and then click “Virtual Machines”.\n\nThere are 2 main uses for the Admin console. You can edit the VM configurations, but you can also connect to them if Remote Desktop/ssh are not available.\n\n9.2.1 Editing Virtual Machines\nYou can edit RAM, HD space (ie boot disk), and number of CPUs.\n\nFollow the steps above to get logged in.\nWhile viewing the list of VMs, click the 3-dot menu for the VM you wish to edit.\n\nTo edit CPUs and RAM, select “Resize”.\nTo edit HD size, select “Resize Boot Disk”\n\n\n\n\n9.2.2 Connecting to the VM via the admin console\nThis will only be done if SSH & Remote desktop are NOT available to you. See below for the normal way to make connections.\n\nWhile viewing the list of VMs, click the 3-dot menu for the VM you wish to connect.\nSelect “Connect to Remote Console”.\nA new browser window will open showing the VM connection.\n\nFor Windows machines, you must use the item near the top that says “Send Ctrl+Alt+Del” to bring up the login fields.",
     "crumbs": [
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Virtual Machines</span>"
     ]
@@ -454,7 +464,7 @@
     "href": "virtual_machines.html#connection-information",
     "title": "9  Virtual Machines",
     "section": "9.3 Connection Information",
-    "text": "9.3 Connection Information\n\n9.3.1 Connecting via the Admin Console\nWhile viewing the list of VMs, click the 3-dot menu for the VM you wish to connect to, then select Connect to Remote Console.\n\n\n9.3.2 Direct connections\n\n9.3.2.1 Granting access\n\nUsers must be granted access via netID by John or Susan through Manifest which is UW’s Active Directory service. See this KB page for instructions on using Manifest.\n\nThe manufest group to add them to is called “CCI-GS-PSYCH-GEN-USER”\n\nOn the VM, the Administrator must create a user account and give it a password. These user accounts must be “Local” accounts, and cannot be administrators. (NB the administrator password is in Lastpass, both in the lab account and shared with John)\n\nHit the Start button and Type “Control Panel” to bring up the Control Panel\nHit “User Accounts” twice then “Manager another account” and then “Add a new user”\n\nThe Administrator must also grant this user permission to use Remote Desktop to connect. In the Control Panel search for “Remote” and select “Select users who can use Remote Desktop”\n\n\n\n9.3.2.2 After access has been granted\n\nEach user will be given a computer account username for the specific VM they plan to use. Computer usernames/passwords are shared through LastPass, or see Susan to have one created for you. Usually this will be your netid (with nothing after it)\nIt is recommended that you change your VM machine account password to match your netID password, as we have usually done with local computer accounts, to make it easier to connect going forward. Otherwise it will default to your local computer credentials and you will have to select “Use another account” each time.\nYou must be on a wired LAN machine in the psych building, or authenticated through GlobalProtect.\n\nIf you are on a campus WIFI, you must use eduroam rather than UWNet (the latter is not considered secure enough and connections from it are denied)\n\nFor the windows VM you can connect via Remote Desktop using the IP above.\nFor the linux VM you can connect via SSH using the IP above and port 22. It is recommended that you connect with a username specified, ie ssh username@128.104.221.24 where “username” is the one created for you (or ssh root@128.104.221.24 for the root user)",
+    "text": "9.3 Connection Information\n\n9.3.1 Granting access\nThere are 3 steps required before a user can connect to these machines:\n1 Users must be granted access via netID by John or Susan through Manifest which is UW’s Active Directory service. * See this KB page for instructions on using Manifest. * The manufest group to add them to is called “CCI-GS-PSYCH-GEN-USER” 2. On the VM, the Administrator must create a user account and give it a password. These user accounts must be “Local” accounts, and cannot be administrators. (NB the administrator password is in Lastpass, both in the lab account and shared with John). To add an account: * Click the Start button and Type “Control Panel” to bring up the Control Panel * Click “User Accounts”. * Click “User Accounts” again, then “Manager another account” * Click “Add a new user” and follow all the prompts. 3. After the user is created, you must also grant this user permission to use Remote Desktop to connect. * In the Control Panel search for the word “Remote”. * Click “Select users who can use Remote Desktop” * An intermediate window may or may not come up. If so click “Select Users” again. * Type the user name, then click “Add” and then “Okay”\nKeep in mind, if a user needs access on all 3 VMs, steps 2 & 3 must be repeated for each VM.\n\n\n9.3.2 Connecting (after access is granted)\n\nEach lab member must use the account username for the specific VM they plan to use. Computer usernames/passwords are shared through LastPass, or see Susan to have one created for you. Usually the password will be your netid.\nIt is recommended that you change your VM machine account password to match your netID password, as we have usually done with local computer accounts for Dionysus, to make it easier to connect going forward. Otherwise it will default to your local computer credentials and you will have to select “Use another account” each time.\nYou must be on a wired LAN machine in the psych building, or authenticated through GlobalProtect.\n\nIf you are on a campus WIFI, you must use eduroam and not UWNet (the latter is not considered secure enough and connections from it are denied, even through GlobalProtect)\n\n\n\n9.3.2.1 Windows machines\n\nUse Remote Desktop using the IP listed above for the VM you are connecting to.\nFor credentials, use the local account username/password that was created for you.\n\n\n\n9.3.2.2 Linux machine\n\nFor the linux VM you can connect via SSH using the IP above and port 22.\nIt is recommended that you connect with a username specified, ie ssh username@128.104.221.24 where “username” is the one created for you (e.g., ssh root@128.104.221.24 for the root user). You will then be prompted to enter a password.",
     "crumbs": [
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Virtual Machines</span>"
     ]
@@ -474,7 +484,7 @@
     "href": "git.html",
     "title": "10  Git",
     "section": "",
-    "text": "10.1 Creating an SSH Key\nTo communicate with github through a terminal you must first establish an SSH key (a secure access credential). Follow the instructions below to create this.\nssh-keygen -t ed25519 -C \"your_email@example.com\"\nvim .ssh/id_ed25519.pub\ngit remote set-url origin git@github.com:repo_owner_username/repo_name.git\nex: git remote set-url origin git@github.com:jjcurtin/proj_risk2.git",
+    "text": "10.1 Creating an SSH Key\nFor full documentation of using git from the command line you can read the Git Pro Book.\nTo communicate with github through a terminal you must first establish an SSH key (a secure access credential). Follow the instructions below to create this.\nssh-keygen -t ed25519 -C \"your_email@example.com\"\nvim .ssh/id_ed25519.pub\ngit remote set-url origin git@github.com:repo_owner_username/repo_name.git\nex: git remote set-url origin git@github.com:jjcurtin/proj_risk2.git",
     "crumbs": [
       "Linux and CLI",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Git</span>"
@@ -1288,7 +1298,7 @@
     "href": "psychophysiology.html",
     "title": "19  Psychophysiology Methods",
     "section": "",
-    "text": "20 Electronics and Psychophysiology",
+    "text": "20 Electronics and Psychophysiology\nAlthough we no longer focus on psychophysiology studies in our lab, this chapter is a central repository to share our gathered expertise and methods with other researchers.",
     "crumbs": [
       "Psychophysiology",
       "<span class='chapter-number'>19</span>  <span class='chapter-title'>Psychophysiology Methods</span>"
