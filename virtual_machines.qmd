@@ -34,7 +34,8 @@
 * HD space: 100 GB
 
 ### Hardware specs
-As of Feb 2024 CCI KB lists the following hardware specs for VMs:
+As of March 2024 CCI KB lists the following hardware specs for VMs:
+
 * Server: Dell R740XD vSAN Ready Node
 * CPU: [Intel Xeon Gold 6258R CPU @ 2.70GHz](https://ark.intel.com/content/www/us/en/ark/products/199350/intel-xeon-gold-6258r-processor-38-5m-cache-2-70-ghz.html)
 * Memory: Dual Rank x4 PC4-25600R (DDR4-3200) Registered CAS-22
@@ -89,7 +90,7 @@ This will only be done if SSH & Remote desktop are NOT available to you. See bel
 
 There are 3 steps required before a user can connect to these machines:
 
-1 Users must be granted access via netID by John or Susan through [Manifest](https://manifest.services.wisc.edu) which is UW's Active Directory service. 
+1. Users must be granted access via netID by John or Susan through [Manifest](https://manifest.services.wisc.edu) which is UW's Active Directory service. 
    * See [this KB page](https://kb.wisc.edu/25882) for instructions on using Manifest.
    * The manufest group to add them to is called "CCI-GS-PSYCH-GEN-USER"
 2. On the VM, the Administrator must create a user account and give it a password. These user accounts must be "Local" accounts, and cannot be administrators. (NB the administrator password is in Lastpass, both in the lab account and shared with John). To add an account:
@@ -122,5 +123,5 @@ Keep in mind, if a user needs access on all 3 VMs, steps 2 & 3 must be repeated 
 
 ## UW Documentation
 
-https://kb.wisc.edu/search.php?q=cci+virtual is the list of existing documentation from DoIt about VMs.
+<https://kb.wisc.edu/search.php?q=cci+virtual> is the list of existing documentation from DoIt about VMs.
 
