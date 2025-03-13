@@ -365,7 +365,16 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="hardware-specs" class="level3" data-number="9.1.4">
 <h3 data-number="9.1.4" class="anchored" data-anchor-id="hardware-specs"><span class="header-section-number">9.1.4</span> Hardware specs</h3>
-<p>As of Feb 2024 CCI KB lists the following hardware specs for VMs: * Server: Dell R740XD vSAN Ready Node * CPU: <a href="https://ark.intel.com/content/www/us/en/ark/products/199350/intel-xeon-gold-6258r-processor-38-5m-cache-2-70-ghz.html">Intel Xeon Gold 6258R CPU @ 2.70GHz</a> * Memory: Dual Rank x4 PC4-25600R (DDR4-3200) Registered CAS-22 * Storage: All-Flash vSAN * Cache Disks: 1.6TB Flash NVMe PCIe 8GT/s * Capacity Disks: 7.68TB SAS 12Gb/s * Network: Redundant 25Gb/s SFP28 Network adapters</p>
+<p>As of March 2024 CCI KB lists the following hardware specs for VMs:</p>
+<ul>
+<li>Server: Dell R740XD vSAN Ready Node</li>
+<li>CPU: <a href="https://ark.intel.com/content/www/us/en/ark/products/199350/intel-xeon-gold-6258r-processor-38-5m-cache-2-70-ghz.html">Intel Xeon Gold 6258R CPU @ 2.70GHz</a></li>
+<li>Memory: Dual Rank x4 PC4-25600R (DDR4-3200) Registered CAS-22</li>
+<li>Storage: All-Flash vSAN</li>
+<li>Cache Disks: 1.6TB Flash NVMe PCIe 8GT/s</li>
+<li>Capacity Disks: 7.68TB SAS 12Gb/s</li>
+<li>Network: Redundant 25Gb/s SFP28 Network adapters</li>
+</ul>
 </section>
 <section id="a-note-on-cores-per-socket-and-available-cores" class="level3" data-number="9.1.5">
 <h3 data-number="9.1.5" class="anchored" data-anchor-id="a-note-on-cores-per-socket-and-available-cores"><span class="header-section-number">9.1.5</span> A note on “Cores per socket” and “available cores”</h3>
@@ -415,7 +424,27 @@ ul.task-list li input[type="checkbox"] {
 <section id="granting-access" class="level3" data-number="9.3.1">
 <h3 data-number="9.3.1" class="anchored" data-anchor-id="granting-access"><span class="header-section-number">9.3.1</span> Granting access</h3>
 <p>There are 3 steps required before a user can connect to these machines:</p>
-<p>1 Users must be granted access via netID by John or Susan through <a href="https://manifest.services.wisc.edu">Manifest</a> which is UW’s Active Directory service. * See <a href="https://kb.wisc.edu/25882">this KB page</a> for instructions on using Manifest. * The manufest group to add them to is called “CCI-GS-PSYCH-GEN-USER” 2. On the VM, the Administrator must create a user account and give it a password. These user accounts must be “Local” accounts, and cannot be administrators. (NB the administrator password is in Lastpass, both in the lab account and shared with John). To add an account: * Click the Start button and Type “Control Panel” to bring up the Control Panel * Click “User Accounts”. * Click “User Accounts” again, then “Manager another account” * Click “Add a new user” and follow all the prompts. 3. After the user is created, you must also grant this user permission to use Remote Desktop to connect. * In the Control Panel search for the word “Remote”. * Click “Select users who can use Remote Desktop” * An intermediate window may or may not come up. If so click “Select Users” again. * Type the user name, then click “Add” and then “Okay”</p>
+<ol type="1">
+<li>Users must be granted access via netID by John or Susan through <a href="https://manifest.services.wisc.edu">Manifest</a> which is UW’s Active Directory service.
+<ul>
+<li>See <a href="https://kb.wisc.edu/25882">this KB page</a> for instructions on using Manifest.</li>
+<li>The manufest group to add them to is called “CCI-GS-PSYCH-GEN-USER”</li>
+</ul></li>
+<li>On the VM, the Administrator must create a user account and give it a password. These user accounts must be “Local” accounts, and cannot be administrators. (NB the administrator password is in Lastpass, both in the lab account and shared with John). To add an account:
+<ul>
+<li>Click the Start button and Type “Control Panel” to bring up the Control Panel</li>
+<li>Click “User Accounts”.</li>
+<li>Click “User Accounts” again, then “Manager another account”</li>
+<li>Click “Add a new user” and follow all the prompts.</li>
+</ul></li>
+<li>After the user is created, you must also grant this user permission to use Remote Desktop to connect.
+<ul>
+<li>In the Control Panel search for the word “Remote”.</li>
+<li>Click “Select users who can use Remote Desktop”</li>
+<li>An intermediate window may or may not come up. If so click “Select Users” again.</li>
+<li>Type the user name, then click “Add” and then “Okay”</li>
+</ul></li>
+</ol>
 <p>Keep in mind, if a user needs access on all 3 VMs, steps 2 &amp; 3 must be repeated for each VM.</p>
 </section>
 <section id="connecting-after-access-is-granted" class="level3" data-number="9.3.2">
