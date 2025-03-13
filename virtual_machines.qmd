@@ -1,25 +1,19 @@
 # Virtual Machines
 
-## CCI Admin Console
-
-The VMs are administered through the [CCI Cloud Console](https://cci-one-vra-01.cci.wisc.edu/csp/gateway/portal/#/consumer). 
-
-Authenticate with your NetID followed by @ad.wisc.edu, then hit Service Broker. In the left sidebar is a Deployments item; expand that and click Virtual Machines.
-
 ## General Information
 
 ### Linux VM
 
 * Resource Name: PSYCH-GEN-022216
-* Deployment name: optimize
+* Deployment name: hal
 * IP: 128.104.221.24  
 * CPUs: 2
-* Cores per socket: 2
+* Cores per socket: 1
 * Memory: 32 GB
 * HD space: 60 GB
 
 
-### Win VM
+### Win VM #1
 
 * Resource Name: PSYCH-GEN-022219
 * Deployment name: optimize_win
@@ -27,6 +21,16 @@ Authenticate with your NetID followed by @ad.wisc.edu, then hit Service Broker. 
 * CPUs: 1
 * Cores per socket: 1
 * Memory: 16 GB
+* HD space: 100 GB
+
+### Win VM #2
+
+* Resource Name: PSYCH-GEN-025563 
+* Deployment name: supercomputer
+* IP: 10.128.254.117   
+* CPUs: 1
+* Cores per socket: 1
+* Memory: 64 GB
 * HD space: 100 GB
 
 ### Hardware specs
@@ -40,39 +44,81 @@ As of Feb 2024 CCI KB lists the following hardware specs for VMs:
 * Network: Redundant 25Gb/s SFP28 Network adapters
 
 
-### Editing RAM, HD space, etc
+### A note on "Cores per socket" and "available cores"
+Conversations with CCI support indicate that all of the hardware cores for a specific CPU are shared among whomever connects to that CPU - not just users on one VM, but any VM with access to that CPU: 
 
-While viewing the list of VMs, click the 3-dot menu for the VM you wish to edit.
+"The physical CPUs are shared resources and are managed by the CPU scheduler. The CPU scheduler determines which VMs use the processors and when. It maximizes the utilization of the processors and ensures all VMs get their time on a processor."
 
-* For CPUs, cores, and RAM, select Resize. 
-   * Cores per socket should be left at 1 (the default). This has nothing to do with the number of cores the CPU has, see the specs above for more details on that.
-* For HD size, select Resize Boot Disk
+Cores per socket, on the other hand, has nothing to do with the number of cores the CPU has, and for our purposes we leave it at the default of 1: "That feature is available because there are operating systems and applications with license limits based on sockets. In those cases, it may be to your advantage to configure more than 1 core per socket."
+
+## Administration
+
+The VMs are administered through the CCI Cloud Console.
+
+1. Visit [CCI Cloud Console](https://cci-one-vra-01.cci.wisc.edu/csp/gateway/portal/#/consumer). 
+2. The first thing you should see, should be "Select your domain". Select "ad.wisc.edu"
+2. Authenticate with your NetID.
+3. After you are logged in, click "Service Broker". 
+4. In the left sidebar is you will see "Deployments". Click to expand that, and then click "Virtual Machines".
+
+
+There are 2 main uses for the Admin console. You can edit the VM configurations, but you can also connect to them if Remote Desktop/ssh are not available.
+
+### Editing Virtual Machines
+
+You can edit RAM, HD space (ie boot disk), and number of CPUs.
+
+1. Follow the steps above to get logged in.
+2. While viewing the list of VMs, click the 3-dot menu for the VM you wish to edit.
+   * To edit CPUs and RAM, select "Resize". 
+   * To edit HD size, select "Resize Boot Disk"
+
+### Connecting to the VM via the admin console
+
+This will only be done if SSH & Remote desktop are NOT available to you. See below for the normal way to make connections.
+
+1. While viewing the list of VMs, click the 3-dot menu for the VM you wish to connect.
+2. Select "Connect to Remote Console".
+3. A new browser window will open showing the VM connection. 
+   * For Windows machines, you must use the item near the top that says "Send Ctrl+Alt+Del" to bring up the login fields.
+
 
 ## Connection Information
 
-### Connecting via the Admin Console
+### Granting access
 
-While viewing the list of VMs, click the 3-dot menu for the VM you wish to connect to, then select Connect to Remote Console.
+There are 3 steps required before a user can connect to these machines:
 
-### Direct connections
-
-#### Granting access
-
-* Users must be granted access via netID by John or Susan through [Manifest](https://manifest.services.wisc.edu) which is UW's Active Directory service. See [this KB page](https://kb.wisc.edu/25882) for instructions on using Manifest.
+1 Users must be granted access via netID by John or Susan through [Manifest](https://manifest.services.wisc.edu) which is UW's Active Directory service. 
+   * See [this KB page](https://kb.wisc.edu/25882) for instructions on using Manifest.
    * The manufest group to add them to is called "CCI-GS-PSYCH-GEN-USER"
-* On the VM, the Administrator must create a user account and give it a password. These user accounts must be "Local" accounts, and cannot be administrators. (NB the administrator password is in Lastpass, both in the lab account and shared with John)
-   * Hit the Start button and Type "Control Panel" to bring up the Control Panel
-   * Hit "User Accounts" twice then "Manager another account" and then "Add a new user"
-* The Administrator must also grant this user permission to use Remote Desktop to connect. In the Control Panel search for "Remote" and select "Select users who can use Remote Desktop"
+2. On the VM, the Administrator must create a user account and give it a password. These user accounts must be "Local" accounts, and cannot be administrators. (NB the administrator password is in Lastpass, both in the lab account and shared with John). To add an account:
+   * Click the Start button and Type "Control Panel" to bring up the Control Panel
+   * Click "User Accounts".
+   * Click "User Accounts" again, then "Manager another account"
+   * Click  "Add a new user" and follow all the prompts.
+3. After the user is created, you must also grant this user permission to use Remote Desktop to connect. 
+   * In the Control Panel search for the word "Remote".
+   * Click "Select users who can use Remote Desktop"
+   * An intermediate window may or may not come up. If so click "Select Users" again.
+   * Type the user name, then click "Add" and then "Okay"
+   
+Keep in mind, if a user needs access on all 3 VMs, steps 2 & 3 must be repeated for each VM.
 
-#### After access has been granted
+### Connecting (after access is granted)
 
-* Each user will be given a computer account username for the specific VM they plan to use. Computer usernames/passwords are shared through LastPass, or see Susan to have one created for you. Usually this will be your netid (with nothing after it)
-* It is recommended that you change your VM machine account password to match your netID password, as we have usually done with local computer accounts, to make it easier to connect going forward. Otherwise it will default to your local computer credentials and you will have to select "Use another account" each time.
+* Each lab member must use the account username for the specific VM they plan to use. Computer usernames/passwords are shared through LastPass, or see Susan to have one created for you. Usually the password will be your netid.
+* It is recommended that you change your VM machine account password to match your netID password, as we have usually done with local computer accounts for Dionysus, to make it easier to connect going forward. Otherwise it will default to your local computer credentials and you will have to select "Use another account" each time.
 * You must be on a wired LAN machine in the psych building, or authenticated through GlobalProtect. 
-   * If you are on a campus WIFI, you must use eduroam rather than UWNet (the latter is not considered secure enough and connections from it are denied)
-* For the windows VM you can connect via Remote Desktop using the IP above. 
-* For the linux VM you can connect via SSH using the IP above and port 22. It is recommended that you connect with a username specified, ie `ssh username@128.104.221.24` where "username" is the one created for you (or `ssh root@128.104.221.24` for the root user)
+   * If you are on a campus WIFI, you must use **eduroam** and **not UWNet** (the latter is not considered secure enough and connections from it are denied, even through GlobalProtect)
+   
+#### Windows machines
+1. Use Remote Desktop using the IP listed above for the VM you are connecting to.
+2. For credentials, use the local account username/password that was created for you.
+
+#### Linux machine
+1. For the linux VM you can connect via SSH using the IP above and port 22. 
+2. It is recommended that you connect with a username specified, ie `ssh username@128.104.221.24` where "username" is the one created for you (e.g., `ssh root@128.104.221.24` for the root user). You will then be prompted to enter a password.
 
 ## UW Documentation
 
