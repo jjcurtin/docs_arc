@@ -38,6 +38,12 @@ We use `evince [filename.pdf]` to view pdfs
 
 we use `qpdf --empty --pages infile.pdf 1-5 -- outfile.pdf` to extract pages from a pdf
 
+See [docs]https://qpdf.readthedocs.io/en/stable/cli.html#page-ranges) for options on listing page ranges in `qpdf`
+
+- no spaces
+- 1-2,5-6 for pages 1-2 and 5-6
+- 3-z for all pages except 1-2
+- 1-z,x3-4 for all pages except 3-4
 
 ## Browsers 
 
