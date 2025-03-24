@@ -154,7 +154,7 @@
     "href": "studies.html",
     "title": "3  Current and Planned Studies",
     "section": "",
-    "text": "3.1 RISK\nWe list potential study ideas below, organized by project/data set. When projects have been tentatively claimed, that is indicated as well",
+    "text": "3.1 RISK",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Current and Planned Studies</span>"
     ]
@@ -394,7 +394,7 @@
     "href": "research_drives.html",
     "title": "8  Research Drives",
     "section": "",
-    "text": "8.1 Access\nJohn has been assigned 2 research drives which are free UW-owned storage space for researchers. Each is 25 TB but technically we will need to pay if total use across both exceeds 25 TB.\nThe primary research drive will become a replacement for the P:/ on dionysus as we can complete migrations. It is NOT permitted to store restricted data on this drive. Most of our studies are not restricted, except those that involve the VA or a UW Healthcare Component Co-I.\nThe other is a restricted research drive for which it IS permitted to store restricted data. When migration is complete, it should only contain study folders for the MN-VA studies, Risk1, and Risk2.\nTo gain access to the research/restricted drives you must be granted access through Manifest which is UW’s Active Directory service. John or Susan can add you as needed.",
+    "text": "8.1 Access\nTo gain access to the research/restricted drives you must be granted access through Manifest which is UW’s Active Directory service. John or Susan can add you as needed.",
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Research Drives</span>"
     ]
@@ -404,7 +404,7 @@
     "href": "research_drives.html#access",
     "title": "8  Research Drives",
     "section": "",
-    "text": "Add them to either uw:app:researchdrive:pis:jjcurtin (for the regular research drive) or uw:app:restricteddrive:pis:jjcurtin for the restricted drive\nAdd them either to the jjcurtin-admin group for the desired drive (for admins) or jjcurtin-lab (for regular lab members/grads). There are also external user groups and read-only groups if needed.\nSee this KB page for information on adding members through manifest.\n\n\n8.1.1 Special notes about the Restricted Drive\n\nDue to current (2024) UW policies about restricted data, currently the restricted drive can only be mapped from one of the lab’s virtual machines.\nAs of December 2024 we have not yet migrated the restricted data, as we have not yet set up a workflow to allow everyone who needs it to access this data. One possibility we are considering is to set up a processed data folder on the primary research drive for general access, and retain only raw data on the restricted drive.",
+    "text": "See https://kb.wisc.edu/25882 for information on adding members through manifest.\n\n\n8.1.1 Special notes about the Restricted Drive\n\nDue to current (2024) UW policies about restricted data, currently the restricted drive can only be mapped from one of the lab’s virtual machines.\nAs of December 2024 we have not yet migrated the restricted data, as we have not yet set up a workflow to allow everyone who needs it to access this data. One possibility we are considering is to set up a processed data folder on the primary research drive for general access, and retain only raw data on the restricted drive.",
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Research Drives</span>"
     ]
@@ -424,7 +424,7 @@
     "href": "research_drives.html#uw-documentation",
     "title": "8  Research Drives",
     "section": "8.3 UW Documentation",
-    "text": "8.3 UW Documentation\nUW’s documentation on Research Drives is here.",
+    "text": "8.3 UW Documentation\nSee https://kb.wisc.edu/95074 for UW’s documentation on Research Drives.",
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Research Drives</span>"
     ]
@@ -434,7 +434,7 @@
     "href": "virtual_machines.html",
     "title": "9  Virtual Machines",
     "section": "",
-    "text": "9.1 General Information",
+    "text": "9.1 CCI Admin Console\nThe VMs are administered through the CCI Cloud Console.\nAuthenticate with your NetID followed by @ad.wisc.edu, then hit Service Broker. In the left sidebar is a Deployments item; expand that and click Virtual Machines.",
     "crumbs": [
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Virtual Machines</span>"
     ]
@@ -443,18 +443,8 @@
     "objectID": "virtual_machines.html#general-information",
     "href": "virtual_machines.html#general-information",
     "title": "9  Virtual Machines",
-    "section": "",
-    "text": "9.1.1 Linux VM\n\nResource Name: PSYCH-GEN-022216\nDeployment name: hal\nIP: 128.104.221.24\n\nCPUs: 2\nCores per socket: 1\nMemory: 32 GB\nHD space: 60 GB\n\n\n\n9.1.2 Win VM #1\n\nResource Name: PSYCH-GEN-022219\nDeployment name: optimize_win\nIP: 128.104.221.25\n\nCPUs: 1\nCores per socket: 1\nMemory: 16 GB\nHD space: 100 GB\n\n\n\n9.1.3 Win VM #2\n\nResource Name: PSYCH-GEN-025563\nDeployment name: supercomputer\nIP: 10.128.254.117\n\nCPUs: 1\nCores per socket: 1\nMemory: 64 GB\nHD space: 100 GB\n\n\n\n9.1.4 Hardware specs\nAs of March 2024 CCI KB lists the following hardware specs for VMs:\n\nServer: Dell R740XD vSAN Ready Node\nCPU: Intel Xeon Gold 6258R CPU @ 2.70GHz\nMemory: Dual Rank x4 PC4-25600R (DDR4-3200) Registered CAS-22\nStorage: All-Flash vSAN\nCache Disks: 1.6TB Flash NVMe PCIe 8GT/s\nCapacity Disks: 7.68TB SAS 12Gb/s\nNetwork: Redundant 25Gb/s SFP28 Network adapters\n\n\n\n9.1.5 A note on “Cores per socket” and “available cores”\nConversations with CCI support indicate that all of the hardware cores for a specific CPU are shared among whomever connects to that CPU - not just users on one VM, but any VM with access to that CPU:\n“The physical CPUs are shared resources and are managed by the CPU scheduler. The CPU scheduler determines which VMs use the processors and when. It maximizes the utilization of the processors and ensures all VMs get their time on a processor.”\nCores per socket, on the other hand, has nothing to do with the number of cores the CPU has, and for our purposes we leave it at the default of 1: “That feature is available because there are operating systems and applications with license limits based on sockets. In those cases, it may be to your advantage to configure more than 1 core per socket.”",
-    "crumbs": [
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Virtual Machines</span>"
-    ]
-  },
-  {
-    "objectID": "virtual_machines.html#administration",
-    "href": "virtual_machines.html#administration",
-    "title": "9  Virtual Machines",
-    "section": "9.2 Administration",
-    "text": "9.2 Administration\nThe VMs are administered through the CCI Cloud Console.\n\nVisit CCI Cloud Console.\nThe first thing you should see, should be “Select your domain”. Select “ad.wisc.edu”\nAuthenticate with your NetID.\nAfter you are logged in, click “Service Broker”.\nIn the left sidebar is you will see “Deployments”. Click to expand that, and then click “Virtual Machines”.\n\nThere are 2 main uses for the Admin console. You can edit the VM configurations, but you can also connect to them if Remote Desktop/ssh are not available.\n\n9.2.1 Editing Virtual Machines\nYou can edit RAM, HD space (ie boot disk), and number of CPUs.\n\nFollow the steps above to get logged in.\nWhile viewing the list of VMs, click the 3-dot menu for the VM you wish to edit.\n\nTo edit CPUs and RAM, select “Resize”.\nTo edit HD size, select “Resize Boot Disk”\n\n\n\n\n9.2.2 Connecting to the VM via the admin console\nThis will only be done if SSH & Remote desktop are NOT available to you. See below for the normal way to make connections.\n\nWhile viewing the list of VMs, click the 3-dot menu for the VM you wish to connect.\nSelect “Connect to Remote Console”.\nA new browser window will open showing the VM connection.\n\nFor Windows machines, you must use the item near the top that says “Send Ctrl+Alt+Del” to bring up the login fields.",
+    "section": "9.2 General Information",
+    "text": "9.2 General Information\n\n9.2.1 Linux VM\n\nResource Name: PSYCH-GEN-022216\nDeployment name: optimize\nIP: 128.104.221.24\n\nCPUs: 2\nCores per socket: 2\nMemory: 32 GB\nHD space: 60 GB\n\n\n\n9.2.2 Win VM\n\nResource Name: PSYCH-GEN-022219\nDeployment name: optimize_win\nIP: 128.104.221.25\n\nCPUs: 1\nCores per socket: 1\nMemory: 16 GB\nHD space: 100 GB\n\n\n\n9.2.3 Editing RAM, HD space, etc\nWhile viewing the list of VMs, click the 3-dot menu for the VM you wish to edit.\n\nFor CPUs, cores, and RAM, select Resize.\nFor HD size, select Resize Boot Disk",
     "crumbs": [
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Virtual Machines</span>"
     ]
@@ -464,7 +454,7 @@
     "href": "virtual_machines.html#connection-information",
     "title": "9  Virtual Machines",
     "section": "9.3 Connection Information",
-    "text": "9.3 Connection Information\n\n9.3.1 Granting access\nThere are 3 steps required before a user can connect to these machines:\n\nUsers must be granted access via netID by John or Susan through Manifest which is UW’s Active Directory service.\n\nSee this KB page for instructions on using Manifest.\nThe manufest group to add them to is called “CCI-GS-PSYCH-GEN-USER”\n\nOn the VM, the Administrator must create a user account and give it a password. These user accounts must be “Local” accounts, and cannot be administrators. (NB the administrator password is in Lastpass, both in the lab account and shared with John). To add an account:\n\nClick the Start button and Type “Control Panel” to bring up the Control Panel\nClick “User Accounts”.\nClick “User Accounts” again, then “Manager another account”\nClick “Add a new user” and follow all the prompts.\n\nAfter the user is created, you must also grant this user permission to use Remote Desktop to connect.\n\nIn the Control Panel search for the word “Remote”.\nClick “Select users who can use Remote Desktop”\nAn intermediate window may or may not come up. If so click “Select Users” again.\nType the user name, then click “Add” and then “Okay”\n\n\nKeep in mind, if a user needs access on all 3 VMs, steps 2 & 3 must be repeated for each VM.\n\n\n9.3.2 Connecting (after access is granted)\n\nEach lab member must use the account username for the specific VM they plan to use. Computer usernames/passwords are shared through LastPass, or see Susan to have one created for you. Usually the password will be your netid.\nIt is recommended that you change your VM machine account password to match your netID password, as we have usually done with local computer accounts for Dionysus, to make it easier to connect going forward. Otherwise it will default to your local computer credentials and you will have to select “Use another account” each time.\nYou must be on a wired LAN machine in the psych building, or authenticated through GlobalProtect.\n\nIf you are on a campus WIFI, you must use eduroam and not UWNet (the latter is not considered secure enough and connections from it are denied, even through GlobalProtect)\n\n\n\n9.3.2.1 Windows machines\n\nUse Remote Desktop using the IP listed above for the VM you are connecting to.\nFor credentials, use the local account username/password that was created for you.\n\n\n\n9.3.2.2 Linux machine\n\nFor the linux VM you can connect via SSH using the IP above and port 22.\nIt is recommended that you connect with a username specified, ie ssh username@128.104.221.24 where “username” is the one created for you (e.g., ssh root@128.104.221.24 for the root user). You will then be prompted to enter a password.",
+    "text": "9.3 Connection Information\n\n9.3.1 Connecting via the Admin Console\nWhile viewing the list of VMs, click the 3-dot menu for the VM you wish to connect to, then select Connect to Remote Console.\n\n\n9.3.2 Direct connections\n\nUsernames/passwords are shared through LastPass, or see Susan to have one created for you\nYou must be on a wired LAN machine in the psych building, or authenticated through GlobalProtect.\nIf you are on a campus WIFI, you must use eduroam rather than UWNet (the latter is not considered secure enough and connections from it are denied)\nFor the windows VM you can connect via Remote Desktop using the IP above.\nFor the linux VM you can connect via SSH using the IP above and port 22.",
     "crumbs": [
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Virtual Machines</span>"
     ]
@@ -484,7 +474,7 @@
     "href": "git.html",
     "title": "10  Git",
     "section": "",
-    "text": "10.1 Creating an SSH Key\nFor full documentation of using git from the command line you can read the Git Pro Book.\nTo communicate with github through a terminal you must first establish an SSH key (a secure access credential). Follow the instructions below to create this.\nssh-keygen -t ed25519 -C \"your_email@example.com\"\nvim .ssh/id_ed25519.pub\ngit remote set-url origin git@github.com:repo_owner_username/repo_name.git\nex: git remote set-url origin git@github.com:jjcurtin/proj_risk2.git",
+    "text": "10.1 Creating an SSH Key\nTo communicate with github through a terminal you must first establish an SSH key (a secure access credential). Follow the instructions below to create this.\nssh-keygen -t ed25519 -C \"your_email@example.com\"\nvim .ssh/id_ed25519.pub\ngit remote set-url origin git@github.com:repo_owner_username/repo_name.git\nex: git remote set-url origin git@github.com:jjcurtin/proj_risk2.git",
     "crumbs": [
       "Linux and CLI",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Git</span>"
@@ -605,7 +595,7 @@
     "href": "linux_install.html#slack",
     "title": "11  Installing Linux",
     "section": "11.6 Slack",
-    "text": "11.6 Slack\nSlack is easily installed from the Ubuntu Software Center. Open up the software center. Search for Slack. Install. Done.\n\n11.6.1 pdfs\n\nsudo snap install evince for viewing pdfs\nsudo apt-get install qpdf for manipulating pdfs (e.g., extract pages)\nalso consider sudo apt install poppler-utils and then and for pdftotext filname.pdf",
+    "text": "11.6 Slack\nSlack is easily installed from the Ubuntu Software Center. Open up the software center. Search for Slack. Install. Done.\n\n11.6.1 pdfs\n\nsudo snap install evince for viewing pdfs\nsudo apt-get install qpdf for manipulating pdfs (e.g., extract pages)",
     "crumbs": [
       "Linux and CLI",
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>Installing Linux</span>"
@@ -715,40 +705,7 @@
     "href": "linux_install.html#customize-cli-prompt",
     "title": "11  Installing Linux",
     "section": "11.16 Customize CLI prompt",
-    "text": "11.16 Customize CLI prompt\nThis will set up a green prompt with relative path for current directory.\nPS1=“$ (https://github.com/cknadler/vim-anywhere) - more info",
-    "crumbs": [
-      "Linux and CLI",
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Installing Linux</span>"
-    ]
-  },
-  {
-    "objectID": "linux_install.html#vim-in-bash",
-    "href": "linux_install.html#vim-in-bash",
-    "title": "11  Installing Linux",
-    "section": "11.17 Vim in bash",
-    "text": "11.17 Vim in bash\n\nhttps://blog.sanctum.geek.nz/vi-mode-in-bash/",
-    "crumbs": [
-      "Linux and CLI",
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Installing Linux</span>"
-    ]
-  },
-  {
-    "objectID": "linux_install.html#github-copilot-for-cli",
-    "href": "linux_install.html#github-copilot-for-cli",
-    "title": "11  Installing Linux",
-    "section": "11.18 Github Copilot for CLI",
-    "text": "11.18 Github Copilot for CLI\n\nhttps://github.com/cli/cli/blob/trunk/docs/install_linux.md\ngh auth login\ngh extension install github/gh-copilot",
-    "crumbs": [
-      "Linux and CLI",
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Installing Linux</span>"
-    ]
-  },
-  {
-    "objectID": "linux_install.html#git-command-line-for-windows",
-    "href": "linux_install.html#git-command-line-for-windows",
-    "title": "11  Installing Linux",
-    "section": "11.19 Git Command Line for Windows",
-    "text": "11.19 Git Command Line for Windows\nIf you want to run some cli programs (e.g., sftp, ssh, git) and limited bash on a Windows compoter, install Git Bash.\nThis is NOT needed if you are installing Linux as your OS.",
+    "text": "11.16 Customize CLI prompt\nThis will set up a green prompt with relative path for current directory.\nPS1=“$ (https://git-scm.com/download/win).\nThis is NOT needed if you are installing Linux as your OS.",
     "crumbs": [
       "Linux and CLI",
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>Installing Linux</span>"
@@ -803,7 +760,7 @@
     "href": "linux_use.html#pdf-manipulation",
     "title": "12  Using Linux",
     "section": "12.4 Pdf manipulation",
-    "text": "12.4 Pdf manipulation\nWe use evince [filename.pdf] to view pdfs\nwe use qpdf --empty --pages infile.pdf 1-5 -- outfile.pdf to extract pages from a pdf",
+    "text": "12.4 Pdf manipulation\nWe use evince [filename.pdf] to view pdfs\nwe use qpdf --empty --pages infile.pdf 1-5 -- outfile.pdf to extract pages from a pdf\nSee [docs]https://qpdf.readthedocs.io/en/stable/cli.html#page-ranges) for options on listing page ranges in qpdf\n\nno spaces\n1-2,5-6 for pages 1-2 and 5-6\n3-z for all pages except 1-2\n1-z,x3-4 for all pages except 3-4",
     "crumbs": [
       "Linux and CLI",
       "<span class='chapter-number'>12</span>  <span class='chapter-title'>Using Linux</span>"
@@ -825,7 +782,7 @@
     "href": "linux_use.html#common-commands",
     "title": "12  Using Linux",
     "section": "12.6 Common Commands",
-    "text": "12.6 Common Commands\n\nwc, uniq, head, tail, |, &gt;, &gt;&gt;, less, sort, grep, cat, man, help, –help, type, which, echo, history\nls -lSr to list files sorted by size (with larger sizes later: r). Useful to find the non-zero error files. Can have issues when applied to large numbers of files (&gt; 60K). See use of find and xargs below if needed.\ncd - changes to previous directory\nmv to move files between directories. can use .. as target to move file to home directory. e.g., mv results_* ..\n&gt; redirect standard output to a new file (creates file if does not exist; writes over file contents if it does exist). &gt;&gt; redirect standard output to append to a file\nrm to remove file(s). rm -r to remove non-empty directory\ncat filename_* &gt; all_files.csv to concatenate all files into one file.\nless views file contents\n| is pipe operator\nwc is word count. wc -l counts lines\nchmod +x get_missing_jobs.sh to change permissions on get_missing_jobs.sh to run it. ./get_missing_jobs.sh to run it.\nfind -maxdepth 1 -name \"results_*.csv\" | wc -l will find results_*.csv in local folder (maxdepth 1) and pipe them into a word count that counts lines (-l)\ncat job_nums.csv | wc -l reads contents of job_nums.csv and pipes to a word count that counts lines (-l)\nfind -maxdepth 1 -name \"results_*.csv\" | ls -lSr gets around the too many arguments issue. Find searches recursively by default (override with maxdepth if needed), whereas ls searches just . or the specified directory (e.g., ./results)\nSee tutorial on awk to understand its use for simple programming. See a tutorial on the use of xargs.\nprintf to send formatted text to standard output or to a file\n\nprintf \"John is %s\\n\" \"nice\"\nprintf \"John is %d years old\" 54\nprintf \"hello world\\nIt is John!\" &gt; out.txt)\n\nman [command] to open manual for command\nsdiff file1 file2 - Compare two files side by side.\nvimdiff file1 file2 - Highlight the differences between two files in the vim editor.\ntar [-] c|x|t f tarfile [pattern] - Create, extract or list contents of a tar archive using pattern, if supplied.\ndu -h - Display sizes in human readable format. For example, 1.2M, 3.7G, etc.\n\ndu -shc - Display size of directory and its subdirectories\n\nhead, tail, and sort work as expected. Remember to use -n with sort if you want to do a numeric (rather than text) sort. Sort also takes -r for reverse. Use pipe to pipe in a vector of numbers or text. Use -1 with head or tail to get the first (or last) value in series.\ncd- switches back to previous directory\ncolumn -s , -t &lt; test.csv will display contents of .test.csv in columns using built in function. default without -s , is space delimited",
+    "text": "12.6 Common Commands\n\nwc, uniq, head, tail, |, &gt;, &gt;&gt;, less, sort, grep, cat, man, help, –help, type, which, echo, history\nls -lSr to list files sorted by size (with larger sizes later: r). Useful to find the non-zero error files. Can have issues when applied to large numbers of files (&gt; 60K). See use of find and xargs below if needed.\ncd - changes to previous directory\nmv to move files between directories. can use .. as target to move file to home directory. e.g., mv results_* ..\n&gt; redirect standard output to a new file (creates file if does not exist; writes over file contents if it does exist). &gt;&gt; redirect standard output to append to a file\nrm to remove file(s). rm -r to remove non-empty directory\ncat filename_* &gt; all_files.csv to concatenate all files into one file.\nless views file contents\n| is pipe operator\nwc is word count. wc -l counts lines\nchmod +x get_missing_jobs.sh to change permissions on get_missing_jobs.sh to run it. ./get_missing_jobs.sh to run it.\nfind -maxdepth 1 -name \"results_*.csv\" | wc -l will find results_*.csv in local folder (maxdepth 1) and pipe them into a word count that counts lines (-l)\ncat job_nums.csv | wc -l reads contents of job_nums.csv and pipes to a word count that counts lines (-l)\nfind -maxdepth 1 -name \"results_*.csv\" | ls -lSr gets around the too many arguments issue. Find searches recursively by default (override with maxdepth if needed), whereas ls searches just . or the specified directory (e.g., ./results)\nSee tutorial on awk to understand its use for simple programming. See a tutorial on the use of xargs.\nprintf to send formatted text to standard output or to a file\n\nprintf \"John is %s\\n\" \"nice\"\nprintf \"John is %d years old\" 54\nprintf \"hello world\\nIt is John!\" &gt; out.txt)\n\nman [command] to open manual for command\nsdiff file1 file2 - Compare two files side by side.\nvimdiff file1 file2 - Highlight the differences between two files in the vim editor.\ntar [-] c|x|t f tarfile [pattern] - Create, extract or list contents of a tar archive using pattern, if supplied.\ndu -h - Display sizes in human readable format. For example, 1.2M, 3.7G, etc.\n\ndu -shc - Display size of directory and its subdirectories\n\nhead, tail, and sort work as expected. Remember to use -n with sort if you want to do a numeric (rather than text) sort. Sort also takes -r for reverse. Use pipe to pipe in a vector of numbers or text. Use -1 with head or tail to get the first (or last) value in series.\ncd- switches back to previous directory",
     "crumbs": [
       "Linux and CLI",
       "<span class='chapter-number'>12</span>  <span class='chapter-title'>Using Linux</span>"
@@ -1298,7 +1255,7 @@
     "href": "psychophysiology.html",
     "title": "19  Psychophysiology Methods",
     "section": "",
-    "text": "20 Electronics and Psychophysiology\nAlthough we no longer focus on psychophysiology studies in our lab, this chapter is a central repository to share our gathered expertise and methods with other researchers.",
+    "text": "20 Electronics and Psychophysiology",
     "crumbs": [
       "Psychophysiology",
       "<span class='chapter-number'>19</span>  <span class='chapter-title'>Psychophysiology Methods</span>"
