@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>12&nbsp; Vim – Documentation for ARC</title>
+<title>5&nbsp; Quarto – Documentation for ARC</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +64,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./bash_scripting.html" rel="next">
-<link href="./linux_use.html" rel="prev">
+<link href="./chtc.html" rel="next">
+<link href="./resources.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -81,7 +115,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./git.html">Linux and CLI</a></li><li class="breadcrumb-item"><a href="./vim.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Vim</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./quarto.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Quarto</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -141,26 +175,32 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./quarto.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Quarto</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./chtc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">CHTC</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">CHTC</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./flowchart_demo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Flowcharts</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Flowcharts</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./research_drives.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Research Drives</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Research Drives</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./virtual_machines.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Virtual Machines</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Virtual Machines</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -175,37 +215,37 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./git.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Git</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Git</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./linux_install.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Installing Linux</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Installing Linux</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./linux_use.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Using Linux</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Using Linux</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./vim.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Vim</span></span></a>
+  <a href="./vim.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Vim</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bash_scripting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Bash Scripting</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Bash Scripting</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./shell_expansions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Shell Expansions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Shell Expansions</span></span></a>
   </div>
 </li>
       </ul>
@@ -222,19 +262,19 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./globalprotect_mapping.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Global Protect and Mapping the Network Server</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Global Protect and Mapping the Network Server</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./zotero.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Zotero</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Zotero</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./qr_code.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Creating QR Codes for Presentations</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Creating QR Codes for Presentations</span></span></a>
   </div>
 </li>
       </ul>
@@ -251,13 +291,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./psychophysiology.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Psychophysiology Methods</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Psychophysiology Methods</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./psychophysiology_software.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Psychophysiology Software</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Psychophysiology Software</span></span></a>
   </div>
 </li>
       </ul>
@@ -272,29 +312,21 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#exit-and-save" id="toc-exit-and-save" class="nav-link active" data-scroll-target="#exit-and-save"><span class="header-section-number">12.1</span> Exit and Save</a></li>
-  <li><a href="#run-commands" id="toc-run-commands" class="nav-link" data-scroll-target="#run-commands"><span class="header-section-number">12.2</span> Run commands</a></li>
-  <li><a href="#navigating-document-in-default-command-mode" id="toc-navigating-document-in-default-command-mode" class="nav-link" data-scroll-target="#navigating-document-in-default-command-mode"><span class="header-section-number">12.3</span> Navigating document in Default (Command) Mode</a></li>
-  <li><a href="#inserting" id="toc-inserting" class="nav-link" data-scroll-target="#inserting"><span class="header-section-number">12.4</span> Inserting</a></li>
-  <li><a href="#deleting" id="toc-deleting" class="nav-link" data-scroll-target="#deleting"><span class="header-section-number">12.5</span> Deleting</a></li>
-  <li><a href="#spell-check" id="toc-spell-check" class="nav-link" data-scroll-target="#spell-check"><span class="header-section-number">12.6</span> Spell check</a></li>
-  <li><a href="#search-in-vim" id="toc-search-in-vim" class="nav-link" data-scroll-target="#search-in-vim"><span class="header-section-number">12.7</span> Search in VIM</a></li>
-  <li><a href="#visual-selection" id="toc-visual-selection" class="nav-link" data-scroll-target="#visual-selection"><span class="header-section-number">12.8</span> Visual selection</a></li>
-  <li><a href="#copy" id="toc-copy" class="nav-link" data-scroll-target="#copy"><span class="header-section-number">12.9</span> Copy</a></li>
-  <li><a href="#working-with-multiple-files" id="toc-working-with-multiple-files" class="nav-link" data-scroll-target="#working-with-multiple-files"><span class="header-section-number">12.10</span> Working with multiple files</a></li>
-  <li><a href="#command-line-in-vim" id="toc-command-line-in-vim" class="nav-link" data-scroll-target="#command-line-in-vim"><span class="header-section-number">12.11</span> Command line in VIM</a></li>
-  <li><a href="#render-files" id="toc-render-files" class="nav-link" data-scroll-target="#render-files"><span class="header-section-number">12.12</span> Render files</a></li>
-  <li><a href="#installing-plugins" id="toc-installing-plugins" class="nav-link" data-scroll-target="#installing-plugins"><span class="header-section-number">12.13</span> Installing plugins</a></li>
-  <li><a href="#learing-vim" id="toc-learing-vim" class="nav-link" data-scroll-target="#learing-vim"><span class="header-section-number">12.14</span> Learing VIM</a></li>
+  <li><a href="#using-quarto" id="toc-using-quarto" class="nav-link active" data-scroll-target="#using-quarto"><span class="header-section-number">5.1</span> Using Quarto</a></li>
+  <li><a href="#manuscript-projects" id="toc-manuscript-projects" class="nav-link" data-scroll-target="#manuscript-projects"><span class="header-section-number">5.2</span> Manuscript Projects</a></li>
+  <li><a href="#checking-installation-details" id="toc-checking-installation-details" class="nav-link" data-scroll-target="#checking-installation-details"><span class="header-section-number">5.3</span> Checking installation details</a></li>
+  <li><a href="#assigning-values-to-parameters" id="toc-assigning-values-to-parameters" class="nav-link" data-scroll-target="#assigning-values-to-parameters"><span class="header-section-number">5.4</span> Assigning values to parameters</a></li>
+  <li><a href="#using-parameter-values" id="toc-using-parameter-values" class="nav-link" data-scroll-target="#using-parameter-values"><span class="header-section-number">5.5</span> Using parameter values</a></li>
+  <li><a href="#passing-parameter-values-at-command-line" id="toc-passing-parameter-values-at-command-line" class="nav-link" data-scroll-target="#passing-parameter-values-at-command-line"><span class="header-section-number">5.6</span> Passing parameter values at command line</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./git.html">Linux and CLI</a></li><li class="breadcrumb-item"><a href="./vim.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Vim</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Vim</span></h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Quarto</span></h1>
 </div>
 
 
@@ -311,149 +343,106 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="exit-and-save" class="level2" data-number="12.1">
-<h2 data-number="12.1" class="anchored" data-anchor-id="exit-and-save"><span class="header-section-number">12.1</span> Exit and Save</h2>
+<section id="using-quarto" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="using-quarto"><span class="header-section-number">5.1</span> Using Quarto</h2>
+<p>For general info on using quarto, visit John’s <a href="https://jjcurtin.github.io/book_dwvt/quarto.html">Data Wrangling quarto page</a>.</p>
+</section>
+<section id="manuscript-projects" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="manuscript-projects"><span class="header-section-number">5.2</span> Manuscript Projects</h2>
+<p>As of 2024 our preferred method for creating reproducible analysis is to have a <a href="https://quarto.org/docs/projects/quarto-projects.html">quarto project</a> for each study.</p>
+<p>A project allows you to connect a website, presentations (both slidesets and posters), and PDFs/word documents to a set of analysis notebooks (formerly our ana_.Rmd files). That way, code across all output formats can be updated simultaneously from a single location. Plots and charts can also be produced from these notebooks, which can them be used across multiple output document formats.</p>
+<p>Please note that most of the documentation on John’s <a href="https://jjcurtin.github.io/book_dwvt/quarto.html">Data Wrangling quarto page</a> was written when we were creating each format type as a standalone. This information is still valid for that workflow. Differences related to projects will be noted in the appropriate section on that page.</p>
+<p>Here are steps to set up a manuscript project:</p>
+<ol type="1">
+<li>Create study repo for project on github in John’s account (call it study_NAME)</li>
+<li>Add collaborators to the repo</li>
+<li>Clone the repo to your computer</li>
+<li>Create manuscript project files in the repo. In the terminal (in github folder above new repo) type <code>quarto create project manuscript</code> and then indicate the name of the repo folder when asked</li>
+<li>Add a gh-pages branch to the repo. Do this in terminal with these commands</li>
+</ol>
 <ul>
-<li><code>:x</code> exits and saves</li>
-<li><code>:w</code> saves without exit</li>
-<li><code>:w filename</code> saves file as filename</li>
-<li><code>:q!</code> exits without save</li>
+<li><code>git switch --orphan gh-pages</code></li>
+<li><code>git commit --allow-empty -m "Initial commit on orphan branch"</code></li>
+<li><code>git push -u origin gh-pages</code></li>
+</ul>
+<ol start="6" type="1">
+<li>Set up github to publish website from the gh-pages branch. Go to settings, pages, and select the gh-pages and /root as the branch to publish from. The website will be published at https://jjcurtin.github.io/study_NAME</li>
+</ol>
+</section>
+<section id="checking-installation-details" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="checking-installation-details"><span class="header-section-number">5.3</span> Checking installation details</h2>
+<p><code>/opt/quarto/"${QUARTO_VERSION}"/bin/quarto check</code> in the terminal</p>
+</section>
+<section id="assigning-values-to-parameters" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="assigning-values-to-parameters"><span class="header-section-number">5.4</span> Assigning values to parameters</h2>
+<p>You define parameters in the YAML using the syntax below</p>
+<ul>
+<li>You can assign initial values to the parameters. These values will be used by default if you do not replace them with new values from the command line when you render the script.</li>
+<li>You can update these values with new values you pass in when you render the script (see below).<br>
+</li>
+<li>If you only provide a subset of updated parameter values when you render the document, the default values will be used for the remaining parameters.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>params<span class="sc">:</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  pv1<span class="sc">:</span> <span class="dv">5</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  pv2<span class="sc">:</span> <span class="dv">10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>For a variety of reasons, I prefer to assign the values from the params list to individual variables</p>
+<ul>
+<li>Code is shorter when using these variables</li>
+<li>I can update them interactively if I want to use different values (the params list is read-only)</li>
+</ul>
+<p>First set the parameters in the YAML as above. Then put this code chunk right at the top of the script. If you edit this code chunk to assign new values interactively, make sure you comment it out when you save the final script!</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>pv1 <span class="ot">&lt;-</span> params<span class="sc">$</span>pv1</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>pv2 <span class="ot">&lt;-</span> params<span class="sc">$</span>pv2</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># pv1 &lt;- 5 # Use this line to interactively assign new value</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># pv2 &lt;- 10 # use this line to interactively assign new value</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="using-parameter-values" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="using-parameter-values"><span class="header-section-number">5.5</span> Using parameter values</h2>
+<p>When you use params in the YAML, a list named <code>params</code> is created.</p>
+<ul>
+<li>You can then use this list as normal with no further code needed to establish the values.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>params<span class="sc">$</span>pv1 <span class="sc">+</span> params<span class="sc">$</span>pv2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 15</code></pre>
+</div>
+</div>
+<ul>
+<li>You can also access these values using inline r statements. See example below. I strongly recommend using this in the title of your document so that you can confirm that you correctly updated the parameter values when you rendered! e.g.,</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>title<span class="sc">:</span> <span class="st">"Demo of quarto document with pv1 = `r params$pv1` and  pv2 = `r params$pv2`."</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Or if you assigned the parameter values to variables as I recommended, you can just use those variables as you normally would. They will start with the values assigned to associated parameters (in YAML or input from command line)</li>
 </ul>
 </section>
-<section id="run-commands" class="level2" data-number="12.2">
-<h2 data-number="12.2" class="anchored" data-anchor-id="run-commands"><span class="header-section-number">12.2</span> Run commands</h2>
+<section id="passing-parameter-values-at-command-line" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="passing-parameter-values-at-command-line"><span class="header-section-number">5.6</span> Passing parameter values at command line</h2>
+<p>I prefer to render quarto documents in the terminal.</p>
 <ul>
-<li><code>:!CMD</code> where CMD is command. e.g.., !ls</li>
+<li>You can indicate the output filename (otherwise, the output file name is set to the input filename with a different extension).<br>
+</li>
+<li>You can also pass in values to the parameters, which is typically why we use parameters in the first place</li>
 </ul>
-</section>
-<section id="navigating-document-in-default-command-mode" class="level2" data-number="12.3">
-<h2 data-number="12.3" class="anchored" data-anchor-id="navigating-document-in-default-command-mode"><span class="header-section-number">12.3</span> Navigating document in Default (Command) Mode</h2>
-<p>Remember to enter command mode by pressing <code>esc</code> - <code>0</code> moves the cursor to the start of line - <code>$</code> moves cursor to end of line - Move cursor left (<code>h</code>), down(<code>j</code>), up (<code>k</code>), or right (<code>l</code>)</p>
+<p>Use the following syntax to render quarto documents at command line.</p>
 <ul>
-<li><p><code>gg</code> for top of document</p></li>
-<li><p><code>G</code> for bottom of document</p></li>
-<li><p><code>nG</code> to move to line number n.&nbsp;CTRL-g shows line numbers in footer of doc.</p></li>
-<li><p><code>H</code> for top of window, <code>M</code> for middle of window, and <code>L</code> for bottom of window</p></li>
-<li><p><code>w</code> moves forward to the beginning of the next word.</p></li>
-<li><p><code>b</code> moves backwards to the beginning of the previous word.</p></li>
-<li><p><code>(</code> and <code>)</code> move by sentences, either backward or forward.</p></li>
-<li><p><code>{</code> and <code>}</code> move by paragraphs.</p></li>
+<li>use -P to provide a parameter value. No space between parameter name and value. If you provide values for only a subset of parameters, defaults will be used for other parameters</li>
+<li>use <code>-o</code> to specify filename (defaults to input filename if not provided).</li>
 </ul>
-</section>
-<section id="inserting" class="level2" data-number="12.4">
-<h2 data-number="12.4" class="anchored" data-anchor-id="inserting"><span class="header-section-number">12.4</span> Inserting</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>quarto render docname.qmd <span class="sc">-</span>o outputname.html  <span class="sc">-</span>P pv1<span class="sc">:</span><span class="dv">1</span> <span class="sc">-</span>P pv2<span class="sc">:</span><span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>For rendering books and slides, we have written a bash script to handle setting the <code>_quarto.yml</code> file and then rendering the full project or a single file.</p>
 <ul>
-<li><p><code>i</code> Insert text before the cursor</p></li>
-<li><p><code>a</code> Insert text after cursor</p></li>
-<li><p><code>A</code> Append text to end of current line. - <code>I</code> Insert text at beginning of line.</p></li>
-<li><p><code>o</code> Open blank line below cursor for text. - <code>O</code> Open blank line above cursor for text.</p></li>
-<li><p><code>p</code> puts the Vim register (from delete) after cursor (if full line, on next line).</p></li>
-<li><p><code>rx</code> replaces the character at the cursor with ‘x’</p></li>
-<li><p><code>R</code> replaces multiple characters. Type ESC when done.</p></li>
-<li><p><code>ce</code> deletes until end of word and places you in insert. Press ESC when done</p></li>
-<li><p><code>c$</code> deletes until end of line and places you in insert. Press ESC when done</p></li>
-<li><p><code>:%s/old/new/gc</code> - replaces old with new in full doc with prompt for replace.</p></li>
-<li><p><code>:r filename</code> to insert text in filename above cursor</p></li>
-</ul>
-</section>
-<section id="deleting" class="level2" data-number="12.5">
-<h2 data-number="12.5" class="anchored" data-anchor-id="deleting"><span class="header-section-number">12.5</span> Deleting</h2>
-<ul>
-<li><code>x</code> deletes the character under the cursor</li>
-<li><code>dw</code> deletes from cursor to start of next word (including space spearator). <code>d2w</code> deletes from cursor to end of second word, etc.</li>
-<li><code>de</code> delets from curors to end of current for</li>
-<li><code>dd</code> deletes the line. <code>2dd</code> deletes two lines.</li>
-<li><code>d$</code> deletes from cursor to end of line.</li>
-<li><code>u</code> to undo the last command. <code>CTRL-R</code> for redo -<code>U</code> to undo all fixes on a line.</li>
-</ul>
-</section>
-<section id="spell-check" class="level2" data-number="12.6">
-<h2 data-number="12.6" class="anchored" data-anchor-id="spell-check"><span class="header-section-number">12.6</span> Spell check</h2>
-<ul>
-<li><code>:set spell</code> – Turn on spell checking</li>
-<li><code>:set nospell</code> – Turn off spell checking</li>
-<li><code>]s</code> – Jump to the next misspelled word</li>
-<li><code>[s</code> – Jump to the previous misspelled word</li>
-<li><code>z=</code> – Bring up the suggested replacements</li>
-<li><code>zg</code> – Good word: Add the word under the cursor to the dictionary</li>
-<li><code>zw</code> – Woops! Undo and remove the word from the dictionary</li>
-</ul>
-</section>
-<section id="search-in-vim" class="level2" data-number="12.7">
-<h2 data-number="12.7" class="anchored" data-anchor-id="search-in-vim"><span class="header-section-number">12.7</span> Search in VIM</h2>
-<ul>
-<li><code>/text</code> to search forward for text. Type ENTER to exit to that text.</li>
-<li><code>?text</code> to search backward for text.</li>
-<li><code>n</code> to find next instance of text (after ENTER)</li>
-<li><code>N</code> to find previous instance of text (after ENTER)</li>
-</ul>
-<p>For search and replace</p>
-<ul>
-<li>`%s/<search_phrase>/<replace_phrase>/options</replace_phrase></search_phrase></li>
-<li>options include <code>g</code> for replace all, <code>c</code> for confirmation and <code>i</code> for case insensitive</li>
-</ul>
-</section>
-<section id="visual-selection" class="level2" data-number="12.8">
-<h2 data-number="12.8" class="anchored" data-anchor-id="visual-selection"><span class="header-section-number">12.8</span> Visual selection</h2>
-<ul>
-<li><code>v</code> to select text. Move cursor around with hjkl keys</li>
-<li>then <code>d</code> to delete (can later p(ut) it somewhere if needed)</li>
-<li>or <code>y</code> to yank (copy) so you can later p(ut) it somewhere</li>
-<li>or <code>w</code> to write to separate file</li>
-</ul>
-</section>
-<section id="copy" class="level2" data-number="12.9">
-<h2 data-number="12.9" class="anchored" data-anchor-id="copy"><span class="header-section-number">12.9</span> Copy</h2>
-<ul>
-<li><code>y</code> to yank (copy) selction (use with v for visual selection)</li>
-<li><code>yw</code> to yank a word</li>
-<li><code>yy</code> to yank a line</li>
-</ul>
-</section>
-<section id="working-with-multiple-files" class="level2" data-number="12.10">
-<h2 data-number="12.10" class="anchored" data-anchor-id="working-with-multiple-files"><span class="header-section-number">12.10</span> Working with multiple files</h2>
-<p>Vim can open multiple files in separate buffers. This can be done at the start by providing multiple filenames to vim (e.g., <code>vim file1.md file2.md</code>)</p>
-<p>Alternatively, additional files can be opened for editting later (<code>:e file2.txt</code>).</p>
-<p>Moving between buffers</p>
-<ul>
-<li><code>bn</code> moves to next buffer</li>
-<li><code>bp</code> moves to previous buffer</li>
-<li><code>:buffers</code> displays all open buffers</li>
-<li><code>: buffer 1</code> allows switch to buffer 1 (or any other number) if there are many buffers open</li>
-<li><code>:bd</code> deletes the current buffer. Will fail unless buffer has first been saved (or no changes made)</li>
-</ul>
-<p>yank/delete/put will work between buffers</p>
-</section>
-<section id="command-line-in-vim" class="level2" data-number="12.11">
-<h2 data-number="12.11" class="anchored" data-anchor-id="command-line-in-vim"><span class="header-section-number">12.11</span> Command line in VIM</h2>
-<p>Switch to command line from normal mode by typing <code>:</code></p>
-<p>You can then use:</p>
-<ul>
-<li><code>pwd</code> to print the current working director</li>
-<li><code>cd</code> to change the working directory for the vim shell</li>
-<li><code>lcd</code> to change the working directory for the specific buffer you are in</li>
-</ul>
-</section>
-<section id="render-files" class="level2" data-number="12.12">
-<h2 data-number="12.12" class="anchored" data-anchor-id="render-files"><span class="header-section-number">12.12</span> Render files</h2>
-<p>We tend to use either md or qmd files for writing, code, etc. Our .vimrc file turns on markdown highlighting for these files if saved with .md or ..qmd extensions. qmd is preferred because it works with RStudio as well.</p>
-<p>These files can be rendered to html or pdf if desired.</p>
-<ul>
-<li><code>quarto render file.qmd</code> to render to html</li>
-<li><code>quarto render file.qmd --to pdf</code> to render to pdf</li>
-</ul>
-<p>We can use a full yaml header for more fancy output. We have templates for apa manuscripts, letterhead, and a generally nice format pdf output if desired. Just paste the yaml at the top of the file.</p>
-</section>
-<section id="installing-plugins" class="level2" data-number="12.13">
-<h2 data-number="12.13" class="anchored" data-anchor-id="installing-plugins"><span class="header-section-number">12.13</span> Installing plugins</h2>
-<p>If the plugin is on github, simply clone it using the github url into the vim plugin folder: /home/jjcurtin/.vim/pack/vendor/start</p>
-<p>And you are done!</p>
-</section>
-<section id="learing-vim" class="level2" data-number="12.14">
-<h2 data-number="12.14" class="anchored" data-anchor-id="learing-vim"><span class="header-section-number">12.14</span> Learing VIM</h2>
-<ul>
-<li><p>run <code>vimtutor</code></p></li>
-<li><p>books: https://iccf-holland.org/vim_books.html</p></li>
+<li>call the function from the terminal: <code>./render.sh filename.qmd book</code></li>
+<li>the first parameter can be the name of the qmd file or <code>all</code> to render all units (only used for books, not slides)</li>
+<li>the second parameter can be <code>book</code>, <code>slides</code> or <code>slides_wide</code></li>
 </ul>
 
 
@@ -879,13 +868,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./linux_use.html" class="pagination-link" aria-label="Using Linux">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Using Linux</span></span>
+      <a href="./resources.html" class="pagination-link" aria-label="Lab Resources">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Lab Resources</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./bash_scripting.html" class="pagination-link" aria-label="Bash Scripting">
-        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Bash Scripting</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./chtc.html" class="pagination-link" aria-label="CHTC">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">CHTC</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
