@@ -30,7 +30,7 @@
 * IP: 10.128.254.117   
 * CPUs: 1
 * Cores per socket: 1
-* Memory: 64 GB
+* Memory: 128 GB
 * HD space: 100 GB
 
 ### Hardware specs
