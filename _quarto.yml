@@ -24,7 +24,6 @@ book:
     - grad_expectations.qmd
     - studies.qmd
     - resources.qmd
-    - quarto.qmd
     - chtc.qmd
     - flowchart_demo.qmd
     - research_drives.qmd

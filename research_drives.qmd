@@ -11,7 +11,9 @@ The other is a restricted research drive for which it IS permitted to store rest
 
 To gain access to the research/restricted drives you must be granted access through [Manifest](https://manifest.services.wisc.edu) which is UW's Active Directory service. John or Susan can add you as needed. 
 
-* See https://kb.wisc.edu/25882 for information on adding members through manifest.
+* Add them to either `uw:app:researchdrive:pis:jjcurtin` (for the regular research drive) or `uw:app:restricteddrive:pis:jjcurtin` for the restricted drive
+* Add them either to the jjcurtin-admin group for the desired drive (for admins) or jjcurtin-lab (for regular lab members/grads). There are also external user groups and read-only groups if needed.
+* See [this KB page](https://kb.wisc.edu/25882) for information on adding members through manifest.
 
 ### Special notes about the Restricted Drive
 
@@ -36,4 +38,4 @@ For the username, you must connect with your netID followed by @ad.wisc.edu (eg,
 
 ## UW Documentation
 
-See https://kb.wisc.edu/95074 for UW's documentation on Research Drives.
+UW's documentation on Research Drives is [here](https://kb.wisc.edu/95074).
