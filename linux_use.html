@@ -349,6 +349,13 @@ ul.task-list li input[type="checkbox"] {
 <h2 data-number="11.4" class="anchored" data-anchor-id="pdf-manipulation"><span class="header-section-number">11.4</span> Pdf manipulation</h2>
 <p>We use <code>evince [filename.pdf]</code> to view pdfs</p>
 <p>we use <code>qpdf --empty --pages infile.pdf 1-5 -- outfile.pdf</code> to extract pages from a pdf</p>
+<p>See [docs]https://qpdf.readthedocs.io/en/stable/cli.html#page-ranges) for options on listing page ranges in <code>qpdf</code></p>
+<ul>
+<li>no spaces</li>
+<li>1-2,5-6 for pages 1-2 and 5-6</li>
+<li>3-z for all pages except 1-2</li>
+<li>1-z,x3-4 for all pages except 3-4</li>
+</ul>
 </section>
 <section id="browsers" class="level2" data-number="11.5">
 <h2 data-number="11.5" class="anchored" data-anchor-id="browsers"><span class="header-section-number">11.5</span> Browsers</h2>
