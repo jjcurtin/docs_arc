@@ -154,7 +154,7 @@
     "href": "studies.html",
     "title": "3  Current and Planned Studies",
     "section": "",
-    "text": "3.1 RISK\nWe list potential study ideas below, organized by project/data set. When projects have been tentatively claimed, that is indicated as well",
+    "text": "3.1 RISK",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Current and Planned Studies</span>"
     ]
@@ -204,17 +204,7 @@
     "href": "resources.html#repositories",
     "title": "4  Lab Resources",
     "section": "",
-    "text": "lab_supoort: Contains R functions, chtc code, and quarto templates written for specific ARC tasks.\narc_measures: Copies of our collected individual difference measures and their scoring code and related reference material. Any questionnaire which is copyrighted will only have our scoring file and a link to the copyright holder, if known.",
-    "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Lab Resources</span>"
-    ]
-  },
-  {
-    "objectID": "resources.html#quarto-templates",
-    "href": "resources.html#quarto-templates",
-    "title": "4  Lab Resources",
-    "section": "4.2 Quarto Templates",
-    "text": "4.2 Quarto Templates\nAll of the following templates are quarto files for use in creating lab-related documentation\n\nSimple Quarto Template. This simple template allows you to set margins/font and to switch from HTML to PDF output.\n\n\n4.2.1 YAML files\nIncluding these YAML files in a blank .qmd document sets up output for either HTML or PDF, tailored to ARC standards with respect to margins, font, etc.\nTBD (CONTENTS NEED TO BE ADDED TO THESE FILES)\n\nHTML YAML\nPD YAML\n\n\n\n4.2.2 Latex Support Files\nTBD\n\nincludes.tex - this file includes frequently used packages and their specifications. (Will expand)\ndefine_headers_arc.tex - define H1 - H3 headers per John’s specifications\ndefine_headers_apa.tex - define H1 - H5 headers per APA specifications\nnih_template.tex - contains formatting related to NIH grant writing including header and bibliography formatting.\n\n\n\n4.2.3 Manuscripts\n\n4.2.3.1 APA\n.qmd template. This is based on the template at this repo. Our version is currently under development to try and load assets from our lab_support repo rather than installing the extention files locally.\n\n\n4.2.3.2 CSL files\nBelow are the YAML code of a couple that we use frequently (linked to the primary CSL repo)\nNIH Grant Proposals:\ncsl: https://raw.githubusercontent.com/citation-style-language/styles/master/national-library-of-medicine-grant-proposals.csl\nElsevier (Vancouver substyle):\ncsl: https://raw.githubusercontent.com/citation-style-language/styles-distribution/f8524f9b9df60e94e98f824f242a1fb27cc9fc59/elsevier-vancouver.csl\nAPA 7th Edition:\ncsl: https://raw.githubusercontent.com/citation-style-language/styles/master/apa.csl\nNote: the apa quarto template in the lab_support repo calls its own version of the apa.csl from within its ex_apa support folder.\n\n\n\n4.2.4 Grants\nTBD\n\n\n4.2.5 Other\nLetterhead: .qmd template. See Susan or John for assistance in personalizing this for other lab members.",
+    "text": "lab_supoort: Contains R functions, chtc code, and quarto templates written for specific ARC tasks.\narc_measures: Copies of our collected individual difference measures and their scoring code and related reference material. Any questionnaire which is copyrighted will only have our scoring file and a link to the copyright holder, if known.\n\n\n4.1.1 Latex Support Files\nTBD\n\nincludes.tex - this file includes frequently used packages and their specifications. (Will expand)\ndefine_headers_arc.tex - define H1 - H3 headers per John’s specifications\ndefine_headers_apa.tex - define H1 - H5 headers per APA specifications\nnih_template.tex - contains formatting related to NIH grant writing including header and bibliography formatting.",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Lab Resources</span>"
     ]
@@ -334,7 +324,7 @@
     "href": "research_drives.html",
     "title": "7  Research Drives",
     "section": "",
-    "text": "7.1 Access\nJohn has been assigned 2 research drives which are free UW-owned storage space for researchers. Each is 25 TB but technically we will need to pay if total use across both exceeds 25 TB.\nThe primary research drive will become a replacement for the P:/ on dionysus as we can complete migrations. It is NOT permitted to store restricted data on this drive. Most of our studies are not restricted, except those that involve the VA or a UW Healthcare Component Co-I.\nThe other is a restricted research drive for which it IS permitted to store restricted data. When migration is complete, it should only contain study folders for the MN-VA studies, Risk1, and Risk2.\nTo gain access to the research/restricted drives you must be granted access through Manifest which is UW’s Active Directory service. John or Susan can add you as needed.",
+    "text": "7.1 Access\nTo gain access to the research/restricted drives you must be granted access through Manifest which is UW’s Active Directory service. John or Susan can add you as needed.",
     "crumbs": [
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Research Drives</span>"
     ]
@@ -384,7 +374,7 @@
     "href": "virtual_machines.html#general-information",
     "title": "8  Virtual Machines",
     "section": "",
-    "text": "8.1.1 Linux VM\n\nResource Name: PSYCH-GEN-022216\nDeployment name: hal\nIP: 128.104.221.24\n\nCPUs: 2\nCores per socket: 1\nMemory: 32 GB\nHD space: 60 GB\n\n\n\n8.1.2 Win VM #1\n\nResource Name: PSYCH-GEN-022219\nDeployment name: optimize_win\nIP: 128.104.221.25\n\nCPUs: 1\nCores per socket: 1\nMemory: 16 GB\nHD space: 100 GB\n\n\n\n8.1.3 Win VM #2\n\nResource Name: PSYCH-GEN-025563\nDeployment name: supercomputer\nIP: 10.128.254.117\n\nCPUs: 1\nCores per socket: 1\nMemory: 128 GB\nHD space: 100 GB\n\n\n\n8.1.4 Hardware specs\nAs of March 2024 CCI KB lists the following hardware specs for VMs:\n\nServer: Dell R740XD vSAN Ready Node\nCPU: Intel Xeon Gold 6258R CPU @ 2.70GHz\nMemory: Dual Rank x4 PC4-25600R (DDR4-3200) Registered CAS-22\nStorage: All-Flash vSAN\nCache Disks: 1.6TB Flash NVMe PCIe 8GT/s\nCapacity Disks: 7.68TB SAS 12Gb/s\nNetwork: Redundant 25Gb/s SFP28 Network adapters\n\n\n\n8.1.5 A note on “Cores per socket” and “available cores”\nConversations with CCI support indicate that all of the hardware cores for a specific CPU are shared among whomever connects to that CPU - not just users on one VM, but any VM with access to that CPU:\n“The physical CPUs are shared resources and are managed by the CPU scheduler. The CPU scheduler determines which VMs use the processors and when. It maximizes the utilization of the processors and ensures all VMs get their time on a processor.”\nCores per socket, on the other hand, has nothing to do with the number of cores the CPU has, and for our purposes we leave it at the default of 1: “That feature is available because there are operating systems and applications with license limits based on sockets. In those cases, it may be to your advantage to configure more than 1 core per socket.”",
+    "text": "8.1.1 Linux VM\n\nResource Name: PSYCH-GEN-022216\nDeployment name: hal\nIP: 128.104.221.24\n\nCPUs: 2\nCores per socket: 1\nMemory: 32 GB\nHD space: 60 GB\n\n\n\n8.1.2 Win VM #1\n\nResource Name: PSYCH-GEN-022219\nDeployment name: optimize_win\nIP: 128.104.221.25\n\nCPUs: 1\nCores per socket: 1\nMemory: 16 GB\nHD space: 100 GB\n\n\n\n8.1.3 Win VM #2\n\nResource Name: PSYCH-GEN-025563\nDeployment name: supercomputer\nIP: 10.128.254.117\n\nCPUs: 1\nCores per socket: 1\nMemory: 64 GB\nHD space: 100 GB\n\n\n\n8.1.4 Hardware specs\nAs of March 2024 CCI KB lists the following hardware specs for VMs:\n\nServer: Dell R740XD vSAN Ready Node\nCPU: Intel Xeon Gold 6258R CPU @ 2.70GHz\nMemory: Dual Rank x4 PC4-25600R (DDR4-3200) Registered CAS-22\nStorage: All-Flash vSAN\nCache Disks: 1.6TB Flash NVMe PCIe 8GT/s\nCapacity Disks: 7.68TB SAS 12Gb/s\nNetwork: Redundant 25Gb/s SFP28 Network adapters\n\n\n\n8.1.5 A note on “Cores per socket” and “available cores”\nConversations with CCI support indicate that all of the hardware cores for a specific CPU are shared among whomever connects to that CPU - not just users on one VM, but any VM with access to that CPU:\n“The physical CPUs are shared resources and are managed by the CPU scheduler. The CPU scheduler determines which VMs use the processors and when. It maximizes the utilization of the processors and ensures all VMs get their time on a processor.”\nCores per socket, on the other hand, has nothing to do with the number of cores the CPU has, and for our purposes we leave it at the default of 1: “That feature is available because there are operating systems and applications with license limits based on sockets. In those cases, it may be to your advantage to configure more than 1 core per socket.”",
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Virtual Machines</span>"
     ]
@@ -424,7 +414,7 @@
     "href": "git.html",
     "title": "9  Git",
     "section": "",
-    "text": "9.1 Creating an SSH Key\nFor full documentation of using git from the command line you can read the Git Pro Book.\nTo communicate with github through a terminal you must first establish an SSH key (a secure access credential). Follow the instructions below to create this.\nssh-keygen -t ed25519 -C \"your_email@example.com\"\nvim .ssh/id_ed25519.pub\ngit remote set-url origin git@github.com:repo_owner_username/repo_name.git\nex: git remote set-url origin git@github.com:jjcurtin/proj_risk2.git",
+    "text": "9.1 Creating an SSH Key\nTo communicate with github through a terminal you must first establish an SSH key (a secure access credential). Follow the instructions below to create this.\nssh-keygen -t ed25519 -C \"your_email@example.com\"\nvim .ssh/id_ed25519.pub\ngit remote set-url origin git@github.com:repo_owner_username/repo_name.git\nex: git remote set-url origin git@github.com:jjcurtin/proj_risk2.git",
     "crumbs": [
       "Linux and CLI",
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Git</span>"
@@ -1238,7 +1228,7 @@
     "href": "psychophysiology.html",
     "title": "18  Psychophysiology Methods",
     "section": "",
-    "text": "19 Electronics and Psychophysiology\nAlthough we no longer focus on psychophysiology studies in our lab, this chapter is a central repository to share our gathered expertise and methods with other researchers.",
+    "text": "19 Electronics and Psychophysiology",
     "crumbs": [
       "Psychophysiology",
       "<span class='chapter-number'>18</span>  <span class='chapter-title'>Psychophysiology Methods</span>"
