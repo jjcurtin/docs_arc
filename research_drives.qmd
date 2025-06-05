@@ -26,12 +26,24 @@ To gain access to the research/restricted drives you must be granted access thro
 The two drives are mapped exactly as if you were mapping the P drive. Refer to your normal procedures for Mac/Win/Linux, and use the following addresses (specifying the smb prefix or whatever else is required by your OS):
 
 Primary research drive:  
-`\\research.drive.wisc.edu\jjcurtin`
+`\\research.drive.wisc.edu\jjcurtin` but use `\\research.drive.wisc.edu\jjcurtin\studydata` for access to study data folders, see below
 
 Restricted research drive:  
 `\\restricted.drive.wisc.edu\jjcurtin`
 
 * (NOTE that the restricted drive can currently only be mapped from the two VMs, see Restricted Drive section above)  
+
+Note:
+
+John's `format_path` function appends the correct drive letter number (R for restricted, S for standard). There is no studydata folder in the restricted drive; therefore you should map them as follows:
+
+* R to `\\restricted.drive.wisc.edu\jjcurtin`
+* S to `\\research.drive.wisc.edu\jjcurtin\studydata`
+
+Then if you call format_path with just your study folder name and "standard" (the default) or "restricted" it will format it appropriately: 
+
+* `format_path("risk")` or f`ormat_path("risk", "standard")` both give you `S:\studydata\risk`
+* `format_path("risk", "restricted")` gives you `R:\risk`
 
 For the username, you must connect with your netID followed by @ad.wisc.edu (eg, schneck2@ad.wisc.edu) and your netID password.
 
