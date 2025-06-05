@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.40">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -37,10 +37,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-77205cbbef6a5b90ba72edc25dea2156.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -326,11 +326,22 @@ ul.task-list li input[type="checkbox"] {
 <h2 data-number="7.2" class="anchored" data-anchor-id="connecting"><span class="header-section-number">7.2</span> Connecting</h2>
 <p>The two drives are mapped exactly as if you were mapping the P drive. Refer to your normal procedures for Mac/Win/Linux, and use the following addresses (specifying the smb prefix or whatever else is required by your OS):</p>
 <p>Primary research drive:<br>
-<code>\\research.drive.wisc.edu\jjcurtin</code></p>
+<code>\\research.drive.wisc.edu\jjcurtin</code> but use <code>\\research.drive.wisc.edu\jjcurtin\studydata</code> for access to study data folders, see below</p>
 <p>Restricted research drive:<br>
 <code>\\restricted.drive.wisc.edu\jjcurtin</code></p>
 <ul>
 <li>(NOTE that the restricted drive can currently only be mapped from the two VMs, see Restricted Drive section above)</li>
+</ul>
+<p>Note:</p>
+<p>John’s <code>format_path</code> function appends the correct drive letter number (R for restricted, S for standard). There is no studydata folder in the restricted drive; therefore you should map them as follows:</p>
+<ul>
+<li>R to <code>\\restricted.drive.wisc.edu\jjcurtin</code></li>
+<li>S to <code>\\research.drive.wisc.edu\jjcurtin\studydata</code></li>
+</ul>
+<p>Then if you call format_path with just your study folder name and “standard” (the default) or “restricted” it will format it appropriately:</p>
+<ul>
+<li><code>format_path("risk")</code> or f<code>ormat_path("risk", "standard")</code> both give you <code>S:\studydata\risk</code></li>
+<li><code>format_path("risk", "restricted")</code> gives you <code>R:\risk</code></li>
 </ul>
 <p>For the username, you must connect with your netID followed by <span class="citation" data-cites="ad.wisc.edu">@ad.wisc.edu</span> (eg, schneck2@ad.wisc.edu) and your netID password.</p>
 </section>
@@ -424,8 +435,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -536,7 +545,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

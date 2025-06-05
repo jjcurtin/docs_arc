@@ -154,7 +154,7 @@
     "href": "studies.html",
     "title": "3  Current and Planned Studies",
     "section": "",
-    "text": "3.1 RISK",
+    "text": "3.1 RISK\nWe list potential study ideas below, organized by project/data set. When projects have been tentatively claimed, that is indicated as well",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Current and Planned Studies</span>"
     ]
@@ -324,7 +324,7 @@
     "href": "research_drives.html",
     "title": "7  Research Drives",
     "section": "",
-    "text": "7.1 Access\nTo gain access to the research/restricted drives you must be granted access through Manifest which is UW’s Active Directory service. John or Susan can add you as needed.",
+    "text": "7.1 Access\nJohn has been assigned 2 research drives which are free UW-owned storage space for researchers. Each is 25 TB but technically we will need to pay if total use across both exceeds 25 TB.\nThe primary research drive will become a replacement for the P:/ on dionysus as we can complete migrations. It is NOT permitted to store restricted data on this drive. Most of our studies are not restricted, except those that involve the VA or a UW Healthcare Component Co-I.\nThe other is a restricted research drive for which it IS permitted to store restricted data. When migration is complete, it should only contain study folders for the MN-VA studies, Risk1, and Risk2.\nTo gain access to the research/restricted drives you must be granted access through Manifest which is UW’s Active Directory service. John or Susan can add you as needed.",
     "crumbs": [
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Research Drives</span>"
     ]
@@ -344,7 +344,7 @@
     "href": "research_drives.html#connecting",
     "title": "7  Research Drives",
     "section": "7.2 Connecting",
-    "text": "7.2 Connecting\nThe two drives are mapped exactly as if you were mapping the P drive. Refer to your normal procedures for Mac/Win/Linux, and use the following addresses (specifying the smb prefix or whatever else is required by your OS):\nPrimary research drive:\n\\\\research.drive.wisc.edu\\jjcurtin\nRestricted research drive:\n\\\\restricted.drive.wisc.edu\\jjcurtin\n\n(NOTE that the restricted drive can currently only be mapped from the two VMs, see Restricted Drive section above)\n\nFor the username, you must connect with your netID followed by @ad.wisc.edu (eg, schneck2@ad.wisc.edu) and your netID password.",
+    "text": "7.2 Connecting\nThe two drives are mapped exactly as if you were mapping the P drive. Refer to your normal procedures for Mac/Win/Linux, and use the following addresses (specifying the smb prefix or whatever else is required by your OS):\nPrimary research drive:\n\\\\research.drive.wisc.edu\\jjcurtin but use \\\\research.drive.wisc.edu\\jjcurtin\\studydata for access to study data folders, see below\nRestricted research drive:\n\\\\restricted.drive.wisc.edu\\jjcurtin\n\n(NOTE that the restricted drive can currently only be mapped from the two VMs, see Restricted Drive section above)\n\nNote:\nJohn’s format_path function appends the correct drive letter number (R for restricted, S for standard). There is no studydata folder in the restricted drive; therefore you should map them as follows:\n\nR to \\\\restricted.drive.wisc.edu\\jjcurtin\nS to \\\\research.drive.wisc.edu\\jjcurtin\\studydata\n\nThen if you call format_path with just your study folder name and “standard” (the default) or “restricted” it will format it appropriately:\n\nformat_path(\"risk\") or format_path(\"risk\", \"standard\") both give you S:\\studydata\\risk\nformat_path(\"risk\", \"restricted\") gives you R:\\risk\n\nFor the username, you must connect with your netID followed by @ad.wisc.edu (eg, schneck2@ad.wisc.edu) and your netID password.",
     "crumbs": [
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Research Drives</span>"
     ]
@@ -414,7 +414,7 @@
     "href": "git.html",
     "title": "9  Git",
     "section": "",
-    "text": "9.1 Creating an SSH Key\nTo communicate with github through a terminal you must first establish an SSH key (a secure access credential). Follow the instructions below to create this.\nssh-keygen -t ed25519 -C \"your_email@example.com\"\nvim .ssh/id_ed25519.pub\ngit remote set-url origin git@github.com:repo_owner_username/repo_name.git\nex: git remote set-url origin git@github.com:jjcurtin/proj_risk2.git",
+    "text": "9.1 Creating an SSH Key\nFor full documentation of using git from the command line you can read the Git Pro Book.\nTo communicate with github through a terminal you must first establish an SSH key (a secure access credential). Follow the instructions below to create this.\nssh-keygen -t ed25519 -C \"your_email@example.com\"\nvim .ssh/id_ed25519.pub\ngit remote set-url origin git@github.com:repo_owner_username/repo_name.git\nex: git remote set-url origin git@github.com:jjcurtin/proj_risk2.git",
     "crumbs": [
       "Linux and CLI",
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Git</span>"
@@ -1228,7 +1228,7 @@
     "href": "psychophysiology.html",
     "title": "18  Psychophysiology Methods",
     "section": "",
-    "text": "19 Electronics and Psychophysiology",
+    "text": "19 Electronics and Psychophysiology\nAlthough we no longer focus on psychophysiology studies in our lab, this chapter is a central repository to share our gathered expertise and methods with other researchers.",
     "crumbs": [
       "Psychophysiology",
       "<span class='chapter-number'>18</span>  <span class='chapter-title'>Psychophysiology Methods</span>"
