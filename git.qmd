@@ -39,15 +39,15 @@ Note: These commands will only work if you are in a git repo.
 - `git clone git@github.com:username/repo_name.git` clones a repo from github
 - `git status` shows any files updated locally
 - `git add [filename]` add file to staging area
-- `git add .` adds all modified files to staging area
+- `git add .` adds all modified files to staging area.  Be careful that you want to stage all files.  Best only if preceded by `git status`
 - `git commit` create commit of staged files - this will prompt you to enter commit message. You can also use the -m flag to write your message directly with commit command (`git commit -m "updates xyz"`).
-- `git commit -am "commit message"` will add all files and commit them in one step.  However, 
+- `git commit -am "commit message"` will add all files and commit them in one step. Be careful that you are sure you want to commit all files.
 - `git push` pushes your commits to github
 - `git pull` pulls updates from github (it is good practice to pull before commiting)    
 - `git mv <oldname> <newname>` to rename and/or move a file without losing its link to its earlier history.  [Read more](https://docs.github.com/en/repositories/working-with-files/managing-files/renaming-a-file)
 - `git stash` to stash changes; `git stash pop` to reapply stashed changes
-
-- `gitpcp "message` is a shell script written by john to pull, commit (with message) and push to github
+- `git reset HEAD~1` will undo a local commit (not yet pushed to github) but retain the changes to files
+- `gitpcp.sh "message"` is a shell script written by john to pull, commit (with message) and push to github
 
 ### Repos
 
