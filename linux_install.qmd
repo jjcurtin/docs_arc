@@ -109,6 +109,11 @@ https://www.tadviewer.com/
 
 https://www.moderncsv.com/
 
+## Video player
+
+For MP4, etc
+
+`sudo apt-get install vlc`
 
 ## Mount Shares
 
