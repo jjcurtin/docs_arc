@@ -110,7 +110,14 @@ At times some (or all) jobs may be held if they require more memory or disk spac
 ## Using and Creating Containers for R and Packages
 
 ### Full documetation from CHTC
-CHTC has full [documentation](https://chtc.cs.wisc.edu/uw-research-computing/singularity-htc) of these steps.  We are currently using this [Docker image for base r](https://hub.docker.com/_/r-base).  Chose current numbered version (e.g., 4.3.0) among tags.
+CHTC has full documentation of these steps (updated 08/2025):
+
+* [Use Apptainer Containers](https://chtc.cs.wisc.edu/uw-research-computing/apptainer-htc)
+* [Building an Apptainer Container”: ](https://chtc.cs.wisc.edu/uw-research-computing/apptainer-build)
+* [Advanced Apptainer Example - SUMO](https://chtc.cs.wisc.edu/uw-research-computing/apptainer-htc-advanced-example)
+
+
+We are currently using this [Docker image for base r](https://hub.docker.com/_/r-base).  Chose current numbered version (e.g., 4.3.0) among tags.
 
 ### Use Existing Container
 
@@ -134,7 +141,9 @@ Here is the steps in brief
 2.  FTP these files to CHTC submit server
 3.  Run an interactive sessions `condor_submit -i build.sub`, where you use your sub file 
 4.  Build the apptainer: `apptainer build train.sif train.def`, where you name your .sif file and use your def file
-5. After the container is built, you can clear the cache: `apptainer cache clean -f` and then `exit` the interactive session.  Your container should be returned to the root folder on chtc submit server (along with the log file).  Consider whether to archive it on our server or if it was a one-time use for you.
+5. While still in the interactive build job, run the command `apptainer shell -e my-container.sif`. This command will start the container and log you into it, allowing you to test your software commands. Once you are done testing the container, enter `exit` to exit the container.
+6. Once you are satisfied that your container is built correctly, copy your .sif file to your staging directory with `mv my-container.sif /staging/$USER`.
+7. After the container is transferred, you can clear the cache: `apptainer cache clean -f` and then `exit` the interactive session.  Your container is now on the root folder on chtc submit server (along with the log file).  Consider whether to archive it on our server or if it was a one-time use for you.
 
 
 ## Making package TARS

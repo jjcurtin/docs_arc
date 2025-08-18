@@ -6,6 +6,10 @@ A full list of John's GitHub repos can be found [here](https://github.com/jjcurt
 * [lab_supoort](https://github.com/jjcurtin/lab_support): Contains R functions, chtc code, and quarto templates written for specific ARC tasks.
 * [arc_measures](https://github.com/jjcurtin/arc_measures): Copies of our collected individual difference measures and their scoring code and related reference material. Any questionnaire which is copyrighted will only have our scoring file and a link to the copyright holder, if known.
 
+## Passwords
+Important passwords are kept in the credentials file in studydata/other on the S: drive. 
+
+
 ### Latex Support Files
 
 TBD
