@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.56">
+<meta name="generator" content="quarto-1.6.40">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -37,10 +37,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-77205cbbef6a5b90ba72edc25dea2156.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -439,7 +439,13 @@ ul.task-list li input[type="checkbox"] {
 <h2 data-number="6.6" class="anchored" data-anchor-id="using-and-creating-containers-for-r-and-packages"><span class="header-section-number">6.6</span> Using and Creating Containers for R and Packages</h2>
 <section id="full-documetation-from-chtc" class="level3" data-number="6.6.1">
 <h3 data-number="6.6.1" class="anchored" data-anchor-id="full-documetation-from-chtc"><span class="header-section-number">6.6.1</span> Full documetation from CHTC</h3>
-<p>CHTC has full <a href="https://chtc.cs.wisc.edu/uw-research-computing/singularity-htc">documentation</a> of these steps. We are currently using this <a href="https://hub.docker.com/_/r-base">Docker image for base r</a>. Chose current numbered version (e.g., 4.3.0) among tags.</p>
+<p>CHTC has full documentation of these steps (updated 08/2025):</p>
+<ul>
+<li><a href="https://chtc.cs.wisc.edu/uw-research-computing/apptainer-htc">Use Apptainer Containers</a></li>
+<li><a href="https://chtc.cs.wisc.edu/uw-research-computing/apptainer-build">Building an Apptainer Container”:</a></li>
+<li><a href="https://chtc.cs.wisc.edu/uw-research-computing/apptainer-htc-advanced-example">Advanced Apptainer Example - SUMO</a></li>
+</ul>
+<p>We are currently using this <a href="https://hub.docker.com/_/r-base">Docker image for base r</a>. Chose current numbered version (e.g., 4.3.0) among tags.</p>
 </section>
 <section id="use-existing-container" class="level3" data-number="6.6.2">
 <h3 data-number="6.6.2" class="anchored" data-anchor-id="use-existing-container"><span class="header-section-number">6.6.2</span> Use Existing Container</h3>
@@ -460,7 +466,9 @@ ul.task-list li input[type="checkbox"] {
 <li>FTP these files to CHTC submit server</li>
 <li>Run an interactive sessions <code>condor_submit -i build.sub</code>, where you use your sub file</li>
 <li>Build the apptainer: <code>apptainer build train.sif train.def</code>, where you name your .sif file and use your def file</li>
-<li>After the container is built, you can clear the cache: <code>apptainer cache clean -f</code> and then <code>exit</code> the interactive session. Your container should be returned to the root folder on chtc submit server (along with the log file). Consider whether to archive it on our server or if it was a one-time use for you.</li>
+<li>While still in the interactive build job, run the command <code>apptainer shell -e my-container.sif</code>. This command will start the container and log you into it, allowing you to test your software commands. Once you are done testing the container, enter <code>exit</code> to exit the container.</li>
+<li>Once you are satisfied that your container is built correctly, copy your .sif file to your staging directory with <code>mv my-container.sif /staging/$USER</code>.</li>
+<li>After the container is transferred, you can clear the cache: <code>apptainer cache clean -f</code> and then <code>exit</code> the interactive session. Your container is now on the root folder on chtc submit server (along with the log file). Consider whether to archive it on our server or if it was a one-time use for you.</li>
 </ol>
 </section>
 </section>
@@ -577,8 +585,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -689,7 +695,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

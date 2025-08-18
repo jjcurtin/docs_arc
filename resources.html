@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.56">
+<meta name="generator" content="quarto-1.6.40">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -37,10 +37,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-77205cbbef6a5b90ba72edc25dea2156.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -278,9 +278,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#repositories" id="toc-repositories" class="nav-link active" data-scroll-target="#repositories"><span class="header-section-number">4.1</span> Repositories</a>
+  <li><a href="#repositories" id="toc-repositories" class="nav-link active" data-scroll-target="#repositories"><span class="header-section-number">4.1</span> Repositories</a></li>
+  <li><a href="#passwords" id="toc-passwords" class="nav-link" data-scroll-target="#passwords"><span class="header-section-number">4.2</span> Passwords</a>
   <ul class="collapse">
-  <li><a href="#latex-support-files" id="toc-latex-support-files" class="nav-link" data-scroll-target="#latex-support-files"><span class="header-section-number">4.1.1</span> Latex Support Files</a></li>
+  <li><a href="#latex-support-files" id="toc-latex-support-files" class="nav-link" data-scroll-target="#latex-support-files"><span class="header-section-number">4.2.1</span> Latex Support Files</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -314,8 +315,12 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="https://github.com/jjcurtin/lab_support">lab_supoort</a>: Contains R functions, chtc code, and quarto templates written for specific ARC tasks.</li>
 <li><a href="https://github.com/jjcurtin/arc_measures">arc_measures</a>: Copies of our collected individual difference measures and their scoring code and related reference material. Any questionnaire which is copyrighted will only have our scoring file and a link to the copyright holder, if known.</li>
 </ul>
-<section id="latex-support-files" class="level3" data-number="4.1.1">
-<h3 data-number="4.1.1" class="anchored" data-anchor-id="latex-support-files"><span class="header-section-number">4.1.1</span> Latex Support Files</h3>
+</section>
+<section id="passwords" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="passwords"><span class="header-section-number">4.2</span> Passwords</h2>
+<p>Important passwords are kept in the credentials file in studydata/other on the S: drive.</p>
+<section id="latex-support-files" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="latex-support-files"><span class="header-section-number">4.2.1</span> Latex Support Files</h3>
 <p>TBD</p>
 <ul>
 <li><a href="https://github.com/jjcurtin/lab_support/blob/main/templates/latex/package_includes.tex">includes.tex</a> - this file includes frequently used packages and their specifications. (Will expand)</li>
@@ -411,8 +416,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -523,7 +526,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

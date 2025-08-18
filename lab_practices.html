@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.56">
+<meta name="generator" content="quarto-1.6.40">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -37,10 +37,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-77205cbbef6a5b90ba72edc25dea2156.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -329,16 +329,15 @@ ul.task-list li input[type="checkbox"] {
 <section id="building-address" class="level4" data-number="1.1.1.1">
 <h4 data-number="1.1.1.1" class="anchored" data-anchor-id="building-address"><span class="header-section-number">1.1.1.1</span> Building Address:</h4>
 <p>1202 W Johnson St, Madison WI 53706</p>
-<p>The lab Mailbox is on the 2nd floor, around the corner from Gary’s office facing the department head’s office (labeled Curtin/Wanta). Grads will be assigned their own mailboxes.</p>
+<p>The lab Mailbox is on the 2nd floor, around the corner from the elevators, facing the department head’s office (labeled Curtin/Wanta). Grads will be assigned their own mailboxes.</p>
 <p><strong>Offices:</strong></p>
 <p>John - 326<br>
 Grad office - 325<br>
 Susan - 187<br>
-Ariela - 191<br>
 RA offices - 195, 192</p>
 <p>Most lab meetings are held in 228 or 311.</p>
 <p><strong>Keys:</strong></p>
-<p>See Gary on 2nd floor for Lab and Building keys. Undergraduates will have to pay a $20 fee which will be refunded upon return of the keys. Let Susan know if you take this route and I’ll email him authorization.</p>
+<p>See the administrator in the main office on 2nd floor for Lab and Building keys. Undergraduates will have to pay a $20 fee which will be refunded upon return of the keys. Let Susan know if you take this route and I’ll email him authorization.</p>
 <p>In addition to the building key, you can request:<br>
 30 key – first floor.<br>
 9 key – grad office.</p>
@@ -638,8 +637,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -750,7 +747,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
