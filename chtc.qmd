@@ -113,7 +113,7 @@ At times some (or all) jobs may be held if they require more memory or disk spac
 CHTC has full documentation of these steps (updated 08/2025):
 
 * [Use Apptainer Containers](https://chtc.cs.wisc.edu/uw-research-computing/apptainer-htc)
-* [Building an Apptainer Container”: ](https://chtc.cs.wisc.edu/uw-research-computing/apptainer-build)
+* [Building an Apptainer Container](https://chtc.cs.wisc.edu/uw-research-computing/apptainer-build)
 * [Advanced Apptainer Example - SUMO](https://chtc.cs.wisc.edu/uw-research-computing/apptainer-htc-advanced-example)
 
 
