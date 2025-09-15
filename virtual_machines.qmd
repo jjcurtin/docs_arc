@@ -108,8 +108,8 @@ Keep in mind, if a user needs access on all 3 VMs, steps 2 & 3 must be repeated 
 
 ### Connecting (after access is granted)
 
-* Each lab member must use the account username for the specific VM they plan to use. Computer usernames/passwords are shared through LastPass, or see Susan to have one created for you. Usually the password will be your netid.
-* It is recommended that you change your VM machine account password to match your netID password, as we have usually done with local computer accounts for Dionysus, to make it easier to connect going forward. Otherwise it will default to your local computer credentials and you will have to select "Use another account" each time.
+* Each lab member must use the account username for the specific VM they plan to use. See Susan to have one created for you. The username you are given will match your netID, and the password will *intially* be a generic one. 
+* It is recommended that you *immediately* change your VM machine account password to match your netID password, to make it easier to connect going forward. Otherwise it will default to your local computer credentials and you will have to select "Use another account" each time.
 * You must be on a wired LAN machine in the psych building, or authenticated through GlobalProtect. 
    * If you are on a campus WIFI, you must use **eduroam** and **not UWNet** (the latter is not considered secure enough and connections from it are denied, even through GlobalProtect)
    
