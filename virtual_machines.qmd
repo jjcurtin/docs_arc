@@ -2,16 +2,7 @@
 
 ## General Information
 
-### Linux VM
-
-* Resource Name: PSYCH-GEN-022216
-* Deployment name: hal
-* IP: 128.104.221.24  
-* CPUs: 2
-* Cores per socket: 1
-* Memory: 32 GB
-* HD space: 60 GB
-
+We previously also had a linux VM but it was deleted as it was unused.
 
 ### Win VM #1
 
