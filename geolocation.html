@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>8&nbsp; Research Drives – Documentation for ARC</title>
+<title>11&nbsp; Geolocation Processing – Documentation for ARC</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./virtual_machines.html" rel="next">
-<link href="./flowchart_demo.html" rel="prev">
+<link href="./linux_install.html" rel="next">
+<link href="./git.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -81,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./research_drives.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Research Drives</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./geolocation.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Geolocation Processing</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -159,7 +159,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./research_drives.html" class="sidebar-item-text sidebar-link active">
+  <a href="./research_drives.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Research Drives</span></span></a>
   </div>
 </li>
@@ -177,7 +177,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./geolocation.html" class="sidebar-item-text sidebar-link">
+  <a href="./geolocation.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Geolocation Processing</span></span></a>
   </div>
 </li>
@@ -284,12 +284,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#access" id="toc-access" class="nav-link active" data-scroll-target="#access"><span class="header-section-number">8.1</span> Access</a>
-  <ul class="collapse">
-  <li><a href="#special-notes-about-the-restricted-drive" id="toc-special-notes-about-the-restricted-drive" class="nav-link" data-scroll-target="#special-notes-about-the-restricted-drive"><span class="header-section-number">8.1.1</span> Special notes about the Restricted Drive</a></li>
-  </ul></li>
-  <li><a href="#connecting" id="toc-connecting" class="nav-link" data-scroll-target="#connecting"><span class="header-section-number">8.2</span> Connecting</a></li>
-  <li><a href="#uw-documentation" id="toc-uw-documentation" class="nav-link" data-scroll-target="#uw-documentation"><span class="header-section-number">8.3</span> UW Documentation</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><span class="header-section-number">11.1</span> Overview</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"><span class="header-section-number">11.2</span> </a></li>
   </ul>
 </nav>
     </div>
@@ -298,7 +294,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Research Drives</span></h1>
+<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Geolocation Processing</span></h1>
 </div>
 
 
@@ -315,51 +311,16 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>John has been assigned 2 research drives which are free UW-owned storage space for researchers. Each is 25 TB but technically we will need to pay if total use across both exceeds 25 TB.</p>
-<p>The primary research drive will become a replacement for the P:/ on dionysus as we can complete migrations. It is NOT permitted to store restricted data on this drive. Most of our studies are not restricted, except those that involve the VA or a UW Healthcare Component Co-I.</p>
-<p>The other is a restricted research drive for which it IS permitted to store restricted data. When migration is complete, it should only contain study folders for the MN-VA studies, Risk1, and Risk2.</p>
-<section id="access" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="access"><span class="header-section-number">8.1</span> Access</h2>
-<p>To gain access to the research/restricted drives you must be granted access through <a href="https://manifest.services.wisc.edu">Manifest</a> which is UW’s Active Directory service. John or Susan can add you as needed.</p>
-<ul>
-<li>Add them to either <code>uw:app:researchdrive:pis:jjcurtin</code> (for the regular research drive) or <code>uw:app:restricteddrive:pis:jjcurtin</code> for the restricted drive</li>
-<li>Add them either to the jjcurtin-admin group for the desired drive (for admins) or jjcurtin-lab (for regular lab members/grads). There are also external user groups and read-only groups if needed.</li>
-<li>See <a href="https://kb.wisc.edu/25882">this KB page</a> for information on adding members through manifest.</li>
-</ul>
-<section id="special-notes-about-the-restricted-drive" class="level3" data-number="8.1.1">
-<h3 data-number="8.1.1" class="anchored" data-anchor-id="special-notes-about-the-restricted-drive"><span class="header-section-number">8.1.1</span> Special notes about the Restricted Drive</h3>
-<ul>
-<li>Due to current (2024) UW policies about restricted data, currently the restricted drive can only be mapped from one of the lab’s <a href="./virtual_machines.html">virtual machines</a>.</li>
-<li>As of December 2024 we have not yet migrated the restricted data, as we have not yet set up a workflow to allow everyone who needs it to access this data. One possibility we are considering is to set up a processed data folder on the primary research drive for general access, and retain only raw data on the restricted drive.</li>
-</ul>
+<section id="overview" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="overview"><span class="header-section-number">11.1</span> Overview</h2>
+<p>All preliminary geolocation processing is done on the virtual machine. The raw geolocation data will always be saved on the restricted drive (R drive) in a folder for the project for those data. Processed geolocation data are saved on the standard drive (S).</p>
+<p>To log into the virtual machine, see the <a href="./virtual_machines.html">virtual machines page</a>.</p>
+<p>Talk with Susan about getting a userid on the VM if you do not already have one.</p>
+<p>You will also need to mount both the restricted and standard research drives on the VM the first time you log into it. See the <a href="./research_drives.html">research drives page</a> for instructions.</p>
 </section>
-</section>
-<section id="connecting" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="connecting"><span class="header-section-number">8.2</span> Connecting</h2>
-<p>The two drives are mapped exactly as if you were mapping the P drive. Refer to your normal procedures for Mac/Win/Linux, and use the following addresses (specifying the smb prefix or whatever else is required by your OS):</p>
-<p>Primary research drive:<br>
-<code>\\research.drive.wisc.edu\jjcurtin</code> but use <code>\\research.drive.wisc.edu\jjcurtin\studydata</code> for access to study data folders, see below</p>
-<p>Restricted research drive:<br>
-<code>\\restricted.drive.wisc.edu\jjcurtin</code></p>
-<ul>
-<li>(NOTE that the restricted drive can currently only be mapped from the two VMs, see Restricted Drive section above)</li>
-</ul>
-<p>Note:</p>
-<p>John’s <code>format_path</code> function appends the correct drive letter number (R for restricted, S for standard). There is no studydata folder in the restricted drive; therefore you should map them as follows:</p>
-<ul>
-<li>R to <code>\\restricted.drive.wisc.edu\jjcurtin</code></li>
-<li>S to <code>\\research.drive.wisc.edu\jjcurtin\studydata</code></li>
-</ul>
-<p>Then if you call format_path with just your study folder name and “standard” (the default) or “restricted” it will format it appropriately:</p>
-<ul>
-<li><code>format_path("risk")</code> or f<code>ormat_path("risk", "standard")</code> both give you <code>S:\studydata\risk</code></li>
-<li><code>format_path("risk", "restricted")</code> gives you <code>R:\risk</code></li>
-</ul>
-<p>For the username, you must connect with your netID followed by <span class="citation" data-cites="ad.wisc.edu">@ad.wisc.edu</span> (eg, schneck2@ad.wisc.edu) and your netID password.</p>
-</section>
-<section id="uw-documentation" class="level2" data-number="8.3">
-<h2 data-number="8.3" class="anchored" data-anchor-id="uw-documentation"><span class="header-section-number">8.3</span> UW Documentation</h2>
-<p>UW’s documentation on Research Drives is <a href="https://kb.wisc.edu/95074">here</a>.</p>
+<section id="section" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="section"><span class="header-section-number">11.2</span> </h2>
+<p>CHRIS CONTINUES HERE…..</p>
 
 
 </section>
@@ -784,13 +745,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./flowchart_demo.html" class="pagination-link" aria-label="Flowcharts">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Flowcharts</span></span>
+      <a href="./git.html" class="pagination-link" aria-label="Git">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Git</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./virtual_machines.html" class="pagination-link" aria-label="Virtual Machines">
-        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Virtual Machines</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./linux_install.html" class="pagination-link" aria-label="Installing Linux">
+        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Installing Linux</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
