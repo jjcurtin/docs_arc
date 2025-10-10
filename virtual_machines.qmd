@@ -2,8 +2,6 @@
 
 ## General Information
 
-We previously also had a linux VM but it was deleted as it was unused.
-
 ### Win VM #1
 
 * Resource Name: PSYCH-GEN-022219
@@ -23,6 +21,17 @@ We previously also had a linux VM but it was deleted as it was unused.
 * Cores per socket: 1
 * Memory: 128 GB
 * HD space: 100 GB
+
+### Linux VM
+
+* System: Ubuntu 24.04.3 LTS
+* Desktop Environment: XFCE4
+* Remote Access: RDP (Remote Desktop Protocol)
+* IP: 128.104.50.166
+* CPUs: 1
+* Cores per socket: 1
+* MemoryL 128 GB
+* HD Space: 100 GB
 
 ### Hardware specs
 As of March 2024 CCI KB lists the following hardware specs for VMs:
@@ -74,6 +83,69 @@ This will only be done if SSH & Remote desktop are NOT available to you. See bel
 3. A new browser window will open showing the VM connection. 
    * For Windows machines, you must use the item near the top that says "Send Ctrl+Alt+Del" to bring up the login fields.
 
+## Ubuntu VM Setup
+
+### Initial System Configuration
+
+The Linux VM was configured with a RDP (Remote Desktop Protocol) using the XFCE4 desktop environment. This setup was chosen for many reasons:
+
+1. Cross-platform compatability (Windows, Mac, Linux clients)
+2. Supports multi-user (multiple lab members can connect simultaneously)
+3. Stability (XFCE4 avoids Ubuntu 24.04's Wayland/RDP compatibility issues)
+4. Resource Efficiency (almost double RAM efficiency compared to GNOME)
+
+For visibility, these were the commands that were ran to setup the initial system:
+
+From a ROOT SSH:
+```{bash}
+# 1. update system packages 
+sudo apt update && sudo apt upgrade -y
+
+# 2. install RDP server and desktop environment
+sudo apt install -y xrdp xfce4 xfce4-goodies
+
+# 3. configure XFCE as default desktop for RDP users
+sudo bash -c 'echo "xfce4-session" > /etc/skel/.xsession'
+sudo sed -i 's/allowed_users=console/allowed_users=anybody/' /etc/X11/Xwrapper.config
+
+# 4. enable and start RDP service
+sudo systemctl enable --now xrdp
+sudo adduser xrdp ssl-cert
+sudo systemctl restart xrdp
+
+# 5. open firewall for RDP connections
+sudo ufw allow 3389/tcp
+```
+
+### Creating User Accounts on the Linux VM
+
+For each lab member who needs access to the Ubuntu VM:
+
+From a ROOT SSH:
+```{bash}
+# 1. create user account (replace 'username' with NetID)
+sudo adduser username
+
+# follow the prompts:
+# - Enter password (twice)
+# - Press Enter to skip optional fields (Full Name, etc.)
+# - Press Y to confirm
+
+# 2. set up desktop session for user's RDP
+echo "xfce4-session" | sudo tee /home/username/.xsession
+```
+
+Example:
+```{bash}
+sudo adduser cjanssen3
+echo "xfce4-session" | sudo tee /home/cjanssen3/.xsession
+```
+
+Optional: Grant admin privileges
+
+```{bash}
+sudo usermod -aG sudo username
+```
 
 ## Connection Information
 
@@ -109,8 +181,43 @@ Keep in mind, if a user needs access on all 3 VMs, steps 2 & 3 must be repeated 
 2. For credentials, use the local account username/password that was created for you.
 
 #### Linux machine
-1. For the linux VM you can connect via SSH using the IP above and port 22. 
-2. It is recommended that you connect with a username specified, ie `ssh username@128.104.221.24` where "username" is the one created for you (e.g., `ssh root@128.104.221.24` for the root user). You will then be prompted to enter a password.
+
+(Assuming that your user has been created using the process described above)
+
+For Windows users:
+
+1. Press `Win + R`
+2. type `mstsc` and enter
+3. Insert the Linux IP Address into the "Computer" field
+4. Connect
+5. Enter User and Password
+6. Click "OK"
+
+For Mac Users:
+
+1. Open Remote Desktop app of choice (Windows App is recommended)
+2. Click "+ Add PC"
+3. Enter Linux IP Address in "PC Name"
+4. Add
+5. Double-click the connection
+6. Enter User and Password
+
+For Linux Users:
+
+1. Open Remmina
+2. Click "+"
+3. Select protocal: "RDP"
+4. Server: Enter Linux IP Address
+5. Enter User
+6. Enter Password
+7. Click "Save and Connect"
+
+Quick Connect:
+
+```{bash}
+remmina -c rdp://128.104.50.166
+```
+
 
 ## UW Documentation
 

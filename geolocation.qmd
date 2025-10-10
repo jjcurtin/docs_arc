@@ -1,18 +1,14 @@
 # Geolocation Processing
 
-
 ## Overview
 
 All preliminary geolocation processing is done on the virtual machine.  The raw geolocation data will always be saved on the restricted drive (R drive) in a folder for the project for those data.   Processed geolocation data are saved on the standard drive (S).
-
 
 To log into the virtual machine, see the [virtual machines page](virtual_machines.qmd).
 
 Talk with Susan about getting a userid on the VM if you do not already have one.
 
 You will also need to mount both the restricted and standard research drives on the VM the first time you log into it.  See the [research drives page](research_drives.qmd) for instructions.
-
-
 
 ## 
 CHRIS CONTINUES HERE.....
