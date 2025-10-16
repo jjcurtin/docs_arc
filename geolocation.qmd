@@ -2,13 +2,208 @@
 
 ## Overview
 
-All preliminary geolocation processing is done on the virtual machine.  The raw geolocation data will always be saved on the restricted drive (R drive) in a folder for the project for those data.   Processed geolocation data are saved on the standard drive (S).
+All preliminary geolocation processing is done on the virtual machine. The raw geolocation data will always be saved on the restricted drive (R drive) in a folder for the project for those data. Processed geolocation data are saved on the standard drive (S).
 
 To log into the virtual machine, see the [virtual machines page](virtual_machines.qmd).
 
 Talk with Susan about getting a userid on the VM if you do not already have one.
 
-You will also need to mount both the restricted and standard research drives on the VM the first time you log into it.  See the [research drives page](research_drives.qmd) for instructions.
+You will also need to mount both the restricted and standard research drives on the VM the first time you log into it. See the [research drives page](research_drives.qmd) for instructions.
 
-## 
-CHRIS CONTINUES HERE.....
+## Initial System Configuration
+
+There are a series of steps that will need to be taken in order to prepare a virtual machine for use with the GPS2 docker environment, they will be discussed here.
+
+### Installing Docker & Docker Compose
+
+GPS2 uses containerized `PostGIS` and `Nominatim` services that ensure consistent database environments. These services run in **containers** that are propagated by a **docker engine**. These containers not only allow us to quickly and easily access this software, but shares that ease of access across different os/platforms.
+
+It is recommended to add any user that is regularly interacting with Docker to the `docker` group, as this will allow them to run the engine without `sudo`. This is done for convenience, but also to prevent permission issues with R scripts that call Docker commands.
+
+Finally, `systemctl enable` ensures that Docker will start automatically on boot, which is useful for long-term analysis jobs / setups.
+
+```{bash}
+sudo apt update
+sudo apt install -y docker.io docker-compose
+sudo systemctl enable --now docker
+sudo usermod -aG docker $USER # logout/login required
+```
+
+To verify adequate installation, one can run these commands:
+
+```{bash}
+docker --version
+docker-compose --version
+docker ps # notably, this should work with sudo after logout/login
+```
+
+### Installing PostgreSQL Client Tools
+
+Throughout GPS2, psql commands are used sporadically for direct database testing and verification. Most of the database connections can be handled by R's `DBI`, but having psql allows for certain debugging capabilities without the additional complication of R.
+
+```{bash}
+sudo apt install -y postgresql-client
+psql --version # to verify
+```
+
+### Installing R
+
+This is likely already done, but for posterity:
+
+To check for an existing R installation
+
+```{bash}
+R --version
+```
+
+If R is missing or below 4.0
+
+```{bash}
+sudo apt install -y r-base r-base-dev
+```
+
+### Installing Quarto
+
+Needs little explanation, chosen for its support of multi-language notebooks, research documentation and reproducibility, and native support for bash in code chunks.
+
+```{bash}
+# download latest stable Quarto (v1.8.25 as of 10/16/2025)
+wget https://github.com/quarto-dev/quarto-cli/releases/download/v1.8.25/quarto-1.8.25-linux-amd64.deb
+
+sudo dpkg -i quarto-1.8.25-linux-amd64.deb # install
+```
+
+To verify:
+
+```{bash}
+quarto --version
+quarto check
+```
+
+### System Libraries for R Spatial Packages
+
+System libraries are pre-compiled C/C++ libraries that are installed at the OS level that provide the core functionality for a variety of geospatial operations within GPS2. R packages like `sf`, `geosphere`, and `httr` don't reimplement these capabilities, but rather act as "wrappers" that compile against and call these system libraries. It is important to install these libraries now, so that later package installation in R (i.e. `install.packages("sf")`) can properly compile without error.
+
+```{bash}
+sudo apt install -y \
+  libgdal-dev \
+  libproj-dev \
+  libgeos-dev \
+  libudunits2-dev \
+  libcurl4-openssl-dev \
+  libssl-dev \
+  libxml2-dev \
+  libabsl-dev
+```
+
+##### GDAL (Geospatial Data Abstraction Library)
+
+Powers the `sf` package for reading/writing spatial data formats (shapefiles, geoJSON). Examples of implementation can be found in `05-spatial-zoning-analysis.qmd`.
+
+##### PROJ (Cartographic Projections)
+
+Handles coordinate system transformations (e.g., WGS84 to State Plane Wisconsin). This is important in maintaining accurate distance calculations in clustering. GPS2 uses EPSG:4326 (WGS84) consistently, but PROJ ensures future flexibility, and is a `sf` dependency.
+
+##### GEOS (Geometry Engine Open Source)
+
+Provides spatial operations (intersections, buffers, unions). Example in `05-spatial-zoning-analysis.qmd` with "point-in-polygon" tests (which clusters fall within which zoning districts). Core dependency for PostGIS spatial functions.
+
+##### udunits2
+
+Handles unit conversions (miles \<-\> meters, hours \<-\> minutes), primarily used in GPS point processing and filtering. Dependency of the `units` package in R.
+
+##### libcurl
+
+Enables HTTP requests for `httr` package. Primarily used in `04-reverse-geocoding.qmd` for local Nominatim API calls, and is also needed to download the Wisconsin OSM data if refreshing Nominatim.
+
+##### libssl
+
+Provides SSL/TLS encryption for secure HTTPS connections, and is required by libcurl to make HTTPS requests. Powers `devtools:source_url()` for `format_path()`, and installing CRAN packages through `install.packages()`.
+
+##### libxml2
+
+Parses XML and GTML documents into structured data, dependency of `httr` and `xml` (dependency of many tideyverse packages).
+
+##### libabsl
+
+Required by `s2` package, which itself is a dependency of the `sf` package.
+
+### Install CMake
+
+**Cmake** is a cross-platform build system for compiling C/C++ code, and will be used if our libraries fail to properly compile certain packages (notably `sf`)
+
+```{bash}
+sudo apt install -y cmake
+```
+
+To verify:
+
+```{bash}
+cmake --version
+```
+
+## R Package Installation
+
+### Temporary R Directory
+
+Firstly, we are going to configure our own R temporary directory. We do this to avoid the common university practice of mounting `/tmp` with `noexec` for security reasons. Notably, this prevents R from executing configure scripts during package compilation.
+
+To check if this will be an issue, run:
+
+```{bash}
+mount | grep /temp
+```
+
+If you see 'noexec', follow, complete the section below:
+
+```{bash}
+# create a temporary directory in home folder
+mkdir -p ~/R_temp
+
+# configure R to use it permanently (UPDATE USER IN SECOND LINE!!!)
+cat > ~/.Renviron << 'EOF'
+TMPDIR=~/home/user/R_temp 
+EOF
+```
+
+To verify:
+
+```{r}
+Sys.getenv("TMPDIR") # should show /home/user/R_temp
+```
+
+If it doesn't show the correct and updated directory, remember to fully restart and reload R/R Studio. If this still doesn't work, brute-force it within the R console by manually setting the path.
+
+## Package List and Installation
+
+Thcis is the current R package list for GPS2 (updated: 10/16/2025)
+
+```{r}
+#| eval: false
+#| include: false
+
+install.packages(c(
+    "tidyverse",    # Data manipulation & visualization
+    "here",         # Path management
+    "DBI",          # Database interface
+    "RPostgres",    # PostgreSQL driver
+    "sf",           # Simple Features spatial data
+    "httr",         # HTTP requests for Nominatim
+    "jsonlite",     # JSON parsing
+    "geosphere",    # Distance calculations
+    "leaflet",      # Interactive maps
+    "lubridate"     # Date/time handling
+  ))
+```
+
+Since devtools is a very complicated package, and we only want `format_path()` from lab_support, we will be sourcing it directly using base R.
+
+```{r}
+source("https://raw.githubusercontent.com/jjcurtin/lab_support/main/format_path.R")
+```
+
+## Research Drive Mapping & Mounting
+
+### Mapping Research Drives
+
+### Mounting Research Drives with GPS2
