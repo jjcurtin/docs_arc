@@ -8,8 +8,6 @@ To log into the virtual machine, see the [virtual machines page](virtual_machine
 
 Talk with Susan about getting a userid on the VM if you do not already have one.
 
-You will also need to mount both the restricted and standard research drives on the VM the first time you log into it. See the [research drives page](research_drives.qmd) for instructions.
-
 ## Initial System Configuration
 
 There are a series of steps that will need to be taken in order to prepare a virtual machine for use with the GPS2 docker environment, they will be discussed here.
@@ -18,7 +16,7 @@ There are a series of steps that will need to be taken in order to prepare a vir
 
 GPS2 uses containerized `PostGIS` and `Nominatim` services that ensure consistent database environments. These services run in **containers** that are propagated by a **docker engine**. These containers not only allow us to quickly and easily access this software, but shares that ease of access across different os/platforms.
 
-It is recommended to add any user that is regularly interacting with Docker to the `docker` group, as this will allow them to run the engine without `sudo`. This is done for convenience, but also to prevent permission issues with R scripts that call Docker commands.
+It is recommended to add any user that is regularly interacting with Docker to the `docker` group, as this will allow them to run the engine without `sudo`. This is mainly done for convenience, but also to prevent permission issues with R scripts that call Docker commands.
 
 Finally, `systemctl enable` ensures that Docker will start automatically on boot, which is useful for long-term analysis jobs / setups.
 
@@ -35,6 +33,48 @@ To verify adequate installation, one can run these commands:
 docker --version
 docker-compose --version
 docker ps # notably, this should work with sudo after logout/login
+```
+
+### Verify and Expand /var Partition for Docker Storage
+
+The following change has already been made, but it's documented here for posterity:
+Docker stores volumes in `/var/lib/docker` by default, and **Nominatim requires ~5-8GB of disk space during initial Wisconsin OSM import** (plus growth over time). If the `/var` partition is too small, it will cause Nominatim to fail.
+
+Check available space:
+```{bash}
+df -h /var  # Should show at least 10GB available for Nominatim
+```
+
+**If /var has less than 10GB available**, check for free space in the LVM volume group:
+
+```{bash}
+sudo vgs  # Look at VFree column
+```
+
+**If free space exists** (e.g., 20GB+ available), extend `/var`:
+
+```{bash}
+# Add 10GB to /var (adjust size based on availability)
+sudo lvextend -L +10G /dev/Volume00/var
+sudo resize2fs /dev/mapper/Volume00-var
+
+# Verify new size
+df -h /var  # Should now show ~15GB total
+```
+
+### Fix AppArmor Compatibility Issue
+
+Ubuntu 24.04's default AppArmor runc profile blocks Docker container execution. It is necessary to disable it:
+
+```{bash}
+sudo mv /etc/apparmor.d/runc /etc/apparmor.d/runc.disabled
+sudo systemctl restart docker
+```
+
+Then, verify Docker works:
+
+```{bash}
+docker run --rm hello-world
 ```
 
 ### Installing PostgreSQL Client Tools
@@ -82,7 +122,7 @@ quarto check
 
 ### System Libraries for R Spatial Packages
 
-System libraries are pre-compiled C/C++ libraries that are installed at the OS level that provide the core functionality for a variety of geospatial operations within GPS2. R packages like `sf`, `geosphere`, and `httr` don't reimplement these capabilities, but rather act as "wrappers" that compile against and call these system libraries. It is important to install these libraries now, so that later package installation in R (i.e. `install.packages("sf")`) can properly compile without error.
+System libraries are pre-compiled C/C++ libraries that are installed at the OS level that provide the core functionality for a variety of geospatial operations within GPS2. R packages like `sf`, `geosphere`, and `httr` don't re-implement these capabilities, but rather act as "wrappers" that compile against and call these system libraries. It is important to install these libraries now, so that later package installation in R (i.e. `install.packages("sf")`) can properly compile without error.
 
 ```{bash}
 sudo apt install -y \
@@ -176,7 +216,7 @@ If it doesn't show the correct and updated directory, remember to fully restart 
 
 ## Package List and Installation
 
-Thcis is the current R package list for GPS2 (updated: 10/16/2025)
+This is the current R package list for GPS2 (updated: 10/16/2025)
 
 ```{r}
 #| eval: false
@@ -202,8 +242,51 @@ Since devtools is a very complicated package, and we only want `format_path()` f
 source("https://raw.githubusercontent.com/jjcurtin/lab_support/main/format_path.R")
 ```
 
-## Research Drive Mapping & Mounting
+## Mounting Standard and Restricted Research Drives
 
-### Mapping Research Drives
+For ease of setup, a bash script that automatically maps both drives has been written and stored within the Linux VM for all users, following lab policy of storing it within `/usr/local/bin`.
 
-### Mounting Research Drives with GPS2
+Simply run `mount-uw-drives` and follow the steps of inserting your Net-ID and passwords. Additionally, a script for un-mounting the research drives can be found at the same location, and is dubbed `unmount-uw-drives`.
+
+## GPS2 Setup and Configuration
+
+Now that all of the preliminary setup has been done, we can move to setting up the actual system.
+
+### Cloning into GPS2
+
+An SSH key pair was generated on the research VM and configured as a shared authentication method. The private key (`/etc/ssh/lab_github_key`) is stored locally with read permissions granted to all VM users, while the corresponding public key was added as a deploy key to the GPS2 repository.
+
+This allows all git operations (clone, push, pull) to be performed without individual GitHub accounts or collaborator permissions being required. The shared key is automatically used by SSH when connections to GitHub are established for this repository.
+
+To clone into the repo:
+```{bash}
+git clone git@github.com:christopher-janssen/GPS2.git
+```
+
+### Specifying mounting points for GPS2
+
+The GPS2 repository is fitted with example config/env files for dealing with OS specific file path dependencies, as functions like `format_path()` do not work within Docker Compose YAML files.
+
+Instead, simply run the following command in the `/GPS2/docker-compose/` directory to properly configure the linux file-path mounting.
+
+```{bash}
+cp .env.linux .env
+```
+
+### Intializing GPS2 Docker Containers
+
+Navigate to the `/docker-compose` directory of GPS2 and run:
+
+```{bash}
+docker-compose up -d
+```
+
+You can then monitor the docker containers health and status with the command:
+
+```{bash}
+docker ps
+```
+
+Given the reduced CPU allotments, allow a size-able amount of time for the Nominatim image to fully initialize, as stopping the process during setup can cause errors.
+
+Assuming all containers fully intialize, you are now ready to work through the standard GPS2 workflow!
