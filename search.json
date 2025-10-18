@@ -574,7 +574,7 @@
     "href": "geolocation.html#package-list-and-installation",
     "title": "11  Geolocation Processing",
     "section": "11.4 Package List and Installation",
-    "text": "11.4 Package List and Installation\nThis is the current R package list for GPS2 (updated: 10/16/2025)\nSince devtools is a very complicated package, and we only want format_path() from lab_support, we will be sourcing it directly using base R.\n\nsource(\"https://raw.githubusercontent.com/jjcurtin/lab_support/main/format_path.R\")",
+    "text": "11.4 Package List and Installation\nThis is the current R package list for GPS2 (updated: 10/16/2025)\n\ninstall.packages(c(\n    \"tidyverse\",  \n    \"here\",      \n    \"DBI\",       \n    \"RPostgres\",   \n    \"sf\",        \n    \"httr\",       \n    \"jsonlite\",    \n    \"geosphere\",   \n    \"leaflet\",    \n    \"lubridate\"    \n  ))\n\nSince devtools is a very complicated package, and we only want format_path() from lab_support, we will be sourcing it directly using base R.\n\nsource(\"https://raw.githubusercontent.com/jjcurtin/lab_support/main/format_path.R\")",
     "crumbs": [
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>Geolocation Processing</span>"
     ]
