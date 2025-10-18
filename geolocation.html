@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.56">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -37,10 +71,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-77205cbbef6a5b90ba72edc25dea2156.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -285,7 +319,29 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><span class="header-section-number">11.1</span> Overview</a></li>
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"><span class="header-section-number">11.2</span> </a></li>
+  <li><a href="#initial-system-configuration" id="toc-initial-system-configuration" class="nav-link" data-scroll-target="#initial-system-configuration"><span class="header-section-number">11.2</span> Initial System Configuration</a>
+  <ul class="collapse">
+  <li><a href="#installing-docker-docker-compose" id="toc-installing-docker-docker-compose" class="nav-link" data-scroll-target="#installing-docker-docker-compose"><span class="header-section-number">11.2.1</span> Installing Docker &amp; Docker Compose</a></li>
+  <li><a href="#verify-and-expand-var-partition-for-docker-storage" id="toc-verify-and-expand-var-partition-for-docker-storage" class="nav-link" data-scroll-target="#verify-and-expand-var-partition-for-docker-storage"><span class="header-section-number">11.2.2</span> Verify and Expand /var Partition for Docker Storage</a></li>
+  <li><a href="#fix-apparmor-compatibility-issue" id="toc-fix-apparmor-compatibility-issue" class="nav-link" data-scroll-target="#fix-apparmor-compatibility-issue"><span class="header-section-number">11.2.3</span> Fix AppArmor Compatibility Issue</a></li>
+  <li><a href="#installing-postgresql-client-tools" id="toc-installing-postgresql-client-tools" class="nav-link" data-scroll-target="#installing-postgresql-client-tools"><span class="header-section-number">11.2.4</span> Installing PostgreSQL Client Tools</a></li>
+  <li><a href="#installing-r" id="toc-installing-r" class="nav-link" data-scroll-target="#installing-r"><span class="header-section-number">11.2.5</span> Installing R</a></li>
+  <li><a href="#installing-quarto" id="toc-installing-quarto" class="nav-link" data-scroll-target="#installing-quarto"><span class="header-section-number">11.2.6</span> Installing Quarto</a></li>
+  <li><a href="#system-libraries-for-r-spatial-packages" id="toc-system-libraries-for-r-spatial-packages" class="nav-link" data-scroll-target="#system-libraries-for-r-spatial-packages"><span class="header-section-number">11.2.7</span> System Libraries for R Spatial Packages</a></li>
+  <li><a href="#install-cmake" id="toc-install-cmake" class="nav-link" data-scroll-target="#install-cmake"><span class="header-section-number">11.2.8</span> Install CMake</a></li>
+  </ul></li>
+  <li><a href="#r-package-installation" id="toc-r-package-installation" class="nav-link" data-scroll-target="#r-package-installation"><span class="header-section-number">11.3</span> R Package Installation</a>
+  <ul class="collapse">
+  <li><a href="#temporary-r-directory" id="toc-temporary-r-directory" class="nav-link" data-scroll-target="#temporary-r-directory"><span class="header-section-number">11.3.1</span> Temporary R Directory</a></li>
+  </ul></li>
+  <li><a href="#package-list-and-installation" id="toc-package-list-and-installation" class="nav-link" data-scroll-target="#package-list-and-installation"><span class="header-section-number">11.4</span> Package List and Installation</a></li>
+  <li><a href="#mounting-standard-and-restricted-research-drives" id="toc-mounting-standard-and-restricted-research-drives" class="nav-link" data-scroll-target="#mounting-standard-and-restricted-research-drives"><span class="header-section-number">11.5</span> Mounting Standard and Restricted Research Drives</a></li>
+  <li><a href="#gps2-setup-and-configuration" id="toc-gps2-setup-and-configuration" class="nav-link" data-scroll-target="#gps2-setup-and-configuration"><span class="header-section-number">11.6</span> GPS2 Setup and Configuration</a>
+  <ul class="collapse">
+  <li><a href="#cloning-into-gps2" id="toc-cloning-into-gps2" class="nav-link" data-scroll-target="#cloning-into-gps2"><span class="header-section-number">11.6.1</span> Cloning into GPS2</a></li>
+  <li><a href="#specifying-mounting-points-for-gps2" id="toc-specifying-mounting-points-for-gps2" class="nav-link" data-scroll-target="#specifying-mounting-points-for-gps2"><span class="header-section-number">11.6.2</span> Specifying mounting points for GPS2</a></li>
+  <li><a href="#intializing-gps2-docker-containers" id="toc-intializing-gps2-docker-containers" class="nav-link" data-scroll-target="#intializing-gps2-docker-containers"><span class="header-section-number">11.6.3</span> Intializing GPS2 Docker Containers</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -316,13 +372,229 @@ ul.task-list li input[type="checkbox"] {
 <p>All preliminary geolocation processing is done on the virtual machine. The raw geolocation data will always be saved on the restricted drive (R drive) in a folder for the project for those data. Processed geolocation data are saved on the standard drive (S).</p>
 <p>To log into the virtual machine, see the <a href="./virtual_machines.html">virtual machines page</a>.</p>
 <p>Talk with Susan about getting a userid on the VM if you do not already have one.</p>
-<p>You will also need to mount both the restricted and standard research drives on the VM the first time you log into it. See the <a href="./research_drives.html">research drives page</a> for instructions.</p>
 </section>
-<section id="section" class="level2" data-number="11.2">
-<h2 data-number="11.2" class="anchored" data-anchor-id="section"><span class="header-section-number">11.2</span> </h2>
-<p>CHRIS CONTINUES HERE…..</p>
+<section id="initial-system-configuration" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="initial-system-configuration"><span class="header-section-number">11.2</span> Initial System Configuration</h2>
+<p>There are a series of steps that will need to be taken in order to prepare a virtual machine for use with the GPS2 docker environment, they will be discussed here.</p>
+<section id="installing-docker-docker-compose" class="level3" data-number="11.2.1">
+<h3 data-number="11.2.1" class="anchored" data-anchor-id="installing-docker-docker-compose"><span class="header-section-number">11.2.1</span> Installing Docker &amp; Docker Compose</h3>
+<p>GPS2 uses containerized <code>PostGIS</code> and <code>Nominatim</code> services that ensure consistent database environments. These services run in <strong>containers</strong> that are propagated by a <strong>docker engine</strong>. These containers not only allow us to quickly and easily access this software, but shares that ease of access across different os/platforms.</p>
+<p>It is recommended to add any user that is regularly interacting with Docker to the <code>docker</code> group, as this will allow them to run the engine without <code>sudo</code>. This is mainly done for convenience, but also to prevent permission issues with R scripts that call Docker commands.</p>
+<p>Finally, <code>systemctl enable</code> ensures that Docker will start automatically on boot, which is useful for long-term analysis jobs / setups.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install <span class="at">-y</span> docker.io docker-compose</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> systemctl enable <span class="at">--now</span> docker</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> usermod <span class="at">-aG</span> docker <span class="va">$USER</span> <span class="co"># logout/login required</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>To verify adequate installation, one can run these commands:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> <span class="at">--version</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">docker-compose</span> <span class="at">--version</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> ps <span class="co"># notably, this should work with sudo after logout/login</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="verify-and-expand-var-partition-for-docker-storage" class="level3" data-number="11.2.2">
+<h3 data-number="11.2.2" class="anchored" data-anchor-id="verify-and-expand-var-partition-for-docker-storage"><span class="header-section-number">11.2.2</span> Verify and Expand /var Partition for Docker Storage</h3>
+<p>The following change has already been made, but it’s documented here for posterity: Docker stores volumes in <code>/var/lib/docker</code> by default, and <strong>Nominatim requires ~5-8GB of disk space during initial Wisconsin OSM import</strong> (plus growth over time). If the <code>/var</code> partition is too small, it will cause Nominatim to fail.</p>
+<p>Check available space:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">df</span> <span class="at">-h</span> /var  <span class="co"># Should show at least 10GB available for Nominatim</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>If /var has less than 10GB available</strong>, check for free space in the LVM volume group:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> vgs  <span class="co"># Look at VFree column</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>If free space exists</strong> (e.g., 20GB+ available), extend <code>/var</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Add 10GB to /var (adjust size based on availability)</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> lvextend <span class="at">-L</span> +10G /dev/Volume00/var</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> resize2fs /dev/mapper/Volume00-var</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Verify new size</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">df</span> <span class="at">-h</span> /var  <span class="co"># Should now show ~15GB total</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="fix-apparmor-compatibility-issue" class="level3" data-number="11.2.3">
+<h3 data-number="11.2.3" class="anchored" data-anchor-id="fix-apparmor-compatibility-issue"><span class="header-section-number">11.2.3</span> Fix AppArmor Compatibility Issue</h3>
+<p>Ubuntu 24.04’s default AppArmor runc profile blocks Docker container execution. It is necessary to disable it:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> mv /etc/apparmor.d/runc /etc/apparmor.d/runc.disabled</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> systemctl restart docker</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Then, verify Docker works:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">--rm</span> hello-world</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="installing-postgresql-client-tools" class="level3" data-number="11.2.4">
+<h3 data-number="11.2.4" class="anchored" data-anchor-id="installing-postgresql-client-tools"><span class="header-section-number">11.2.4</span> Installing PostgreSQL Client Tools</h3>
+<p>Throughout GPS2, psql commands are used sporadically for direct database testing and verification. Most of the database connections can be handled by R’s <code>DBI</code>, but having psql allows for certain debugging capabilities without the additional complication of R.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install <span class="at">-y</span> postgresql-client</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">psql</span> <span class="at">--version</span> <span class="co"># to verify</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="installing-r" class="level3" data-number="11.2.5">
+<h3 data-number="11.2.5" class="anchored" data-anchor-id="installing-r"><span class="header-section-number">11.2.5</span> Installing R</h3>
+<p>This is likely already done, but for posterity:</p>
+<p>To check for an existing R installation</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>If R is missing or below 4.0</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install <span class="at">-y</span> r-base r-base-dev</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="installing-quarto" class="level3" data-number="11.2.6">
+<h3 data-number="11.2.6" class="anchored" data-anchor-id="installing-quarto"><span class="header-section-number">11.2.6</span> Installing Quarto</h3>
+<p>Needs little explanation, chosen for its support of multi-language notebooks, research documentation and reproducibility, and native support for bash in code chunks.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># download latest stable Quarto (v1.8.25 as of 10/16/2025)</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://github.com/quarto-dev/quarto-cli/releases/download/v1.8.25/quarto-1.8.25-linux-amd64.deb</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> dpkg <span class="at">-i</span> quarto-1.8.25-linux-amd64.deb <span class="co"># install</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>To verify:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> <span class="at">--version</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> check</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="system-libraries-for-r-spatial-packages" class="level3" data-number="11.2.7">
+<h3 data-number="11.2.7" class="anchored" data-anchor-id="system-libraries-for-r-spatial-packages"><span class="header-section-number">11.2.7</span> System Libraries for R Spatial Packages</h3>
+<p>System libraries are pre-compiled C/C++ libraries that are installed at the OS level that provide the core functionality for a variety of geospatial operations within GPS2. R packages like <code>sf</code>, <code>geosphere</code>, and <code>httr</code> don’t re-implement these capabilities, but rather act as “wrappers” that compile against and call these system libraries. It is important to install these libraries now, so that later package installation in R (i.e.&nbsp;<code>install.packages("sf")</code>) can properly compile without error.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install <span class="at">-y</span> <span class="dt">\</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  libgdal-dev <span class="dt">\</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  libproj-dev <span class="dt">\</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  libgeos-dev <span class="dt">\</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  libudunits2-dev <span class="dt">\</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  libcurl4-openssl-dev <span class="dt">\</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  libssl-dev <span class="dt">\</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  libxml2-dev <span class="dt">\</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  libabsl-dev</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="gdal-geospatial-data-abstraction-library" class="level5" data-number="11.2.7.0.1">
+<h5 data-number="11.2.7.0.1" class="anchored" data-anchor-id="gdal-geospatial-data-abstraction-library"><span class="header-section-number">11.2.7.0.1</span> GDAL (Geospatial Data Abstraction Library)</h5>
+<p>Powers the <code>sf</code> package for reading/writing spatial data formats (shapefiles, geoJSON). Examples of implementation can be found in <code>05-spatial-zoning-analysis.qmd</code>.</p>
+</section>
+<section id="proj-cartographic-projections" class="level5" data-number="11.2.7.0.2">
+<h5 data-number="11.2.7.0.2" class="anchored" data-anchor-id="proj-cartographic-projections"><span class="header-section-number">11.2.7.0.2</span> PROJ (Cartographic Projections)</h5>
+<p>Handles coordinate system transformations (e.g., WGS84 to State Plane Wisconsin). This is important in maintaining accurate distance calculations in clustering. GPS2 uses EPSG:4326 (WGS84) consistently, but PROJ ensures future flexibility, and is a <code>sf</code> dependency.</p>
+</section>
+<section id="geos-geometry-engine-open-source" class="level5" data-number="11.2.7.0.3">
+<h5 data-number="11.2.7.0.3" class="anchored" data-anchor-id="geos-geometry-engine-open-source"><span class="header-section-number">11.2.7.0.3</span> GEOS (Geometry Engine Open Source)</h5>
+<p>Provides spatial operations (intersections, buffers, unions). Example in <code>05-spatial-zoning-analysis.qmd</code> with “point-in-polygon” tests (which clusters fall within which zoning districts). Core dependency for PostGIS spatial functions.</p>
+</section>
+<section id="udunits2" class="level5" data-number="11.2.7.0.4">
+<h5 data-number="11.2.7.0.4" class="anchored" data-anchor-id="udunits2"><span class="header-section-number">11.2.7.0.4</span> udunits2</h5>
+<p>Handles unit conversions (miles &lt;-&gt; meters, hours &lt;-&gt; minutes), primarily used in GPS point processing and filtering. Dependency of the <code>units</code> package in R.</p>
+</section>
+<section id="libcurl" class="level5" data-number="11.2.7.0.5">
+<h5 data-number="11.2.7.0.5" class="anchored" data-anchor-id="libcurl"><span class="header-section-number">11.2.7.0.5</span> libcurl</h5>
+<p>Enables HTTP requests for <code>httr</code> package. Primarily used in <code>04-reverse-geocoding.qmd</code> for local Nominatim API calls, and is also needed to download the Wisconsin OSM data if refreshing Nominatim.</p>
+</section>
+<section id="libssl" class="level5" data-number="11.2.7.0.6">
+<h5 data-number="11.2.7.0.6" class="anchored" data-anchor-id="libssl"><span class="header-section-number">11.2.7.0.6</span> libssl</h5>
+<p>Provides SSL/TLS encryption for secure HTTPS connections, and is required by libcurl to make HTTPS requests. Powers <code>devtools:source_url()</code> for <code>format_path()</code>, and installing CRAN packages through <code>install.packages()</code>.</p>
+</section>
+<section id="libxml2" class="level5" data-number="11.2.7.0.7">
+<h5 data-number="11.2.7.0.7" class="anchored" data-anchor-id="libxml2"><span class="header-section-number">11.2.7.0.7</span> libxml2</h5>
+<p>Parses XML and GTML documents into structured data, dependency of <code>httr</code> and <code>xml</code> (dependency of many tideyverse packages).</p>
+</section>
+<section id="libabsl" class="level5" data-number="11.2.7.0.8">
+<h5 data-number="11.2.7.0.8" class="anchored" data-anchor-id="libabsl"><span class="header-section-number">11.2.7.0.8</span> libabsl</h5>
+<p>Required by <code>s2</code> package, which itself is a dependency of the <code>sf</code> package.</p>
+</section>
+</section>
+<section id="install-cmake" class="level3" data-number="11.2.8">
+<h3 data-number="11.2.8" class="anchored" data-anchor-id="install-cmake"><span class="header-section-number">11.2.8</span> Install CMake</h3>
+<p><strong>Cmake</strong> is a cross-platform build system for compiling C/C++ code, and will be used if our libraries fail to properly compile certain packages (notably <code>sf</code>)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install <span class="at">-y</span> cmake</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>To verify:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cmake</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="r-package-installation" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="r-package-installation"><span class="header-section-number">11.3</span> R Package Installation</h2>
+<section id="temporary-r-directory" class="level3" data-number="11.3.1">
+<h3 data-number="11.3.1" class="anchored" data-anchor-id="temporary-r-directory"><span class="header-section-number">11.3.1</span> Temporary R Directory</h3>
+<p>Firstly, we are going to configure our own R temporary directory. We do this to avoid the common university practice of mounting <code>/tmp</code> with <code>noexec</code> for security reasons. Notably, this prevents R from executing configure scripts during package compilation.</p>
+<p>To check if this will be an issue, run:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mount</span> <span class="kw">|</span> <span class="fu">grep</span> /temp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>If you see ‘noexec’, follow, complete the section below:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create a temporary directory in home folder</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> ~/R_temp</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co"># configure R to use it permanently (UPDATE USER IN SECOND LINE!!!)</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> <span class="op">&gt;</span> ~/.Renviron <span class="op">&lt;&lt; 'EOF'</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="st">TMPDIR=~/home/user/R_temp </span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="op">EOF</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>To verify:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.getenv</span>(<span class="st">"TMPDIR"</span>) <span class="co"># should show /home/user/R_temp</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>If it doesn’t show the correct and updated directory, remember to fully restart and reload R/R Studio. If this still doesn’t work, brute-force it within the R console by manually setting the path.</p>
+</section>
+</section>
+<section id="package-list-and-installation" class="level2" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="package-list-and-installation"><span class="header-section-number">11.4</span> Package List and Installation</h2>
+<p>This is the current R package list for GPS2 (updated: 10/16/2025)</p>
+<p>Since devtools is a very complicated package, and we only want <code>format_path()</code> from lab_support, we will be sourcing it directly using base R.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"https://raw.githubusercontent.com/jjcurtin/lab_support/main/format_path.R"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="mounting-standard-and-restricted-research-drives" class="level2" data-number="11.5">
+<h2 data-number="11.5" class="anchored" data-anchor-id="mounting-standard-and-restricted-research-drives"><span class="header-section-number">11.5</span> Mounting Standard and Restricted Research Drives</h2>
+<p>For ease of setup, a bash script that automatically maps both drives has been written and stored within the Linux VM for all users, following lab policy of storing it within <code>/usr/local/bin</code>.</p>
+<p>Simply run <code>mount-uw-drives</code> and follow the steps of inserting your Net-ID and passwords. Additionally, a script for un-mounting the research drives can be found at the same location, and is dubbed <code>unmount-uw-drives</code>.</p>
+</section>
+<section id="gps2-setup-and-configuration" class="level2" data-number="11.6">
+<h2 data-number="11.6" class="anchored" data-anchor-id="gps2-setup-and-configuration"><span class="header-section-number">11.6</span> GPS2 Setup and Configuration</h2>
+<p>Now that all of the preliminary setup has been done, we can move to setting up the actual system.</p>
+<section id="cloning-into-gps2" class="level3" data-number="11.6.1">
+<h3 data-number="11.6.1" class="anchored" data-anchor-id="cloning-into-gps2"><span class="header-section-number">11.6.1</span> Cloning into GPS2</h3>
+<p>An SSH key pair was generated on the research VM and configured as a shared authentication method. The private key (<code>/etc/ssh/lab_github_key</code>) is stored locally with read permissions granted to all VM users, while the corresponding public key was added as a deploy key to the GPS2 repository.</p>
+<p>This allows all git operations (clone, push, pull) to be performed without individual GitHub accounts or collaborator permissions being required. The shared key is automatically used by SSH when connections to GitHub are established for this repository.</p>
+<p>To clone into the repo:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone git@github.com:christopher-janssen/GPS2.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="specifying-mounting-points-for-gps2" class="level3" data-number="11.6.2">
+<h3 data-number="11.6.2" class="anchored" data-anchor-id="specifying-mounting-points-for-gps2"><span class="header-section-number">11.6.2</span> Specifying mounting points for GPS2</h3>
+<p>The GPS2 repository is fitted with example config/env files for dealing with OS specific file path dependencies, as functions like <code>format_path()</code> do not work within Docker Compose YAML files.</p>
+<p>Instead, simply run the following command in the <code>/GPS2/docker-compose/</code> directory to properly configure the linux file-path mounting.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> .env.linux .env</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="intializing-gps2-docker-containers" class="level3" data-number="11.6.3">
+<h3 data-number="11.6.3" class="anchored" data-anchor-id="intializing-gps2-docker-containers"><span class="header-section-number">11.6.3</span> Intializing GPS2 Docker Containers</h3>
+<p>Navigate to the <code>/docker-compose</code> directory of GPS2 and run:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker-compose</span> up <span class="at">-d</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>You can then monitor the docker containers health and status with the command:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> ps</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Given the reduced CPU allotments, allow a size-able amount of time for the Nominatim image to fully initialize, as stopping the process during setup can cause errors.</p>
+<p>Assuming all containers fully intialize, you are now ready to work through the standard GPS2 workflow!</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -408,8 +680,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -520,7 +790,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

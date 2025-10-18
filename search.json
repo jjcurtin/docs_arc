@@ -154,7 +154,7 @@
     "href": "studies.html",
     "title": "3  Current and Planned Studies",
     "section": "",
-    "text": "3.1 RISK",
+    "text": "3.1 RISK\nWe list potential study ideas below, organized by project/data set. When projects have been tentatively claimed, that is indicated as well",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Current and Planned Studies</span>"
     ]
@@ -224,7 +224,7 @@
     "href": "engagement_resources.html",
     "title": "5  Engagement Resources",
     "section": "",
-    "text": "5.1 On-campus resources",
+    "text": "5.1 On-campus resources\nThis page details resources for community engagement, both on- and off-campus.",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Engagement Resources</span>"
     ]
@@ -374,7 +374,7 @@
     "href": "research_drives.html",
     "title": "8  Research Drives",
     "section": "",
-    "text": "8.1 Access\nTo gain access to the research/restricted drives you must be granted access through Manifest which is UW’s Active Directory service. John or Susan can add you as needed.",
+    "text": "8.1 Access\nJohn has been assigned 2 research drives which are free UW-owned storage space for researchers. Each is 25 TB but technically we will need to pay if total use across both exceeds 25 TB.\nThe primary research drive will become a replacement for the P:/ on dionysus as we can complete migrations. It is NOT permitted to store restricted data on this drive. Most of our studies are not restricted, except those that involve the VA or a UW Healthcare Component Co-I.\nThe other is a restricted research drive for which it IS permitted to store restricted data. When migration is complete, it should only contain study folders for the MN-VA studies, Risk1, and Risk2.\nTo gain access to the research/restricted drives you must be granted access through Manifest which is UW’s Active Directory service. John or Susan can add you as needed.",
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Research Drives</span>"
     ]
@@ -474,7 +474,7 @@
     "href": "git.html",
     "title": "10  Git",
     "section": "",
-    "text": "10.1 Creating an SSH Key\nTo communicate with github through a terminal you must first establish an SSH key (a secure access credential). Follow the instructions below to create this.\nssh-keygen -t ed25519 -C \"your_email@example.com\"\nvim .ssh/id_ed25519.pub\ngit remote set-url origin git@github.com:repo_owner_username/repo_name.git\nex: git remote set-url origin git@github.com:jjcurtin/proj_risk2.git",
+    "text": "10.1 Creating an SSH Key\nFor full documentation of using git from the command line you can read the Git Pro Book.\nTo communicate with github through a terminal you must first establish an SSH key (a secure access credential). Follow the instructions below to create this.\nssh-keygen -t ed25519 -C \"your_email@example.com\"\nvim .ssh/id_ed25519.pub\ngit remote set-url origin git@github.com:repo_owner_username/repo_name.git\nex: git remote set-url origin git@github.com:jjcurtin/proj_risk2.git",
     "crumbs": [
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Git</span>"
     ]
@@ -544,17 +544,57 @@
     "href": "geolocation.html",
     "title": "11  Geolocation Processing",
     "section": "",
-    "text": "11.1 Overview\nAll preliminary geolocation processing is done on the virtual machine. The raw geolocation data will always be saved on the restricted drive (R drive) in a folder for the project for those data. Processed geolocation data are saved on the standard drive (S).\nTo log into the virtual machine, see the virtual machines page.\nTalk with Susan about getting a userid on the VM if you do not already have one.\nYou will also need to mount both the restricted and standard research drives on the VM the first time you log into it. See the research drives page for instructions.",
+    "text": "11.1 Overview\nAll preliminary geolocation processing is done on the virtual machine. The raw geolocation data will always be saved on the restricted drive (R drive) in a folder for the project for those data. Processed geolocation data are saved on the standard drive (S).\nTo log into the virtual machine, see the virtual machines page.\nTalk with Susan about getting a userid on the VM if you do not already have one.",
     "crumbs": [
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>Geolocation Processing</span>"
     ]
   },
   {
-    "objectID": "geolocation.html#section",
-    "href": "geolocation.html#section",
+    "objectID": "geolocation.html#initial-system-configuration",
+    "href": "geolocation.html#initial-system-configuration",
     "title": "11  Geolocation Processing",
-    "section": "11.2 ",
-    "text": "11.2 \nCHRIS CONTINUES HERE…..",
+    "section": "11.2 Initial System Configuration",
+    "text": "11.2 Initial System Configuration\nThere are a series of steps that will need to be taken in order to prepare a virtual machine for use with the GPS2 docker environment, they will be discussed here.\n\n11.2.1 Installing Docker & Docker Compose\nGPS2 uses containerized PostGIS and Nominatim services that ensure consistent database environments. These services run in containers that are propagated by a docker engine. These containers not only allow us to quickly and easily access this software, but shares that ease of access across different os/platforms.\nIt is recommended to add any user that is regularly interacting with Docker to the docker group, as this will allow them to run the engine without sudo. This is mainly done for convenience, but also to prevent permission issues with R scripts that call Docker commands.\nFinally, systemctl enable ensures that Docker will start automatically on boot, which is useful for long-term analysis jobs / setups.\n\nsudo apt update\nsudo apt install -y docker.io docker-compose\nsudo systemctl enable --now docker\nsudo usermod -aG docker $USER # logout/login required\n\nTo verify adequate installation, one can run these commands:\n\ndocker --version\ndocker-compose --version\ndocker ps # notably, this should work with sudo after logout/login\n\n\n\n11.2.2 Verify and Expand /var Partition for Docker Storage\nThe following change has already been made, but it’s documented here for posterity: Docker stores volumes in /var/lib/docker by default, and Nominatim requires ~5-8GB of disk space during initial Wisconsin OSM import (plus growth over time). If the /var partition is too small, it will cause Nominatim to fail.\nCheck available space:\n\ndf -h /var  # Should show at least 10GB available for Nominatim\n\nIf /var has less than 10GB available, check for free space in the LVM volume group:\n\nsudo vgs  # Look at VFree column\n\nIf free space exists (e.g., 20GB+ available), extend /var:\n\n# Add 10GB to /var (adjust size based on availability)\nsudo lvextend -L +10G /dev/Volume00/var\nsudo resize2fs /dev/mapper/Volume00-var\n\n# Verify new size\ndf -h /var  # Should now show ~15GB total\n\n\n\n11.2.3 Fix AppArmor Compatibility Issue\nUbuntu 24.04’s default AppArmor runc profile blocks Docker container execution. It is necessary to disable it:\n\nsudo mv /etc/apparmor.d/runc /etc/apparmor.d/runc.disabled\nsudo systemctl restart docker\n\nThen, verify Docker works:\n\ndocker run --rm hello-world\n\n\n\n11.2.4 Installing PostgreSQL Client Tools\nThroughout GPS2, psql commands are used sporadically for direct database testing and verification. Most of the database connections can be handled by R’s DBI, but having psql allows for certain debugging capabilities without the additional complication of R.\n\nsudo apt install -y postgresql-client\npsql --version # to verify\n\n\n\n11.2.5 Installing R\nThis is likely already done, but for posterity:\nTo check for an existing R installation\n\nR --version\n\nIf R is missing or below 4.0\n\nsudo apt install -y r-base r-base-dev\n\n\n\n11.2.6 Installing Quarto\nNeeds little explanation, chosen for its support of multi-language notebooks, research documentation and reproducibility, and native support for bash in code chunks.\n\n# download latest stable Quarto (v1.8.25 as of 10/16/2025)\nwget https://github.com/quarto-dev/quarto-cli/releases/download/v1.8.25/quarto-1.8.25-linux-amd64.deb\n\nsudo dpkg -i quarto-1.8.25-linux-amd64.deb # install\n\nTo verify:\n\nquarto --version\nquarto check\n\n\n\n11.2.7 System Libraries for R Spatial Packages\nSystem libraries are pre-compiled C/C++ libraries that are installed at the OS level that provide the core functionality for a variety of geospatial operations within GPS2. R packages like sf, geosphere, and httr don’t re-implement these capabilities, but rather act as “wrappers” that compile against and call these system libraries. It is important to install these libraries now, so that later package installation in R (i.e. install.packages(\"sf\")) can properly compile without error.\n\nsudo apt install -y \\\n  libgdal-dev \\\n  libproj-dev \\\n  libgeos-dev \\\n  libudunits2-dev \\\n  libcurl4-openssl-dev \\\n  libssl-dev \\\n  libxml2-dev \\\n  libabsl-dev\n\n\n11.2.7.0.1 GDAL (Geospatial Data Abstraction Library)\nPowers the sf package for reading/writing spatial data formats (shapefiles, geoJSON). Examples of implementation can be found in 05-spatial-zoning-analysis.qmd.\n\n\n11.2.7.0.2 PROJ (Cartographic Projections)\nHandles coordinate system transformations (e.g., WGS84 to State Plane Wisconsin). This is important in maintaining accurate distance calculations in clustering. GPS2 uses EPSG:4326 (WGS84) consistently, but PROJ ensures future flexibility, and is a sf dependency.\n\n\n11.2.7.0.3 GEOS (Geometry Engine Open Source)\nProvides spatial operations (intersections, buffers, unions). Example in 05-spatial-zoning-analysis.qmd with “point-in-polygon” tests (which clusters fall within which zoning districts). Core dependency for PostGIS spatial functions.\n\n\n11.2.7.0.4 udunits2\nHandles unit conversions (miles &lt;-&gt; meters, hours &lt;-&gt; minutes), primarily used in GPS point processing and filtering. Dependency of the units package in R.\n\n\n11.2.7.0.5 libcurl\nEnables HTTP requests for httr package. Primarily used in 04-reverse-geocoding.qmd for local Nominatim API calls, and is also needed to download the Wisconsin OSM data if refreshing Nominatim.\n\n\n11.2.7.0.6 libssl\nProvides SSL/TLS encryption for secure HTTPS connections, and is required by libcurl to make HTTPS requests. Powers devtools:source_url() for format_path(), and installing CRAN packages through install.packages().\n\n\n11.2.7.0.7 libxml2\nParses XML and GTML documents into structured data, dependency of httr and xml (dependency of many tideyverse packages).\n\n\n11.2.7.0.8 libabsl\nRequired by s2 package, which itself is a dependency of the sf package.\n\n\n\n11.2.8 Install CMake\nCmake is a cross-platform build system for compiling C/C++ code, and will be used if our libraries fail to properly compile certain packages (notably sf)\n\nsudo apt install -y cmake\n\nTo verify:\n\ncmake --version",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Geolocation Processing</span>"
+    ]
+  },
+  {
+    "objectID": "geolocation.html#r-package-installation",
+    "href": "geolocation.html#r-package-installation",
+    "title": "11  Geolocation Processing",
+    "section": "11.3 R Package Installation",
+    "text": "11.3 R Package Installation\n\n11.3.1 Temporary R Directory\nFirstly, we are going to configure our own R temporary directory. We do this to avoid the common university practice of mounting /tmp with noexec for security reasons. Notably, this prevents R from executing configure scripts during package compilation.\nTo check if this will be an issue, run:\n\nmount | grep /temp\n\nIf you see ‘noexec’, follow, complete the section below:\n\n# create a temporary directory in home folder\nmkdir -p ~/R_temp\n\n# configure R to use it permanently (UPDATE USER IN SECOND LINE!!!)\ncat &gt; ~/.Renviron &lt;&lt; 'EOF'\nTMPDIR=~/home/user/R_temp \nEOF\n\nTo verify:\n\nSys.getenv(\"TMPDIR\") # should show /home/user/R_temp\n\nIf it doesn’t show the correct and updated directory, remember to fully restart and reload R/R Studio. If this still doesn’t work, brute-force it within the R console by manually setting the path.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Geolocation Processing</span>"
+    ]
+  },
+  {
+    "objectID": "geolocation.html#package-list-and-installation",
+    "href": "geolocation.html#package-list-and-installation",
+    "title": "11  Geolocation Processing",
+    "section": "11.4 Package List and Installation",
+    "text": "11.4 Package List and Installation\nThis is the current R package list for GPS2 (updated: 10/16/2025)\nSince devtools is a very complicated package, and we only want format_path() from lab_support, we will be sourcing it directly using base R.\n\nsource(\"https://raw.githubusercontent.com/jjcurtin/lab_support/main/format_path.R\")",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Geolocation Processing</span>"
+    ]
+  },
+  {
+    "objectID": "geolocation.html#mounting-standard-and-restricted-research-drives",
+    "href": "geolocation.html#mounting-standard-and-restricted-research-drives",
+    "title": "11  Geolocation Processing",
+    "section": "11.5 Mounting Standard and Restricted Research Drives",
+    "text": "11.5 Mounting Standard and Restricted Research Drives\nFor ease of setup, a bash script that automatically maps both drives has been written and stored within the Linux VM for all users, following lab policy of storing it within /usr/local/bin.\nSimply run mount-uw-drives and follow the steps of inserting your Net-ID and passwords. Additionally, a script for un-mounting the research drives can be found at the same location, and is dubbed unmount-uw-drives.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Geolocation Processing</span>"
+    ]
+  },
+  {
+    "objectID": "geolocation.html#gps2-setup-and-configuration",
+    "href": "geolocation.html#gps2-setup-and-configuration",
+    "title": "11  Geolocation Processing",
+    "section": "11.6 GPS2 Setup and Configuration",
+    "text": "11.6 GPS2 Setup and Configuration\nNow that all of the preliminary setup has been done, we can move to setting up the actual system.\n\n11.6.1 Cloning into GPS2\nAn SSH key pair was generated on the research VM and configured as a shared authentication method. The private key (/etc/ssh/lab_github_key) is stored locally with read permissions granted to all VM users, while the corresponding public key was added as a deploy key to the GPS2 repository.\nThis allows all git operations (clone, push, pull) to be performed without individual GitHub accounts or collaborator permissions being required. The shared key is automatically used by SSH when connections to GitHub are established for this repository.\nTo clone into the repo:\n\ngit clone git@github.com:christopher-janssen/GPS2.git\n\n\n\n11.6.2 Specifying mounting points for GPS2\nThe GPS2 repository is fitted with example config/env files for dealing with OS specific file path dependencies, as functions like format_path() do not work within Docker Compose YAML files.\nInstead, simply run the following command in the /GPS2/docker-compose/ directory to properly configure the linux file-path mounting.\n\ncp .env.linux .env\n\n\n\n11.6.3 Intializing GPS2 Docker Containers\nNavigate to the /docker-compose directory of GPS2 and run:\n\ndocker-compose up -d\n\nYou can then monitor the docker containers health and status with the command:\n\ndocker ps\n\nGiven the reduced CPU allotments, allow a size-able amount of time for the Nominatim image to fully initialize, as stopping the process during setup can cause errors.\nAssuming all containers fully intialize, you are now ready to work through the standard GPS2 workflow!",
     "crumbs": [
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>Geolocation Processing</span>"
     ]
@@ -1323,7 +1363,7 @@
     "href": "psychophysiology.html",
     "title": "20  Psychophysiology Methods",
     "section": "",
-    "text": "21 Electronics and Psychophysiology",
+    "text": "21 Electronics and Psychophysiology\nAlthough we no longer focus on psychophysiology studies in our lab, this chapter is a central repository to share our gathered expertise and methods with other researchers.",
     "crumbs": [
       "Psychophysiology",
       "<span class='chapter-number'>20</span>  <span class='chapter-title'>Psychophysiology Methods</span>"
