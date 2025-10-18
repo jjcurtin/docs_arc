@@ -224,20 +224,17 @@ If it doesn't show the correct and updated directory, remember to fully restart 
 This is the current R package list for GPS2 (updated: 10/16/2025)
 
 ```{r}
-#| eval: false
-#| include: false
-
 install.packages(c(
-    "tidyverse",    # Data manipulation & visualization
-    "here",         # Path management
-    "DBI",          # Database interface
-    "RPostgres",    # PostgreSQL driver
-    "sf",           # Simple Features spatial data
-    "httr",         # HTTP requests for Nominatim
-    "jsonlite",     # JSON parsing
-    "geosphere",    # Distance calculations
-    "leaflet",      # Interactive maps
-    "lubridate"     # Date/time handling
+    "tidyverse",  
+    "here",      
+    "DBI",       
+    "RPostgres",   
+    "sf",        
+    "httr",       
+    "jsonlite",    
+    "geosphere",   
+    "leaflet",    
+    "lubridate"    
   ))
 ```
 
