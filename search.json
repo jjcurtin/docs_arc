@@ -154,7 +154,7 @@
     "href": "studies.html",
     "title": "3  Current and Planned Studies",
     "section": "",
-    "text": "3.1 RISK\nWe list potential study ideas below, organized by project/data set. When projects have been tentatively claimed, that is indicated as well",
+    "text": "3.1 RISK",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Current and Planned Studies</span>"
     ]
@@ -224,7 +224,7 @@
     "href": "engagement_resources.html",
     "title": "5  Engagement Resources",
     "section": "",
-    "text": "5.1 On-campus resources\nThis page details resources for community engagement, both on- and off-campus.",
+    "text": "5.1 On-campus resources",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Engagement Resources</span>"
     ]
@@ -374,7 +374,7 @@
     "href": "research_drives.html",
     "title": "8  Research Drives",
     "section": "",
-    "text": "8.1 Access\nJohn has been assigned 2 research drives which are free UW-owned storage space for researchers. Each is 25 TB but technically we will need to pay if total use across both exceeds 25 TB.\nThe primary research drive will become a replacement for the P:/ on dionysus as we can complete migrations. It is NOT permitted to store restricted data on this drive. Most of our studies are not restricted, except those that involve the VA or a UW Healthcare Component Co-I.\nThe other is a restricted research drive for which it IS permitted to store restricted data. When migration is complete, it should only contain study folders for the MN-VA studies, Risk1, and Risk2.\nTo gain access to the research/restricted drives you must be granted access through Manifest which is UW’s Active Directory service. John or Susan can add you as needed.",
+    "text": "8.1 Access\nTo gain access to the research/restricted drives you must be granted access through Manifest which is UW’s Active Directory service. John or Susan can add you as needed.",
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Research Drives</span>"
     ]
@@ -474,7 +474,7 @@
     "href": "git.html",
     "title": "10  Git",
     "section": "",
-    "text": "10.1 Creating an SSH Key\nFor full documentation of using git from the command line you can read the Git Pro Book.\nTo communicate with github through a terminal you must first establish an SSH key (a secure access credential). Follow the instructions below to create this.\nssh-keygen -t ed25519 -C \"your_email@example.com\"\nvim .ssh/id_ed25519.pub\ngit remote set-url origin git@github.com:repo_owner_username/repo_name.git\nex: git remote set-url origin git@github.com:jjcurtin/proj_risk2.git",
+    "text": "10.1 Creating an SSH Key\nTo communicate with github through a terminal you must first establish an SSH key (a secure access credential). Follow the instructions below to create this.\nssh-keygen -t ed25519 -C \"your_email@example.com\"\nvim .ssh/id_ed25519.pub\ngit remote set-url origin git@github.com:repo_owner_username/repo_name.git\nex: git remote set-url origin git@github.com:jjcurtin/proj_risk2.git",
     "crumbs": [
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Git</span>"
     ]
@@ -1363,7 +1363,7 @@
     "href": "psychophysiology.html",
     "title": "20  Psychophysiology Methods",
     "section": "",
-    "text": "21 Electronics and Psychophysiology\nAlthough we no longer focus on psychophysiology studies in our lab, this chapter is a central repository to share our gathered expertise and methods with other researchers.",
+    "text": "21 Electronics and Psychophysiology",
     "crumbs": [
       "Psychophysiology",
       "<span class='chapter-number'>20</span>  <span class='chapter-title'>Psychophysiology Methods</span>"
