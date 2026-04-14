@@ -1,0 +1,96 @@
+---
+execute:
+  eval: false
+---
+
+# Nominatim US Geocoding Server
+
+## Overview
+
+The lab now maintains a self-hosted [Nominatim](https://nominatim.org/) reverse geocoding server loaded with the full United States OpenStreetMap dataset. This allows for large-scale reverse geocoding (latitude/longitude → address) entirely within the lab's infrastructure, with no data leaving the university network, no rate limits, and no costs.
+
+The server is hosted on the lab's Linux VM and is accessible to anyone on the UW network or connected via [GlobalProtect VPN](globalprotect_mapping.qmd).
+
+**Server:** `http://128.104.50.166/nominatim`
+
+## Accessing the Server
+
+No login or API key is required. You must be either on campus or connected to GlobalProtect VPN. To verify the server is up, navigate to:
+
+```         
+http://128.104.50.166/nominatim/status
+```
+
+You should see `{"status":0,"message":"OK",...}`.
+
+## Reverse Geocoding in R
+
+### Using `httr`
+
+The `httr` package is the recommended way to query the server. The example below wraps the API call in a function for easy reuse:
+
+```{r}
+library(tidyverse)
+library(httr)
+library(jsonlite)
+
+reverse_geocode_nominatim <- function(lat, lon) {
+  response <- GET(
+    "http://128.104.50.166/nominatim/reverse",
+    query = list(
+      lat = lat,
+      lon = lon,
+      format = "json"
+    )
+  )
+
+  content(response, as = "parsed")
+}
+```
+
+Single coordinate:
+
+```{r}
+result <- reverse_geocode_nominatim(43.0731, -89.4012)
+
+# Full display name
+result$display_name
+
+# Individual address components
+result$address$road
+result$address$city
+result$address$state
+result$address$postcode
+```
+
+For batch processing a dataframe:
+
+```{r}
+coords <- tibble(
+  id = 1:3,
+  lat = c(43.0731, 41.8781, 44.9778),
+  lon = c(-89.4012, -87.6298, -93.2650)
+)
+
+geocode_row <- function(lat, lon) {
+  result <- reverse_geocode_nominatim(lat, lon)
+
+  tibble(
+    display_name = result$display_name %||% NA_character_,
+    road         = result$address$road %||% NA_character_,
+    city         = result$address$city %||% NA_character_,
+    state        = result$address$state %||% NA_character_,
+    postcode     = result$address$postcode %||% NA_character_
+  )
+}
+
+coords |>
+  mutate(map2_dfr(lat, lon, geocode_row))
+```
+
+## Notes
+
+-   The dataset is the full United States OSM extract, imported April 2026.
+-   The server has no rate limiting, but avoid hammering it with highly concurrent requests, as it currently runs on a single CPU.
+-   For very large jobs, consider processing in batches and writing intermediate results to disk.
+-   If the server appears down, contact Chris (703-715-7091) or feed an LLM the relevant specs of the VM, found [here](virtual_machines.qmd)
