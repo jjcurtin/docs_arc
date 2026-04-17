@@ -634,7 +634,7 @@
     "href": "nominatim_us.html#notes",
     "title": "12  Nominatim US Geocoding Server",
     "section": "12.4 Notes",
-    "text": "12.4 Notes\n\nThe dataset is the full United States OSM extract, imported April 2026.\nThe server has no rate limiting, but avoid hammering it with highly concurrent requests, as it currently runs on a single CPU.\nFor very large jobs, consider processing in batches and writing intermediate results to disk.\nIf the server appears down, contact Chris (703-715-7091) or feed an LLM the relevant specs of the VM, found here",
+    "text": "12.4 Notes\n\nThe dataset is the full United States OSM extract, imported April 2026.\nThe server has no rate limiting, but avoid hammering it with highly concurrent requests, as it currently runs on a single CPU.\nFor very large jobs, consider processing in batches and writing intermediate results to disk.\nIf the server appears down, contact Chris via Slack or feed an LLM the relevant specs of the VM, found here",
     "crumbs": [
       "<span class='chapter-number'>12</span>  <span class='chapter-title'>Nominatim US Geocoding Server</span>"
     ]
