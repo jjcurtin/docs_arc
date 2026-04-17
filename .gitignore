@@ -5,3 +5,4 @@ docs_arc.Rproj
 .DS_Store
 
 **/*.quarto_ipynb
+_book/

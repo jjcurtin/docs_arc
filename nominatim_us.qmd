@@ -93,4 +93,4 @@ coords |>
 -   The dataset is the full United States OSM extract, imported April 2026.
 -   The server has no rate limiting, but avoid hammering it with highly concurrent requests, as it currently runs on a single CPU.
 -   For very large jobs, consider processing in batches and writing intermediate results to disk.
--   If the server appears down, contact Chris (703-715-7091) or feed an LLM the relevant specs of the VM, found [here](virtual_machines.qmd)
+-   If the server appears down, contact Chris via Slack or feed an LLM the relevant specs of the VM, found [here](virtual_machines.qmd)
