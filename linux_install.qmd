@@ -269,6 +269,11 @@ Install with: `curl -fsSL https://raw.github.com/cknadler/vim-anywhere/master/in
 - [more info](https://ostechnix.com/how-to-use-vim-editor-to-input-text-anywhere/)
 
 
+## Other software/apps
+
+- [OpenWhispr](https://openwhispr.com/download)
+- Ghosty
+
 ## Vim in bash
 
 - https://blog.sanctum.geek.nz/vi-mode-in-bash/
