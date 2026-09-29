@@ -25,7 +25,7 @@ It is recommended to add any user that is regularly interacting with Docker to t
 
 Finally, `systemctl enable` ensures that Docker will start automatically on boot, which is useful for long-term analysis jobs / setups.
 
-```{bash}
+```bash
 sudo apt update
 sudo apt install -y docker.io docker-compose
 sudo systemctl enable --now docker
@@ -34,7 +34,7 @@ sudo usermod -aG docker $USER # logout/login required
 
 To verify adequate installation, one can run these commands:
 
-```{bash}
+```bash
 docker --version
 docker-compose --version
 docker ps # notably, this should work with sudo after logout/login
@@ -46,19 +46,19 @@ The following change has already been made, but it's documented here for posteri
 Docker stores volumes in `/var/lib/docker` by default, and **Nominatim requires ~5-8GB of disk space during initial Wisconsin OSM import** (plus growth over time). If the `/var` partition is too small, it will cause Nominatim to fail.
 
 Check available space:
-```{bash}
+```bash
 df -h /var  # Should show at least 10GB available for Nominatim
 ```
 
 **If /var has less than 10GB available**, check for free space in the LVM volume group:
 
-```{bash}
+```bash
 sudo vgs  # Look at VFree column
 ```
 
 **If free space exists** (e.g., 20GB+ available), extend `/var`:
 
-```{bash}
+```bash
 # Add 10GB to /var (adjust size based on availability)
 sudo lvextend -L +10G /dev/Volume00/var
 sudo resize2fs /dev/mapper/Volume00-var
@@ -71,14 +71,14 @@ df -h /var  # Should now show ~15GB total
 
 Ubuntu 24.04's default AppArmor runc profile blocks Docker container execution. It is necessary to disable it:
 
-```{bash}
+```bash
 sudo mv /etc/apparmor.d/runc /etc/apparmor.d/runc.disabled
 sudo systemctl restart docker
 ```
 
 Then, verify Docker works:
 
-```{bash}
+```bash
 docker run --rm hello-world
 ```
 
@@ -86,7 +86,7 @@ docker run --rm hello-world
 
 Throughout GPS2, psql commands are used sporadically for direct database testing and verification. Most of the database connections can be handled by R's `DBI`, but having psql allows for certain debugging capabilities without the additional complication of R.
 
-```{bash}
+```bash
 sudo apt install -y postgresql-client
 psql --version # to verify
 ```
@@ -97,13 +97,13 @@ This is likely already done, but for posterity:
 
 To check for an existing R installation
 
-```{bash}
+```bash
 R --version
 ```
 
 If R is missing or below 4.0
 
-```{bash}
+```bash
 sudo apt install -y r-base r-base-dev
 ```
 
@@ -111,7 +111,7 @@ sudo apt install -y r-base r-base-dev
 
 Needs little explanation, chosen for its support of multi-language notebooks, research documentation and reproducibility, and native support for bash in code chunks.
 
-```{bash}
+```bash
 # download latest stable Quarto (v1.8.25 as of 10/16/2025)
 wget https://github.com/quarto-dev/quarto-cli/releases/download/v1.8.25/quarto-1.8.25-linux-amd64.deb
 
@@ -120,7 +120,7 @@ sudo dpkg -i quarto-1.8.25-linux-amd64.deb # install
 
 To verify:
 
-```{bash}
+```bash
 quarto --version
 quarto check
 ```
@@ -129,7 +129,7 @@ quarto check
 
 System libraries are pre-compiled C/C++ libraries that are installed at the OS level that provide the core functionality for a variety of geospatial operations within GPS2. R packages like `sf`, `geosphere`, and `httr` don't re-implement these capabilities, but rather act as "wrappers" that compile against and call these system libraries. It is important to install these libraries now, so that later package installation in R (i.e. `install.packages("sf")`) can properly compile without error.
 
-```{bash}
+```bash
 sudo apt install -y \
   libgdal-dev \
   libproj-dev \
@@ -177,13 +177,13 @@ Required by `s2` package, which itself is a dependency of the `sf` package.
 
 **Cmake** is a cross-platform build system for compiling C/C++ code, and will be used if our libraries fail to properly compile certain packages (notably `sf`)
 
-```{bash}
+```bash
 sudo apt install -y cmake
 ```
 
 To verify:
 
-```{bash}
+```bash
 cmake --version
 ```
 
@@ -195,13 +195,13 @@ Firstly, we are going to configure our own R temporary directory. We do this to 
 
 To check if this will be an issue, run:
 
-```{bash}
+```bash
 mount | grep /temp
 ```
 
 If you see 'noexec', follow, complete the section below:
 
-```{bash}
+```bash
 # create a temporary directory in home folder
 mkdir -p ~/R_temp
 
@@ -261,7 +261,7 @@ An SSH key pair was generated on the research VM and configured as a shared auth
 This allows all git operations (clone, push, pull) to be performed without individual GitHub accounts or collaborator permissions being required. The shared key is automatically used by SSH when connections to GitHub are established for this repository.
 
 To clone into the repo:
-```{bash}
+```bash
 git clone git@github.com:christopher-janssen/GPS2.git
 ```
 
@@ -271,7 +271,7 @@ The GPS2 repository is fitted with example config/env files for dealing with OS 
 
 Instead, simply run the following command in the `/GPS2/docker-compose/` directory to properly configure the linux file-path mounting.
 
-```{bash}
+```bash
 cp .env.linux .env
 ```
 
@@ -279,13 +279,13 @@ cp .env.linux .env
 
 Navigate to the `/docker-compose` directory of GPS2 and run:
 
-```{bash}
+```bash
 docker-compose up -d
 ```
 
 You can then monitor the docker containers health and status with the command:
 
-```{bash}
+```bash
 docker ps
 ```
 
