@@ -8,7 +8,7 @@ The zoom link for CHTC office hours is [go.wisc.edu/chtc-officehours](go.wisc.ed
 
 ## Logging In
 
-1.  Open PuTTY. Enter Hostname: submit-1.chtc.wisc.edu, Port: 22, connection type: ssh
+1.  SSH to CHTC (PuTTY or terminal). Enter Hostname: submit-1.chtc.wisc.edu, Port: 22, connection type: ssh
 2.  Log in with your netid. You will have to use DUO for MFA.
 3.  Open WinSCP. Use the same credentials as PuTTY. You can drag files between your computer and CHTC. You can also edit documents with this program.
 
@@ -20,7 +20,9 @@ CHTC provides a [Hello World](https://chtc.cs.wisc.edu/uw-research-computing/hel
 
 ## Software
 
-On windows, use [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) for secure shell connection (SSH) to CHTC submit server and [WinSCP](https://winscp.net/eng/download.php) for FTP.
+Use SSH from terminal (Linux/Mac) or [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) for secure shell connection (SSH) to CHTC submit server.
+
+FTP is now natively supported from CHTC servers.  See these [notes](https://chtc.cs.wisc.edu/uw-research-computing/transfer-data-researchdrive)
 
 ## General CHTC Workflow
 
