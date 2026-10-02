@@ -22,7 +22,9 @@ CHTC provides a [Hello World](https://chtc.cs.wisc.edu/uw-research-computing/hel
 
 Use SSH from terminal (Linux/Mac) or [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) for secure shell connection (SSH) to CHTC submit server.
 
-FTP is now natively supported from CHTC servers.  See these [notes](https://chtc.cs.wisc.edu/uw-research-computing/transfer-data-researchdrive)
+FTP between CTHC and Research Drive is now natively supported from CHTC servers.  See these [notes](https://chtc.cs.wisc.edu/uw-research-computing/transfer-data-researchdrive)
+
+Alternatively, there are [instructions](https://chtc.cs.wisc.edu/uw-research-computing/transfer-files-computer) on how to use `scp` to transfer files between CHTC and your locale computer.
 
 ## General CHTC Workflow
 
